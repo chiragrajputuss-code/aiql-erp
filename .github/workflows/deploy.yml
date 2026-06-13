@@ -1,0 +1,89 @@
+name: Deploy to EC2
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:   # allow manual trigger
+
+jobs:
+  deploy:
+    name: Build & Deploy
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      # ── 1. Checkout ─────────────────────────────────────────────────────────
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      # ── 2. Setup pnpm + Node ────────────────────────────────────────────────
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10.33.0
+
+      - name: Setup Node 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      # ── 3. Install dependencies ─────────────────────────────────────────────
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # ── 4. Type check ───────────────────────────────────────────────────────
+      - name: Type check
+        run: pnpm --filter web typecheck
+
+      # ── 5. Build ────────────────────────────────────────────────────────────
+      - name: Build
+        env:
+          # Minimal env for build — secrets NOT needed at build time for Next.js
+          # (all secrets are runtime-only via SSM/env on EC2)
+          DATABASE_URL: ${{ secrets.DATABASE_URL }}
+          NEXT_PUBLIC_APP_URL: ${{ secrets.NEXT_PUBLIC_APP_URL }}
+        run: pnpm --filter web build
+
+      # ── 6. SSH deploy to EC2 ─────────────────────────────────────────────────
+      # Uses rsync to copy only changed files; PM2 zero-downtime reload
+      - name: Deploy to EC2
+        env:
+          EC2_HOST: ${{ secrets.EC2_HOST }}          # e.g. ec2-13-234-56-78.ap-south-1.compute.amazonaws.com
+          EC2_USER: ${{ secrets.EC2_USER }}          # ubuntu
+          EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}    # contents of pem file
+        run: |
+          # Write SSH key
+          echo "$EC2_SSH_KEY" > /tmp/deploy_key.pem
+          chmod 600 /tmp/deploy_key.pem
+
+          SSH="ssh -i /tmp/deploy_key.pem -o StrictHostKeyChecking=no $EC2_USER@$EC2_HOST"
+          RSYNC="rsync -az --delete --exclude='.git' --exclude='node_modules' --exclude='.next/cache'"
+
+          echo ">>> Syncing repo to EC2"
+          $RSYNC . $EC2_USER@$EC2_HOST:/home/$EC2_USER/aiql-erp/
+
+          echo ">>> Installing deps + running migrations + reloading PM2"
+          $SSH "
+            set -e
+            cd ~/aiql-erp
+            pnpm install --frozen-lockfile --prod
+            pnpm --filter @aiql/db exec prisma migrate deploy
+            pm2 reload ecosystem.config.js --env production --update-env
+            pm2 save
+          "
+
+          echo ">>> Deploy complete"
+
+      # ── 7. Health check ─────────────────────────────────────────────────────
+      - name: Health check
+        env:
+          NEXT_PUBLIC_APP_URL: ${{ secrets.NEXT_PUBLIC_APP_URL }}
+        run: |
+          sleep 5
+          status=$(curl -s -o /dev/null -w "%{http_code}" "$NEXT_PUBLIC_APP_URL/api/health" || echo "000")
+          if [[ "$status" != "200" ]]; then
+            echo "Health check failed: HTTP $status"
+            exit 1
+          fi
+          echo "Health check passed: HTTP $status"

@@ -1,0 +1,866 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("DATABASE_URL")
+  extensions = [vector]
+}
+
+// ─── Enums ───────────────────────────────────────────────────────────────────
+
+enum Plan {
+  FREE
+  STARTER
+  PROFESSIONAL
+  ENTERPRISE
+}
+
+enum Role {
+  ADMIN
+  MEMBER
+  VIEWER
+}
+
+enum ErpType {
+  TALLY
+  ZOHO_BOOKS
+  QUICKBOOKS
+  XERO
+  SAP
+  ORACLE
+  CUSTOM
+  FILE_UPLOAD
+}
+
+enum ConnectionStatus {
+  PENDING
+  ACTIVE
+  FAILED
+  DISCONNECTED
+}
+
+enum QueryStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  LOW_CONFIDENCE
+}
+
+enum ClosePeriodStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum CloseTaskStatus {
+  PENDING
+  IN_PROGRESS
+  COMPLETED
+  FAILED
+  BLOCKED
+}
+
+enum ReconStatus {
+  PENDING
+  RUNNING
+  PASSED
+  FAILED
+}
+
+enum PeriodType {
+  MONTHLY
+  QUARTERLY
+  ANNUAL
+}
+
+enum TaskCategory {
+  RECONCILIATION
+  REVIEW
+  APPROVAL
+  FLUX_ANALYSIS
+  REPORTING
+  CUSTOM
+}
+
+enum SensitivityLevel {
+  STANDARD
+  HIGH
+  MAXIMUM
+}
+
+enum LLMProvider {
+  AIQL_MANAGED
+  AZURE_OPENAI
+  OPENAI
+  GEMINI
+  GROQ
+  OLLAMA
+}
+
+enum CloseProfile {
+  STANDARD
+  QUICK
+  YEAR_END
+  ADAPTIVE
+}
+
+enum KnowledgeSource {
+  SCAN_ISSUE       // Scan engine flagged something
+  RECONCILIATION   // A recon failed or had a variance
+  FLUX_VARIANCE    // Flux analysis flagged a material change
+  AGENT_QUESTION   // P&L / BS review agent asked the user
+  MANUAL           // User typed the knowledge directly
+}
+
+enum KnowledgeVerdict {
+  NORMAL           // User confirmed this is expected behaviour
+  INVESTIGATE      // User wants to look into it (do not auto-resolve)
+  ANNOTATED        // User added a typed explanation
+  REJECTED         // User said this knowledge is wrong / outdated
+}
+
+enum AutoApplyPolicy {
+  ALWAYS           // Auto-resolve this pattern every period (recurring fact)
+  ONCE             // Auto-resolve this period only, then re-ask next time
+  NEVER            // Always re-ask (uncertain or sensitive)
+}
+
+enum LlmProxyProvider {
+  OPENAI           // chat.openai.com / api.openai.com
+  ANTHROPIC        // api.anthropic.com (Messages API)
+  GROQ             // api.groq.com (OpenAI-compatible)
+  AZURE_OPENAI     // *.openai.azure.com
+}
+
+enum DocumentType {
+  GL               // General Ledger — transaction register
+  TDS_RETURN_26Q   // Form 26Q — quarterly TDS return
+  GSTR_1           // GSTR-1 — outward supplies return
+  GSTR_3B          // GSTR-3B — monthly summary return
+  ITR              // Income Tax Return
+  OTHER            // Unknown / generic table
+}
+
+enum UploadDataIntent {
+  CURRENT_OPERATIONAL  // Live business data — trigger compliance pulse
+  HISTORICAL           // Past period / audit prep — skip current deadlines
+}
+
+enum PulseCadence {
+  DAILY
+  WEEKLY
+  OFF
+}
+
+// ─── Core Models ─────────────────────────────────────────────────────────────
+
+model Organisation {
+  id   String @id @default(cuid())
+  name String
+  slug String @unique
+
+  plan       Plan @default(STARTER)
+  queriesUsed  Int  @default(0)
+  queryLimit   Int  @default(500)
+  queriesResetAt DateTime
+
+  // Stripe
+  stripeCustomerId     String?
+  stripeSubscriptionId String?
+
+  // LLM override
+  llmProvider  LLMProvider?
+  llmApiKey    String?
+  llmModel     String?
+
+  // Notifications
+  notifyEmail     Boolean @default(true)
+  notifyWhatsApp  Boolean @default(false)
+  notifySlack     Boolean @default(false)
+  slackWebhookUrl String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  users              User[]
+  connections        ErpConnection[]
+  tokenisationConfig TokenisationConfig?
+  apiKeys            ApiKey[]
+  queryLogs          QueryLog[]
+  closePeriods       ClosePeriod[]
+  columnMappings     OrgColumnMapping[]
+  accountMappings    OrgAccountMapping[]
+  pinnedQueries      PinnedQuery[]
+  agentSessions      AgentSession[]
+  businessKnowledge  OrgBusinessKnowledge[]
+  closePreferences   OrgClosePreferences?
+  llmProxyApiKeys    LlmProxyApiKey[]
+  llmProxyAuditLogs  LlmProxyAuditLog[]
+  pulseSubscriptions PulseSubscription[]
+
+  @@map("organisations")
+}
+
+model User {
+  id           String  @id @default(cuid())
+  email        String  @unique
+  name         String?
+  passwordHash String?
+  googleId     String? @unique
+  phone        String?
+
+  role  Role   @default(MEMBER)
+  orgId String
+  org   Organisation @relation(fields: [orgId], references: [id], onDelete: Cascade)
+
+  onboardingComplete Boolean @default(false)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  sessions       Session[]
+  assignedTasks  CloseTask[]
+
+  @@map("users")
+}
+
+model Session {
+  id        String   @id
+  userId    String
+  expiresAt DateTime
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+// ─── Tokenisation ─────────────────────────────────────────────────────────────
+
+model TokenisationConfig {
+  id    String @id @default(cuid())
+  orgId String @unique
+  org   Organisation @relation(fields: [orgId], references: [id], onDelete: Cascade)
+
+  tokeniseVendors   Boolean @default(true)
+  tokeniseCustomers Boolean @default(true)
+  tokeniseEmployees Boolean @default(true)
+  tokeniseAmounts   Boolean @default(true)
+  tokeniseAccounts  Boolean @default(true)
+  tokeniseProjects  Boolean @default(true)
+
+  sensitivityLevel SensitivityLevel @default(STANDARD)
+  accountPattern   String?
+
+  customEntities String[] @default([])
+  customStripList String[] @default([])
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("tokenisation_configs")
+}
+
+// ─── ERP Connections ──────────────────────────────────────────────────────────
+
+model ErpConnection {
+  id          String @id @default(cuid())
+  orgId       String
+  org         Organisation @relation(fields: [orgId], references: [id], onDelete: Cascade)
+
+  erpType     ErpType
+  displayName String
+  status      ConnectionStatus @default(PENDING)
+
+  credentialsArn       String   @default("")
+  schemaCacheJson      String?
+  schemaCachedAt       DateTime?
+  entityDictionaryJson String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  queryLogs          QueryLog[]
+  closePeriods       ClosePeriod[]
+  uploadedFile       UploadedFile?
+  workspaceDocuments WorkspaceDocument[]
+  accountMappings    OrgAccountMapping[]
+  pinnedQueries      PinnedQuery[]
+  pulseSubscription  PulseSubscription?
+
+  @@map("erp_connections")
+}
+
+model UploadedFile {
+  id           String @id @default(cuid())
+  connectionId String @unique
+  connection   ErpConnection @relation(fields: [connectionId], references: [id], onDelete: Cascade)
+
+  originalName   String
+  mimeType       String
+  sizeBytes      Int
+  rowCount       Int      @default(0)
+  tableName      String
+  columnMapping  String   // JSON: ResolvedMapping[]
+  s3Key          String?
+  expiresAt      DateTime
+
+  // Document type system (Day 1 additions)
+  documentType       DocumentType @default(GL)
+  dataIntent         UploadDataIntent @default(CURRENT_OPERATIONAL)
+  detectedType       DocumentType?   // Auto-detected type (before user confirms)
+  detectedConfidence Float?          // 0-1 confidence of auto-detection
+  periodStart        DateTime?       // GL / tax period start
+  periodEnd          DateTime?       // GL / tax period end
+  userConfirmedType  Boolean @default(false)  // Has user explicitly confirmed the type
+  schemaVersion      String?         // For future schema versioning (e.g. "Form26Q.FY24")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("uploaded_files")
+}
+
+// Supplemental documents attached to a connection/workspace.
+// In v1 the primary GL lives in UploadedFile; additional docs (Form 26Q,
+// GSTR-1, etc.) uploaded in v2 will use this model.
+model WorkspaceDocument {
+  id           String @id @default(cuid())
+  connectionId String
+  connection   ErpConnection @relation(fields: [connectionId], references: [id], onDelete: Cascade)
+
+  documentType       DocumentType
+  dataIntent         UploadDataIntent @default(CURRENT_OPERATIONAL)
+  originalName       String
+  mimeType           String
+  sizeBytes          Int
+  rowCount           Int @default(0)
+  tableName          String   // Dynamically created PostgreSQL table name
+  columnMapping      String   // JSON: ResolvedMapping[]
+  s3Key              String?
+  expiresAt          DateTime
+
+  detectedType       DocumentType?
+  detectedConfidence Float?
+  periodStart        DateTime?
+  periodEnd          DateTime?
+  userConfirmedType  Boolean @default(false)
+  schemaVersion      String?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([connectionId, documentType])
+  @@map("workspace_documents")
+}
+
+// ─── Query Engine ─────────────────────────────────────────────────────────────
+
+model QueryLog {
+  id           String @id @default(cuid())
+  orgId        String
+  org          Organisation @relation(fields: [orgId], references: [id], onDelete: Cascade)
+  connectionId String?
+  connection   ErpConnection? @relation(fields: [connectionId], references: [id], onDelete: SetNull)
+
+  question          String
+  tokenisedQuestion String?
+  generatedSql      String?
+  confidence        Float?
+  verdict           String?
+
+  llmProvider     String?
+  llmModel        String?
+  tokensIn        Int?
+  tokensOut       Int?
+  estimatedCostUsd Float?
+  executionTimeMs Int?
+  fromCache       Boolean @default(false)
+  fromTemplate    String?
+
+  status     QueryStatus @default(PENDING)
+  rowCount   Int?
+  errorMessage String?
+
+  tokenisationAuditJson String?
+
+  // User feedback — drives RAG quality (negative entries excluded from retrieval)
+  feedback String?   // "positive" | "negative"
+
+  createdAt DateTime @default(now())
+
+  @@map("query_logs")
+}
+
+// ─── Cash Dashboard ───────────────────────────────────────────────────────────
+
+model PinnedQuery {
+  id           String @id @default(cuid())
+  orgId        String
+  org          Organisation  @relation(fields: [orgId], references: [id], onDelete: Cascade)
+  connectionId String
+  connection   ErpConnection @relation(fields: [connectionId], references: [id], onDelete: Cascade)
+
+  templateId String
+  title      String
+  position   Int      @default(0)
+
+  createdAt DateTime @default(now())
+
+  @@unique([connectionId, templateId])
+  @@map("pinned_queries")
+}
+
+// ─── Close Engine ─────────────────────────────────────────────────────────────
+
+model ClosePeriod {
+  id           String @id @default(cuid())
+  orgId        String
+  org          Organisation @relation(fields: [orgId], references: [id], onDelete: Cascade)
+  connectionId  String
+  connection    ErpConnection @relation(fields: [connectionId], references: [id])
+  // All connections contributing GL data to this close. connectionId is the primary (first).
+  connectionIds String[]      @default([])
+
+  name       String
+  periodType PeriodType
+  status     ClosePeriodStatus @default(PENDING)
+
+  startDate DateTime
+  endDate   DateTime
+  targetCompletionDate DateTime?
+
+  completionPct Float    @default(0)
+  completedAt   DateTime?
+
+  // ScanResult JSON (from data quality scan) saved at period creation in adaptive mode
+  scanResultJson String?
+
+  // Adaptive close period creation
+  closeProfile        CloseProfile @default(STANDARD)
+  userIntent          String?      // Raw user prompt (free-text) used for adaptive
+  intentSummaryJson   String?      // Parsed CloseIntent (LLM output) — focusAreas, riskFlags, exclusions
+  customWatchItems    String[]     @default([])  // Explicit account names / patterns to watch
+  profileSnapshotJson String?      // Frozen profile config used at generation time
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  tasks CloseTask[]
+
+  @@map("close_periods")
+}
+
+model CloseTask {
+  id       String @id @default(cuid())
+  periodId String
+  period   ClosePeriod @relation(fields: [periodId], references: [id], onDelete: Cascade)
+
+  title        String
+  category     TaskCategory
+  autoComplete Boolean @default(false)
+
+  status     CloseTaskStatus @default(PENDING)
+  assigneeId String?
+  assignee   User?   @relation(fields: [assigneeId], references: [id], onDelete: SetNull)
+
+  dueDate   DateTime?
+  notes     String?
+  sortOrder Int      @default(0)
+
+  dependsOnIds String[] @default([])
+
+  completedAt DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  reconciliations Reconciliation[]
+  fluxRun         FluxAnalysisRun?
+  agentSessions   AgentSession[]
+
+  @@map("close_tasks")
+}
+
+model FluxAnalysisRun {
+  id     String @id @default(cuid())
+  taskId String @unique
+  task   CloseTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  currentPeriodStart DateTime
+  currentPeriodEnd   DateTime
+  priorPeriodStart   DateTime
+  priorPeriodEnd     DateTime
+
+  totalAccounts    Int   @default(0)
+  materialCount    Int   @default(0)
+  totalAbsVariance Float @default(0)
+
+  // Full FluxAnalysisResult serialised as JSON (changes + AI analyses)
+  resultJson String
+
+  durationMs Int      @default(0)
+  lastRunAt  DateTime @default(now())
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("flux_analysis_runs")
+}
+
+model Reconciliation {
+  id     String @id @default(cuid())
+  taskId String
+  task   CloseTask @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  name             String
+  sourceQuery      String
+  targetQuery      String
+  detailQuery      String?
+  /// Positional bindings for $1, $2, ... in source/target/detail queries. JSON-encoded string array.
+  paramsJson       String @default("[]")
+  varianceThreshold Float  @default(0)
+
+  status        ReconStatus @default(PENDING)
+  sourceBalance Float?
+  targetBalance Float?
+  variance      Float?
+  aiExplanation String?
+
+  lastRunAt DateTime?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("reconciliations")
+}
+
+// ─── Agent Sessions (Sprint 2 — Agentic P&L Review) ──────────────────────────
+
+model AgentSession {
+  id           String  @id @default(cuid())
+  orgId        String
+  org          Organisation @relation(fields: [orgId], references: [id], onDelete: Cascade)
+  taskId       String?
+  task         CloseTask?   @relation(fields: [taskId], references: [id], onDelete: Cascade)
+
+  // What kind of agent this is: "pl_review", "bs_review"
+  agentType    String
+
+  // State machine: "investigating" | "awaiting_user" | "completed" | "failed" | "cancelled"
+  state        String  @default("investigating")
+
+  // Telemetry (hard guardrails)
+  iteration       Int   @default(0)
+  toolCallCount   Int   @default(0)
+  totalCostInr    Float @default(0)
+  totalTokensIn   Int   @default(0)
+  totalTokensOut  Int   @default(0)
+  durationMs      Int   @default(0)
+  stopReason      String?
+
+  // Conversation history — serialized list of agent messages + tool results
+  conversationJson  String  @default("[]")
+  // Tool call log (for audit)
+  toolCallsJson     String  @default("[]")
+  // Reasoning trail — short LLM thought summaries per iteration
+  reasoningJson     String  @default("[]")
+  // Pending questions (when state = awaiting_user)
+  questionsJson     String?
+  // Cumulative user answers
+  answersJson       String  @default("[]")
+  // Final structured output (when state = completed)
+  reportJson        String?
+
+  startedAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+  completedAt DateTime?
+
+  @@index([orgId])
+  @@index([taskId])
+  @@map("agent_sessions")
+}
+
+// ─── Per-customer business knowledge (learned from CA Q&A) ───────────────────
+
+model OrgBusinessKnowledge {
+  id           String  @id @default(cuid())
+  orgId        String
+  org          Organisation @relation(fields: [orgId], references: [id], onDelete: Cascade)
+  connectionId String?
+
+  // Stable key for this knowledge fragment.
+  // Built deterministically from source signature, e.g. "scan:voucher_imbalance",
+  // "flux:salary:march:bonus_recurring", "recon:bank-recon".
+  patternKey   String
+  // Human-readable context that prompted this knowledge (shown to the user).
+  context      String
+  // The answer / fact the CA confirmed (free text).
+  answer       String
+  // Confidence reduces over time if not reaffirmed.
+  confidence   Float   @default(1.0)
+
+  // Where this knowledge originated — drives how lookup tries to match it.
+  source        KnowledgeSource @default(MANUAL)
+  /// Loose JSON reference to the source row.
+  /// Shape varies by source: { scanIssueCode, periodId } / { reconId } / etc.
+  sourceRefJson String?
+
+  // What did the user actually say?
+  verdict       KnowledgeVerdict @default(NORMAL)
+  /// Free-text annotation when verdict is ANNOTATED or INVESTIGATE.
+  annotation    String?
+
+  // How aggressively to auto-apply on future closes.
+  autoApply     AutoApplyPolicy @default(ALWAYS)
+
+  /// Q&A history — JSON array of { askedAt, answeredAt, verdict, annotation }.
+  /// Capped to most recent ~20 entries. Used for "we asked this 3 times before".
+  historyJson   String   @default("[]")
+
+  /// Vector embedding (Ollama nomic-embed-text — 768 dims) of (context + answer + annotation).
+  /// Populated asynchronously after row creation. NULL while pending or if Ollama unavailable.
+  /// Read/written via raw SQL — Prisma client does not support vector type natively.
+  embedding     Unsupported("vector(768)")?
+
+  firstLearnedAt    DateTime @default(now())
+  lastReaffirmedAt  DateTime @default(now())
+  reaffirmationCount Int     @default(1)
+
+  /// When this knowledge was last applied (auto-resolved a task) on a close cycle.
+  /// NULL = never applied yet. Powers the "auto-resolved this month" counter
+  /// on the dashboard insights banner.
+  lastAppliedAt     DateTime?
+  /// Total number of times this knowledge has auto-resolved a task across all
+  /// close cycles. Increments on each successful auto-resolve.
+  appliedCount      Int      @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([orgId, connectionId, patternKey])
+  @@index([orgId, connectionId])
+  @@index([orgId, source])
+  @@index([orgId, lastAppliedAt])
+  @@map("org_business_knowledge")
+}
+
+// ─── Account Mappings ─────────────────────────────────────────────────────────
+
+model OrgAccountMapping {
+  id           String @id @default(cuid())
+  orgId        String
+  org          Organisation  @relation(fields: [orgId], references: [id], onDelete: Cascade)
+  connectionId String
+  connection   ErpConnection @relation(fields: [connectionId], references: [id], onDelete: Cascade)
+
+  accountName  String  // exact account name from GL data
+  accountType  String  // AccountType value: BANK, PAYABLE, RECEIVABLE, TAX, INVENTORY, etc.
+  confidence   Float   @default(0)   // 0–1, from auto-classification
+  isConfirmed  Boolean @default(false)
+  confirmedAt  DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([connectionId, accountName])
+  @@map("org_account_mappings")
+}
+
+// ─── Close Preferences (per-org memory of last close) ────────────────────────
+
+model OrgClosePreferences {
+  id    String @id @default(cuid())
+  orgId String @unique
+  org   Organisation @relation(fields: [orgId], references: [id], onDelete: Cascade)
+
+  // Memory of the most recent successful close — enables "Same as last close"
+  lastProfile             CloseProfile?
+  lastIntent              String?
+  lastIntentSummaryJson   String?
+  lastCustomWatchItems    String[] @default([])
+  lastClosedAt            DateTime?
+
+  // Usage counts per profile (JSON: { STANDARD: 3, QUICK: 1, YEAR_END: 0, ADAPTIVE: 5 })
+  usageCountJson String @default("{}")
+
+  // Pattern recognition — did the user repeatedly add the same custom watch items?
+  // Stored as JSON: [{ pattern: "salary advance", count: 3, lastSeenAt: "..." }]
+  recurringPatternsJson String @default("[]")
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("org_close_preferences")
+}
+
+// ─── LLM Proxy (BYOK — bring your own key) ──────────────────────────────────
+//
+// Customers store their own LLM provider API keys here, encrypted at rest.
+// AIQL never sees the plaintext outside the request lifecycle:
+//   1. Encrypt on POST (via apps/web/src/lib/crypto.ts AES-256-GCM)
+//   2. Decrypt only inside the proxy handler at call time
+//   3. Forward request to the customer's chosen provider
+//   4. Tokenise outbound text, detokenise inbound response (PII never leaves)
+
+model LlmProxyApiKey {
+  id     String @id @default(cuid())
+  orgId  String
+  org    Organisation @relation(fields: [orgId], references: [id], onDelete: Cascade)
+
+  provider LlmProxyProvider
+  /// Human-readable label, e.g. "Production OpenAI key"
+  name     String
+  /// AES-256-GCM ciphertext (base64). Decrypted only at request time.
+  encryptedKey String
+  /// Last 4 chars of the plaintext key, kept for display ("...XYZ4")
+  keyTail  String
+
+  isActive    Boolean   @default(true)
+  lastUsedAt  DateTime?
+  callCount   Int       @default(0)
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([orgId, provider])
+  @@map("llm_proxy_api_keys")
+}
+
+model LlmProxyAuditLog {
+  id     String @id @default(cuid())
+  orgId  String
+  org    Organisation @relation(fields: [orgId], references: [id], onDelete: Cascade)
+
+  provider     LlmProxyProvider
+  model        String
+  /// What we masked, JSON: [{ category: "VENDOR", count: 3 }, ...]
+  maskedJson   String   @default("[]")
+  promptChars  Int      @default(0)
+  responseChars Int     @default(0)
+  tokensIn     Int      @default(0)
+  tokensOut    Int      @default(0)
+  /// HTTP status from the upstream provider. 0 if our wrapper short-circuited.
+  upstreamStatus Int    @default(0)
+  /// Was knowledge context auto-injected?
+  knowledgeApplied Int  @default(0)
+  durationMs   Int      @default(0)
+  errorMessage String?
+
+  createdAt DateTime @default(now())
+
+  @@index([orgId, createdAt])
+  @@map("llm_proxy_audit_logs")
+}
+
+// ─── Column Mappings ──────────────────────────────────────────────────────────
+
+model OrgColumnMapping {
+  id               String   @id @default(cuid())
+  orgId            String
+  org              Organisation @relation(fields: [orgId], references: [id], onDelete: Cascade)
+
+  sourceColumnName String   // e.g. "Dr Amt", "Debit Amount", "उधार राशि"
+  canonicalField   String   // e.g. "debit_amount", "credit_amount", "date", "description"
+  confirmedAt      DateTime @default(now())
+  updatedAt        DateTime @updatedAt
+
+  @@unique([orgId, sourceColumnName])
+  @@map("org_column_mappings")
+}
+
+// ─── Daily Pulse ─────────────────────────────────────────────────────────────
+//
+// One subscription per connection (workspace). Subscription drives cadence and
+// per-category snooze settings. Each run generates one PulseDigest containing
+// PulseAlert rows for each triggered rule.
+
+model PulseSubscription {
+  id           String @id @default(cuid())
+  orgId        String
+  org          Organisation  @relation(fields: [orgId], references: [id], onDelete: Cascade)
+  connectionId String @unique
+  connection   ErpConnection @relation(fields: [connectionId], references: [id], onDelete: Cascade)
+
+  cadence      PulseCadence @default(WEEKLY)
+  emailEnabled Boolean @default(true)
+  inAppEnabled Boolean @default(true)
+
+  // Category codes whose alerts should be suppressed (e.g. ["tds_deadline", "gstr1_deadline"])
+  snoozedCategories String[] @default([])
+
+  isActive   Boolean  @default(true)
+  lastSentAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  digests PulseDigest[]
+
+  @@index([orgId])
+  @@map("pulse_subscriptions")
+}
+
+model PulseDigest {
+  id             String @id @default(cuid())
+  subscriptionId String
+  subscription   PulseSubscription @relation(fields: [subscriptionId], references: [id], onDelete: Cascade)
+  connectionId   String
+
+  digestJson     String   // Full serialized pulse content for rendering
+  generatedAt    DateTime @default(now())
+  emailSentAt    DateTime?
+  emailDelivered Boolean  @default(false)
+  // Signed token for non-authenticated email link view
+  shareToken     String   @unique @default(cuid())
+
+  alerts PulseAlert[]
+
+  @@index([connectionId, generatedAt])
+  @@map("pulse_digests")
+}
+
+model PulseAlert {
+  id           String @id @default(cuid())
+  digestId     String
+  digest       PulseDigest @relation(fields: [digestId], references: [id], onDelete: Cascade)
+  connectionId String
+
+  // Category codes: "tds_deadline" | "gstr1_deadline" | "gstr3b_deadline" |
+  //                 "advance_tax"  | "itr_deadline"   | "unresolved_scan"  |
+  //                 "snapshot"     | "anomaly"
+  category   String
+  severity   String   // "critical" | "review" | "info"
+  title      String
+  detail     String?
+  actionUrl  String?
+  detailJson String?  // Type-specific structured payload (amounts, voucher lists, etc.)
+
+  isSnoozed Boolean  @default(false)
+  snoozedAt DateTime?
+
+  createdAt DateTime @default(now())
+
+  @@index([connectionId, createdAt])
+  @@map("pulse_alerts")
+}
+
+// ─── API Keys ─────────────────────────────────────────────────────────────────
+
+model ApiKey {
+  id    String @id @default(cuid())
+  orgId String
+  org   Organisation @relation(fields: [orgId], references: [id], onDelete: Cascade)
+
+  name      String
+  keyHash   String   @unique
+  keyPrefix String
+
+  isActive  Boolean   @default(true)
+  expiresAt DateTime?
+  lastUsedAt DateTime?
+
+  createdAt DateTime @default(now())
+
+  @@map("api_keys")
+}

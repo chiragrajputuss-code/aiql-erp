@@ -1,0 +1,2251 @@
+Date,Vch No,Vch Type,Particulars,Debit,Credit,Narration
+2023-04-01,BR-1020,Receipt,Sundry Debtors,,12343.23,Received from Pooja Patel
+2023-04-01,INV-1196,Sales,Sundry Debtors,19925.88,,Being sales to Sunita Gupta
+2024-01-01,PUR-1039,Purchase,Vegetable Purchases,5881.31,,Purchase from Om Steel Pvt Ltd
+2024-07-01,BP-1015,Payment,Sundry Creditors,244170.82,,Payment to Om Steel Pvt Ltd
+2024-07-01,BP-1015,Payment,HDFC Bank A/c,,244170.82,Payment to Om Steel Pvt Ltd
+2024-07-01,BP-1030,Payment,Sundry Creditors,221919.30,,Payment to Sai Traders Group
+2024-07-01,BP-1030,Payment,HDFC Bank A/c,,221919.30,Payment to Sai Traders Group
+2024-07-01,BP-1153,Payment,Sundry Creditors,130441.03,,Payment to Krishna Agencies & Co
+2024-07-01,BP-1153,Payment,HDFC Bank A/c,,130441.03,Payment to Krishna Agencies & Co
+2024-07-01,BR-1043,Receipt,HDFC Bank A/c,126076.39,,Received from Sunita Gupta
+2024-07-01,BR-1043,Receipt,Sundry Debtors,,126076.39,Received from Sunita Gupta
+2024-07-01,BR-1074,Receipt,HDFC Bank A/c,94931.93,,Received from Sunita Gupta
+2024-07-01,BR-1074,Receipt,Sundry Debtors,,94931.93,Received from Sunita Gupta
+2024-07-01,BR-1077,Receipt,HDFC Bank A/c,195359.78,,Received from Sunita Reddy
+2024-07-01,BR-1077,Receipt,Sundry Debtors,,195359.78,Received from Sunita Reddy
+2024-07-01,BR-1085,Receipt,HDFC Bank A/c,51161.25,,Received from Sunita Reddy
+2024-07-01,BR-1085,Receipt,Sundry Debtors,,51161.25,Received from Sunita Reddy
+2024-07-01,INV-1018,Sales,Sundry Debtors,187360.62,,Being sales to Sunita Gupta
+2024-07-01,INV-1018,Sales,Restaurant Sales,,187360.62,Being sales to Sunita Gupta
+2024-07-01,INV-1120,Sales,Sundry Debtors,197701.26,,Being sales to Sunita Gupta
+2024-07-01,INV-1120,Sales,Restaurant Sales,,197701.26,Being sales to Sunita Gupta
+2024-07-01,INV-1228,Sales,Sundry Debtors,81778.03,,Being sales to Sunita Reddy
+2024-07-01,INV-1228,Sales,Restaurant Sales,,81778.03,Being sales to Sunita Reddy
+2024-07-01,INV-1229,Sales,Sundry Debtors,27324.94,,Being sales to Sunita Reddy
+2024-07-01,INV-1229,Sales,Restaurant Sales,,27324.94,Being sales to Sunita Reddy
+2024-07-01,INV-1264,Sales,Sundry Debtors,187306.05,,Being sales to Ritu Choudhary
+2024-07-01,INV-1264,Sales,Restaurant Sales,,187306.05,Being sales to Ritu Choudhary
+2024-07-01,INV-1280,Sales,Sundry Debtors,23026.68,,Being sales to Pooja Patel
+2024-07-01,INV-1280,Sales,Restaurant Sales,,23026.68,Being sales to Pooja Patel
+2024-07-01,INV-1317,Sales,Sundry Debtors,125363.59,,Being sales to Sunita Reddy
+2024-07-01,INV-1317,Sales,Restaurant Sales,,125363.59,Being sales to Sunita Reddy
+2024-07-01,JV-1001,Journal,Audit Fees,24738.57,,Being audit fees for the period
+2024-07-01,JV-1001,Journal,HDFC Bank A/c,,24738.57,Being audit fees for the period
+2024-07-01,JV-1005,Journal,Diwali Bonus to Staff,4519.07,,Being diwali bonus to staff for the period
+2024-07-01,JV-1005,Journal,HDFC Bank A/c,,4519.07,Being diwali bonus to staff for the period
+2024-07-01,JV-1047,Journal,Office Rent,47914.69,,Being office rent for the period
+2024-07-01,JV-1047,Journal,HDFC Bank A/c,,47914.69,Being office rent for the period
+2024-07-01,JV-1115,Journal,Bank Charges,53951.32,,Being bank charges for the period
+2024-07-01,JV-1115,Journal,HDFC Bank A/c,,53951.32,Being bank charges for the period
+2024-07-01,JV-1136,Journal,Telephone & Internet,74713.47,,Being telephone & internet for the period
+2024-07-01,JV-1136,Journal,HDFC Bank A/c,,74713.47,Being telephone & internet for the period
+2024-07-01,PUR-1004,Purchase,Meat & Poultry Purchases,97808.45,,Purchase from Ganesh Agencies Pvt Ltd
+2024-07-01,PUR-1004,Purchase,Sundry Creditors,,97808.45,Purchase from Ganesh Agencies Pvt Ltd
+2024-07-02,BP-1012,Payment,Sundry Creditors,280817.12,,Payment to Maa Works LLP
+2024-07-02,BP-1012,Payment,HDFC Bank A/c,,280817.12,Payment to Maa Works LLP
+2024-07-02,BP-1066,Payment,Sundry Creditors,114605.45,,Payment to Bharat Trading Pvt Ltd
+2024-07-02,BP-1066,Payment,HDFC Bank A/c,,114605.45,Payment to Bharat Trading Pvt Ltd
+2024-07-02,BP-1112,Payment,Sundry Creditors,155629.28,,Payment to Bharat Suppliers & Co
+2024-07-02,BP-1112,Payment,HDFC Bank A/c,,155629.28,Payment to Bharat Suppliers & Co
+2024-07-02,BR-1065,Receipt,HDFC Bank A/c,32895.94,,Received from Ritu Choudhary
+2024-07-02,BR-1065,Receipt,Sundry Debtors,,32895.94,Received from Ritu Choudhary
+2024-07-02,BR-1084,Receipt,HDFC Bank A/c,249907.03,,Received from Ritu Choudhary
+2024-07-02,BR-1084,Receipt,Sundry Debtors,,249907.03,Received from Ritu Choudhary
+2024-07-02,BR-1095,Receipt,HDFC Bank A/c,224721.96,,Received from Sunita Gupta
+2024-07-02,BR-1095,Receipt,Sundry Debtors,,224721.96,Received from Sunita Gupta
+2024-07-02,INV-1013,Sales,Sundry Debtors,192973.14,,Being sales to Sunita Reddy
+2024-07-02,INV-1013,Sales,Restaurant Sales,,192973.14,Being sales to Sunita Reddy
+2024-07-02,INV-1067,Sales,Sundry Debtors,176472.37,,Being sales to Sunita Reddy
+2024-07-02,INV-1067,Sales,Restaurant Sales,,176472.37,Being sales to Sunita Reddy
+2024-07-02,INV-1109,Sales,Sundry Debtors,64998.40,,Being sales to Sunita Gupta
+2024-07-02,INV-1109,Sales,Restaurant Sales,,64998.40,Being sales to Sunita Gupta
+2024-07-02,INV-1260,Sales,Sundry Debtors,188084.89,,Being sales to Sunita Reddy
+2024-07-02,INV-1260,Sales,Restaurant Sales,,188084.89,Being sales to Sunita Reddy
+2024-07-02,JV-1050,Journal,Diwali Bonus to Staff,60013.94,,Being diwali bonus to staff for the period
+2024-07-02,JV-1050,Journal,HDFC Bank A/c,,60013.94,Being diwali bonus to staff for the period
+2024-07-02,JV-1088,Journal,Bank Charges,65954.43,,Being bank charges for the period
+2024-07-02,JV-1088,Journal,HDFC Bank A/c,,65954.43,Being bank charges for the period
+2024-07-02,PUR-1109,Purchase,Vegetable Purchases,145913.62,,Purchase from Krishna Industries Industries
+2024-07-02,PUR-1109,Purchase,Sundry Creditors,,145913.62,Purchase from Krishna Industries Industries
+2024-07-02,PUR-1111,Purchase,Vegetable Purchases,114148.60,,Purchase from Krishna Industries Industries
+2024-07-02,PUR-1111,Purchase,Sundry Creditors,,114148.60,
+2024-07-02,PUR-1155,Purchase,Meat & Poultry Purchases,171014.29,,Purchase from Ratan Enterprises Industries
+2024-07-02,PUR-1155,Purchase,Sundry Creditors,,171014.29,Purchase from Ratan Enterprises Industries
+2024-07-03,BP-1081,Payment,Sundry Creditors,263563.64,,Payment to Bharat Suppliers & Co
+2024-07-03,BP-1081,Payment,HDFC Bank A/c,,263563.64,Payment to Bharat Suppliers & Co
+2024-07-03,BP-1092,Payment,Sundry Creditors,15493.52,,Payment to Sai Industries Industries
+2024-07-03,BP-1092,Payment,HDFC Bank A/c,,15493.52,Payment to Sai Industries Industries
+2024-07-03,BP-1150,Payment,Sundry Creditors,232565.62,,Payment to Sai Industries Industries
+2024-07-03,BP-1150,Payment,HDFC Bank A/c,,232565.62,Payment to Sai Industries Industries
+2024-07-03,BR-1008,Receipt,HDFC Bank A/c,195543.69,,Received from Ritu Choudhary
+2024-07-03,BR-1008,Receipt,Sundry Debtors,,195543.69,Received from Ritu Choudhary
+2024-07-03,INV-1049,Sales,Sundry Debtors,153700.20,,Being sales to Pooja Patel
+2024-07-03,INV-1049,Sales,Restaurant Sales,,153700.20,Being sales to Pooja Patel
+2024-07-03,INV-1284,Sales,Sundry Debtors,63352.25,,Being sales to Sunita Gupta
+2024-07-03,INV-1284,Sales,Restaurant Sales,,63352.25,Being sales to Sunita Gupta
+2024-07-03,INV-1309,Sales,Sundry Debtors,18945.18,,Being sales to Sunita Reddy
+2024-07-03,INV-1309,Sales,Restaurant Sales,,18945.18,Being sales to Sunita Reddy
+2024-07-03,INV-1311,Sales,Sundry Debtors,46828.30,,Being sales to Ritu Choudhary
+2024-07-03,INV-1311,Sales,Restaurant Sales,,46828.30,Being sales to Ritu Choudhary
+2024-07-03,JV-1065,Journal,Diwali Bonus to Staff,44392.18,,Being diwali bonus to staff for the period
+2024-07-03,JV-1065,Journal,HDFC Bank A/c,,44504.33,Being diwali bonus to staff for the period
+2024-07-03,JV-1092,Journal,Travelling Expenses,62533.25,,Being travelling expenses for the period
+2024-07-03,JV-1092,Journal,HDFC Bank A/c,,62533.25,Being travelling expenses for the period
+2024-07-03,PUR-1059,Purchase,Kitchen Wages,239572.15,,Purchase from Sai Suppliers LLP
+2024-07-03,PUR-1059,Purchase,Sundry Creditors,,239572.15,Purchase from Sai Suppliers LLP
+2024-07-03,PUR-1145,Purchase,Kitchen Wages,147161.95,,Purchase from Sai Traders Group
+2024-07-03,PUR-1145,Purchase,Sundry Creditors,,147161.95,Purchase from Sai Traders Group
+2024-07-03,PUR-1228,Purchase,Vegetable Purchases,264202.03,,Purchase from Shree Traders & Co
+2024-07-03,PUR-1228,Purchase,Sundry Creditors,,264202.03,Purchase from Shree Traders & Co
+2024-07-04,BP-1022,Payment,Sundry Creditors,268654.71,,Payment to Maa Works LLP
+2024-07-04,BP-1022,Payment,HDFC Bank A/c,,268654.71,Payment to Maa Works LLP
+2024-07-04,BP-1111,Payment,Sundry Creditors,219058.93,,Payment to Shree Traders & Co
+2024-07-04,BP-1111,Payment,HDFC Bank A/c,,219058.93,Payment to Shree Traders & Co
+2024-07-04,BP-1119,Payment,Sundry Creditors,238216.13,,Payment to Ratan Enterprises Group
+2024-07-04,BP-1119,Payment,HDFC Bank A/c,,238216.13,Payment to Ratan Enterprises Group
+2024-07-04,BR-1017,Receipt,HDFC Bank A/c,78860.15,,Received from Pooja Patel
+2024-07-04,BR-1017,Receipt,Sundry Debtors,,78860.15,Received from Pooja Patel
+2024-07-04,BR-1072,Receipt,HDFC Bank A/c,239347.86,,Received from Ritu Choudhary
+2024-07-04,BR-1072,Receipt,Sundry Debtors,,239347.86,Received from Ritu Choudhary
+2024-07-04,BR-1099,Receipt,HDFC Bank A/c,67770.39,,Received from Pooja Patel
+2024-07-04,BR-1099,Receipt,Sundry Debtors,,67770.39,Received from Pooja Patel
+2024-07-04,INV-1003,Sales,Sundry Debtors,101104.65,,Being sales to Pooja Patel
+2024-07-04,INV-1003,Sales,Restaurant Sales,,101104.65,Being sales to Pooja Patel
+2024-07-04,INV-1019,Sales,Sundry Debtors,152070.41,,Being sales to Sunita Gupta
+2024-07-04,INV-1019,Sales,Restaurant Sales,,152070.41,Being sales to Sunita Gupta
+2024-07-04,INV-1173,Sales,Sundry Debtors,41891.76,,Being sales to Sunita Gupta
+2024-07-04,INV-1173,Sales,Restaurant Sales,,41891.76,Being sales to Sunita Gupta
+2024-07-04,INV-1235,Sales,Sundry Debtors,78227.66,,Being sales to Sunita Gupta
+2024-07-04,INV-1235,Sales,Restaurant Sales,,78227.66,Being sales to Sunita Gupta
+2024-07-04,JV-1033,Journal,Office Rent,92594.91,,Being office rent for the period
+2024-07-04,JV-1033,Journal,HDFC Bank A/c,,92594.91,Being office rent for the period
+2024-07-04,JV-1035,Journal,Telephone & Internet,81616.09,,Being telephone & internet for the period
+2024-07-04,JV-1035,Journal,HDFC Bank A/c,,81616.09,Being telephone & internet for the period
+2024-07-04,JV-X832,Journal,Adjustment Account,9493.53,,Unknown adjustment
+2024-07-04,JV-X832,Journal,HDFC Bank A/c,,9493.53,Unknown adjustment
+2024-07-04,PUR-1043,Purchase,Spices & Provisions,124308.30,,Purchase from Ganesh Traders & Bros
+2024-07-04,PUR-1043,Purchase,Sundry Creditors,,124308.30,Purchase from Ganesh Traders & Bros
+2024-07-04,PUR-1106,Purchase,Spices & Provisions,282465.87,,Purchase from Om Steel Pvt Ltd
+2024-07-04,PUR-1106,Purchase,Sundry Creditors,,282465.87,Purchase from Om Steel Pvt Ltd
+2024-07-05,BP-1016,Payment,Sundry Creditors,283211.51,,Payment to Om Trading Industries
+2024-07-05,BP-1016,Payment,HDFC Bank A/c,,283211.51,Payment to Om Trading Industries
+2024-07-05,BP-1147,Payment,Sundry Creditors,152986.97,,Payment to Maa Works & Bros
+2024-07-05,BP-1147,Payment,HDFC Bank A/c,,152986.97,Payment to Maa Works & Bros
+2024-07-05,BR-1145,Receipt,HDFC Bank A/c,119907.57,,Received from Ritu Choudhary
+2024-07-05,BR-1145,Receipt,Sundry Debtors,,119907.57,Received from Ritu Choudhary
+2024-07-05,INV-1099,Sales,Sundry Debtors,188622.09,,Being sales to Sunita Gupta
+2024-07-05,INV-1099,Sales,Restaurant Sales,,188622.09,Being sales to Sunita Gupta
+2024-07-05,INV-1153,Sales,Sundry Debtors,127136.56,,Being sales to Sunita Gupta
+2024-07-05,INV-1153,Sales,Restaurant Sales,,127136.56,Being sales to Sunita Gupta
+2024-07-05,INV-1244,Sales,Sundry Debtors,76960.13,,Being sales to Sunita Gupta
+2024-07-05,INV-1244,Sales,Restaurant Sales,,76960.13,Being sales to Sunita Gupta
+2024-07-05,INV-1270,Sales,Sundry Debtors,160956.93,,Being sales to Pooja Patel
+2024-07-05,INV-1270,Sales,Restaurant Sales,,160956.93,Being sales to Pooja Patel
+2024-07-05,INV-1283,Sales,Sundry Debtors,156446.20,,Being sales to Pooja Patel
+2024-07-05,INV-1283,Sales,Restaurant Sales,,156446.20,Being sales to Pooja Patel
+2024-07-05,JV-1023,Journal,Salaries & Wages,59506.70,,Being salaries & wages for the period
+2024-07-05,JV-1023,Journal,HDFC Bank A/c,,59506.70,Being salaries & wages for the period
+2024-07-05,JV-1037,Journal,Printing & Stationery,27282.20,,Being printing & stationery for the period
+2024-07-05,JV-1037,Journal,HDFC Bank A/c,,27282.20,Being printing & stationery for the period
+2024-07-05,JV-1052,Journal,Postage & Courier,19089.12,,Being postage & courier for the period
+2024-07-05,JV-1052,Journal,HDFC Bank A/c,,19089.12,Being postage & courier for the period
+2024-07-05,JV-1075,Journal,Printing & Stationery,8573.56,,Being printing & stationery for the period
+2024-07-05,JV-1075,Journal,HDFC Bank A/c,,8573.56,Being printing & stationery for the period
+2024-07-05,JV-1127,Journal,Diwali Bonus to Staff,8079.78,,Being diwali bonus to staff for the period
+2024-07-05,JV-1127,Journal,HDFC Bank A/c,,8079.78,Being diwali bonus to staff for the period
+2024-07-05,JV-X786,Journal,Misc Expenses 999,4610.74,,Unknown adjustment
+2024-07-05,JV-X786,Journal,HDFC Bank A/c,,4610.74,Unknown adjustment
+2024-07-05,PUR-1088,Purchase,Spices & Provisions,234122.45,,Purchase from Maa Services LLP
+2024-07-05,PUR-1088,Purchase,Sundry Creditors,,234122.45,Purchase from Maa Services LLP
+2024-07-05,PUR-1272,Purchase,Spices & Provisions,110212.71,,Purchase from Sai Traders Group
+2024-07-05,PUR-1272,Purchase,Sundry Creditors,,110212.71,Purchase from Sai Traders Group
+2024-07-06,BP-1024,Payment,Sundry Creditors,102530.50,,Payment to Ratan Enterprises Group
+2024-07-06,BP-1024,Payment,HDFC Bank A/c,,102530.50,Payment to Ratan Enterprises Group
+2024-07-06,BP-1078,Payment,Sundry Creditors,23108.94,,Payment to Sai Services Pvt Ltd
+2024-07-06,BP-1078,Payment,HDFC Bank A/c,,23108.94,Payment to Sai Services Pvt Ltd
+2024-07-06,BR-1158,Receipt,HDFC Bank A/c,56001.96,,Received from Pooja Patel
+2024-07-06,BR-1158,Receipt,Sundry Debtors,,56001.96,Received from Pooja Patel
+2024-07-06,BR-1187,Receipt,HDFC Bank A/c,83506.08,,Received from Sunita Reddy
+2024-07-06,BR-1187,Receipt,Sundry Debtors,,83506.08,Received from Sunita Reddy
+2024-07-06,INV-1057,Sales,Sundry Debtors,195183.63,,Being sales to Ritu Choudhary
+2024-07-06,INV-1057,Sales,Restaurant Sales,,195183.63,Being sales to Ritu Choudhary
+2024-07-06,INV-1317-DUP,Sales,Sundry Debtors,125363.59,,Being sales to Sunita Reddy
+2024-07-06,INV-1317-DUP,Sales,Restaurant Sales,,125363.59,Being sales to Sunita Reddy
+2024-07-06,JV-1144,Journal,Audit Fees,70658.29,,Being audit fees for the period
+2024-07-06,JV-1144,Journal,HDFC Bank A/c,,70658.29,Being audit fees for the period
+2024-07-06,PUR-1047,Purchase,Vegetable Purchases,26003.74,,Purchase from Shree Trading Group
+2024-07-06,PUR-1047,Purchase,Sundry Creditors,,26003.74,Purchase from Shree Trading Group
+2024-07-06,PUR-1093,Purchase,Spices & Provisions,163685.99,,Purchase from Maa Works & Bros
+2024-07-06,PUR-1093,Purchase,Sundry Creditors,,163685.99,Purchase from Maa Works & Bros
+2024-07-06,PUR-1141,Purchase,Spices & Provisions,62828.63,,Purchase from Sai Services Pvt Ltd
+2024-07-06,PUR-1141,Purchase,Sundry Creditors,,62828.63,Purchase from Sai Services Pvt Ltd
+2024-07-06,PUR-1164,Purchase,Spices & Provisions,114365.08,,Purchase from Bharat Suppliers & Co
+2024-07-06,PUR-1164,Purchase,Sundry Creditors,,114365.08,Purchase from Bharat Suppliers & Co
+2024-07-06,PUR-1192,Purchase,Meat & Poultry Purchases,152258.85,,Purchase from Om Traders & Bros
+2024-07-06,PUR-1192,Purchase,Sundry Creditors,,152258.85,Purchase from Om Traders & Bros
+2024-07-07,BP-1009,Payment,Sundry Creditors,95267.57,,Payment to Om Trading Industries
+2024-07-07,BP-1009,Payment,HDFC Bank A/c,,95267.57,Payment to Om Trading Industries
+2024-07-07,INV-1276,Sales,Sundry Debtors,187666.21,,
+2024-07-07,INV-1276,Sales,Restaurant Sales,,187666.21,Being sales to Ritu Choudhary
+2024-07-07,INV-1283-DUP,Sales,Sundry Debtors,156446.20,,Being sales to Pooja Patel
+2024-07-07,INV-1283-DUP,Sales,Restaurant Sales,,156446.20,Being sales to Pooja Patel
+2024-07-07,PUR-1006,Purchase,Vegetable Purchases,6264.13,,Purchase from Ratan Enterprises Group
+2024-07-07,PUR-1006,Purchase,Sundry Creditors,,6264.13,Purchase from Ratan Enterprises Group
+2024-07-07,PUR-1074,Purchase,Vegetable Purchases,84533.09,,Purchase from Bharat Suppliers & Co
+2024-07-07,PUR-1074,Purchase,Sundry Creditors,,84533.09,Purchase from Bharat Suppliers & Co
+2024-07-07,PUR-1142,Purchase,Vegetable Purchases,48197.27,,Purchase from Om Traders & Bros
+2024-07-07,PUR-1142,Purchase,Sundry Creditors,,48197.27,Purchase from Om Traders & Bros
+2024-07-07,PUR-1178,Purchase,Kitchen Wages,207954.57,,Purchase from Krishna Industries Industries
+2024-07-07,PUR-1178,Purchase,Sundry Creditors,,207954.57,Purchase from Krishna Industries Industries
+2024-07-07,PUR-1217,Purchase,Meat & Poultry Purchases,109894.76,,Purchase from Om Steel Pvt Ltd
+2024-07-07,PUR-1217,Purchase,Sundry Creditors,,109894.76,Purchase from Om Steel Pvt Ltd
+2024-07-07,PUR-1241,Purchase,Spices & Provisions,55710.14,,Purchase from Shree Trading Group
+2024-07-07,PUR-1241,Purchase,Sundry Creditors,,55710.14,Purchase from Shree Trading Group
+2024-07-08,BP-1028,Payment,Sundry Creditors,124249.82,,Payment to Krishna Industries Industries
+2024-07-08,BP-1028,Payment,HDFC Bank A/c,,124249.82,Payment to Krishna Industries Industries
+2024-07-08,BP-1097,Payment,Sundry Creditors,149045.64,,Payment to Sai Suppliers LLP
+2024-07-08,BP-1097,Payment,HDFC Bank A/c,,149045.64,Payment to Sai Suppliers LLP
+2024-07-08,BR-1046,Receipt,HDFC Bank A/c,238780.43,,Received from Sunita Reddy
+2024-07-08,BR-1046,Receipt,Sundry Debtors,,238780.43,Received from Sunita Reddy
+2024-07-08,INV-1050,Sales,Sundry Debtors,140381.42,,Being sales to Sunita Gupta
+2024-07-08,INV-1050,Sales,Restaurant Sales,,140381.42,Being sales to Sunita Gupta
+2024-07-08,INV-1096,Sales,Sundry Debtors,183793.44,,Being sales to Ritu Choudhary
+2024-07-08,INV-1096,Sales,Restaurant Sales,,183793.44,Being sales to Ritu Choudhary
+2024-07-08,INV-1115,Sales,Sundry Debtors,67262.09,,Being sales to Ritu Choudhary
+2024-07-08,INV-1115,Sales,Restaurant Sales,,67262.09,Being sales to Ritu Choudhary
+2024-07-08,INV-1131,Sales,Sundry Debtors,70655.03,,Being sales to Ritu Choudhary
+2024-07-08,INV-1131,Sales,Restaurant Sales,,70655.03,Being sales to Ritu Choudhary
+2024-07-08,INV-1227,Sales,Sundry Debtors,65953.69,,Being sales to Sunita Reddy
+2024-07-08,INV-1227,Sales,Restaurant Sales,,65953.69,Being sales to Sunita Reddy
+2024-07-08,INV-1308,Sales,Sundry Debtors,69753.01,,Being sales to Pooja Patel
+2024-07-08,INV-1308,Sales,Restaurant Sales,,69753.01,Being sales to Pooja Patel
+2024-07-08,JV-1000,Journal,Electricity Charges,64226.69,,Being electricity charges for the period
+2024-07-08,JV-1000,Journal,HDFC Bank A/c,,64226.69,Being electricity charges for the period
+2024-07-08,JV-1013,Journal,Travelling Expenses,50754.65,,Being travelling expenses for the period
+2024-07-08,JV-1013,Journal,HDFC Bank A/c,,50754.65,Being travelling expenses for the period
+2024-07-08,PUR-1025,Purchase,Meat & Poultry Purchases,106613.00,,Purchase from Shree Works Pvt Ltd
+2024-07-08,PUR-1025,Purchase,Sundry Creditors,,106613.00,Purchase from Shree Works Pvt Ltd
+2024-07-08,PUR-1061,Purchase,Meat & Poultry Purchases,180027.59,,Purchase from Ganesh Traders & Bros
+2024-07-08,PUR-1061,Purchase,Sundry Creditors,,180027.59,Purchase from Ganesh Traders & Bros
+2024-07-08,PUR-1104,Purchase,Vegetable Purchases,138037.10,,Purchase from Krishna Industries Industries
+2024-07-08,PUR-1104,Purchase,Sundry Creditors,,138037.10,Purchase from Krishna Industries Industries
+2024-07-09,BR-1052,Receipt,HDFC Bank A/c,226699.09,,Received from Ritu Choudhary
+2024-07-09,BR-1052,Receipt,Sundry Debtors,,226699.09,Received from Ritu Choudhary
+2024-07-09,BR-1184,Receipt,HDFC Bank A/c,226426.55,,Received from Ritu Choudhary
+2024-07-09,BR-1184,Receipt,Sundry Debtors,,226426.55,Received from Ritu Choudhary
+2024-07-09,INV-1058,Sales,Sundry Debtors,143462.41,,Being sales to Sunita Reddy
+2024-07-09,INV-1058,Sales,Restaurant Sales,,143462.41,Being sales to Sunita Reddy
+2024-07-09,INV-1089,Sales,Sundry Debtors,64064.82,,Being sales to Pooja Patel
+2024-07-09,INV-1089,Sales,Restaurant Sales,,64064.82,Being sales to Pooja Patel
+2024-07-09,INV-1222,Sales,Sundry Debtors,93835.81,,Being sales to Sunita Gupta
+2024-07-09,INV-1222,Sales,Restaurant Sales,,93835.81,Being sales to Sunita Gupta
+2024-07-09,INV-1251,Sales,Sundry Debtors,67165.34,,Being sales to Sunita Reddy
+2024-07-09,INV-1251,Sales,Restaurant Sales,,67165.34,Being sales to Sunita Reddy
+2024-07-09,INV-1304,Sales,Sundry Debtors,86262.12,,Being sales to Pooja Patel
+2024-07-09,INV-1304,Sales,Restaurant Sales,,86262.12,Being sales to Pooja Patel
+2024-07-09,INV-1315,Sales,Sundry Debtors,186682.53,,Being sales to Ritu Choudhary
+2024-07-09,INV-1315,Sales,Restaurant Sales,,186682.53,Being sales to Ritu Choudhary
+2024-07-09,INV-1325,Sales,Sundry Debtors,157901.20,,Being sales to Sunita Gupta
+2024-07-09,INV-1325,Sales,Restaurant Sales,,157901.20,Being sales to Sunita Gupta
+2024-07-09,JV-1018,Journal,Bank Charges,81005.66,,Being bank charges for the period
+2024-07-09,JV-1018,Journal,HDFC Bank A/c,,81005.66,Being bank charges for the period
+2024-07-09,PUR-1077,Purchase,Meat & Poultry Purchases,117321.19,,Purchase from Om Steel Pvt Ltd
+2024-07-09,PUR-1077,Purchase,Sundry Creditors,,117321.19,Purchase from Om Steel Pvt Ltd
+2024-07-09,PUR-1116,Purchase,Spices & Provisions,58247.47,,Purchase from Sai Suppliers LLP
+2024-07-09,PUR-1116,Purchase,Sundry Creditors,,58247.47,Purchase from Sai Suppliers LLP
+2024-07-10,BP-1056,Payment,Sundry Creditors,56437.91,,Payment to Om Trading Industries
+2024-07-10,BP-1056,Payment,HDFC Bank A/c,,56437.91,Payment to Om Trading Industries
+2024-07-10,BR-1135,Receipt,HDFC Bank A/c,141164.55,,Received from Ritu Choudhary
+2024-07-10,BR-1135,Receipt,Sundry Debtors,,141164.55,Received from Ritu Choudhary
+2024-07-10,INV-1051,Sales,Sundry Debtors,10474.84,,Being sales to Sunita Reddy
+2024-07-10,INV-1051,Sales,Restaurant Sales,,10474.84,Being sales to Sunita Reddy
+2024-07-10,INV-1061,Sales,Sundry Debtors,114104.56,,Being sales to Sunita Reddy
+2024-07-10,INV-1061,Sales,Restaurant Sales,,114104.56,Being sales to Sunita Reddy
+2024-07-10,INV-1202,Sales,Sundry Debtors,169215.32,,Being sales to Sunita Gupta
+2024-07-10,INV-1202,Sales,Restaurant Sales,,169215.32,Being sales to Sunita Gupta
+2024-07-10,JV-1087,Journal,Salaries & Wages,31958.82,,Being salaries & wages for the period
+2024-07-10,JV-1087,Journal,HDFC Bank A/c,,31958.82,Being salaries & wages for the period
+2024-07-10,PUR-1022,Purchase,Meat & Poultry Purchases,219401.59,,Purchase from Bharat Suppliers & Co
+2024-07-10,PUR-1022,Purchase,Sundry Creditors,,219401.59,Purchase from Bharat Suppliers & Co
+2024-07-10,PUR-1065,Purchase,Meat & Poultry Purchases,240299.79,,Purchase from Krishna Agencies & Co
+2024-07-10,PUR-1065,Purchase,Sundry Creditors,,240299.79,Purchase from Krishna Agencies & Co
+2024-07-10,PUR-1167,Purchase,Meat & Poultry Purchases,33122.12,,Purchase from Maa Works & Bros
+2024-07-10,PUR-1167,Purchase,Sundry Creditors,,33122.12,Purchase from Maa Works & Bros
+2024-07-10,PUR-1226,Purchase,Meat & Poultry Purchases,124702.59,,Purchase from Bharat Suppliers & Co
+2024-07-10,PUR-1226,Purchase,Sundry Creditors,,124702.59,Purchase from Bharat Suppliers & Co
+2024-07-11,BR-1044,Receipt,HDFC Bank A/c,204531.91,,Received from Sunita Gupta
+2024-07-11,BR-1044,Receipt,Sundry Debtors,,204531.91,Received from Sunita Gupta
+2024-07-11,BR-1079,Receipt,HDFC Bank A/c,149266.33,,Received from Sunita Reddy
+2024-07-11,BR-1079,Receipt,Sundry Debtors,,149266.33,Received from Sunita Reddy
+2024-07-11,BR-1089,Receipt,HDFC Bank A/c,231644.04,,Received from Pooja Patel
+2024-07-11,BR-1089,Receipt,Sundry Debtors,,231644.04,Received from Pooja Patel
+2024-07-11,INV-1269,Sales,Sundry Debtors,174305.32,,Being sales to Pooja Patel
+2024-07-11,INV-1269,Sales,Restaurant Sales,,174305.32,Being sales to Pooja Patel
+2024-07-11,INV-1291,Sales,Sundry Debtors,84923.75,,Being sales to Sunita Gupta
+2024-07-11,INV-1291,Sales,Restaurant Sales,,84923.75,Being sales to Sunita Gupta
+2024-07-11,PUR-1027,Purchase,Spices & Provisions,174075.34,,Purchase from Sai Suppliers LLP
+2024-07-11,PUR-1027,Purchase,Sundry Creditors,,174075.34,Purchase from Sai Suppliers LLP
+2024-07-11,PUR-1127,Purchase,Spices & Provisions,55443.84,,Purchase from Ganesh Traders & Bros
+2024-07-11,PUR-1127,Purchase,Sundry Creditors,,55443.84,Purchase from Ganesh Traders & Bros
+2024-07-11,PUR-1181,Purchase,Kitchen Wages,249404.28,,Purchase from Ratan Mills Pvt Ltd
+2024-07-11,PUR-1181,Purchase,Sundry Creditors,,249404.28,Purchase from Ratan Mills Pvt Ltd
+2024-07-11,PUR-1185,Purchase,Vegetable Purchases,121649.36,,Purchase from Bharat Trading Pvt Ltd
+2024-07-11,PUR-1185,Purchase,Sundry Creditors,,121649.36,Purchase from Bharat Trading Pvt Ltd
+2024-07-12,BP-1121,Payment,Sundry Creditors,178900.02,,Payment to Om Trading Industries
+2024-07-12,BP-1121,Payment,HDFC Bank A/c,,178900.02,Payment to Om Trading Industries
+2024-07-12,BP-1145,Payment,Sundry Creditors,75368.38,,Payment to Om Trading Industries
+2024-07-12,BP-1145,Payment,HDFC Bank A/c,,75368.38,Payment to Om Trading Industries
+2024-07-12,BP-1146,Payment,Sundry Creditors,214428.66,,Payment to Ganesh Traders & Bros
+2024-07-12,BP-1146,Payment,HDFC Bank A/c,,214428.66,Payment to Ganesh Traders & Bros
+2024-07-12,INV-1106,Sales,Sundry Debtors,3401.08,,Being sales to Pooja Patel
+2024-07-12,INV-1106,Sales,Restaurant Sales,,3401.08,Being sales to Pooja Patel
+2024-07-12,INV-1175,Sales,Sundry Debtors,127668.83,,
+2024-07-12,INV-1175,Sales,Restaurant Sales,,127668.83,Being sales to Ritu Choudhary
+2024-07-12,INV-1176,Sales,Sundry Debtors,13274.38,,Being sales to Sunita Gupta
+2024-07-12,INV-1176,Sales,Restaurant Sales,,13274.38,Being sales to Sunita Gupta
+2024-07-12,INV-1198,Sales,Sundry Debtors,146957.20,,Being sales to Ritu Choudhary
+2024-07-12,INV-1198,Sales,Restaurant Sales,,146957.20,Being sales to Ritu Choudhary
+2024-07-12,INV-1243,Sales,Sundry Debtors,3274.79,,Being sales to Ritu Choudhary
+2024-07-12,INV-1243,Sales,Restaurant Sales,,3274.79,Being sales to Ritu Choudhary
+2024-07-12,INV-1318,Sales,Sundry Debtors,191045.71,,Being sales to Sunita Reddy
+2024-07-12,INV-1318,Sales,Restaurant Sales,,191045.71,Being sales to Sunita Reddy
+2024-07-13,BP-1086,Payment,Sundry Creditors,82249.18,,Payment to Shree Trading Group
+2024-07-13,BP-1086,Payment,HDFC Bank A/c,,82249.18,Payment to Shree Trading Group
+2024-07-13,BP-1093,Payment,Sundry Creditors,24049.13,,
+2024-07-13,BP-1093,Payment,HDFC Bank A/c,,24049.13,Payment to Ratan Mills Pvt Ltd
+2024-07-13,BR-1097,Receipt,HDFC Bank A/c,64462.58,,Received from Ritu Choudhary
+2024-07-13,BR-1097,Receipt,Sundry Debtors,,64462.58,Received from Ritu Choudhary
+2024-07-13,BR-1141,Receipt,HDFC Bank A/c,47489.44,,Received from Sunita Reddy
+2024-07-13,BR-1141,Receipt,Sundry Debtors,,47489.44,Received from Sunita Reddy
+2024-07-13,BR-1166,Receipt,HDFC Bank A/c,167017.84,,Received from Sunita Reddy
+2024-07-13,BR-1166,Receipt,Sundry Debtors,,167017.84,Received from Sunita Reddy
+2024-07-13,BR-1172,Receipt,HDFC Bank A/c,140198.78,,Received from Ritu Choudhary
+2024-07-13,BR-1172,Receipt,Sundry Debtors,,140198.78,Received from Ritu Choudhary
+2024-07-13,INV-1102,Sales,Sundry Debtors,100597.99,,Being sales to Pooja Patel
+2024-07-13,INV-1102,Sales,Restaurant Sales,,100597.99,Being sales to Pooja Patel
+2024-07-13,INV-1139,Sales,Sundry Debtors,102622.57,,Being sales to Ritu Choudhary
+2024-07-13,INV-1139,Sales,Restaurant Sales,,102622.57,Being sales to Ritu Choudhary
+2024-07-13,INV-1174,Sales,Sundry Debtors,3292.16,,Being sales to Ritu Choudhary
+2024-07-13,INV-1174,Sales,Restaurant Sales,,3292.16,Being sales to Ritu Choudhary
+2024-07-13,INV-1328,Sales,Sundry Debtors,30588.46,,Being sales to Sunita Gupta
+2024-07-13,INV-1328,Sales,Restaurant Sales,,30588.46,Being sales to Sunita Gupta
+2024-07-13,PUR-1038,Purchase,Vegetable Purchases,128176.58,,Purchase from Om Trading Industries
+2024-07-13,PUR-1038,Purchase,Sundry Creditors,,128176.58,Purchase from Om Trading Industries
+2024-07-13,PUR-1051,Purchase,Spices & Provisions,227195.53,,Purchase from Shree Works Pvt Ltd
+2024-07-13,PUR-1051,Purchase,Sundry Creditors,,227195.53,Purchase from Shree Works Pvt Ltd
+2024-07-13,PUR-1149,Purchase,Vegetable Purchases,104155.35,,Purchase from Krishna Suppliers Pvt Ltd
+2024-07-13,PUR-1149,Purchase,Sundry Creditors,,104155.35,Purchase from Krishna Suppliers Pvt Ltd
+2024-07-14,BP-1051,Payment,Sundry Creditors,252645.60,,Payment to Krishna Agencies & Co
+2024-07-14,BP-1051,Payment,HDFC Bank A/c,,252645.60,Payment to Krishna Agencies & Co
+2024-07-14,BP-1054,Payment,Sundry Creditors,189451.47,,Payment to Ratan Enterprises Group
+2024-07-14,BP-1054,Payment,HDFC Bank A/c,,189451.47,Payment to Ratan Enterprises Group
+2024-07-14,BP-1061,Payment,Sundry Creditors,245612.12,,Payment to Om Trading Industries
+2024-07-14,BP-1061,Payment,HDFC Bank A/c,,245612.12,Payment to Om Trading Industries
+2024-07-14,BP-1127,Payment,Sundry Creditors,140357.11,,Payment to Shree Traders & Co
+2024-07-14,BP-1127,Payment,HDFC Bank A/c,,140357.11,Payment to Shree Traders & Co
+2024-07-14,BP-1156,Payment,Sundry Creditors,10214.16,,Payment to Maa Works LLP
+2024-07-14,BP-1156,Payment,HDFC Bank A/c,,10214.16,Payment to Maa Works LLP
+2024-07-14,BR-1113,Receipt,HDFC Bank A/c,179778.88,,Received from Ritu Choudhary
+2024-07-14,BR-1113,Receipt,Sundry Debtors,,179778.88,Received from Ritu Choudhary
+2024-07-14,BR-1146,Receipt,HDFC Bank A/c,102870.01,,Received from Sunita Gupta
+2024-07-14,BR-1146,Receipt,Sundry Debtors,,102870.01,Received from Sunita Gupta
+2024-07-14,BR-1177,Receipt,HDFC Bank A/c,163214.10,,Received from Pooja Patel
+2024-07-14,BR-1177,Receipt,Sundry Debtors,,163214.10,Received from Pooja Patel
+2024-07-14,INV-1043,Sales,Sundry Debtors,22965.31,,Being sales to Ritu Choudhary
+2024-07-14,INV-1043,Sales,Restaurant Sales,,22965.31,Being sales to Ritu Choudhary
+2024-07-14,INV-1077,Sales,Sundry Debtors,141281.07,,Being sales to Sunita Gupta
+2024-07-14,INV-1077,Sales,Restaurant Sales,,141281.07,Being sales to Sunita Gupta
+2024-07-14,INV-1100,Sales,Sundry Debtors,75338.58,,Being sales to Pooja Patel
+2024-07-14,INV-1100,Sales,Restaurant Sales,,75338.58,Being sales to Pooja Patel
+2024-07-14,INV-1169,Sales,Sundry Debtors,169558.17,,Being sales to Sunita Gupta
+2024-07-14,INV-1169,Sales,Restaurant Sales,,169558.17,Being sales to Sunita Gupta
+2024-07-14,INV-1236,Sales,Sundry Debtors,28487.23,,Being sales to Pooja Patel
+2024-07-14,INV-1236,Sales,Restaurant Sales,,28487.23,Being sales to Pooja Patel
+2024-07-14,INV-1285,Sales,Sundry Debtors,38030.00,,Being sales to Pooja Patel
+2024-07-14,INV-1285,Sales,Restaurant Sales,,38030.00,Being sales to Pooja Patel
+2024-07-14,INV-1289,Sales,Sundry Debtors,33137.51,,Being sales to Sunita Reddy
+2024-07-14,INV-1289,Sales,Restaurant Sales,,33137.51,Being sales to Sunita Reddy
+2024-07-14,INV-1316,Sales,Sundry Debtors,157980.81,,Being sales to Sunita Reddy
+2024-07-14,INV-1316,Sales,Restaurant Sales,,157980.81,Being sales to Sunita Reddy
+2024-07-14,INV-1330,Sales,Sundry Debtors,87153.06,,Being sales to Pooja Patel
+2024-07-14,INV-1330,Sales,Restaurant Sales,,87153.06,Being sales to Pooja Patel
+2024-07-14,JV-1119,Journal,Diwali Bonus to Staff,40847.65,,Being diwali bonus to staff for the period
+2024-07-14,JV-1119,Journal,HDFC Bank A/c,,40847.65,Being diwali bonus to staff for the period
+2024-07-14,PUR-1011,Purchase,Meat & Poultry Purchases,240571.08,,Purchase from Ratan Enterprises Industries
+2024-07-14,PUR-1011,Purchase,Sundry Creditors,,240571.08,Purchase from Ratan Enterprises Industries
+2024-07-14,PUR-1039,Purchase,Sundry Creditors,,5881.31,Purchase from Om Steel Pvt Ltd
+2024-07-15,BR-1162,Receipt,HDFC Bank A/c,83289.08,,Received from Ritu Choudhary
+2024-07-15,BR-1162,Receipt,Sundry Debtors,,83289.08,Received from Ritu Choudhary
+2024-07-15,BR-1186,Receipt,HDFC Bank A/c,143893.30,,Received from Pooja Patel
+2024-07-15,BR-1186,Receipt,Sundry Debtors,,143893.30,Received from Pooja Patel
+2024-07-15,BR-1191,Receipt,HDFC Bank A/c,217701.98,,Received from Sunita Gupta
+2024-07-15,BR-1191,Receipt,Sundry Debtors,,217701.98,Received from Sunita Gupta
+2024-07-15,INV-1122,Sales,Sundry Debtors,156611.15,,Being sales to Sunita Gupta
+2024-07-15,INV-1122,Sales,Restaurant Sales,,156611.15,Being sales to Sunita Gupta
+2024-07-15,INV-1329,Sales,Sundry Debtors,185477.11,,Being sales to Ritu Choudhary
+2024-07-15,INV-1329,Sales,Restaurant Sales,,185477.11,Being sales to Ritu Choudhary
+2024-07-15,JV-1121,Journal,Electricity Charges,50655.54,,Being electricity charges for the period
+2024-07-15,JV-1121,Journal,HDFC Bank A/c,,50655.54,Being electricity charges for the period
+2024-07-15,JV-1140,Journal,Travelling Expenses,79739.05,,Being travelling expenses for the period
+2024-07-15,JV-1140,Journal,HDFC Bank A/c,,79739.05,Being travelling expenses for the period
+2024-07-15,PUR-1014,Purchase,Spices & Provisions,147385.64,,Purchase from Maa Works LLP
+2024-07-15,PUR-1014,Purchase,Sundry Creditors,,147385.64,Purchase from Maa Works LLP
+2024-07-15,PUR-1052,Purchase,Vegetable Purchases,30288.54,,Purchase from Ganesh Traders & Bros
+2024-07-15,PUR-1052,Purchase,Sundry Creditors,,30288.54,Purchase from Ganesh Traders & Bros
+2024-07-15,PUR-1058,Purchase,Spices & Provisions,186876.41,,Purchase from Shree Works Pvt Ltd
+2024-07-15,PUR-1058,Purchase,Sundry Creditors,,186876.41,Purchase from Shree Works Pvt Ltd
+2024-07-15,PUR-1115,Purchase,Spices & Provisions,75311.23,,Purchase from Maa Works & Bros
+2024-07-15,PUR-1115,Purchase,Sundry Creditors,,75311.23,Purchase from Maa Works & Bros
+2024-07-15,PUR-1237,Purchase,Kitchen Wages,291521.23,,Purchase from Maa Services LLP
+2024-07-15,PUR-1237,Purchase,Sundry Creditors,,291521.23,Purchase from Maa Services LLP
+2024-07-15,PUR-1239,Purchase,Meat & Poultry Purchases,277958.02,,Purchase from Om Traders & Bros
+2024-07-15,PUR-1239,Purchase,Sundry Creditors,,277958.02,Purchase from Om Traders & Bros
+2024-07-16,BP-1003,Payment,Sundry Creditors,256303.96,,Payment to Bharat Trading Pvt Ltd
+2024-07-16,BP-1003,Payment,HDFC Bank A/c,,256303.96,Payment to Bharat Trading Pvt Ltd
+2024-07-16,BR-1070,Receipt,HDFC Bank A/c,79757.15,,Received from Sunita Reddy
+2024-07-16,BR-1070,Receipt,Sundry Debtors,,79757.15,Received from Sunita Reddy
+2024-07-16,BR-1102,Receipt,HDFC Bank A/c,100289.51,,Received from Sunita Gupta
+2024-07-16,BR-1102,Receipt,Sundry Debtors,,100289.51,Received from Sunita Gupta
+2024-07-16,BR-1110,Receipt,HDFC Bank A/c,153938.19,,Received from Pooja Patel
+2024-07-16,BR-1110,Receipt,Sundry Debtors,,153938.19,Received from Pooja Patel
+2024-07-16,BR-1181,Receipt,HDFC Bank A/c,219096.36,,Received from Pooja Patel
+2024-07-16,BR-1181,Receipt,Sundry Debtors,,219096.36,Received from Pooja Patel
+2024-07-16,INV-1040,Sales,Sundry Debtors,185937.52,,Being sales to Pooja Patel
+2024-07-16,INV-1040,Sales,Restaurant Sales,,185937.52,Being sales to Pooja Patel
+2024-07-16,INV-1093,Sales,Sundry Debtors,53245.86,,Being sales to Ritu Choudhary
+2024-07-16,INV-1093,Sales,Restaurant Sales,,53245.86,Being sales to Ritu Choudhary
+2024-07-16,JV-1034,Journal,Office Rent,31417.04,,Being office rent for the period
+2024-07-16,JV-1034,Journal,HDFC Bank A/c,,31417.04,Being office rent for the period
+2024-07-16,JV-1126,Journal,Salaries & Wages,43851.12,,Being salaries & wages for the period
+2024-07-16,JV-1126,Journal,HDFC Bank A/c,,43851.12,Being salaries & wages for the period
+2024-07-16,PUR-1033,Purchase,Spices & Provisions,249710.98,,Purchase from Krishna Agencies & Co
+2024-07-16,PUR-1033,Purchase,Sundry Creditors,,249710.98,Purchase from Krishna Agencies & Co
+2024-07-16,PUR-1265,Purchase,Kitchen Wages,189180.97,,Purchase from Shree Works Pvt Ltd
+2024-07-16,PUR-1265,Purchase,Sundry Creditors,,189180.97,Purchase from Shree Works Pvt Ltd
+2024-07-16,PUR-1267,Purchase,Vegetable Purchases,97999.58,,Purchase from Bharat Suppliers & Co
+2024-07-16,PUR-1267,Purchase,Sundry Creditors,,97999.58,Purchase from Bharat Suppliers & Co
+2024-07-17,BP-1000,Payment,Sundry Creditors,292312.98,,Payment to Ganesh Traders & Bros
+2024-07-17,BP-1000,Payment,HDFC Bank A/c,,292312.98,Payment to Ganesh Traders & Bros
+2024-07-17,BR-1133,Receipt,HDFC Bank A/c,242133.29,,Received from Ritu Choudhary
+2024-07-17,BR-1133,Receipt,Sundry Debtors,,242133.29,Received from Ritu Choudhary
+2024-07-17,BR-1144,Receipt,HDFC Bank A/c,215071.41,,Received from Ritu Choudhary
+2024-07-17,BR-1144,Receipt,Sundry Debtors,,215071.41,Received from Ritu Choudhary
+2024-07-17,INV-1149,Sales,Sundry Debtors,43614.83,,Being sales to Sunita Reddy
+2024-07-17,INV-1149,Sales,Restaurant Sales,,43614.83,Being sales to Sunita Reddy
+2024-07-17,INV-1212,Sales,Sundry Debtors,139063.83,,Being sales to Sunita Gupta
+2024-07-17,INV-1212,Sales,Restaurant Sales,,139063.83,Being sales to Sunita Gupta
+2024-07-17,INV-1246,Sales,Sundry Debtors,187981.55,,Being sales to Pooja Patel
+2024-07-17,INV-1246,Sales,Restaurant Sales,,187981.55,Being sales to Pooja Patel
+2024-07-17,JV-1044,Journal,Printing & Stationery,39183.06,,Being printing & stationery for the period
+2024-07-17,JV-1044,Journal,HDFC Bank A/c,,39183.06,Being printing & stationery for the period
+2024-07-17,JV-1108,Journal,Telephone & Internet,60468.39,,Being telephone & internet for the period
+2024-07-17,JV-1108,Journal,HDFC Bank A/c,,60468.39,Being telephone & internet for the period
+2024-07-17,PUR-1008,Purchase,Vegetable Purchases,173386.04,,Purchase from Sai Traders Group
+2024-07-17,PUR-1008,Purchase,Sundry Creditors,,173386.04,Purchase from Sai Traders Group
+2024-07-17,PUR-1020,Purchase,Meat & Poultry Purchases,145541.23,,Purchase from Ratan Enterprises Industries
+2024-07-17,PUR-1020,Purchase,Sundry Creditors,,145541.23,Purchase from Ratan Enterprises Industries
+2024-07-17,PUR-1090,Purchase,Vegetable Purchases,73023.94,,Purchase from Om Traders & Bros
+2024-07-17,PUR-1090,Purchase,Sundry Creditors,,73023.94,Purchase from Om Traders & Bros
+2024-07-17,PUR-1100,Purchase,Kitchen Wages,73817.84,,Purchase from Om Steel Pvt Ltd
+2024-07-17,PUR-1100,Purchase,Sundry Creditors,,73817.84,Purchase from Om Steel Pvt Ltd
+2024-07-17,PUR-1117,Purchase,Vegetable Purchases,109882.34,,Purchase from Bharat Suppliers & Co
+2024-07-17,PUR-1117,Purchase,Sundry Creditors,,109882.34,Purchase from Bharat Suppliers & Co
+2024-07-17,PUR-1196,Purchase,Meat & Poultry Purchases,169427.93,,Purchase from Ratan Enterprises Industries
+2024-07-17,PUR-1196,Purchase,Sundry Creditors,,169427.93,Purchase from Ratan Enterprises Industries
+2024-07-18,BP-1105,Payment,Sundry Creditors,275411.52,,Payment to Bharat Trading Pvt Ltd
+2024-07-18,BP-1105,Payment,HDFC Bank A/c,,275411.52,Payment to Bharat Trading Pvt Ltd
+2024-07-18,INV-1129,Sales,Sundry Debtors,73467.44,,Being sales to Pooja Patel
+2024-07-18,INV-1129,Sales,Restaurant Sales,,73467.44,Being sales to Pooja Patel
+2024-07-18,INV-1191,Sales,Sundry Debtors,43760.07,,Being sales to Sunita Reddy
+2024-07-18,INV-1191,Sales,Restaurant Sales,,43799.62,Being sales to Sunita Reddy
+2024-07-18,INV-1313,Sales,Sundry Debtors,144609.92,,Being sales to Ritu Choudhary
+2024-07-18,INV-1313,Sales,Restaurant Sales,,144609.92,Being sales to Ritu Choudhary
+2024-07-18,JV-1031,Journal,Diwali Bonus to Staff,27552.63,,Being diwali bonus to staff for the period
+2024-07-18,JV-1031,Journal,HDFC Bank A/c,,27552.63,Being diwali bonus to staff for the period
+2024-07-18,JV-1038,Journal,Bank Charges,66646.49,,Being bank charges for the period
+2024-07-18,JV-1038,Journal,HDFC Bank A/c,,66646.49,Being bank charges for the period
+2024-07-18,JV-1060,Journal,Bank Charges,68995.06,,Being bank charges for the period
+2024-07-18,JV-1060,Journal,HDFC Bank A/c,,68995.06,Being bank charges for the period
+2024-07-18,JV-1093,Journal,Diwali Bonus to Staff,85417.53,,Being diwali bonus to staff for the period
+2024-07-18,JV-1093,Journal,HDFC Bank A/c,,85417.53,Being diwali bonus to staff for the period
+2024-07-18,PUR-1003,Purchase,Spices & Provisions,79909.66,,Purchase from Ganesh Agencies Pvt Ltd
+2024-07-18,PUR-1003,Purchase,Sundry Creditors,,79909.66,Purchase from Ganesh Agencies Pvt Ltd
+2024-07-18,PUR-1073,Purchase,Spices & Provisions,132762.20,,Purchase from Om Steel Pvt Ltd
+2024-07-18,PUR-1073,Purchase,Sundry Creditors,,132762.20,Purchase from Om Steel Pvt Ltd
+2024-07-18,PUR-1105,Purchase,Spices & Provisions,153710.21,,Purchase from Maa Services LLP
+2024-07-18,PUR-1105,Purchase,Sundry Creditors,,153710.21,Purchase from Maa Services LLP
+2024-07-18,PUR-1121,Purchase,Kitchen Wages,120723.79,,Purchase from Krishna Industries Industries
+2024-07-18,PUR-1121,Purchase,Sundry Creditors,,120723.79,Purchase from Krishna Industries Industries
+2024-07-18,PUR-1240,Purchase,Vegetable Purchases,155938.39,,Purchase from Om Traders & Bros
+2024-07-18,PUR-1240,Purchase,Sundry Creditors,,155938.39,Purchase from Om Traders & Bros
+2024-07-18,PUR-1271,Purchase,Spices & Provisions,71498.68,,Purchase from Krishna Suppliers Pvt Ltd
+2024-07-18,PUR-1271,Purchase,Sundry Creditors,,71498.68,Purchase from Krishna Suppliers Pvt Ltd
+2024-07-19,BP-1045,Payment,Sundry Creditors,296367.87,,Payment to Om Trading Industries
+2024-07-19,BP-1045,Payment,HDFC Bank A/c,,296367.87,Payment to Om Trading Industries
+2024-07-19,INV-1130,Sales,Sundry Debtors,67927.98,,Being sales to Ritu Choudhary
+2024-07-19,INV-1130,Sales,Restaurant Sales,,67927.98,Being sales to Ritu Choudhary
+2024-07-19,INV-1177,Sales,Sundry Debtors,36214.80,,Being sales to Sunita Reddy
+2024-07-19,INV-1177,Sales,Restaurant Sales,,36214.80,Being sales to Sunita Reddy
+2024-07-19,INV-1178,Sales,Sundry Debtors,106632.91,,Being sales to Pooja Patel
+2024-07-19,INV-1178,Sales,Restaurant Sales,,106632.91,Being sales to Pooja Patel
+2024-07-19,INV-1279,Sales,Sundry Debtors,81523.26,,Being sales to Pooja Patel
+2024-07-19,INV-1279,Sales,Restaurant Sales,,81523.26,Being sales to Pooja Patel
+2024-07-19,JV-1029,Journal,Audit Fees,17469.00,,Being audit fees for the period
+2024-07-19,JV-1029,Journal,HDFC Bank A/c,,17469.00,Being audit fees for the period
+2024-07-19,JV-1066,Journal,Audit Fees,41181.69,,Being audit fees for the period
+2024-07-19,JV-1066,Journal,HDFC Bank A/c,,41181.69,Being audit fees for the period
+2024-07-19,JV-1132,Journal,Office Rent,45074.25,,Being office rent for the period
+2024-07-19,JV-1132,Journal,HDFC Bank A/c,,45074.25,Being office rent for the period
+2024-07-19,PUR-1221,Purchase,Spices & Provisions,211816.35,,Purchase from Sai Traders Group
+2024-07-19,PUR-1221,Purchase,Sundry Creditors,,211816.35,Purchase from Sai Traders Group
+2024-07-20,BP-1036,Payment,Sundry Creditors,232911.30,,Payment to Sai Services Pvt Ltd
+2024-07-20,BP-1036,Payment,HDFC Bank A/c,,232911.30,Payment to Sai Services Pvt Ltd
+2024-07-20,BR-1059,Receipt,HDFC Bank A/c,215871.14,,Received from Sunita Reddy
+2024-07-20,BR-1059,Receipt,Sundry Debtors,,215871.14,Received from Sunita Reddy
+2024-07-20,BR-1090,Receipt,HDFC Bank A/c,155302.19,,Received from Sunita Reddy
+2024-07-20,BR-1090,Receipt,Sundry Debtors,,155302.19,Received from Sunita Reddy
+2024-07-20,INV-1048,Sales,Sundry Debtors,116989.01,,Being sales to Sunita Reddy
+2024-07-20,INV-1048,Sales,Restaurant Sales,,116989.01,Being sales to Sunita Reddy
+2024-07-20,INV-1145,Sales,Sundry Debtors,31557.14,,Being sales to Sunita Gupta
+2024-07-20,INV-1145,Sales,Restaurant Sales,,31557.14,Being sales to Sunita Gupta
+2024-07-20,INV-1164,Sales,Sundry Debtors,38688.05,,Being sales to Sunita Gupta
+2024-07-20,INV-1164,Sales,Restaurant Sales,,38688.05,Being sales to Sunita Gupta
+2024-07-20,INV-1233,Sales,Sundry Debtors,27785.50,,Being sales to Sunita Reddy
+2024-07-20,INV-1233,Sales,Restaurant Sales,,27785.50,Being sales to Sunita Reddy
+2024-07-20,INV-1234,Sales,Sundry Debtors,81187.92,,Being sales to Sunita Reddy
+2024-07-20,INV-1234,Sales,Restaurant Sales,,81187.92,Being sales to Sunita Reddy
+2024-07-20,INV-1262,Sales,Sundry Debtors,39162.79,,Being sales to Ritu Choudhary
+2024-07-20,INV-1262,Sales,Restaurant Sales,,39162.79,Being sales to Ritu Choudhary
+2024-07-20,INV-1306,Sales,Sundry Debtors,9032.17,,Being sales to Sunita Gupta
+2024-07-20,INV-1306,Sales,Restaurant Sales,,9032.17,Being sales to Sunita Gupta
+2024-07-20,JV-1016,Journal,Salaries & Wages,24459.79,,Being salaries & wages for the period
+2024-07-20,JV-1016,Journal,HDFC Bank A/c,,24459.79,Being salaries & wages for the period
+2024-07-20,PUR-1089,Purchase,Meat & Poultry Purchases,279080.28,,Purchase from Om Steel Pvt Ltd
+2024-07-20,PUR-1089,Purchase,Sundry Creditors,,279080.28,Purchase from Om Steel Pvt Ltd
+2024-07-21,BR-1151,Receipt,HDFC Bank A/c,3795.26,,Received from Sunita Reddy
+2024-07-21,BR-1151,Receipt,Sundry Debtors,,3795.26,Received from Sunita Reddy
+2024-07-21,INV-1101,Sales,Sundry Debtors,128385.00,,Being sales to Sunita Reddy
+2024-07-21,INV-1101,Sales,Restaurant Sales,,128385.00,Being sales to Sunita Reddy
+2024-07-21,JV-1024,Journal,Office Rent,49831.80,,Being office rent for the period
+2024-07-21,JV-1024,Journal,HDFC Bank A/c,,49831.80,Being office rent for the period
+2024-07-21,JV-1032,Journal,Postage & Courier,63981.59,,Being postage & courier for the period
+2024-07-21,JV-1032,Journal,HDFC Bank A/c,,63981.59,Being postage & courier for the period
+2024-07-21,JV-1076,Journal,Bank Charges,90991.87,,Being bank charges for the period
+2024-07-21,JV-1076,Journal,HDFC Bank A/c,,90991.87,Being bank charges for the period
+2024-07-21,PUR-1044,Purchase,Meat & Poultry Purchases,186618.38,,Purchase from Shree Trading Group
+2024-07-21,PUR-1044,Purchase,Sundry Creditors,,186618.38,Purchase from Shree Trading Group
+2024-07-21,PUR-1189,Purchase,Kitchen Wages,86246.98,,Purchase from Ratan Enterprises Group
+2024-07-21,PUR-1189,Purchase,Sundry Creditors,,86246.98,Purchase from Ratan Enterprises Group
+2024-07-21,PUR-1224,Purchase,Kitchen Wages,273998.55,,Purchase from Sai Suppliers LLP
+2024-07-21,PUR-1224,Purchase,Sundry Creditors,,273998.55,Purchase from Sai Suppliers LLP
+2024-07-22,BR-1045,Receipt,HDFC Bank A/c,27160.89,,Received from Sunita Reddy
+2024-07-22,BR-1045,Receipt,Sundry Debtors,,27160.89,Received from Sunita Reddy
+2024-07-22,BR-1098,Receipt,HDFC Bank A/c,147304.31,,Received from Sunita Gupta
+2024-07-22,BR-1098,Receipt,Sundry Debtors,,147304.31,Received from Sunita Gupta
+2024-07-22,BR-1104,Receipt,HDFC Bank A/c,43817.52,,Received from Sunita Gupta
+2024-07-22,BR-1104,Receipt,Sundry Debtors,,43817.52,Received from Sunita Gupta
+2024-07-22,BR-1183,Receipt,HDFC Bank A/c,50783.00,,Received from Sunita Reddy
+2024-07-22,BR-1183,Receipt,Sundry Debtors,,50783.00,Received from Sunita Reddy
+2024-07-22,INV-1104,Sales,Sundry Debtors,40538.25,,Being sales to Sunita Gupta
+2024-07-22,INV-1104,Sales,Restaurant Sales,,40538.25,Being sales to Sunita Gupta
+2024-07-22,INV-1196,Sales,Restaurant Sales,,19925.88,Being sales to Sunita Gupta
+2024-07-22,INV-1282,Sales,Sundry Debtors,121189.39,,
+2024-07-22,INV-1282,Sales,Restaurant Sales,,121189.39,Being sales to Sunita Reddy
+2024-07-22,INV-1319,Sales,Sundry Debtors,59384.29,,Being sales to Pooja Patel
+2024-07-22,INV-1319,Sales,Restaurant Sales,,59384.29,Being sales to Pooja Patel
+2024-07-22,JV-1057,Journal,Bank Charges,65317.54,,Being bank charges for the period
+2024-07-22,JV-1057,Journal,HDFC Bank A/c,,65317.54,Being bank charges for the period
+2024-07-22,PUR-1032,Purchase,Spices & Provisions,297269.68,,Purchase from Maa Services LLP
+2024-07-22,PUR-1032,Purchase,Sundry Creditors,,297269.68,Purchase from Maa Services LLP
+2024-07-22,PUR-1055,Purchase,Vegetable Purchases,194650.80,,Purchase from Sai Suppliers LLP
+2024-07-22,PUR-1055,Purchase,Sundry Creditors,,194650.80,Purchase from Sai Suppliers LLP
+2024-07-22,PUR-1135,Purchase,Spices & Provisions,211153.00,,Purchase from Sai Industries Industries
+2024-07-22,PUR-1135,Purchase,Sundry Creditors,,211153.00,Purchase from Sai Industries Industries
+2024-07-22,PUR-1144,Purchase,Meat & Poultry Purchases,126522.92,,Purchase from Shree Works Pvt Ltd
+2024-07-22,PUR-1144,Purchase,Sundry Creditors,,126522.92,Purchase from Shree Works Pvt Ltd
+2024-07-23,BP-1087,Payment,Sundry Creditors,197662.71,,Payment to Ganesh Agencies Pvt Ltd
+2024-07-23,BP-1087,Payment,HDFC Bank A/c,,197662.71,Payment to Ganesh Agencies Pvt Ltd
+2024-07-23,BR-1028,Receipt,HDFC Bank A/c,60850.62,,Received from Sunita Reddy
+2024-07-23,BR-1028,Receipt,Sundry Debtors,,60850.62,Received from Sunita Reddy
+2024-07-23,INV-1107,Sales,Sundry Debtors,68578.65,,Being sales to Sunita Reddy
+2024-07-23,INV-1107,Sales,Restaurant Sales,,68578.65,Being sales to Sunita Reddy
+2024-07-23,INV-1157,Sales,Sundry Debtors,139754.75,,Being sales to Pooja Patel
+2024-07-23,INV-1157,Sales,Restaurant Sales,,139754.75,Being sales to Pooja Patel
+2024-07-23,JV-1058,Journal,Electricity Charges,37035.57,,Being electricity charges for the period
+2024-07-23,JV-1058,Journal,HDFC Bank A/c,,37035.57,Being electricity charges for the period
+2024-07-23,JV-1064,Journal,Electricity Charges,4155.57,,Being electricity charges for the period
+2024-07-23,JV-1064,Journal,HDFC Bank A/c,,4155.57,Being electricity charges for the period
+2024-07-23,JV-1120,Journal,Printing & Stationery,48122.70,,Being printing & stationery for the period
+2024-07-23,JV-1120,Journal,HDFC Bank A/c,,48122.70,Being printing & stationery for the period
+2024-07-23,PUR-1029,Purchase,Spices & Provisions,73556.32,,Purchase from Sai Suppliers LLP
+2024-07-23,PUR-1029,Purchase,Sundry Creditors,,73556.32,Purchase from Sai Suppliers LLP
+2024-07-23,PUR-1082,Purchase,Kitchen Wages,195249.82,,Purchase from Om Mills LLP
+2024-07-23,PUR-1082,Purchase,Sundry Creditors,,195249.82,Purchase from Om Mills LLP
+2024-07-23,PUR-1139,Purchase,Meat & Poultry Purchases,39820.04,,Purchase from Krishna Suppliers Pvt Ltd
+2024-07-23,PUR-1139,Purchase,Sundry Creditors,,39820.04,Purchase from Krishna Suppliers Pvt Ltd
+2024-07-23,PUR-1214,Purchase,Kitchen Wages,193743.64,,Purchase from Om Traders & Bros
+2024-07-23,PUR-1214,Purchase,Sundry Creditors,,193743.64,Purchase from Om Traders & Bros
+2024-07-24,BR-1041,Receipt,HDFC Bank A/c,14859.27,,Received from Sunita Reddy
+2024-07-24,BR-1041,Receipt,Sundry Debtors,,14859.27,Received from Sunita Reddy
+2024-07-24,INV-1094,Sales,Sundry Debtors,181514.20,,Being sales to Pooja Patel
+2024-07-24,INV-1094,Sales,Restaurant Sales,,181514.20,Being sales to Pooja Patel
+2024-07-24,INV-1118,Sales,Sundry Debtors,38341.31,,Being sales to Pooja Patel
+2024-07-24,INV-1118,Sales,Restaurant Sales,,38341.31,Being sales to Pooja Patel
+2024-07-24,INV-1307,Sales,Sundry Debtors,180323.24,,Being sales to Sunita Gupta
+2024-07-24,INV-1307,Sales,Restaurant Sales,,180323.24,Being sales to Sunita Gupta
+2024-07-24,JV-1118,Journal,Audit Fees,20755.78,,Being audit fees for the period
+2024-07-24,JV-1118,Journal,HDFC Bank A/c,,20755.78,Being audit fees for the period
+2024-07-24,JV-1135,Journal,Bank Charges,42917.52,,Being bank charges for the period
+2024-07-24,JV-1135,Journal,HDFC Bank A/c,,42917.52,Being bank charges for the period
+2024-07-24,PUR-1069,Purchase,Spices & Provisions,193783.64,,Purchase from Om Trading Industries
+2024-07-24,PUR-1069,Purchase,Sundry Creditors,,193783.64,Purchase from Om Trading Industries
+2024-07-24,PUR-1258,Purchase,Kitchen Wages,271129.65,,Purchase from Om Trading Industries
+2024-07-24,PUR-1258,Purchase,Sundry Creditors,,271129.65,Purchase from Om Trading Industries
+2024-07-25,BP-1020,Payment,Sundry Creditors,35763.52,,Payment to Shree Traders & Co
+2024-07-25,BP-1020,Payment,HDFC Bank A/c,,35763.52,Payment to Shree Traders & Co
+2024-07-25,BP-1075,Payment,Sundry Creditors,215782.94,,Payment to Bharat Trading Pvt Ltd
+2024-07-25,BP-1075,Payment,HDFC Bank A/c,,215782.94,Payment to Bharat Trading Pvt Ltd
+2024-07-25,BP-1116,Payment,Sundry Creditors,60912.57,,Payment to Sai Suppliers LLP
+2024-07-25,BP-1116,Payment,HDFC Bank A/c,,60912.57,Payment to Sai Suppliers LLP
+2024-07-25,BR-1118,Receipt,HDFC Bank A/c,62347.82,,Received from Sunita Reddy
+2024-07-25,BR-1118,Receipt,Sundry Debtors,,62347.82,Received from Sunita Reddy
+2024-07-25,BR-1148,Receipt,HDFC Bank A/c,226328.45,,Received from Ritu Choudhary
+2024-07-25,BR-1148,Receipt,Sundry Debtors,,226328.45,Received from Ritu Choudhary
+2024-07-25,INV-1021,Sales,Sundry Debtors,167369.03,,Being sales to Sunita Reddy
+2024-07-25,INV-1021,Sales,Restaurant Sales,,167369.03,Being sales to Sunita Reddy
+2024-07-25,INV-1218,Sales,Sundry Debtors,199314.52,,Being sales to Ritu Choudhary
+2024-07-25,INV-1218,Sales,Restaurant Sales,,199314.52,Being sales to Ritu Choudhary
+2024-07-25,JV-1010,Journal,Office Rent,28500.94,,Being office rent for the period
+2024-07-25,JV-1010,Journal,HDFC Bank A/c,,28500.94,Being office rent for the period
+2024-07-25,JV-1072,Journal,Diwali Bonus to Staff,35685.98,,Being diwali bonus to staff for the period
+2024-07-25,JV-1072,Journal,HDFC Bank A/c,,35685.98,Being diwali bonus to staff for the period
+2024-07-25,PUR-1188,Purchase,Kitchen Wages,230249.86,,Purchase from Om Steel Pvt Ltd
+2024-07-25,PUR-1188,Purchase,Sundry Creditors,,230249.86,Purchase from Om Steel Pvt Ltd
+2024-07-26,BP-1064,Payment,Sundry Creditors,115740.53,,Payment to Maa Works & Bros
+2024-07-26,BP-1064,Payment,HDFC Bank A/c,,115740.53,Payment to Maa Works & Bros
+2024-07-26,BP-1080,Payment,Sundry Creditors,217313.07,,Payment to Maa Works & Bros
+2024-07-26,BP-1080,Payment,HDFC Bank A/c,,217313.07,Payment to Maa Works & Bros
+2024-07-26,BP-1143,Payment,Sundry Creditors,89108.84,,Payment to Shree Trading Group
+2024-07-26,BP-1143,Payment,HDFC Bank A/c,,89108.84,Payment to Shree Trading Group
+2024-07-26,INV-1006,Sales,Sundry Debtors,22347.42,,Being sales to Pooja Patel
+2024-07-26,INV-1006,Sales,Restaurant Sales,,22347.42,Being sales to Pooja Patel
+2024-07-26,INV-1036,Sales,Sundry Debtors,42960.99,,Being sales to Ritu Choudhary
+2024-07-26,INV-1036,Sales,Restaurant Sales,,42960.99,Being sales to Ritu Choudhary
+2024-07-26,PUR-1170,Purchase,Spices & Provisions,10822.72,,Purchase from Om Trading Industries
+2024-07-26,PUR-1170,Purchase,Sundry Creditors,,10822.72,Purchase from Om Trading Industries
+2024-07-26,PUR-1208,Purchase,Meat & Poultry Purchases,68292.00,,Purchase from Bharat Suppliers & Co
+2024-07-26,PUR-1208,Purchase,Sundry Creditors,,68292.00,Purchase from Bharat Suppliers & Co
+2024-07-27,BR-1032,Receipt,HDFC Bank A/c,169090.93,,Received from Sunita Gupta
+2024-07-27,BR-1032,Receipt,Sundry Debtors,,169090.93,Received from Sunita Gupta
+2024-07-27,BR-1129,Receipt,HDFC Bank A/c,226159.89,,Received from Sunita Reddy
+2024-07-27,BR-1129,Receipt,Sundry Debtors,,226159.89,Received from Sunita Reddy
+2024-07-27,BR-1130,Receipt,HDFC Bank A/c,141656.49,,Received from Pooja Patel
+2024-07-27,BR-1130,Receipt,Sundry Debtors,,141656.49,Received from Pooja Patel
+2024-07-27,BR-1165,Receipt,HDFC Bank A/c,26241.95,,Received from Pooja Patel
+2024-07-27,BR-1165,Receipt,Sundry Debtors,,26241.95,Received from Pooja Patel
+2024-07-27,INV-1053,Sales,Sundry Debtors,133015.33,,Being sales to Ritu Choudhary
+2024-07-27,INV-1053,Sales,Restaurant Sales,,133015.33,Being sales to Ritu Choudhary
+2024-07-27,JV-1014,Journal,Printing & Stationery,79221.32,,Being printing & stationery for the period
+2024-07-27,JV-1014,Journal,HDFC Bank A/c,,79221.32,Being printing & stationery for the period
+2024-07-27,JV-1090,Journal,Travelling Expenses,84074.45,,Being travelling expenses for the period
+2024-07-27,JV-1090,Journal,HDFC Bank A/c,,84074.45,Being travelling expenses for the period
+2024-07-27,PUR-1030,Purchase,Vegetable Purchases,216072.91,,Purchase from Sai Suppliers LLP
+2024-07-27,PUR-1030,Purchase,Sundry Creditors,,216072.91,Purchase from Sai Suppliers LLP
+2024-07-27,PUR-1160,Purchase,Meat & Poultry Purchases,122259.96,,Purchase from Maa Works LLP
+2024-07-27,PUR-1160,Purchase,Sundry Creditors,,122259.96,Purchase from Maa Works LLP
+2024-07-27,PUR-1255,Purchase,Meat & Poultry Purchases,162743.11,,Purchase from Om Traders & Bros
+2024-07-27,PUR-1255,Purchase,Sundry Creditors,,162743.11,Purchase from Om Traders & Bros
+2024-07-28,BR-1034,Receipt,HDFC Bank A/c,145615.39,,Received from Sunita Gupta
+2024-07-28,BR-1034,Receipt,Sundry Debtors,,145615.39,Received from Sunita Gupta
+2024-07-28,BR-1036,Receipt,HDFC Bank A/c,113162.56,,Received from Ritu Choudhary
+2024-07-28,BR-1036,Receipt,Sundry Debtors,,113162.56,Received from Ritu Choudhary
+2024-07-28,BR-1081,Receipt,HDFC Bank A/c,221693.95,,Received from Sunita Reddy
+2024-07-28,BR-1081,Receipt,Sundry Debtors,,221693.95,Received from Sunita Reddy
+2024-07-28,BR-1137,Receipt,HDFC Bank A/c,86250.34,,Received from Sunita Reddy
+2024-07-28,BR-1137,Receipt,Sundry Debtors,,86250.34,Received from Sunita Reddy
+2024-07-28,BR-1175,Receipt,HDFC Bank A/c,71945.29,,Received from Sunita Gupta
+2024-07-28,BR-1175,Receipt,Sundry Debtors,,71945.29,Received from Sunita Gupta
+2024-07-28,INV-1171,Sales,Sundry Debtors,114315.24,,Being sales to Sunita Reddy
+2024-07-28,INV-1171,Sales,Restaurant Sales,,114315.24,Being sales to Sunita Reddy
+2024-07-28,PUR-1163,Purchase,Spices & Provisions,5262.73,,Purchase from Om Traders & Bros
+2024-07-28,PUR-1163,Purchase,Sundry Creditors,,5262.73,Purchase from Om Traders & Bros
+2024-07-29,BP-1098,Payment,Sundry Creditors,134465.59,,Payment to Bharat Trading Pvt Ltd
+2024-07-29,BP-1098,Payment,HDFC Bank A/c,,134465.59,Payment to Bharat Trading Pvt Ltd
+2024-07-29,BR-1086,Receipt,HDFC Bank A/c,96195.63,,Received from Pooja Patel
+2024-07-29,BR-1086,Receipt,Sundry Debtors,,96195.63,Received from Pooja Patel
+2024-07-29,BR-1138,Receipt,HDFC Bank A/c,150540.60,,Received from Sunita Gupta
+2024-07-29,BR-1138,Receipt,Sundry Debtors,,150540.60,Received from Sunita Gupta
+2024-07-29,INV-1105,Sales,Sundry Debtors,37468.27,,Being sales to Sunita Reddy
+2024-07-29,INV-1105,Sales,Restaurant Sales,,37468.27,Being sales to Sunita Reddy
+2024-07-29,INV-1263,Sales,Sundry Debtors,169162.44,,Being sales to Sunita Gupta
+2024-07-29,INV-1263,Sales,Restaurant Sales,,169162.44,Being sales to Sunita Gupta
+2024-07-29,JV-1096,Journal,Electricity Charges,13832.09,,Being electricity charges for the period
+2024-07-29,JV-1096,Journal,HDFC Bank A/c,,13832.09,Being electricity charges for the period
+2024-07-29,JV-1125,Journal,Telephone & Internet,31421.21,,Being telephone & internet for the period
+2024-07-29,JV-1125,Journal,HDFC Bank A/c,,31421.21,Being telephone & internet for the period
+2024-07-29,JV-1129,Journal,Salaries & Wages,81679.56,,Being salaries & wages for the period
+2024-07-29,JV-1129,Journal,HDFC Bank A/c,,81679.56,Being salaries & wages for the period
+2024-07-29,PUR-1085,Purchase,Spices & Provisions,208350.92,,Purchase from Maa Services LLP
+2024-07-29,PUR-1085,Purchase,Sundry Creditors,,208350.92,Purchase from Maa Services LLP
+2024-07-29,PUR-1101,Purchase,Kitchen Wages,93368.40,,Purchase from Om Trading Industries
+2024-07-29,PUR-1101,Purchase,Sundry Creditors,,93368.40,Purchase from Om Trading Industries
+2024-07-29,PUR-1251,Purchase,Meat & Poultry Purchases,222664.40,,Purchase from Sai Traders Group
+2024-07-29,PUR-1251,Purchase,Sundry Creditors,,222664.40,Purchase from Sai Traders Group
+2024-07-30,BP-1055,Payment,Sundry Creditors,,,Payment to Maa Works & Bros
+2024-07-30,BP-1055,Payment,HDFC Bank A/c,,33425.01,Payment to Maa Works & Bros
+2024-07-30,BP-1057,Payment,Sundry Creditors,227423.98,,Payment to Ratan Mills Pvt Ltd
+2024-07-30,BP-1057,Payment,HDFC Bank A/c,,227423.98,Payment to Ratan Mills Pvt Ltd
+2024-07-30,BP-1108,Payment,Sundry Creditors,284776.51,,Payment to Ratan Mills Pvt Ltd
+2024-07-30,BP-1108,Payment,HDFC Bank A/c,,284776.51,Payment to Ratan Mills Pvt Ltd
+2024-07-30,BR-1154,Receipt,HDFC Bank A/c,198496.96,,Received from Pooja Patel
+2024-07-30,BR-1154,Receipt,Sundry Debtors,,198496.96,Received from Pooja Patel
+2024-07-30,PUR-1131,Purchase,Spices & Provisions,57404.79,,Purchase from Shree Trading Group
+2024-07-30,PUR-1131,Purchase,Sundry Creditors,,57404.79,Purchase from Shree Trading Group
+2024-07-30,PUR-1143,Purchase,Spices & Provisions,95085.13,,Purchase from Krishna Agencies & Co
+2024-07-30,PUR-1143,Purchase,Sundry Creditors,,95085.13,Purchase from Krishna Agencies & Co
+2024-07-30,PUR-1184,Purchase,Kitchen Wages,9215.76,,Purchase from Om Traders & Bros
+2024-07-30,PUR-1184,Purchase,Sundry Creditors,,9215.76,Purchase from Om Traders & Bros
+2024-07-31,BP-1027,Payment,Sundry Creditors,215873.97,,Payment to Bharat Trading Pvt Ltd
+2024-07-31,BP-1027,Payment,HDFC Bank A/c,,215873.97,Payment to Bharat Trading Pvt Ltd
+2024-07-31,BP-1082,Payment,Sundry Creditors,223854.24,,Payment to Maa Works & Bros
+2024-07-31,BP-1082,Payment,HDFC Bank A/c,,223854.24,Payment to Maa Works & Bros
+2024-07-31,INV-1111,Sales,Sundry Debtors,121124.64,,Being sales to Ritu Choudhary
+2024-07-31,INV-1111,Sales,Restaurant Sales,,121124.64,Being sales to Ritu Choudhary
+2024-07-31,INV-1267,Sales,Sundry Debtors,51909.57,,Being sales to Sunita Gupta
+2024-07-31,INV-1267,Sales,Restaurant Sales,,51909.57,Being sales to Sunita Gupta
+2024-07-31,JV-1078,Journal,Printing & Stationery,59626.64,,Being printing & stationery for the period
+2024-07-31,JV-1078,Journal,HDFC Bank A/c,,59626.64,Being printing & stationery for the period
+2024-07-31,JV-1095,Journal,Diwali Bonus to Staff,16968.19,,Being diwali bonus to staff for the period
+2024-07-31,JV-1095,Journal,HDFC Bank A/c,,16968.19,Being diwali bonus to staff for the period
+2024-07-31,JV-1138,Journal,Travelling Expenses,54359.86,,Being travelling expenses for the period
+2024-07-31,JV-1138,Journal,HDFC Bank A/c,,54359.86,Being travelling expenses for the period
+2024-07-31,PUR-1049,Purchase,Vegetable Purchases,118511.88,,Purchase from Om Trading Industries
+2024-07-31,PUR-1049,Purchase,Sundry Creditors,,118511.88,Purchase from Om Trading Industries
+2024-07-31,PUR-1233,Purchase,Kitchen Wages,12226.28,,Purchase from Shree Works Pvt Ltd
+2024-07-31,PUR-1233,Purchase,Sundry Creditors,,12226.28,Purchase from Shree Works Pvt Ltd
+2024-07-31,PUR-1235,Purchase,Meat & Poultry Purchases,280192.38,,Purchase from Maa Works LLP
+2024-07-31,PUR-1235,Purchase,Sundry Creditors,,280192.38,Purchase from Maa Works LLP
+2024-08-01,BP-1072,Payment,Sundry Creditors,291341.10,,Payment to Ratan Enterprises Group
+2024-08-01,BP-1072,Payment,HDFC Bank A/c,,291341.10,Payment to Ratan Enterprises Group
+2024-08-01,BP-1073,Payment,Sundry Creditors,187571.26,,Payment to Krishna Suppliers Pvt Ltd
+2024-08-01,BP-1073,Payment,HDFC Bank A/c,,187571.26,Payment to Krishna Suppliers Pvt Ltd
+2024-08-01,BR-1026,Receipt,HDFC Bank A/c,79980.92,,Received from Ritu Choudhary
+2024-08-01,BR-1026,Receipt,Sundry Debtors,,79980.92,Received from Ritu Choudhary
+2024-08-01,BR-1040,Receipt,HDFC Bank A/c,181545.68,,Received from Sunita Gupta
+2024-08-01,BR-1040,Receipt,Sundry Debtors,,181545.68,Received from Sunita Gupta
+2024-08-01,BR-1042,Receipt,HDFC Bank A/c,224613.09,,Received from Pooja Patel
+2024-08-01,BR-1042,Receipt,Sundry Debtors,,224613.09,Received from Pooja Patel
+2024-08-01,BR-1127,Receipt,HDFC Bank A/c,190362.76,,Received from Sunita Reddy
+2024-08-01,BR-1127,Receipt,Sundry Debtors,,190362.76,Received from Sunita Reddy
+2024-08-01,INV-1125,Sales,Sundry Debtors,87516.22,,Being sales to Pooja Patel
+2024-08-01,INV-1125,Sales,Restaurant Sales,,87516.22,Being sales to Pooja Patel
+2024-08-01,INV-1163,Sales,Sundry Debtors,90201.31,,Being sales to Pooja Patel
+2024-08-01,INV-1163,Sales,Restaurant Sales,,90201.31,Being sales to Pooja Patel
+2024-08-01,INV-1167,Sales,Sundry Debtors,83008.17,,Being sales to Pooja Patel
+2024-08-01,INV-1167,Sales,Restaurant Sales,,83008.17,Being sales to Pooja Patel
+2024-08-01,INV-1211,Sales,Sundry Debtors,28099.44,,Being sales to Pooja Patel
+2024-08-01,INV-1211,Sales,Restaurant Sales,,28099.44,Being sales to Pooja Patel
+2024-08-01,INV-1237,Sales,Sundry Debtors,23180.29,,Being sales to Pooja Patel
+2024-08-01,INV-1237,Sales,Restaurant Sales,,23180.29,Being sales to Pooja Patel
+2024-08-01,INV-1239,Sales,Sundry Debtors,94446.07,,Being sales to Ritu Choudhary
+2024-08-01,INV-1239,Sales,Restaurant Sales,,94446.07,Being sales to Ritu Choudhary
+2024-08-01,INV-1286,Sales,Sundry Debtors,156931.89,,Being sales to Ritu Choudhary
+2024-08-01,INV-1286,Sales,Restaurant Sales,,156931.89,Being sales to Ritu Choudhary
+2024-08-01,INV-1292,Sales,Sundry Debtors,145847.04,,Being sales to Sunita Gupta
+2024-08-01,INV-1292,Sales,Restaurant Sales,,145847.04,Being sales to Sunita Gupta
+2024-08-01,PUR-1103,Purchase,Vegetable Purchases,141131.28,,Purchase from Shree Works Pvt Ltd
+2024-08-01,PUR-1103,Purchase,Sundry Creditors,,141131.28,Purchase from Shree Works Pvt Ltd
+2024-08-02,BP-1076,Payment,Sundry Creditors,5963.40,,Payment to Om Mills LLP
+2024-08-02,BP-1076,Payment,HDFC Bank A/c,,5963.40,Payment to Om Mills LLP
+2024-08-02,BR-1100,Receipt,HDFC Bank A/c,174062.09,,Received from Ritu Choudhary
+2024-08-02,BR-1100,Receipt,Sundry Debtors,,174062.09,Received from Ritu Choudhary
+2024-08-02,BR-1112,Receipt,HDFC Bank A/c,218810.18,,Received from Sunita Gupta
+2024-08-02,BR-1112,Receipt,Sundry Debtors,,218810.18,Received from Sunita Gupta
+2024-08-02,INV-1010,Sales,Sundry Debtors,25894.12,,Being sales to Pooja Patel
+2024-08-02,INV-1010,Sales,Restaurant Sales,,25894.12,Being sales to Pooja Patel
+2024-08-02,INV-1112,Sales,Sundry Debtors,75668.07,,Being sales to Sunita Reddy
+2024-08-02,INV-1112,Sales,Restaurant Sales,,75668.07,Being sales to Sunita Reddy
+2024-08-02,INV-1116,Sales,Sundry Debtors,82875.11,,Being sales to Pooja Patel
+2024-08-02,INV-1116,Sales,Restaurant Sales,,82875.11,Being sales to Pooja Patel
+2024-08-02,INV-1320,Sales,Sundry Debtors,115712.09,,Being sales to Ritu Choudhary
+2024-08-02,INV-1320,Sales,Restaurant Sales,,115712.09,
+2024-08-02,JV-1089,Journal,Printing & Stationery,48081.67,,Being printing & stationery for the period
+2024-08-02,JV-1089,Journal,HDFC Bank A/c,,48081.67,Being printing & stationery for the period
+2024-08-02,JV-1141,Journal,Telephone & Internet,23151.43,,Being telephone & internet for the period
+2024-08-02,JV-1141,Journal,HDFC Bank A/c,,23151.43,Being telephone & internet for the period
+2024-08-02,PUR-1037,Purchase,Kitchen Wages,110826.24,,Purchase from Ganesh Traders & Bros
+2024-08-02,PUR-1037,Purchase,Sundry Creditors,,110826.24,Purchase from Ganesh Traders & Bros
+2024-08-02,PUR-1042,Purchase,Meat & Poultry Purchases,66808.46,,Purchase from Om Mills LLP
+2024-08-02,PUR-1042,Purchase,Sundry Creditors,,66808.46,Purchase from Om Mills LLP
+2024-08-02,PUR-1060,Purchase,Kitchen Wages,173448.70,,Purchase from Sai Industries Industries
+2024-08-02,PUR-1060,Purchase,Sundry Creditors,,173448.70,Purchase from Sai Industries Industries
+2024-08-03,BP-1026,Payment,Sundry Creditors,183687.31,,Payment to Bharat Trading Pvt Ltd
+2024-08-03,BP-1026,Payment,HDFC Bank A/c,,183687.31,Payment to Bharat Trading Pvt Ltd
+2024-08-03,BP-1058,Payment,Sundry Creditors,232706.20,,Payment to Om Steel Pvt Ltd
+2024-08-03,BP-1058,Payment,HDFC Bank A/c,,232706.20,Payment to Om Steel Pvt Ltd
+2024-08-03,BR-1035,Receipt,HDFC Bank A/c,35183.03,,Received from Ritu Choudhary
+2024-08-03,BR-1035,Receipt,Sundry Debtors,,35183.03,Received from Ritu Choudhary
+2024-08-03,BR-1142,Receipt,HDFC Bank A/c,222428.30,,Received from Sunita Gupta
+2024-08-03,BR-1142,Receipt,Sundry Debtors,,222428.30,Received from Sunita Gupta
+2024-08-03,BR-1147,Receipt,HDFC Bank A/c,118473.53,,Received from Sunita Gupta
+2024-08-03,BR-1147,Receipt,Sundry Debtors,,118473.53,Received from Sunita Gupta
+2024-08-03,INV-1069,Sales,Sundry Debtors,61153.45,,Being sales to Ritu Choudhary
+2024-08-03,INV-1069,Sales,Restaurant Sales,,61153.45,Being sales to Ritu Choudhary
+2024-08-03,INV-1214,Sales,Sundry Debtors,16151.98,,Being sales to Sunita Gupta
+2024-08-03,INV-1214,Sales,Restaurant Sales,,16151.98,Being sales to Sunita Gupta
+2024-08-03,JV-1062,Journal,Diwali Bonus to Staff,63212.17,,Being diwali bonus to staff for the period
+2024-08-03,JV-1062,Journal,HDFC Bank A/c,,63212.17,Being diwali bonus to staff for the period
+2024-08-03,PUR-1087,Purchase,Kitchen Wages,223489.44,,Purchase from Ratan Enterprises Group
+2024-08-03,PUR-1087,Purchase,Sundry Creditors,,223489.44,Purchase from Ratan Enterprises Group
+2024-08-03,PUR-1099,Purchase,Meat & Poultry Purchases,236020.18,,Purchase from Krishna Agencies & Co
+2024-08-03,PUR-1099,Purchase,Sundry Creditors,,236020.18,Purchase from Krishna Agencies & Co
+2024-08-03,PUR-1159,Purchase,Meat & Poultry Purchases,150244.89,,Purchase from Shree Works Pvt Ltd
+2024-08-03,PUR-1159,Purchase,Sundry Creditors,,150244.89,Purchase from Shree Works Pvt Ltd
+2024-08-04,BP-1099,Payment,Sundry Creditors,28386.37,,Payment to Maa Works LLP
+2024-08-04,BP-1099,Payment,HDFC Bank A/c,,28386.37,Payment to Maa Works LLP
+2024-08-04,BP-1106,Payment,Sundry Creditors,174530.37,,Payment to Sai Services Pvt Ltd
+2024-08-04,BP-1106,Payment,HDFC Bank A/c,,174530.37,Payment to Sai Services Pvt Ltd
+2024-08-04,BR-1063,Receipt,HDFC Bank A/c,67083.98,,Received from Sunita Gupta
+2024-08-04,BR-1063,Receipt,Sundry Debtors,,67083.98,Received from Sunita Gupta
+2024-08-04,BR-1080,Receipt,HDFC Bank A/c,59268.31,,Received from Pooja Patel
+2024-08-04,BR-1080,Receipt,Sundry Debtors,,59268.31,Received from Pooja Patel
+2024-08-04,BR-1136,Receipt,HDFC Bank A/c,125443.34,,Received from Sunita Gupta
+2024-08-04,BR-1136,Receipt,Sundry Debtors,,125443.34,Received from Sunita Gupta
+2024-08-04,BR-1139,Receipt,HDFC Bank A/c,91729.86,,Received from Pooja Patel
+2024-08-04,BR-1139,Receipt,Sundry Debtors,,91729.86,Received from Pooja Patel
+2024-08-04,INV-1252,Sales,Sundry Debtors,95996.50,,Being sales to Sunita Gupta
+2024-08-04,INV-1252,Sales,Restaurant Sales,,95996.50,Being sales to Sunita Gupta
+2024-08-04,JV-1061,Journal,Electricity Charges,8700.90,,Being electricity charges for the period
+2024-08-04,JV-1061,Journal,HDFC Bank A/c,,8700.90,Being electricity charges for the period
+2024-08-04,JV-S431,Journal,Sundry Creditors,177347.02,,Refund/advance from vendor
+2024-08-04,JV-S431,Journal,HDFC Bank A/c,,177347.02,Refund/advance from vendor
+2024-08-04,PUR-1026,Purchase,Meat & Poultry Purchases,220634.67,,Purchase from Krishna Suppliers Pvt Ltd
+2024-08-04,PUR-1026,Purchase,Sundry Creditors,,220634.67,Purchase from Krishna Suppliers Pvt Ltd
+2024-08-04,PUR-1050,Purchase,Spices & Provisions,62495.91,,Purchase from Ganesh Traders & Bros
+2024-08-04,PUR-1050,Purchase,Sundry Creditors,,62495.91,Purchase from Ganesh Traders & Bros
+2024-08-04,PUR-1140,Purchase,Meat & Poultry Purchases,173895.17,,Purchase from Om Steel Pvt Ltd
+2024-08-04,PUR-1140,Purchase,Sundry Creditors,,173895.17,Purchase from Om Steel Pvt Ltd
+2024-08-04,PUR-1194,Purchase,Meat & Poultry Purchases,277929.28,,Purchase from Bharat Suppliers & Co
+2024-08-04,PUR-1194,Purchase,Sundry Creditors,,277929.28,Purchase from Bharat Suppliers & Co
+2024-08-04,PUR-1231,Purchase,Spices & Provisions,46508.94,,Purchase from Om Steel Pvt Ltd
+2024-08-04,PUR-1231,Purchase,Sundry Creditors,,46508.94,Purchase from Om Steel Pvt Ltd
+2024-08-05,BP-1031,Payment,Sundry Creditors,101294.34,,Payment to Sai Industries Industries
+2024-08-05,BP-1031,Payment,HDFC Bank A/c,,101294.34,
+2024-08-05,BP-1089,Payment,Sundry Creditors,269444.75,,Payment to Sai Industries Industries
+2024-08-05,BP-1089,Payment,HDFC Bank A/c,,269444.75,Payment to Sai Industries Industries
+2024-08-05,BP-1123,Payment,Sundry Creditors,299986.53,,Payment to Bharat Trading Pvt Ltd
+2024-08-05,BP-1123,Payment,HDFC Bank A/c,,299986.53,Payment to Bharat Trading Pvt Ltd
+2024-08-05,BR-1178,Receipt,HDFC Bank A/c,26898.69,,Received from Sunita Gupta
+2024-08-05,BR-1178,Receipt,Sundry Debtors,,26898.69,Received from Sunita Gupta
+2024-08-05,BR-1190,Receipt,HDFC Bank A/c,71859.35,,Received from Sunita Reddy
+2024-08-05,BR-1190,Receipt,Sundry Debtors,,71859.35,Received from Sunita Reddy
+2024-08-05,INV-1087,Sales,Sundry Debtors,50392.75,,Being sales to Pooja Patel
+2024-08-05,INV-1087,Sales,Restaurant Sales,,50392.75,Being sales to Pooja Patel
+2024-08-05,INV-1247,Sales,Sundry Debtors,74792.69,,Being sales to Pooja Patel
+2024-08-05,INV-1247,Sales,Restaurant Sales,,74792.69,Being sales to Pooja Patel
+2024-08-05,INV-1256,Sales,Sundry Debtors,47224.84,,Being sales to Ritu Choudhary
+2024-08-05,INV-1256,Sales,Restaurant Sales,,47224.84,Being sales to Ritu Choudhary
+2024-08-05,INV-1299,Sales,Sundry Debtors,192634.30,,Being sales to Sunita Reddy
+2024-08-05,INV-1299,Sales,Restaurant Sales,,192634.30,Being sales to Sunita Reddy
+2024-08-05,INV-1322,Sales,Sundry Debtors,121027.40,,Being sales to Sunita Reddy
+2024-08-05,INV-1322,Sales,Restaurant Sales,,121027.40,Being sales to Sunita Reddy
+2024-08-05,JV-1073,Journal,Salaries & Wages,8573.23,,Being salaries & wages for the period
+2024-08-05,JV-1073,Journal,HDFC Bank A/c,,8573.23,Being salaries & wages for the period
+2024-08-05,JV-X735,Journal,Round Off,984.50,,Unknown adjustment
+2024-08-05,JV-X735,Journal,HDFC Bank A/c,,984.50,Unknown adjustment
+2024-08-05,PUR-1227,Purchase,Kitchen Wages,131562.59,,Purchase from Sai Suppliers LLP
+2024-08-05,PUR-1227,Purchase,Sundry Creditors,,131562.59,Purchase from Sai Suppliers LLP
+2024-08-06,BP-1065,Payment,Sundry Creditors,258817.52,,Payment to Sai Industries Industries
+2024-08-06,BP-1065,Payment,HDFC Bank A/c,,258817.52,Payment to Sai Industries Industries
+2024-08-06,BP-1110,Payment,Sundry Creditors,279239.04,,Payment to Om Mills LLP
+2024-08-06,BP-1110,Payment,HDFC Bank A/c,,279239.04,Payment to Om Mills LLP
+2024-08-06,BP-1136,Payment,Sundry Creditors,183230.42,,Payment to Om Steel Pvt Ltd
+2024-08-06,BP-1136,Payment,HDFC Bank A/c,,183230.42,Payment to Om Steel Pvt Ltd
+2024-08-06,BR-1024,Receipt,HDFC Bank A/c,116394.39,,Received from Sunita Reddy
+2024-08-06,BR-1024,Receipt,Sundry Debtors,,116394.39,Received from Sunita Reddy
+2024-08-06,BR-1155,Receipt,HDFC Bank A/c,97816.46,,Received from Ritu Choudhary
+2024-08-06,BR-1155,Receipt,Sundry Debtors,,97816.46,Received from Ritu Choudhary
+2024-08-06,INV-1035,Sales,Sundry Debtors,198415.51,,Being sales to Sunita Reddy
+2024-08-06,INV-1035,Sales,Restaurant Sales,,198415.51,Being sales to Sunita Reddy
+2024-08-06,INV-1065,Sales,Sundry Debtors,155981.13,,Being sales to Pooja Patel
+2024-08-06,INV-1065,Sales,Restaurant Sales,,156004.14,Being sales to Pooja Patel
+2024-08-06,INV-1078,Sales,Sundry Debtors,186594.63,,Being sales to Sunita Reddy
+2024-08-06,INV-1078,Sales,Restaurant Sales,,186594.63,Being sales to Sunita Reddy
+2024-08-06,INV-1301,Sales,Sundry Debtors,141498.49,,Being sales to Sunita Gupta
+2024-08-06,INV-1301,Sales,Restaurant Sales,,141498.49,Being sales to Sunita Gupta
+2024-08-06,INV-1326,Sales,Sundry Debtors,50110.76,,Being sales to Ritu Choudhary
+2024-08-06,INV-1326,Sales,Restaurant Sales,,50110.76,Being sales to Ritu Choudhary
+2024-08-06,JV-1028,Journal,Electricity Charges,47592.39,,Being electricity charges for the period
+2024-08-06,JV-1028,Journal,HDFC Bank A/c,,47592.39,Being electricity charges for the period
+2024-08-06,PUR-1080,Purchase,Spices & Provisions,33059.16,,Purchase from Ganesh Agencies Pvt Ltd
+2024-08-06,PUR-1080,Purchase,Sundry Creditors,,33059.16,Purchase from Ganesh Agencies Pvt Ltd
+2024-08-06,PUR-1092,Purchase,Kitchen Wages,150908.06,,Purchase from Shree Trading Group
+2024-08-06,PUR-1092,Purchase,Sundry Creditors,,150908.06,Purchase from Shree Trading Group
+2024-08-06,PUR-1112,Purchase,Meat & Poultry Purchases,42699.69,,Purchase from Krishna Agencies & Co
+2024-08-06,PUR-1112,Purchase,Sundry Creditors,,42699.69,Purchase from Krishna Agencies & Co
+2024-08-06,PUR-1174,Purchase,Meat & Poultry Purchases,129924.61,,Purchase from Shree Trading Group
+2024-08-06,PUR-1174,Purchase,Sundry Creditors,,129924.61,Purchase from Shree Trading Group
+2024-08-06,PUR-1199,Purchase,Vegetable Purchases,13615.64,,Purchase from Sai Suppliers LLP
+2024-08-06,PUR-1199,Purchase,Sundry Creditors,,13615.64,Purchase from Sai Suppliers LLP
+2024-08-06,PUR-1247,Purchase,Meat & Poultry Purchases,164138.40,,Purchase from Maa Services LLP
+2024-08-06,PUR-1247,Purchase,Sundry Creditors,,164138.40,Purchase from Maa Services LLP
+2024-08-07,BP-1032,Payment,Sundry Creditors,299964.49,,Payment to Sai Industries Industries
+2024-08-07,BP-1032,Payment,HDFC Bank A/c,,299964.49,Payment to Sai Industries Industries
+2024-08-07,BP-1083,Payment,Sundry Creditors,32368.22,,Payment to Om Mills LLP
+2024-08-07,BP-1083,Payment,HDFC Bank A/c,,32368.22,Payment to Om Mills LLP
+2024-08-07,BR-1022,Receipt,HDFC Bank A/c,99642.53,,Received from Sunita Reddy
+2024-08-07,BR-1022,Receipt,Sundry Debtors,,99642.53,Received from Sunita Reddy
+2024-08-07,BR-1114,Receipt,HDFC Bank A/c,21124.97,,Received from Pooja Patel
+2024-08-07,BR-1114,Receipt,Sundry Debtors,,21124.97,Received from Pooja Patel
+2024-08-07,BR-1116,Receipt,HDFC Bank A/c,33988.91,,Received from Sunita Gupta
+2024-08-07,BR-1116,Receipt,Sundry Debtors,,33988.91,Received from Sunita Gupta
+2024-08-07,BR-1132,Receipt,HDFC Bank A/c,52536.33,,Received from Sunita Gupta
+2024-08-07,BR-1132,Receipt,Sundry Debtors,,52536.33,Received from Sunita Gupta
+2024-08-07,BR-1160,Receipt,HDFC Bank A/c,195538.66,,Received from Pooja Patel
+2024-08-07,BR-1160,Receipt,Sundry Debtors,,195538.66,Received from Pooja Patel
+2024-08-07,INV-1225,Sales,Sundry Debtors,102815.51,,Being sales to Ritu Choudhary
+2024-08-07,INV-1225,Sales,Restaurant Sales,,102815.51,Being sales to Ritu Choudhary
+2024-08-07,JV-1077,Journal,Salaries & Wages,81939.19,,Being salaries & wages for the period
+2024-08-07,JV-1077,Journal,HDFC Bank A/c,,81939.19,Being salaries & wages for the period
+2024-08-07,PUR-1152,Purchase,Kitchen Wages,201916.46,,Purchase from Sai Industries Industries
+2024-08-07,PUR-1152,Purchase,Sundry Creditors,,201916.46,Purchase from Sai Industries Industries
+2024-08-07,PUR-1225,Purchase,Spices & Provisions,200908.34,,Purchase from Om Mills LLP
+2024-08-07,PUR-1225,Purchase,Sundry Creditors,,200908.34,Purchase from Om Mills LLP
+2024-08-08,BP-1107,Payment,Sundry Creditors,191262.82,,Payment to Bharat Suppliers & Co
+2024-08-08,BP-1107,Payment,HDFC Bank A/c,,191262.82,Payment to Bharat Suppliers & Co
+2024-08-08,BP-1140,Payment,Sundry Creditors,73807.02,,Payment to Sai Industries Industries
+2024-08-08,BP-1140,Payment,HDFC Bank A/c,,73807.02,Payment to Sai Industries Industries
+2024-08-08,BR-1029,Receipt,HDFC Bank A/c,186175.14,,Received from Pooja Patel
+2024-08-08,BR-1029,Receipt,Sundry Debtors,,186175.14,Received from Pooja Patel
+2024-08-08,INV-1032,Sales,Sundry Debtors,146318.91,,Being sales to Pooja Patel
+2024-08-08,INV-1032,Sales,Restaurant Sales,,146318.91,Being sales to Pooja Patel
+2024-08-08,INV-1126,Sales,Sundry Debtors,140043.86,,Being sales to Sunita Gupta
+2024-08-08,INV-1126,Sales,Restaurant Sales,,140043.86,Being sales to Sunita Gupta
+2024-08-08,INV-1156,Sales,Sundry Debtors,63941.03,,Being sales to Ritu Choudhary
+2024-08-08,INV-1156,Sales,Restaurant Sales,,63941.03,Being sales to Ritu Choudhary
+2024-08-08,INV-1201,Sales,Sundry Debtors,46019.35,,Being sales to Pooja Patel
+2024-08-08,INV-1201,Sales,Restaurant Sales,,46019.35,Being sales to Pooja Patel
+2024-08-08,INV-1220,Sales,Sundry Debtors,131677.36,,Being sales to Sunita Reddy
+2024-08-08,INV-1220,Sales,Restaurant Sales,,131677.36,Being sales to Sunita Reddy
+2024-08-08,INV-1232,Sales,Sundry Debtors,186587.02,,Being sales to Sunita Reddy
+2024-08-08,INV-1232,Sales,Restaurant Sales,,186587.02,Being sales to Sunita Reddy
+2024-08-08,INV-1266,Sales,Sundry Debtors,196624.37,,Being sales to Ritu Choudhary
+2024-08-08,INV-1266,Sales,Restaurant Sales,,196624.37,Being sales to Ritu Choudhary
+2024-08-08,JV-1025,Journal,Telephone & Internet,4000.83,,Being telephone & internet for the period
+2024-08-08,JV-1025,Journal,HDFC Bank A/c,,4000.83,Being telephone & internet for the period
+2024-08-08,JV-1079,Journal,Telephone & Internet,9458.89,,Being telephone & internet for the period
+2024-08-08,JV-1079,Journal,HDFC Bank A/c,,9458.89,Being telephone & internet for the period
+2024-08-08,JV-1137,Journal,Office Rent,52735.92,,Being office rent for the period
+2024-08-08,JV-1137,Journal,HDFC Bank A/c,,52735.92,Being office rent for the period
+2024-08-08,PUR-1075,Purchase,Kitchen Wages,121001.09,,Purchase from Ratan Enterprises Group
+2024-08-08,PUR-1075,Purchase,Sundry Creditors,,121001.09,Purchase from Ratan Enterprises Group
+2024-08-08,PUR-1244,Purchase,Spices & Provisions,249082.24,,Purchase from Sai Services Pvt Ltd
+2024-08-08,PUR-1244,Purchase,Sundry Creditors,,249082.24,Purchase from Sai Services Pvt Ltd
+2024-08-09,BP-1007,Payment,Sundry Creditors,199934.78,,Payment to Bharat Trading Pvt Ltd
+2024-08-09,BP-1007,Payment,HDFC Bank A/c,,199934.78,Payment to Bharat Trading Pvt Ltd
+2024-08-09,BP-1008,Payment,Sundry Creditors,143101.25,,Payment to Om Steel Pvt Ltd
+2024-08-09,BP-1008,Payment,HDFC Bank A/c,,143101.25,Payment to Om Steel Pvt Ltd
+2024-08-09,BP-1070,Payment,Sundry Creditors,97189.78,,Payment to Ratan Enterprises Industries
+2024-08-09,BP-1070,Payment,HDFC Bank A/c,,97189.78,Payment to Ratan Enterprises Industries
+2024-08-09,BR-1002,Receipt,HDFC Bank A/c,92983.92,,Received from Sunita Reddy
+2024-08-09,BR-1002,Receipt,Sundry Debtors,,92983.92,Received from Sunita Reddy
+2024-08-09,BR-1003,Receipt,HDFC Bank A/c,102463.31,,Received from Sunita Gupta
+2024-08-09,BR-1003,Receipt,Sundry Debtors,,102463.31,Received from Sunita Gupta
+2024-08-09,BR-1037,Receipt,HDFC Bank A/c,59170.06,,Received from Pooja Patel
+2024-08-09,BR-1037,Receipt,Sundry Debtors,,59170.06,Received from Pooja Patel
+2024-08-09,BR-1120,Receipt,HDFC Bank A/c,186074.56,,Received from Pooja Patel
+2024-08-09,BR-1120,Receipt,Sundry Debtors,,186074.56,Received from Pooja Patel
+2024-08-09,BR-1167,Receipt,HDFC Bank A/c,188667.57,,Received from Ritu Choudhary
+2024-08-09,BR-1167,Receipt,Sundry Debtors,,188667.57,Received from Ritu Choudhary
+2024-08-09,INV-1008,Sales,Sundry Debtors,101257.22,,Being sales to Sunita Gupta
+2024-08-09,INV-1008,Sales,Restaurant Sales,,101257.22,Being sales to Sunita Gupta
+2024-08-09,INV-1031,Sales,Sundry Debtors,78243.36,,Being sales to Sunita Gupta
+2024-08-09,INV-1031,Sales,Restaurant Sales,,78243.36,Being sales to Sunita Gupta
+2024-08-09,INV-1123,Sales,Sundry Debtors,37333.65,,Being sales to Sunita Gupta
+2024-08-09,INV-1123,Sales,Restaurant Sales,,37333.65,Being sales to Sunita Gupta
+2024-08-09,INV-1321,Sales,Sundry Debtors,175448.76,,Being sales to Ritu Choudhary
+2024-08-09,INV-1321,Sales,Restaurant Sales,,175448.76,Being sales to Ritu Choudhary
+2024-08-09,JV-1008,Journal,Salaries & Wages,16701.85,,Being salaries & wages for the period
+2024-08-09,JV-1008,Journal,HDFC Bank A/c,,16701.85,Being salaries & wages for the period
+2024-08-09,PUR-1021,Purchase,Spices & Provisions,208180.70,,Purchase from Bharat Trading Pvt Ltd
+2024-08-09,PUR-1021,Purchase,Sundry Creditors,,208180.70,Purchase from Bharat Trading Pvt Ltd
+2024-08-10,BP-1144,Payment,Sundry Creditors,160814.39,,Payment to Bharat Trading Pvt Ltd
+2024-08-10,BP-1144,Payment,HDFC Bank A/c,,160814.39,Payment to Bharat Trading Pvt Ltd
+2024-08-10,BR-1025,Receipt,HDFC Bank A/c,220488.94,,Received from Ritu Choudhary
+2024-08-10,BR-1025,Receipt,Sundry Debtors,,220488.94,Received from Ritu Choudhary
+2024-08-10,BR-1105,Receipt,HDFC Bank A/c,205717.23,,Received from Ritu Choudhary
+2024-08-10,BR-1105,Receipt,Sundry Debtors,,205717.23,Received from Ritu Choudhary
+2024-08-10,BR-1124,Receipt,HDFC Bank A/c,220919.97,,Received from Pooja Patel
+2024-08-10,BR-1124,Receipt,Sundry Debtors,,220919.97,Received from Pooja Patel
+2024-08-10,BR-1152,Receipt,HDFC Bank A/c,35260.64,,Received from Ritu Choudhary
+2024-08-10,BR-1152,Receipt,Sundry Debtors,,35260.64,Received from Ritu Choudhary
+2024-08-10,INV-1151,Sales,Sundry Debtors,140991.15,,Being sales to Sunita Reddy
+2024-08-10,INV-1151,Sales,Restaurant Sales,,140991.15,Being sales to Sunita Reddy
+2024-08-10,INV-1217,Sales,Sundry Debtors,148173.32,,Being sales to Ritu Choudhary
+2024-08-10,INV-1217,Sales,Restaurant Sales,,148173.32,Being sales to Ritu Choudhary
+2024-08-10,JV-1012,Journal,Audit Fees,44513.59,,Being audit fees for the period
+2024-08-10,JV-1012,Journal,HDFC Bank A/c,,44513.59,Being audit fees for the period
+2024-08-10,JV-1102,Journal,Salaries & Wages,25416.08,,Being salaries & wages for the period
+2024-08-10,JV-1102,Journal,HDFC Bank A/c,,25416.08,Being salaries & wages for the period
+2024-08-10,PUR-1097,Purchase,Vegetable Purchases,129283.30,,Purchase from Shree Works Pvt Ltd
+2024-08-10,PUR-1097,Purchase,Sundry Creditors,,129283.30,Purchase from Shree Works Pvt Ltd
+2024-08-10,PUR-1154,Purchase,Vegetable Purchases,298571.19,,Purchase from Bharat Suppliers & Co
+2024-08-10,PUR-1154,Purchase,Sundry Creditors,,298571.19,Purchase from Bharat Suppliers & Co
+2024-08-10,PUR-1191,Purchase,Spices & Provisions,46832.11,,Purchase from Maa Works & Bros
+2024-08-10,PUR-1191,Purchase,Sundry Creditors,,46832.11,Purchase from Maa Works & Bros
+2024-08-10,PUR-1229,Purchase,Spices & Provisions,267800.01,,Purchase from Shree Trading Group
+2024-08-10,PUR-1229,Purchase,Sundry Creditors,,267800.01,Purchase from Shree Trading Group
+2024-08-10,PUR-1230,Purchase,Spices & Provisions,89812.04,,Purchase from Sai Services Pvt Ltd
+2024-08-10,PUR-1230,Purchase,Sundry Creditors,,89812.04,Purchase from Sai Services Pvt Ltd
+2024-08-11,BP-1017,Payment,Sundry Creditors,185295.37,,Payment to Shree Trading Group
+2024-08-11,BP-1017,Payment,HDFC Bank A/c,,185295.37,Payment to Shree Trading Group
+2024-08-11,BP-1085,Payment,Sundry Creditors,175009.25,,Payment to Sai Industries Industries
+2024-08-11,BP-1085,Payment,HDFC Bank A/c,,175009.25,Payment to Sai Industries Industries
+2024-08-11,BP-1157,Payment,Sundry Creditors,162926.37,,Payment to Om Traders & Bros
+2024-08-11,BP-1157,Payment,HDFC Bank A/c,,162926.37,Payment to Om Traders & Bros
+2024-08-11,BR-1057,Receipt,HDFC Bank A/c,244325.93,,Received from Sunita Gupta
+2024-08-11,BR-1057,Receipt,Sundry Debtors,,244325.93,Received from Sunita Gupta
+2024-08-11,INV-1047,Sales,Sundry Debtors,144808.02,,Being sales to Sunita Gupta
+2024-08-11,INV-1047,Sales,Restaurant Sales,,144808.02,Being sales to Sunita Gupta
+2024-08-11,INV-1082,Sales,Sundry Debtors,39473.70,,Being sales to Sunita Gupta
+2024-08-11,INV-1082,Sales,Restaurant Sales,,39473.70,Being sales to Sunita Gupta
+2024-08-11,INV-1166,Sales,Sundry Debtors,150064.99,,Being sales to Sunita Gupta
+2024-08-11,INV-1166,Sales,Restaurant Sales,,150064.99,Being sales to Sunita Gupta
+2024-08-11,INV-1213,Sales,Sundry Debtors,61728.10,,Being sales to Pooja Patel
+2024-08-11,INV-1213,Sales,Restaurant Sales,,61728.10,Being sales to Pooja Patel
+2024-08-11,INV-1258,Sales,Sundry Debtors,28420.95,,Being sales to Sunita Reddy
+2024-08-11,INV-1258,Sales,Restaurant Sales,,28420.95,Being sales to Sunita Reddy
+2024-08-11,JV-1049,Journal,Salaries & Wages,23932.99,,Being salaries & wages for the period
+2024-08-11,JV-1049,Journal,HDFC Bank A/c,,23932.99,Being salaries & wages for the period
+2024-08-11,JV-1148,Journal,Electricity Charges,56858.43,,Being electricity charges for the period
+2024-08-11,JV-1148,Journal,HDFC Bank A/c,,56858.43,Being electricity charges for the period
+2024-08-11,PUR-1005,Purchase,Meat & Poultry Purchases,154157.19,,Purchase from Om Mills LLP
+2024-08-11,PUR-1005,Purchase,Sundry Creditors,,154157.19,Purchase from Om Mills LLP
+2024-08-11,PUR-1054,Purchase,Kitchen Wages,290744.43,,Purchase from Maa Works LLP
+2024-08-11,PUR-1054,Purchase,Sundry Creditors,,290744.43,Purchase from Maa Works LLP
+2024-08-11,PUR-1098,Purchase,Meat & Poultry Purchases,72866.84,,Purchase from Ganesh Agencies Pvt Ltd
+2024-08-11,PUR-1098,Purchase,Sundry Creditors,,72866.84,Purchase from Ganesh Agencies Pvt Ltd
+2024-08-11,PUR-1102,Purchase,Kitchen Wages,264534.86,,Purchase from Sai Traders Group
+2024-08-11,PUR-1102,Purchase,Sundry Creditors,,264534.86,Purchase from Sai Traders Group
+2024-08-11,PUR-1124,Purchase,Spices & Provisions,82544.82,,Purchase from Sai Industries Industries
+2024-08-11,PUR-1124,Purchase,Sundry Creditors,,82544.82,Purchase from Sai Industries Industries
+2024-08-11,PUR-1129,Purchase,Spices & Provisions,181752.17,,Purchase from Maa Works & Bros
+2024-08-11,PUR-1129,Purchase,Sundry Creditors,,181752.17,Purchase from Maa Works & Bros
+2024-08-11,PUR-1190,Purchase,Vegetable Purchases,130688.84,,Purchase from Om Trading Industries
+2024-08-11,PUR-1190,Purchase,Sundry Creditors,,130688.84,Purchase from Om Trading Industries
+2024-08-12,BP-1006,Payment,Sundry Creditors,79202.01,,Payment to Bharat Trading Pvt Ltd
+2024-08-12,BP-1006,Payment,HDFC Bank A/c,,79202.01,Payment to Bharat Trading Pvt Ltd
+2024-08-12,BP-1035,Payment,Sundry Creditors,210419.68,,Payment to Ratan Enterprises Group
+2024-08-12,BP-1035,Payment,HDFC Bank A/c,,210419.68,Payment to Ratan Enterprises Group
+2024-08-12,BP-1046,Payment,Sundry Creditors,298613.61,,Payment to Ratan Mills Pvt Ltd
+2024-08-12,BP-1046,Payment,HDFC Bank A/c,,298613.61,Payment to Ratan Mills Pvt Ltd
+2024-08-12,BP-1048,Payment,Sundry Creditors,270697.59,,Payment to Maa Works LLP
+2024-08-12,BP-1048,Payment,HDFC Bank A/c,,270697.59,Payment to Maa Works LLP
+2024-08-12,BP-1102,Payment,Sundry Creditors,64551.40,,Payment to Maa Works & Bros
+2024-08-12,BP-1102,Payment,HDFC Bank A/c,,64551.40,Payment to Maa Works & Bros
+2024-08-12,BP-1117,Payment,Sundry Creditors,69668.03,,Payment to Sai Industries Industries
+2024-08-12,BP-1117,Payment,HDFC Bank A/c,,69668.03,Payment to Sai Industries Industries
+2024-08-12,BR-1056,Receipt,HDFC Bank A/c,216315.55,,Received from Ritu Choudhary
+2024-08-12,BR-1056,Receipt,Sundry Debtors,,216315.55,Received from Ritu Choudhary
+2024-08-12,BR-1106,Receipt,HDFC Bank A/c,47533.10,,Received from Sunita Gupta
+2024-08-12,BR-1106,Receipt,Sundry Debtors,,47533.10,Received from Sunita Gupta
+2024-08-12,BR-1123,Receipt,HDFC Bank A/c,7822.92,,Received from Pooja Patel
+2024-08-12,BR-1123,Receipt,Sundry Debtors,,7822.92,Received from Pooja Patel
+2024-08-12,INV-1160,Sales,Sundry Debtors,64678.29,,Being sales to Sunita Reddy
+2024-08-12,INV-1160,Sales,Restaurant Sales,,64678.29,Being sales to Sunita Reddy
+2024-08-12,INV-1188,Sales,Sundry Debtors,160622.32,,Being sales to Pooja Patel
+2024-08-12,INV-1188,Sales,Restaurant Sales,,160622.32,Being sales to Pooja Patel
+2024-08-12,INV-1255,Sales,Sundry Debtors,37017.28,,Being sales to Sunita Gupta
+2024-08-12,INV-1255,Sales,Restaurant Sales,,37017.28,Being sales to Sunita Gupta
+2024-08-12,INV-1265,Sales,Sundry Debtors,81619.20,,Being sales to Sunita Reddy
+2024-08-12,INV-1265,Sales,Restaurant Sales,,81619.20,Being sales to Sunita Reddy
+2024-08-12,PUR-1018,Purchase,Spices & Provisions,164651.42,,Purchase from Shree Works Pvt Ltd
+2024-08-12,PUR-1018,Purchase,Sundry Creditors,,164651.42,Purchase from Shree Works Pvt Ltd
+2024-08-12,PUR-1123,Purchase,Vegetable Purchases,85216.34,,Purchase from Shree Works Pvt Ltd
+2024-08-12,PUR-1123,Purchase,Sundry Creditors,,85216.34,Purchase from Shree Works Pvt Ltd
+2024-08-12,PUR-1186,Purchase,Spices & Provisions,242481.19,,Purchase from Ganesh Agencies Pvt Ltd
+2024-08-12,PUR-1186,Purchase,Sundry Creditors,,242481.19,Purchase from Ganesh Agencies Pvt Ltd
+2024-08-12,PUR-1247-DUP,Purchase,Meat & Poultry Purchases,164138.40,,Purchase from Maa Services LLP
+2024-08-12,PUR-1247-DUP,Purchase,Sundry Creditors,,164138.40,Purchase from Maa Services LLP
+2024-08-13,BP-1133,Payment,Sundry Creditors,73246.24,,Payment to Bharat Trading Pvt Ltd
+2024-08-13,BP-1133,Payment,HDFC Bank A/c,,73246.24,Payment to Bharat Trading Pvt Ltd
+2024-08-13,BR-1066,Receipt,HDFC Bank A/c,111127.95,,Received from Ritu Choudhary
+2024-08-13,BR-1066,Receipt,Sundry Debtors,,111127.95,Received from Ritu Choudhary
+2024-08-13,BR-1182,Receipt,HDFC Bank A/c,148256.73,,Received from Sunita Reddy
+2024-08-13,BR-1182,Receipt,Sundry Debtors,,148256.73,Received from Sunita Reddy
+2024-08-13,INV-1273,Sales,Sundry Debtors,142229.25,,Being sales to Ritu Choudhary
+2024-08-13,INV-1273,Sales,Restaurant Sales,,142229.25,Being sales to Ritu Choudhary
+2024-08-13,INV-1287,Sales,Sundry Debtors,177751.68,,Being sales to Sunita Gupta
+2024-08-13,INV-1287,Sales,Restaurant Sales,,177751.68,Being sales to Sunita Gupta
+2024-08-13,JV-1017,Journal,Telephone & Internet,99009.49,,Being telephone & internet for the period
+2024-08-13,JV-1017,Journal,HDFC Bank A/c,,99009.49,Being telephone & internet for the period
+2024-08-13,JV-1128,Journal,Printing & Stationery,9421.95,,Being printing & stationery for the period
+2024-08-13,JV-1128,Journal,HDFC Bank A/c,,9421.95,Being printing & stationery for the period
+2024-08-13,JV-1143,Journal,Office Rent,49131.74,,Being office rent for the period
+2024-08-13,JV-1143,Journal,HDFC Bank A/c,,49131.74,Being office rent for the period
+2024-08-13,PUR-1096,Purchase,Vegetable Purchases,22606.29,,Purchase from Ratan Enterprises Industries
+2024-08-13,PUR-1096,Purchase,Sundry Creditors,,22606.29,Purchase from Ratan Enterprises Industries
+2024-08-13,PUR-1171,Purchase,Vegetable Purchases,195476.40,,Purchase from Om Steel Pvt Ltd
+2024-08-13,PUR-1171,Purchase,Sundry Creditors,,195476.40,Purchase from Om Steel Pvt Ltd
+2024-08-13,PUR-1219,Purchase,Spices & Provisions,224290.76,,Purchase from Ganesh Traders & Bros
+2024-08-13,PUR-1219,Purchase,Sundry Creditors,,224290.76,Purchase from Ganesh Traders & Bros
+2024-08-14,BP-1021,Payment,Sundry Creditors,96225.72,,Payment to Maa Works LLP
+2024-08-14,BP-1021,Payment,HDFC Bank A/c,,96225.72,Payment to Maa Works LLP
+2024-08-14,BP-1041,Payment,Sundry Creditors,295692.10,,Payment to Krishna Industries Industries
+2024-08-14,BP-1041,Payment,HDFC Bank A/c,,295692.10,Payment to Krishna Industries Industries
+2024-08-14,BP-1122,Payment,Sundry Creditors,153526.03,,Payment to Om Trading Industries
+2024-08-14,BP-1122,Payment,HDFC Bank A/c,,153526.03,Payment to Om Trading Industries
+2024-08-14,BP-1132,Payment,Sundry Creditors,159157.04,,Payment to Ratan Mills Pvt Ltd
+2024-08-14,BP-1132,Payment,HDFC Bank A/c,,159157.04,Payment to Ratan Mills Pvt Ltd
+2024-08-14,BR-1161,Receipt,HDFC Bank A/c,61114.86,,Received from Ritu Choudhary
+2024-08-14,BR-1161,Receipt,Sundry Debtors,,61114.86,Received from Ritu Choudhary
+2024-08-14,INV-1187,Sales,Sundry Debtors,,,Being sales to Ritu Choudhary
+2024-08-14,INV-1187,Sales,Restaurant Sales,,135903.50,Being sales to Ritu Choudhary
+2024-08-14,INV-1209,Sales,Sundry Debtors,167277.53,,Being sales to Sunita Gupta
+2024-08-14,INV-1209,Sales,Restaurant Sales,,167277.53,Being sales to Sunita Gupta
+2024-08-14,JV-1106,Journal,Bank Charges,20778.95,,Being bank charges for the period
+2024-08-14,JV-1106,Journal,HDFC Bank A/c,,20778.95,Being bank charges for the period
+2024-08-14,JV-1114,Journal,Office Rent,96272.91,,Being office rent for the period
+2024-08-14,JV-1114,Journal,HDFC Bank A/c,,96272.91,Being office rent for the period
+2024-08-14,JV-1134,Journal,Telephone & Internet,63571.39,,Being telephone & internet for the period
+2024-08-14,JV-1134,Journal,HDFC Bank A/c,,63571.39,Being telephone & internet for the period
+2024-08-14,JV-1145,Journal,Postage & Courier,92012.05,,Being postage & courier for the period
+2024-08-14,JV-1145,Journal,HDFC Bank A/c,,92012.05,Being postage & courier for the period
+2024-08-14,PUR-1024,Purchase,Spices & Provisions,220880.29,,Purchase from Om Traders & Bros
+2024-08-14,PUR-1024,Purchase,Sundry Creditors,,220880.29,Purchase from Om Traders & Bros
+2024-08-14,PUR-1211,Purchase,Meat & Poultry Purchases,59037.01,,Purchase from Sai Services Pvt Ltd
+2024-08-14,PUR-1211,Purchase,Sundry Creditors,,59037.01,Purchase from Sai Services Pvt Ltd
+2024-08-15,BP-1038,Payment,Sundry Creditors,27935.43,,Payment to Maa Works LLP
+2024-08-15,BP-1038,Payment,HDFC Bank A/c,,27935.43,Payment to Maa Works LLP
+2024-08-15,BR-1000,Receipt,HDFC Bank A/c,117336.37,,Received from Ritu Choudhary
+2024-08-15,BR-1000,Receipt,Sundry Debtors,,117336.37,Received from Ritu Choudhary
+2024-08-15,BR-1030,Receipt,HDFC Bank A/c,125359.92,,Received from Sunita Gupta
+2024-08-15,BR-1030,Receipt,Sundry Debtors,,125359.92,Received from Sunita Gupta
+2024-08-15,BR-1076,Receipt,HDFC Bank A/c,130512.69,,Received from Ritu Choudhary
+2024-08-15,BR-1076,Receipt,Sundry Debtors,,130512.69,Received from Ritu Choudhary
+2024-08-15,INV-1037,Sales,Sundry Debtors,64859.54,,Being sales to Ritu Choudhary
+2024-08-15,INV-1037,Sales,Restaurant Sales,,64859.54,Being sales to Ritu Choudhary
+2024-08-15,INV-1090,Sales,Sundry Debtors,39183.48,,Being sales to Sunita Reddy
+2024-08-15,INV-1090,Sales,Restaurant Sales,,39183.48,Being sales to Sunita Reddy
+2024-08-15,INV-1108,Sales,Sundry Debtors,81839.27,,Being sales to Sunita Gupta
+2024-08-15,INV-1108,Sales,Restaurant Sales,,81839.27,Being sales to Sunita Gupta
+2024-08-15,JV-1021,Journal,Printing & Stationery,89526.20,,Being printing & stationery for the period
+2024-08-15,JV-1021,Journal,HDFC Bank A/c,,89526.20,Being printing & stationery for the period
+2024-08-15,JV-1042,Journal,Postage & Courier,43967.50,,Being postage & courier for the period
+2024-08-15,JV-1042,Journal,HDFC Bank A/c,,43967.50,Being postage & courier for the period
+2024-08-15,PUR-1007,Purchase,Kitchen Wages,174173.22,,Purchase from Om Mills LLP
+2024-08-15,PUR-1007,Purchase,Sundry Creditors,,174173.22,Purchase from Om Mills LLP
+2024-08-15,PUR-1013,Purchase,Kitchen Wages,226710.00,,Purchase from Maa Works & Bros
+2024-08-15,PUR-1013,Purchase,Sundry Creditors,,226710.00,Purchase from Maa Works & Bros
+2024-08-16,BP-1059,Payment,Sundry Creditors,144686.70,,Payment to Bharat Trading Pvt Ltd
+2024-08-16,BP-1059,Payment,HDFC Bank A/c,,144686.70,Payment to Bharat Trading Pvt Ltd
+2024-08-16,BP-1090,Payment,Sundry Creditors,222154.73,,Payment to Sai Services Pvt Ltd
+2024-08-16,BP-1090,Payment,HDFC Bank A/c,,222154.73,Payment to Sai Services Pvt Ltd
+2024-08-16,BR-1061,Receipt,HDFC Bank A/c,53507.65,,Received from Sunita Gupta
+2024-08-16,BR-1061,Receipt,Sundry Debtors,,53507.65,Received from Sunita Gupta
+2024-08-16,BR-1083,Receipt,HDFC Bank A/c,142919.68,,Received from Pooja Patel
+2024-08-16,BR-1083,Receipt,Sundry Debtors,,142919.68,Received from Pooja Patel
+2024-08-16,BR-1093,Receipt,HDFC Bank A/c,107181.39,,Received from Pooja Patel
+2024-08-16,BR-1093,Receipt,Sundry Debtors,,107181.39,Received from Pooja Patel
+2024-08-16,INV-1002,Sales,Sundry Debtors,46915.04,,Being sales to Sunita Gupta
+2024-08-16,INV-1002,Sales,Restaurant Sales,,46915.04,Being sales to Sunita Gupta
+2024-08-16,INV-1081,Sales,Sundry Debtors,32883.32,,Being sales to Sunita Reddy
+2024-08-16,INV-1081,Sales,Restaurant Sales,,32883.32,Being sales to Sunita Reddy
+2024-08-16,INV-1241,Sales,Sundry Debtors,55002.75,,Being sales to Sunita Gupta
+2024-08-16,INV-1241,Sales,Restaurant Sales,,55002.75,Being sales to Sunita Gupta
+2024-08-16,INV-1281,Sales,Sundry Debtors,131226.65,,Being sales to Sunita Reddy
+2024-08-16,INV-1281,Sales,Restaurant Sales,,131226.65,Being sales to Sunita Reddy
+2024-08-16,JV-1015,Journal,Salaries & Wages,64661.12,,Being salaries & wages for the period
+2024-08-16,JV-1015,Journal,HDFC Bank A/c,,64661.12,Being salaries & wages for the period
+2024-08-16,JV-1020,Journal,Bank Charges,60500.87,,Being bank charges for the period
+2024-08-16,JV-1020,Journal,HDFC Bank A/c,,60500.87,Being bank charges for the period
+2024-08-16,JV-1111,Journal,Diwali Bonus to Staff,394214.16,,Being diwali bonus to staff for the period
+2024-08-16,JV-1111,Journal,HDFC Bank A/c,,49276.77,Being diwali bonus to staff for the period
+2024-08-16,JV-1130,Journal,Bank Charges,75791.62,,Being bank charges for the period
+2024-08-16,JV-1130,Journal,HDFC Bank A/c,,75791.62,Being bank charges for the period
+2024-08-16,PUR-1045,Purchase,Spices & Provisions,25821.89,,Purchase from Krishna Agencies & Co
+2024-08-16,PUR-1045,Purchase,Sundry Creditors,,25821.89,Purchase from Krishna Agencies & Co
+2024-08-16,PUR-1070,Purchase,Kitchen Wages,240668.38,,Purchase from Krishna Suppliers Pvt Ltd
+2024-08-16,PUR-1070,Purchase,Sundry Creditors,,240668.38,Purchase from Krishna Suppliers Pvt Ltd
+2024-08-16,PUR-1201,Purchase,Kitchen Wages,255692.44,,Purchase from Bharat Trading Pvt Ltd
+2024-08-16,PUR-1201,Purchase,Sundry Creditors,,255692.44,Purchase from Bharat Trading Pvt Ltd
+2024-08-17,BP-1077,Payment,Sundry Creditors,44461.42,,Payment to Sai Services Pvt Ltd
+2024-08-17,BP-1077,Payment,HDFC Bank A/c,,44461.42,Payment to Sai Services Pvt Ltd
+2024-08-17,BR-1115,Receipt,HDFC Bank A/c,179938.77,,Received from Sunita Gupta
+2024-08-17,BR-1115,Receipt,Sundry Debtors,,179938.77,Received from Sunita Gupta
+2024-08-17,INV-1052,Sales,Sundry Debtors,78151.44,,Being sales to Sunita Reddy
+2024-08-17,INV-1052,Sales,Restaurant Sales,,78151.44,Being sales to Sunita Reddy
+2024-08-17,INV-1070,Sales,Sundry Debtors,77010.85,,Being sales to Ritu Choudhary
+2024-08-17,INV-1070,Sales,Restaurant Sales,,77010.85,Being sales to Ritu Choudhary
+2024-08-17,INV-1133,Sales,Sundry Debtors,179622.64,,Being sales to Sunita Gupta
+2024-08-17,INV-1133,Sales,Restaurant Sales,,179622.64,Being sales to Sunita Gupta
+2024-08-17,INV-1168,Sales,Sundry Debtors,150164.46,,Being sales to Sunita Reddy
+2024-08-17,INV-1168,Sales,Restaurant Sales,,150164.46,Being sales to Sunita Reddy
+2024-08-17,INV-1186,Sales,Sundry Debtors,125359.87,,Being sales to Sunita Gupta
+2024-08-17,INV-1186,Sales,Restaurant Sales,,125359.87,Being sales to Sunita Gupta
+2024-08-17,JV-1040,Journal,Diwali Bonus to Staff,792838.80,,Being diwali bonus to staff for the period
+2024-08-17,JV-1040,Journal,HDFC Bank A/c,,99104.85,Being diwali bonus to staff for the period
+2024-08-17,JV-1150,Journal,Postage & Courier,71294.98,,Being postage & courier for the period
+2024-08-17,JV-1150,Journal,HDFC Bank A/c,,71294.98,Being postage & courier for the period
+2024-08-17,PUR-1002,Purchase,Spices & Provisions,228038.23,,Purchase from Shree Traders & Co
+2024-08-17,PUR-1002,Purchase,Sundry Creditors,,228038.23,Purchase from Shree Traders & Co
+2024-08-17,PUR-1036,Purchase,Meat & Poultry Purchases,276272.43,,Purchase from Om Trading Industries
+2024-08-17,PUR-1036,Purchase,Sundry Creditors,,276272.43,Purchase from Om Trading Industries
+2024-08-17,PUR-1243,Purchase,Vegetable Purchases,418696.98,,Purchase from Shree Trading Group
+2024-08-17,PUR-1243,Purchase,Sundry Creditors,,261685.61,Purchase from Shree Trading Group
+2024-08-18,BR-1015,Receipt,HDFC Bank A/c,86256.55,,Received from Sunita Gupta
+2024-08-18,BR-1015,Receipt,Sundry Debtors,,86256.55,Received from Sunita Gupta
+2024-08-18,BR-1069,Receipt,HDFC Bank A/c,23140.76,,Received from Sunita Reddy
+2024-08-18,BR-1069,Receipt,Sundry Debtors,,23140.76,Received from Sunita Reddy
+2024-08-18,INV-1138,Sales,Sundry Debtors,31646.89,,Being sales to Pooja Patel
+2024-08-18,INV-1138,Sales,Restaurant Sales,,31646.89,Being sales to Pooja Patel
+2024-08-18,INV-1170,Sales,Sundry Debtors,5137.80,,Being sales to Ritu Choudhary
+2024-08-18,INV-1170,Sales,Restaurant Sales,,5137.80,Being sales to Ritu Choudhary
+2024-08-18,INV-1181,Sales,Sundry Debtors,74974.05,,Being sales to Sunita Gupta
+2024-08-18,INV-1181,Sales,Restaurant Sales,,74974.05,Being sales to Sunita Gupta
+2024-08-18,INV-1194,Sales,Sundry Debtors,39742.47,,Being sales to Pooja Patel
+2024-08-18,INV-1194,Sales,Restaurant Sales,,39742.47,Being sales to Pooja Patel
+2024-08-18,INV-1219,Sales,Sundry Debtors,95128.57,,Being sales to Sunita Gupta
+2024-08-18,INV-1219,Sales,Restaurant Sales,,95128.57,Being sales to Sunita Gupta
+2024-08-18,JV-1039,Journal,Audit Fees,14044.82,,Being audit fees for the period
+2024-08-18,JV-1039,Journal,HDFC Bank A/c,,14044.82,Being audit fees for the period
+2024-08-18,JV-X153,Journal,Round Off,6207.02,,Unknown adjustment
+2024-08-18,JV-X153,Journal,HDFC Bank A/c,,6207.02,Unknown adjustment
+2024-08-18,PUR-1009,Purchase,Spices & Provisions,250566.83,,Purchase from Ganesh Agencies Pvt Ltd
+2024-08-18,PUR-1009,Purchase,Sundry Creditors,,250566.83,Purchase from Ganesh Agencies Pvt Ltd
+2024-08-18,PUR-1110,Purchase,Vegetable Purchases,290162.42,,Purchase from Sai Suppliers LLP
+2024-08-18,PUR-1110,Purchase,Sundry Creditors,,181351.51,Purchase from Sai Suppliers LLP
+2024-08-19,BP-1014,Payment,Sundry Creditors,11188.47,,Payment to Om Steel Pvt Ltd
+2024-08-19,BP-1014,Payment,HDFC Bank A/c,,11188.47,Payment to Om Steel Pvt Ltd
+2024-08-19,BP-1130,Payment,Sundry Creditors,219316.29,,Payment to Ganesh Traders & Bros
+2024-08-19,BP-1130,Payment,HDFC Bank A/c,,219316.29,Payment to Ganesh Traders & Bros
+2024-08-19,BR-1169,Receipt,HDFC Bank A/c,180270.38,,Received from Ritu Choudhary
+2024-08-19,BR-1169,Receipt,Sundry Debtors,,180270.38,Received from Ritu Choudhary
+2024-08-19,INV-1039,Sales,Sundry Debtors,113616.34,,Being sales to Ritu Choudhary
+2024-08-19,INV-1039,Sales,Restaurant Sales,,113616.34,Being sales to Ritu Choudhary
+2024-08-19,INV-1066,Sales,Sundry Debtors,104201.38,,Being sales to Sunita Reddy
+2024-08-19,INV-1066,Sales,Restaurant Sales,,104201.38,Being sales to Sunita Reddy
+2024-08-19,INV-1184,Sales,Sundry Debtors,74443.18,,Being sales to Pooja Patel
+2024-08-19,INV-1184,Sales,Restaurant Sales,,74443.18,Being sales to Pooja Patel
+2024-08-19,INV-1192,Sales,Sundry Debtors,134585.67,,Being sales to Sunita Gupta
+2024-08-19,INV-1192,Sales,Restaurant Sales,,134585.67,Being sales to Sunita Gupta
+2024-08-19,INV-1245,Sales,Sundry Debtors,158552.98,,Being sales to Ritu Choudhary
+2024-08-19,INV-1245,Sales,Restaurant Sales,,158552.98,Being sales to Ritu Choudhary
+2024-08-19,INV-1253,Sales,Sundry Debtors,69597.92,,Being sales to Sunita Reddy
+2024-08-19,INV-1253,Sales,Restaurant Sales,,69597.92,Being sales to Sunita Reddy
+2024-08-19,INV-1297,Sales,Sundry Debtors,95142.65,,Being sales to Sunita Gupta
+2024-08-19,INV-1297,Sales,Restaurant Sales,,95142.65,Being sales to Sunita Gupta
+2024-08-19,JV-1003,Journal,Salaries & Wages,70891.95,,Being salaries & wages for the period
+2024-08-19,JV-1003,Journal,HDFC Bank A/c,,70891.95,Being salaries & wages for the period
+2024-08-19,JV-1019,Journal,Postage & Courier,61193.01,,Being postage & courier for the period
+2024-08-19,JV-1019,Journal,HDFC Bank A/c,,61193.01,Being postage & courier for the period
+2024-08-19,PUR-1094,Purchase,Kitchen Wages,9851.07,,Purchase from Om Steel Pvt Ltd
+2024-08-19,PUR-1094,Purchase,Sundry Creditors,,9851.07,Purchase from Om Steel Pvt Ltd
+2024-08-19,PUR-1125,Purchase,Vegetable Purchases,83182.27,,Purchase from Ratan Enterprises Group
+2024-08-19,PUR-1125,Purchase,Sundry Creditors,,51988.92,Purchase from Ratan Enterprises Group
+2024-08-19,PUR-1193,Purchase,Kitchen Wages,148579.18,,Purchase from Om Steel Pvt Ltd
+2024-08-19,PUR-1193,Purchase,Sundry Creditors,,148579.18,Purchase from Om Steel Pvt Ltd
+2024-08-20,BR-1156,Receipt,HDFC Bank A/c,122682.49,,Received from Pooja Patel
+2024-08-20,BR-1156,Receipt,Sundry Debtors,,122682.49,Received from Pooja Patel
+2024-08-20,BR-1176,Receipt,HDFC Bank A/c,177716.52,,Received from Ritu Choudhary
+2024-08-20,BR-1176,Receipt,Sundry Debtors,,177716.52,Received from Ritu Choudhary
+2024-08-20,INV-1150,Sales,Sundry Debtors,159701.44,,Being sales to Sunita Reddy
+2024-08-20,INV-1150,Sales,Restaurant Sales,,159701.44,Being sales to Sunita Reddy
+2024-08-20,INV-1186-DUP,Sales,Sundry Debtors,125359.87,,Being sales to Sunita Gupta
+2024-08-20,INV-1186-DUP,Sales,Restaurant Sales,,125359.87,Being sales to Sunita Gupta
+2024-08-20,INV-1310,Sales,Sundry Debtors,106976.79,,Being sales to Sunita Gupta
+2024-08-20,INV-1310,Sales,Restaurant Sales,,106976.79,Being sales to Sunita Gupta
+2024-08-20,JV-1101,Journal,Printing & Stationery,66384.14,,Being printing & stationery for the period
+2024-08-20,JV-1101,Journal,HDFC Bank A/c,,66384.14,Being printing & stationery for the period
+2024-08-20,PUR-1023,Purchase,Kitchen Wages,74216.41,,Purchase from Shree Trading Group
+2024-08-20,PUR-1023,Purchase,Sundry Creditors,,74216.41,Purchase from Shree Trading Group
+2024-08-20,PUR-1147,Purchase,Vegetable Purchases,410232.18,,Purchase from Sai Industries Industries
+2024-08-20,PUR-1147,Purchase,Sundry Creditors,,256395.11,Purchase from Sai Industries Industries
+2024-08-20,PUR-1234,Purchase,Kitchen Wages,296262.38,,Purchase from Om Steel Pvt Ltd
+2024-08-20,PUR-1234,Purchase,Sundry Creditors,,296262.38,Purchase from Om Steel Pvt Ltd
+2024-08-20,PUR-1248,Purchase,Spices & Provisions,37964.81,,Purchase from Maa Services LLP
+2024-08-20,PUR-1248,Purchase,Sundry Creditors,,37964.81,Purchase from Maa Services LLP
+2024-08-21,BP-1042,Payment,Sundry Creditors,270457.61,,Payment to Krishna Industries Industries
+2024-08-21,BP-1042,Payment,HDFC Bank A/c,,270457.61,Payment to Krishna Industries Industries
+2024-08-21,BR-1073,Receipt,HDFC Bank A/c,248087.96,,Received from Sunita Reddy
+2024-08-21,BR-1073,Receipt,Sundry Debtors,,248087.96,Received from Sunita Reddy
+2024-08-21,BR-1153,Receipt,HDFC Bank A/c,193768.23,,Received from Sunita Reddy
+2024-08-21,BR-1153,Receipt,Sundry Debtors,,193768.23,Received from Sunita Reddy
+2024-08-21,BR-1180,Receipt,HDFC Bank A/c,247615.67,,Received from Sunita Reddy
+2024-08-21,BR-1180,Receipt,Sundry Debtors,,247615.67,Received from Sunita Reddy
+2024-08-21,INV-1028,Sales,Sundry Debtors,161779.51,,
+2024-08-21,INV-1028,Sales,Restaurant Sales,,161779.51,Being sales to Sunita Reddy
+2024-08-21,INV-1092,Sales,Sundry Debtors,13842.24,,Being sales to Sunita Gupta
+2024-08-21,INV-1092,Sales,Restaurant Sales,,13842.24,Being sales to Sunita Gupta
+2024-08-21,INV-1103,Sales,Sundry Debtors,58443.30,,Being sales to Sunita Gupta
+2024-08-21,INV-1103,Sales,Restaurant Sales,,58443.30,Being sales to Sunita Gupta
+2024-08-21,INV-1206,Sales,Sundry Debtors,51841.38,,Being sales to Pooja Patel
+2024-08-21,INV-1206,Sales,Restaurant Sales,,51841.38,Being sales to Pooja Patel
+2024-08-21,INV-1208,Sales,Sundry Debtors,70329.78,,Being sales to Pooja Patel
+2024-08-21,INV-1208,Sales,Restaurant Sales,,70329.78,Being sales to Pooja Patel
+2024-08-21,INV-1327,Sales,Sundry Debtors,106499.68,,Being sales to Pooja Patel
+2024-08-21,INV-1327,Sales,Restaurant Sales,,106499.68,Being sales to Pooja Patel
+2024-08-21,PUR-1084,Purchase,Spices & Provisions,276808.37,,Purchase from Om Steel Pvt Ltd
+2024-08-21,PUR-1084,Purchase,Sundry Creditors,,276808.37,Purchase from Om Steel Pvt Ltd
+2024-08-21,PUR-1177,Purchase,Meat & Poultry Purchases,151571.17,,Purchase from Om Steel Pvt Ltd
+2024-08-21,PUR-1177,Purchase,Sundry Creditors,,151571.17,Purchase from Om Steel Pvt Ltd
+2024-08-21,PUR-1222,Purchase,Meat & Poultry Purchases,248899.17,,Purchase from Shree Traders & Co
+2024-08-21,PUR-1222,Purchase,Sundry Creditors,,248899.17,Purchase from Shree Traders & Co
+2024-08-22,BP-1088,Payment,Sundry Creditors,133256.22,,Payment to Om Steel Pvt Ltd
+2024-08-22,BP-1088,Payment,HDFC Bank A/c,,133256.22,Payment to Om Steel Pvt Ltd
+2024-08-22,BR-1006,Receipt,HDFC Bank A/c,46057.76,,Received from Sunita Reddy
+2024-08-22,BR-1006,Receipt,Sundry Debtors,,46057.76,Received from Sunita Reddy
+2024-08-22,BR-1013,Receipt,HDFC Bank A/c,245337.47,,Received from Sunita Gupta
+2024-08-22,BR-1013,Receipt,Sundry Debtors,,245337.47,Received from Sunita Gupta
+2024-08-22,BR-1031,Receipt,HDFC Bank A/c,235386.88,,Received from Ritu Choudhary
+2024-08-22,BR-1031,Receipt,Sundry Debtors,,235386.88,Received from Ritu Choudhary
+2024-08-22,BR-1062,Receipt,HDFC Bank A/c,99048.55,,Received from Ritu Choudhary
+2024-08-22,BR-1062,Receipt,Sundry Debtors,,99048.55,Received from Ritu Choudhary
+2024-08-22,INV-1121,Sales,Sundry Debtors,195641.85,,Being sales to Sunita Reddy
+2024-08-22,INV-1121,Sales,Restaurant Sales,,195641.85,Being sales to Sunita Reddy
+2024-08-22,INV-1224,Sales,Sundry Debtors,66799.06,,Being sales to Sunita Gupta
+2024-08-22,INV-1224,Sales,Restaurant Sales,,66799.06,Being sales to Sunita Gupta
+2024-08-22,INV-1298,Sales,Sundry Debtors,84381.50,,Being sales to Ritu Choudhary
+2024-08-22,INV-1298,Sales,Restaurant Sales,,84381.50,Being sales to Ritu Choudhary
+2024-08-22,JV-1059,Journal,Travelling Expenses,16131.94,,Being travelling expenses for the period
+2024-08-22,JV-1059,Journal,HDFC Bank A/c,,16131.94,Being travelling expenses for the period
+2024-08-22,JV-1117,Journal,Travelling Expenses,91872.63,,Being travelling expenses for the period
+2024-08-22,JV-1117,Journal,HDFC Bank A/c,,91872.63,Being travelling expenses for the period
+2024-08-22,PUR-1168,Purchase,Spices & Provisions,34861.88,,Purchase from Sai Traders Group
+2024-08-22,PUR-1168,Purchase,Sundry Creditors,,34861.88,Purchase from Sai Traders Group
+2024-08-22,PUR-1204,Purchase,Kitchen Wages,169611.06,,Purchase from Om Traders & Bros
+2024-08-22,PUR-1204,Purchase,Sundry Creditors,,169611.06,Purchase from Om Traders & Bros
+2024-08-22,PUR-1223,Purchase,Kitchen Wages,231853.21,,Purchase from Sai Suppliers LLP
+2024-08-22,PUR-1223,Purchase,Sundry Creditors,,231853.21,Purchase from Sai Suppliers LLP
+2024-08-22,PUR-1264,Purchase,Spices & Provisions,97151.49,,Purchase from Bharat Trading Pvt Ltd
+2024-08-22,PUR-1264,Purchase,Sundry Creditors,,97151.49,Purchase from Bharat Trading Pvt Ltd
+2024-08-23,BP-1091,Payment,Sundry Creditors,203535.96,,Payment to Om Mills LLP
+2024-08-23,BP-1091,Payment,HDFC Bank A/c,,203535.96,Payment to Om Mills LLP
+2024-08-23,BR-1033,Receipt,HDFC Bank A/c,170920.40,,Received from Sunita Gupta
+2024-08-23,BR-1033,Receipt,Sundry Debtors,,170920.40,Received from Sunita Gupta
+2024-08-23,BR-1048,Receipt,HDFC Bank A/c,141383.72,,Received from Sunita Reddy
+2024-08-23,BR-1048,Receipt,Sundry Debtors,,141383.72,Received from Sunita Reddy
+2024-08-23,INV-1012,Sales,Sundry Debtors,189369.71,,Being sales to Pooja Patel
+2024-08-23,INV-1012,Sales,Restaurant Sales,,189369.71,Being sales to Pooja Patel
+2024-08-23,INV-1134,Sales,Sundry Debtors,28605.56,,Being sales to Ritu Choudhary
+2024-08-23,INV-1134,Sales,Restaurant Sales,,28605.56,Being sales to Ritu Choudhary
+2024-08-23,INV-1203,Sales,Sundry Debtors,123515.49,,Being sales to Sunita Reddy
+2024-08-23,INV-1203,Sales,Restaurant Sales,,123515.49,Being sales to Sunita Reddy
+2024-08-23,INV-1259,Sales,Sundry Debtors,107353.78,,Being sales to Sunita Reddy
+2024-08-23,INV-1259,Sales,Restaurant Sales,,107353.78,Being sales to Sunita Reddy
+2024-08-23,INV-1261,Sales,Sundry Debtors,27360.94,,Being sales to Ritu Choudhary
+2024-08-23,INV-1261,Sales,Restaurant Sales,,27360.94,Being sales to Ritu Choudhary
+2024-08-23,INV-1302,Sales,Sundry Debtors,112681.37,,Being sales to Ritu Choudhary
+2024-08-23,INV-1302,Sales,Restaurant Sales,,112681.37,Being sales to Ritu Choudhary
+2024-08-23,JV-1004,Journal,Office Rent,58684.91,,Being office rent for the period
+2024-08-23,JV-1004,Journal,HDFC Bank A/c,,58684.91,Being office rent for the period
+2024-08-23,JV-1054,Journal,Telephone & Internet,2774.15,,Being telephone & internet for the period
+2024-08-23,JV-1054,Journal,HDFC Bank A/c,,2774.15,Being telephone & internet for the period
+2024-08-23,JV-1142,Journal,Travelling Expenses,35888.16,,Being travelling expenses for the period
+2024-08-23,JV-1142,Journal,HDFC Bank A/c,,35888.16,Being travelling expenses for the period
+2024-08-23,PUR-1172,Purchase,Meat & Poultry Purchases,121770.81,,Purchase from Krishna Industries Industries
+2024-08-23,PUR-1172,Purchase,Sundry Creditors,,121770.81,Purchase from Krishna Industries Industries
+2024-08-23,PUR-1180,Purchase,Meat & Poultry Purchases,183131.18,,Purchase from Ganesh Agencies Pvt Ltd
+2024-08-23,PUR-1180,Purchase,Sundry Creditors,,183131.18,Purchase from Ganesh Agencies Pvt Ltd
+2024-08-23,PUR-1215,Purchase,Kitchen Wages,231322.27,,Purchase from Krishna Agencies & Co
+2024-08-23,PUR-1215,Purchase,Sundry Creditors,,231322.27,Purchase from Krishna Agencies & Co
+2024-08-24,BP-1001,Payment,Sundry Creditors,216450.79,,Payment to Om Traders & Bros
+2024-08-24,BP-1001,Payment,HDFC Bank A/c,,216450.79,Payment to Om Traders & Bros
+2024-08-24,BP-1084,Payment,Sundry Creditors,35493.39,,Payment to Om Trading Industries
+2024-08-24,BP-1084,Payment,HDFC Bank A/c,,35493.39,Payment to Om Trading Industries
+2024-08-24,BR-1016,Receipt,HDFC Bank A/c,154063.89,,Received from Ritu Choudhary
+2024-08-24,BR-1016,Receipt,Sundry Debtors,,154063.89,Received from Ritu Choudhary
+2024-08-24,BR-1087,Receipt,HDFC Bank A/c,141834.24,,Received from Sunita Reddy
+2024-08-24,BR-1087,Receipt,Sundry Debtors,,141834.24,Received from Sunita Reddy
+2024-08-24,BR-1103,Receipt,HDFC Bank A/c,162886.44,,Received from Pooja Patel
+2024-08-24,BR-1103,Receipt,Sundry Debtors,,162886.44,Received from Pooja Patel
+2024-08-24,BR-1149,Receipt,HDFC Bank A/c,47155.94,,Received from Sunita Gupta
+2024-08-24,BR-1149,Receipt,Sundry Debtors,,47155.94,Received from Sunita Gupta
+2024-08-24,INV-1064,Sales,Sundry Debtors,188799.42,,Being sales to Ritu Choudhary
+2024-08-24,INV-1064,Sales,Restaurant Sales,,188799.42,Being sales to Ritu Choudhary
+2024-08-24,INV-1072,Sales,Sundry Debtors,81384.13,,Being sales to Pooja Patel
+2024-08-24,INV-1072,Sales,Restaurant Sales,,81384.13,Being sales to Pooja Patel
+2024-08-24,INV-1135,Sales,Sundry Debtors,103085.11,,Being sales to Ritu Choudhary
+2024-08-24,INV-1135,Sales,Restaurant Sales,,103085.11,Being sales to Ritu Choudhary
+2024-08-24,INV-1140,Sales,Sundry Debtors,121561.28,,Being sales to Sunita Reddy
+2024-08-24,INV-1140,Sales,Restaurant Sales,,121561.28,Being sales to Sunita Reddy
+2024-08-24,INV-1238,Sales,Sundry Debtors,170034.75,,Being sales to Sunita Gupta
+2024-08-24,INV-1238,Sales,Restaurant Sales,,170034.75,Being sales to Sunita Gupta
+2024-08-24,JV-1019-DUP,Journal,Postage & Courier,61193.01,,Being postage & courier for the period
+2024-08-24,JV-1019-DUP,Journal,HDFC Bank A/c,,61193.01,Being postage & courier for the period
+2024-08-24,JV-1069,Journal,Postage & Courier,11272.35,,Being postage & courier for the period
+2024-08-24,JV-1069,Journal,HDFC Bank A/c,,11272.35,Being postage & courier for the period
+2024-08-24,PUR-1000,Purchase,Kitchen Wages,202469.29,,Purchase from Maa Works LLP
+2024-08-24,PUR-1000,Purchase,Sundry Creditors,,202469.29,Purchase from Maa Works LLP
+2024-08-24,PUR-1064,Purchase,Kitchen Wages,91906.89,,Purchase from Ganesh Agencies Pvt Ltd
+2024-08-24,PUR-1064,Purchase,Sundry Creditors,,91906.89,Purchase from Ganesh Agencies Pvt Ltd
+2024-08-24,PUR-1113,Purchase,Spices & Provisions,168669.59,,Purchase from Krishna Suppliers Pvt Ltd
+2024-08-24,PUR-1113,Purchase,Sundry Creditors,,168669.59,Purchase from Krishna Suppliers Pvt Ltd
+2024-08-24,PUR-1134,Purchase,Vegetable Purchases,75569.65,,Purchase from Krishna Suppliers Pvt Ltd
+2024-08-24,PUR-1134,Purchase,Sundry Creditors,,47231.03,Purchase from Krishna Suppliers Pvt Ltd
+2024-08-24,PUR-1156,Purchase,Meat & Poultry Purchases,52500.32,,Purchase from Om Steel Pvt Ltd
+2024-08-24,PUR-1156,Purchase,Sundry Creditors,,52500.32,Purchase from Om Steel Pvt Ltd
+2024-08-24,PUR-1249,Purchase,Meat & Poultry Purchases,40442.27,,Purchase from Bharat Trading Pvt Ltd
+2024-08-24,PUR-1249,Purchase,Sundry Creditors,,40442.27,Purchase from Bharat Trading Pvt Ltd
+2024-08-25,BR-1071,Receipt,HDFC Bank A/c,236527.48,,Received from Sunita Gupta
+2024-08-25,BR-1071,Receipt,Sundry Debtors,,236527.48,Received from Sunita Gupta
+2024-08-25,INV-1172,Sales,Sundry Debtors,171528.44,,Being sales to Pooja Patel
+2024-08-25,INV-1172,Sales,Restaurant Sales,,171528.44,Being sales to Pooja Patel
+2024-08-25,INV-1231,Sales,Sundry Debtors,160282.64,,Being sales to Sunita Reddy
+2024-08-25,INV-1231,Sales,Restaurant Sales,,160282.64,Being sales to Sunita Reddy
+2024-08-25,INV-1242,Sales,Sundry Debtors,6422.55,,Being sales to Sunita Gupta
+2024-08-25,INV-1242,Sales,Restaurant Sales,,6422.55,Being sales to Sunita Gupta
+2024-08-25,JV-X433,Journal,Temp Holding,5277.12,,Unknown adjustment
+2024-08-25,JV-X433,Journal,HDFC Bank A/c,,5277.12,Unknown adjustment
+2024-08-25,PUR-1063,Purchase,Vegetable Purchases,275805.14,,Purchase from Sai Industries Industries
+2024-08-25,PUR-1063,Purchase,Sundry Creditors,,172378.21,
+2024-08-25,PUR-1119,Purchase,Kitchen Wages,249653.08,,Purchase from Bharat Trading Pvt Ltd
+2024-08-25,PUR-1119,Purchase,Sundry Creditors,,249653.08,Purchase from Bharat Trading Pvt Ltd
+2024-08-25,PUR-1179,Purchase,Spices & Provisions,294062.22,,Purchase from Sai Services Pvt Ltd
+2024-08-25,PUR-1179,Purchase,Sundry Creditors,,294062.22,Purchase from Sai Services Pvt Ltd
+2024-08-25,PUR-1207,Purchase,Spices & Provisions,136133.07,,Purchase from Shree Works Pvt Ltd
+2024-08-25,PUR-1207,Purchase,Sundry Creditors,,136133.07,Purchase from Shree Works Pvt Ltd
+2024-08-25,PUR-1212,Purchase,Kitchen Wages,28789.60,,Purchase from Ratan Mills Pvt Ltd
+2024-08-25,PUR-1212,Purchase,Sundry Creditors,,28789.60,Purchase from Ratan Mills Pvt Ltd
+2024-08-25,PUR-1257,Purchase,Kitchen Wages,274738.55,,Purchase from Shree Trading Group
+2024-08-25,PUR-1257,Purchase,Sundry Creditors,,274738.55,Purchase from Shree Trading Group
+2024-08-26,BP-1025,Payment,Sundry Creditors,299471.28,,Payment to Ganesh Agencies Pvt Ltd
+2024-08-26,BP-1025,Payment,HDFC Bank A/c,,299471.28,Payment to Ganesh Agencies Pvt Ltd
+2024-08-26,BP-1138,Payment,Sundry Creditors,247718.52,,Payment to Sai Traders Group
+2024-08-26,BP-1138,Payment,HDFC Bank A/c,,247718.52,Payment to Sai Traders Group
+2024-08-26,BR-1021,Receipt,HDFC Bank A/c,120456.98,,Received from Sunita Reddy
+2024-08-26,BR-1021,Receipt,Sundry Debtors,,120456.98,Received from Sunita Reddy
+2024-08-26,INV-1059,Sales,Sundry Debtors,32848.43,,
+2024-08-26,INV-1059,Sales,Restaurant Sales,,32848.43,Being sales to Sunita Reddy
+2024-08-26,INV-1114,Sales,Sundry Debtors,44871.25,,Being sales to Pooja Patel
+2024-08-26,INV-1114,Sales,Restaurant Sales,,44871.25,Being sales to Pooja Patel
+2024-08-26,INV-1147,Sales,Sundry Debtors,80486.12,,Being sales to Sunita Reddy
+2024-08-26,INV-1147,Sales,Restaurant Sales,,80486.12,Being sales to Sunita Reddy
+2024-08-26,INV-1158,Sales,Sundry Debtors,92025.15,,Being sales to Sunita Gupta
+2024-08-26,INV-1158,Sales,Restaurant Sales,,92025.15,Being sales to Sunita Gupta
+2024-08-26,INV-1183,Sales,Sundry Debtors,15586.80,,Being sales to Sunita Gupta
+2024-08-26,INV-1183,Sales,Restaurant Sales,,15586.80,Being sales to Sunita Gupta
+2024-08-26,JV-1041,Journal,Salaries & Wages,11379.30,,Being salaries & wages for the period
+2024-08-26,JV-1041,Journal,HDFC Bank A/c,,11379.30,Being salaries & wages for the period
+2024-08-26,JV-1046,Journal,Bank Charges,89827.60,,Being bank charges for the period
+2024-08-26,JV-1046,Journal,HDFC Bank A/c,,89827.60,Being bank charges for the period
+2024-08-26,JV-1074,Journal,Telephone & Internet,48540.41,,Being telephone & internet for the period
+2024-08-26,JV-1074,Journal,HDFC Bank A/c,,48540.41,Being telephone & internet for the period
+2024-08-26,JV-1084,Journal,Salaries & Wages,52789.20,,Being salaries & wages for the period
+2024-08-26,JV-1084,Journal,HDFC Bank A/c,,52789.20,Being salaries & wages for the period
+2024-08-26,JV-1152,Journal,Audit Fees,50038.26,,Being audit fees for the period
+2024-08-26,JV-1152,Journal,HDFC Bank A/c,,50038.26,Being audit fees for the period
+2024-08-26,PUR-1072,Purchase,Kitchen Wages,86587.37,,Purchase from Maa Works & Bros
+2024-08-26,PUR-1072,Purchase,Sundry Creditors,,86587.37,Purchase from Maa Works & Bros
+2024-08-26,PUR-1234-DUP,Purchase,Kitchen Wages,296262.38,,Purchase from Om Steel Pvt Ltd
+2024-08-26,PUR-1234-DUP,Purchase,Sundry Creditors,,296262.38,Purchase from Om Steel Pvt Ltd
+2024-08-27,BP-1060,Payment,Sundry Creditors,285102.59,,Payment to Krishna Suppliers Pvt Ltd
+2024-08-27,BP-1060,Payment,HDFC Bank A/c,,285102.59,Payment to Krishna Suppliers Pvt Ltd
+2024-08-27,BP-1142,Payment,Sundry Creditors,266637.08,,Payment to Om Steel Pvt Ltd
+2024-08-27,BP-1142,Payment,HDFC Bank A/c,,266637.08,Payment to Om Steel Pvt Ltd
+2024-08-27,BR-1054,Receipt,HDFC Bank A/c,90515.27,,Received from Ritu Choudhary
+2024-08-27,BR-1054,Receipt,Sundry Debtors,,90515.27,Received from Ritu Choudhary
+2024-08-27,BR-1091,Receipt,HDFC Bank A/c,178434.38,,Received from Ritu Choudhary
+2024-08-27,BR-1091,Receipt,Sundry Debtors,,178434.38,Received from Ritu Choudhary
+2024-08-27,BR-1185,Receipt,HDFC Bank A/c,12925.35,,Received from Ritu Choudhary
+2024-08-27,BR-1185,Receipt,Sundry Debtors,,12925.35,Received from Ritu Choudhary
+2024-08-27,INV-1046,Sales,Sundry Debtors,133629.40,,Being sales to Sunita Reddy
+2024-08-27,INV-1046,Sales,Restaurant Sales,,133629.40,Being sales to Sunita Reddy
+2024-08-27,INV-1063,Sales,Sundry Debtors,165754.80,,Being sales to Ritu Choudhary
+2024-08-27,INV-1063,Sales,Restaurant Sales,,165754.80,Being sales to Ritu Choudhary
+2024-08-27,INV-1088,Sales,Sundry Debtors,87431.14,,Being sales to Pooja Patel
+2024-08-27,INV-1088,Sales,Restaurant Sales,,87431.14,Being sales to Pooja Patel
+2024-08-27,INV-1110,Sales,Sundry Debtors,130499.44,,Being sales to Sunita Reddy
+2024-08-27,INV-1110,Sales,Restaurant Sales,,130499.44,Being sales to Sunita Reddy
+2024-08-27,INV-1113,Sales,Sundry Debtors,50124.74,,Being sales to Sunita Gupta
+2024-08-27,INV-1113,Sales,Restaurant Sales,,50124.74,Being sales to Sunita Gupta
+2024-08-27,INV-1144,Sales,Sundry Debtors,145354.97,,Being sales to Ritu Choudhary
+2024-08-27,INV-1144,Sales,Restaurant Sales,,145354.97,Being sales to Ritu Choudhary
+2024-08-27,JV-1082,Journal,Office Rent,26148.47,,Being office rent for the period
+2024-08-27,JV-1082,Journal,HDFC Bank A/c,,26148.47,Being office rent for the period
+2024-08-27,PUR-1010,Purchase,Meat & Poultry Purchases,59628.61,,Purchase from Om Steel Pvt Ltd
+2024-08-27,PUR-1010,Purchase,Sundry Creditors,,59628.61,Purchase from Om Steel Pvt Ltd
+2024-08-27,PUR-1200,Purchase,Vegetable Purchases,255682.14,,Purchase from Ganesh Agencies Pvt Ltd
+2024-08-27,PUR-1200,Purchase,Sundry Creditors,,159801.34,Purchase from Ganesh Agencies Pvt Ltd
+2024-08-27,PUR-1269,Purchase,Kitchen Wages,26008.12,,Purchase from Om Steel Pvt Ltd
+2024-08-27,PUR-1269,Purchase,Sundry Creditors,,26008.12,Purchase from Om Steel Pvt Ltd
+2024-08-28,BP-1013,Payment,Sundry Creditors,70440.47,,Payment to Om Steel Pvt Ltd
+2024-08-28,BP-1013,Payment,HDFC Bank A/c,,70440.47,Payment to Om Steel Pvt Ltd
+2024-08-28,BP-1069,Payment,Sundry Creditors,203038.70,,Payment to Krishna Agencies & Co
+2024-08-28,BP-1069,Payment,HDFC Bank A/c,,203038.70,Payment to Krishna Agencies & Co
+2024-08-28,BP-1094,Payment,Sundry Creditors,226294.13,,Payment to Ratan Mills Pvt Ltd
+2024-08-28,BP-1094,Payment,HDFC Bank A/c,,226294.13,Payment to Ratan Mills Pvt Ltd
+2024-08-28,INV-1023,Sales,Sundry Debtors,2082.93,,Being sales to Ritu Choudhary
+2024-08-28,INV-1023,Sales,Restaurant Sales,,2082.93,Being sales to Ritu Choudhary
+2024-08-28,INV-1079,Sales,Sundry Debtors,44559.94,,Being sales to Pooja Patel
+2024-08-28,INV-1079,Sales,Restaurant Sales,,44559.94,Being sales to Pooja Patel
+2024-08-28,PUR-1176,Purchase,Meat & Poultry Purchases,246116.86,,Purchase from Sai Industries Industries
+2024-08-28,PUR-1176,Purchase,Sundry Creditors,,246116.86,Purchase from Sai Industries Industries
+2024-08-28,PUR-1260,Purchase,Vegetable Purchases,190322.62,,
+2024-08-28,PUR-1260,Purchase,Sundry Creditors,,118951.64,Purchase from Ratan Mills Pvt Ltd
+2024-08-28,PUR-1262,Purchase,Spices & Provisions,25434.63,,Purchase from Krishna Suppliers Pvt Ltd
+2024-08-28,PUR-1262,Purchase,Sundry Creditors,,25434.63,Purchase from Krishna Suppliers Pvt Ltd
+2024-08-29,BR-1101,Receipt,HDFC Bank A/c,96601.78,,Received from Sunita Reddy
+2024-08-29,BR-1101,Receipt,Sundry Debtors,,96601.78,Received from Sunita Reddy
+2024-08-29,BR-1111,Receipt,HDFC Bank A/c,3473.07,,Received from Sunita Gupta
+2024-08-29,BR-1111,Receipt,Sundry Debtors,,3473.07,Received from Sunita Gupta
+2024-08-29,BR-1128,Receipt,HDFC Bank A/c,246676.97,,Received from Sunita Reddy
+2024-08-29,BR-1128,Receipt,Sundry Debtors,,246676.97,Received from Sunita Reddy
+2024-08-29,INV-1086,Sales,Sundry Debtors,137652.37,,Being sales to Pooja Patel
+2024-08-29,INV-1086,Sales,Restaurant Sales,,137652.37,Being sales to Pooja Patel
+2024-08-29,INV-1154,Sales,Sundry Debtors,60115.85,,Being sales to Sunita Gupta
+2024-08-29,INV-1154,Sales,Restaurant Sales,,60115.85,Being sales to Sunita Gupta
+2024-08-29,INV-1161,Sales,Sundry Debtors,4137.08,,Being sales to Ritu Choudhary
+2024-08-29,INV-1161,Sales,Restaurant Sales,,4137.08,Being sales to Ritu Choudhary
+2024-08-29,INV-1250,Sales,Sundry Debtors,191294.74,,Being sales to Sunita Reddy
+2024-08-29,INV-1250,Sales,Restaurant Sales,,191294.74,Being sales to Sunita Reddy
+2024-08-29,INV-1268,Sales,Sundry Debtors,174647.65,,Being sales to Ritu Choudhary
+2024-08-29,INV-1268,Sales,Restaurant Sales,,174647.65,Being sales to Ritu Choudhary
+2024-08-29,INV-1303,Sales,Sundry Debtors,67757.61,,Being sales to Pooja Patel
+2024-08-29,INV-1303,Sales,Restaurant Sales,,67757.61,Being sales to Pooja Patel
+2024-08-29,INV-1305,Sales,Sundry Debtors,83464.01,,Being sales to Pooja Patel
+2024-08-29,INV-1305,Sales,Restaurant Sales,,83464.01,Being sales to Pooja Patel
+2024-08-29,INV-1314,Sales,Sundry Debtors,36246.13,,Being sales to Pooja Patel
+2024-08-29,INV-1314,Sales,Restaurant Sales,,36246.13,Being sales to Pooja Patel
+2024-08-29,INV-1323,Sales,Sundry Debtors,161164.48,,Being sales to Sunita Reddy
+2024-08-29,INV-1323,Sales,Restaurant Sales,,161164.48,Being sales to Sunita Reddy
+2024-08-29,JV-1053,Journal,Electricity Charges,11628.99,,Being electricity charges for the period
+2024-08-29,JV-1053,Journal,HDFC Bank A/c,,11628.99,Being electricity charges for the period
+2024-08-29,JV-1086,Journal,Telephone & Internet,36880.30,,Being telephone & internet for the period
+2024-08-29,JV-1086,Journal,HDFC Bank A/c,,36880.30,Being telephone & internet for the period
+2024-08-29,JV-1151,Journal,Bank Charges,49308.39,,Being bank charges for the period
+2024-08-29,JV-1151,Journal,HDFC Bank A/c,,49308.39,Being bank charges for the period
+2024-08-30,BP-1151,Payment,Sundry Creditors,191209.49,,Payment to Krishna Industries Industries
+2024-08-30,BP-1151,Payment,HDFC Bank A/c,,191209.49,Payment to Krishna Industries Industries
+2024-08-30,BR-1159,Receipt,HDFC Bank A/c,216039.53,,Received from Pooja Patel
+2024-08-30,BR-1159,Receipt,Sundry Debtors,,216039.53,Received from Pooja Patel
+2024-08-30,BR-1192,Receipt,HDFC Bank A/c,76647.61,,Received from Pooja Patel
+2024-08-30,BR-1192,Receipt,Sundry Debtors,,76647.61,Received from Pooja Patel
+2024-08-30,INV-1020,Sales,Sundry Debtors,176527.87,,Being sales to Pooja Patel
+2024-08-30,INV-1020,Sales,Restaurant Sales,,176527.87,Being sales to Pooja Patel
+2024-08-30,INV-1119,Sales,Sundry Debtors,28281.73,,Being sales to Pooja Patel
+2024-08-30,INV-1119,Sales,Restaurant Sales,,28281.73,Being sales to Pooja Patel
+2024-08-30,INV-1223,Sales,Sundry Debtors,169396.72,,Being sales to Sunita Reddy
+2024-08-30,INV-1223,Sales,Restaurant Sales,,169396.72,Being sales to Sunita Reddy
+2024-08-30,INV-1254,Sales,Sundry Debtors,87983.79,,Being sales to Pooja Patel
+2024-08-30,INV-1254,Sales,Restaurant Sales,,87983.79,Being sales to Pooja Patel
+2024-08-30,JV-1022,Journal,Salaries & Wages,71624.35,,Being salaries & wages for the period
+2024-08-30,JV-1022,Journal,HDFC Bank A/c,,71624.35,Being salaries & wages for the period
+2024-08-30,JV-1080,Journal,Office Rent,23859.45,,Being office rent for the period
+2024-08-30,JV-1080,Journal,HDFC Bank A/c,,23859.45,Being office rent for the period
+2024-08-30,JV-1083,Journal,Bank Charges,34955.83,,Being bank charges for the period
+2024-08-30,JV-1083,Journal,HDFC Bank A/c,,34955.83,Being bank charges for the period
+2024-08-30,JV-1149,Journal,Postage & Courier,34978.21,,Being postage & courier for the period
+2024-08-30,JV-1149,Journal,HDFC Bank A/c,,34978.21,Being postage & courier for the period
+2024-08-30,PUR-1197,Purchase,Kitchen Wages,97027.86,,Purchase from Shree Traders & Co
+2024-08-30,PUR-1197,Purchase,Sundry Creditors,,97027.86,Purchase from Shree Traders & Co
+2024-08-30,PUR-1232,Purchase,Spices & Provisions,253939.34,,Purchase from Shree Works Pvt Ltd
+2024-08-30,PUR-1232,Purchase,Sundry Creditors,,253939.34,Purchase from Shree Works Pvt Ltd
+2024-08-31,BP-1095,Payment,Sundry Creditors,110728.83,,Payment to Sai Services Pvt Ltd
+2024-08-31,BP-1095,Payment,HDFC Bank A/c,,110728.83,Payment to Sai Services Pvt Ltd
+2024-08-31,BR-1014,Receipt,HDFC Bank A/c,176911.98,,Received from Ritu Choudhary
+2024-08-31,BR-1014,Receipt,Sundry Debtors,,176911.98,Received from Ritu Choudhary
+2024-08-31,BR-1064,Receipt,HDFC Bank A/c,27666.43,,Received from Pooja Patel
+2024-08-31,BR-1064,Receipt,Sundry Debtors,,27666.43,Received from Pooja Patel
+2024-08-31,BR-1126,Receipt,HDFC Bank A/c,222532.57,,Received from Sunita Gupta
+2024-08-31,BR-1126,Receipt,Sundry Debtors,,222532.57,Received from Sunita Gupta
+2024-08-31,BR-1143,Receipt,HDFC Bank A/c,237505.05,,Received from Sunita Reddy
+2024-08-31,BR-1143,Receipt,Sundry Debtors,,237505.05,Received from Sunita Reddy
+2024-08-31,INV-1007,Sales,Sundry Debtors,10815.43,,Being sales to Ritu Choudhary
+2024-08-31,INV-1007,Sales,Restaurant Sales,,10815.43,Being sales to Ritu Choudhary
+2024-08-31,INV-1215,Sales,Sundry Debtors,130098.38,,
+2024-08-31,INV-1215,Sales,Restaurant Sales,,130098.38,Being sales to Ritu Choudhary
+2024-08-31,INV-1324,Sales,Sundry Debtors,10663.83,,Being sales to Pooja Patel
+2024-08-31,INV-1324,Sales,Restaurant Sales,,10663.83,Being sales to Pooja Patel
+2024-08-31,JV-1009,Journal,Travelling Expenses,10034.48,,Being travelling expenses for the period
+2024-08-31,JV-1009,Journal,HDFC Bank A/c,,10034.48,Being travelling expenses for the period
+2024-08-31,PUR-1053,Purchase,Kitchen Wages,140367.01,,Purchase from Om Steel Pvt Ltd
+2024-08-31,PUR-1053,Purchase,Sundry Creditors,,140367.01,Purchase from Om Steel Pvt Ltd
+2024-08-31,PUR-1130,Purchase,Kitchen Wages,219141.86,,Purchase from Om Steel Pvt Ltd
+2024-08-31,PUR-1130,Purchase,Sundry Creditors,,219141.86,Purchase from Om Steel Pvt Ltd
+2024-09-01,BP-1067,Payment,Sundry Creditors,110601.91,,Payment to Om Mills LLP
+2024-09-01,BP-1067,Payment,HDFC Bank A/c,,110601.91,Payment to Om Mills LLP
+2024-09-01,BP-1125,Payment,Sundry Creditors,47998.37,,Payment to Krishna Agencies & Co
+2024-09-01,BP-1125,Payment,HDFC Bank A/c,,47998.37,Payment to Krishna Agencies & Co
+2024-09-01,BR-1109,Receipt,HDFC Bank A/c,168751.39,,Received from Sunita Gupta
+2024-09-01,BR-1109,Receipt,Sundry Debtors,,168751.39,Received from Sunita Gupta
+2024-09-01,INV-1216,Sales,Sundry Debtors,85511.51,,Being sales to Sunita Gupta
+2024-09-01,INV-1216,Sales,Restaurant Sales,,85511.51,Being sales to Sunita Gupta
+2024-09-01,INV-1277,Sales,Sundry Debtors,48421.92,,Being sales to Pooja Patel
+2024-09-01,INV-1277,Sales,Restaurant Sales,,48421.92,Being sales to Pooja Patel
+2024-09-01,JV-1002,Journal,Diwali Bonus to Staff,322314.88,,Being diwali bonus to staff for the period
+2024-09-01,JV-1002,Journal,HDFC Bank A/c,,40289.36,Being diwali bonus to staff for the period
+2024-09-01,JV-1105,Journal,Bank Charges,87621.10,,Being bank charges for the period
+2024-09-01,JV-1105,Journal,HDFC Bank A/c,,87621.10,Being bank charges for the period
+2024-09-01,JV-1107,Journal,Office Rent,4476.45,,Being office rent for the period
+2024-09-01,JV-1107,Journal,HDFC Bank A/c,,4476.45,Being office rent for the period
+2024-09-01,JV-1146,Journal,Electricity Charges,92433.88,,Being electricity charges for the period
+2024-09-01,JV-1146,Journal,HDFC Bank A/c,,92433.88,Being electricity charges for the period
+2024-09-01,PUR-1165,Purchase,Kitchen Wages,37783.12,,Purchase from Krishna Agencies & Co
+2024-09-01,PUR-1165,Purchase,Sundry Creditors,,37783.12,Purchase from Krishna Agencies & Co
+2024-09-01,PUR-1253,Purchase,Kitchen Wages,35085.55,,Purchase from Om Mills LLP
+2024-09-01,PUR-1253,Purchase,Sundry Creditors,,35085.55,Purchase from Om Mills LLP
+2024-09-01,PUR-1261,Purchase,Spices & Provisions,65135.00,,Purchase from Krishna Industries Industries
+2024-09-01,PUR-1261,Purchase,Sundry Creditors,,65135.00,Purchase from Krishna Industries Industries
+2024-09-02,BP-1049,Payment,Sundry Creditors,109830.10,,Payment to Krishna Agencies & Co
+2024-09-02,BP-1049,Payment,HDFC Bank A/c,,109830.10,Payment to Krishna Agencies & Co
+2024-09-02,BR-1001,Receipt,HDFC Bank A/c,13802.18,,Received from Sunita Gupta
+2024-09-02,BR-1001,Receipt,Sundry Debtors,,13802.18,Received from Sunita Gupta
+2024-09-02,BR-1163,Receipt,HDFC Bank A/c,195178.29,,Received from Pooja Patel
+2024-09-02,BR-1163,Receipt,Sundry Debtors,,195178.29,Received from Pooja Patel
+2024-09-02,BR-1174,Receipt,HDFC Bank A/c,215504.35,,Received from Sunita Reddy
+2024-09-02,BR-1174,Receipt,Sundry Debtors,,215504.35,Received from Sunita Reddy
+2024-09-02,INV-1042,Sales,Sundry Debtors,109055.47,,Being sales to Ritu Choudhary
+2024-09-02,INV-1042,Sales,Restaurant Sales,,109055.47,Being sales to Ritu Choudhary
+2024-09-02,INV-1155,Sales,Sundry Debtors,151834.02,,Being sales to Ritu Choudhary
+2024-09-02,INV-1155,Sales,Restaurant Sales,,151834.02,Being sales to Ritu Choudhary
+2024-09-02,INV-1257,Sales,Sundry Debtors,164604.11,,Being sales to Ritu Choudhary
+2024-09-02,INV-1257,Sales,Restaurant Sales,,164604.11,Being sales to Ritu Choudhary
+2024-09-02,PUR-1034,Purchase,Vegetable Purchases,68452.51,,Purchase from Shree Works Pvt Ltd
+2024-09-02,PUR-1034,Purchase,Sundry Creditors,,42782.82,Purchase from Shree Works Pvt Ltd
+2024-09-02,PUR-1040,Purchase,Vegetable Purchases,84490.93,,Purchase from Krishna Agencies & Co
+2024-09-02,PUR-1040,Purchase,Sundry Creditors,,52806.83,Purchase from Krishna Agencies & Co
+2024-09-02,PUR-1079,Purchase,Meat & Poultry Purchases,155966.35,,Purchase from Maa Services LLP
+2024-09-02,PUR-1079,Purchase,Sundry Creditors,,155966.35,Purchase from Maa Services LLP
+2024-09-02,PUR-1107,Purchase,Meat & Poultry Purchases,208363.76,,Purchase from Sai Industries Industries
+2024-09-02,PUR-1107,Purchase,Sundry Creditors,,208363.76,Purchase from Sai Industries Industries
+2024-09-02,PUR-1162,Purchase,Spices & Provisions,52032.72,,Purchase from Om Mills LLP
+2024-09-02,PUR-1162,Purchase,Sundry Creditors,,52032.72,Purchase from Om Mills LLP
+2024-09-02,PUR-1268,Purchase,Kitchen Wages,142837.58,,Purchase from Sai Traders Group
+2024-09-02,PUR-1268,Purchase,Sundry Creditors,,142837.58,Purchase from Sai Traders Group
+2024-09-03,BP-1104,Payment,Sundry Creditors,131958.83,,Payment to Ratan Mills Pvt Ltd
+2024-09-03,BP-1104,Payment,HDFC Bank A/c,,131958.83,Payment to Ratan Mills Pvt Ltd
+2024-09-03,BP-1126,Payment,Sundry Creditors,75636.17,,Payment to Sai Services Pvt Ltd
+2024-09-03,BP-1126,Payment,HDFC Bank A/c,,75636.17,Payment to Sai Services Pvt Ltd
+2024-09-03,BR-1060,Receipt,HDFC Bank A/c,181485.85,,Received from Pooja Patel
+2024-09-03,BR-1060,Receipt,Sundry Debtors,,181485.85,Received from Pooja Patel
+2024-09-03,INV-1016,Sales,Sundry Debtors,157102.08,,Being sales to Pooja Patel
+2024-09-03,INV-1016,Sales,Restaurant Sales,,157102.08,Being sales to Pooja Patel
+2024-09-03,INV-1190,Sales,Sundry Debtors,127100.63,,Being sales to Ritu Choudhary
+2024-09-03,INV-1190,Sales,Restaurant Sales,,127100.63,Being sales to Ritu Choudhary
+2024-09-03,INV-1200,Sales,Sundry Debtors,4901.30,,Being sales to Sunita Gupta
+2024-09-03,INV-1200,Sales,Restaurant Sales,,4901.30,Being sales to Sunita Gupta
+2024-09-03,INV-1312,Sales,Sundry Debtors,125736.05,,Being sales to Sunita Reddy
+2024-09-03,INV-1312,Sales,Restaurant Sales,,125736.05,Being sales to Sunita Reddy
+2024-09-03,JV-1036,Journal,Telephone & Internet,30879.21,,Being telephone & internet for the period
+2024-09-03,JV-1036,Journal,HDFC Bank A/c,,30879.21,Being telephone & internet for the period
+2024-09-03,JV-1124,Journal,Telephone & Internet,25708.78,,Being telephone & internet for the period
+2024-09-03,JV-1124,Journal,HDFC Bank A/c,,25708.78,Being telephone & internet for the period
+2024-09-03,PUR-1001,Purchase,Kitchen Wages,69210.35,,Purchase from Maa Works LLP
+2024-09-03,PUR-1001,Purchase,Sundry Creditors,,69210.35,Purchase from Maa Works LLP
+2024-09-03,PUR-1203,Purchase,Spices & Provisions,156614.66,,Purchase from Krishna Industries Industries
+2024-09-03,PUR-1203,Purchase,Sundry Creditors,,156614.66,Purchase from Krishna Industries Industries
+2024-09-04,BP-1149,Payment,Sundry Creditors,142632.61,,Payment to Om Steel Pvt Ltd
+2024-09-04,BP-1149,Payment,HDFC Bank A/c,,142695.35,Payment to Om Steel Pvt Ltd
+2024-09-04,BR-1011,Receipt,HDFC Bank A/c,137276.59,,Received from Sunita Gupta
+2024-09-04,BR-1011,Receipt,Sundry Debtors,,137276.59,Received from Sunita Gupta
+2024-09-04,BR-1188,Receipt,HDFC Bank A/c,25950.75,,Received from Sunita Reddy
+2024-09-04,BR-1188,Receipt,Sundry Debtors,,25950.75,Received from Sunita Reddy
+2024-09-04,INV-1095,Sales,Sundry Debtors,60914.79,,Being sales to Pooja Patel
+2024-09-04,INV-1095,Sales,Restaurant Sales,,60914.79,Being sales to Pooja Patel
+2024-09-04,INV-1136,Sales,Sundry Debtors,130189.41,,Being sales to Sunita Reddy
+2024-09-04,INV-1136,Sales,Restaurant Sales,,130189.41,Being sales to Sunita Reddy
+2024-09-04,INV-1137,Sales,Sundry Debtors,69083.69,,Being sales to Ritu Choudhary
+2024-09-04,INV-1137,Sales,Restaurant Sales,,69083.69,Being sales to Ritu Choudhary
+2024-09-04,INV-1230,Sales,Sundry Debtors,160015.25,,Being sales to Pooja Patel
+2024-09-04,INV-1230,Sales,Restaurant Sales,,160015.25,Being sales to Pooja Patel
+2024-09-04,INV-1249,Sales,Sundry Debtors,89375.49,,Being sales to Sunita Reddy
+2024-09-04,INV-1249,Sales,Restaurant Sales,,89375.49,Being sales to Sunita Reddy
+2024-09-04,INV-1275,Sales,Sundry Debtors,31520.07,,Being sales to Sunita Gupta
+2024-09-04,INV-1275,Sales,Restaurant Sales,,31520.07,Being sales to Sunita Gupta
+2024-09-04,PUR-1035,Purchase,Vegetable Purchases,293679.17,,Purchase from Krishna Industries Industries
+2024-09-04,PUR-1035,Purchase,Sundry Creditors,,183549.48,Purchase from Krishna Industries Industries
+2024-09-04,PUR-1083,Purchase,Kitchen Wages,267925.22,,Purchase from Sai Traders Group
+2024-09-04,PUR-1083,Purchase,Sundry Creditors,,267925.22,Purchase from Sai Traders Group
+2024-09-04,PUR-1122,Purchase,Vegetable Purchases,406365.86,,Purchase from Maa Works & Bros
+2024-09-04,PUR-1122,Purchase,Sundry Creditors,,253978.66,Purchase from Maa Works & Bros
+2024-09-04,PUR-1148,Purchase,Kitchen Wages,12580.33,,Purchase from Sai Services Pvt Ltd
+2024-09-04,PUR-1148,Purchase,Sundry Creditors,,12580.33,Purchase from Sai Services Pvt Ltd
+2024-09-05,BR-1140,Receipt,HDFC Bank A/c,6471.56,,Received from Ritu Choudhary
+2024-09-05,BR-1140,Receipt,Sundry Debtors,,6471.56,Received from Ritu Choudhary
+2024-09-05,INV-1005,Sales,Sundry Debtors,99503.95,,Being sales to Sunita Gupta
+2024-09-05,INV-1005,Sales,Restaurant Sales,,99503.95,Being sales to Sunita Gupta
+2024-09-05,INV-1014,Sales,Sundry Debtors,145583.75,,Being sales to Sunita Reddy
+2024-09-05,INV-1014,Sales,Restaurant Sales,,145583.75,Being sales to Sunita Reddy
+2024-09-05,INV-1038,Sales,Sundry Debtors,96032.81,,Being sales to Sunita Gupta
+2024-09-05,INV-1038,Sales,Restaurant Sales,,96032.81,Being sales to Sunita Gupta
+2024-09-05,INV-1041,Sales,Sundry Debtors,193975.99,,Being sales to Ritu Choudhary
+2024-09-05,INV-1041,Sales,Restaurant Sales,,193975.99,Being sales to Ritu Choudhary
+2024-09-05,INV-1195,Sales,Sundry Debtors,40872.86,,Being sales to Sunita Gupta
+2024-09-05,INV-1195,Sales,Restaurant Sales,,40872.86,Being sales to Sunita Gupta
+2024-09-05,INV-1199,Sales,Sundry Debtors,48691.23,,Being sales to Pooja Patel
+2024-09-05,INV-1199,Sales,Restaurant Sales,,48691.23,Being sales to Pooja Patel
+2024-09-05,INV-1204,Sales,Sundry Debtors,89887.56,,Being sales to Sunita Reddy
+2024-09-05,INV-1204,Sales,Restaurant Sales,,89887.56,Being sales to Sunita Reddy
+2024-09-05,INV-1210,Sales,Sundry Debtors,118598.26,,Being sales to Sunita Reddy
+2024-09-05,INV-1210,Sales,Restaurant Sales,,118598.26,Being sales to Sunita Reddy
+2024-09-05,INV-1295,Sales,Sundry Debtors,114527.08,,Being sales to Pooja Patel
+2024-09-05,INV-1295,Sales,Restaurant Sales,,114527.08,Being sales to Pooja Patel
+2024-09-05,JV-1116,Journal,Printing & Stationery,67153.11,,Being printing & stationery for the period
+2024-09-05,JV-1116,Journal,HDFC Bank A/c,,67153.11,Being printing & stationery for the period
+2024-09-05,PUR-1016,Purchase,Vegetable Purchases,126643.89,,Purchase from Om Steel Pvt Ltd
+2024-09-05,PUR-1016,Purchase,Sundry Creditors,,79152.43,Purchase from Om Steel Pvt Ltd
+2024-09-05,PUR-1057,Purchase,Vegetable Purchases,413660.82,,Purchase from Bharat Suppliers & Co
+2024-09-05,PUR-1057,Purchase,Sundry Creditors,,258538.01,Purchase from Bharat Suppliers & Co
+2024-09-05,PUR-1118,Purchase,Vegetable Purchases,201109.04,,Purchase from Krishna Agencies & Co
+2024-09-05,PUR-1118,Purchase,Sundry Creditors,,125693.15,Purchase from Krishna Agencies & Co
+2024-09-06,BP-1019,Payment,Sundry Creditors,175549.19,,Payment to Bharat Suppliers & Co
+2024-09-06,BP-1019,Payment,HDFC Bank A/c,,175549.19,Payment to Bharat Suppliers & Co
+2024-09-06,BP-1023,Payment,Sundry Creditors,5016.65,,Payment to Om Mills LLP
+2024-09-06,BP-1023,Payment,HDFC Bank A/c,,5016.65,Payment to Om Mills LLP
+2024-09-06,BP-1074,Payment,Sundry Creditors,67881.01,,Payment to Ratan Mills Pvt Ltd
+2024-09-06,BP-1074,Payment,HDFC Bank A/c,,67881.01,Payment to Ratan Mills Pvt Ltd
+2024-09-06,BR-1082,Receipt,HDFC Bank A/c,154640.17,,Received from Sunita Reddy
+2024-09-06,BR-1082,Receipt,Sundry Debtors,,154640.17,
+2024-09-06,BR-1092,Receipt,HDFC Bank A/c,43253.43,,Received from Ritu Choudhary
+2024-09-06,BR-1092,Receipt,Sundry Debtors,,43253.43,Received from Ritu Choudhary
+2024-09-06,BR-1119,Receipt,HDFC Bank A/c,29460.54,,Received from Ritu Choudhary
+2024-09-06,BR-1119,Receipt,Sundry Debtors,,29460.54,Received from Ritu Choudhary
+2024-09-06,BR-1164,Receipt,HDFC Bank A/c,154970.04,,Received from Pooja Patel
+2024-09-06,BR-1164,Receipt,Sundry Debtors,,154970.04,Received from Pooja Patel
+2024-09-06,INV-1159,Sales,Sundry Debtors,157437.08,,Being sales to Sunita Reddy
+2024-09-06,INV-1159,Sales,Restaurant Sales,,157437.08,Being sales to Sunita Reddy
+2024-09-06,INV-1290,Sales,Sundry Debtors,70946.01,,Being sales to Sunita Reddy
+2024-09-06,INV-1290,Sales,Restaurant Sales,,70946.01,Being sales to Sunita Reddy
+2024-09-06,JV-1100,Journal,Office Rent,18272.82,,Being office rent for the period
+2024-09-06,JV-1100,Journal,HDFC Bank A/c,,18272.82,Being office rent for the period
+2024-09-06,JV-1113,Journal,Bank Charges,33089.22,,Being bank charges for the period
+2024-09-06,JV-1113,Journal,HDFC Bank A/c,,33089.22,Being bank charges for the period
+2024-09-06,JV-X124,Journal,Temp Holding,9100.44,,Unknown adjustment
+2024-09-06,JV-X124,Journal,HDFC Bank A/c,,9100.44,Unknown adjustment
+2024-09-06,PUR-1066,Purchase,Spices & Provisions,66739.71,,Purchase from Ratan Mills Pvt Ltd
+2024-09-06,PUR-1066,Purchase,Sundry Creditors,,66739.71,Purchase from Ratan Mills Pvt Ltd
+2024-09-06,PUR-1187,Purchase,Vegetable Purchases,247962.08,,Purchase from Krishna Suppliers Pvt Ltd
+2024-09-06,PUR-1187,Purchase,Sundry Creditors,,154976.30,Purchase from Krishna Suppliers Pvt Ltd
+2024-09-07,BP-1011,Payment,Sundry Creditors,299119.49,,Payment to Bharat Suppliers & Co
+2024-09-07,BP-1011,Payment,HDFC Bank A/c,,299119.49,Payment to Bharat Suppliers & Co
+2024-09-07,BP-1063,Payment,Sundry Creditors,171029.52,,Payment to Om Trading Industries
+2024-09-07,BP-1063,Payment,HDFC Bank A/c,,171029.52,Payment to Om Trading Industries
+2024-09-07,BR-1005,Receipt,HDFC Bank A/c,94726.34,,Received from Pooja Patel
+2024-09-07,BR-1005,Receipt,Sundry Debtors,,94726.34,Received from Pooja Patel
+2024-09-07,BR-1096,Receipt,HDFC Bank A/c,170120.76,,Received from Sunita Reddy
+2024-09-07,BR-1096,Receipt,Sundry Debtors,,170120.76,Received from Sunita Reddy
+2024-09-07,INV-1000,Sales,Sundry Debtors,97217.22,,Being sales to Sunita Reddy
+2024-09-07,INV-1000,Sales,Restaurant Sales,,97217.22,Being sales to Sunita Reddy
+2024-09-07,INV-1056,Sales,Sundry Debtors,49815.98,,Being sales to Sunita Reddy
+2024-09-07,INV-1056,Sales,Restaurant Sales,,49815.98,Being sales to Sunita Reddy
+2024-09-07,INV-1146,Sales,Sundry Debtors,61256.58,,Being sales to Ritu Choudhary
+2024-09-07,INV-1146,Sales,Restaurant Sales,,61256.58,Being sales to Ritu Choudhary
+2024-09-07,INV-1197,Sales,Sundry Debtors,48289.27,,Being sales to Sunita Reddy
+2024-09-07,INV-1197,Sales,Restaurant Sales,,48289.27,Being sales to Sunita Reddy
+2024-09-07,JV-1011,Journal,Bank Charges,48064.82,,Being bank charges for the period
+2024-09-07,JV-1011,Journal,HDFC Bank A/c,,48064.82,Being bank charges for the period
+2024-09-07,JV-1122,Journal,Electricity Charges,65822.58,,Being electricity charges for the period
+2024-09-07,JV-1122,Journal,HDFC Bank A/c,,65822.58,Being electricity charges for the period
+2024-09-07,PUR-1048,Purchase,Kitchen Wages,138545.93,,Purchase from Maa Services LLP
+2024-09-07,PUR-1048,Purchase,Sundry Creditors,,138545.93,Purchase from Maa Services LLP
+2024-09-08,BP-1100,Payment,Sundry Creditors,20063.53,,Payment to Shree Traders & Co
+2024-09-08,BP-1100,Payment,HDFC Bank A/c,,20063.53,Payment to Shree Traders & Co
+2024-09-08,BP-1155,Payment,Sundry Creditors,152830.20,,Payment to Sai Suppliers LLP
+2024-09-08,BP-1155,Payment,HDFC Bank A/c,,152830.20,Payment to Sai Suppliers LLP
+2024-09-08,BR-1053,Receipt,HDFC Bank A/c,184544.96,,Received from Ritu Choudhary
+2024-09-08,BR-1053,Receipt,Sundry Debtors,,184544.96,Received from Ritu Choudhary
+2024-09-08,INV-1075,Sales,Sundry Debtors,72321.27,,Being sales to Ritu Choudhary
+2024-09-08,INV-1075,Sales,Restaurant Sales,,72321.27,Being sales to Ritu Choudhary
+2024-09-08,INV-1141,Sales,Sundry Debtors,111858.66,,Being sales to Pooja Patel
+2024-09-08,INV-1141,Sales,Restaurant Sales,,111858.66,Being sales to Pooja Patel
+2024-09-08,JV-1056,Journal,Postage & Courier,33251.23,,Being postage & courier for the period
+2024-09-08,JV-1056,Journal,HDFC Bank A/c,,33251.23,Being postage & courier for the period
+2024-09-08,JV-1098,Journal,Office Rent,12870.50,,Being office rent for the period
+2024-09-08,JV-1098,Journal,HDFC Bank A/c,,12870.50,Being office rent for the period
+2024-09-08,PUR-1017,Purchase,Kitchen Wages,112416.35,,Purchase from Om Traders & Bros
+2024-09-08,PUR-1017,Purchase,Sundry Creditors,,112416.35,Purchase from Om Traders & Bros
+2024-09-08,PUR-1028,Purchase,Vegetable Purchases,460818.19,,Purchase from Sai Industries Industries
+2024-09-08,PUR-1028,Purchase,Sundry Creditors,,288011.37,Purchase from Sai Industries Industries
+2024-09-08,PUR-1071,Purchase,Vegetable Purchases,309069.15,,Purchase from Sai Traders Group
+2024-09-08,PUR-1071,Purchase,Sundry Creditors,,193168.22,Purchase from Sai Traders Group
+2024-09-08,PUR-1153,Purchase,Kitchen Wages,288344.27,,Purchase from Om Steel Pvt Ltd
+2024-09-08,PUR-1153,Purchase,Sundry Creditors,,288344.27,Purchase from Om Steel Pvt Ltd
+2024-09-08,PUR-1202,Purchase,Vegetable Purchases,193151.82,,Purchase from Ratan Enterprises Group
+2024-09-08,PUR-1202,Purchase,Sundry Creditors,,120719.89,Purchase from Ratan Enterprises Group
+2024-09-09,BP-1044,Payment,Sundry Creditors,82479.88,,Payment to Om Steel Pvt Ltd
+2024-09-09,BP-1044,Payment,HDFC Bank A/c,,82479.88,Payment to Om Steel Pvt Ltd
+2024-09-09,BP-1101,Payment,Sundry Creditors,250294.18,,Payment to Shree Works Pvt Ltd
+2024-09-09,BP-1101,Payment,HDFC Bank A/c,,250294.18,Payment to Shree Works Pvt Ltd
+2024-09-09,BP-1139,Payment,Sundry Creditors,85551.95,,Payment to Shree Traders & Co
+2024-09-09,BP-1139,Payment,HDFC Bank A/c,,85551.95,Payment to Shree Traders & Co
+2024-09-09,BR-1020,Receipt,HDFC Bank A/c,12343.23,,Received from Pooja Patel
+2024-09-09,BR-1039,Receipt,HDFC Bank A/c,39821.67,,Received from Ritu Choudhary
+2024-09-09,BR-1039,Receipt,Sundry Debtors,,39821.67,Received from Ritu Choudhary
+2024-09-09,BR-1050,Receipt,HDFC Bank A/c,208490.46,,Received from Sunita Gupta
+2024-09-09,BR-1050,Receipt,Sundry Debtors,,208490.46,Received from Sunita Gupta
+2024-09-09,BR-1088,Receipt,HDFC Bank A/c,35354.95,,Received from Sunita Reddy
+2024-09-09,BR-1088,Receipt,Sundry Debtors,,35354.95,Received from Sunita Reddy
+2024-09-09,INV-1193,Sales,Sundry Debtors,139133.76,,Being sales to Ritu Choudhary
+2024-09-09,INV-1193,Sales,Restaurant Sales,,139133.76,Being sales to Ritu Choudhary
+2024-09-09,JV-1051,Journal,Office Rent,84754.04,,Being office rent for the period
+2024-09-09,JV-1051,Journal,HDFC Bank A/c,,84754.04,Being office rent for the period
+2024-09-09,PUR-1046,Purchase,Vegetable Purchases,85675.25,,Purchase from Maa Services LLP
+2024-09-09,PUR-1046,Purchase,Sundry Creditors,,53547.03,Purchase from Maa Services LLP
+2024-09-09,PUR-1166,Purchase,Meat & Poultry Purchases,13706.94,,Purchase from Om Steel Pvt Ltd
+2024-09-09,PUR-1166,Purchase,Sundry Creditors,,13706.94,Purchase from Om Steel Pvt Ltd
+2024-09-09,PUR-1210,Purchase,Meat & Poultry Purchases,24654.40,,Purchase from Sai Services Pvt Ltd
+2024-09-09,PUR-1210,Purchase,Sundry Creditors,,24654.40,Purchase from Sai Services Pvt Ltd
+2024-09-10,BP-1047,Payment,Sundry Creditors,246382.68,,Payment to Sai Traders Group
+2024-09-10,BP-1047,Payment,HDFC Bank A/c,,246382.68,Payment to Sai Traders Group
+2024-09-10,BP-1120,Payment,Sundry Creditors,120343.01,,Payment to Om Trading Industries
+2024-09-10,BP-1120,Payment,HDFC Bank A/c,,120343.01,Payment to Om Trading Industries
+2024-09-10,BP-1137,Payment,Sundry Creditors,196481.26,,Payment to Om Traders & Bros
+2024-09-10,BP-1137,Payment,HDFC Bank A/c,,196481.26,Payment to Om Traders & Bros
+2024-09-10,BP-1152,Payment,Sundry Creditors,198459.35,,Payment to Ratan Enterprises Group
+2024-09-10,BP-1152,Payment,HDFC Bank A/c,,198459.35,Payment to Ratan Enterprises Group
+2024-09-10,INV-1054,Sales,Sundry Debtors,198938.47,,Being sales to Sunita Reddy
+2024-09-10,INV-1054,Sales,Restaurant Sales,,198938.47,Being sales to Sunita Reddy
+2024-09-10,INV-1182,Sales,Sundry Debtors,7159.98,,Being sales to Pooja Patel
+2024-09-10,INV-1182,Sales,Restaurant Sales,,7159.98,Being sales to Pooja Patel
+2024-09-10,INV-1200-DUP,Sales,Sundry Debtors,4901.30,,Being sales to Sunita Gupta
+2024-09-10,INV-1200-DUP,Sales,Restaurant Sales,,4901.30,Being sales to Sunita Gupta
+2024-09-10,JV-1063,Journal,Audit Fees,85137.35,,Being audit fees for the period
+2024-09-10,JV-1063,Journal,HDFC Bank A/c,,85137.35,Being audit fees for the period
+2024-09-10,JV-1071,Journal,Travelling Expenses,55987.87,,Being travelling expenses for the period
+2024-09-10,JV-1071,Journal,HDFC Bank A/c,,55987.87,Being travelling expenses for the period
+2024-09-10,JV-1103,Journal,Postage & Courier,79647.41,,Being postage & courier for the period
+2024-09-10,JV-1103,Journal,HDFC Bank A/c,,79647.41,Being postage & courier for the period
+2024-09-10,PUR-1068,Purchase,Vegetable Purchases,470111.41,,Purchase from Om Trading Industries
+2024-09-10,PUR-1068,Purchase,Sundry Creditors,,293819.63,Purchase from Om Trading Industries
+2024-09-10,PUR-1236,Purchase,Kitchen Wages,275268.35,,Purchase from Om Steel Pvt Ltd
+2024-09-10,PUR-1236,Purchase,Sundry Creditors,,275268.35,Purchase from Om Steel Pvt Ltd
+2024-09-10,PUR-1263,Purchase,Kitchen Wages,189105.42,,Purchase from Maa Works LLP
+2024-09-10,PUR-1263,Purchase,Sundry Creditors,,189105.42,Purchase from Maa Works LLP
+2024-09-11,BP-1134,Payment,Sundry Creditors,52310.21,,Payment to Sai Services Pvt Ltd
+2024-09-11,BP-1134,Payment,HDFC Bank A/c,,52310.21,Payment to Sai Services Pvt Ltd
+2024-09-11,BP-1141,Payment,Sundry Creditors,88369.91,,Payment to Ganesh Agencies Pvt Ltd
+2024-09-11,BP-1141,Payment,HDFC Bank A/c,,88369.91,Payment to Ganesh Agencies Pvt Ltd
+2024-09-11,BR-1018,Receipt,HDFC Bank A/c,11544.03,,Received from Sunita Reddy
+2024-09-11,BR-1018,Receipt,Sundry Debtors,,11544.03,Received from Sunita Reddy
+2024-09-11,INV-1025,Sales,Sundry Debtors,124841.45,,Being sales to Pooja Patel
+2024-09-11,INV-1025,Sales,Restaurant Sales,,124841.45,Being sales to Pooja Patel
+2024-09-11,INV-1278,Sales,Sundry Debtors,145439.69,,Being sales to Sunita Gupta
+2024-09-11,INV-1278,Sales,Restaurant Sales,,145439.69,Being sales to Sunita Gupta
+2024-09-11,INV-1288,Sales,Sundry Debtors,173105.31,,Being sales to Ritu Choudhary
+2024-09-11,INV-1288,Sales,Restaurant Sales,,173105.31,Being sales to Ritu Choudhary
+2024-09-11,JV-1006,Journal,Diwali Bonus to Staff,387028.96,,Being diwali bonus to staff for the period
+2024-09-11,JV-1006,Journal,HDFC Bank A/c,,48378.62,Being diwali bonus to staff for the period
+2024-09-11,JV-X723,Journal,Reconciliation A/c,9857.18,,Unknown adjustment
+2024-09-11,JV-X723,Journal,HDFC Bank A/c,,9857.18,Unknown adjustment
+2024-09-11,PUR-1067,Purchase,Meat & Poultry Purchases,197112.45,,Purchase from Bharat Trading Pvt Ltd
+2024-09-11,PUR-1067,Purchase,Sundry Creditors,,197112.45,Purchase from Bharat Trading Pvt Ltd
+2024-09-11,PUR-1086,Purchase,Kitchen Wages,47989.40,,Purchase from Ratan Mills Pvt Ltd
+2024-09-11,PUR-1086,Purchase,Sundry Creditors,,47989.40,Purchase from Ratan Mills Pvt Ltd
+2024-09-11,PUR-1161,Purchase,Meat & Poultry Purchases,63351.92,,Purchase from Krishna Industries Industries
+2024-09-11,PUR-1161,Purchase,Sundry Creditors,,63351.92,Purchase from Krishna Industries Industries
+2024-09-11,PUR-1242,Purchase,Meat & Poultry Purchases,100147.94,,Purchase from Krishna Industries Industries
+2024-09-11,PUR-1242,Purchase,Sundry Creditors,,100147.94,Purchase from Krishna Industries Industries
+2024-09-12,BR-1019,Receipt,HDFC Bank A/c,,,Received from Ritu Choudhary
+2024-09-12,BR-1019,Receipt,Sundry Debtors,,19069.29,Received from Ritu Choudhary
+2024-09-12,PUR-1078,Purchase,Kitchen Wages,147034.69,,Purchase from Om Trading Industries
+2024-09-12,PUR-1078,Purchase,Sundry Creditors,,147034.69,Purchase from Om Trading Industries
+2024-09-12,PUR-1108,Purchase,Meat & Poultry Purchases,37521.11,,Purchase from Maa Works LLP
+2024-09-12,PUR-1108,Purchase,Sundry Creditors,,37521.11,Purchase from Maa Works LLP
+2024-09-12,PUR-1137,Purchase,Vegetable Purchases,419432.43,,Purchase from Shree Traders & Co
+2024-09-12,PUR-1137,Purchase,Sundry Creditors,,262145.27,Purchase from Shree Traders & Co
+2024-09-12,PUR-1218,Purchase,Kitchen Wages,230672.89,,Purchase from Shree Works Pvt Ltd
+2024-09-12,PUR-1218,Purchase,Sundry Creditors,,230672.89,Purchase from Shree Works Pvt Ltd
+2024-09-13,BP-1124,Payment,Sundry Creditors,243325.58,,Payment to Shree Works Pvt Ltd
+2024-09-13,BP-1124,Payment,HDFC Bank A/c,,243325.58,Payment to Shree Works Pvt Ltd
+2024-09-13,BR-1131,Receipt,HDFC Bank A/c,20067.89,,Received from Ritu Choudhary
+2024-09-13,BR-1131,Receipt,Sundry Debtors,,20067.89,Received from Ritu Choudhary
+2024-09-13,JV-1048,Journal,Telephone & Internet,4907.48,,Being telephone & internet for the period
+2024-09-13,JV-1048,Journal,HDFC Bank A/c,,4907.48,Being telephone & internet for the period
+2024-09-13,PUR-1056,Purchase,Spices & Provisions,247238.07,,Purchase from Ganesh Agencies Pvt Ltd
+2024-09-13,PUR-1056,Purchase,Sundry Creditors,,247238.07,Purchase from Ganesh Agencies Pvt Ltd
+2024-09-13,PUR-1076,Purchase,Kitchen Wages,197680.50,,Purchase from Sai Services Pvt Ltd
+2024-09-13,PUR-1076,Purchase,Sundry Creditors,,197680.50,Purchase from Sai Services Pvt Ltd
+2024-09-13,PUR-1091,Purchase,Kitchen Wages,171446.63,,Purchase from Ratan Enterprises Industries
+2024-09-13,PUR-1091,Purchase,Sundry Creditors,,171446.63,Purchase from Ratan Enterprises Industries
+2024-09-13,PUR-1250,Purchase,Meat & Poultry Purchases,69158.06,,Purchase from Om Mills LLP
+2024-09-13,PUR-1250,Purchase,Sundry Creditors,,69158.06,Purchase from Om Mills LLP
+2024-09-14,BP-1005,Payment,Sundry Creditors,116449.73,,Payment to Ganesh Traders & Bros
+2024-09-14,BP-1005,Payment,HDFC Bank A/c,,116449.73,Payment to Ganesh Traders & Bros
+2024-09-14,BP-1115,Payment,Sundry Creditors,210679.20,,Payment to Ratan Mills Pvt Ltd
+2024-09-14,BP-1115,Payment,HDFC Bank A/c,,210679.20,Payment to Ratan Mills Pvt Ltd
+2024-09-14,BP-1118,Payment,Sundry Creditors,153283.41,,Payment to Shree Trading Group
+2024-09-14,BP-1118,Payment,HDFC Bank A/c,,153283.41,Payment to Shree Trading Group
+2024-09-14,BP-1148,Payment,Sundry Creditors,39863.43,,Payment to Bharat Suppliers & Co
+2024-09-14,BP-1148,Payment,HDFC Bank A/c,,39863.43,Payment to Bharat Suppliers & Co
+2024-09-14,BR-1051,Receipt,HDFC Bank A/c,235561.55,,Received from Ritu Choudhary
+2024-09-14,BR-1051,Receipt,Sundry Debtors,,235561.55,Received from Ritu Choudhary
+2024-09-14,BR-1125,Receipt,HDFC Bank A/c,174888.41,,Received from Sunita Gupta
+2024-09-14,BR-1125,Receipt,Sundry Debtors,,174888.41,Received from Sunita Gupta
+2024-09-14,BR-1134,Receipt,HDFC Bank A/c,227548.42,,Received from Sunita Reddy
+2024-09-14,BR-1134,Receipt,Sundry Debtors,,227548.42,Received from Sunita Reddy
+2024-09-14,BR-1157,Receipt,HDFC Bank A/c,80838.88,,Received from Sunita Gupta
+2024-09-14,BR-1157,Receipt,Sundry Debtors,,80838.88,Received from Sunita Gupta
+2024-09-14,BR-1179,Receipt,HDFC Bank A/c,59867.12,,Received from Sunita Reddy
+2024-09-14,BR-1179,Receipt,Sundry Debtors,,59867.12,Received from Sunita Reddy
+2024-09-14,INV-1017,Sales,Sundry Debtors,69726.68,,Being sales to Sunita Gupta
+2024-09-14,INV-1017,Sales,Restaurant Sales,,69726.68,Being sales to Sunita Gupta
+2024-09-14,INV-1044,Sales,Sundry Debtors,58564.20,,Being sales to Pooja Patel
+2024-09-14,INV-1044,Sales,Restaurant Sales,,58564.20,Being sales to Pooja Patel
+2024-09-14,INV-1076,Sales,Sundry Debtors,190651.09,,Being sales to Sunita Reddy
+2024-09-14,INV-1076,Sales,Restaurant Sales,,190651.09,Being sales to Sunita Reddy
+2024-09-14,JV-1110,Journal,Diwali Bonus to Staff,705803.44,,Being diwali bonus to staff for the period
+2024-09-14,JV-1110,Journal,HDFC Bank A/c,,88225.43,Being diwali bonus to staff for the period
+2024-09-14,JV-1131,Journal,Office Rent,33475.11,,Being office rent for the period
+2024-09-14,JV-1131,Journal,HDFC Bank A/c,,33475.11,Being office rent for the period
+2024-09-14,PUR-1205,Purchase,Vegetable Purchases,472875.98,,Purchase from Sai Suppliers LLP
+2024-09-14,PUR-1205,Purchase,Sundry Creditors,,295547.49,Purchase from Sai Suppliers LLP
+2024-09-14,PUR-1220,Purchase,Kitchen Wages,255554.86,,Purchase from Om Steel Pvt Ltd
+2024-09-14,PUR-1220,Purchase,Sundry Creditors,,255554.86,Purchase from Om Steel Pvt Ltd
+2024-09-14,PUR-1245,Purchase,Kitchen Wages,54955.09,,Purchase from Ratan Enterprises Group
+2024-09-14,PUR-1245,Purchase,Sundry Creditors,,54955.09,Purchase from Ratan Enterprises Group
+2024-09-14,PUR-1256,Purchase,Spices & Provisions,288455.14,,Purchase from Maa Works & Bros
+2024-09-14,PUR-1256,Purchase,Sundry Creditors,,288455.14,Purchase from Maa Works & Bros
+2024-09-15,BR-1058,Receipt,HDFC Bank A/c,248083.54,,Received from Sunita Gupta
+2024-09-15,BR-1058,Receipt,Sundry Debtors,,248083.54,Received from Sunita Gupta
+2024-09-15,BR-1107,Receipt,HDFC Bank A/c,92616.83,,Received from Pooja Patel
+2024-09-15,BR-1107,Receipt,Sundry Debtors,,92616.83,Received from Pooja Patel
+2024-09-15,INV-1004,Sales,Sundry Debtors,155845.86,,Being sales to Sunita Gupta
+2024-09-15,INV-1004,Sales,Restaurant Sales,,155845.86,Being sales to Sunita Gupta
+2024-09-15,INV-1026,Sales,Sundry Debtors,67550.37,,Being sales to Sunita Reddy
+2024-09-15,INV-1026,Sales,Restaurant Sales,,67550.37,Being sales to Sunita Reddy
+2024-09-15,INV-1073,Sales,Sundry Debtors,71169.21,,Being sales to Sunita Reddy
+2024-09-15,INV-1073,Sales,Restaurant Sales,,71169.21,Being sales to Sunita Reddy
+2024-09-15,INV-1207,Sales,Sundry Debtors,137004.91,,Being sales to Sunita Reddy
+2024-09-15,INV-1207,Sales,Restaurant Sales,,137004.91,Being sales to Sunita Reddy
+2024-09-15,INV-1271,Sales,Sundry Debtors,16312.26,,Being sales to Pooja Patel
+2024-09-15,INV-1271,Sales,Restaurant Sales,,16312.26,Being sales to Pooja Patel
+2024-09-15,INV-1294,Sales,Sundry Debtors,198800.63,,Being sales to Pooja Patel
+2024-09-15,INV-1294,Sales,Restaurant Sales,,198800.63,Being sales to Pooja Patel
+2024-09-15,JV-1068,Journal,Travelling Expenses,17245.27,,Being travelling expenses for the period
+2024-09-15,JV-1068,Journal,HDFC Bank A/c,,17245.27,Being travelling expenses for the period
+2024-09-15,JV-1139,Journal,Telephone & Internet,17574.50,,Being telephone & internet for the period
+2024-09-15,JV-1139,Journal,HDFC Bank A/c,,17574.50,Being telephone & internet for the period
+2024-09-15,JV-X577,Journal,Reconciliation A/c,561.69,,Unknown adjustment
+2024-09-15,JV-X577,Journal,HDFC Bank A/c,,561.69,Unknown adjustment
+2024-09-15,PUR-1158,Purchase,Spices & Provisions,247813.81,,Purchase from Krishna Suppliers Pvt Ltd
+2024-09-15,PUR-1158,Purchase,Sundry Creditors,,247813.81,Purchase from Krishna Suppliers Pvt Ltd
+2024-09-15,PUR-1246,Purchase,Spices & Provisions,226617.99,,Purchase from Bharat Trading Pvt Ltd
+2024-09-15,PUR-1246,Purchase,Sundry Creditors,,226617.99,Purchase from Bharat Trading Pvt Ltd
+2024-09-16,BP-1037,Payment,Sundry Creditors,65938.09,,Payment to Maa Services LLP
+2024-09-16,BP-1037,Payment,HDFC Bank A/c,,65938.09,Payment to Maa Services LLP
+2024-09-16,BP-1039,Payment,Sundry Creditors,157258.85,,Payment to Maa Works LLP
+2024-09-16,BP-1039,Payment,HDFC Bank A/c,,157258.85,Payment to Maa Works LLP
+2024-09-16,BR-1004,Receipt,HDFC Bank A/c,112910.25,,Received from Sunita Gupta
+2024-09-16,BR-1004,Receipt,Sundry Debtors,,112910.25,Received from Sunita Gupta
+2024-09-16,BR-1038,Receipt,HDFC Bank A/c,127102.25,,Received from Sunita Gupta
+2024-09-16,BR-1038,Receipt,Sundry Debtors,,127102.25,Received from Sunita Gupta
+2024-09-16,INV-1055,Sales,Sundry Debtors,30963.11,,Being sales to Pooja Patel
+2024-09-16,INV-1055,Sales,Restaurant Sales,,30963.11,Being sales to Pooja Patel
+2024-09-16,INV-1083,Sales,Sundry Debtors,89001.22,,Being sales to Sunita Reddy
+2024-09-16,INV-1083,Sales,Restaurant Sales,,89001.22,Being sales to Sunita Reddy
+2024-09-16,INV-1148,Sales,Sundry Debtors,11454.31,,Being sales to Ritu Choudhary
+2024-09-16,INV-1148,Sales,Restaurant Sales,,11454.31,Being sales to Ritu Choudhary
+2024-09-16,INV-1162,Sales,Sundry Debtors,162792.32,,Being sales to Pooja Patel
+2024-09-16,INV-1162,Sales,Restaurant Sales,,162792.32,Being sales to Pooja Patel
+2024-09-16,INV-1205,Sales,Sundry Debtors,169999.65,,Being sales to Sunita Reddy
+2024-09-16,INV-1205,Sales,Restaurant Sales,,169999.65,Being sales to Sunita Reddy
+2024-09-16,INV-1248,Sales,Sundry Debtors,111501.18,,Being sales to Ritu Choudhary
+2024-09-16,INV-1248,Sales,Restaurant Sales,,111501.18,Being sales to Ritu Choudhary
+2024-09-16,PUR-1062,Purchase,Kitchen Wages,88308.37,,Purchase from Shree Works Pvt Ltd
+2024-09-16,PUR-1062,Purchase,Sundry Creditors,,88308.37,Purchase from Shree Works Pvt Ltd
+2024-09-16,PUR-1198,Purchase,Vegetable Purchases,396347.57,,Purchase from Om Trading Industries
+2024-09-16,PUR-1198,Purchase,Sundry Creditors,,247717.23,Purchase from Om Trading Industries
+2024-09-16,PUR-1216,Purchase,Spices & Provisions,223543.25,,Purchase from Sai Traders Group
+2024-09-16,PUR-1216,Purchase,Sundry Creditors,,223543.25,Purchase from Sai Traders Group
+2024-09-17,BP-1068,Payment,Sundry Creditors,191903.41,,Payment to Krishna Industries Industries
+2024-09-17,BP-1068,Payment,HDFC Bank A/c,,191903.41,Payment to Krishna Industries Industries
+2024-09-17,BR-1067,Receipt,HDFC Bank A/c,67989.09,,Received from Sunita Reddy
+2024-09-17,BR-1067,Receipt,Sundry Debtors,,67989.09,Received from Sunita Reddy
+2024-09-17,BR-1150,Receipt,HDFC Bank A/c,248077.47,,Received from Pooja Patel
+2024-09-17,BR-1150,Receipt,Sundry Debtors,,248077.47,Received from Pooja Patel
+2024-09-17,INV-1034,Sales,Sundry Debtors,105809.93,,Being sales to Ritu Choudhary
+2024-09-17,INV-1034,Sales,Restaurant Sales,,105809.93,Being sales to Ritu Choudhary
+2024-09-17,INV-1117,Sales,Sundry Debtors,80521.62,,Being sales to Sunita Reddy
+2024-09-17,INV-1117,Sales,Restaurant Sales,,80521.62,Being sales to Sunita Reddy
+2024-09-17,INV-1128,Sales,Sundry Debtors,22659.99,,Being sales to Ritu Choudhary
+2024-09-17,INV-1128,Sales,Restaurant Sales,,22659.99,Being sales to Ritu Choudhary
+2024-09-17,JV-1097,Journal,Diwali Bonus to Staff,740100.16,,Being diwali bonus to staff for the period
+2024-09-17,JV-1097,Journal,HDFC Bank A/c,,92512.52,Being diwali bonus to staff for the period
+2024-09-17,JV-1099,Journal,Office Rent,20686.65,,Being office rent for the period
+2024-09-17,JV-1099,Journal,HDFC Bank A/c,,20686.65,Being office rent for the period
+2024-09-17,PUR-1012,Purchase,Kitchen Wages,150457.41,,Purchase from Sai Suppliers LLP
+2024-09-17,PUR-1012,Purchase,Sundry Creditors,,150457.41,Purchase from Sai Suppliers LLP
+2024-09-17,PUR-1126,Purchase,Meat & Poultry Purchases,73833.47,,Purchase from Om Mills LLP
+2024-09-17,PUR-1126,Purchase,Sundry Creditors,,73833.47,Purchase from Om Mills LLP
+2024-09-18,BP-1010,Payment,Sundry Creditors,205902.78,,Payment to Ratan Enterprises Group
+2024-09-18,BP-1010,Payment,HDFC Bank A/c,,205902.78,Payment to Ratan Enterprises Group
+2024-09-18,BP-1029,Payment,Sundry Creditors,262156.29,,Payment to Om Steel Pvt Ltd
+2024-09-18,BP-1029,Payment,HDFC Bank A/c,,262156.29,Payment to Om Steel Pvt Ltd
+2024-09-18,BR-1049,Receipt,HDFC Bank A/c,,,Received from Sunita Gupta
+2024-09-18,BR-1049,Receipt,Sundry Debtors,,21743.10,Received from Sunita Gupta
+2024-09-18,INV-1272,Sales,Sundry Debtors,3031.38,,Being sales to Pooja Patel
+2024-09-18,INV-1272,Sales,Restaurant Sales,,3031.38,Being sales to Pooja Patel
+2024-09-18,JV-1055,Journal,Travelling Expenses,25537.44,,Being travelling expenses for the period
+2024-09-18,JV-1055,Journal,HDFC Bank A/c,,25537.44,Being travelling expenses for the period
+2024-09-18,JV-1133,Journal,Diwali Bonus to Staff,779201.44,,Being diwali bonus to staff for the period
+2024-09-18,JV-1133,Journal,HDFC Bank A/c,,97400.18,Being diwali bonus to staff for the period
+2024-09-18,PUR-1095,Purchase,Spices & Provisions,273067.24,,Purchase from Krishna Agencies & Co
+2024-09-18,PUR-1095,Purchase,Sundry Creditors,,273067.24,Purchase from Krishna Agencies & Co
+2024-09-19,BP-1034,Payment,Sundry Creditors,198223.65,,Payment to Ratan Mills Pvt Ltd
+2024-09-19,BP-1034,Payment,HDFC Bank A/c,,198223.65,Payment to Ratan Mills Pvt Ltd
+2024-09-19,BR-1055,Receipt,HDFC Bank A/c,6095.06,,Received from Sunita Gupta
+2024-09-19,BR-1055,Receipt,Sundry Debtors,,6095.06,Received from Sunita Gupta
+2024-09-19,INV-1080,Sales,Sundry Debtors,57671.69,,Being sales to Sunita Reddy
+2024-09-19,INV-1080,Sales,Restaurant Sales,,57671.69,Being sales to Sunita Reddy
+2024-09-19,INV-1084,Sales,Sundry Debtors,80897.90,,Being sales to Sunita Gupta
+2024-09-19,INV-1084,Sales,Restaurant Sales,,80897.90,Being sales to Sunita Gupta
+2024-09-19,INV-1091,Sales,Sundry Debtors,107915.10,,Being sales to Pooja Patel
+2024-09-19,INV-1091,Sales,Restaurant Sales,,107915.10,Being sales to Pooja Patel
+2024-09-19,INV-1180,Sales,Sundry Debtors,133702.12,,Being sales to Sunita Gupta
+2024-09-19,INV-1180,Sales,Restaurant Sales,,133702.12,Being sales to Sunita Gupta
+2024-09-19,INV-1221,Sales,Sundry Debtors,38157.99,,Being sales to Sunita Gupta
+2024-09-19,INV-1221,Sales,Restaurant Sales,,38157.99,Being sales to Sunita Gupta
+2024-09-19,JV-1027,Journal,Office Rent,59462.02,,Being office rent for the period
+2024-09-19,JV-1027,Journal,HDFC Bank A/c,,59462.02,Being office rent for the period
+2024-09-19,PUR-1138,Purchase,Kitchen Wages,202525.95,,Purchase from Om Mills LLP
+2024-09-19,PUR-1138,Purchase,Sundry Creditors,,202525.95,Purchase from Om Mills LLP
+2024-09-19,PUR-1238,Purchase,Vegetable Purchases,377232.61,,Purchase from Om Trading Industries
+2024-09-19,PUR-1238,Purchase,Sundry Creditors,,235770.38,Purchase from Om Trading Industries
+2024-09-20,BR-1047,Receipt,HDFC Bank A/c,37006.01,,Received from Pooja Patel
+2024-09-20,BR-1047,Receipt,Sundry Debtors,,37006.01,Received from Pooja Patel
+2024-09-20,BR-1171,Receipt,HDFC Bank A/c,107247.32,,Received from Sunita Gupta
+2024-09-20,BR-1171,Receipt,Sundry Debtors,,107247.32,Received from Sunita Gupta
+2024-09-20,INV-1030,Sales,Sundry Debtors,16943.17,,Being sales to Sunita Gupta
+2024-09-20,INV-1030,Sales,Restaurant Sales,,16943.17,Being sales to Sunita Gupta
+2024-09-20,INV-1226,Sales,Sundry Debtors,87561.02,,Being sales to Sunita Reddy
+2024-09-20,INV-1226,Sales,Restaurant Sales,,87561.02,Being sales to Sunita Reddy
+2024-09-20,JV-1043,Journal,Postage & Courier,30679.95,,Being postage & courier for the period
+2024-09-20,JV-1043,Journal,HDFC Bank A/c,,30679.95,Being postage & courier for the period
+2024-09-20,PUR-1019,Purchase,Meat & Poultry Purchases,119861.46,,Purchase from Maa Works LLP
+2024-09-20,PUR-1019,Purchase,Sundry Creditors,,119861.46,Purchase from Maa Works LLP
+2024-09-20,PUR-1150,Purchase,Vegetable Purchases,462451.76,,Purchase from Bharat Trading Pvt Ltd
+2024-09-20,PUR-1150,Purchase,Sundry Creditors,,289032.35,Purchase from Bharat Trading Pvt Ltd
+2024-09-20,PUR-1182,Purchase,Spices & Provisions,24914.70,,Purchase from Ratan Enterprises Group
+2024-09-20,PUR-1182,Purchase,Sundry Creditors,,24914.70,Purchase from Ratan Enterprises Group
+2024-09-20,PUR-1254,Purchase,Meat & Poultry Purchases,222259.18,,Purchase from Sai Traders Group
+2024-09-20,PUR-1254,Purchase,Sundry Creditors,,222259.18,Purchase from Sai Traders Group
+2024-09-21,BP-1002,Payment,Sundry Creditors,67626.97,,Payment to Ratan Enterprises Group
+2024-09-21,BP-1002,Payment,HDFC Bank A/c,,67626.97,Payment to Ratan Enterprises Group
+2024-09-21,BP-1050,Payment,Sundry Creditors,12508.35,,Payment to Krishna Suppliers Pvt Ltd
+2024-09-21,BP-1050,Payment,HDFC Bank A/c,,12508.35,Payment to Krishna Suppliers Pvt Ltd
+2024-09-21,BP-1114,Payment,Sundry Creditors,226145.09,,Payment to Om Steel Pvt Ltd
+2024-09-21,BP-1114,Payment,HDFC Bank A/c,,226145.09,Payment to Om Steel Pvt Ltd
+2024-09-21,BP-1131,Payment,Sundry Creditors,91567.33,,Payment to Ratan Enterprises Group
+2024-09-21,BP-1131,Payment,HDFC Bank A/c,,91567.33,Payment to Ratan Enterprises Group
+2024-09-21,BR-1007,Receipt,HDFC Bank A/c,153502.77,,Received from Sunita Gupta
+2024-09-21,BR-1007,Receipt,Sundry Debtors,,153502.77,Received from Sunita Gupta
+2024-09-21,INV-1027,Sales,Sundry Debtors,51391.82,,Being sales to Ritu Choudhary
+2024-09-21,INV-1027,Sales,Restaurant Sales,,51391.82,Being sales to Ritu Choudhary
+2024-09-21,INV-1097,Sales,Sundry Debtors,113996.82,,Being sales to Sunita Reddy
+2024-09-21,INV-1097,Sales,Restaurant Sales,,113996.82,Being sales to Sunita Reddy
+2024-09-21,INV-1098,Sales,Sundry Debtors,103816.26,,Being sales to Pooja Patel
+2024-09-21,INV-1098,Sales,Restaurant Sales,,103816.26,Being sales to Pooja Patel
+2024-09-21,INV-1165,Sales,Sundry Debtors,149140.51,,Being sales to Pooja Patel
+2024-09-21,INV-1165,Sales,Restaurant Sales,,149140.51,Being sales to Pooja Patel
+2024-09-21,JV-1007,Journal,Salaries & Wages,50718.75,,Being salaries & wages for the period
+2024-09-21,JV-1007,Journal,HDFC Bank A/c,,50718.75,Being salaries & wages for the period
+2024-09-21,JV-1109,Journal,Salaries & Wages,16113.09,,Being salaries & wages for the period
+2024-09-21,JV-1109,Journal,HDFC Bank A/c,,16113.09,Being salaries & wages for the period
+2024-09-21,JV-1112,Journal,Electricity Charges,85787.01,,Being electricity charges for the period
+2024-09-21,JV-1112,Journal,HDFC Bank A/c,,85787.01,Being electricity charges for the period
+2024-09-21,PUR-1114,Purchase,Meat & Poultry Purchases,220230.62,,Purchase from Bharat Suppliers & Co
+2024-09-21,PUR-1114,Purchase,Sundry Creditors,,220230.62,Purchase from Bharat Suppliers & Co
+2024-09-21,PUR-1157,Purchase,Vegetable Purchases,36903.54,,Purchase from Maa Services LLP
+2024-09-21,PUR-1157,Purchase,Sundry Creditors,,23064.71,Purchase from Maa Services LLP
+2024-09-21,PUR-1183,Purchase,Spices & Provisions,27096.38,,Purchase from Om Steel Pvt Ltd
+2024-09-21,PUR-1183,Purchase,Sundry Creditors,,27096.38,Purchase from Om Steel Pvt Ltd
+2024-09-22,BP-1033,Payment,Sundry Creditors,285592.62,,Payment to Bharat Trading Pvt Ltd
+2024-09-22,BP-1033,Payment,HDFC Bank A/c,,285592.62,Payment to Bharat Trading Pvt Ltd
+2024-09-22,BR-1027,Receipt,HDFC Bank A/c,104907.53,,Received from Sunita Reddy
+2024-09-22,BR-1027,Receipt,Sundry Debtors,,104907.53,Received from Sunita Reddy
+2024-09-22,BR-1094,Receipt,HDFC Bank A/c,220569.71,,Received from Sunita Gupta
+2024-09-22,BR-1094,Receipt,Sundry Debtors,,220569.71,Received from Sunita Gupta
+2024-09-22,BR-1122,Receipt,HDFC Bank A/c,219319.57,,Received from Pooja Patel
+2024-09-22,BR-1122,Receipt,Sundry Debtors,,219319.57,Received from Pooja Patel
+2024-09-22,INV-1060,Sales,Sundry Debtors,139297.72,,Being sales to Ritu Choudhary
+2024-09-22,INV-1060,Sales,Restaurant Sales,,139297.72,Being sales to Ritu Choudhary
+2024-09-22,INV-1074,Sales,Sundry Debtors,6759.34,,Being sales to Pooja Patel
+2024-09-22,INV-1074,Sales,Restaurant Sales,,6759.34,Being sales to Pooja Patel
+2024-09-22,INV-1085,Sales,Sundry Debtors,18923.28,,Being sales to Pooja Patel
+2024-09-22,INV-1085,Sales,Restaurant Sales,,18923.28,Being sales to Pooja Patel
+2024-09-22,INV-1296,Sales,Sundry Debtors,86086.64,,Being sales to Sunita Reddy
+2024-09-22,INV-1296,Sales,Restaurant Sales,,86086.64,Being sales to Sunita Reddy
+2024-09-22,JV-1026,Journal,Office Rent,64056.19,,Being office rent for the period
+2024-09-22,JV-1026,Journal,HDFC Bank A/c,,64056.19,Being office rent for the period
+2024-09-22,JV-1123,Journal,Postage & Courier,22058.61,,Being postage & courier for the period
+2024-09-22,JV-1123,Journal,HDFC Bank A/c,,22058.61,Being postage & courier for the period
+2024-09-22,PUR-1041,Purchase,Kitchen Wages,11511.30,,Purchase from Om Traders & Bros
+2024-09-22,PUR-1041,Purchase,Sundry Creditors,,11511.30,Purchase from Om Traders & Bros
+2024-09-22,PUR-1151,Purchase,Vegetable Purchases,174044.29,,Purchase from Ratan Mills Pvt Ltd
+2024-09-22,PUR-1151,Purchase,Sundry Creditors,,108777.68,Purchase from Ratan Mills Pvt Ltd
+2024-09-22,PUR-1213,Purchase,Meat & Poultry Purchases,250004.66,,Purchase from Om Traders & Bros
+2024-09-22,PUR-1213,Purchase,Sundry Creditors,,250004.66,Purchase from Om Traders & Bros
+2024-09-22,PUR-1252,Purchase,Kitchen Wages,263654.22,,Purchase from Maa Works & Bros
+2024-09-22,PUR-1252,Purchase,Sundry Creditors,,263654.22,Purchase from Maa Works & Bros
+2024-09-23,BP-1128,Payment,Sundry Creditors,62954.62,,Payment to Maa Works LLP
+2024-09-23,BP-1128,Payment,HDFC Bank A/c,,62954.62,Payment to Maa Works LLP
+2024-09-23,INV-1071,Sales,Sundry Debtors,148227.86,,Being sales to Sunita Gupta
+2024-09-23,INV-1071,Sales,Restaurant Sales,,148227.86,Being sales to Sunita Gupta
+2024-09-23,INV-1142,Sales,Sundry Debtors,157931.39,,Being sales to Sunita Reddy
+2024-09-23,INV-1142,Sales,Restaurant Sales,,157931.39,Being sales to Sunita Reddy
+2024-09-23,JV-1070,Journal,Office Rent,17981.71,,Being office rent for the period
+2024-09-23,JV-1070,Journal,HDFC Bank A/c,,17981.71,Being office rent for the period
+2024-09-23,PUR-1259,Purchase,Spices & Provisions,290301.37,,Purchase from Om Steel Pvt Ltd
+2024-09-23,PUR-1259,Purchase,Sundry Creditors,,290301.37,Purchase from Om Steel Pvt Ltd
+2024-09-24,BP-1043,Payment,Sundry Creditors,177768.42,,Payment to Maa Works LLP
+2024-09-24,BP-1043,Payment,HDFC Bank A/c,,177768.42,Payment to Maa Works LLP
+2024-09-24,BP-1103,Payment,Sundry Creditors,147861.14,,Payment to Om Mills LLP
+2024-09-24,BP-1103,Payment,HDFC Bank A/c,,147861.14,Payment to Om Mills LLP
+2024-09-24,BP-1113,Payment,Sundry Creditors,297353.10,,Payment to Ratan Enterprises Industries
+2024-09-24,BP-1113,Payment,HDFC Bank A/c,,297353.10,Payment to Ratan Enterprises Industries
+2024-09-24,BR-1009,Receipt,HDFC Bank A/c,154421.64,,Received from Sunita Reddy
+2024-09-24,BR-1009,Receipt,Sundry Debtors,,154421.64,Received from Sunita Reddy
+2024-09-24,BR-1075,Receipt,HDFC Bank A/c,202124.51,,Received from Sunita Reddy
+2024-09-24,BR-1075,Receipt,Sundry Debtors,,202124.51,Received from Sunita Reddy
+2024-09-24,INV-1001,Sales,Sundry Debtors,42397.76,,Being sales to Sunita Reddy
+2024-09-24,INV-1001,Sales,Restaurant Sales,,42397.76,Being sales to Sunita Reddy
+2024-09-24,INV-1009,Sales,Sundry Debtors,74200.58,,Being sales to Ritu Choudhary
+2024-09-24,INV-1009,Sales,Restaurant Sales,,74200.58,Being sales to Ritu Choudhary
+2024-09-24,INV-1011,Sales,Sundry Debtors,92034.60,,Being sales to Pooja Patel
+2024-09-24,INV-1011,Sales,Restaurant Sales,,92034.60,Being sales to Pooja Patel
+2024-09-24,INV-1124,Sales,Sundry Debtors,136307.80,,Being sales to Sunita Gupta
+2024-09-24,INV-1124,Sales,Restaurant Sales,,136307.80,Being sales to Sunita Gupta
+2024-09-24,INV-1185,Sales,Sundry Debtors,72458.55,,Being sales to Sunita Gupta
+2024-09-24,INV-1185,Sales,Restaurant Sales,,72458.55,Being sales to Sunita Gupta
+2024-09-24,INV-1274,Sales,Sundry Debtors,19754.84,,Being sales to Pooja Patel
+2024-09-24,INV-1274,Sales,Restaurant Sales,,19754.84,Being sales to Pooja Patel
+2024-09-24,JV-1067,Journal,Bank Charges,79817.78,,Being bank charges for the period
+2024-09-24,JV-1067,Journal,HDFC Bank A/c,,79817.78,Being bank charges for the period
+2024-09-24,JV-1081,Journal,Office Rent,24509.74,,Being office rent for the period
+2024-09-24,JV-1081,Journal,HDFC Bank A/c,,24509.74,Being office rent for the period
+2024-09-24,JV-1147,Journal,Diwali Bonus to Staff,599927.04,,Being diwali bonus to staff for the period
+2024-09-24,JV-1147,Journal,HDFC Bank A/c,,74990.88,Being diwali bonus to staff for the period
+2024-09-24,PUR-1015,Purchase,Spices & Provisions,252410.73,,Purchase from Bharat Suppliers & Co
+2024-09-24,PUR-1015,Purchase,Sundry Creditors,,252410.73,Purchase from Bharat Suppliers & Co
+2024-09-24,PUR-1173,Purchase,Spices & Provisions,219162.42,,Purchase from Sai Traders Group
+2024-09-24,PUR-1173,Purchase,Sundry Creditors,,219162.42,Purchase from Sai Traders Group
+2024-09-24,PUR-1209,Purchase,Vegetable Purchases,357623.94,,Purchase from Ganesh Agencies Pvt Ltd
+2024-09-24,PUR-1209,Purchase,Sundry Creditors,,223514.96,Purchase from Ganesh Agencies Pvt Ltd
+2024-09-25,BP-1062,Payment,Sundry Creditors,89218.24,,Payment to Maa Works LLP
+2024-09-25,BP-1062,Payment,HDFC Bank A/c,,89218.24,Payment to Maa Works LLP
+2024-09-25,BP-1071,Payment,Sundry Creditors,189370.02,,Payment to Bharat Suppliers & Co
+2024-09-25,BP-1071,Payment,HDFC Bank A/c,,189370.02,Payment to Bharat Suppliers & Co
+2024-09-25,BR-1121,Receipt,HDFC Bank A/c,179630.15,,Received from Pooja Patel
+2024-09-25,BR-1121,Receipt,Sundry Debtors,,179630.15,Received from Pooja Patel
+2024-09-25,BR-1168,Receipt,HDFC Bank A/c,140974.13,,Received from Sunita Gupta
+2024-09-25,BR-1168,Receipt,Sundry Debtors,,140974.13,Received from Sunita Gupta
+2024-09-25,INV-1143,Sales,Sundry Debtors,84605.05,,Being sales to Ritu Choudhary
+2024-09-25,INV-1143,Sales,Restaurant Sales,,84605.05,Being sales to Ritu Choudhary
+2024-09-25,INV-1189,Sales,Sundry Debtors,55499.38,,Being sales to Sunita Reddy
+2024-09-25,INV-1189,Sales,Restaurant Sales,,55499.38,Being sales to Sunita Reddy
+2024-09-25,INV-1293,Sales,Sundry Debtors,23500.47,,
+2024-09-25,INV-1293,Sales,Restaurant Sales,,23500.47,Being sales to Ritu Choudhary
+2024-09-25,JV-1091,Journal,Postage & Courier,75756.23,,Being postage & courier for the period
+2024-09-25,JV-1091,Journal,HDFC Bank A/c,,75756.23,Being postage & courier for the period
+2024-09-25,JV-1094,Journal,Office Rent,59199.06,,Being office rent for the period
+2024-09-25,JV-1094,Journal,HDFC Bank A/c,,59199.06,Being office rent for the period
+2024-09-25,JV-1104,Journal,Travelling Expenses,11969.22,,Being travelling expenses for the period
+2024-09-25,JV-1104,Journal,HDFC Bank A/c,,11969.22,Being travelling expenses for the period
+2024-09-25,PUR-1120,Purchase,Meat & Poultry Purchases,225417.10,,Purchase from Bharat Suppliers & Co
+2024-09-25,PUR-1120,Purchase,Sundry Creditors,,225417.10,Purchase from Bharat Suppliers & Co
+2024-09-25,PUR-1132,Purchase,Kitchen Wages,150719.85,,Purchase from Krishna Agencies & Co
+2024-09-25,PUR-1132,Purchase,Sundry Creditors,,150719.85,Purchase from Krishna Agencies & Co
+2024-09-25,PUR-1175,Purchase,Meat & Poultry Purchases,190511.89,,Purchase from Bharat Trading Pvt Ltd
+2024-09-25,PUR-1175,Purchase,Sundry Creditors,,190511.89,Purchase from Bharat Trading Pvt Ltd
+2024-09-26,BP-1052,Payment,Sundry Creditors,221844.21,,Payment to Shree Traders & Co
+2024-09-26,BP-1052,Payment,HDFC Bank A/c,,221844.21,Payment to Shree Traders & Co
+2024-09-26,BP-1053,Payment,Sundry Creditors,10691.02,,Payment to Sai Services Pvt Ltd
+2024-09-26,BP-1053,Payment,HDFC Bank A/c,,10691.02,Payment to Sai Services Pvt Ltd
+2024-09-26,BP-1135,Payment,Sundry Creditors,209016.36,,Payment to Om Mills LLP
+2024-09-26,BP-1135,Payment,HDFC Bank A/c,,209016.36,Payment to Om Mills LLP
+2024-09-26,BR-1117,Receipt,HDFC Bank A/c,30744.32,,Received from Sunita Gupta
+2024-09-26,BR-1117,Receipt,Sundry Debtors,,30744.32,Received from Sunita Gupta
+2024-09-26,BR-1173,Receipt,HDFC Bank A/c,97422.87,,Received from Pooja Patel
+2024-09-26,BR-1173,Receipt,Sundry Debtors,,97422.87,Received from Pooja Patel
+2024-09-26,BR-1189,Receipt,HDFC Bank A/c,230766.68,,Received from Ritu Choudhary
+2024-09-26,BR-1189,Receipt,Sundry Debtors,,230766.68,Received from Ritu Choudhary
+2024-09-26,INV-1022,Sales,Sundry Debtors,169521.05,,Being sales to Pooja Patel
+2024-09-26,INV-1022,Sales,Restaurant Sales,,169521.05,Being sales to Pooja Patel
+2024-09-26,INV-1179,Sales,Sundry Debtors,105362.05,,Being sales to Sunita Gupta
+2024-09-26,INV-1179,Sales,Restaurant Sales,,105362.05,Being sales to Sunita Gupta
+2024-09-26,JV-1030,Journal,Salaries & Wages,98315.20,,Being salaries & wages for the period
+2024-09-26,JV-1030,Journal,HDFC Bank A/c,,98315.20,Being salaries & wages for the period
+2024-09-26,JV-S910,Journal,Sundry Creditors,93996.10,,Refund/advance from vendor
+2024-09-26,JV-S910,Journal,HDFC Bank A/c,,93996.10,Refund/advance from vendor
+2024-09-26,PUR-1031,Purchase,Kitchen Wages,92565.96,,Purchase from Shree Trading Group
+2024-09-26,PUR-1031,Purchase,Sundry Creditors,,92565.96,Purchase from Shree Trading Group
+2024-09-26,PUR-1136,Purchase,Kitchen Wages,50011.29,,Purchase from Bharat Suppliers & Co
+2024-09-26,PUR-1136,Purchase,Sundry Creditors,,50011.29,Purchase from Bharat Suppliers & Co
+2024-09-26,PUR-1146,Purchase,Vegetable Purchases,408260.32,,Purchase from Ratan Mills Pvt Ltd
+2024-09-26,PUR-1146,Purchase,Sundry Creditors,,255162.70,Purchase from Ratan Mills Pvt Ltd
+2024-09-26,PUR-1206,Purchase,Spices & Provisions,215198.13,,Purchase from Sai Suppliers LLP
+2024-09-26,PUR-1206,Purchase,Sundry Creditors,,215198.13,Purchase from Sai Suppliers LLP
+2024-09-27,BP-1004,Payment,Sundry Creditors,128754.34,,Payment to Om Steel Pvt Ltd
+2024-09-27,BP-1004,Payment,HDFC Bank A/c,,128754.34,Payment to Om Steel Pvt Ltd
+2024-09-27,BP-1018,Payment,Sundry Creditors,126708.75,,Payment to Om Mills LLP
+2024-09-27,BP-1018,Payment,HDFC Bank A/c,,126708.75,Payment to Om Mills LLP
+2024-09-27,BP-1096,Payment,Sundry Creditors,180860.10,,Payment to Om Traders & Bros
+2024-09-27,BP-1096,Payment,HDFC Bank A/c,,180860.10,Payment to Om Traders & Bros
+2024-09-27,BP-1129,Payment,Sundry Creditors,175037.39,,Payment to Ratan Mills Pvt Ltd
+2024-09-27,BP-1129,Payment,HDFC Bank A/c,,175037.39,Payment to Ratan Mills Pvt Ltd
+2024-09-27,BR-1078,Receipt,HDFC Bank A/c,137050.51,,Received from Ritu Choudhary
+2024-09-27,BR-1078,Receipt,Sundry Debtors,,137050.51,Received from Ritu Choudhary
+2024-09-27,INV-1029,Sales,Sundry Debtors,91943.35,,Being sales to Sunita Gupta
+2024-09-27,INV-1029,Sales,Restaurant Sales,,91943.35,Being sales to Sunita Gupta
+2024-09-27,INV-1033,Sales,Sundry Debtors,144978.95,,Being sales to Sunita Gupta
+2024-09-27,INV-1033,Sales,Restaurant Sales,,144978.95,Being sales to Sunita Gupta
+2024-09-27,INV-1062,Sales,Sundry Debtors,102939.32,,Being sales to Sunita Reddy
+2024-09-27,INV-1062,Sales,Restaurant Sales,,102939.32,Being sales to Sunita Reddy
+2024-09-27,INV-1127,Sales,Sundry Debtors,16104.20,,Being sales to Pooja Patel
+2024-09-27,INV-1127,Sales,Restaurant Sales,,16104.20,Being sales to Pooja Patel
+2024-09-27,JV-1045,Journal,Telephone & Internet,63072.45,,Being telephone & internet for the period
+2024-09-27,JV-1045,Journal,HDFC Bank A/c,,63072.45,Being telephone & internet for the period
+2024-09-27,PUR-1081,Purchase,Spices & Provisions,223312.63,,Purchase from Ratan Mills Pvt Ltd
+2024-09-27,PUR-1081,Purchase,Sundry Creditors,,223312.63,Purchase from Ratan Mills Pvt Ltd
+2024-09-27,PUR-1128,Purchase,Meat & Poultry Purchases,256079.23,,Purchase from Ratan Mills Pvt Ltd
+2024-09-27,PUR-1128,Purchase,Sundry Creditors,,256079.23,Purchase from Ratan Mills Pvt Ltd
+2024-09-27,PUR-1169,Purchase,Vegetable Purchases,8833.97,,Purchase from Ratan Enterprises Industries
+2024-09-27,PUR-1169,Purchase,Sundry Creditors,,5521.23,Purchase from Ratan Enterprises Industries
+2024-09-27,PUR-1195,Purchase,Vegetable Purchases,117816.54,,Purchase from Sai Services Pvt Ltd
+2024-09-27,PUR-1195,Purchase,Sundry Creditors,,73635.34,Purchase from Sai Services Pvt Ltd
+2024-09-28,BP-1040,Payment,Sundry Creditors,75537.54,,Payment to Krishna Agencies & Co
+2024-09-28,BP-1040,Payment,HDFC Bank A/c,,75537.54,Payment to Krishna Agencies & Co
+2024-09-28,BP-1079,Payment,Sundry Creditors,268762.86,,Payment to Sai Traders Group
+2024-09-28,BP-1079,Payment,HDFC Bank A/c,,268762.86,Payment to Sai Traders Group
+2024-09-28,BP-1109,Payment,Sundry Creditors,264826.40,,Payment to Om Mills LLP
+2024-09-28,BP-1109,Payment,HDFC Bank A/c,,264826.40,Payment to Om Mills LLP
+2024-09-28,BR-1010,Receipt,HDFC Bank A/c,69052.35,,Received from Ritu Choudhary
+2024-09-28,BR-1010,Receipt,Sundry Debtors,,69052.35,Received from Ritu Choudhary
+2024-09-28,BR-1012,Receipt,HDFC Bank A/c,47038.15,,Received from Ritu Choudhary
+2024-09-28,BR-1012,Receipt,Sundry Debtors,,47038.15,Received from Ritu Choudhary
+2024-09-28,BR-1023,Receipt,HDFC Bank A/c,45809.02,,Received from Sunita Reddy
+2024-09-28,BR-1023,Receipt,Sundry Debtors,,45809.02,Received from Sunita Reddy
+2024-09-28,INV-1015,Sales,Sundry Debtors,14141.21,,Being sales to Sunita Reddy
+2024-09-28,INV-1015,Sales,Restaurant Sales,,14141.21,Being sales to Sunita Reddy
+2024-09-28,INV-1068,Sales,Sundry Debtors,119230.34,,Being sales to Sunita Reddy
+2024-09-28,INV-1068,Sales,Restaurant Sales,,119230.34,Being sales to Sunita Reddy
+2024-09-28,INV-1132,Sales,Sundry Debtors,14789.88,,Being sales to Ritu Choudhary
+2024-09-28,INV-1132,Sales,Restaurant Sales,,14789.88,Being sales to Ritu Choudhary
+2024-09-28,INV-1240,Sales,Sundry Debtors,26768.39,,Being sales to Sunita Gupta
+2024-09-28,INV-1240,Sales,Restaurant Sales,,26768.39,Being sales to Sunita Gupta
+2024-09-28,INV-1300,Sales,Sundry Debtors,122658.08,,Being sales to Ritu Choudhary
+2024-09-28,INV-1300,Sales,Restaurant Sales,,122658.08,Being sales to Ritu Choudhary
+2024-09-28,PUR-1133,Purchase,Kitchen Wages,50890.16,,Purchase from Krishna Industries Industries
+2024-09-28,PUR-1133,Purchase,Sundry Creditors,,50890.16,Purchase from Krishna Industries Industries
+2024-09-28,PUR-1270,Purchase,Vegetable Purchases,168132.45,,Purchase from Ratan Enterprises Industries
+2024-09-28,PUR-1270,Purchase,Sundry Creditors,,105082.78,Purchase from Ratan Enterprises Industries
+2024-09-29,BP-1154,Payment,Sundry Creditors,15427.83,,Payment to Om Mills LLP
+2024-09-29,BP-1154,Payment,HDFC Bank A/c,,15427.83,Payment to Om Mills LLP
+2024-09-29,BR-1068,Receipt,HDFC Bank A/c,233209.75,,Received from Sunita Gupta
+2024-09-29,BR-1068,Receipt,Sundry Debtors,,233209.75,Received from Sunita Gupta
+2024-09-29,BR-1108,Receipt,HDFC Bank A/c,185008.56,,Received from Pooja Patel
+2024-09-29,BR-1108,Receipt,Sundry Debtors,,185008.56,Received from Pooja Patel
+2024-09-29,BR-1170,Receipt,HDFC Bank A/c,216073.92,,Received from Pooja Patel
+2024-09-29,BR-1170,Receipt,Sundry Debtors,,216073.92,Received from Pooja Patel
+2024-09-29,INV-1024,Sales,Sundry Debtors,30899.28,,Being sales to Pooja Patel
+2024-09-29,INV-1024,Sales,Restaurant Sales,,30899.28,Being sales to Pooja Patel
+2024-09-29,INV-1045,Sales,Sundry Debtors,168726.06,,Being sales to Sunita Gupta
+2024-09-29,INV-1045,Sales,Restaurant Sales,,168726.06,Being sales to Sunita Gupta
+2024-09-29,INV-1152,Sales,Sundry Debtors,112539.61,,Being sales to Ritu Choudhary
+2024-09-29,INV-1152,Sales,Restaurant Sales,,112539.61,Being sales to Ritu Choudhary
+2024-09-29,JV-1085,Journal,Office Rent,42953.84,,Being office rent for the period
+2024-09-29,JV-1085,Journal,HDFC Bank A/c,,42953.84,Being office rent for the period
+2024-09-29,PUR-1266,Purchase,Kitchen Wages,159732.88,,Purchase from Om Trading Industries
+2024-09-29,PUR-1266,Purchase,Sundry Creditors,,159732.88,Purchase from Om Trading Industries

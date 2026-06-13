@@ -1,0 +1,2083 @@
+दिनांक,Vch No,Voucher Type,Account Name,उधार,जमा,Narration
+2026-07-01,BP-1023,Payment,Sundry Creditors,132004.12,,Payment to Shree Agencies Industries
+2026-07-01,BP-1023,Payment,SBI A/c,,132004.12,Payment to Shree Agencies Industries
+2026-07-01,BR-1037,Receipt,SBI A/c,81660.14,,Received from Nitin Agarwal
+2026-07-01,BR-1037,Receipt,Sundry Debtors,,81660.14,Received from Nitin Agarwal
+2026-07-01,BR-1099,Receipt,SBI A/c,140442.25,,Received from Pooja Kumar
+2026-07-01,BR-1099,Receipt,Sundry Debtors,,140442.25,Received from Pooja Kumar
+2026-07-01,BR-1151,Receipt,SBI A/c,81018.63,,Received from Rajesh Choudhary
+2026-07-01,BR-1151,Receipt,Sundry Debtors,,81018.63,Received from Rajesh Choudhary
+2026-07-01,INV-1029,Sales,Sundry Debtors,71952.24,,Being sales to Neha Shah
+2026-07-01,INV-1029,Sales,Registration Fees,,71952.24,Being sales to Neha Shah
+2026-07-01,INV-1228,Sales,Sundry Debtors,113661.75,,Being sales to Rahul Mehta
+2026-07-01,INV-1228,Sales,Tuition Fees,,113661.75,Being sales to Rahul Mehta
+2026-07-01,JV-1051,Journal,Faculty Salaries,50282.27,,Being faculty salaries for the period
+2026-07-01,JV-1051,Journal,SBI A/c,,50282.27,Being faculty salaries for the period
+2026-07-01,PUR-1093,Purchase,Faculty Salaries,263893.43,,Purchase from Om Traders & Sons
+2026-07-01,PUR-1093,Purchase,Sundry Creditors,,263893.43,Purchase from Om Traders & Sons
+2026-07-01,PUR-1134,Purchase,Telephone & Internet,49994.14,,Purchase from Shree Agencies Industries
+2026-07-01,PUR-1134,Purchase,Sundry Creditors,,49994.14,Purchase from Shree Agencies Industries
+2026-07-02,BP-1030,Payment,Sundry Creditors,272170.90,,Payment to Om Traders & Sons
+2026-07-02,BP-1030,Payment,SBI A/c,,272170.90,Payment to Om Traders & Sons
+2026-07-02,BP-1074,Payment,Sundry Creditors,184678.47,,Payment to Ratan Enterprises & Co
+2026-07-02,BP-1074,Payment,SBI A/c,,184678.47,Payment to Ratan Enterprises & Co
+2026-07-02,BR-1044,Receipt,SBI A/c,29845.06,,Received from Ritu Nair
+2026-07-02,BR-1044,Receipt,Sundry Debtors,,29845.06,Received from Ritu Nair
+2026-07-02,BR-1074,Receipt,SBI A/c,52026.83,,Received from Neha Kumar
+2026-07-02,BR-1074,Receipt,Sundry Debtors,,52026.83,Received from Neha Kumar
+2026-07-02,BR-1135,Receipt,SBI A/c,164796.60,,Received from Vikram Sharma
+2026-07-02,BR-1135,Receipt,Sundry Debtors,,164796.60,Received from Vikram Sharma
+2026-07-02,INV-1090,Sales,Sundry Debtors,60313.64,,Being sales to Swati Sharma
+2026-07-02,INV-1090,Sales,Tuition Fees,,60313.64,Being sales to Swati Sharma
+2026-07-02,INV-1200,Sales,Sundry Debtors,179135.86,,Being sales to Rajesh Gupta
+2026-07-02,INV-1200,Sales,Registration Fees,,179135.86,Being sales to Rajesh Gupta
+2026-07-02,JV-1124,Journal,Electricity Charges,92629.34,,Being electricity charges for the period
+2026-07-02,JV-1124,Journal,SBI A/c,,92629.34,Being electricity charges for the period
+2026-07-03,BP-1029,Payment,Sundry Creditors,199357.46,,Payment to Ganesh Mills Group
+2026-07-03,BP-1029,Payment,SBI A/c,,199357.46,Payment to Ganesh Mills Group
+2026-07-03,BR-1045,Receipt,SBI A/c,72700.66,,Received from Manoj Rao
+2026-07-03,BR-1045,Receipt,Sundry Debtors,,72700.66,Received from Manoj Rao
+2026-07-03,INV-1003,Sales,Sundry Debtors,108446.96,,Being sales to Sunita Agarwal
+2026-07-03,INV-1003,Sales,Tuition Fees,,108446.96,Being sales to Sunita Agarwal
+2026-07-03,INV-1140,Sales,Sundry Debtors,156391.25,,Being sales to Nitin Bhat
+2026-07-03,INV-1140,Sales,Tuition Fees,,156391.25,Being sales to Nitin Bhat
+2026-07-03,PUR-1087,Purchase,Bank Charges,165883.37,,Purchase from Sai Trading Pvt Ltd
+2026-07-03,PUR-1087,Purchase,Sundry Creditors,,165883.37,Purchase from Sai Trading Pvt Ltd
+2026-07-03,PUR-1105,Purchase,Building Rent - Centre,188631.45,,Purchase from Bharat Enterprises & Sons
+2026-07-03,PUR-1105,Purchase,Sundry Creditors,,188631.45,Purchase from Bharat Enterprises & Sons
+2026-07-04,BR-1156,Receipt,SBI A/c,239064.78,,Received from Swati Rao
+2026-07-04,BR-1156,Receipt,Sundry Debtors,,239064.78,Received from Swati Rao
+2026-07-04,JV-1123,Journal,Telephone & Internet,71187.99,,Being telephone & internet for the period
+2026-07-04,JV-1123,Journal,SBI A/c,,71187.99,Being telephone & internet for the period
+2026-07-04,PUR-1049,Purchase,Office Rent,188347.77,,Purchase from Om Services Industries
+2026-07-04,PUR-1049,Purchase,Sundry Creditors,,188347.77,Purchase from Om Services Industries
+2026-07-04,PUR-1059,Purchase,Travelling Expenses,48375.52,,Purchase from Ganesh Mills Group
+2026-07-04,PUR-1059,Purchase,Sundry Creditors,,48375.52,Purchase from Ganesh Mills Group
+2026-07-04,PUR-1137,Purchase,Salaries & Wages,245712.63,,Purchase from Om Traders & Sons
+2026-07-04,PUR-1137,Purchase,Sundry Creditors,,245712.63,Purchase from Om Traders & Sons
+2026-07-05,BP-1019,Payment,Sundry Creditors,114559.39,,Payment to Lakshmi Industries Industries
+2026-07-05,BP-1019,Payment,SBI A/c,,114559.39,Payment to Lakshmi Industries Industries
+2026-07-05,BP-1035,Payment,Sundry Creditors,40301.35,,Payment to Maa Agencies Pvt Ltd
+2026-07-05,BP-1035,Payment,SBI A/c,,40301.35,Payment to Maa Agencies Pvt Ltd
+2026-07-05,BP-1045,Payment,Sundry Creditors,64484.00,,Payment to Om Services Industries
+2026-07-05,BP-1045,Payment,SBI A/c,,64484.00,Payment to Om Services Industries
+2026-07-05,BR-1069,Receipt,SBI A/c,208871.38,,Received from Neha Desai
+2026-07-05,BR-1069,Receipt,Sundry Debtors,,208871.38,Received from Neha Desai
+2026-07-05,BR-1078,Receipt,SBI A/c,135670.45,,Received from Vikram Joshi
+2026-07-05,BR-1078,Receipt,Sundry Debtors,,135670.45,Received from Vikram Joshi
+2026-07-05,INV-1123,Sales,Sundry Debtors,136894.99,,Being sales to Kavita Banerjee
+2026-07-05,INV-1123,Sales,Registration Fees,,136894.99,Being sales to Kavita Banerjee
+2026-07-05,INV-1157,Sales,Sundry Debtors,102932.97,,Being sales to Neha Desai
+2026-07-05,INV-1157,Sales,Tuition Fees,,102932.97,Being sales to Neha Desai
+2026-07-05,INV-1195,Sales,Sundry Debtors,53536.57,,Being sales to Rajesh Nair
+2026-07-05,INV-1195,Sales,Tuition Fees,,53536.57,Being sales to Rajesh Nair
+2026-07-05,JV-1054,Journal,Faculty Salaries,2339.55,,Being faculty salaries for the period
+2026-07-05,JV-1054,Journal,SBI A/c,,2339.55,Being faculty salaries for the period
+2026-07-05,JV-1088,Journal,Salaries & Wages,44253.98,,Being salaries & wages for the period
+2026-07-05,JV-1088,Journal,SBI A/c,,44253.98,Being salaries & wages for the period
+2026-07-05,JV-1119,Journal,Telephone & Internet,17822.95,,Being telephone & internet for the period
+2026-07-05,JV-1119,Journal,SBI A/c,,17822.95,Being telephone & internet for the period
+2026-07-05,PUR-1103,Purchase,Study Material Printing,16272.19,,Purchase from Ganesh Industries Pvt Ltd
+2026-07-05,PUR-1103,Purchase,Sundry Creditors,,16272.19,Purchase from Ganesh Industries Pvt Ltd
+2026-07-05,PUR-1104,Purchase,Postage & Courier,57757.31,,Purchase from Ratan Enterprises & Co
+2026-07-05,PUR-1104,Purchase,Sundry Creditors,,57757.31,Purchase from Ratan Enterprises & Co
+2026-07-06,BP-1040,Payment,Sundry Creditors,163884.78,,Payment to Om Traders & Sons
+2026-07-06,BP-1040,Payment,SBI A/c,,163884.78,Payment to Om Traders & Sons
+2026-07-06,BP-1077,Payment,Sundry Creditors,175632.56,,Payment to Om Services Industries
+2026-07-06,BP-1077,Payment,SBI A/c,,175632.56,Payment to Om Services Industries
+2026-07-06,BR-1049,Receipt,SBI A/c,40665.60,,Received from Manoj Sharma
+2026-07-06,BR-1049,Receipt,Sundry Debtors,,40665.60,Received from Manoj Sharma
+2026-07-06,BR-1114,Receipt,SBI A/c,217029.10,,Received from Suresh Shah
+2026-07-06,BR-1114,Receipt,Sundry Debtors,,217029.10,Received from Suresh Shah
+2026-07-06,BR-1162,Receipt,SBI A/c,136381.02,,Received from Nitin Iyer
+2026-07-06,BR-1162,Receipt,Sundry Debtors,,136381.02,Received from Nitin Iyer
+2026-07-06,INV-1133,Sales,Sundry Debtors,105591.65,,Being sales to Arjun Kumar
+2026-07-06,INV-1133,Sales,Registration Fees,,105591.65,Being sales to Arjun Kumar
+2026-07-06,INV-1175,Sales,Sundry Debtors,134626.66,,Being sales to Ritu Mehta
+2026-07-06,INV-1175,Sales,Tuition Fees,,134626.66,Being sales to Ritu Mehta
+2026-07-06,INV-1183,Sales,Sundry Debtors,157266.13,,Being sales to Manoj Mehta
+2026-07-06,INV-1183,Sales,Registration Fees,,157266.13,Being sales to Manoj Mehta
+2026-07-06,INV-1263,Sales,Sundry Debtors,165890.38,,Being sales to Rahul Iyer
+2026-07-06,INV-1263,Sales,Registration Fees,,165890.38,Being sales to Rahul Iyer
+2026-07-06,INV-1282,Sales,Sundry Debtors,144903.92,,Being sales to Amit Shah
+2026-07-06,INV-1282,Sales,Tuition Fees,,144903.92,Being sales to Amit Shah
+2026-07-06,INV-1311,Sales,Sundry Debtors,151712.47,,Being sales to Deepak Singh
+2026-07-06,INV-1311,Sales,Registration Fees,,151712.47,Being sales to Deepak Singh
+2026-07-06,INV-1314,Sales,Sundry Debtors,98873.59,,Being sales to Priya Patel
+2026-07-06,INV-1314,Sales,Tuition Fees,,98873.59,Being sales to Priya Patel
+2026-07-06,JV-1025,Journal,Printing & Stationery,24649.09,,Being printing & stationery for the period
+2026-07-06,JV-1025,Journal,SBI A/c,,24649.09,Being printing & stationery for the period
+2026-07-06,JV-1101,Journal,Printing & Stationery,23481.41,,Being printing & stationery for the period
+2026-07-06,JV-1101,Journal,SBI A/c,,23481.41,Being printing & stationery for the period
+2026-07-06,PUR-1092,Purchase,Travelling Expenses,273785.77,,Purchase from Ganesh Mills Group
+2026-07-06,PUR-1092,Purchase,Sundry Creditors,,273785.77,Purchase from Ganesh Mills Group
+2026-07-07,INV-1014,Sales,Sundry Debtors,180775.68,,Being sales to Swati Choudhary
+2026-07-07,INV-1014,Sales,Tuition Fees,,180775.68,Being sales to Swati Choudhary
+2026-07-07,INV-1074,Sales,Sundry Debtors,61793.13,,Being sales to Meena Kumar
+2026-07-07,INV-1074,Sales,Registration Fees,,61793.13,Being sales to Meena Kumar
+2026-07-07,INV-1303,Sales,Sundry Debtors,23072.67,,Being sales to Amit Joshi
+2026-07-07,INV-1303,Sales,Tuition Fees,,23072.67,Being sales to Amit Joshi
+2026-07-07,JV-1074,Journal,Travelling Expenses,8990.24,,Being travelling expenses for the period
+2026-07-07,JV-1074,Journal,SBI A/c,,8990.24,Being travelling expenses for the period
+2026-07-07,PUR-1068,Purchase,Printing & Stationery,222030.65,,Purchase from Maa Agencies Pvt Ltd
+2026-07-07,PUR-1068,Purchase,Sundry Creditors,,222030.65,Purchase from Maa Agencies Pvt Ltd
+2026-07-07,PUR-1074,Purchase,Audit Fees,205240.49,,Purchase from Ganesh Industries Pvt Ltd
+2026-07-07,PUR-1074,Purchase,Sundry Creditors,,205240.49,Purchase from Ganesh Industries Pvt Ltd
+2026-07-07,PUR-1131,Purchase,Telephone & Internet,138110.20,,Purchase from Krishna Enterprises & Co
+2026-07-07,PUR-1131,Purchase,Sundry Creditors,,138110.20,Purchase from Krishna Enterprises & Co
+2026-07-07,PUR-1135,Purchase,Electricity Charges,279163.20,,Purchase from Ratan Enterprises & Co
+2026-07-07,PUR-1135,Purchase,Sundry Creditors,,279163.20,Purchase from Ratan Enterprises & Co
+2026-07-07,PUR-1218,Purchase,Printing & Stationery,150119.60,,Purchase from Sai Trading Pvt Ltd
+2026-07-07,PUR-1218,Purchase,Sundry Creditors,,150119.60,Purchase from Sai Trading Pvt Ltd
+2026-07-08,BP-1086,Payment,Sundry Creditors,129308.10,,Payment to Ratan Enterprises & Co
+2026-07-08,BP-1086,Payment,SBI A/c,,129308.10,Payment to Ratan Enterprises & Co
+2026-07-08,BP-1114,Payment,Sundry Creditors,276416.25,,Payment to Ratan Enterprises & Co
+2026-07-08,BP-1114,Payment,SBI A/c,,276416.25,Payment to Ratan Enterprises & Co
+2026-07-08,BP-1118,Payment,Sundry Creditors,76388.98,,Payment to Shree Agencies Industries
+2026-07-08,BP-1118,Payment,SBI A/c,,76388.98,Payment to Shree Agencies Industries
+2026-07-08,BR-1003,Receipt,SBI A/c,210144.97,,Received from Kavita Banerjee
+2026-07-08,BR-1003,Receipt,Sundry Debtors,,210144.97,Received from Kavita Banerjee
+2026-07-08,BR-1040,Receipt,SBI A/c,186604.06,,Received from Rahul Kumar
+2026-07-08,BR-1040,Receipt,Sundry Debtors,,186604.06,Received from Rahul Kumar
+2026-07-08,INV-1073,Sales,Sundry Debtors,14405.32,,Being sales to Neha Verma
+2026-07-08,INV-1073,Sales,Tuition Fees,,14405.32,Being sales to Neha Verma
+2026-07-08,INV-1212,Sales,Sundry Debtors,99611.79,,Being sales to Vikram Rao
+2026-07-08,INV-1212,Sales,Registration Fees,,99611.79,Being sales to Vikram Rao
+2026-07-08,INV-1284,Sales,Sundry Debtors,38592.93,,Being sales to Rajesh Verma
+2026-07-08,INV-1284,Sales,Tuition Fees,,38592.93,Being sales to Rajesh Verma
+2026-07-08,PUR-1047,Purchase,Office Rent,160841.19,,Purchase from Krishna Enterprises & Co
+2026-07-08,PUR-1047,Purchase,Sundry Creditors,,160841.19,Purchase from Krishna Enterprises & Co
+2026-07-08,PUR-1080,Purchase,Electricity Charges,52833.69,,Purchase from Shree Agencies Industries
+2026-07-08,PUR-1080,Purchase,Sundry Creditors,,52833.69,Purchase from Shree Agencies Industries
+2026-07-08,PUR-1209,Purchase,Office Rent,257264.79,,Purchase from Sai Trading Pvt Ltd
+2026-07-08,PUR-1209,Purchase,Sundry Creditors,,257264.79,Purchase from Sai Trading Pvt Ltd
+2026-07-08,PUR-1212,Purchase,Faculty Salaries,269633.62,,Purchase from Bharat Enterprises & Sons
+2026-07-08,PUR-1212,Purchase,Sundry Creditors,,269633.62,Purchase from Bharat Enterprises & Sons
+2026-07-08,PUR-1223,Purchase,Postage & Courier,190680.38,,Purchase from Ratan Enterprises & Co
+2026-07-08,PUR-1223,Purchase,Sundry Creditors,,190680.38,Purchase from Ratan Enterprises & Co
+2026-07-09,BR-1121,Receipt,SBI A/c,98124.96,,Received from Pooja Agarwal
+2026-07-09,BR-1121,Receipt,Sundry Debtors,,98124.96,Received from Pooja Agarwal
+2026-07-09,BR-1147,Receipt,SBI A/c,244547.00,,Received from Sanjay Mehta
+2026-07-09,BR-1147,Receipt,Sundry Debtors,,244547.00,Received from Sanjay Mehta
+2026-07-09,INV-1013,Sales,Sundry Debtors,195484.45,,Being sales to Arjun Nair
+2026-07-09,INV-1013,Sales,Registration Fees,,195484.45,Being sales to Arjun Nair
+2026-07-09,INV-1058,Sales,Sundry Debtors,113403.15,,Being sales to Arjun Nair
+2026-07-09,INV-1058,Sales,Tuition Fees,,113403.15,Being sales to Arjun Nair
+2026-07-09,INV-1071,Sales,Sundry Debtors,85492.45,,Being sales to Manoj Shah
+2026-07-09,INV-1071,Sales,Tuition Fees,,85492.45,Being sales to Manoj Shah
+2026-07-09,INV-1092,Sales,Sundry Debtors,54709.47,,Being sales to Neha Verma
+2026-07-09,INV-1092,Sales,Registration Fees,,54709.47,Being sales to Neha Verma
+2026-07-09,JV-1000,Journal,Audit Fees,50283.99,,Being audit fees for the period
+2026-07-09,JV-1000,Journal,SBI A/c,,50283.99,Being audit fees for the period
+2026-07-09,JV-1083,Journal,Office Rent,70022.65,,Being office rent for the period
+2026-07-09,JV-1083,Journal,SBI A/c,,70022.65,Being office rent for the period
+2026-07-09,PUR-1149,Purchase,Study Material Printing,232729.07,,Purchase from Krishna Enterprises & Co
+2026-07-09,PUR-1149,Purchase,Sundry Creditors,,232729.07,Purchase from Krishna Enterprises & Co
+2026-07-09,PUR-1165,Purchase,Salaries & Wages,88992.10,,Purchase from Ratan Enterprises & Co
+2026-07-09,PUR-1165,Purchase,Sundry Creditors,,88992.10,Purchase from Ratan Enterprises & Co
+2026-07-10,BP-1007,Payment,Sundry Creditors,18905.32,,Payment to Om Traders & Sons
+2026-07-10,BP-1007,Payment,SBI A/c,,18905.32,Payment to Om Traders & Sons
+2026-07-10,BP-1026,Payment,Sundry Creditors,298225.08,,Payment to Shree Agencies Industries
+2026-07-10,BP-1026,Payment,SBI A/c,,298225.08,Payment to Shree Agencies Industries
+2026-07-10,BP-1111,Payment,Sundry Creditors,204445.83,,Payment to Shree Agencies Industries
+2026-07-10,BP-1111,Payment,SBI A/c,,204445.83,Payment to Shree Agencies Industries
+2026-07-10,BP-1131,Payment,Sundry Creditors,47948.68,,Payment to Krishna Enterprises & Co
+2026-07-10,BP-1131,Payment,SBI A/c,,47948.68,Payment to Krishna Enterprises & Co
+2026-07-10,BP-1141,Payment,Sundry Creditors,113919.81,,Payment to Ganesh Mills Group
+2026-07-10,BP-1141,Payment,SBI A/c,,113919.81,Payment to Ganesh Mills Group
+2026-07-10,INV-1096,Sales,Sundry Debtors,148679.42,,Being sales to Sunita Shah
+2026-07-10,INV-1096,Sales,Tuition Fees,,148679.42,Being sales to Sunita Shah
+2026-07-10,INV-1115,Sales,Sundry Debtors,160828.04,,Being sales to Neha Kumar
+2026-07-10,INV-1115,Sales,Registration Fees,,160828.04,Being sales to Neha Kumar
+2026-07-10,INV-1151,Sales,Sundry Debtors,67063.09,,Being sales to Manoj Shah
+2026-07-10,INV-1151,Sales,Registration Fees,,67063.09,Being sales to Manoj Shah
+2026-07-10,INV-1156,Sales,Sundry Debtors,173115.05,,Being sales to Rahul Shah
+2026-07-10,INV-1156,Sales,Tuition Fees,,173115.05,Being sales to Rahul Shah
+2026-07-10,JV-1001,Journal,Faculty Salaries,78707.74,,Being faculty salaries for the period
+2026-07-10,JV-1001,Journal,SBI A/c,,78707.74,Being faculty salaries for the period
+2026-07-10,JV-1053,Journal,Bank Charges,55319.84,,Being bank charges for the period
+2026-07-10,JV-1053,Journal,SBI A/c,,55319.84,Being bank charges for the period
+2026-07-10,JV-1118,Journal,Study Material Printing,24407.34,,Being study material printing for the period
+2026-07-10,JV-1118,Journal,SBI A/c,,24407.34,Being study material printing for the period
+2026-07-10,PUR-1023,Purchase,Travelling Expenses,30707.40,,Purchase from Om Traders & Sons
+2026-07-10,PUR-1023,Purchase,Sundry Creditors,,30707.40,Purchase from Om Traders & Sons
+2026-07-10,PUR-1139,Purchase,Audit Fees,77715.83,,Purchase from Ratan Enterprises & Co
+2026-07-10,PUR-1139,Purchase,Sundry Creditors,,77715.83,Purchase from Ratan Enterprises & Co
+2026-07-10,PUR-1183,Purchase,Office Rent,102518.03,,Purchase from Sai Trading Pvt Ltd
+2026-07-10,PUR-1183,Purchase,Sundry Creditors,,102518.03,Purchase from Sai Trading Pvt Ltd
+2026-07-10,PUR-1205,Purchase,Printing & Stationery,6871.32,,Purchase from Om Services Industries
+2026-07-10,PUR-1205,Purchase,Sundry Creditors,,6871.32,Purchase from Om Services Industries
+2026-07-11,BR-1153,Receipt,SBI A/c,167596.43,,Received from Nitin Shah
+2026-07-11,BR-1153,Receipt,Sundry Debtors,,167596.43,Received from Nitin Shah
+2026-07-11,INV-1097,Sales,Sundry Debtors,176445.52,,Being sales to Vikram Sharma
+2026-07-11,INV-1097,Sales,Registration Fees,,176445.52,Being sales to Vikram Sharma
+2026-07-11,INV-1301,Sales,Sundry Debtors,167380.01,,Being sales to Rajesh Verma
+2026-07-11,INV-1301,Sales,Registration Fees,,167380.01,Being sales to Rajesh Verma
+2026-07-11,JV-1036,Journal,Telephone & Internet,82666.43,,Being telephone & internet for the period
+2026-07-11,JV-1036,Journal,SBI A/c,,82666.43,Being telephone & internet for the period
+2026-07-11,JV-1055,Journal,Printing & Stationery,18097.87,,Being printing & stationery for the period
+2026-07-11,JV-1055,Journal,SBI A/c,,18097.87,Being printing & stationery for the period
+2026-07-11,PUR-1028,Purchase,Travelling Expenses,278890.07,,Purchase from Lakshmi Industries Industries
+2026-07-11,PUR-1028,Purchase,Sundry Creditors,,278890.07,Purchase from Lakshmi Industries Industries
+2026-07-11,PUR-1116,Purchase,Bank Charges,277722.78,,Purchase from Bharat Enterprises & Sons
+2026-07-11,PUR-1116,Purchase,Sundry Creditors,,277722.78,Purchase from Bharat Enterprises & Sons
+2026-07-11,PUR-1163,Purchase,Faculty Salaries,186783.55,,Purchase from Ganesh Mills Group
+2026-07-11,PUR-1163,Purchase,Sundry Creditors,,186783.55,Purchase from Ganesh Mills Group
+2026-07-11,PUR-1234,Purchase,Postage & Courier,76622.38,,Purchase from Om Services Industries
+2026-07-11,PUR-1234,Purchase,Sundry Creditors,,76622.38,Purchase from Om Services Industries
+2026-07-12,BP-1002,Payment,Sundry Creditors,82630.15,,Payment to Bharat Enterprises & Sons
+2026-07-12,BP-1002,Payment,SBI A/c,,82630.15,Payment to Bharat Enterprises & Sons
+2026-07-12,BP-1015,Payment,Sundry Creditors,234637.90,,Payment to Bharat Enterprises & Sons
+2026-07-12,BP-1015,Payment,SBI A/c,,234637.90,Payment to Bharat Enterprises & Sons
+2026-07-12,BP-1139,Payment,Sundry Creditors,280980.23,,Payment to Ratan Enterprises & Co
+2026-07-12,BP-1139,Payment,SBI A/c,,280980.23,Payment to Ratan Enterprises & Co
+2026-07-12,BR-1081,Receipt,SBI A/c,93499.07,,Received from Kavita Iyer
+2026-07-12,BR-1081,Receipt,Sundry Debtors,,93499.07,Received from Kavita Iyer
+2026-07-12,INV-1018,Sales,Sundry Debtors,106320.70,,Being sales to Swati Patel
+2026-07-12,INV-1018,Sales,Registration Fees,,106320.70,Being sales to Swati Patel
+2026-07-12,INV-1088,Sales,Sundry Debtors,77185.86,,Being sales to Nitin Shah
+2026-07-12,INV-1088,Sales,Registration Fees,,77185.86,Being sales to Nitin Shah
+2026-07-12,INV-1105,Sales,Sundry Debtors,168380.19,,Being sales to Meena Shah
+2026-07-12,INV-1105,Sales,Registration Fees,,168380.19,Being sales to Meena Shah
+2026-07-12,INV-1122,Sales,Sundry Debtors,193426.58,,Being sales to Meena Shah
+2026-07-12,INV-1122,Sales,Registration Fees,,193426.58,Being sales to Meena Shah
+2026-07-12,INV-1139,Sales,Sundry Debtors,19633.26,,Being sales to Neha Kumar
+2026-07-12,INV-1139,Sales,Tuition Fees,,19633.26,Being sales to Neha Kumar
+2026-07-12,INV-1160,Sales,Sundry Debtors,185311.15,,Being sales to Suresh Pillai
+2026-07-12,INV-1160,Sales,Tuition Fees,,185311.15,Being sales to Suresh Pillai
+2026-07-12,INV-1227,Sales,Sundry Debtors,45804.55,,Being sales to Asha Mehta
+2026-07-12,INV-1227,Sales,Tuition Fees,,45804.55,Being sales to Asha Mehta
+2026-07-12,INV-1297,Sales,Sundry Debtors,185559.37,,Being sales to Rahul Pillai
+2026-07-12,INV-1297,Sales,Registration Fees,,185559.37,Being sales to Rahul Pillai
+2026-07-12,JV-1028,Journal,Telephone & Internet,41008.74,,Being telephone & internet for the period
+2026-07-12,JV-1028,Journal,SBI A/c,,41008.74,Being telephone & internet for the period
+2026-07-12,JV-1030,Journal,Study Material Printing,98875.02,,Being study material printing for the period
+2026-07-12,JV-1030,Journal,SBI A/c,,98875.02,Being study material printing for the period
+2026-07-12,PUR-1066,Purchase,Faculty Salaries,281142.46,,Purchase from Maa Agencies Pvt Ltd
+2026-07-12,PUR-1066,Purchase,Sundry Creditors,,281142.46,Purchase from Maa Agencies Pvt Ltd
+2026-07-12,PUR-1236,Purchase,Printing & Stationery,88361.10,,Purchase from Ganesh Mills Group
+2026-07-12,PUR-1236,Purchase,Sundry Creditors,,88361.10,Purchase from Ganesh Mills Group
+2026-07-13,BP-1016,Payment,Sundry Creditors,216707.09,,Payment to Ganesh Mills Group
+2026-07-13,BP-1016,Payment,SBI A/c,,216707.09,Payment to Ganesh Mills Group
+2026-07-13,BP-1115,Payment,Sundry Creditors,112631.62,,Payment to Om Traders & Sons
+2026-07-13,BP-1115,Payment,SBI A/c,,112631.62,Payment to Om Traders & Sons
+2026-07-13,BR-1021,Receipt,SBI A/c,169223.49,,Received from Deepak Iyer
+2026-07-13,BR-1021,Receipt,Sundry Debtors,,169223.49,Received from Deepak Iyer
+2026-07-13,BR-1109,Receipt,SBI A/c,149245.55,,Received from Sunita Kapoor
+2026-07-13,BR-1109,Receipt,Sundry Debtors,,149245.55,Received from Sunita Kapoor
+2026-07-13,INV-1075,Sales,Sundry Debtors,171480.37,,Being sales to Arjun Banerjee
+2026-07-13,INV-1075,Sales,Registration Fees,,171480.37,Being sales to Arjun Banerjee
+2026-07-13,INV-1085,Sales,Sundry Debtors,48382.88,,Being sales to Rajesh Verma
+2026-07-13,INV-1085,Sales,Tuition Fees,,48382.88,Being sales to Rajesh Verma
+2026-07-13,INV-1240,Sales,Sundry Debtors,25328.67,,Being sales to Vikram Verma
+2026-07-13,INV-1240,Sales,Registration Fees,,25328.67,Being sales to Vikram Verma
+2026-07-13,INV-1300,Sales,Sundry Debtors,107563.89,,Being sales to Kavita Reddy
+2026-07-13,INV-1300,Sales,Tuition Fees,,107563.89,Being sales to Kavita Reddy
+2026-07-13,PUR-1094,Purchase,Electricity Charges,214606.94,,Purchase from Sai Trading Pvt Ltd
+2026-07-13,PUR-1094,Purchase,Sundry Creditors,,214606.94,Purchase from Sai Trading Pvt Ltd
+2026-07-14,BP-1012,Payment,Sundry Creditors,285666.36,,Payment to Ganesh Mills Group
+2026-07-14,BP-1012,Payment,SBI A/c,,285666.36,Payment to Ganesh Mills Group
+2026-07-14,BP-1042,Payment,Sundry Creditors,126245.78,,Payment to Ratan Enterprises & Co
+2026-07-14,BP-1042,Payment,SBI A/c,,126245.78,Payment to Ratan Enterprises & Co
+2026-07-14,BP-1048,Payment,Sundry Creditors,183335.80,,Payment to Lakshmi Enterprises Pvt Ltd
+2026-07-14,BP-1048,Payment,SBI A/c,,183335.80,Payment to Lakshmi Enterprises Pvt Ltd
+2026-07-14,BP-1095,Payment,Sundry Creditors,261198.84,,Payment to Om Services Industries
+2026-07-14,BP-1095,Payment,SBI A/c,,261198.84,Payment to Om Services Industries
+2026-07-14,BR-1009,Receipt,SBI A/c,244184.19,,Received from Asha Desai
+2026-07-14,BR-1009,Receipt,Sundry Debtors,,244184.19,Received from Asha Desai
+2026-07-14,BR-1025,Receipt,SBI A/c,199291.40,,Received from Nitin Kapoor
+2026-07-14,BR-1025,Receipt,Sundry Debtors,,199291.40,Received from Nitin Kapoor
+2026-07-14,BR-1041,Receipt,SBI A/c,150662.46,,Received from Rajesh Kumar
+2026-07-14,BR-1041,Receipt,Sundry Debtors,,150662.46,Received from Rajesh Kumar
+2026-07-14,BR-1094,Receipt,SBI A/c,115919.39,,Received from Pooja Kumar
+2026-07-14,BR-1094,Receipt,Sundry Debtors,,115919.39,Received from Pooja Kumar
+2026-07-14,BR-1152,Receipt,SBI A/c,163467.64,,Received from Sanjay Rao
+2026-07-14,BR-1152,Receipt,Sundry Debtors,,163467.64,Received from Sanjay Rao
+2026-07-14,BR-1158,Receipt,SBI A/c,48601.60,,Received from Deepak Pillai
+2026-07-14,BR-1158,Receipt,Sundry Debtors,,48601.60,Received from Deepak Pillai
+2026-07-14,INV-1053,Sales,Sundry Debtors,193024.94,,Being sales to Rahul Shah
+2026-07-14,INV-1053,Sales,Registration Fees,,193024.94,Being sales to Rahul Shah
+2026-07-14,INV-1304,Sales,Sundry Debtors,159717.16,,Being sales to Rahul Iyer
+2026-07-14,INV-1304,Sales,Registration Fees,,159717.16,Being sales to Rahul Iyer
+2026-07-14,JV-1037,Journal,Postage & Courier,79266.05,,Being postage & courier for the period
+2026-07-14,JV-1037,Journal,SBI A/c,,79266.05,Being postage & courier for the period
+2026-07-14,JV-1047,Journal,Bank Charges,8050.97,,Being bank charges for the period
+2026-07-14,JV-1047,Journal,SBI A/c,,8050.97,Being bank charges for the period
+2026-07-14,PUR-1075,Purchase,Postage & Courier,31250.75,,Purchase from Krishna Enterprises & Co
+2026-07-14,PUR-1075,Purchase,Sundry Creditors,,31250.75,Purchase from Krishna Enterprises & Co
+2026-07-14,PUR-1095,Purchase,Electricity Charges,211314.08,,Purchase from Ganesh Industries Pvt Ltd
+2026-07-14,PUR-1095,Purchase,Sundry Creditors,,211314.08,Purchase from Ganesh Industries Pvt Ltd
+2026-07-14,PUR-1192,Purchase,Telephone & Internet,149643.97,,Purchase from Om Traders & Sons
+2026-07-14,PUR-1192,Purchase,Sundry Creditors,,149643.97,Purchase from Om Traders & Sons
+2026-07-14,PUR-1235,Purchase,Travelling Expenses,237841.28,,Purchase from Ganesh Industries Pvt Ltd
+2026-07-14,PUR-1235,Purchase,Sundry Creditors,,237841.28,Purchase from Ganesh Industries Pvt Ltd
+2026-07-15,INV-1009,Sales,Sundry Debtors,56048.30,,Being sales to Rajesh Verma
+2026-07-15,INV-1009,Sales,Tuition Fees,,56048.30,Being sales to Rajesh Verma
+2026-07-15,INV-1221,Sales,Sundry Debtors,137352.30,,Being sales to Deepak Reddy
+2026-07-15,INV-1221,Sales,Tuition Fees,,137352.30,Being sales to Deepak Reddy
+2026-07-15,INV-1259,Sales,Sundry Debtors,123309.40,,Being sales to Suresh Shah
+2026-07-15,INV-1259,Sales,Tuition Fees,,123309.40,Being sales to Suresh Shah
+2026-07-15,JV-1058,Journal,Building Rent - Centre,12466.78,,Being building rent - centre for the period
+2026-07-15,JV-1058,Journal,SBI A/c,,12466.78,Being building rent - centre for the period
+2026-07-15,JV-1072,Journal,Printing & Stationery,61900.01,,Being printing & stationery for the period
+2026-07-15,JV-1072,Journal,SBI A/c,,61900.01,Being printing & stationery for the period
+2026-07-15,PUR-1071,Purchase,Telephone & Internet,68211.47,,Purchase from Om Traders & Sons
+2026-07-15,PUR-1071,Purchase,Sundry Creditors,,68211.47,Purchase from Om Traders & Sons
+2026-07-15,PUR-1076,Purchase,Telephone & Internet,100944.81,,Purchase from Ganesh Mills Group
+2026-07-15,PUR-1076,Purchase,Sundry Creditors,,100944.81,Purchase from Ganesh Mills Group
+2026-07-15,PUR-1102,Purchase,Telephone & Internet,18863.13,,Purchase from Ganesh Industries Pvt Ltd
+2026-07-15,PUR-1102,Purchase,Sundry Creditors,,18863.13,Purchase from Ganesh Industries Pvt Ltd
+2026-07-16,BP-1072,Payment,Sundry Creditors,215816.64,,Payment to Ratan Enterprises & Co
+2026-07-16,BP-1072,Payment,SBI A/c,,215816.64,Payment to Ratan Enterprises & Co
+2026-07-16,BP-1080,Payment,Sundry Creditors,178172.80,,Payment to Krishna Enterprises & Co
+2026-07-16,BP-1080,Payment,SBI A/c,,178172.80,Payment to Krishna Enterprises & Co
+2026-07-16,BP-1106,Payment,Sundry Creditors,178822.43,,Payment to Shree Agencies Industries
+2026-07-16,BP-1106,Payment,SBI A/c,,,Payment to Shree Agencies Industries
+2026-07-16,BP-1137,Payment,Sundry Creditors,208444.44,,Payment to Shree Agencies Industries
+2026-07-16,BP-1137,Payment,SBI A/c,,208444.44,Payment to Shree Agencies Industries
+2026-07-16,BP-1140,Payment,Sundry Creditors,181111.50,,Payment to Sai Trading Pvt Ltd
+2026-07-16,BP-1140,Payment,SBI A/c,,181111.50,Payment to Sai Trading Pvt Ltd
+2026-07-16,BR-1018,Receipt,SBI A/c,31254.99,,Received from Meena Patel
+2026-07-16,BR-1018,Receipt,Sundry Debtors,,31254.99,Received from Meena Patel
+2026-07-16,BR-1019,Receipt,SBI A/c,104368.34,,Received from Nitin Patel
+2026-07-16,BR-1019,Receipt,Sundry Debtors,,104368.34,Received from Nitin Patel
+2026-07-16,BR-1126,Receipt,SBI A/c,25043.21,,Received from Rahul Iyer
+2026-07-16,BR-1126,Receipt,Sundry Debtors,,25043.21,Received from Rahul Iyer
+2026-07-16,BR-1138,Receipt,SBI A/c,39651.58,,Received from Vikram Verma
+2026-07-16,BR-1138,Receipt,Sundry Debtors,,39651.58,Received from Vikram Verma
+2026-07-16,INV-1064,Sales,Sundry Debtors,6296.03,,Being sales to Swati Kumar
+2026-07-16,INV-1064,Sales,Registration Fees,,6296.03,Being sales to Swati Kumar
+2026-07-16,INV-1243,Sales,Sundry Debtors,38722.17,,Being sales to Rahul Nair
+2026-07-16,INV-1243,Sales,Tuition Fees,,38722.17,Being sales to Rahul Nair
+2026-07-16,INV-1275,Sales,Sundry Debtors,26798.84,,Being sales to Suresh Desai
+2026-07-16,INV-1275,Sales,Registration Fees,,26798.84,Being sales to Suresh Desai
+2026-07-16,JV-1009,Journal,Building Rent - Centre,81430.71,,Being building rent - centre for the period
+2026-07-16,JV-1009,Journal,SBI A/c,,81430.71,Being building rent - centre for the period
+2026-07-16,JV-1010,Journal,Travelling Expenses,4827.96,,Being travelling expenses for the period
+2026-07-16,JV-1010,Journal,SBI A/c,,4827.96,Being travelling expenses for the period
+2026-07-16,JV-1069,Journal,Printing & Stationery,55382.25,,Being printing & stationery for the period
+2026-07-16,JV-1069,Journal,SBI A/c,,55382.25,Being printing & stationery for the period
+2026-07-16,JV-1136,Journal,Printing & Stationery,21707.46,,Being printing & stationery for the period
+2026-07-16,JV-1136,Journal,SBI A/c,,21707.46,Being printing & stationery for the period
+2026-07-16,PUR-1027,Purchase,Building Rent - Centre,32174.96,,Purchase from Ganesh Industries Pvt Ltd
+2026-07-16,PUR-1027,Purchase,Sundry Creditors,,32174.96,Purchase from Ganesh Industries Pvt Ltd
+2026-07-16,PUR-1039,Purchase,Salaries & Wages,20910.42,,Purchase from Sai Trading Pvt Ltd
+2026-07-16,PUR-1039,Purchase,Sundry Creditors,,20910.42,Purchase from Sai Trading Pvt Ltd
+2026-07-16,PUR-1060,Purchase,Salaries & Wages,52999.35,,Purchase from Lakshmi Industries Industries
+2026-07-16,PUR-1060,Purchase,Sundry Creditors,,52999.35,Purchase from Lakshmi Industries Industries
+2026-07-16,PUR-1084,Purchase,Printing & Stationery,24333.37,,Purchase from Om Services Industries
+2026-07-16,PUR-1084,Purchase,Sundry Creditors,,24333.37,Purchase from Om Services Industries
+2026-07-16,PUR-1127,Purchase,Telephone & Internet,129681.34,,Purchase from Krishna Enterprises & Co
+2026-07-16,PUR-1127,Purchase,Sundry Creditors,,129681.34,Purchase from Krishna Enterprises & Co
+2026-07-16,PUR-1210,Purchase,Travelling Expenses,49286.15,,Purchase from Shree Agencies Industries
+2026-07-16,PUR-1210,Purchase,Sundry Creditors,,49286.15,Purchase from Shree Agencies Industries
+2026-07-16,PUR-1233,Purchase,Telephone & Internet,167490.91,,Purchase from Ganesh Mills Group
+2026-07-16,PUR-1233,Purchase,Sundry Creditors,,167490.91,Purchase from Ganesh Mills Group
+2026-07-17,BP-1133,Payment,Sundry Creditors,122027.45,,Payment to Sai Trading Pvt Ltd
+2026-07-17,BP-1133,Payment,SBI A/c,,122027.45,Payment to Sai Trading Pvt Ltd
+2026-07-17,BP-1134,Payment,Sundry Creditors,28652.31,,Payment to Ratan Enterprises & Co
+2026-07-17,BP-1134,Payment,SBI A/c,,28652.31,Payment to Ratan Enterprises & Co
+2026-07-17,BR-1071,Receipt,SBI A/c,15091.36,,Received from Asha Shah
+2026-07-17,BR-1071,Receipt,Sundry Debtors,,15091.36,Received from Asha Shah
+2026-07-17,BR-1124,Receipt,SBI A/c,96882.54,,Received from Pooja Mehta
+2026-07-17,BR-1124,Receipt,Sundry Debtors,,96882.54,Received from Pooja Mehta
+2026-07-17,BR-1140,Receipt,SBI A/c,159290.18,,Received from Rajesh Kapoor
+2026-07-17,BR-1140,Receipt,Sundry Debtors,,159290.18,Received from Rajesh Kapoor
+2026-07-17,INV-1102,Sales,Sundry Debtors,61515.16,,Being sales to Suresh Verma
+2026-07-17,INV-1102,Sales,Tuition Fees,,61515.16,Being sales to Suresh Verma
+2026-07-17,INV-1148,Sales,Sundry Debtors,94670.36,,Being sales to Suresh Iyer
+2026-07-17,INV-1148,Sales,Tuition Fees,,94670.36,Being sales to Suresh Iyer
+2026-07-17,INV-1270,Sales,Sundry Debtors,106381.10,,Being sales to Neha Kumar
+2026-07-17,INV-1270,Sales,Registration Fees,,106381.10,
+2026-07-17,INV-1302,Sales,Sundry Debtors,160616.25,,Being sales to Swati Choudhary
+2026-07-17,INV-1302,Sales,Tuition Fees,,160616.25,Being sales to Swati Choudhary
+2026-07-17,JV-1023,Journal,Faculty Salaries,30453.24,,Being faculty salaries for the period
+2026-07-17,JV-1023,Journal,SBI A/c,,30453.24,Being faculty salaries for the period
+2026-07-17,JV-1109,Journal,Faculty Salaries,13057.52,,Being faculty salaries for the period
+2026-07-17,JV-1109,Journal,SBI A/c,,13057.52,Being faculty salaries for the period
+2026-07-17,JV-X245,Journal,Temp Holding,4397.27,,Unknown adjustment
+2026-07-17,JV-X245,Journal,SBI A/c,,4397.27,Unknown adjustment
+2026-07-17,PUR-1142,Purchase,Travelling Expenses,172677.08,,Purchase from Ratan Enterprises & Co
+2026-07-17,PUR-1142,Purchase,Sundry Creditors,,172677.08,Purchase from Ratan Enterprises & Co
+2026-07-17,PUR-1178,Purchase,Telephone & Internet,225953.07,,Purchase from Sai Trading Pvt Ltd
+2026-07-17,PUR-1178,Purchase,Sundry Creditors,,225953.07,Purchase from Sai Trading Pvt Ltd
+2026-07-17,PUR-1217,Purchase,Printing & Stationery,8190.72,,Purchase from Ganesh Industries Pvt Ltd
+2026-07-17,PUR-1217,Purchase,Sundry Creditors,,8190.72,Purchase from Ganesh Industries Pvt Ltd
+2026-07-17,PUR-1221,Purchase,Bank Charges,14807.55,,Purchase from Ganesh Industries Pvt Ltd
+2026-07-17,PUR-1221,Purchase,Sundry Creditors,,14807.55,Purchase from Ganesh Industries Pvt Ltd
+2026-07-18,BP-1034,Payment,Sundry Creditors,137287.03,,Payment to Lakshmi Industries Industries
+2026-07-18,BP-1034,Payment,SBI A/c,,137287.03,Payment to Lakshmi Industries Industries
+2026-07-18,BP-1046,Payment,Sundry Creditors,105455.86,,Payment to Krishna Enterprises & Co
+2026-07-18,BP-1046,Payment,SBI A/c,,105455.86,Payment to Krishna Enterprises & Co
+2026-07-18,BR-1032,Receipt,SBI A/c,154305.39,,Received from Neha Joshi
+2026-07-18,BR-1032,Receipt,Sundry Debtors,,154305.39,Received from Neha Joshi
+2026-07-18,BR-1119,Receipt,SBI A/c,207783.50,,Received from Sanjay Choudhary
+2026-07-18,BR-1119,Receipt,Sundry Debtors,,207783.50,Received from Sanjay Choudhary
+2026-07-18,INV-1169,Sales,Sundry Debtors,125985.40,,Being sales to Meena Sharma
+2026-07-18,INV-1169,Sales,Tuition Fees,,125985.40,Being sales to Meena Sharma
+2026-07-18,INV-1246,Sales,Sundry Debtors,165668.54,,Being sales to Sunita Desai
+2026-07-18,INV-1246,Sales,Tuition Fees,,165668.54,Being sales to Sunita Desai
+2026-07-18,INV-1317,Sales,Sundry Debtors,36152.96,,Being sales to Suresh Verma
+2026-07-18,INV-1317,Sales,Registration Fees,,36152.96,Being sales to Suresh Verma
+2026-07-18,JV-1005,Journal,Study Material Printing,49162.66,,Being study material printing for the period
+2026-07-18,JV-1005,Journal,SBI A/c,,49162.66,Being study material printing for the period
+2026-07-18,JV-1018,Journal,Postage & Courier,17625.94,,Being postage & courier for the period
+2026-07-18,JV-1018,Journal,SBI A/c,,17625.94,Being postage & courier for the period
+2026-07-18,JV-1099,Journal,Audit Fees,68752.32,,Being audit fees for the period
+2026-07-18,JV-1099,Journal,SBI A/c,,68752.32,Being audit fees for the period
+2026-07-18,JV-X345,Journal,Round Off,3580.62,,Unknown adjustment
+2026-07-18,JV-X345,Journal,SBI A/c,,3580.62,Unknown adjustment
+2026-07-18,PUR-1117,Purchase,Printing & Stationery,178168.81,,Purchase from Ganesh Mills Group
+2026-07-18,PUR-1117,Purchase,Sundry Creditors,,178168.81,Purchase from Ganesh Mills Group
+2026-07-18,PUR-1197,Purchase,Building Rent - Centre,185002.56,,Purchase from Maa Agencies Pvt Ltd
+2026-07-18,PUR-1197,Purchase,Sundry Creditors,,185002.56,Purchase from Maa Agencies Pvt Ltd
+2026-07-19,BP-1110,Payment,Sundry Creditors,268936.30,,Payment to Ratan Enterprises & Co
+2026-07-19,BP-1110,Payment,SBI A/c,,268936.30,Payment to Ratan Enterprises & Co
+2026-07-19,JV-X179,Journal,Sundry Adjustments,980.70,,Unknown adjustment
+2026-07-19,JV-X179,Journal,SBI A/c,,980.70,Unknown adjustment
+2026-07-20,BP-1005,Payment,Sundry Creditors,99462.81,,Payment to Ratan Enterprises & Co
+2026-07-20,BP-1005,Payment,SBI A/c,,99462.81,Payment to Ratan Enterprises & Co
+2026-07-20,BP-1008,Payment,Sundry Creditors,147156.73,,Payment to Maa Agencies Pvt Ltd
+2026-07-20,BP-1008,Payment,SBI A/c,,147156.73,Payment to Maa Agencies Pvt Ltd
+2026-07-20,BR-1036,Receipt,SBI A/c,191008.72,,Received from Rahul Rao
+2026-07-20,BR-1036,Receipt,Sundry Debtors,,191008.72,Received from Rahul Rao
+2026-07-20,BR-1091,Receipt,SBI A/c,85290.91,,
+2026-07-20,BR-1091,Receipt,Sundry Debtors,,85290.91,Received from Kavita Banerjee
+2026-07-20,INV-1024,Sales,Sundry Debtors,133110.92,,Being sales to Deepak Gupta
+2026-07-20,INV-1024,Sales,Registration Fees,,133110.92,Being sales to Deepak Gupta
+2026-07-20,INV-1037,Sales,Sundry Debtors,12957.08,,Being sales to Priya Rao
+2026-07-20,INV-1037,Sales,Registration Fees,,12957.08,Being sales to Priya Rao
+2026-07-20,INV-1072,Sales,Sundry Debtors,19846.31,,Being sales to Meena Rao
+2026-07-20,INV-1072,Sales,Registration Fees,,19846.31,Being sales to Meena Rao
+2026-07-20,INV-1095,Sales,Sundry Debtors,30331.87,,Being sales to Manoj Mehta
+2026-07-20,INV-1095,Sales,Registration Fees,,30331.87,Being sales to Manoj Mehta
+2026-07-20,INV-1100,Sales,Sundry Debtors,135555.26,,Being sales to Nitin Iyer
+2026-07-20,INV-1100,Sales,Registration Fees,,135555.26,Being sales to Nitin Iyer
+2026-07-20,INV-1107,Sales,Sundry Debtors,15173.77,,Being sales to Meena Patel
+2026-07-20,INV-1107,Sales,Registration Fees,,15173.77,Being sales to Meena Patel
+2026-07-20,JV-1044,Journal,Building Rent - Centre,30111.32,,Being building rent - centre for the period
+2026-07-20,JV-1044,Journal,SBI A/c,,30111.32,Being building rent - centre for the period
+2026-07-20,PUR-1002,Purchase,Travelling Expenses,151608.12,,Purchase from Om Services Industries
+2026-07-20,PUR-1002,Purchase,Sundry Creditors,,151608.12,Purchase from Om Services Industries
+2026-07-20,PUR-1014,Purchase,Bank Charges,262493.65,,Purchase from Lakshmi Industries Industries
+2026-07-20,PUR-1014,Purchase,Sundry Creditors,,262493.65,Purchase from Lakshmi Industries Industries
+2026-07-20,PUR-1024,Purchase,Study Material Printing,223026.27,,Purchase from Shree Agencies Industries
+2026-07-20,PUR-1024,Purchase,Sundry Creditors,,223026.27,Purchase from Shree Agencies Industries
+2026-07-20,PUR-1054,Purchase,Salaries & Wages,164042.70,,Purchase from Krishna Enterprises & Co
+2026-07-20,PUR-1054,Purchase,Sundry Creditors,,164042.70,Purchase from Krishna Enterprises & Co
+2026-07-20,PUR-1063,Purchase,Telephone & Internet,5649.89,,Purchase from Lakshmi Industries Industries
+2026-07-20,PUR-1063,Purchase,Sundry Creditors,,5649.89,Purchase from Lakshmi Industries Industries
+2026-07-20,PUR-1190,Purchase,Bank Charges,221046.50,,Purchase from Ratan Enterprises & Co
+2026-07-20,PUR-1190,Purchase,Sundry Creditors,,221046.50,Purchase from Ratan Enterprises & Co
+2026-07-21,BP-1068,Payment,Sundry Creditors,126248.87,,Payment to Sai Trading Pvt Ltd
+2026-07-21,BP-1068,Payment,SBI A/c,,126248.87,Payment to Sai Trading Pvt Ltd
+2026-07-21,BP-1124,Payment,Sundry Creditors,268444.74,,Payment to Shree Agencies Industries
+2026-07-21,BP-1124,Payment,SBI A/c,,268444.74,Payment to Shree Agencies Industries
+2026-07-21,BR-1164,Receipt,SBI A/c,60367.71,,Received from Nitin Patel
+2026-07-21,BR-1164,Receipt,Sundry Debtors,,60367.71,Received from Nitin Patel
+2026-07-21,INV-1041,Sales,Sundry Debtors,180362.55,,Being sales to Arjun Desai
+2026-07-21,INV-1041,Sales,Tuition Fees,,180362.55,Being sales to Arjun Desai
+2026-07-21,INV-1111,Sales,Sundry Debtors,27309.38,,Being sales to Ritu Singh
+2026-07-21,INV-1111,Sales,Registration Fees,,27309.38,Being sales to Ritu Singh
+2026-07-21,PUR-1109,Purchase,Salaries & Wages,109022.54,,Purchase from Lakshmi Industries Industries
+2026-07-21,PUR-1109,Purchase,Sundry Creditors,,109022.54,Purchase from Lakshmi Industries Industries
+2026-07-22,BP-1051,Payment,Sundry Creditors,230634.57,,Payment to Ganesh Industries Pvt Ltd
+2026-07-22,BP-1051,Payment,SBI A/c,,230634.57,Payment to Ganesh Industries Pvt Ltd
+2026-07-22,BP-1084,Payment,Sundry Creditors,36423.67,,Payment to Bharat Enterprises & Sons
+2026-07-22,BP-1084,Payment,SBI A/c,,36423.67,Payment to Bharat Enterprises & Sons
+2026-07-22,BR-1103,Receipt,SBI A/c,233205.98,,Received from Rahul Shah
+2026-07-22,BR-1103,Receipt,Sundry Debtors,,233205.98,Received from Rahul Shah
+2026-07-22,INV-1010,Sales,Sundry Debtors,53624.63,,Being sales to Neha Shah
+2026-07-22,INV-1010,Sales,Tuition Fees,,53624.63,Being sales to Neha Shah
+2026-07-22,INV-1256,Sales,Sundry Debtors,137010.52,,Being sales to Vikram Rao
+2026-07-22,INV-1256,Sales,Tuition Fees,,137010.52,Being sales to Vikram Rao
+2026-07-22,JV-1095,Journal,Bank Charges,35465.56,,Being bank charges for the period
+2026-07-22,JV-1095,Journal,SBI A/c,,35465.56,Being bank charges for the period
+2026-07-22,PUR-1172,Purchase,Office Rent,80087.77,,Purchase from Krishna Enterprises & Co
+2026-07-22,PUR-1172,Purchase,Sundry Creditors,,80087.77,Purchase from Krishna Enterprises & Co
+2026-07-23,BP-1070,Payment,Sundry Creditors,71653.07,,Payment to Krishna Enterprises & Co
+2026-07-23,BP-1070,Payment,SBI A/c,,71653.07,Payment to Krishna Enterprises & Co
+2026-07-23,BP-1119,Payment,Sundry Creditors,296586.93,,Payment to Ratan Enterprises & Co
+2026-07-23,BP-1119,Payment,SBI A/c,,296586.93,Payment to Ratan Enterprises & Co
+2026-07-23,BR-1004,Receipt,SBI A/c,208022.61,,Received from Priya Desai
+2026-07-23,BR-1004,Receipt,Sundry Debtors,,208022.61,Received from Priya Desai
+2026-07-23,BR-1024,Receipt,SBI A/c,72336.07,,Received from Kavita Joshi
+2026-07-23,BR-1024,Receipt,Sundry Debtors,,72336.07,Received from Kavita Joshi
+2026-07-23,BR-1113,Receipt,SBI A/c,154607.78,,
+2026-07-23,BR-1113,Receipt,Sundry Debtors,,154607.78,Received from Deepak Iyer
+2026-07-23,BR-1137,Receipt,SBI A/c,7285.56,,Received from Rahul Shah
+2026-07-23,BR-1137,Receipt,Sundry Debtors,,7285.56,Received from Rahul Shah
+2026-07-23,INV-1033,Sales,Sundry Debtors,155177.06,,Being sales to Rahul Nair
+2026-07-23,INV-1033,Sales,Tuition Fees,,155177.06,Being sales to Rahul Nair
+2026-07-23,INV-1191,Sales,Sundry Debtors,181401.62,,Being sales to Sunita Nair
+2026-07-23,INV-1191,Sales,Tuition Fees,,181401.62,Being sales to Sunita Nair
+2026-07-23,INV-1214,Sales,Sundry Debtors,131146.78,,Being sales to Meena Shah
+2026-07-23,INV-1214,Sales,Registration Fees,,131146.78,Being sales to Meena Shah
+2026-07-23,INV-1245,Sales,Sundry Debtors,93669.61,,Being sales to Asha Patel
+2026-07-23,INV-1245,Sales,Tuition Fees,,93669.61,Being sales to Asha Patel
+2026-07-23,INV-1276,Sales,Sundry Debtors,165341.98,,Being sales to Rahul Mehta
+2026-07-23,INV-1276,Sales,Registration Fees,,165341.98,Being sales to Rahul Mehta
+2026-07-23,INV-1331,Sales,Sundry Debtors,58561.33,,Being sales to Deepak Iyer
+2026-07-23,INV-1331,Sales,Tuition Fees,,58561.33,Being sales to Deepak Iyer
+2026-07-23,JV-1097,Journal,Bank Charges,22446.09,,Being bank charges for the period
+2026-07-23,JV-1097,Journal,SBI A/c,,22446.09,Being bank charges for the period
+2026-07-23,JV-1131,Journal,Study Material Printing,96895.42,,Being study material printing for the period
+2026-07-23,JV-1131,Journal,SBI A/c,,96895.42,Being study material printing for the period
+2026-07-23,PUR-1019,Purchase,Telephone & Internet,116853.92,,Purchase from Lakshmi Industries Industries
+2026-07-23,PUR-1019,Purchase,Sundry Creditors,,116853.92,Purchase from Lakshmi Industries Industries
+2026-07-23,PUR-1231,Purchase,Travelling Expenses,255493.37,,Purchase from Om Traders & Sons
+2026-07-23,PUR-1231,Purchase,Sundry Creditors,,255493.37,Purchase from Om Traders & Sons
+2026-07-24,BP-1037,Payment,Sundry Creditors,225846.53,,Payment to Ganesh Industries Pvt Ltd
+2026-07-24,BP-1037,Payment,SBI A/c,,225846.53,Payment to Ganesh Industries Pvt Ltd
+2026-07-24,INV-1052,Sales,Sundry Debtors,123544.18,,Being sales to Sunita Patel
+2026-07-24,INV-1052,Sales,Tuition Fees,,123544.18,Being sales to Sunita Patel
+2026-07-24,INV-1099,Sales,Sundry Debtors,180640.44,,Being sales to Kavita Iyer
+2026-07-24,INV-1099,Sales,Registration Fees,,180640.44,Being sales to Kavita Iyer
+2026-07-24,INV-1163,Sales,Sundry Debtors,33895.65,,Being sales to Deepak Pillai
+2026-07-24,INV-1163,Sales,Registration Fees,,33895.65,Being sales to Deepak Pillai
+2026-07-24,JV-1105,Journal,Printing & Stationery,68703.68,,Being printing & stationery for the period
+2026-07-24,JV-1105,Journal,SBI A/c,,68703.68,Being printing & stationery for the period
+2026-07-24,JV-1128,Journal,Office Rent,67553.79,,Being office rent for the period
+2026-07-24,JV-1128,Journal,SBI A/c,,67553.79,Being office rent for the period
+2026-07-24,PUR-1130,Purchase,Audit Fees,66317.85,,Purchase from Ratan Enterprises & Co
+2026-07-24,PUR-1130,Purchase,Sundry Creditors,,66317.85,Purchase from Ratan Enterprises & Co
+2026-07-24,PUR-1187,Purchase,Bank Charges,139409.75,,Purchase from Shree Agencies Industries
+2026-07-24,PUR-1187,Purchase,Sundry Creditors,,139409.75,Purchase from Shree Agencies Industries
+2026-07-25,BP-1014,Payment,Sundry Creditors,28469.57,,Payment to Ganesh Industries Pvt Ltd
+2026-07-25,BP-1014,Payment,SBI A/c,,28469.57,Payment to Ganesh Industries Pvt Ltd
+2026-07-25,BP-1082,Payment,Sundry Creditors,239397.95,,Payment to Ganesh Industries Pvt Ltd
+2026-07-25,BP-1082,Payment,SBI A/c,,239397.95,Payment to Ganesh Industries Pvt Ltd
+2026-07-25,BP-1096,Payment,Sundry Creditors,167658.06,,Payment to Om Traders & Sons
+2026-07-25,BP-1096,Payment,SBI A/c,,167658.06,Payment to Om Traders & Sons
+2026-07-25,BR-1057,Receipt,SBI A/c,123743.11,,Received from Ritu Kumar
+2026-07-25,BR-1057,Receipt,Sundry Debtors,,123743.11,Received from Ritu Kumar
+2026-07-25,INV-1070,Sales,Sundry Debtors,152322.64,,Being sales to Vikram Sharma
+2026-07-25,INV-1070,Sales,Registration Fees,,152322.64,Being sales to Vikram Sharma
+2026-07-25,INV-1210,Sales,Sundry Debtors,31331.11,,Being sales to Ritu Kumar
+2026-07-25,INV-1210,Sales,Registration Fees,,31331.11,Being sales to Ritu Kumar
+2026-07-25,JV-1043,Journal,Printing & Stationery,67618.09,,Being printing & stationery for the period
+2026-07-25,JV-1043,Journal,SBI A/c,,67618.09,Being printing & stationery for the period
+2026-07-25,JV-1099-DUP,Journal,Audit Fees,68752.32,,Being audit fees for the period
+2026-07-25,JV-1099-DUP,Journal,SBI A/c,,68752.32,Being audit fees for the period
+2026-07-25,PUR-1170,Purchase,Building Rent - Centre,249825.51,,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-07-25,PUR-1170,Purchase,Sundry Creditors,,249825.51,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-07-26,BP-1063,Payment,Sundry Creditors,40247.81,,Payment to Maa Agencies Pvt Ltd
+2026-07-26,BP-1063,Payment,SBI A/c,,40247.81,Payment to Maa Agencies Pvt Ltd
+2026-07-26,BP-1148,Payment,Sundry Creditors,229499.31,,Payment to Krishna Enterprises & Co
+2026-07-26,BP-1148,Payment,SBI A/c,,229499.31,Payment to Krishna Enterprises & Co
+2026-07-26,BR-1051,Receipt,SBI A/c,130519.31,,Received from Rahul Shah
+2026-07-26,BR-1051,Receipt,Sundry Debtors,,130519.31,Received from Rahul Shah
+2026-07-26,BR-1070,Receipt,SBI A/c,163970.41,,Received from Sanjay Rao
+2026-07-26,BR-1070,Receipt,Sundry Debtors,,163970.41,Received from Sanjay Rao
+2026-07-26,BR-1133,Receipt,SBI A/c,154820.81,,Received from Ritu Patel
+2026-07-26,BR-1133,Receipt,Sundry Debtors,,154820.81,Received from Ritu Patel
+2026-07-26,INV-1093,Sales,Sundry Debtors,155168.11,,Being sales to Meena Bhat
+2026-07-26,INV-1093,Sales,Tuition Fees,,155168.11,Being sales to Meena Bhat
+2026-07-26,INV-1141,Sales,Sundry Debtors,100066.45,,Being sales to Nitin Patel
+2026-07-26,INV-1141,Sales,Tuition Fees,,100066.45,Being sales to Nitin Patel
+2026-07-26,INV-1154,Sales,Sundry Debtors,73582.59,,Being sales to Suresh Singh
+2026-07-26,INV-1154,Sales,Registration Fees,,73582.59,Being sales to Suresh Singh
+2026-07-26,INV-1207,Sales,Sundry Debtors,93574.00,,Being sales to Sanjay Nair
+2026-07-26,INV-1207,Sales,Tuition Fees,,93574.00,Being sales to Sanjay Nair
+2026-07-26,JV-1016,Journal,Electricity Charges,34008.79,,Being electricity charges for the period
+2026-07-26,JV-1016,Journal,SBI A/c,,34008.79,Being electricity charges for the period
+2026-07-26,JV-1066,Journal,Bank Charges,79833.97,,Being bank charges for the period
+2026-07-26,JV-1066,Journal,SBI A/c,,79833.97,Being bank charges for the period
+2026-07-26,JV-1121,Journal,Telephone & Internet,42293.56,,Being telephone & internet for the period
+2026-07-26,JV-1121,Journal,SBI A/c,,42293.56,
+2026-07-26,PUR-1100,Purchase,Study Material Printing,22621.58,,Purchase from Maa Agencies Pvt Ltd
+2026-07-26,PUR-1100,Purchase,Sundry Creditors,,22621.58,Purchase from Maa Agencies Pvt Ltd
+2026-07-27,BR-1034,Receipt,SBI A/c,81690.37,,Received from Manoj Desai
+2026-07-27,BR-1034,Receipt,Sundry Debtors,,81690.37,Received from Manoj Desai
+2026-07-27,INV-1023,Sales,Registration Fees,,7035.67,Being sales to Nitin Bhat
+2026-07-27,INV-1110,Sales,Sundry Debtors,69864.95,,Being sales to Neha Joshi
+2026-07-27,INV-1110,Sales,Tuition Fees,,69864.95,Being sales to Neha Joshi
+2026-07-27,INV-1202,Sales,Sundry Debtors,14687.34,,Being sales to Ritu Joshi
+2026-07-27,INV-1202,Sales,Registration Fees,,14687.34,Being sales to Ritu Joshi
+2026-07-27,INV-1250,Sales,Sundry Debtors,3048.38,,Being sales to Neha Verma
+2026-07-27,INV-1250,Sales,Tuition Fees,,3048.38,Being sales to Neha Verma
+2026-07-27,INV-1312,Sales,Sundry Debtors,51524.50,,Being sales to Priya Shah
+2026-07-27,INV-1312,Sales,Tuition Fees,,51524.50,Being sales to Priya Shah
+2026-07-27,JV-1020,Journal,Travelling Expenses,11535.32,,Being travelling expenses for the period
+2026-07-27,JV-1020,Journal,SBI A/c,,11535.32,Being travelling expenses for the period
+2026-07-27,PUR-1113,Purchase,Bank Charges,197708.83,,Purchase from Om Services Industries
+2026-07-27,PUR-1113,Purchase,Sundry Creditors,,197708.83,Purchase from Om Services Industries
+2026-07-28,BP-1073,Payment,Sundry Creditors,242684.35,,Payment to Om Services Industries
+2026-07-28,BP-1073,Payment,SBI A/c,,242684.35,Payment to Om Services Industries
+2026-07-28,BR-1005,Receipt,SBI A/c,201240.19,,Received from Neha Desai
+2026-07-28,BR-1005,Receipt,Sundry Debtors,,201240.19,Received from Neha Desai
+2026-07-28,BR-1029,Receipt,SBI A/c,227955.37,,Received from Ritu Choudhary
+2026-07-28,BR-1029,Receipt,Sundry Debtors,,227955.37,Received from Ritu Choudhary
+2026-07-28,BR-1132,Receipt,SBI A/c,221239.29,,Received from Amit Joshi
+2026-07-28,BR-1132,Receipt,Sundry Debtors,,221239.29,Received from Amit Joshi
+2026-07-28,INV-1035,Sales,Sundry Debtors,105904.07,,Being sales to Deepak Iyer
+2026-07-28,INV-1035,Sales,Tuition Fees,,105904.07,Being sales to Deepak Iyer
+2026-07-28,INV-1108,Sales,Sundry Debtors,129039.24,,Being sales to Rajesh Verma
+2026-07-28,INV-1108,Sales,Registration Fees,,129039.24,Being sales to Rajesh Verma
+2026-07-28,INV-1129,Sales,Sundry Debtors,61058.55,,Being sales to Kavita Iyer
+2026-07-28,INV-1129,Sales,Tuition Fees,,61058.55,Being sales to Kavita Iyer
+2026-07-28,INV-1199,Sales,Sundry Debtors,26876.55,,Being sales to Ritu Iyer
+2026-07-28,INV-1199,Sales,Tuition Fees,,26876.55,Being sales to Ritu Iyer
+2026-07-28,JV-1094,Journal,Telephone & Internet,1428.43,,Being telephone & internet for the period
+2026-07-28,JV-1094,Journal,SBI A/c,,1428.43,Being telephone & internet for the period
+2026-07-28,JV-1117,Journal,Printing & Stationery,68600.12,,Being printing & stationery for the period
+2026-07-28,JV-1117,Journal,SBI A/c,,68600.12,Being printing & stationery for the period
+2026-07-28,PUR-1125,Purchase,Bank Charges,9361.04,,Purchase from Lakshmi Industries Industries
+2026-07-28,PUR-1125,Purchase,Sundry Creditors,,9361.04,Purchase from Lakshmi Industries Industries
+2026-07-28,PUR-1179,Purchase,Building Rent - Centre,25261.94,,Purchase from Krishna Enterprises & Co
+2026-07-28,PUR-1179,Purchase,Sundry Creditors,,25261.94,Purchase from Krishna Enterprises & Co
+2026-07-28,PUR-1184,Purchase,Audit Fees,43383.54,,Purchase from Sai Trading Pvt Ltd
+2026-07-28,PUR-1184,Purchase,Sundry Creditors,,43383.54,Purchase from Sai Trading Pvt Ltd
+2026-07-28,PUR-1224,Purchase,Printing & Stationery,128548.52,,Purchase from Shree Agencies Industries
+2026-07-28,PUR-1224,Purchase,Sundry Creditors,,128548.52,Purchase from Shree Agencies Industries
+2026-07-29,BP-1117,Payment,Sundry Creditors,18844.36,,Payment to Om Traders & Sons
+2026-07-29,BP-1117,Payment,SBI A/c,,18844.36,Payment to Om Traders & Sons
+2026-07-29,BR-1000,Receipt,SBI A/c,237250.72,,Received from Amit Pillai
+2026-07-29,BR-1000,Receipt,Sundry Debtors,,237250.72,Received from Amit Pillai
+2026-07-29,BR-1066,Receipt,SBI A/c,19900.67,,Received from Sunita Kapoor
+2026-07-29,BR-1066,Receipt,Sundry Debtors,,19900.67,Received from Sunita Kapoor
+2026-07-29,BR-1084,Receipt,SBI A/c,235361.26,,Received from Suresh Nair
+2026-07-29,BR-1084,Receipt,Sundry Debtors,,235361.26,Received from Suresh Nair
+2026-07-29,BR-1089,Receipt,SBI A/c,71318.61,,Received from Rajesh Choudhary
+2026-07-29,BR-1089,Receipt,Sundry Debtors,,71318.61,Received from Rajesh Choudhary
+2026-07-29,BR-1116,Receipt,SBI A/c,196510.56,,Received from Neha Shah
+2026-07-29,BR-1116,Receipt,Sundry Debtors,,196510.56,Received from Neha Shah
+2026-07-29,INV-1007,Sales,Sundry Debtors,163763.48,,Being sales to Amit Iyer
+2026-07-29,INV-1007,Sales,Tuition Fees,,163763.48,Being sales to Amit Iyer
+2026-07-29,INV-1027,Sales,Sundry Debtors,27263.12,,Being sales to Ritu Kumar
+2026-07-29,INV-1027,Sales,Registration Fees,,27263.12,Being sales to Ritu Kumar
+2026-07-29,INV-1054,Sales,Sundry Debtors,193813.27,,Being sales to Suresh Gupta
+2026-07-29,INV-1054,Sales,Tuition Fees,,193813.27,Being sales to Suresh Gupta
+2026-07-29,INV-1172,Sales,Sundry Debtors,192392.58,,Being sales to Neha Pillai
+2026-07-29,INV-1172,Sales,Tuition Fees,,192392.58,Being sales to Neha Pillai
+2026-07-29,INV-1180,Sales,Sundry Debtors,61935.61,,Being sales to Deepak Iyer
+2026-07-29,INV-1180,Sales,Registration Fees,,61935.61,Being sales to Deepak Iyer
+2026-07-29,INV-1192,Sales,Sundry Debtors,150987.29,,Being sales to Asha Desai
+2026-07-29,INV-1192,Sales,Registration Fees,,150987.29,Being sales to Asha Desai
+2026-07-29,INV-1271,Sales,Sundry Debtors,47212.53,,Being sales to Sunita Kumar
+2026-07-29,INV-1271,Sales,Tuition Fees,,47212.53,Being sales to Sunita Kumar
+2026-07-29,INV-1296,Sales,Sundry Debtors,97164.39,,Being sales to Deepak Gupta
+2026-07-29,INV-1296,Sales,Registration Fees,,97164.39,Being sales to Deepak Gupta
+2026-07-29,JV-1104,Journal,Building Rent - Centre,93846.30,,Being building rent - centre for the period
+2026-07-29,JV-1104,Journal,SBI A/c,,93846.30,Being building rent - centre for the period
+2026-07-29,PUR-1053,Purchase,Printing & Stationery,53018.96,,Purchase from Bharat Enterprises & Sons
+2026-07-29,PUR-1053,Purchase,Sundry Creditors,,53018.96,Purchase from Bharat Enterprises & Sons
+2026-07-29,PUR-1112,Purchase,Salaries & Wages,191752.22,,Purchase from Om Services Industries
+2026-07-29,PUR-1112,Purchase,Sundry Creditors,,191752.22,Purchase from Om Services Industries
+2026-07-29,PUR-1182,Purchase,Salaries & Wages,281325.62,,Purchase from Bharat Enterprises & Sons
+2026-07-29,PUR-1182,Purchase,Sundry Creditors,,281325.62,Purchase from Bharat Enterprises & Sons
+2026-07-29,PUR-1230,Purchase,Office Rent,142406.96,,Purchase from Maa Agencies Pvt Ltd
+2026-07-29,PUR-1230,Purchase,Sundry Creditors,,142406.96,Purchase from Maa Agencies Pvt Ltd
+2026-07-30,BP-1062,Payment,Sundry Creditors,75462.80,,Payment to Om Traders & Sons
+2026-07-30,BP-1062,Payment,SBI A/c,,75462.80,Payment to Om Traders & Sons
+2026-07-30,BP-1065,Payment,Sundry Creditors,114245.32,,Payment to Lakshmi Enterprises Pvt Ltd
+2026-07-30,BP-1065,Payment,SBI A/c,,114245.32,Payment to Lakshmi Enterprises Pvt Ltd
+2026-07-30,BP-1091,Payment,Sundry Creditors,190547.04,,Payment to Krishna Enterprises & Co
+2026-07-30,BP-1091,Payment,SBI A/c,,190547.04,Payment to Krishna Enterprises & Co
+2026-07-30,BP-1094,Payment,Sundry Creditors,261067.65,,Payment to Shree Agencies Industries
+2026-07-30,BP-1094,Payment,SBI A/c,,261067.65,Payment to Shree Agencies Industries
+2026-07-30,BP-1132,Payment,Sundry Creditors,259402.98,,Payment to Shree Agencies Industries
+2026-07-30,BP-1132,Payment,SBI A/c,,259402.98,Payment to Shree Agencies Industries
+2026-07-30,BP-1145,Payment,Sundry Creditors,257445.15,,Payment to Ganesh Industries Pvt Ltd
+2026-07-30,BP-1145,Payment,SBI A/c,,257445.15,Payment to Ganesh Industries Pvt Ltd
+2026-07-30,BR-1031,Receipt,SBI A/c,33166.76,,Received from Nitin Agarwal
+2026-07-30,BR-1031,Receipt,Sundry Debtors,,33166.76,Received from Nitin Agarwal
+2026-07-30,BR-1043,Receipt,SBI A/c,44818.58,,Received from Ritu Sharma
+2026-07-30,BR-1043,Receipt,Sundry Debtors,,44818.58,Received from Ritu Sharma
+2026-07-30,BR-1080,Receipt,SBI A/c,32203.26,,Received from Rahul Gupta
+2026-07-30,BR-1080,Receipt,Sundry Debtors,,32203.26,Received from Rahul Gupta
+2026-07-30,BR-1163,Receipt,SBI A/c,125712.30,,Received from Asha Desai
+2026-07-30,BR-1163,Receipt,Sundry Debtors,,125712.30,Received from Asha Desai
+2026-07-30,INV-1188,Sales,Sundry Debtors,196457.72,,Being sales to Deepak Pillai
+2026-07-30,INV-1188,Sales,Tuition Fees,,196457.72,Being sales to Deepak Pillai
+2026-07-30,INV-1201,Sales,Sundry Debtors,138932.21,,Being sales to Swati Shah
+2026-07-30,INV-1201,Sales,Registration Fees,,138932.21,Being sales to Swati Shah
+2026-07-30,INV-1269,Sales,Sundry Debtors,25572.49,,Being sales to Ritu Gupta
+2026-07-30,INV-1269,Sales,Tuition Fees,,25572.49,Being sales to Ritu Gupta
+2026-07-30,INV-1321,Sales,Sundry Debtors,8072.15,,Being sales to Deepak Bhat
+2026-07-30,INV-1321,Sales,Tuition Fees,,8072.15,Being sales to Deepak Bhat
+2026-07-30,JV-1033,Journal,Bank Charges,18314.84,,Being bank charges for the period
+2026-07-30,JV-1033,Journal,SBI A/c,,18314.84,Being bank charges for the period
+2026-07-30,JV-1070,Journal,Faculty Salaries,1769.69,,Being faculty salaries for the period
+2026-07-30,JV-1070,Journal,SBI A/c,,1769.69,Being faculty salaries for the period
+2026-07-30,JV-1090,Journal,Audit Fees,93067.02,,Being audit fees for the period
+2026-07-30,JV-1090,Journal,SBI A/c,,93067.02,Being audit fees for the period
+2026-07-30,JV-1108,Journal,Salaries & Wages,77937.63,,Being salaries & wages for the period
+2026-07-30,JV-1108,Journal,SBI A/c,,77937.63,Being salaries & wages for the period
+2026-07-30,JV-1125,Journal,Study Material Printing,22359.95,,Being study material printing for the period
+2026-07-30,JV-1125,Journal,SBI A/c,,22359.95,Being study material printing for the period
+2026-07-30,PUR-1048,Purchase,Travelling Expenses,285014.83,,Purchase from Sai Trading Pvt Ltd
+2026-07-30,PUR-1048,Purchase,Sundry Creditors,,285014.83,Purchase from Sai Trading Pvt Ltd
+2026-07-30,PUR-1070,Purchase,Building Rent - Centre,157274.47,,Purchase from Bharat Enterprises & Sons
+2026-07-30,PUR-1070,Purchase,Sundry Creditors,,157274.47,Purchase from Bharat Enterprises & Sons
+2026-07-30,PUR-1078,Purchase,Bank Charges,272308.84,,Purchase from Om Traders & Sons
+2026-07-30,PUR-1078,Purchase,Sundry Creditors,,272308.84,Purchase from Om Traders & Sons
+2026-07-30,PUR-1202,Purchase,Salaries & Wages,154723.48,,Purchase from Bharat Enterprises & Sons
+2026-07-30,PUR-1202,Purchase,Sundry Creditors,,154723.48,Purchase from Bharat Enterprises & Sons
+2026-07-31,BP-1127,Payment,Sundry Creditors,99869.52,,Payment to Shree Agencies Industries
+2026-07-31,BP-1127,Payment,SBI A/c,,99869.52,Payment to Shree Agencies Industries
+2026-07-31,BP-1135,Payment,Sundry Creditors,79027.85,,Payment to Krishna Enterprises & Co
+2026-07-31,BP-1135,Payment,SBI A/c,,79027.85,Payment to Krishna Enterprises & Co
+2026-07-31,INV-1222,Sales,Sundry Debtors,21046.49,,Being sales to Sunita Reddy
+2026-07-31,INV-1222,Sales,Registration Fees,,21046.49,Being sales to Sunita Reddy
+2026-07-31,INV-1233,Sales,Sundry Debtors,192065.14,,Being sales to Kavita Banerjee
+2026-07-31,INV-1233,Sales,Tuition Fees,,192065.14,Being sales to Kavita Banerjee
+2026-07-31,INV-1268,Sales,Sundry Debtors,105180.97,,Being sales to Anjali Rao
+2026-07-31,INV-1268,Sales,Tuition Fees,,105180.97,Being sales to Anjali Rao
+2026-07-31,INV-1334,Sales,Sundry Debtors,59959.22,,Being sales to Amit Kumar
+2026-07-31,INV-1334,Sales,Registration Fees,,59959.22,Being sales to Amit Kumar
+2026-07-31,JV-1075,Journal,Building Rent - Centre,21104.60,,Being building rent - centre for the period
+2026-07-31,JV-1075,Journal,SBI A/c,,21104.60,Being building rent - centre for the period
+2026-07-31,PUR-1001,Purchase,Salaries & Wages,229893.83,,Purchase from Ganesh Mills Group
+2026-07-31,PUR-1001,Purchase,Sundry Creditors,,229893.83,Purchase from Ganesh Mills Group
+2026-07-31,PUR-1016,Purchase,Study Material Printing,126439.67,,Purchase from Krishna Enterprises & Co
+2026-07-31,PUR-1016,Purchase,Sundry Creditors,,126439.67,Purchase from Krishna Enterprises & Co
+2026-07-31,PUR-1120,Purchase,Salaries & Wages,278389.44,,Purchase from Ganesh Mills Group
+2026-07-31,PUR-1120,Purchase,Sundry Creditors,,278389.44,Purchase from Ganesh Mills Group
+2026-08-01,BP-1097,Payment,Sundry Creditors,96138.08,,Payment to Ganesh Mills Group
+2026-08-01,BP-1097,Payment,SBI A/c,,96138.08,Payment to Ganesh Mills Group
+2026-08-01,BP-1123,Payment,Sundry Creditors,278866.23,,Payment to Maa Agencies Pvt Ltd
+2026-08-01,BP-1123,Payment,SBI A/c,,278866.23,Payment to Maa Agencies Pvt Ltd
+2026-08-01,BR-1001,Receipt,SBI A/c,174894.90,,Received from Suresh Singh
+2026-08-01,BR-1001,Receipt,Sundry Debtors,,174894.90,Received from Suresh Singh
+2026-08-01,BR-1073,Receipt,SBI A/c,106193.62,,Received from Nitin Shah
+2026-08-01,BR-1073,Receipt,Sundry Debtors,,106193.62,Received from Nitin Shah
+2026-08-01,BR-1120,Receipt,SBI A/c,185514.28,,Received from Asha Sharma
+2026-08-01,BR-1120,Receipt,Sundry Debtors,,185514.28,Received from Asha Sharma
+2026-08-01,INV-1150,Sales,Sundry Debtors,198635.48,,Being sales to Neha Singh
+2026-08-01,INV-1150,Sales,Registration Fees,,198635.48,Being sales to Neha Singh
+2026-08-01,INV-1216,Sales,Sundry Debtors,149289.53,,Being sales to Suresh Nair
+2026-08-01,INV-1216,Sales,Tuition Fees,,149289.53,Being sales to Suresh Nair
+2026-08-01,INV-1229,Sales,Sundry Debtors,179345.81,,Being sales to Deepak Bhat
+2026-08-01,INV-1229,Sales,Registration Fees,,179345.81,Being sales to Deepak Bhat
+2026-08-01,INV-1308,Sales,Sundry Debtors,115805.15,,Being sales to Neha Mehta
+2026-08-01,INV-1308,Sales,Registration Fees,,115805.15,Being sales to Neha Mehta
+2026-08-01,INV-1316,Sales,Sundry Debtors,3131.31,,Being sales to Anjali Rao
+2026-08-01,INV-1316,Sales,Registration Fees,,3131.31,Being sales to Anjali Rao
+2026-08-01,INV-1324,Sales,Sundry Debtors,188760.52,,Being sales to Ritu Bhat
+2026-08-01,INV-1324,Sales,Tuition Fees,,188760.52,Being sales to Ritu Bhat
+2026-08-01,JV-1006,Journal,Telephone & Internet,65150.00,,Being telephone & internet for the period
+2026-08-01,JV-1006,Journal,SBI A/c,,65150.00,Being telephone & internet for the period
+2026-08-01,JV-1035,Journal,Office Rent,30344.09,,Being office rent for the period
+2026-08-01,JV-1035,Journal,SBI A/c,,30344.09,Being office rent for the period
+2026-08-01,JV-1082,Journal,Study Material Printing,42364.76,,Being study material printing for the period
+2026-08-01,JV-1082,Journal,SBI A/c,,42364.76,Being study material printing for the period
+2026-08-01,JV-1120,Journal,Bank Charges,19843.16,,Being bank charges for the period
+2026-08-01,JV-1120,Journal,SBI A/c,,19843.16,Being bank charges for the period
+2026-08-01,PUR-1226,Purchase,Faculty Salaries,76850.89,,Purchase from Ganesh Mills Group
+2026-08-01,PUR-1226,Purchase,Sundry Creditors,,76850.89,Purchase from Ganesh Mills Group
+2026-08-02,BP-1028,Payment,Sundry Creditors,171434.95,,Payment to Om Services Industries
+2026-08-02,BP-1028,Payment,SBI A/c,,171434.95,Payment to Om Services Industries
+2026-08-02,BP-1092,Payment,Sundry Creditors,194065.69,,Payment to Lakshmi Industries Industries
+2026-08-02,BP-1092,Payment,SBI A/c,,194065.69,Payment to Lakshmi Industries Industries
+2026-08-02,BR-1079,Receipt,SBI A/c,18093.25,,Received from Manoj Mehta
+2026-08-02,BR-1079,Receipt,Sundry Debtors,,18093.25,Received from Manoj Mehta
+2026-08-02,BR-1131,Receipt,SBI A/c,191543.83,,Received from Rahul Desai
+2026-08-02,BR-1131,Receipt,Sundry Debtors,,191543.83,Received from Rahul Desai
+2026-08-02,INV-1039,Sales,Sundry Debtors,190343.37,,Being sales to Swati Shah
+2026-08-02,INV-1039,Sales,Tuition Fees,,190343.37,Being sales to Swati Shah
+2026-08-02,INV-1042,Sales,Sundry Debtors,130051.38,,Being sales to Priya Agarwal
+2026-08-02,INV-1042,Sales,Tuition Fees,,130051.38,Being sales to Priya Agarwal
+2026-08-02,INV-1206,Sales,Sundry Debtors,94255.88,,Being sales to Asha Reddy
+2026-08-02,INV-1206,Sales,Tuition Fees,,94292.75,Being sales to Asha Reddy
+2026-08-02,INV-1264,Sales,Sundry Debtors,57569.19,,Being sales to Meena Kumar
+2026-08-02,INV-1264,Sales,Tuition Fees,,57569.19,Being sales to Meena Kumar
+2026-08-02,INV-1337,Sales,Sundry Debtors,141101.52,,Being sales to Vikram Rao
+2026-08-02,INV-1337,Sales,Tuition Fees,,141101.52,Being sales to Vikram Rao
+2026-08-02,JV-1073,Journal,Postage & Courier,69453.65,,Being postage & courier for the period
+2026-08-02,JV-1073,Journal,SBI A/c,,69453.65,Being postage & courier for the period
+2026-08-03,BP-1057,Payment,Sundry Creditors,164474.70,,Payment to Bharat Enterprises & Sons
+2026-08-03,BP-1057,Payment,SBI A/c,,164474.70,Payment to Bharat Enterprises & Sons
+2026-08-03,BR-1065,Receipt,SBI A/c,236035.64,,Received from Nitin Bhat
+2026-08-03,BR-1065,Receipt,Sundry Debtors,,236035.64,Received from Nitin Bhat
+2026-08-03,BR-1068,Receipt,SBI A/c,108482.67,,Received from Sanjay Singh
+2026-08-03,BR-1068,Receipt,Sundry Debtors,,108482.67,Received from Sanjay Singh
+2026-08-03,BR-1130,Receipt,SBI A/c,222766.36,,Received from Neha Joshi
+2026-08-03,BR-1130,Receipt,Sundry Debtors,,222766.36,Received from Neha Joshi
+2026-08-03,INV-1020,Sales,Sundry Debtors,14453.33,,Being sales to Nitin Kumar
+2026-08-03,INV-1020,Sales,Tuition Fees,,14453.33,Being sales to Nitin Kumar
+2026-08-03,INV-1032,Sales,Sundry Debtors,128807.66,,Being sales to Manoj Pillai
+2026-08-03,INV-1032,Sales,Tuition Fees,,128807.66,Being sales to Manoj Pillai
+2026-08-03,INV-1126,Sales,Sundry Debtors,42691.73,,Being sales to Rajesh Kumar
+2026-08-03,INV-1126,Sales,Registration Fees,,42691.73,Being sales to Rajesh Kumar
+2026-08-03,INV-1184,Sales,Sundry Debtors,161775.73,,Being sales to Anjali Kapoor
+2026-08-03,INV-1184,Sales,Tuition Fees,,161775.73,Being sales to Anjali Kapoor
+2026-08-03,INV-1197,Sales,Sundry Debtors,182957.79,,Being sales to Asha Bhat
+2026-08-03,INV-1197,Sales,Tuition Fees,,182957.79,Being sales to Asha Bhat
+2026-08-03,INV-1319,Sales,Sundry Debtors,116620.69,,Being sales to Meena Mehta
+2026-08-03,INV-1319,Sales,Registration Fees,,116620.69,Being sales to Meena Mehta
+2026-08-03,JV-1022,Journal,Electricity Charges,76416.60,,Being electricity charges for the period
+2026-08-03,JV-1022,Journal,SBI A/c,,76416.60,Being electricity charges for the period
+2026-08-03,PUR-1036,Purchase,Travelling Expenses,89133.18,,Purchase from Krishna Enterprises & Co
+2026-08-03,PUR-1036,Purchase,Sundry Creditors,,89133.18,Purchase from Krishna Enterprises & Co
+2026-08-03,PUR-1101,Purchase,Electricity Charges,64273.51,,Purchase from Krishna Enterprises & Co
+2026-08-03,PUR-1101,Purchase,Sundry Creditors,,64273.51,Purchase from Krishna Enterprises & Co
+2026-08-03,PUR-1239,Purchase,Printing & Stationery,208077.50,,Purchase from Sai Trading Pvt Ltd
+2026-08-03,PUR-1239,Purchase,Sundry Creditors,,208077.50,Purchase from Sai Trading Pvt Ltd
+2026-08-04,BP-1066,Payment,Sundry Creditors,135611.37,,Payment to Ratan Enterprises & Co
+2026-08-04,BP-1066,Payment,SBI A/c,,135611.37,Payment to Ratan Enterprises & Co
+2026-08-04,BR-1100,Receipt,SBI A/c,96531.70,,Received from Ritu Choudhary
+2026-08-04,BR-1100,Receipt,Sundry Debtors,,96531.70,Received from Ritu Choudhary
+2026-08-04,BR-1106,Receipt,SBI A/c,64873.19,,Received from Nitin Sharma
+2026-08-04,BR-1106,Receipt,Sundry Debtors,,64873.19,Received from Nitin Sharma
+2026-08-04,INV-1076,Sales,Sundry Debtors,70955.01,,Being sales to Sunita Shah
+2026-08-04,INV-1076,Sales,Tuition Fees,,70955.01,Being sales to Sunita Shah
+2026-08-04,INV-1136,Sales,Sundry Debtors,119378.20,,Being sales to Pooja Gupta
+2026-08-04,INV-1136,Sales,Registration Fees,,119378.20,Being sales to Pooja Gupta
+2026-08-04,INV-1158,Sales,Sundry Debtors,175678.06,,Being sales to Neha Joshi
+2026-08-04,INV-1158,Sales,Tuition Fees,,175678.06,Being sales to Neha Joshi
+2026-08-04,INV-1164,Sales,Sundry Debtors,189550.99,,Being sales to Swati Shah
+2026-08-04,INV-1164,Sales,Tuition Fees,,189550.99,Being sales to Swati Shah
+2026-08-04,INV-1173,Sales,Sundry Debtors,49801.51,,Being sales to Rajesh Choudhary
+2026-08-04,INV-1173,Sales,Registration Fees,,49801.51,Being sales to Rajesh Choudhary
+2026-08-04,INV-1235,Sales,Sundry Debtors,71441.13,,Being sales to Rajesh Patel
+2026-08-04,INV-1235,Sales,Tuition Fees,,71441.13,Being sales to Rajesh Patel
+2026-08-04,JV-1040,Journal,Study Material Printing,40219.73,,Being study material printing for the period
+2026-08-04,JV-1040,Journal,SBI A/c,,40219.73,Being study material printing for the period
+2026-08-04,JV-1068,Journal,Salaries & Wages,57975.18,,Being salaries & wages for the period
+2026-08-04,JV-1068,Journal,SBI A/c,,57975.18,Being salaries & wages for the period
+2026-08-04,PUR-1229,Purchase,Postage & Courier,256058.52,,Purchase from Shree Agencies Industries
+2026-08-04,PUR-1229,Purchase,Sundry Creditors,,256058.52,Purchase from Shree Agencies Industries
+2026-08-05,BP-1020,Payment,Sundry Creditors,43062.42,,Payment to Shree Agencies Industries
+2026-08-05,BP-1020,Payment,SBI A/c,,43062.42,Payment to Shree Agencies Industries
+2026-08-05,BP-1033,Payment,Sundry Creditors,15174.32,,Payment to Maa Agencies Pvt Ltd
+2026-08-05,BP-1033,Payment,SBI A/c,,15174.32,Payment to Maa Agencies Pvt Ltd
+2026-08-05,BR-1016,Receipt,SBI A/c,221303.48,,Received from Suresh Desai
+2026-08-05,BR-1016,Receipt,Sundry Debtors,,221303.48,Received from Suresh Desai
+2026-08-05,JV-1014,Journal,Postage & Courier,89354.39,,Being postage & courier for the period
+2026-08-05,JV-1014,Journal,SBI A/c,,89354.39,Being postage & courier for the period
+2026-08-05,PUR-1195,Purchase,Salaries & Wages,128187.15,,Purchase from Om Services Industries
+2026-08-05,PUR-1195,Purchase,Sundry Creditors,,128187.15,Purchase from Om Services Industries
+2026-08-06,BP-1044,Payment,Sundry Creditors,263886.74,,Payment to Om Traders & Sons
+2026-08-06,BP-1044,Payment,SBI A/c,,263886.74,Payment to Om Traders & Sons
+2026-08-06,BR-1102,Receipt,SBI A/c,159332.65,,Received from Rahul Sharma
+2026-08-06,BR-1102,Receipt,Sundry Debtors,,159332.65,Received from Rahul Sharma
+2026-08-06,BR-1134,Receipt,SBI A/c,65368.59,,Received from Nitin Shah
+2026-08-06,BR-1134,Receipt,Sundry Debtors,,65368.59,Received from Nitin Shah
+2026-08-06,INV-1086,Sales,Sundry Debtors,78883.20,,Being sales to Meena Singh
+2026-08-06,INV-1086,Sales,Tuition Fees,,78883.20,Being sales to Meena Singh
+2026-08-06,INV-1149,Sales,Sundry Debtors,142143.81,,Being sales to Nitin Gupta
+2026-08-06,INV-1149,Sales,Registration Fees,,142143.81,Being sales to Nitin Gupta
+2026-08-06,INV-1152,Sales,Sundry Debtors,74140.09,,Being sales to Rahul Iyer
+2026-08-06,INV-1152,Sales,Registration Fees,,74140.09,Being sales to Rahul Iyer
+2026-08-06,INV-1336,Sales,Sundry Debtors,58482.96,,Being sales to Amit Kumar
+2026-08-06,INV-1336,Sales,Tuition Fees,,58482.96,Being sales to Amit Kumar
+2026-08-06,JV-1091,Journal,Salaries & Wages,67455.68,,Being salaries & wages for the period
+2026-08-06,JV-1091,Journal,SBI A/c,,67455.68,Being salaries & wages for the period
+2026-08-06,PUR-1032,Purchase,Printing & Stationery,55623.21,,Purchase from Om Traders & Sons
+2026-08-06,PUR-1032,Purchase,Sundry Creditors,,55623.21,Purchase from Om Traders & Sons
+2026-08-06,PUR-1220,Purchase,Faculty Salaries,216861.60,,Purchase from Ganesh Industries Pvt Ltd
+2026-08-06,PUR-1220,Purchase,Sundry Creditors,,216861.60,Purchase from Ganesh Industries Pvt Ltd
+2026-08-07,BP-1126,Payment,Sundry Creditors,98542.21,,Payment to Shree Agencies Industries
+2026-08-07,BP-1126,Payment,SBI A/c,,98542.21,Payment to Shree Agencies Industries
+2026-08-07,BR-1064,Receipt,SBI A/c,16599.33,,Received from Swati Shah
+2026-08-07,BR-1064,Receipt,Sundry Debtors,,16599.33,Received from Swati Shah
+2026-08-07,BR-1087,Receipt,SBI A/c,144733.78,,Received from Nitin Shah
+2026-08-07,BR-1087,Receipt,Sundry Debtors,,144733.78,Received from Nitin Shah
+2026-08-07,INV-1044,Sales,Sundry Debtors,71519.70,,Being sales to Ritu Nair
+2026-08-07,INV-1044,Sales,Registration Fees,,71519.70,Being sales to Ritu Nair
+2026-08-07,INV-1055,Sales,Sundry Debtors,181302.29,,Being sales to Manoj Pillai
+2026-08-07,INV-1055,Sales,Registration Fees,,181302.29,Being sales to Manoj Pillai
+2026-08-07,INV-1069,Sales,Sundry Debtors,71569.49,,Being sales to Sanjay Mehta
+2026-08-07,INV-1069,Sales,Tuition Fees,,71569.49,Being sales to Sanjay Mehta
+2026-08-07,INV-1104,Sales,Sundry Debtors,190967.55,,Being sales to Rajesh Choudhary
+2026-08-07,INV-1104,Sales,Registration Fees,,190967.55,Being sales to Rajesh Choudhary
+2026-08-07,INV-1113,Sales,Sundry Debtors,13920.37,,Being sales to Sunita Shah
+2026-08-07,INV-1113,Sales,Tuition Fees,,13920.37,Being sales to Sunita Shah
+2026-08-07,INV-1138,Sales,Sundry Debtors,182187.23,,Being sales to Rajesh Nair
+2026-08-07,INV-1138,Sales,Tuition Fees,,182187.23,Being sales to Rajesh Nair
+2026-08-07,INV-1242,Sales,Sundry Debtors,128708.09,,Being sales to Ritu Kumar
+2026-08-07,INV-1242,Sales,Tuition Fees,,128708.09,Being sales to Ritu Kumar
+2026-08-07,PUR-1006,Purchase,Salaries & Wages,100931.00,,Purchase from Ratan Enterprises & Co
+2026-08-07,PUR-1006,Purchase,Sundry Creditors,,100931.00,Purchase from Ratan Enterprises & Co
+2026-08-07,PUR-1022,Purchase,Postage & Courier,186281.30,,Purchase from Ganesh Mills Group
+2026-08-07,PUR-1022,Purchase,Sundry Creditors,,186281.30,Purchase from Ganesh Mills Group
+2026-08-07,PUR-1176,Purchase,Office Rent,10997.84,,Purchase from Ganesh Industries Pvt Ltd
+2026-08-07,PUR-1176,Purchase,Sundry Creditors,,10997.84,Purchase from Ganesh Industries Pvt Ltd
+2026-08-07,PUR-1204,Purchase,Travelling Expenses,292107.22,,Purchase from Krishna Enterprises & Co
+2026-08-07,PUR-1204,Purchase,Sundry Creditors,,292107.22,Purchase from Krishna Enterprises & Co
+2026-08-08,BP-1061,Payment,Sundry Creditors,242308.70,,Payment to Sai Trading Pvt Ltd
+2026-08-08,BP-1061,Payment,SBI A/c,,242308.70,Payment to Sai Trading Pvt Ltd
+2026-08-08,INV-1082,Sales,Sundry Debtors,45272.47,,Being sales to Nitin Agarwal
+2026-08-08,INV-1082,Sales,Registration Fees,,45272.47,Being sales to Nitin Agarwal
+2026-08-08,INV-1109,Sales,Sundry Debtors,105375.08,,Being sales to Meena Kapoor
+2026-08-08,INV-1109,Sales,Registration Fees,,105375.08,Being sales to Meena Kapoor
+2026-08-08,INV-1165,Sales,Sundry Debtors,17551.92,,Being sales to Rahul Rao
+2026-08-08,INV-1165,Sales,Tuition Fees,,17551.92,Being sales to Rahul Rao
+2026-08-08,INV-1170,Sales,Sundry Debtors,177133.34,,Being sales to Kavita Banerjee
+2026-08-08,INV-1170,Sales,Tuition Fees,,177133.34,Being sales to Kavita Banerjee
+2026-08-08,INV-1203,Sales,Sundry Debtors,81349.03,,Being sales to Meena Shah
+2026-08-08,INV-1203,Sales,Registration Fees,,81349.03,Being sales to Meena Shah
+2026-08-08,INV-1325,Sales,Sundry Debtors,4951.25,,Being sales to Suresh Shah
+2026-08-08,INV-1325,Sales,Tuition Fees,,4951.25,Being sales to Suresh Shah
+2026-08-08,JV-1017,Journal,Salaries & Wages,44473.80,,Being salaries & wages for the period
+2026-08-08,JV-1017,Journal,SBI A/c,,44473.80,Being salaries & wages for the period
+2026-08-08,JV-1079,Journal,Postage & Courier,8946.64,,Being postage & courier for the period
+2026-08-08,JV-1079,Journal,SBI A/c,,8946.64,Being postage & courier for the period
+2026-08-08,PUR-1020,Purchase,Postage & Courier,125488.00,,Purchase from Lakshmi Industries Industries
+2026-08-08,PUR-1020,Purchase,Sundry Creditors,,125488.00,Purchase from Lakshmi Industries Industries
+2026-08-08,PUR-1147,Purchase,Salaries & Wages,68950.93,,Purchase from Ratan Enterprises & Co
+2026-08-08,PUR-1147,Purchase,Sundry Creditors,,68950.93,Purchase from Ratan Enterprises & Co
+2026-08-08,PUR-1174,Purchase,Printing & Stationery,295110.93,,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-08-08,PUR-1174,Purchase,Sundry Creditors,,295110.93,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-08-08,PUR-1188,Purchase,Building Rent - Centre,291575.96,,Purchase from Ratan Enterprises & Co
+2026-08-08,PUR-1188,Purchase,Sundry Creditors,,291575.96,Purchase from Ratan Enterprises & Co
+2026-08-09,BP-1004,Payment,Sundry Creditors,45895.51,,Payment to Om Services Industries
+2026-08-09,BP-1004,Payment,SBI A/c,,45895.51,Payment to Om Services Industries
+2026-08-09,BP-1027,Payment,Sundry Creditors,52514.78,,Payment to Bharat Enterprises & Sons
+2026-08-09,BP-1027,Payment,SBI A/c,,52514.78,Payment to Bharat Enterprises & Sons
+2026-08-09,BR-1028,Receipt,SBI A/c,105872.82,,Received from Rahul Desai
+2026-08-09,BR-1028,Receipt,Sundry Debtors,,105872.82,Received from Rahul Desai
+2026-08-09,BR-1092,Receipt,SBI A/c,93695.81,,Received from Neha Verma
+2026-08-09,BR-1092,Receipt,Sundry Debtors,,93695.81,Received from Neha Verma
+2026-08-09,BR-1127,Receipt,SBI A/c,71898.86,,Received from Manoj Patel
+2026-08-09,BR-1127,Receipt,Sundry Debtors,,71898.86,Received from Manoj Patel
+2026-08-09,INV-1006,Sales,Sundry Debtors,82373.29,,Being sales to Sanjay Pillai
+2026-08-09,INV-1006,Sales,Registration Fees,,82373.29,Being sales to Sanjay Pillai
+2026-08-09,INV-1078,Sales,Sundry Debtors,146913.58,,Being sales to Asha Sharma
+2026-08-09,INV-1078,Sales,Tuition Fees,,146913.58,Being sales to Asha Sharma
+2026-08-09,INV-1103,Sales,Sundry Debtors,90786.46,,Being sales to Arjun Choudhary
+2026-08-09,INV-1103,Sales,Registration Fees,,90786.46,Being sales to Arjun Choudhary
+2026-08-09,INV-1252,Sales,Sundry Debtors,61063.18,,Being sales to Arjun Nair
+2026-08-09,INV-1252,Sales,Tuition Fees,,61063.18,Being sales to Arjun Nair
+2026-08-09,JV-1042,Journal,Study Material Printing,73198.85,,Being study material printing for the period
+2026-08-09,JV-1042,Journal,SBI A/c,,73198.85,Being study material printing for the period
+2026-08-09,PUR-1058,Purchase,Travelling Expenses,58418.30,,Purchase from Ganesh Industries Pvt Ltd
+2026-08-09,PUR-1058,Purchase,Sundry Creditors,,58418.30,Purchase from Ganesh Industries Pvt Ltd
+2026-08-09,PUR-1079,Purchase,Faculty Salaries,18003.28,,Purchase from Bharat Enterprises & Sons
+2026-08-09,PUR-1079,Purchase,Sundry Creditors,,18003.28,Purchase from Bharat Enterprises & Sons
+2026-08-09,PUR-1081,Purchase,Travelling Expenses,31748.34,,Purchase from Krishna Enterprises & Co
+2026-08-09,PUR-1081,Purchase,Sundry Creditors,,31748.34,Purchase from Krishna Enterprises & Co
+2026-08-10,BR-1146,Receipt,SBI A/c,237497.46,,Received from Rajesh Kumar
+2026-08-10,BR-1146,Receipt,Sundry Debtors,,237497.46,Received from Rajesh Kumar
+2026-08-10,BR-1161,Receipt,SBI A/c,109336.35,,Received from Anjali Kapoor
+2026-08-10,BR-1161,Receipt,Sundry Debtors,,109336.35,Received from Anjali Kapoor
+2026-08-10,INV-1251,Sales,Sundry Debtors,41350.69,,Being sales to Neha Joshi
+2026-08-10,INV-1251,Sales,Tuition Fees,,41350.69,Being sales to Neha Joshi
+2026-08-10,INV-1289,Sales,Sundry Debtors,153589.66,,Being sales to Suresh Gupta
+2026-08-10,INV-1289,Sales,Tuition Fees,,153589.66,Being sales to Suresh Gupta
+2026-08-10,INV-1306,Sales,Sundry Debtors,156320.62,,Being sales to Deepak Iyer
+2026-08-10,INV-1306,Sales,Registration Fees,,156320.62,Being sales to Deepak Iyer
+2026-08-10,JV-1015,Journal,Telephone & Internet,9297.61,,Being telephone & internet for the period
+2026-08-10,JV-1015,Journal,SBI A/c,,9297.61,Being telephone & internet for the period
+2026-08-10,PUR-1031,Purchase,Printing & Stationery,79708.18,,Purchase from Om Services Industries
+2026-08-10,PUR-1031,Purchase,Sundry Creditors,,79708.18,Purchase from Om Services Industries
+2026-08-10,PUR-1042,Purchase,Travelling Expenses,185788.63,,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-08-10,PUR-1042,Purchase,Sundry Creditors,,185788.63,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-08-10,PUR-1050,Purchase,Office Rent,128034.69,,Purchase from Bharat Enterprises & Sons
+2026-08-10,PUR-1050,Purchase,Sundry Creditors,,128034.69,Purchase from Bharat Enterprises & Sons
+2026-08-11,BP-1146,Payment,Sundry Creditors,165132.15,,Payment to Lakshmi Enterprises Pvt Ltd
+2026-08-11,BP-1146,Payment,SBI A/c,,165132.15,Payment to Lakshmi Enterprises Pvt Ltd
+2026-08-11,BR-1118,Receipt,SBI A/c,160324.62,,Received from Priya Kapoor
+2026-08-11,BR-1118,Receipt,Sundry Debtors,,160324.62,Received from Priya Kapoor
+2026-08-11,INV-1008,Sales,Sundry Debtors,7696.59,,Being sales to Meena Singh
+2026-08-11,INV-1008,Sales,Tuition Fees,,7696.59,Being sales to Meena Singh
+2026-08-11,INV-1101,Sales,Sundry Debtors,137418.17,,Being sales to Nitin Iyer
+2026-08-11,INV-1101,Sales,Tuition Fees,,137418.17,Being sales to Nitin Iyer
+2026-08-11,INV-1178,Sales,Sundry Debtors,194728.45,,Being sales to Asha Joshi
+2026-08-11,INV-1178,Sales,Tuition Fees,,194728.45,Being sales to Asha Joshi
+2026-08-11,INV-1291,Sales,Sundry Debtors,18412.86,,Being sales to Asha Mehta
+2026-08-11,INV-1291,Sales,Registration Fees,,18412.86,Being sales to Asha Mehta
+2026-08-11,JV-1002,Journal,Electricity Charges,99811.82,,Being electricity charges for the period
+2026-08-11,JV-1002,Journal,SBI A/c,,99811.82,Being electricity charges for the period
+2026-08-11,JV-1008,Journal,Audit Fees,74227.20,,Being audit fees for the period
+2026-08-11,JV-1008,Journal,SBI A/c,,74227.20,Being audit fees for the period
+2026-08-11,JV-1027,Journal,Printing & Stationery,75654.87,,Being printing & stationery for the period
+2026-08-11,JV-1027,Journal,SBI A/c,,75654.87,Being printing & stationery for the period
+2026-08-11,JV-1093,Journal,Faculty Salaries,41012.01,,Being faculty salaries for the period
+2026-08-11,JV-1093,Journal,SBI A/c,,41012.01,Being faculty salaries for the period
+2026-08-11,PUR-1010,Purchase,Printing & Stationery,294358.31,,Purchase from Lakshmi Industries Industries
+2026-08-11,PUR-1010,Purchase,Sundry Creditors,,294358.31,Purchase from Lakshmi Industries Industries
+2026-08-11,PUR-1067,Purchase,Study Material Printing,48403.16,,Purchase from Ganesh Industries Pvt Ltd
+2026-08-11,PUR-1067,Purchase,Sundry Creditors,,48403.16,Purchase from Ganesh Industries Pvt Ltd
+2026-08-12,BP-1043,Payment,Sundry Creditors,155968.63,,Payment to Lakshmi Industries Industries
+2026-08-12,BP-1043,Payment,SBI A/c,,155968.63,Payment to Lakshmi Industries Industries
+2026-08-12,BP-1052,Payment,Sundry Creditors,99574.75,,Payment to Ganesh Mills Group
+2026-08-12,BP-1052,Payment,SBI A/c,,99574.75,Payment to Ganesh Mills Group
+2026-08-12,BP-1079,Payment,Sundry Creditors,198026.63,,Payment to Sai Trading Pvt Ltd
+2026-08-12,BP-1079,Payment,SBI A/c,,198026.63,Payment to Sai Trading Pvt Ltd
+2026-08-12,BR-1155,Receipt,SBI A/c,132402.89,,Received from Rajesh Kumar
+2026-08-12,BR-1155,Receipt,Sundry Debtors,,132402.89,Received from Rajesh Kumar
+2026-08-12,INV-1043,Sales,Sundry Debtors,102396.72,,Being sales to Nitin Desai
+2026-08-12,INV-1043,Sales,Registration Fees,,102396.72,Being sales to Nitin Desai
+2026-08-12,INV-1120,Sales,Sundry Debtors,14134.93,,Being sales to Rajesh Nair
+2026-08-12,INV-1120,Sales,Registration Fees,,14134.93,Being sales to Rajesh Nair
+2026-08-12,INV-1224,Sales,Sundry Debtors,51601.22,,Being sales to Ritu Gupta
+2026-08-12,INV-1224,Sales,Tuition Fees,,51601.22,Being sales to Ritu Gupta
+2026-08-12,JV-1007,Journal,Audit Fees,97720.51,,Being audit fees for the period
+2026-08-12,JV-1007,Journal,SBI A/c,,97720.51,Being audit fees for the period
+2026-08-12,JV-1060,Journal,Electricity Charges,12387.56,,Being electricity charges for the period
+2026-08-12,JV-1060,Journal,SBI A/c,,12387.56,Being electricity charges for the period
+2026-08-12,JV-1081,Journal,Telephone & Internet,14902.52,,Being telephone & internet for the period
+2026-08-12,JV-1081,Journal,SBI A/c,,14902.52,Being telephone & internet for the period
+2026-08-12,JV-X171,Journal,Old Liability A/c,9618.62,,Unknown adjustment
+2026-08-12,JV-X171,Journal,SBI A/c,,9618.62,Unknown adjustment
+2026-08-12,PUR-1034,Purchase,Faculty Salaries,72740.69,,Purchase from Ganesh Mills Group
+2026-08-12,PUR-1034,Purchase,Sundry Creditors,,72740.69,Purchase from Ganesh Mills Group
+2026-08-12,PUR-1091,Purchase,Study Material Printing,95360.97,,Purchase from Om Services Industries
+2026-08-12,PUR-1091,Purchase,Sundry Creditors,,95360.97,Purchase from Om Services Industries
+2026-08-12,PUR-1126,Purchase,Printing & Stationery,163492.72,,Purchase from Ganesh Mills Group
+2026-08-12,PUR-1126,Purchase,Sundry Creditors,,163492.72,Purchase from Ganesh Mills Group
+2026-08-13,INV-1181,Sales,Sundry Debtors,78289.22,,Being sales to Suresh Verma
+2026-08-13,INV-1181,Sales,Registration Fees,,78289.22,Being sales to Suresh Verma
+2026-08-13,INV-1182,Sales,Sundry Debtors,168587.55,,Being sales to Sanjay Nair
+2026-08-13,INV-1182,Sales,Registration Fees,,168587.55,Being sales to Sanjay Nair
+2026-08-13,INV-1208,Sales,Sundry Debtors,164553.02,,Being sales to Arjun Banerjee
+2026-08-13,INV-1208,Sales,Tuition Fees,,164553.02,Being sales to Arjun Banerjee
+2026-08-13,INV-1277,Sales,Sundry Debtors,32940.29,,Being sales to Meena Patel
+2026-08-13,INV-1277,Sales,Tuition Fees,,32940.29,Being sales to Meena Patel
+2026-08-13,INV-1313,Sales,Sundry Debtors,122741.34,,Being sales to Amit Gupta
+2026-08-13,INV-1313,Sales,Registration Fees,,122741.34,Being sales to Amit Gupta
+2026-08-13,JV-1067,Journal,Printing & Stationery,72237.13,,Being printing & stationery for the period
+2026-08-13,JV-1067,Journal,SBI A/c,,72237.13,Being printing & stationery for the period
+2026-08-13,PUR-1021,Purchase,Faculty Salaries,14153.21,,Purchase from Ratan Enterprises & Co
+2026-08-13,PUR-1021,Purchase,Sundry Creditors,,14153.21,Purchase from Ratan Enterprises & Co
+2026-08-13,PUR-1040,Purchase,Audit Fees,92014.82,,Purchase from Shree Agencies Industries
+2026-08-13,PUR-1040,Purchase,Sundry Creditors,,92014.82,Purchase from Shree Agencies Industries
+2026-08-13,PUR-1065,Purchase,Electricity Charges,213858.11,,Purchase from Shree Agencies Industries
+2026-08-13,PUR-1065,Purchase,Sundry Creditors,,213858.11,Purchase from Shree Agencies Industries
+2026-08-13,PUR-1085,Purchase,Printing & Stationery,265824.84,,Purchase from Bharat Enterprises & Sons
+2026-08-13,PUR-1085,Purchase,Sundry Creditors,,265824.84,Purchase from Bharat Enterprises & Sons
+2026-08-13,PUR-1096,Purchase,Office Rent,126277.92,,Purchase from Ganesh Industries Pvt Ltd
+2026-08-13,PUR-1096,Purchase,Sundry Creditors,,126277.92,Purchase from Ganesh Industries Pvt Ltd
+2026-08-13,PUR-1180,Purchase,Printing & Stationery,82955.61,,Purchase from Ganesh Mills Group
+2026-08-13,PUR-1180,Purchase,Sundry Creditors,,82955.61,Purchase from Ganesh Mills Group
+2026-08-14,BP-1081,Payment,Sundry Creditors,256675.88,,Payment to Shree Agencies Industries
+2026-08-14,BP-1081,Payment,SBI A/c,,256675.88,Payment to Shree Agencies Industries
+2026-08-14,BP-1112,Payment,Sundry Creditors,109729.41,,Payment to Lakshmi Enterprises Pvt Ltd
+2026-08-14,BP-1112,Payment,SBI A/c,,109729.41,Payment to Lakshmi Enterprises Pvt Ltd
+2026-08-14,PUR-1029,Purchase,Faculty Salaries,221404.10,,Purchase from Ganesh Industries Pvt Ltd
+2026-08-14,PUR-1029,Purchase,Sundry Creditors,,221404.10,Purchase from Ganesh Industries Pvt Ltd
+2026-08-14,PUR-1083,Purchase,Office Rent,158295.78,,Purchase from Ganesh Industries Pvt Ltd
+2026-08-14,PUR-1083,Purchase,Sundry Creditors,,158295.78,Purchase from Ganesh Industries Pvt Ltd
+2026-08-14,PUR-1152,Purchase,Electricity Charges,11996.33,,Purchase from Bharat Enterprises & Sons
+2026-08-14,PUR-1152,Purchase,Sundry Creditors,,11996.33,Purchase from Bharat Enterprises & Sons
+2026-08-14,PUR-1155,Purchase,Study Material Printing,130346.42,,Purchase from Sai Trading Pvt Ltd
+2026-08-14,PUR-1155,Purchase,Sundry Creditors,,130346.42,Purchase from Sai Trading Pvt Ltd
+2026-08-15,BR-1023,Receipt,SBI A/c,79506.52,,Received from Nitin Bhat
+2026-08-15,BR-1023,Receipt,Sundry Debtors,,79506.52,Received from Nitin Bhat
+2026-08-15,BR-1047,Receipt,SBI A/c,166957.57,,Received from Swati Singh
+2026-08-15,BR-1047,Receipt,Sundry Debtors,,166957.57,Received from Swati Singh
+2026-08-15,INV-1168,Sales,Sundry Debtors,161072.52,,Being sales to Rahul Shah
+2026-08-15,INV-1168,Sales,Tuition Fees,,161072.52,Being sales to Rahul Shah
+2026-08-15,INV-1179,Sales,Sundry Debtors,109863.43,,Being sales to Rahul Nair
+2026-08-15,INV-1179,Sales,Tuition Fees,,109863.43,Being sales to Rahul Nair
+2026-08-15,INV-1189,Sales,Sundry Debtors,46093.28,,Being sales to Pooja Kumar
+2026-08-15,INV-1189,Sales,Registration Fees,,46093.28,Being sales to Pooja Kumar
+2026-08-15,INV-1241,Sales,Sundry Debtors,165439.49,,Being sales to Nitin Gupta
+2026-08-15,INV-1241,Sales,Tuition Fees,,165439.49,Being sales to Nitin Gupta
+2026-08-15,INV-1267,Sales,Sundry Debtors,98175.40,,Being sales to Neha Shah
+2026-08-15,INV-1267,Sales,Registration Fees,,98175.40,Being sales to Neha Shah
+2026-08-15,JV-1041,Journal,Building Rent - Centre,75829.35,,Being building rent - centre for the period
+2026-08-15,JV-1041,Journal,SBI A/c,,75881.55,Being building rent - centre for the period
+2026-08-15,PUR-1017,Purchase,Faculty Salaries,207385.94,,Purchase from Ganesh Industries Pvt Ltd
+2026-08-15,PUR-1017,Purchase,Sundry Creditors,,207385.94,Purchase from Ganesh Industries Pvt Ltd
+2026-08-15,PUR-1064,Purchase,Building Rent - Centre,87666.00,,Purchase from Bharat Enterprises & Sons
+2026-08-15,PUR-1064,Purchase,Sundry Creditors,,87666.00,Purchase from Bharat Enterprises & Sons
+2026-08-15,PUR-1114,Purchase,Salaries & Wages,257849.44,,Purchase from Sai Trading Pvt Ltd
+2026-08-15,PUR-1114,Purchase,Sundry Creditors,,257849.44,Purchase from Sai Trading Pvt Ltd
+2026-08-15,PUR-1121,Purchase,Study Material Printing,99162.28,,Purchase from Om Traders & Sons
+2026-08-15,PUR-1121,Purchase,Sundry Creditors,,99162.28,Purchase from Om Traders & Sons
+2026-08-15,PUR-1173,Purchase,Travelling Expenses,57610.54,,Purchase from Lakshmi Industries Industries
+2026-08-15,PUR-1173,Purchase,Sundry Creditors,,57610.54,Purchase from Lakshmi Industries Industries
+2026-08-16,BR-1007,Receipt,SBI A/c,217202.78,,Received from Asha Sharma
+2026-08-16,BR-1007,Receipt,Sundry Debtors,,217202.78,Received from Asha Sharma
+2026-08-16,BR-1143,Receipt,SBI A/c,44588.44,,Received from Ritu Iyer
+2026-08-16,BR-1143,Receipt,Sundry Debtors,,44588.44,Received from Ritu Iyer
+2026-08-16,INV-1265,Sales,Sundry Debtors,145461.21,,Being sales to Pooja Kumar
+2026-08-16,INV-1265,Sales,Registration Fees,,145461.21,Being sales to Pooja Kumar
+2026-08-16,JV-1127,Journal,Study Material Printing,63561.22,,Being study material printing for the period
+2026-08-16,JV-1127,Journal,SBI A/c,,63561.22,Being study material printing for the period
+2026-08-17,BP-1031,Payment,Sundry Creditors,79946.88,,Payment to Bharat Enterprises & Sons
+2026-08-17,BP-1031,Payment,SBI A/c,,79946.88,Payment to Bharat Enterprises & Sons
+2026-08-17,BP-1147,Payment,Sundry Creditors,108611.60,,Payment to Ratan Enterprises & Co
+2026-08-17,BP-1147,Payment,SBI A/c,,108611.60,Payment to Ratan Enterprises & Co
+2026-08-17,BR-1002,Receipt,SBI A/c,47227.21,,Received from Ritu Mehta
+2026-08-17,BR-1002,Receipt,Sundry Debtors,,47227.21,Received from Ritu Mehta
+2026-08-17,BR-1015,Receipt,SBI A/c,81927.65,,Received from Deepak Pillai
+2026-08-17,BR-1015,Receipt,Sundry Debtors,,81927.65,Received from Deepak Pillai
+2026-08-17,BR-1088,Receipt,SBI A/c,37689.67,,Received from Anjali Kapoor
+2026-08-17,BR-1088,Receipt,Sundry Debtors,,37689.67,Received from Anjali Kapoor
+2026-08-17,BR-1105,Receipt,SBI A/c,36993.70,,Received from Nitin Verma
+2026-08-17,BR-1105,Receipt,Sundry Debtors,,36993.70,Received from Nitin Verma
+2026-08-17,INV-1127,Sales,Sundry Debtors,130527.24,,Being sales to Suresh Shah
+2026-08-17,INV-1127,Sales,Tuition Fees,,313265.38,Being sales to Suresh Shah
+2026-08-17,INV-1137,Sales,Sundry Debtors,179083.67,,Being sales to Rahul Mehta
+2026-08-17,INV-1137,Sales,Registration Fees,,179083.67,Being sales to Rahul Mehta
+2026-08-17,INV-1257,Sales,Sundry Debtors,35485.29,,Being sales to Amit Pillai
+2026-08-17,INV-1257,Sales,Tuition Fees,,85164.70,Being sales to Amit Pillai
+2026-08-17,INV-1290,Sales,Sundry Debtors,129922.87,,Being sales to Manoj Sharma
+2026-08-17,INV-1290,Sales,Registration Fees,,129922.87,Being sales to Manoj Sharma
+2026-08-17,JV-1111,Journal,Postage & Courier,14304.26,,Being postage & courier for the period
+2026-08-17,JV-1111,Journal,SBI A/c,,14304.26,Being postage & courier for the period
+2026-08-17,JV-1135,Journal,Telephone & Internet,40636.37,,Being telephone & internet for the period
+2026-08-17,JV-1135,Journal,SBI A/c,,40636.37,Being telephone & internet for the period
+2026-08-17,PUR-1073,Purchase,Postage & Courier,54164.35,,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-08-17,PUR-1073,Purchase,Sundry Creditors,,54164.35,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-08-17,PUR-1118,Purchase,Travelling Expenses,70519.71,,Purchase from Shree Agencies Industries
+2026-08-17,PUR-1118,Purchase,Sundry Creditors,,70519.71,Purchase from Shree Agencies Industries
+2026-08-17,PUR-1128,Purchase,Office Rent,110267.66,,Purchase from Om Services Industries
+2026-08-17,PUR-1128,Purchase,Sundry Creditors,,110267.66,Purchase from Om Services Industries
+2026-08-17,PUR-1145,Purchase,Postage & Courier,291728.29,,Purchase from Ganesh Industries Pvt Ltd
+2026-08-17,PUR-1145,Purchase,Sundry Creditors,,291728.29,Purchase from Ganesh Industries Pvt Ltd
+2026-08-18,BP-1039,Payment,Sundry Creditors,16846.61,,Payment to Bharat Enterprises & Sons
+2026-08-18,BP-1039,Payment,SBI A/c,,16846.61,Payment to Bharat Enterprises & Sons
+2026-08-18,BR-1010,Receipt,SBI A/c,246123.23,,Received from Sunita Shah
+2026-08-18,BR-1010,Receipt,Sundry Debtors,,246123.23,Received from Sunita Shah
+2026-08-18,BR-1061,Receipt,SBI A/c,4343.63,,Received from Kavita Bhat
+2026-08-18,BR-1061,Receipt,Sundry Debtors,,4343.63,Received from Kavita Bhat
+2026-08-18,BR-1136,Receipt,SBI A/c,131540.69,,Received from Deepak Singh
+2026-08-18,BR-1136,Receipt,Sundry Debtors,,131540.69,Received from Deepak Singh
+2026-08-18,INV-1005,Sales,Sundry Debtors,143461.86,,Being sales to Arjun Kumar
+2026-08-18,INV-1005,Sales,Tuition Fees,,344308.46,Being sales to Arjun Kumar
+2026-08-18,INV-1080,Sales,Sundry Debtors,7658.94,,Being sales to Rajesh Nair
+2026-08-18,INV-1080,Sales,Tuition Fees,,18381.46,Being sales to Rajesh Nair
+2026-08-18,INV-1174,Sales,Sundry Debtors,140364.75,,Being sales to Rajesh Verma
+2026-08-18,INV-1174,Sales,Registration Fees,,140364.75,Being sales to Rajesh Verma
+2026-08-18,JV-1038,Journal,Postage & Courier,48354.29,,Being postage & courier for the period
+2026-08-18,JV-1038,Journal,SBI A/c,,48354.29,Being postage & courier for the period
+2026-08-18,JV-1092,Journal,Audit Fees,15837.99,,Being audit fees for the period
+2026-08-18,JV-1092,Journal,SBI A/c,,15837.99,Being audit fees for the period
+2026-08-18,PUR-1030,Purchase,Building Rent - Centre,113119.47,,Purchase from Maa Agencies Pvt Ltd
+2026-08-18,PUR-1030,Purchase,Sundry Creditors,,113119.47,Purchase from Maa Agencies Pvt Ltd
+2026-08-18,PUR-1162,Purchase,Postage & Courier,93912.47,,Purchase from Ratan Enterprises & Co
+2026-08-18,PUR-1162,Purchase,Sundry Creditors,,93912.47,Purchase from Ratan Enterprises & Co
+2026-08-18,PUR-1206,Purchase,Salaries & Wages,91845.97,,Purchase from Bharat Enterprises & Sons
+2026-08-18,PUR-1206,Purchase,Sundry Creditors,,91845.97,Purchase from Bharat Enterprises & Sons
+2026-08-19,BP-1022,Payment,Sundry Creditors,150089.43,,Payment to Bharat Enterprises & Sons
+2026-08-19,BP-1022,Payment,SBI A/c,,150089.43,Payment to Bharat Enterprises & Sons
+2026-08-19,BP-1032,Payment,Sundry Creditors,18201.91,,Payment to Sai Trading Pvt Ltd
+2026-08-19,BP-1032,Payment,SBI A/c,,18201.91,Payment to Sai Trading Pvt Ltd
+2026-08-19,BR-1008,Receipt,SBI A/c,180599.66,,Received from Sanjay Patel
+2026-08-19,BR-1008,Receipt,Sundry Debtors,,180599.66,Received from Sanjay Patel
+2026-08-19,BR-1039,Receipt,SBI A/c,26168.12,,Received from Priya Patel
+2026-08-19,BR-1039,Receipt,Sundry Debtors,,26168.12,Received from Priya Patel
+2026-08-19,BR-1046,Receipt,SBI A/c,65415.98,,Received from Meena Gupta
+2026-08-19,BR-1046,Receipt,Sundry Debtors,,65415.98,Received from Meena Gupta
+2026-08-19,BR-1067,Receipt,SBI A/c,184866.90,,Received from Swati Bhat
+2026-08-19,BR-1067,Receipt,Sundry Debtors,,184866.90,Received from Swati Bhat
+2026-08-19,INV-1283,Sales,Sundry Debtors,25827.66,,Being sales to Suresh Patel
+2026-08-19,INV-1283,Sales,Tuition Fees,,61986.38,Being sales to Suresh Patel
+2026-08-19,INV-1292,Sales,Sundry Debtors,153834.27,,Being sales to Manoj Nair
+2026-08-19,INV-1292,Sales,Registration Fees,,153834.27,Being sales to Manoj Nair
+2026-08-19,JV-1021,Journal,Electricity Charges,61597.86,,Being electricity charges for the period
+2026-08-19,JV-1021,Journal,SBI A/c,,61597.86,Being electricity charges for the period
+2026-08-19,JV-1084,Journal,Printing & Stationery,73268.72,,Being printing & stationery for the period
+2026-08-19,JV-1084,Journal,SBI A/c,,73268.72,Being printing & stationery for the period
+2026-08-19,JV-1134,Journal,Travelling Expenses,91398.65,,Being travelling expenses for the period
+2026-08-19,JV-1134,Journal,SBI A/c,,91398.65,Being travelling expenses for the period
+2026-08-19,PUR-1025,Purchase,Printing & Stationery,59470.00,,Purchase from Ganesh Mills Group
+2026-08-19,PUR-1025,Purchase,Sundry Creditors,,59470.00,Purchase from Ganesh Mills Group
+2026-08-19,PUR-1115,Purchase,Printing & Stationery,136828.84,,Purchase from Om Services Industries
+2026-08-19,PUR-1115,Purchase,Sundry Creditors,,136828.84,Purchase from Om Services Industries
+2026-08-20,BP-1025,Payment,Sundry Creditors,281224.16,,Payment to Om Traders & Sons
+2026-08-20,BP-1025,Payment,SBI A/c,,281224.16,Payment to Om Traders & Sons
+2026-08-20,INV-1025,Sales,Sundry Debtors,176632.66,,Being sales to Arjun Nair
+2026-08-20,INV-1025,Sales,Tuition Fees,,423918.38,Being sales to Arjun Nair
+2026-08-20,INV-1059,Sales,Sundry Debtors,185941.76,,Being sales to Rahul Nair
+2026-08-20,INV-1059,Sales,Tuition Fees,,446260.22,Being sales to Rahul Nair
+2026-08-20,INV-1124,Sales,Sundry Debtors,64700.82,,Being sales to Suresh Iyer
+2026-08-20,INV-1124,Sales,Registration Fees,,64700.82,Being sales to Suresh Iyer
+2026-08-20,INV-1125,Sales,Sundry Debtors,13821.78,,Being sales to Nitin Patel
+2026-08-20,INV-1125,Sales,Tuition Fees,,33172.27,Being sales to Nitin Patel
+2026-08-20,INV-1135,Sales,Sundry Debtors,76272.56,,Being sales to Anjali Reddy
+2026-08-20,INV-1135,Sales,Tuition Fees,,183054.14,Being sales to Anjali Reddy
+2026-08-20,INV-1190,Sales,Sundry Debtors,6248.20,,Being sales to Manoj Singh
+2026-08-20,INV-1190,Sales,Registration Fees,,6248.20,Being sales to Manoj Singh
+2026-08-20,JV-1003,Journal,Study Material Printing,51762.15,,Being study material printing for the period
+2026-08-20,JV-1003,Journal,SBI A/c,,51762.15,Being study material printing for the period
+2026-08-20,JV-1050,Journal,Printing & Stationery,40494.86,,Being printing & stationery for the period
+2026-08-20,JV-1050,Journal,SBI A/c,,40494.86,Being printing & stationery for the period
+2026-08-20,PUR-1004,Purchase,Postage & Courier,201155.31,,Purchase from Ganesh Industries Pvt Ltd
+2026-08-20,PUR-1004,Purchase,Sundry Creditors,,201155.31,Purchase from Ganesh Industries Pvt Ltd
+2026-08-20,PUR-1052,Purchase,Printing & Stationery,52680.96,,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-08-20,PUR-1052,Purchase,Sundry Creditors,,52680.96,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-08-20,PUR-1077,Purchase,Salaries & Wages,229822.34,,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-08-20,PUR-1077,Purchase,Sundry Creditors,,229822.34,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-08-20,PUR-1097,Purchase,Printing & Stationery,237063.04,,Purchase from Maa Agencies Pvt Ltd
+2026-08-20,PUR-1097,Purchase,Sundry Creditors,,237063.04,Purchase from Maa Agencies Pvt Ltd
+2026-08-20,PUR-1160,Purchase,Office Rent,175269.45,,Purchase from Ganesh Industries Pvt Ltd
+2026-08-20,PUR-1160,Purchase,Sundry Creditors,,175269.45,Purchase from Ganesh Industries Pvt Ltd
+2026-08-20,PUR-1200,Purchase,Faculty Salaries,488127.06,,Purchase from Sai Trading Pvt Ltd
+2026-08-20,PUR-1200,Purchase,Sundry Creditors,,271181.70,Purchase from Sai Trading Pvt Ltd
+2026-08-20,PUR-1214,Purchase,Bank Charges,298119.32,,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-08-20,PUR-1214,Purchase,Sundry Creditors,,298119.32,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-08-21,BP-1038,Payment,Sundry Creditors,197152.81,,Payment to Om Services Industries
+2026-08-21,BP-1038,Payment,SBI A/c,,197152.81,Payment to Om Services Industries
+2026-08-21,BP-1105,Payment,Sundry Creditors,234690.68,,Payment to Lakshmi Industries Industries
+2026-08-21,BP-1105,Payment,SBI A/c,,234690.68,Payment to Lakshmi Industries Industries
+2026-08-21,BP-1142,Payment,Sundry Creditors,96081.25,,Payment to Ratan Enterprises & Co
+2026-08-21,BP-1142,Payment,SBI A/c,,96081.25,Payment to Ratan Enterprises & Co
+2026-08-21,BR-1111,Receipt,SBI A/c,44374.00,,Received from Vikram Sharma
+2026-08-21,BR-1111,Receipt,Sundry Debtors,,44374.00,Received from Vikram Sharma
+2026-08-21,BR-1157,Receipt,SBI A/c,62641.44,,Received from Arjun Banerjee
+2026-08-21,BR-1157,Receipt,Sundry Debtors,,62641.44,Received from Arjun Banerjee
+2026-08-21,INV-1067,Sales,Sundry Debtors,10125.57,,Being sales to Ritu Iyer
+2026-08-21,INV-1067,Sales,Registration Fees,,10125.57,Being sales to Ritu Iyer
+2026-08-21,PUR-1148,Purchase,Faculty Salaries,129396.91,,Purchase from Ganesh Mills Group
+2026-08-21,PUR-1148,Purchase,Sundry Creditors,,71887.17,Purchase from Ganesh Mills Group
+2026-08-21,PUR-1161,Purchase,Building Rent - Centre,141194.75,,Purchase from Sai Trading Pvt Ltd
+2026-08-21,PUR-1161,Purchase,Sundry Creditors,,141194.75,Purchase from Sai Trading Pvt Ltd
+2026-08-21,PUR-1232,Purchase,Printing & Stationery,61529.74,,Purchase from Ratan Enterprises & Co
+2026-08-21,PUR-1232,Purchase,Sundry Creditors,,61529.74,Purchase from Ratan Enterprises & Co
+2026-08-22,BR-1042,Receipt,SBI A/c,243454.91,,Received from Pooja Kumar
+2026-08-22,BR-1042,Receipt,Sundry Debtors,,243454.91,Received from Pooja Kumar
+2026-08-22,BR-1061-DUP,Receipt,SBI A/c,4343.63,,Received from Kavita Bhat
+2026-08-22,BR-1061-DUP,Receipt,Sundry Debtors,,4343.63,Received from Kavita Bhat
+2026-08-22,BR-1075,Receipt,SBI A/c,11607.39,,Received from Deepak Gupta
+2026-08-22,BR-1075,Receipt,Sundry Debtors,,11607.39,Received from Deepak Gupta
+2026-08-22,BR-1145,Receipt,SBI A/c,163850.62,,Received from Rajesh Gupta
+2026-08-22,BR-1145,Receipt,Sundry Debtors,,163850.62,Received from Rajesh Gupta
+2026-08-22,INV-1177,Sales,Sundry Debtors,192255.39,,Being sales to Pooja Shah
+2026-08-22,INV-1177,Sales,Registration Fees,,192255.39,Being sales to Pooja Shah
+2026-08-22,INV-1218,Sales,Sundry Debtors,36244.54,,Being sales to Vikram Sharma
+2026-08-22,INV-1218,Sales,Tuition Fees,,86986.90,Being sales to Vikram Sharma
+2026-08-22,PUR-1051,Purchase,Travelling Expenses,22132.05,,Purchase from Bharat Enterprises & Sons
+2026-08-22,PUR-1051,Purchase,Sundry Creditors,,22132.05,Purchase from Bharat Enterprises & Sons
+2026-08-22,PUR-1089,Purchase,Telephone & Internet,206523.66,,Purchase from Lakshmi Industries Industries
+2026-08-22,PUR-1089,Purchase,Sundry Creditors,,206523.66,Purchase from Lakshmi Industries Industries
+2026-08-22,PUR-1108,Purchase,Travelling Expenses,24719.56,,Purchase from Bharat Enterprises & Sons
+2026-08-22,PUR-1108,Purchase,Sundry Creditors,,24719.56,Purchase from Bharat Enterprises & Sons
+2026-08-22,PUR-1140,Purchase,Travelling Expenses,277958.11,,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-08-22,PUR-1140,Purchase,Sundry Creditors,,277958.11,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-08-22,PUR-1194,Purchase,Postage & Courier,194576.48,,Purchase from Om Traders & Sons
+2026-08-22,PUR-1194,Purchase,Sundry Creditors,,194576.48,Purchase from Om Traders & Sons
+2026-08-23,BP-1009,Payment,Sundry Creditors,211293.76,,Payment to Ganesh Industries Pvt Ltd
+2026-08-23,BP-1009,Payment,SBI A/c,,211293.76,Payment to Ganesh Industries Pvt Ltd
+2026-08-23,BP-1011,Payment,Sundry Creditors,17787.05,,Payment to Lakshmi Industries Industries
+2026-08-23,BP-1011,Payment,SBI A/c,,17787.05,Payment to Lakshmi Industries Industries
+2026-08-23,BP-1049,Payment,Sundry Creditors,266138.56,,Payment to Sai Trading Pvt Ltd
+2026-08-23,BP-1049,Payment,SBI A/c,,266138.56,Payment to Sai Trading Pvt Ltd
+2026-08-23,BR-1050,Receipt,SBI A/c,101066.98,,Received from Sanjay Singh
+2026-08-23,BR-1050,Receipt,Sundry Debtors,,101066.98,Received from Sanjay Singh
+2026-08-23,BR-1148,Receipt,SBI A/c,163788.50,,Received from Sanjay Patel
+2026-08-23,BR-1148,Receipt,Sundry Debtors,,163788.50,Received from Sanjay Patel
+2026-08-23,INV-1016,Sales,Sundry Debtors,187283.94,,Being sales to Manoj Mehta
+2026-08-23,INV-1016,Sales,Registration Fees,,187283.94,Being sales to Manoj Mehta
+2026-08-23,INV-1147,Sales,Sundry Debtors,44316.26,,Being sales to Manoj Sharma
+2026-08-23,INV-1147,Sales,Tuition Fees,,106359.02,Being sales to Manoj Sharma
+2026-08-23,INV-1217,Sales,Sundry Debtors,82617.07,,Being sales to Nitin Reddy
+2026-08-23,INV-1217,Sales,Tuition Fees,,198280.97,Being sales to Nitin Reddy
+2026-08-23,INV-1239,Sales,Sundry Debtors,147960.84,,Being sales to Swati Patel
+2026-08-23,INV-1239,Sales,Tuition Fees,,355106.02,Being sales to Swati Patel
+2026-08-23,INV-1262,Sales,Sundry Debtors,43253.94,,Being sales to Rajesh Choudhary
+2026-08-23,INV-1262,Sales,Registration Fees,,43253.94,Being sales to Rajesh Choudhary
+2026-08-23,INV-1288,Sales,Sundry Debtors,140374.07,,Being sales to Sanjay Rao
+2026-08-23,INV-1288,Sales,Registration Fees,,140374.07,Being sales to Sanjay Rao
+2026-08-23,INV-1307,Sales,Sundry Debtors,187834.40,,Being sales to Nitin Kapoor
+2026-08-23,INV-1307,Sales,Tuition Fees,,450802.56,Being sales to Nitin Kapoor
+2026-08-23,INV-1309,Sales,Sundry Debtors,92530.20,,Being sales to Neha Verma
+2026-08-23,INV-1309,Sales,Registration Fees,,92530.20,Being sales to Neha Verma
+2026-08-23,PUR-1037,Purchase,Electricity Charges,76886.13,,Purchase from Ganesh Industries Pvt Ltd
+2026-08-23,PUR-1037,Purchase,Sundry Creditors,,76886.13,Purchase from Ganesh Industries Pvt Ltd
+2026-08-23,PUR-1043,Purchase,Travelling Expenses,272893.15,,Purchase from Bharat Enterprises & Sons
+2026-08-23,PUR-1043,Purchase,Sundry Creditors,,272893.15,Purchase from Bharat Enterprises & Sons
+2026-08-24,BR-1149,Receipt,SBI A/c,191278.60,,Received from Swati Patel
+2026-08-24,BR-1149,Receipt,Sundry Debtors,,191278.60,Received from Swati Patel
+2026-08-24,INV-1081,Sales,Sundry Debtors,118012.67,,Being sales to Arjun Desai
+2026-08-24,INV-1081,Sales,Registration Fees,,118012.67,Being sales to Arjun Desai
+2026-08-24,INV-1244,Sales,Sundry Debtors,193040.57,,Being sales to Rajesh Kapoor
+2026-08-24,INV-1244,Sales,Tuition Fees,,463297.37,Being sales to Rajesh Kapoor
+2026-08-24,INV-1281,Sales,Sundry Debtors,61483.21,,Being sales to Nitin Rao
+2026-08-24,INV-1281,Sales,Tuition Fees,,147559.70,Being sales to Nitin Rao
+2026-08-24,JV-1062,Journal,Bank Charges,22616.98,,Being bank charges for the period
+2026-08-24,JV-1062,Journal,SBI A/c,,22616.98,Being bank charges for the period
+2026-08-24,PUR-1038,Purchase,Salaries & Wages,217485.84,,Purchase from Om Services Industries
+2026-08-24,PUR-1038,Purchase,Sundry Creditors,,217485.84,Purchase from Om Services Industries
+2026-08-24,PUR-1141,Purchase,Travelling Expenses,126659.52,,Purchase from Ganesh Mills Group
+2026-08-24,PUR-1141,Purchase,Sundry Creditors,,126659.52,Purchase from Ganesh Mills Group
+2026-08-24,PUR-1177,Purchase,Building Rent - Centre,27569.21,,Purchase from Ganesh Industries Pvt Ltd
+2026-08-24,PUR-1177,Purchase,Sundry Creditors,,27569.21,Purchase from Ganesh Industries Pvt Ltd
+2026-08-24,PUR-1222,Purchase,Bank Charges,292004.13,,Purchase from Bharat Enterprises & Sons
+2026-08-24,PUR-1222,Purchase,Sundry Creditors,,292004.13,Purchase from Bharat Enterprises & Sons
+2026-08-25,BP-1093,Payment,Sundry Creditors,84177.60,,Payment to Lakshmi Enterprises Pvt Ltd
+2026-08-25,BP-1093,Payment,SBI A/c,,84177.60,Payment to Lakshmi Enterprises Pvt Ltd
+2026-08-25,BP-1129,Payment,Sundry Creditors,204635.04,,Payment to Om Services Industries
+2026-08-25,BP-1129,Payment,SBI A/c,,204635.04,Payment to Om Services Industries
+2026-08-25,BR-1063,Receipt,SBI A/c,151315.40,,Received from Manoj Rao
+2026-08-25,BR-1063,Receipt,Sundry Debtors,,151315.40,Received from Manoj Rao
+2026-08-25,BR-1104,Receipt,SBI A/c,59783.80,,Received from Suresh Nair
+2026-08-25,BR-1104,Receipt,Sundry Debtors,,59783.80,Received from Suresh Nair
+2026-08-25,INV-1028,Sales,Sundry Debtors,174002.74,,Being sales to Sanjay Rao
+2026-08-25,INV-1028,Sales,Registration Fees,,174002.74,Being sales to Sanjay Rao
+2026-08-25,INV-1034,Sales,Sundry Debtors,114069.14,,Being sales to Asha Joshi
+2026-08-25,INV-1034,Sales,Registration Fees,,114069.14,Being sales to Asha Joshi
+2026-08-25,INV-1223,Sales,Sundry Debtors,77088.22,,Being sales to Suresh Gupta
+2026-08-25,INV-1223,Sales,Tuition Fees,,185011.73,Being sales to Suresh Gupta
+2026-08-25,JV-1103,Journal,Audit Fees,66690.24,,Being audit fees for the period
+2026-08-25,JV-1103,Journal,SBI A/c,,66690.24,Being audit fees for the period
+2026-08-25,PUR-1098,Purchase,Office Rent,248396.10,,Purchase from Ganesh Mills Group
+2026-08-25,PUR-1098,Purchase,Sundry Creditors,,248396.10,Purchase from Ganesh Mills Group
+2026-08-25,PUR-1119,Purchase,Building Rent - Centre,116711.24,,Purchase from Bharat Enterprises & Sons
+2026-08-25,PUR-1119,Purchase,Sundry Creditors,,116711.24,Purchase from Bharat Enterprises & Sons
+2026-08-26,BP-1120,Payment,Sundry Creditors,239111.00,,Payment to Lakshmi Enterprises Pvt Ltd
+2026-08-26,BP-1120,Payment,SBI A/c,,239111.00,Payment to Lakshmi Enterprises Pvt Ltd
+2026-08-26,BR-1026,Receipt,SBI A/c,66999.00,,Received from Kavita Iyer
+2026-08-26,BR-1026,Receipt,Sundry Debtors,,66999.00,Received from Kavita Iyer
+2026-08-26,INV-1045,Sales,Sundry Debtors,64510.48,,Being sales to Manoj Kumar
+2026-08-26,INV-1045,Sales,Registration Fees,,64510.48,Being sales to Manoj Kumar
+2026-08-26,INV-1166,Sales,Sundry Debtors,141177.10,,Being sales to Rajesh Kumar
+2026-08-26,INV-1166,Sales,Tuition Fees,,338825.04,Being sales to Rajesh Kumar
+2026-08-26,PUR-1003,Purchase,Salaries & Wages,107783.00,,Purchase from Om Services Industries
+2026-08-26,PUR-1003,Purchase,Sundry Creditors,,107783.00,Purchase from Om Services Industries
+2026-08-26,PUR-1011,Purchase,Bank Charges,61006.42,,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-08-26,PUR-1011,Purchase,Sundry Creditors,,61006.42,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-08-26,PUR-1015,Purchase,Salaries & Wages,179341.02,,Purchase from Bharat Enterprises & Sons
+2026-08-26,PUR-1015,Purchase,Sundry Creditors,,179341.02,Purchase from Bharat Enterprises & Sons
+2026-08-26,PUR-1069,Purchase,Postage & Courier,238983.46,,Purchase from Krishna Enterprises & Co
+2026-08-26,PUR-1069,Purchase,Sundry Creditors,,238983.46,Purchase from Krishna Enterprises & Co
+2026-08-26,PUR-1153,Purchase,Office Rent,153094.20,,Purchase from Sai Trading Pvt Ltd
+2026-08-26,PUR-1153,Purchase,Sundry Creditors,,153094.20,Purchase from Sai Trading Pvt Ltd
+2026-08-26,PUR-1216,Purchase,Electricity Charges,55791.23,,Purchase from Ganesh Industries Pvt Ltd
+2026-08-26,PUR-1216,Purchase,Sundry Creditors,,55791.23,Purchase from Ganesh Industries Pvt Ltd
+2026-08-27,BP-1101,Payment,Sundry Creditors,39279.48,,Payment to Krishna Enterprises & Co
+2026-08-27,BP-1101,Payment,SBI A/c,,39279.48,Payment to Krishna Enterprises & Co
+2026-08-27,BR-1061-DUP-DUP,Receipt,SBI A/c,4343.63,,Received from Kavita Bhat
+2026-08-27,BR-1061-DUP-DUP,Receipt,Sundry Debtors,,4343.63,Received from Kavita Bhat
+2026-08-27,BR-1166,Receipt,SBI A/c,168762.15,,Received from Rahul Mehta
+2026-08-27,BR-1166,Receipt,Sundry Debtors,,168762.15,Received from Rahul Mehta
+2026-08-27,INV-1031,Sales,Sundry Debtors,86422.28,,Being sales to Anjali Kapoor
+2026-08-27,INV-1031,Sales,Registration Fees,,86422.28,Being sales to Anjali Kapoor
+2026-08-27,INV-1047,Sales,Sundry Debtors,173250.03,,Being sales to Manoj Nair
+2026-08-27,INV-1047,Sales,Registration Fees,,173250.03,Being sales to Manoj Nair
+2026-08-27,INV-1119,Sales,Sundry Debtors,109420.48,,Being sales to Swati Patel
+2026-08-27,INV-1119,Sales,Registration Fees,,109420.48,Being sales to Swati Patel
+2026-08-27,INV-1194,Sales,Sundry Debtors,82346.34,,Being sales to Arjun Choudhary
+2026-08-27,INV-1194,Sales,Tuition Fees,,197631.22,Being sales to Arjun Choudhary
+2026-08-27,INV-1204,Sales,Sundry Debtors,164122.85,,Being sales to Rahul Sharma
+2026-08-27,INV-1204,Sales,Registration Fees,,164122.85,Being sales to Rahul Sharma
+2026-08-27,JV-S137,Journal,Sundry Creditors,197047.54,,Refund/advance from vendor
+2026-08-27,JV-S137,Journal,SBI A/c,,197047.54,Refund/advance from vendor
+2026-08-27,PUR-1090,Purchase,Audit Fees,248959.98,,Purchase from Sai Trading Pvt Ltd
+2026-08-27,PUR-1090,Purchase,Sundry Creditors,,248959.98,Purchase from Sai Trading Pvt Ltd
+2026-08-27,PUR-1132,Purchase,Audit Fees,178021.47,,Purchase from Om Services Industries
+2026-08-27,PUR-1132,Purchase,Sundry Creditors,,178021.47,Purchase from Om Services Industries
+2026-08-28,BP-1006,Payment,Sundry Creditors,168594.24,,Payment to Ganesh Industries Pvt Ltd
+2026-08-28,BP-1006,Payment,SBI A/c,,168594.24,Payment to Ganesh Industries Pvt Ltd
+2026-08-28,BR-1053,Receipt,SBI A/c,232908.70,,Received from Nitin Reddy
+2026-08-28,BR-1053,Receipt,Sundry Debtors,,232908.70,Received from Nitin Reddy
+2026-08-28,BR-1072,Receipt,SBI A/c,174075.00,,Received from Manoj Mehta
+2026-08-28,BR-1072,Receipt,Sundry Debtors,,174075.00,Received from Manoj Mehta
+2026-08-28,BR-1090,Receipt,SBI A/c,213555.32,,Received from Nitin Patel
+2026-08-28,BR-1090,Receipt,Sundry Debtors,,213555.32,Received from Nitin Patel
+2026-08-28,BR-1098,Receipt,SBI A/c,202036.89,,Received from Amit Joshi
+2026-08-28,BR-1098,Receipt,Sundry Debtors,,202036.89,Received from Amit Joshi
+2026-08-28,BR-1108,Receipt,SBI A/c,104167.49,,Received from Deepak Gupta
+2026-08-28,BR-1108,Receipt,Sundry Debtors,,104167.49,Received from Deepak Gupta
+2026-08-28,BR-1112,Receipt,SBI A/c,10304.58,,Received from Vikram Rao
+2026-08-28,BR-1112,Receipt,Sundry Debtors,,10304.58,Received from Vikram Rao
+2026-08-28,BR-1160,Receipt,SBI A/c,85833.69,,Received from Meena Verma
+2026-08-28,BR-1160,Receipt,Sundry Debtors,,85833.69,Received from Meena Verma
+2026-08-28,INV-1083,Sales,Sundry Debtors,42629.82,,Being sales to Suresh Nair
+2026-08-28,INV-1083,Sales,Registration Fees,,42629.82,Being sales to Suresh Nair
+2026-08-28,JV-1013,Journal,Postage & Courier,59153.12,,Being postage & courier for the period
+2026-08-28,JV-1013,Journal,SBI A/c,,59153.12,Being postage & courier for the period
+2026-08-28,JV-1078,Journal,Travelling Expenses,67967.92,,Being travelling expenses for the period
+2026-08-28,JV-1078,Journal,SBI A/c,,67967.92,Being travelling expenses for the period
+2026-08-28,JV-1133,Journal,Building Rent - Centre,88844.23,,Being building rent - centre for the period
+2026-08-28,JV-1133,Journal,SBI A/c,,88844.23,Being building rent - centre for the period
+2026-08-28,PUR-1168,Purchase,Bank Charges,93460.31,,Purchase from Ganesh Industries Pvt Ltd
+2026-08-28,PUR-1168,Purchase,Sundry Creditors,,93460.31,Purchase from Ganesh Industries Pvt Ltd
+2026-08-28,PUR-1193,Purchase,Travelling Expenses,288626.26,,Purchase from Krishna Enterprises & Co
+2026-08-28,PUR-1193,Purchase,Sundry Creditors,,288626.26,Purchase from Krishna Enterprises & Co
+2026-08-29,BP-1024,Payment,Sundry Creditors,134054.19,,Payment to Lakshmi Enterprises Pvt Ltd
+2026-08-29,BP-1024,Payment,SBI A/c,,134054.19,Payment to Lakshmi Enterprises Pvt Ltd
+2026-08-29,INV-1134,Sales,Sundry Debtors,62999.94,,Being sales to Pooja Kumar
+2026-08-29,INV-1134,Sales,Tuition Fees,,151199.86,Being sales to Pooja Kumar
+2026-08-29,INV-1161,Sales,Sundry Debtors,102892.84,,Being sales to Asha Joshi
+2026-08-29,INV-1161,Sales,Registration Fees,,102892.84,Being sales to Asha Joshi
+2026-08-29,PUR-1045,Purchase,Bank Charges,27868.39,,Purchase from Krishna Enterprises & Co
+2026-08-29,PUR-1045,Purchase,Sundry Creditors,,27868.39,Purchase from Krishna Enterprises & Co
+2026-08-29,PUR-1185,Purchase,Bank Charges,147909.73,,Purchase from Shree Agencies Industries
+2026-08-29,PUR-1185,Purchase,Sundry Creditors,,147909.73,Purchase from Shree Agencies Industries
+2026-08-30,BP-1021,Payment,Sundry Creditors,67343.00,,Payment to Maa Agencies Pvt Ltd
+2026-08-30,BP-1021,Payment,SBI A/c,,67343.00,Payment to Maa Agencies Pvt Ltd
+2026-08-30,BP-1067,Payment,Sundry Creditors,299333.99,,Payment to Ganesh Mills Group
+2026-08-30,BP-1067,Payment,SBI A/c,,299333.99,Payment to Ganesh Mills Group
+2026-08-30,BP-1103,Payment,Sundry Creditors,34371.41,,Payment to Shree Agencies Industries
+2026-08-30,BP-1103,Payment,SBI A/c,,34371.41,Payment to Shree Agencies Industries
+2026-08-30,BR-1055,Receipt,SBI A/c,188182.17,,Received from Nitin Reddy
+2026-08-30,BR-1055,Receipt,Sundry Debtors,,188182.17,Received from Nitin Reddy
+2026-08-30,BR-1107,Receipt,SBI A/c,72706.95,,Received from Nitin Verma
+2026-08-30,BR-1107,Receipt,Sundry Debtors,,72706.95,Received from Nitin Verma
+2026-08-30,INV-1000,Sales,Sundry Debtors,71788.44,,Being sales to Sanjay Patel
+2026-08-30,INV-1000,Sales,Registration Fees,,71788.44,Being sales to Sanjay Patel
+2026-08-30,INV-1048,Sales,Sundry Debtors,177345.17,,Being sales to Neha Joshi
+2026-08-30,INV-1048,Sales,Tuition Fees,,425628.41,Being sales to Neha Joshi
+2026-08-30,INV-1079,Sales,Sundry Debtors,3950.17,,Being sales to Meena Gupta
+2026-08-30,INV-1079,Sales,Tuition Fees,,9480.41,Being sales to Meena Gupta
+2026-08-30,INV-1130,Sales,Sundry Debtors,191084.12,,Being sales to Neha Iyer
+2026-08-30,INV-1130,Sales,Tuition Fees,,458601.89,Being sales to Neha Iyer
+2026-08-30,INV-1248,Sales,Sundry Debtors,83600.95,,Being sales to Arjun Nair
+2026-08-30,INV-1248,Sales,Tuition Fees,,200642.28,Being sales to Arjun Nair
+2026-08-30,JV-1031,Journal,Electricity Charges,79820.79,,Being electricity charges for the period
+2026-08-30,JV-1031,Journal,SBI A/c,,79820.79,Being electricity charges for the period
+2026-08-30,JV-1098,Journal,Telephone & Internet,19440.98,,Being telephone & internet for the period
+2026-08-30,JV-1098,Journal,SBI A/c,,19440.98,Being telephone & internet for the period
+2026-08-30,PUR-1062,Purchase,Travelling Expenses,177889.42,,Purchase from Ratan Enterprises & Co
+2026-08-30,PUR-1062,Purchase,Sundry Creditors,,177889.42,Purchase from Ratan Enterprises & Co
+2026-08-30,PUR-1169,Purchase,Building Rent - Centre,66787.37,,Purchase from Sai Trading Pvt Ltd
+2026-08-30,PUR-1169,Purchase,Sundry Creditors,,66787.37,Purchase from Sai Trading Pvt Ltd
+2026-08-30,PUR-1198,Purchase,Bank Charges,199600.60,,Purchase from Ganesh Mills Group
+2026-08-30,PUR-1198,Purchase,Sundry Creditors,,199600.60,Purchase from Ganesh Mills Group
+2026-08-31,BP-1001,Payment,Sundry Creditors,11094.67,,Payment to Shree Agencies Industries
+2026-08-31,BP-1001,Payment,SBI A/c,,11094.67,Payment to Shree Agencies Industries
+2026-08-31,BP-1085,Payment,Sundry Creditors,134478.56,,Payment to Maa Agencies Pvt Ltd
+2026-08-31,BP-1085,Payment,SBI A/c,,134478.56,Payment to Maa Agencies Pvt Ltd
+2026-08-31,BP-1122,Payment,Sundry Creditors,12285.86,,Payment to Shree Agencies Industries
+2026-08-31,BP-1122,Payment,SBI A/c,,12285.86,Payment to Shree Agencies Industries
+2026-08-31,INV-1060,Sales,Sundry Debtors,194245.85,,Being sales to Ritu Sharma
+2026-08-31,INV-1060,Sales,Registration Fees,,194245.85,Being sales to Ritu Sharma
+2026-08-31,INV-1084,Sales,Sundry Debtors,114378.61,,Being sales to Amit Kapoor
+2026-08-31,INV-1084,Sales,Tuition Fees,,274508.66,Being sales to Amit Kapoor
+2026-08-31,INV-1274,Sales,Sundry Debtors,62878.28,,Being sales to Ritu Shah
+2026-08-31,INV-1274,Sales,Registration Fees,,62878.28,Being sales to Ritu Shah
+2026-08-31,JV-1087,Journal,Electricity Charges,8085.14,,Being electricity charges for the period
+2026-08-31,JV-1087,Journal,SBI A/c,,8085.14,Being electricity charges for the period
+2026-08-31,JV-1106,Journal,Faculty Salaries,75064.73,,Being faculty salaries for the period
+2026-08-31,JV-1106,Journal,SBI A/c,,41702.63,Being faculty salaries for the period
+2026-08-31,JV-1115,Journal,Office Rent,85998.72,,Being office rent for the period
+2026-08-31,JV-1115,Journal,SBI A/c,,85998.72,Being office rent for the period
+2026-08-31,PUR-1110,Purchase,Electricity Charges,173696.97,,Purchase from Om Traders & Sons
+2026-08-31,PUR-1110,Purchase,Sundry Creditors,,173696.97,Purchase from Om Traders & Sons
+2026-08-31,PUR-1136,Purchase,Building Rent - Centre,180007.00,,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-08-31,PUR-1136,Purchase,Sundry Creditors,,180007.00,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-08-31,PUR-1175,Purchase,Audit Fees,220311.00,,Purchase from Ganesh Industries Pvt Ltd
+2026-08-31,PUR-1175,Purchase,Sundry Creditors,,220311.00,Purchase from Ganesh Industries Pvt Ltd
+2026-08-31,PUR-1213,Purchase,Salaries & Wages,287498.73,,Purchase from Ganesh Mills Group
+2026-08-31,PUR-1213,Purchase,Sundry Creditors,,287498.73,
+2026-09-01,BR-1082,Receipt,SBI A/c,33811.69,,Received from Pooja Singh
+2026-09-01,BR-1082,Receipt,Sundry Debtors,,33811.69,Received from Pooja Singh
+2026-09-01,BR-1165,Receipt,SBI A/c,189810.96,,Received from Swati Singh
+2026-09-01,BR-1165,Receipt,Sundry Debtors,,189810.96,Received from Swati Singh
+2026-09-01,INV-1036,Sales,Sundry Debtors,73865.30,,Being sales to Neha Joshi
+2026-09-01,INV-1036,Sales,Tuition Fees,,177276.72,Being sales to Neha Joshi
+2026-09-01,INV-1089,Sales,Sundry Debtors,133077.15,,Being sales to Sanjay Mehta
+2026-09-01,INV-1089,Sales,Registration Fees,,133077.15,Being sales to Sanjay Mehta
+2026-09-01,INV-1293,Sales,Sundry Debtors,145140.90,,Being sales to Neha Mehta
+2026-09-01,INV-1293,Sales,Registration Fees,,145140.90,Being sales to Neha Mehta
+2026-09-01,INV-1329,Sales,Sundry Debtors,84814.05,,Being sales to Meena Shah
+2026-09-01,INV-1329,Sales,Registration Fees,,84814.05,Being sales to Meena Shah
+2026-09-01,JV-1077,Journal,Faculty Salaries,55355.69,,Being faculty salaries for the period
+2026-09-01,JV-1077,Journal,SBI A/c,,30753.16,Being faculty salaries for the period
+2026-09-01,JV-1129,Journal,Printing & Stationery,81789.92,,Being printing & stationery for the period
+2026-09-01,JV-1129,Journal,SBI A/c,,81789.92,Being printing & stationery for the period
+2026-09-01,PUR-1057,Purchase,Office Rent,44873.42,,Purchase from Ganesh Mills Group
+2026-09-01,PUR-1057,Purchase,Sundry Creditors,,44873.42,Purchase from Ganesh Mills Group
+2026-09-01,PUR-1099,Purchase,Study Material Printing,85071.68,,Purchase from Om Services Industries
+2026-09-01,PUR-1099,Purchase,Sundry Creditors,,85071.68,Purchase from Om Services Industries
+2026-09-02,BR-1142,Receipt,SBI A/c,191937.62,,Received from Asha Desai
+2026-09-02,BR-1142,Receipt,Sundry Debtors,,191937.62,Received from Asha Desai
+2026-09-02,INV-1159,Sales,Sundry Debtors,14875.05,,Being sales to Deepak Pillai
+2026-09-02,INV-1159,Sales,Tuition Fees,,35700.12,Being sales to Deepak Pillai
+2026-09-02,INV-1225,Sales,Sundry Debtors,88111.58,,Being sales to Ritu Patel
+2026-09-02,INV-1225,Sales,Registration Fees,,88111.58,Being sales to Ritu Patel
+2026-09-02,INV-1234,Sales,Sundry Debtors,154026.14,,Being sales to Rahul Pillai
+2026-09-02,INV-1234,Sales,Registration Fees,,154026.14,Being sales to Rahul Pillai
+2026-09-02,JV-1113,Journal,Faculty Salaries,109519.31,,Being faculty salaries for the period
+2026-09-02,JV-1113,Journal,SBI A/c,,60844.06,Being faculty salaries for the period
+2026-09-02,PUR-1124,Purchase,Audit Fees,95173.75,,Purchase from Ganesh Industries Pvt Ltd
+2026-09-02,PUR-1124,Purchase,Sundry Creditors,,95173.75,Purchase from Ganesh Industries Pvt Ltd
+2026-09-02,PUR-1157,Purchase,Telephone & Internet,100824.04,,Purchase from Ganesh Industries Pvt Ltd
+2026-09-02,PUR-1157,Purchase,Sundry Creditors,,100824.04,Purchase from Ganesh Industries Pvt Ltd
+2026-09-02,PUR-1164,Purchase,Office Rent,197938.41,,Purchase from Maa Agencies Pvt Ltd
+2026-09-02,PUR-1164,Purchase,Sundry Creditors,,197938.41,Purchase from Maa Agencies Pvt Ltd
+2026-09-02,PUR-1186,Purchase,Bank Charges,10230.86,,Purchase from Om Services Industries
+2026-09-02,PUR-1186,Purchase,Sundry Creditors,,10230.86,Purchase from Om Services Industries
+2026-09-02,PUR-1237,Purchase,Audit Fees,214378.82,,Purchase from Om Services Industries
+2026-09-02,PUR-1237,Purchase,Sundry Creditors,,214378.82,Purchase from Om Services Industries
+2026-09-03,BP-1010,Payment,Sundry Creditors,221356.58,,Payment to Shree Agencies Industries
+2026-09-03,BP-1010,Payment,SBI A/c,,221356.58,Payment to Shree Agencies Industries
+2026-09-03,BP-1099,Payment,Sundry Creditors,175670.46,,Payment to Sai Trading Pvt Ltd
+2026-09-03,BP-1099,Payment,SBI A/c,,175670.46,Payment to Sai Trading Pvt Ltd
+2026-09-03,BP-1116,Payment,Sundry Creditors,30764.49,,Payment to Bharat Enterprises & Sons
+2026-09-03,BP-1116,Payment,SBI A/c,,30764.49,Payment to Bharat Enterprises & Sons
+2026-09-03,INV-1011,Sales,Sundry Debtors,134847.64,,Being sales to Kavita Bhat
+2026-09-03,INV-1011,Sales,Tuition Fees,,323634.34,Being sales to Kavita Bhat
+2026-09-03,INV-1063,Sales,Sundry Debtors,100166.85,,Being sales to Priya Kapoor
+2026-09-03,INV-1063,Sales,Tuition Fees,,240400.44,Being sales to Priya Kapoor
+2026-09-03,INV-1162,Sales,Sundry Debtors,32884.01,,Being sales to Sunita Pillai
+2026-09-03,INV-1162,Sales,Registration Fees,,32884.01,Being sales to Sunita Pillai
+2026-09-03,INV-1261,Sales,Sundry Debtors,166514.99,,Being sales to Asha Joshi
+2026-09-03,INV-1261,Sales,Tuition Fees,,399635.98,Being sales to Asha Joshi
+2026-09-03,INV-1272,Sales,Sundry Debtors,187691.15,,Being sales to Sunita Desai
+2026-09-03,INV-1272,Sales,Registration Fees,,187691.15,Being sales to Sunita Desai
+2026-09-03,JV-1063,Journal,Bank Charges,56765.77,,Being bank charges for the period
+2026-09-03,JV-1063,Journal,SBI A/c,,56765.77,Being bank charges for the period
+2026-09-03,JV-1085,Journal,Telephone & Internet,14037.49,,Being telephone & internet for the period
+2026-09-03,JV-1085,Journal,SBI A/c,,14037.49,Being telephone & internet for the period
+2026-09-03,JV-1112,Journal,Postage & Courier,62294.22,,Being postage & courier for the period
+2026-09-03,JV-1112,Journal,SBI A/c,,62294.22,Being postage & courier for the period
+2026-09-04,BP-1000,Payment,Sundry Creditors,31723.69,,Payment to Bharat Enterprises & Sons
+2026-09-04,BP-1000,Payment,SBI A/c,,31723.69,Payment to Bharat Enterprises & Sons
+2026-09-04,BP-1087,Payment,Sundry Creditors,262367.60,,Payment to Maa Agencies Pvt Ltd
+2026-09-04,BP-1087,Payment,SBI A/c,,262367.60,Payment to Maa Agencies Pvt Ltd
+2026-09-04,BP-1104,Payment,Sundry Creditors,229339.36,,Payment to Shree Agencies Industries
+2026-09-04,BP-1104,Payment,SBI A/c,,229339.36,Payment to Shree Agencies Industries
+2026-09-04,BR-1058,Receipt,SBI A/c,78119.60,,Received from Meena Kumar
+2026-09-04,BR-1058,Receipt,Sundry Debtors,,78119.60,Received from Meena Kumar
+2026-09-04,INV-1205,Sales,Sundry Debtors,176864.08,,Being sales to Rajesh Choudhary
+2026-09-04,INV-1205,Sales,Tuition Fees,,424473.79,Being sales to Rajesh Choudhary
+2026-09-04,INV-1238,Sales,Sundry Debtors,196645.49,,Being sales to Pooja Singh
+2026-09-04,INV-1238,Sales,Tuition Fees,,471949.18,Being sales to Pooja Singh
+2026-09-04,INV-1273,Sales,Sundry Debtors,118708.90,,Being sales to Nitin Iyer
+2026-09-04,INV-1273,Sales,Registration Fees,,118708.90,Being sales to Nitin Iyer
+2026-09-04,INV-1320,Sales,Sundry Debtors,139505.37,,Being sales to Asha Patel
+2026-09-04,INV-1320,Sales,Registration Fees,,139505.37,Being sales to Asha Patel
+2026-09-04,JV-1052,Journal,Bank Charges,81754.18,,Being bank charges for the period
+2026-09-04,JV-1052,Journal,SBI A/c,,81754.18,Being bank charges for the period
+2026-09-05,BR-1159,Receipt,SBI A/c,85559.98,,Received from Swati Choudhary
+2026-09-05,BR-1159,Receipt,Sundry Debtors,,85559.98,Received from Swati Choudhary
+2026-09-05,INV-1038,Sales,Sundry Debtors,165188.21,,Being sales to Sanjay Singh
+2026-09-05,INV-1038,Sales,Registration Fees,,165188.21,Being sales to Sanjay Singh
+2026-09-05,JV-1019,Journal,Bank Charges,55230.06,,Being bank charges for the period
+2026-09-05,JV-1019,Journal,SBI A/c,,55230.06,Being bank charges for the period
+2026-09-05,JV-1100,Journal,Travelling Expenses,63549.88,,Being travelling expenses for the period
+2026-09-05,JV-1100,Journal,SBI A/c,,63549.88,Being travelling expenses for the period
+2026-09-05,JV-1130,Journal,Postage & Courier,12934.15,,Being postage & courier for the period
+2026-09-05,JV-1130,Journal,SBI A/c,,12934.15,Being postage & courier for the period
+2026-09-06,BP-1130,Payment,Sundry Creditors,197821.34,,Payment to Ganesh Industries Pvt Ltd
+2026-09-06,BP-1130,Payment,SBI A/c,,197821.34,Payment to Ganesh Industries Pvt Ltd
+2026-09-06,BR-1096,Receipt,SBI A/c,162661.37,,Received from Suresh Patel
+2026-09-06,BR-1096,Receipt,Sundry Debtors,,162661.37,Received from Suresh Patel
+2026-09-06,BR-1129,Receipt,SBI A/c,241517.41,,Received from Sunita Kapoor
+2026-09-06,BR-1129,Receipt,Sundry Debtors,,241517.41,Received from Sunita Kapoor
+2026-09-06,INV-1062,Sales,Sundry Debtors,117266.78,,Being sales to Anjali Rao
+2026-09-06,INV-1062,Sales,Tuition Fees,,281440.27,Being sales to Anjali Rao
+2026-09-06,INV-1128,Sales,Sundry Debtors,68224.43,,Being sales to Pooja Agarwal
+2026-09-06,INV-1128,Sales,Tuition Fees,,163738.63,Being sales to Pooja Agarwal
+2026-09-06,INV-1247,Sales,Sundry Debtors,120503.16,,Being sales to Asha Mehta
+2026-09-06,INV-1247,Sales,Tuition Fees,,289207.58,Being sales to Asha Mehta
+2026-09-06,PUR-1082,Purchase,Postage & Courier,146386.61,,Purchase from Ganesh Mills Group
+2026-09-06,PUR-1082,Purchase,Sundry Creditors,,146386.61,Purchase from Ganesh Mills Group
+2026-09-06,PUR-1138,Purchase,Audit Fees,43730.14,,Purchase from Maa Agencies Pvt Ltd
+2026-09-06,PUR-1138,Purchase,Sundry Creditors,,43730.14,Purchase from Maa Agencies Pvt Ltd
+2026-09-07,BP-1017,Payment,Sundry Creditors,155853.26,,Payment to Shree Agencies Industries
+2026-09-07,BP-1017,Payment,SBI A/c,,155853.26,Payment to Shree Agencies Industries
+2026-09-07,BP-1071,Payment,Sundry Creditors,146371.60,,Payment to Lakshmi Industries Industries
+2026-09-07,BP-1071,Payment,SBI A/c,,146371.60,Payment to Lakshmi Industries Industries
+2026-09-07,BP-1076,Payment,Sundry Creditors,83988.47,,Payment to Krishna Enterprises & Co
+2026-09-07,BP-1076,Payment,SBI A/c,,83988.47,Payment to Krishna Enterprises & Co
+2026-09-07,BP-1083,Payment,Sundry Creditors,227006.60,,Payment to Ganesh Industries Pvt Ltd
+2026-09-07,BP-1083,Payment,SBI A/c,,227006.60,Payment to Ganesh Industries Pvt Ltd
+2026-09-07,BP-1107,Payment,Sundry Creditors,33449.67,,Payment to Om Traders & Sons
+2026-09-07,BP-1107,Payment,SBI A/c,,33449.67,Payment to Om Traders & Sons
+2026-09-07,BP-1109,Payment,Sundry Creditors,12802.76,,Payment to Ratan Enterprises & Co
+2026-09-07,BP-1109,Payment,SBI A/c,,12802.76,Payment to Ratan Enterprises & Co
+2026-09-07,BR-1030,Receipt,SBI A/c,149790.14,,Received from Sunita Shah
+2026-09-07,BR-1030,Receipt,Sundry Debtors,,149790.14,Received from Sunita Shah
+2026-09-07,BR-1144,Receipt,SBI A/c,204266.51,,Received from Amit Pillai
+2026-09-07,BR-1144,Receipt,Sundry Debtors,,204266.51,Received from Amit Pillai
+2026-09-07,INV-1117,Sales,Sundry Debtors,91985.49,,Being sales to Rahul Iyer
+2026-09-07,INV-1117,Sales,Registration Fees,,91985.49,Being sales to Rahul Iyer
+2026-09-07,INV-1255,Sales,Sundry Debtors,46823.56,,Being sales to Manoj Nair
+2026-09-07,INV-1255,Sales,Registration Fees,,46823.56,Being sales to Manoj Nair
+2026-09-07,JV-1132,Journal,Electricity Charges,91061.47,,Being electricity charges for the period
+2026-09-07,JV-1132,Journal,SBI A/c,,91061.47,Being electricity charges for the period
+2026-09-07,PUR-1013,Purchase,Audit Fees,196591.13,,Purchase from Shree Agencies Industries
+2026-09-07,PUR-1013,Purchase,Sundry Creditors,,196591.13,Purchase from Shree Agencies Industries
+2026-09-07,PUR-1159,Purchase,Faculty Salaries,165210.84,,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-09-07,PUR-1159,Purchase,Sundry Creditors,,91783.80,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-09-08,BR-1115,Receipt,SBI A/c,23140.05,,Received from Sanjay Iyer
+2026-09-08,BR-1115,Receipt,Sundry Debtors,,23140.05,Received from Sanjay Iyer
+2026-09-08,BR-1154,Receipt,SBI A/c,214425.98,,Received from Swati Singh
+2026-09-08,BR-1154,Receipt,Sundry Debtors,,214425.98,Received from Swati Singh
+2026-09-08,INV-1017,Sales,Sundry Debtors,154382.29,,Being sales to Deepak Singh
+2026-09-08,INV-1017,Sales,Registration Fees,,154382.29,Being sales to Deepak Singh
+2026-09-08,INV-1021,Sales,Sundry Debtors,199340.28,,Being sales to Asha Desai
+2026-09-08,INV-1021,Sales,Registration Fees,,199340.28,Being sales to Asha Desai
+2026-09-08,INV-1066,Sales,Sundry Debtors,42091.96,,Being sales to Rajesh Kapoor
+2026-09-08,INV-1066,Sales,Tuition Fees,,101020.70,Being sales to Rajesh Kapoor
+2026-09-08,INV-1131,Sales,Sundry Debtors,30806.53,,Being sales to Neha Joshi
+2026-09-08,INV-1131,Sales,Tuition Fees,,73935.67,Being sales to Neha Joshi
+2026-09-08,INV-1278,Sales,Sundry Debtors,145659.66,,Being sales to Vikram Sharma
+2026-09-08,INV-1278,Sales,Tuition Fees,,349583.18,Being sales to Vikram Sharma
+2026-09-08,INV-1315,Sales,Sundry Debtors,11774.26,,Being sales to Asha Nair
+2026-09-08,INV-1315,Sales,Tuition Fees,,28258.22,Being sales to Asha Nair
+2026-09-08,INV-1318,Sales,Sundry Debtors,193283.39,,Being sales to Manoj Desai
+2026-09-08,INV-1318,Sales,Tuition Fees,,463880.14,Being sales to Manoj Desai
+2026-09-08,JV-1045,Journal,Office Rent,29382.66,,Being office rent for the period
+2026-09-08,JV-1045,Journal,SBI A/c,,29382.66,Being office rent for the period
+2026-09-08,JV-1065,Journal,Printing & Stationery,99899.15,,Being printing & stationery for the period
+2026-09-08,JV-1065,Journal,SBI A/c,,99899.15,Being printing & stationery for the period
+2026-09-08,PUR-1044,Purchase,Postage & Courier,117736.17,,Purchase from Om Services Industries
+2026-09-08,PUR-1044,Purchase,Sundry Creditors,,117736.17,Purchase from Om Services Industries
+2026-09-08,PUR-1086,Purchase,Electricity Charges,80818.22,,Purchase from Ratan Enterprises & Co
+2026-09-08,PUR-1086,Purchase,Sundry Creditors,,80818.22,Purchase from Ratan Enterprises & Co
+2026-09-09,BP-1064,Payment,Sundry Creditors,84770.61,,Payment to Shree Agencies Industries
+2026-09-09,BP-1064,Payment,SBI A/c,,84770.61,Payment to Shree Agencies Industries
+2026-09-09,BP-1069,Payment,Sundry Creditors,126956.34,,Payment to Ratan Enterprises & Co
+2026-09-09,BP-1069,Payment,SBI A/c,,126956.34,Payment to Ratan Enterprises & Co
+2026-09-09,BR-1022,Receipt,SBI A/c,59016.19,,Received from Pooja Agarwal
+2026-09-09,BR-1022,Receipt,Sundry Debtors,,59016.19,Received from Pooja Agarwal
+2026-09-09,BR-1086,Receipt,SBI A/c,195062.94,,Received from Swati Shah
+2026-09-09,BR-1086,Receipt,Sundry Debtors,,195062.94,Received from Swati Shah
+2026-09-09,BR-1101,Receipt,SBI A/c,78815.84,,Received from Anjali Gupta
+2026-09-09,BR-1101,Receipt,Sundry Debtors,,78815.84,Received from Anjali Gupta
+2026-09-09,BR-1122,Receipt,SBI A/c,42760.86,,Received from Swati Patel
+2026-09-09,BR-1122,Receipt,Sundry Debtors,,42760.86,Received from Swati Patel
+2026-09-09,INV-1219,Sales,Sundry Debtors,34304.35,,Being sales to Kavita Banerjee
+2026-09-09,INV-1219,Sales,Registration Fees,,34304.35,Being sales to Kavita Banerjee
+2026-09-09,JV-1032,Journal,Postage & Courier,42837.92,,Being postage & courier for the period
+2026-09-09,JV-1032,Journal,SBI A/c,,42837.92,Being postage & courier for the period
+2026-09-09,PUR-1000,Purchase,Postage & Courier,18500.66,,Purchase from Maa Agencies Pvt Ltd
+2026-09-09,PUR-1000,Purchase,Sundry Creditors,,18500.66,Purchase from Maa Agencies Pvt Ltd
+2026-09-09,PUR-1122,Purchase,Postage & Courier,110473.34,,Purchase from Om Traders & Sons
+2026-09-09,PUR-1122,Purchase,Sundry Creditors,,110473.34,Purchase from Om Traders & Sons
+2026-09-09,PUR-1166,Purchase,Audit Fees,294879.58,,Purchase from Om Traders & Sons
+2026-09-09,PUR-1166,Purchase,Sundry Creditors,,294879.58,Purchase from Om Traders & Sons
+2026-09-10,BP-1136,Payment,Sundry Creditors,103233.39,,Payment to Maa Agencies Pvt Ltd
+2026-09-10,BP-1136,Payment,SBI A/c,,103233.39,Payment to Maa Agencies Pvt Ltd
+2026-09-10,BP-1144,Payment,Sundry Creditors,110540.35,,Payment to Sai Trading Pvt Ltd
+2026-09-10,BP-1144,Payment,SBI A/c,,110540.35,Payment to Sai Trading Pvt Ltd
+2026-09-10,BR-1095,Receipt,SBI A/c,244278.12,,Received from Kavita Mehta
+2026-09-10,BR-1095,Receipt,Sundry Debtors,,244278.12,Received from Kavita Mehta
+2026-09-10,INV-1012,Sales,Sundry Debtors,11531.23,,Being sales to Deepak Agarwal
+2026-09-10,INV-1012,Sales,Registration Fees,,11531.23,Being sales to Deepak Agarwal
+2026-09-10,INV-1143,Sales,Sundry Debtors,67129.40,,Being sales to Kavita Bhat
+2026-09-10,INV-1143,Sales,Registration Fees,,67129.40,Being sales to Kavita Bhat
+2026-09-10,INV-1254,Sales,Sundry Debtors,118776.19,,Being sales to Meena Sharma
+2026-09-10,INV-1254,Sales,Registration Fees,,118776.19,Being sales to Meena Sharma
+2026-09-10,INV-1326,Sales,Sundry Debtors,199252.99,,Being sales to Rajesh Patel
+2026-09-10,INV-1326,Sales,Registration Fees,,199252.99,Being sales to Rajesh Patel
+2026-09-10,JV-1056,Journal,Audit Fees,36847.82,,Being audit fees for the period
+2026-09-10,JV-1056,Journal,SBI A/c,,36847.82,Being audit fees for the period
+2026-09-11,BP-1059,Payment,Sundry Creditors,193250.79,,Payment to Om Traders & Sons
+2026-09-11,BP-1059,Payment,SBI A/c,,193250.79,Payment to Om Traders & Sons
+2026-09-11,BP-1143,Payment,Sundry Creditors,177075.63,,Payment to Ganesh Industries Pvt Ltd
+2026-09-11,BP-1143,Payment,SBI A/c,,177075.63,Payment to Ganesh Industries Pvt Ltd
+2026-09-11,BR-1012,Receipt,SBI A/c,127993.64,,Received from Vikram Sharma
+2026-09-11,BR-1012,Receipt,Sundry Debtors,,127993.64,Received from Vikram Sharma
+2026-09-11,BR-1033,Receipt,SBI A/c,57963.02,,Received from Sanjay Singh
+2026-09-11,BR-1033,Receipt,Sundry Debtors,,57963.02,Received from Sanjay Singh
+2026-09-11,BR-1035,Receipt,SBI A/c,156723.19,,Received from Sunita Kapoor
+2026-09-11,BR-1035,Receipt,Sundry Debtors,,156723.19,Received from Sunita Kapoor
+2026-09-11,BR-1117,Receipt,SBI A/c,87524.43,,Received from Priya Rao
+2026-09-11,BR-1117,Receipt,Sundry Debtors,,87524.43,Received from Priya Rao
+2026-09-11,BR-1128,Receipt,SBI A/c,141154.00,,Received from Sanjay Pillai
+2026-09-11,BR-1128,Receipt,Sundry Debtors,,141154.00,Received from Sanjay Pillai
+2026-09-11,BR-1141,Receipt,SBI A/c,176321.93,,Received from Priya Shah
+2026-09-11,BR-1141,Receipt,Sundry Debtors,,176321.93,Received from Priya Shah
+2026-09-11,INV-1106,Sales,Sundry Debtors,185067.15,,Being sales to Anjali Rao
+2026-09-11,INV-1106,Sales,Registration Fees,,185067.15,Being sales to Anjali Rao
+2026-09-11,INV-1236,Sales,Sundry Debtors,45987.72,,Being sales to Deepak Banerjee
+2026-09-11,INV-1236,Sales,Tuition Fees,,110370.53,Being sales to Deepak Banerjee
+2026-09-11,INV-1327,Sales,Sundry Debtors,48383.55,,Being sales to Vikram Rao
+2026-09-11,INV-1327,Sales,Registration Fees,,48383.55,Being sales to Vikram Rao
+2026-09-11,JV-1011,Journal,Travelling Expenses,31353.70,,Being travelling expenses for the period
+2026-09-11,JV-1011,Journal,SBI A/c,,31353.70,Being travelling expenses for the period
+2026-09-11,PUR-1158,Purchase,Telephone & Internet,232608.90,,Purchase from Om Services Industries
+2026-09-11,PUR-1158,Purchase,Sundry Creditors,,232608.90,Purchase from Om Services Industries
+2026-09-11,PUR-1181,Purchase,Salaries & Wages,109388.74,,
+2026-09-11,PUR-1181,Purchase,Sundry Creditors,,109388.74,Purchase from Om Traders & Sons
+2026-09-11,PUR-1228,Purchase,Telephone & Internet,154931.38,,Purchase from Ganesh Mills Group
+2026-09-11,PUR-1228,Purchase,Sundry Creditors,,154931.38,Purchase from Ganesh Mills Group
+2026-09-12,BR-1013,Receipt,SBI A/c,86265.04,,Received from Kavita Iyer
+2026-09-12,BR-1013,Receipt,Sundry Debtors,,86265.04,Received from Kavita Iyer
+2026-09-12,INV-1030,Sales,Sundry Debtors,91435.38,,Being sales to Ritu Kumar
+2026-09-12,INV-1030,Sales,Registration Fees,,91435.38,Being sales to Ritu Kumar
+2026-09-12,INV-1094,Sales,Sundry Debtors,137862.75,,Being sales to Sunita Nair
+2026-09-12,INV-1094,Sales,Registration Fees,,137862.75,Being sales to Sunita Nair
+2026-09-12,INV-1146,Sales,Sundry Debtors,172747.63,,Being sales to Arjun Pillai
+2026-09-12,INV-1146,Sales,Registration Fees,,172747.63,Being sales to Arjun Pillai
+2026-09-12,INV-1171,Sales,Sundry Debtors,78698.94,,Being sales to Amit Mehta
+2026-09-12,INV-1171,Sales,Registration Fees,,78698.94,Being sales to Amit Mehta
+2026-09-12,INV-1196,Sales,Sundry Debtors,101086.03,,Being sales to Ritu Kumar
+2026-09-12,INV-1196,Sales,Tuition Fees,,242706.07,Being sales to Ritu Kumar
+2026-09-12,INV-1211,Sales,Sundry Debtors,125101.09,,Being sales to Sanjay Mehta
+2026-09-12,INV-1211,Sales,Tuition Fees,,300242.62,Being sales to Sanjay Mehta
+2026-09-12,INV-1253,Sales,Sundry Debtors,50076.36,,Being sales to Suresh Patel
+2026-09-12,INV-1253,Sales,Tuition Fees,,120183.26,Being sales to Suresh Patel
+2026-09-12,INV-1286,Sales,Sundry Debtors,58287.89,,Being sales to Vikram Sharma
+2026-09-12,INV-1286,Sales,Tuition Fees,,139890.94,Being sales to Vikram Sharma
+2026-09-12,JV-1122,Journal,Electricity Charges,55321.82,,Being electricity charges for the period
+2026-09-12,JV-1122,Journal,SBI A/c,,55321.82,Being electricity charges for the period
+2026-09-12,JV-X777,Journal,Temp Holding,3791.94,,Unknown adjustment
+2026-09-12,JV-X777,Journal,SBI A/c,,3791.94,Unknown adjustment
+2026-09-12,PUR-1189,Purchase,Printing & Stationery,20687.87,,Purchase from Ganesh Industries Pvt Ltd
+2026-09-12,PUR-1189,Purchase,Sundry Creditors,,20687.87,Purchase from Ganesh Industries Pvt Ltd
+2026-09-12,PUR-1215,Purchase,Study Material Printing,18515.85,,Purchase from Om Traders & Sons
+2026-09-12,PUR-1215,Purchase,Sundry Creditors,,18515.85,Purchase from Om Traders & Sons
+2026-09-13,BP-1018,Payment,Sundry Creditors,239994.70,,Payment to Lakshmi Enterprises Pvt Ltd
+2026-09-13,BP-1018,Payment,SBI A/c,,239994.70,Payment to Lakshmi Enterprises Pvt Ltd
+2026-09-13,BR-1059,Receipt,SBI A/c,218182.29,,Received from Swati Mehta
+2026-09-13,BR-1059,Receipt,Sundry Debtors,,218182.29,Received from Swati Mehta
+2026-09-13,INV-1153,Sales,Sundry Debtors,20215.06,,Being sales to Asha Patel
+2026-09-13,INV-1153,Sales,Registration Fees,,20215.06,Being sales to Asha Patel
+2026-09-13,INV-1258,Sales,Sundry Debtors,174631.22,,Being sales to Nitin Bhat
+2026-09-13,INV-1258,Sales,Tuition Fees,,419114.93,Being sales to Nitin Bhat
+2026-09-13,JV-1046,Journal,Telephone & Internet,93640.37,,Being telephone & internet for the period
+2026-09-13,JV-1046,Journal,SBI A/c,,93640.37,Being telephone & internet for the period
+2026-09-14,BP-1125,Payment,Sundry Creditors,251770.40,,Payment to Om Traders & Sons
+2026-09-14,BP-1125,Payment,SBI A/c,,251770.40,Payment to Om Traders & Sons
+2026-09-14,BR-1020,Receipt,SBI A/c,153447.81,,Received from Suresh Verma
+2026-09-14,BR-1020,Receipt,Sundry Debtors,,153447.81,Received from Suresh Verma
+2026-09-14,BR-1052,Receipt,SBI A/c,198322.61,,Received from Manoj Nair
+2026-09-14,BR-1052,Receipt,Sundry Debtors,,198322.61,Received from Manoj Nair
+2026-09-14,INV-1061,Sales,Sundry Debtors,63077.82,,Being sales to Meena Patel
+2026-09-14,INV-1061,Sales,Tuition Fees,,151386.77,Being sales to Meena Patel
+2026-09-14,INV-1142,Sales,Sundry Debtors,2922.23,,Being sales to Swati Rao
+2026-09-14,INV-1142,Sales,Registration Fees,,2922.23,Being sales to Swati Rao
+2026-09-14,INV-1145,Sales,Sundry Debtors,154639.72,,Being sales to Asha Patel
+2026-09-14,INV-1145,Sales,Tuition Fees,,371135.33,Being sales to Asha Patel
+2026-09-14,INV-1186,Sales,Sundry Debtors,94006.91,,Being sales to Rajesh Verma
+2026-09-14,INV-1186,Sales,Registration Fees,,94006.91,Being sales to Rajesh Verma
+2026-09-14,INV-1322,Sales,Sundry Debtors,107446.76,,Being sales to Rajesh Choudhary
+2026-09-14,INV-1322,Sales,Tuition Fees,,257872.22,Being sales to Rajesh Choudhary
+2026-09-14,INV-1335,Sales,Sundry Debtors,40492.21,,Being sales to Nitin Kapoor
+2026-09-14,INV-1335,Sales,Tuition Fees,,97181.30,Being sales to Nitin Kapoor
+2026-09-14,JV-1039,Journal,Salaries & Wages,14622.48,,Being salaries & wages for the period
+2026-09-14,JV-1039,Journal,SBI A/c,,14622.48,Being salaries & wages for the period
+2026-09-14,PUR-1143,Purchase,Building Rent - Centre,151656.72,,Purchase from Lakshmi Industries Industries
+2026-09-14,PUR-1143,Purchase,Sundry Creditors,,151656.72,Purchase from Lakshmi Industries Industries
+2026-09-14,PUR-1154,Purchase,Study Material Printing,136069.04,,Purchase from Om Services Industries
+2026-09-14,PUR-1154,Purchase,Sundry Creditors,,136069.04,Purchase from Om Services Industries
+2026-09-14,PUR-1208,Purchase,Building Rent - Centre,187984.33,,Purchase from Lakshmi Industries Industries
+2026-09-14,PUR-1208,Purchase,Sundry Creditors,,187984.33,Purchase from Lakshmi Industries Industries
+2026-09-15,BP-1053,Payment,Sundry Creditors,56928.77,,Payment to Lakshmi Industries Industries
+2026-09-15,BP-1053,Payment,SBI A/c,,56928.77,Payment to Lakshmi Industries Industries
+2026-09-15,BP-1058,Payment,Sundry Creditors,156836.36,,Payment to Shree Agencies Industries
+2026-09-15,BP-1058,Payment,SBI A/c,,156836.36,Payment to Shree Agencies Industries
+2026-09-15,BP-1075,Payment,Sundry Creditors,288789.19,,Payment to Maa Agencies Pvt Ltd
+2026-09-15,BP-1075,Payment,SBI A/c,,288789.19,Payment to Maa Agencies Pvt Ltd
+2026-09-15,BP-1089,Payment,Sundry Creditors,48254.45,,Payment to Shree Agencies Industries
+2026-09-15,BP-1089,Payment,SBI A/c,,48254.45,Payment to Shree Agencies Industries
+2026-09-15,BP-1098,Payment,Sundry Creditors,170682.26,,Payment to Shree Agencies Industries
+2026-09-15,BP-1098,Payment,SBI A/c,,170682.26,Payment to Shree Agencies Industries
+2026-09-15,BR-1060,Receipt,SBI A/c,177048.25,,Received from Neha Verma
+2026-09-15,BR-1060,Receipt,Sundry Debtors,,177048.25,Received from Neha Verma
+2026-09-15,BR-1062,Receipt,SBI A/c,25802.41,,Received from Manoj Nair
+2026-09-15,BR-1062,Receipt,Sundry Debtors,,25802.41,Received from Manoj Nair
+2026-09-15,INV-1050,Sales,Sundry Debtors,154566.63,,Being sales to Deepak Verma
+2026-09-15,INV-1050,Sales,Registration Fees,,154566.63,Being sales to Deepak Verma
+2026-09-15,INV-1231,Sales,Sundry Debtors,182860.99,,Being sales to Sunita Nair
+2026-09-15,INV-1231,Sales,Registration Fees,,182860.99,Being sales to Sunita Nair
+2026-09-15,INV-1287,Sales,Sundry Debtors,20679.46,,Being sales to Deepak Pillai
+2026-09-15,INV-1287,Sales,Registration Fees,,20679.46,Being sales to Deepak Pillai
+2026-09-15,INV-1299,Sales,Sundry Debtors,78945.19,,Being sales to Nitin Reddy
+2026-09-15,INV-1299,Sales,Registration Fees,,78945.19,Being sales to Nitin Reddy
+2026-09-15,JV-1059,Journal,Faculty Salaries,119172.65,,Being faculty salaries for the period
+2026-09-15,JV-1059,Journal,SBI A/c,,66207.03,Being faculty salaries for the period
+2026-09-15,JV-1107,Journal,Electricity Charges,96989.83,,Being electricity charges for the period
+2026-09-15,JV-1107,Journal,SBI A/c,,96989.83,Being electricity charges for the period
+2026-09-15,PUR-1009,Purchase,Study Material Printing,163101.67,,Purchase from Shree Agencies Industries
+2026-09-15,PUR-1009,Purchase,Sundry Creditors,,163101.67,Purchase from Shree Agencies Industries
+2026-09-15,PUR-1056,Purchase,Audit Fees,232513.23,,Purchase from Om Services Industries
+2026-09-15,PUR-1056,Purchase,Sundry Creditors,,232513.23,Purchase from Om Services Industries
+2026-09-15,PUR-1151,Purchase,Electricity Charges,17193.02,,Purchase from Ganesh Industries Pvt Ltd
+2026-09-15,PUR-1151,Purchase,Sundry Creditors,,17193.02,Purchase from Ganesh Industries Pvt Ltd
+2026-09-15,PUR-1191,Purchase,Study Material Printing,205674.32,,Purchase from Ganesh Industries Pvt Ltd
+2026-09-15,PUR-1191,Purchase,Sundry Creditors,,205674.32,Purchase from Ganesh Industries Pvt Ltd
+2026-09-15,PUR-1219,Purchase,Telephone & Internet,129317.21,,Purchase from Lakshmi Industries Industries
+2026-09-15,PUR-1219,Purchase,Sundry Creditors,,129317.21,Purchase from Lakshmi Industries Industries
+2026-09-16,BP-1036,Payment,Sundry Creditors,80169.34,,Payment to Sai Trading Pvt Ltd
+2026-09-16,BP-1036,Payment,SBI A/c,,80169.34,Payment to Sai Trading Pvt Ltd
+2026-09-16,BP-1041,Payment,Sundry Creditors,189399.35,,Payment to Lakshmi Industries Industries
+2026-09-16,BP-1041,Payment,SBI A/c,,189399.35,Payment to Lakshmi Industries Industries
+2026-09-16,BP-1090,Payment,Sundry Creditors,173893.71,,Payment to Ratan Enterprises & Co
+2026-09-16,BP-1090,Payment,SBI A/c,,173893.71,Payment to Ratan Enterprises & Co
+2026-09-16,INV-1185,Sales,Sundry Debtors,96968.33,,Being sales to Deepak Reddy
+2026-09-16,INV-1185,Sales,Registration Fees,,96968.33,Being sales to Deepak Reddy
+2026-09-16,INV-1310,Sales,Sundry Debtors,100863.03,,Being sales to Rajesh Choudhary
+2026-09-16,INV-1310,Sales,Tuition Fees,,242071.27,
+2026-09-16,JV-1034,Journal,Electricity Charges,91573.37,,Being electricity charges for the period
+2026-09-16,JV-1034,Journal,SBI A/c,,91573.37,Being electricity charges for the period
+2026-09-16,JV-1057,Journal,Salaries & Wages,41856.08,,Being salaries & wages for the period
+2026-09-16,JV-1057,Journal,SBI A/c,,41856.08,Being salaries & wages for the period
+2026-09-16,JV-1089,Journal,Audit Fees,16949.36,,Being audit fees for the period
+2026-09-16,JV-1089,Journal,SBI A/c,,16949.36,Being audit fees for the period
+2026-09-16,JV-1096,Journal,Audit Fees,47519.18,,Being audit fees for the period
+2026-09-16,JV-1096,Journal,SBI A/c,,47519.18,Being audit fees for the period
+2026-09-16,JV-1114,Journal,Telephone & Internet,2804.66,,Being telephone & internet for the period
+2026-09-16,JV-1114,Journal,SBI A/c,,2804.66,Being telephone & internet for the period
+2026-09-16,PUR-1008,Purchase,Study Material Printing,145225.12,,Purchase from Ratan Enterprises & Co
+2026-09-16,PUR-1008,Purchase,Sundry Creditors,,145225.12,Purchase from Ratan Enterprises & Co
+2026-09-16,PUR-1072,Purchase,Audit Fees,190077.15,,Purchase from Om Traders & Sons
+2026-09-16,PUR-1072,Purchase,Sundry Creditors,,190077.15,Purchase from Om Traders & Sons
+2026-09-16,PUR-1088,Purchase,Faculty Salaries,45545.17,,Purchase from Shree Agencies Industries
+2026-09-16,PUR-1088,Purchase,Sundry Creditors,,25302.87,Purchase from Shree Agencies Industries
+2026-09-17,BP-1060,Payment,Sundry Creditors,102897.77,,Payment to Maa Agencies Pvt Ltd
+2026-09-17,BP-1060,Payment,SBI A/c,,102897.77,Payment to Maa Agencies Pvt Ltd
+2026-09-17,BP-1102,Payment,Sundry Creditors,184999.90,,Payment to Om Services Industries
+2026-09-17,BP-1102,Payment,SBI A/c,,184999.90,Payment to Om Services Industries
+2026-09-17,BP-1138,Payment,Sundry Creditors,296135.05,,Payment to Ratan Enterprises & Co
+2026-09-17,BP-1138,Payment,SBI A/c,,296135.05,Payment to Ratan Enterprises & Co
+2026-09-17,BR-1027,Receipt,SBI A/c,68400.85,,Received from Arjun Kumar
+2026-09-17,BR-1027,Receipt,Sundry Debtors,,68400.85,Received from Arjun Kumar
+2026-09-17,INV-1209,Sales,Sundry Debtors,86780.07,,Being sales to Meena Gupta
+2026-09-17,INV-1209,Sales,Registration Fees,,86780.07,Being sales to Meena Gupta
+2026-09-17,INV-1226,Sales,Sundry Debtors,15988.08,,Being sales to Anjali Reddy
+2026-09-17,INV-1226,Sales,Tuition Fees,,38371.39,Being sales to Anjali Reddy
+2026-09-17,INV-1323,Sales,Sundry Debtors,192573.25,,Being sales to Vikram Sharma
+2026-09-17,INV-1323,Sales,Registration Fees,,192573.25,Being sales to Vikram Sharma
+2026-09-17,INV-1328,Sales,Sundry Debtors,66650.30,,Being sales to Kavita Singh
+2026-09-17,INV-1328,Sales,Tuition Fees,,159960.72,Being sales to Kavita Singh
+2026-09-17,JV-1071,Journal,Printing & Stationery,1888.63,,Being printing & stationery for the period
+2026-09-17,JV-1071,Journal,SBI A/c,,1888.63,Being printing & stationery for the period
+2026-09-17,PUR-1033,Purchase,Study Material Printing,138570.24,,Purchase from Bharat Enterprises & Sons
+2026-09-17,PUR-1033,Purchase,Sundry Creditors,,138570.24,Purchase from Bharat Enterprises & Sons
+2026-09-17,PUR-1046,Purchase,Office Rent,206882.47,,Purchase from Krishna Enterprises & Co
+2026-09-17,PUR-1046,Purchase,Sundry Creditors,,206882.47,Purchase from Krishna Enterprises & Co
+2026-09-17,PUR-1196,Purchase,Postage & Courier,53019.19,,Purchase from Maa Agencies Pvt Ltd
+2026-09-17,PUR-1196,Purchase,Sundry Creditors,,53019.19,Purchase from Maa Agencies Pvt Ltd
+2026-09-18,BR-1011,Receipt,SBI A/c,44495.68,,Received from Anjali Rao
+2026-09-18,BR-1011,Receipt,Sundry Debtors,,44495.68,Received from Anjali Rao
+2026-09-18,BR-1014,Receipt,SBI A/c,125347.27,,Received from Amit Pillai
+2026-09-18,BR-1014,Receipt,Sundry Debtors,,125347.27,Received from Amit Pillai
+2026-09-18,BR-1038,Receipt,SBI A/c,219370.73,,Received from Kavita Singh
+2026-09-18,BR-1038,Receipt,Sundry Debtors,,219370.73,Received from Kavita Singh
+2026-09-18,BR-1123,Receipt,SBI A/c,248100.95,,Received from Asha Patel
+2026-09-18,BR-1123,Receipt,Sundry Debtors,,248100.95,Received from Asha Patel
+2026-09-18,PUR-1061,Purchase,Audit Fees,47095.99,,Purchase from Lakshmi Industries Industries
+2026-09-18,PUR-1061,Purchase,Sundry Creditors,,47095.99,Purchase from Lakshmi Industries Industries
+2026-09-18,PUR-1150,Purchase,Postage & Courier,225356.21,,Purchase from Lakshmi Industries Industries
+2026-09-18,PUR-1150,Purchase,Sundry Creditors,,225356.21,Purchase from Lakshmi Industries Industries
+2026-09-18,PUR-1207,Purchase,Building Rent - Centre,116220.94,,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-09-18,PUR-1207,Purchase,Sundry Creditors,,116220.94,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-09-18,PUR-1238,Purchase,Salaries & Wages,185263.21,,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-09-18,PUR-1238,Purchase,Sundry Creditors,,185263.21,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-09-19,BP-1050,Payment,Sundry Creditors,292173.28,,Payment to Ganesh Industries Pvt Ltd
+2026-09-19,BP-1050,Payment,SBI A/c,,292173.28,Payment to Ganesh Industries Pvt Ltd
+2026-09-19,BP-1088,Payment,Sundry Creditors,200808.33,,Payment to Bharat Enterprises & Sons
+2026-09-19,BP-1088,Payment,SBI A/c,,200808.33,Payment to Bharat Enterprises & Sons
+2026-09-19,BR-1085,Receipt,SBI A/c,89249.68,,Received from Amit Kumar
+2026-09-19,BR-1085,Receipt,Sundry Debtors,,89249.68,Received from Amit Kumar
+2026-09-19,INV-1049,Sales,Sundry Debtors,198537.91,,Being sales to Nitin Bhat
+2026-09-19,INV-1049,Sales,Tuition Fees,,476490.98,Being sales to Nitin Bhat
+2026-09-19,INV-1285,Sales,Sundry Debtors,17652.96,,Being sales to Ritu Nair
+2026-09-19,INV-1285,Sales,Registration Fees,,17652.96,Being sales to Ritu Nair
+2026-09-19,PUR-1026,Purchase,Electricity Charges,178048.93,,Purchase from Om Traders & Sons
+2026-09-19,PUR-1026,Purchase,Sundry Creditors,,178048.93,Purchase from Om Traders & Sons
+2026-09-19,PUR-1167,Purchase,Office Rent,38527.31,,Purchase from Ratan Enterprises & Co
+2026-09-19,PUR-1167,Purchase,Sundry Creditors,,38527.31,Purchase from Ratan Enterprises & Co
+2026-09-19,PUR-1201,Purchase,Telephone & Internet,67274.96,,Purchase from Shree Agencies Industries
+2026-09-19,PUR-1201,Purchase,Sundry Creditors,,67274.96,Purchase from Shree Agencies Industries
+2026-09-20,BR-1083,Receipt,SBI A/c,8889.39,,Received from Anjali Reddy
+2026-09-20,BR-1083,Receipt,Sundry Debtors,,8889.39,Received from Anjali Reddy
+2026-09-20,INV-1004,Sales,Sundry Debtors,56143.31,,Being sales to Manoj Sharma
+2026-09-20,INV-1004,Sales,Tuition Fees,,134743.94,Being sales to Manoj Sharma
+2026-09-20,INV-1061-DUP,Sales,Sundry Debtors,63077.82,,Being sales to Meena Patel
+2026-09-20,INV-1061-DUP,Sales,Tuition Fees,,151386.77,Being sales to Meena Patel
+2026-09-20,INV-1114,Sales,Sundry Debtors,39964.55,,Being sales to Asha Patel
+2026-09-20,INV-1114,Sales,Registration Fees,,39964.55,Being sales to Asha Patel
+2026-09-20,INV-1187,Sales,Sundry Debtors,143121.79,,Being sales to Rahul Sharma
+2026-09-20,INV-1187,Sales,Registration Fees,,143121.79,Being sales to Rahul Sharma
+2026-09-20,INV-1193,Sales,Sundry Debtors,138288.01,,Being sales to Deepak Pillai
+2026-09-20,INV-1193,Sales,Registration Fees,,138288.01,Being sales to Deepak Pillai
+2026-09-20,INV-1213,Sales,Sundry Debtors,176909.20,,Being sales to Neha Verma
+2026-09-20,INV-1213,Sales,Tuition Fees,,424582.08,Being sales to Neha Verma
+2026-09-20,INV-1220,Sales,Sundry Debtors,95451.40,,Being sales to Deepak Reddy
+2026-09-20,INV-1220,Sales,Tuition Fees,,229083.36,Being sales to Deepak Reddy
+2026-09-20,INV-1280,Sales,Sundry Debtors,6484.21,,Being sales to Rahul Shah
+2026-09-20,INV-1280,Sales,Registration Fees,,6484.21,Being sales to Rahul Shah
+2026-09-20,INV-1298,Sales,Sundry Debtors,149973.42,,Being sales to Rahul Rao
+2026-09-20,INV-1298,Sales,Tuition Fees,,359936.21,Being sales to Rahul Rao
+2026-09-20,JV-1024,Journal,Electricity Charges,3716.95,,Being electricity charges for the period
+2026-09-20,JV-1024,Journal,SBI A/c,,3716.95,Being electricity charges for the period
+2026-09-20,PUR-1005,Purchase,Printing & Stationery,74385.14,,Purchase from Ratan Enterprises & Co
+2026-09-20,PUR-1005,Purchase,Sundry Creditors,,74385.14,Purchase from Ratan Enterprises & Co
+2026-09-20,PUR-1012,Purchase,Study Material Printing,138800.07,,Purchase from Lakshmi Industries Industries
+2026-09-20,PUR-1012,Purchase,Sundry Creditors,,138800.07,Purchase from Lakshmi Industries Industries
+2026-09-20,PUR-1146,Purchase,Office Rent,99592.77,,Purchase from Om Services Industries
+2026-09-20,PUR-1146,Purchase,Sundry Creditors,,99592.77,Purchase from Om Services Industries
+2026-09-21,BP-1056,Payment,Sundry Creditors,260988.28,,Payment to Ratan Enterprises & Co
+2026-09-21,BP-1056,Payment,SBI A/c,,260988.28,Payment to Ratan Enterprises & Co
+2026-09-21,BP-1078,Payment,Sundry Creditors,297602.82,,Payment to Krishna Enterprises & Co
+2026-09-21,BP-1078,Payment,SBI A/c,,297602.82,Payment to Krishna Enterprises & Co
+2026-09-21,BR-1110,Receipt,SBI A/c,162424.91,,Received from Rahul Mehta
+2026-09-21,BR-1110,Receipt,Sundry Debtors,,162424.91,Received from Rahul Mehta
+2026-09-21,INV-1022,Sales,Sundry Debtors,11651.43,,Being sales to Rahul Desai
+2026-09-21,INV-1022,Sales,Registration Fees,,11651.43,Being sales to Rahul Desai
+2026-09-21,INV-1057,Sales,Sundry Debtors,27614.80,,Being sales to Kavita Reddy
+2026-09-21,INV-1057,Sales,Tuition Fees,,66275.52,Being sales to Kavita Reddy
+2026-09-21,INV-1065,Sales,Sundry Debtors,110512.25,,Being sales to Amit Mehta
+2026-09-21,INV-1065,Sales,Tuition Fees,,265229.40,Being sales to Amit Mehta
+2026-09-21,INV-1077,Sales,Sundry Debtors,81085.37,,Being sales to Amit Kapoor
+2026-09-21,INV-1077,Sales,Registration Fees,,81085.37,Being sales to Amit Kapoor
+2026-09-21,INV-1098,Sales,Sundry Debtors,165060.31,,Being sales to Amit Mehta
+2026-09-21,INV-1098,Sales,Tuition Fees,,396144.74,Being sales to Amit Mehta
+2026-09-21,INV-1260,Sales,Sundry Debtors,139434.47,,Being sales to Meena Shah
+2026-09-21,INV-1260,Sales,Registration Fees,,139434.47,Being sales to Meena Shah
+2026-09-21,JV-1102,Journal,Postage & Courier,13789.74,,Being postage & courier for the period
+2026-09-21,JV-1102,Journal,SBI A/c,,13789.74,Being postage & courier for the period
+2026-09-21,JV-1110,Journal,Building Rent - Centre,4470.31,,Being building rent - centre for the period
+2026-09-21,JV-1110,Journal,SBI A/c,,4470.31,Being building rent - centre for the period
+2026-09-21,JV-1126,Journal,Bank Charges,78094.06,,Being bank charges for the period
+2026-09-21,JV-1126,Journal,SBI A/c,,78094.06,Being bank charges for the period
+2026-09-21,PUR-1007,Purchase,Building Rent - Centre,240181.29,,Purchase from Ratan Enterprises & Co
+2026-09-21,PUR-1007,Purchase,Sundry Creditors,,240181.29,Purchase from Ratan Enterprises & Co
+2026-09-21,PUR-1111,Purchase,Travelling Expenses,146449.15,,Purchase from Ganesh Industries Pvt Ltd
+2026-09-21,PUR-1111,Purchase,Sundry Creditors,,146449.15,Purchase from Ganesh Industries Pvt Ltd
+2026-09-21,PUR-1171,Purchase,Postage & Courier,282703.40,,Purchase from Bharat Enterprises & Sons
+2026-09-21,PUR-1171,Purchase,Sundry Creditors,,282703.40,Purchase from Bharat Enterprises & Sons
+2026-09-22,BP-1013,Payment,Sundry Creditors,241413.07,,Payment to Maa Agencies Pvt Ltd
+2026-09-22,BP-1013,Payment,SBI A/c,,241413.07,Payment to Maa Agencies Pvt Ltd
+2026-09-22,BR-1056,Receipt,SBI A/c,146893.70,,Received from Nitin Desai
+2026-09-22,BR-1056,Receipt,Sundry Debtors,,146893.70,Received from Nitin Desai
+2026-09-22,BR-1093,Receipt,SBI A/c,237469.01,,Received from Asha Shah
+2026-09-22,BR-1093,Receipt,Sundry Debtors,,237469.01,Received from Asha Shah
+2026-09-22,INV-1040,Sales,Sundry Debtors,59655.79,,Being sales to Suresh Iyer
+2026-09-22,INV-1040,Sales,Tuition Fees,,143173.90,Being sales to Suresh Iyer
+2026-09-22,INV-1132,Sales,Sundry Debtors,38361.73,,Being sales to Meena Gupta
+2026-09-22,INV-1132,Sales,Tuition Fees,,92068.15,Being sales to Meena Gupta
+2026-09-22,INV-1215,Sales,Sundry Debtors,129343.46,,Being sales to Swati Gupta
+2026-09-22,INV-1215,Sales,Registration Fees,,129343.46,Being sales to Swati Gupta
+2026-09-22,INV-1249,Sales,Sundry Debtors,159875.61,,Being sales to Suresh Mehta
+2026-09-22,INV-1249,Sales,Tuition Fees,,383701.46,Being sales to Suresh Mehta
+2026-09-22,INV-1330,Sales,Sundry Debtors,150176.80,,Being sales to Neha Kumar
+2026-09-22,INV-1330,Sales,Registration Fees,,150176.80,Being sales to Neha Kumar
+2026-09-22,JV-1076,Journal,Bank Charges,23828.56,,Being bank charges for the period
+2026-09-22,JV-1076,Journal,SBI A/c,,23828.56,Being bank charges for the period
+2026-09-22,PUR-1035,Purchase,Study Material Printing,263986.27,,Purchase from Ganesh Mills Group
+2026-09-22,PUR-1035,Purchase,Sundry Creditors,,263986.27,Purchase from Ganesh Mills Group
+2026-09-22,PUR-1041,Purchase,Bank Charges,24400.51,,Purchase from Ratan Enterprises & Co
+2026-09-22,PUR-1041,Purchase,Sundry Creditors,,24400.51,Purchase from Ratan Enterprises & Co
+2026-09-22,PUR-1203,Purchase,Study Material Printing,290421.74,,Purchase from Shree Agencies Industries
+2026-09-22,PUR-1203,Purchase,Sundry Creditors,,290421.74,Purchase from Shree Agencies Industries
+2026-09-23,BP-1047,Payment,Sundry Creditors,253964.44,,Payment to Lakshmi Industries Industries
+2026-09-23,BP-1047,Payment,SBI A/c,,253964.44,Payment to Lakshmi Industries Industries
+2026-09-23,BP-1108,Payment,Sundry Creditors,87913.73,,Payment to Om Traders & Sons
+2026-09-23,BP-1108,Payment,SBI A/c,,87913.73,Payment to Om Traders & Sons
+2026-09-23,BR-1139,Receipt,SBI A/c,179426.78,,Received from Swati Patel
+2026-09-23,BR-1139,Receipt,Sundry Debtors,,179426.78,Received from Swati Patel
+2026-09-23,INV-1026,Sales,Sundry Debtors,43898.73,,Being sales to Nitin Sharma
+2026-09-23,INV-1026,Sales,Tuition Fees,,105356.95,Being sales to Nitin Sharma
+2026-09-23,INV-1056,Sales,Sundry Debtors,187259.67,,Being sales to Ritu Joshi
+2026-09-23,INV-1056,Sales,Tuition Fees,,449423.21,Being sales to Ritu Joshi
+2026-09-23,INV-1068,Sales,Sundry Debtors,32379.64,,Being sales to Sanjay Rao
+2026-09-23,INV-1068,Sales,Tuition Fees,,77711.14,Being sales to Sanjay Rao
+2026-09-23,INV-1087,Sales,Sundry Debtors,125598.60,,Being sales to Neha Kumar
+2026-09-23,INV-1087,Sales,Tuition Fees,,301436.64,Being sales to Neha Kumar
+2026-09-23,INV-1112,Sales,Sundry Debtors,109615.32,,Being sales to Arjun Choudhary
+2026-09-23,INV-1112,Sales,Registration Fees,,109615.32,Being sales to Arjun Choudhary
+2026-09-23,INV-1116,Sales,Sundry Debtors,169145.23,,Being sales to Asha Joshi
+2026-09-23,INV-1116,Sales,Tuition Fees,,405948.55,Being sales to Asha Joshi
+2026-09-23,INV-1305,Sales,Sundry Debtors,16221.03,,Being sales to Sanjay Patel
+2026-09-23,INV-1305,Sales,Registration Fees,,16221.03,Being sales to Sanjay Patel
+2026-09-23,JV-1061,Journal,Building Rent - Centre,33791.11,,Being building rent - centre for the period
+2026-09-23,JV-1061,Journal,SBI A/c,,33791.11,Being building rent - centre for the period
+2026-09-23,JV-1086,Journal,Building Rent - Centre,84029.82,,Being building rent - centre for the period
+2026-09-23,JV-1086,Journal,SBI A/c,,84029.82,Being building rent - centre for the period
+2026-09-23,PUR-1133,Purchase,Postage & Courier,16173.97,,Purchase from Shree Agencies Industries
+2026-09-23,PUR-1133,Purchase,Sundry Creditors,,16173.97,Purchase from Shree Agencies Industries
+2026-09-23,PUR-1144,Purchase,Salaries & Wages,289868.94,,Purchase from Bharat Enterprises & Sons
+2026-09-23,PUR-1144,Purchase,Sundry Creditors,,289868.94,Purchase from Bharat Enterprises & Sons
+2026-09-23,PUR-1211,Purchase,Bank Charges,134642.02,,Purchase from Ratan Enterprises & Co
+2026-09-23,PUR-1211,Purchase,Sundry Creditors,,134642.02,Purchase from Ratan Enterprises & Co
+2026-09-24,BP-1121,Payment,Sundry Creditors,276044.36,,Payment to Maa Agencies Pvt Ltd
+2026-09-24,BP-1121,Payment,SBI A/c,,276044.36,Payment to Maa Agencies Pvt Ltd
+2026-09-24,BR-1017,Receipt,SBI A/c,2177.77,,Received from Arjun Desai
+2026-09-24,BR-1017,Receipt,Sundry Debtors,,2177.77,Received from Arjun Desai
+2026-09-24,INV-1118,Sales,Sundry Debtors,91462.78,,Being sales to Asha Joshi
+2026-09-24,INV-1118,Sales,Registration Fees,,91462.78,Being sales to Asha Joshi
+2026-09-24,INV-1232,Sales,Sundry Debtors,123070.72,,Being sales to Nitin Reddy
+2026-09-24,INV-1232,Sales,Registration Fees,,123070.72,Being sales to Nitin Reddy
+2026-09-24,PUR-1106,Purchase,Audit Fees,151881.46,,Purchase from Krishna Enterprises & Co
+2026-09-24,PUR-1106,Purchase,Sundry Creditors,,151881.46,Purchase from Krishna Enterprises & Co
+2026-09-25,BP-1054,Payment,Sundry Creditors,56137.86,,Payment to Om Services Industries
+2026-09-25,BP-1054,Payment,SBI A/c,,56137.86,Payment to Om Services Industries
+2026-09-25,BP-1128,Payment,Sundry Creditors,269849.23,,Payment to Om Services Industries
+2026-09-25,BP-1128,Payment,SBI A/c,,269849.23,Payment to Om Services Industries
+2026-09-25,BR-1048,Receipt,SBI A/c,171772.88,,Received from Swati Sharma
+2026-09-25,BR-1048,Receipt,Sundry Debtors,,171772.88,Received from Swati Sharma
+2026-09-25,INV-1015,Sales,Sundry Debtors,43076.42,,Being sales to Nitin Rao
+2026-09-25,INV-1015,Sales,Registration Fees,,43076.42,Being sales to Nitin Rao
+2026-09-25,INV-1051,Sales,Sundry Debtors,116500.63,,Being sales to Vikram Sharma
+2026-09-25,INV-1051,Sales,Tuition Fees,,279601.51,Being sales to Vikram Sharma
+2026-09-25,INV-1091,Sales,Sundry Debtors,55034.90,,Being sales to Meena Shah
+2026-09-25,INV-1091,Sales,Tuition Fees,,132083.76,Being sales to Meena Shah
+2026-09-25,INV-1167,Sales,Sundry Debtors,90214.91,,Being sales to Rajesh Nair
+2026-09-25,INV-1167,Sales,Registration Fees,,90214.91,Being sales to Rajesh Nair
+2026-09-25,INV-1198,Sales,Sundry Debtors,107420.50,,Being sales to Deepak Iyer
+2026-09-25,INV-1198,Sales,Registration Fees,,107420.50,Being sales to Deepak Iyer
+2026-09-25,INV-1237,Sales,Sundry Debtors,38046.06,,Being sales to Amit Mehta
+2026-09-25,INV-1237,Sales,Tuition Fees,,91310.54,Being sales to Amit Mehta
+2026-09-25,INV-1279,Sales,Sundry Debtors,11083.42,,Being sales to Rahul Sharma
+2026-09-25,INV-1279,Sales,Tuition Fees,,26600.21,Being sales to Rahul Sharma
+2026-09-25,INV-1294,Sales,Sundry Debtors,9466.84,,Being sales to Nitin Kapoor
+2026-09-25,INV-1294,Sales,Registration Fees,,9466.84,Being sales to Nitin Kapoor
+2026-09-25,JV-1004,Journal,Study Material Printing,36998.84,,Being study material printing for the period
+2026-09-25,JV-1004,Journal,SBI A/c,,36998.84,Being study material printing for the period
+2026-09-25,JV-1064,Journal,Bank Charges,74874.57,,Being bank charges for the period
+2026-09-25,JV-1064,Journal,SBI A/c,,74874.57,Being bank charges for the period
+2026-09-25,JV-1116,Journal,Faculty Salaries,75556.19,,Being faculty salaries for the period
+2026-09-25,JV-1116,Journal,SBI A/c,,41975.66,Being faculty salaries for the period
+2026-09-25,PUR-1018,Purchase,Salaries & Wages,21965.14,,Purchase from Lakshmi Industries Industries
+2026-09-25,PUR-1018,Purchase,Sundry Creditors,,21965.14,Purchase from Lakshmi Industries Industries
+2026-09-26,BR-1125,Receipt,SBI A/c,107658.69,,Received from Suresh Joshi
+2026-09-26,BR-1125,Receipt,Sundry Debtors,,107658.69,Received from Suresh Joshi
+2026-09-26,BR-1150,Receipt,SBI A/c,124300.76,,Received from Rahul Kumar
+2026-09-26,BR-1150,Receipt,Sundry Debtors,,124300.76,Received from Rahul Kumar
+2026-09-26,INV-1001,Sales,Sundry Debtors,174002.70,,Being sales to Suresh Iyer
+2026-09-26,INV-1001,Sales,Registration Fees,,174002.70,Being sales to Suresh Iyer
+2026-09-26,INV-1121,Sales,Sundry Debtors,91007.55,,Being sales to Meena Verma
+2026-09-26,INV-1121,Sales,Registration Fees,,91007.55,Being sales to Meena Verma
+2026-09-26,INV-1176,Sales,Sundry Debtors,98112.85,,Being sales to Asha Nair
+2026-09-26,INV-1176,Sales,Registration Fees,,98112.85,Being sales to Asha Nair
+2026-09-26,INV-1266,Sales,Sundry Debtors,92429.62,,Being sales to Swati Gupta
+2026-09-26,INV-1266,Sales,Tuition Fees,,221831.09,Being sales to Swati Gupta
+2026-09-26,INV-1295,Sales,Tuition Fees,,234722.69,Being sales to Arjun Kumar
+2026-09-26,PUR-1055,Purchase,Faculty Salaries,380436.53,,Purchase from Lakshmi Industries Industries
+2026-09-26,PUR-1055,Purchase,Sundry Creditors,,211353.63,Purchase from Lakshmi Industries Industries
+2026-09-26,PUR-1107,Purchase,Audit Fees,91445.69,,Purchase from Bharat Enterprises & Sons
+2026-09-26,PUR-1107,Purchase,Sundry Creditors,,91445.69,Purchase from Bharat Enterprises & Sons
+2026-09-26,PUR-1156,Purchase,Telephone & Internet,205932.40,,Purchase from Ratan Enterprises & Co
+2026-09-26,PUR-1156,Purchase,Sundry Creditors,,205932.40,Purchase from Ratan Enterprises & Co
+2026-09-26,PUR-1199,Purchase,Office Rent,100926.20,,Purchase from Om Services Industries
+2026-09-26,PUR-1199,Purchase,Sundry Creditors,,100926.20,Purchase from Om Services Industries
+2026-09-27,BR-1006,Receipt,SBI A/c,29522.95,,Received from Priya Shah
+2026-09-27,BR-1006,Receipt,Sundry Debtors,,29522.95,Received from Priya Shah
+2026-09-27,INV-1002,Sales,Sundry Debtors,54629.24,,Being sales to Suresh Desai
+2026-09-27,INV-1002,Sales,Registration Fees,,54629.24,Being sales to Suresh Desai
+2026-09-27,INV-1019,Sales,Sundry Debtors,32910.11,,Being sales to Manoj Desai
+2026-09-27,INV-1019,Sales,Tuition Fees,,78984.26,Being sales to Manoj Desai
+2026-09-27,INV-1155,Sales,Sundry Debtors,33858.21,,Being sales to Sunita Desai
+2026-09-27,INV-1155,Sales,Registration Fees,,33858.21,Being sales to Sunita Desai
+2026-09-27,INV-1230,Sales,Sundry Debtors,80977.21,,Being sales to Sunita Nair
+2026-09-27,INV-1230,Sales,Registration Fees,,80977.21,Being sales to Sunita Nair
+2026-09-27,INV-1332,Sales,Sundry Debtors,126990.65,,Being sales to Swati Bhat
+2026-09-27,INV-1332,Sales,Tuition Fees,,304777.56,
+2026-09-27,JV-1026,Journal,Office Rent,58803.71,,Being office rent for the period
+2026-09-27,JV-1026,Journal,SBI A/c,,58803.71,Being office rent for the period
+2026-09-28,BP-1003,Payment,Sundry Creditors,148112.48,,Payment to Sai Trading Pvt Ltd
+2026-09-28,BP-1003,Payment,SBI A/c,,148112.48,Payment to Sai Trading Pvt Ltd
+2026-09-28,BP-1055,Payment,Sundry Creditors,295036.05,,Payment to Om Services Industries
+2026-09-28,BP-1055,Payment,SBI A/c,,295036.05,Payment to Om Services Industries
+2026-09-28,BP-1100,Payment,Sundry Creditors,27050.52,,Payment to Ganesh Mills Group
+2026-09-28,BP-1100,Payment,SBI A/c,,27050.52,Payment to Ganesh Mills Group
+2026-09-28,BR-1076,Receipt,SBI A/c,225075.02,,Received from Rahul Nair
+2026-09-28,BR-1076,Receipt,Sundry Debtors,,225075.02,Received from Rahul Nair
+2026-09-28,INV-1046,Sales,Sundry Debtors,142494.19,,Being sales to Neha Desai
+2026-09-28,INV-1046,Sales,Tuition Fees,,341986.06,Being sales to Neha Desai
+2026-09-28,INV-1144,Sales,Sundry Debtors,185626.75,,Being sales to Amit Mehta
+2026-09-28,INV-1144,Sales,Tuition Fees,,445504.20,Being sales to Amit Mehta
+2026-09-28,INV-1333,Sales,Sundry Debtors,102248.51,,Being sales to Manoj Desai
+2026-09-28,INV-1333,Sales,Tuition Fees,,245396.42,Being sales to Manoj Desai
+2026-09-28,JV-1012,Journal,Office Rent,63431.24,,Being office rent for the period
+2026-09-28,JV-1012,Journal,SBI A/c,,63431.24,Being office rent for the period
+2026-09-28,JV-1029,Journal,Travelling Expenses,53298.09,,Being travelling expenses for the period
+2026-09-28,JV-1029,Journal,SBI A/c,,53298.09,Being travelling expenses for the period
+2026-09-28,JV-1048,Journal,Audit Fees,41789.66,,Being audit fees for the period
+2026-09-28,JV-1048,Journal,SBI A/c,,41789.66,Being audit fees for the period
+2026-09-28,JV-1080,Journal,Travelling Expenses,59397.99,,Being travelling expenses for the period
+2026-09-28,JV-1080,Journal,SBI A/c,,59397.99,Being travelling expenses for the period
+2026-09-28,PUR-1123,Purchase,Building Rent - Centre,254073.60,,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-09-28,PUR-1123,Purchase,Sundry Creditors,,254073.60,Purchase from Lakshmi Enterprises Pvt Ltd
+2026-09-28,PUR-1225,Purchase,Faculty Salaries,337765.50,,Purchase from Om Services Industries
+2026-09-28,PUR-1225,Purchase,Sundry Creditors,,187647.50,Purchase from Om Services Industries
+2026-09-29,BP-1113,Payment,Sundry Creditors,268885.34,,Payment to Krishna Enterprises & Co
+2026-09-29,BP-1113,Payment,SBI A/c,,268885.34,Payment to Krishna Enterprises & Co
+2026-09-29,BR-1054,Receipt,SBI A/c,126316.71,,Received from Neha Kumar
+2026-09-29,BR-1054,Receipt,Sundry Debtors,,126316.71,Received from Neha Kumar
+2026-09-29,BR-1077,Receipt,SBI A/c,150874.99,,Received from Sanjay Rao
+2026-09-29,BR-1077,Receipt,Sundry Debtors,,150874.99,Received from Sanjay Rao
+2026-09-29,BR-1097,Receipt,SBI A/c,124918.96,,Received from Sunita Patel
+2026-09-29,BR-1097,Receipt,Sundry Debtors,,124918.96,Received from Sunita Patel
+2026-09-29,JV-1049,Journal,Building Rent - Centre,17214.03,,Being building rent - centre for the period
+2026-09-29,JV-1049,Journal,SBI A/c,,17214.03,Being building rent - centre for the period
+2026-09-29,PUR-1129,Purchase,Bank Charges,277104.07,,Purchase from Bharat Enterprises & Sons
+2026-09-29,PUR-1129,Purchase,Sundry Creditors,,277104.07,Purchase from Bharat Enterprises & Sons
+2026-09-29,PUR-1227,Purchase,Travelling Expenses,81260.06,,Purchase from Ganesh Mills Group
+2026-09-29,PUR-1227,Purchase,Sundry Creditors,,81260.06,Purchase from Ganesh Mills Group
+2027-01-01,INV-1023,Sales,Sundry Debtors,7035.67,,Being sales to Nitin Bhat
+2027-01-01,INV-1295,Sales,Sundry Debtors,97801.12,,Being sales to Arjun Kumar

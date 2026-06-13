@@ -1,0 +1,131 @@
+// ─── Shared scan types (mirrors close-engine Issue shape) ────────────────────
+
+export type IssueSeverity = "critical" | "review" | "info";
+
+export interface ScanIssue {
+  code:         string;         // Stable check ID
+  severity:     IssueSeverity;
+  category:     string;
+  title:        string;
+  description:  string;
+  affectedRows: number;
+  exposure:     number | null;  // Financial impact in INR
+  examples:     Record<string, unknown>[];
+}
+
+export interface DocScanResult {
+  documentType: string;
+  connectionId: string;
+  scannedAt:    Date;
+  durationMs:   number;
+  totalIssues:  number;
+  bySeverity:   Record<IssueSeverity, number>;
+  totalExposure: number;
+  issues:       ScanIssue[];
+}
+
+// ─── Form 26Q ────────────────────────────────────────────────────────────────
+
+export interface Form26QRow {
+  // Deductee
+  deducteeName:    string;
+  deducteePan:     string;
+  deducteeType:    string;         // "C" = company, "P" = individual/other
+
+  // TDS section
+  section:         string;         // "194C", "194J", "194H", etc.
+  natureOfPayment: string;
+
+  // Amounts (INR)
+  grossAmount:     number;         // Amount paid / credited to deductee
+  tdsDeducted:     number;         // TDS deducted from payment
+  tdsDeposited:    number;         // TDS deposited via challan
+
+  // Challan details
+  bsrCode:         string;         // 7-digit bank branch code
+  challanDate:     Date | null;
+  challanSerialNo: string;
+  challanAmount:   number;         // Total challan amount
+
+  // Dates
+  dateOfPayment:   Date | null;
+  dateOfDeduction: Date | null;
+
+  // Optional
+  certificateNo:   string | null;  // Lower deduction certificate number
+  remarks:         string | null;
+
+  // Source row for error reporting
+  _rowIndex:       number;
+  _raw:            Record<string, unknown>;
+}
+
+// ─── GSTR-1 ──────────────────────────────────────────────────────────────────
+
+export interface Gstr1Row {
+  // Invoice
+  invoiceNo:        string;
+  invoiceDate:      Date | null;
+  invoiceValue:     number;
+
+  // Counterparty
+  receiverGstin:    string | null;  // null for B2C
+  receiverName:     string | null;
+  placeOfSupply:    string;         // State code "27" = Maharashtra
+
+  // Tax
+  taxableValue:     number;
+  igst:             number;
+  cgst:             number;
+  sgst:             number;
+  cess:             number;
+
+  // Classification
+  supplyType:       string;         // "B2B", "B2C", "EXPORT", "NIL"
+  hsnCode:          string | null;
+  reverseCharge:    boolean;
+
+  // Source
+  _rowIndex:  number;
+  _raw:       Record<string, unknown>;
+}
+
+// ─── GSTR-3B ─────────────────────────────────────────────────────────────────
+
+export interface Gstr3BSummary {
+  // Outward taxable supplies
+  outwardTaxableValue:    number;
+  outwardTaxableIgst:     number;
+  outwardTaxableCgst:     number;
+  outwardTaxableSgst:     number;
+
+  // Input tax credit
+  itcIgst:                number;
+  itcCgst:                number;
+  itcSgst:                number;
+
+  // Tax payable
+  taxPayableIgst:         number;
+  taxPayableCgst:         number;
+  taxPayableSgst:         number;
+
+  // Tax paid
+  taxPaidIgst:            number;
+  taxPaidCgst:            number;
+  taxPaidSgst:            number;
+
+  period:                 string;   // "MM-YYYY" e.g. "04-2026"
+}
+
+// ─── ITR ─────────────────────────────────────────────────────────────────────
+
+export interface ItrSummary {
+  assessmentYear:   string;       // "2025-26"
+  itrForm:          string;       // "ITR-3", "ITR-4", etc.
+  grossTotalIncome: number;
+  taxableIncome:    number;
+  taxPayable:       number;
+  taxPaid:          number;
+  refundDue:        number;
+  filingDate:       Date | null;
+}

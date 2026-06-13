@@ -1,0 +1,1359 @@
+दिनांक,Vch No,Voucher Type,Account Name,उधार,जमा,Narration
+2025-07-01,JV-1021,Journal,HDFC Bank A/c,,55163.97,Being audit fees for the period
+2025-10-01,INV-1065,Sales,Sundry Debtors,119046.75,,Being sales to Meena Bhat
+2025-10-01,INV-1065,Sales,Export Service Income,,100887.08,Sale of goods to Meena Bhat
+2025-10-01,INV-1065,Sales,CGST Output @9%,,9079.83,CGST on sale to Meena Bhat
+2025-10-01,INV-1065,Sales,SGST Output @9%,,9079.83,SGST on sale to Meena Bhat
+2025-10-02,BR-1023,Receipt,HDFC Bank A/c,145126.56,,Received from Neha Gupta
+2025-10-02,BR-1023,Receipt,Sundry Debtors,,145126.56,Received from Neha Gupta
+2025-10-02,BR-1053,Receipt,HDFC Bank A/c,217395.66,,Received from Pooja Gupta
+2025-10-02,BR-1053,Receipt,Sundry Debtors,,217395.66,Received from Pooja Gupta
+2025-10-02,BR-1063,Receipt,ICICI EEFC USD A/c,228785.09,,Received from Neha Gupta
+2025-10-02,BR-1063,Receipt,Sundry Debtors,,228785.09,Received from Neha Gupta
+2025-10-02,CON-1009,Contra,ICICI EEFC USD A/c,469191.49,,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-10-02,CON-1009,Contra,HDFC Bank A/c,,469191.49,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-10-02,INV-1045,Sales,Sundry Debtors,26743.37,,Being sales to Rahul Agarwal
+2025-10-02,INV-1045,Sales,Service Income - Domestic,,22663.87,Sale of goods to Rahul Agarwal
+2025-10-02,INV-1045,Sales,CGST Output @9%,,2039.75,CGST on sale to Rahul Agarwal
+2025-10-02,INV-1045,Sales,SGST Output @9%,,2039.75,SGST on sale to Rahul Agarwal
+2025-10-02,INV-1053,Sales,Sundry Debtors,97733.35,,Being sales to Neha Gupta
+2025-10-02,INV-1053,Sales,Export Service Income,,82824.87,Sale of goods to Neha Gupta
+2025-10-02,INV-1053,Sales,CGST Output @9%,,7454.24,CGST on sale to Neha Gupta
+2025-10-02,INV-1053,Sales,SGST Output @9%,,7454.24,SGST on sale to Neha Gupta
+2025-10-02,INV-1055,Sales,Sundry Debtors,189618.25,,Being sales to Asha Singh
+2025-10-02,INV-1055,Sales,Export Service Income,,160693.43,Sale of goods to Asha Singh
+2025-10-02,INV-1055,Sales,CGST Output @9%,,14462.41,CGST on sale to Asha Singh
+2025-10-02,INV-1055,Sales,SGST Output @9%,,14462.41,SGST on sale to Asha Singh
+2025-10-02,PUR-1049,Purchase,Audit Fees,71425.27,,Purchase from Shree Agencies Group
+2025-10-02,PUR-1049,Purchase,CGST Input @9%,6428.28,,CGST input on purchase from Shree Agencies Group
+2025-10-02,PUR-1049,Purchase,SGST Input @9%,6428.28,,SGST input on purchase from Shree Agencies Group
+2025-10-02,PUR-1049,Purchase,Sundry Creditors,,84281.82,Purchase from Shree Agencies Group
+2025-10-03,PUR-1021,Purchase,AWS Cloud Services,35086.07,,Purchase from Om Industries Pvt Ltd
+2025-10-03,PUR-1021,Purchase,CGST Input @9%,3157.75,,CGST input on purchase from Om Industries Pvt Ltd
+2025-10-03,PUR-1021,Purchase,SGST Input @9%,3157.75,,SGST input on purchase from Om Industries Pvt Ltd
+2025-10-03,PUR-1021,Purchase,Sundry Creditors,,41401.56,Purchase from Om Industries Pvt Ltd
+2025-10-03,PUR-1067,Purchase,Bank Charges,29989.09,,Purchase from Maa Steel Group
+2025-10-03,PUR-1067,Purchase,CGST Input @9%,2699.02,,CGST input on purchase from Maa Steel Group
+2025-10-03,PUR-1067,Purchase,SGST Input @9%,2699.02,,SGST input on purchase from Maa Steel Group
+2025-10-03,PUR-1067,Purchase,Sundry Creditors,,35387.13,Purchase from Maa Steel Group
+2025-10-04,BR-1012,Receipt,HDFC Bank A/c,211871.77,,Received from Meena Bhat
+2025-10-04,BR-1012,Receipt,Sundry Debtors,,211871.77,Received from Meena Bhat
+2025-10-04,BR-1029,Receipt,ICICI EEFC USD A/c,185414.51,,Received from Vikram Kapoor
+2025-10-04,BR-1029,Receipt,Sundry Debtors,,185414.51,Received from Vikram Kapoor
+2025-10-04,INV-1117,Sales,Sundry Debtors,216845.26,,Being sales to Neha Gupta
+2025-10-04,INV-1117,Sales,Export Service Income,,183767.17,Sale of goods to Neha Gupta
+2025-10-04,INV-1117,Sales,CGST Output @9%,,16539.04,CGST on sale to Neha Gupta
+2025-10-04,INV-1117,Sales,SGST Output @9%,,16539.04,SGST on sale to Neha Gupta
+2025-10-04,JV-1027,Journal,Printing & Stationery,77091.85,,Being printing & stationery for the period
+2025-10-04,JV-1027,Journal,ICICI EEFC USD A/c,,77091.85,Being printing & stationery for the period
+2025-10-04,JV-X404,Journal,Misc Expenses 999,3251.90,,Unknown adjustment
+2025-10-04,JV-X404,Journal,HDFC Bank A/c,,3251.90,Unknown adjustment
+2025-10-04,PUR-1006,Purchase,Postage & Courier,26666.19,,Purchase from Om Industries Pvt Ltd
+2025-10-04,PUR-1006,Purchase,CGST Input @9%,2399.96,,CGST input on purchase from Om Industries Pvt Ltd
+2025-10-04,PUR-1006,Purchase,SGST Input @9%,2399.96,,SGST input on purchase from Om Industries Pvt Ltd
+2025-10-04,PUR-1006,Purchase,Sundry Creditors,,31466.10,Purchase from Om Industries Pvt Ltd
+2025-10-04,PUR-1083,Purchase,Printing & Stationery,290779.81,,Purchase from Sidh Mills LLP
+2025-10-04,PUR-1083,Purchase,CGST Input @9%,26170.19,,CGST input on purchase from Sidh Mills LLP
+2025-10-04,PUR-1083,Purchase,SGST Input @9%,26170.19,,SGST input on purchase from Sidh Mills LLP
+2025-10-04,PUR-1083,Purchase,Sundry Creditors,,343120.18,Purchase from Sidh Mills LLP
+2025-10-05,INV-1072,Sales,Sundry Debtors,152055.33,,Being sales to Swati Joshi
+2025-10-05,INV-1072,Sales,Export Service Income,,128860.45,Sale of goods to Swati Joshi
+2025-10-05,INV-1072,Sales,CGST Output @9%,,11597.44,CGST on sale to Swati Joshi
+2025-10-05,INV-1072,Sales,SGST Output @9%,,11597.44,SGST on sale to Swati Joshi
+2025-10-05,JV-1012,Journal,Travelling Expenses,14731.16,,Being travelling expenses for the period
+2025-10-05,JV-1012,Journal,HDFC Bank A/c,,14731.16,Being travelling expenses for the period
+2025-10-05,JV-1035,Journal,Audit Fees,69552.96,,Being audit fees for the period
+2025-10-05,JV-1035,Journal,HDFC Bank A/c,,69552.96,Being audit fees for the period
+2025-10-05,PUR-1020,Purchase,Software Subscriptions,14090.14,,Purchase from Lakshmi Enterprises Group
+2025-10-05,PUR-1020,Purchase,CGST Input @9%,1268.12,,CGST input on purchase from Lakshmi Enterprises Group
+2025-10-05,PUR-1020,Purchase,SGST Input @9%,1268.12,,SGST input on purchase from Lakshmi Enterprises Group
+2025-10-05,PUR-1020,Purchase,Sundry Creditors,,16626.37,Purchase from Lakshmi Enterprises Group
+2025-10-05,PUR-1069,Purchase,Audit Fees,171479.39,,Purchase from Krishna Traders Industries
+2025-10-05,PUR-1069,Purchase,CGST Input @9%,15433.15,,CGST input on purchase from Krishna Traders Industries
+2025-10-05,PUR-1069,Purchase,SGST Input @9%,15433.15,,SGST input on purchase from Krishna Traders Industries
+2025-10-05,PUR-1069,Purchase,Sundry Creditors,,202345.68,Purchase from Krishna Traders Industries
+2025-10-05,PUR-1085,Purchase,Bank Charges,294061.94,,Purchase from Maa Steel Group
+2025-10-05,PUR-1085,Purchase,CGST Input @9%,26465.58,,CGST input on purchase from Maa Steel Group
+2025-10-05,PUR-1085,Purchase,SGST Input @9%,26465.58,,SGST input on purchase from Maa Steel Group
+2025-10-05,PUR-1085,Purchase,Sundry Creditors,,346993.09,Purchase from Maa Steel Group
+2025-10-05,PUR-1104,Purchase,Office Rent,5763.97,,Purchase from Bharat Works Industries
+2025-10-05,PUR-1104,Purchase,CGST Input @9%,518.76,,CGST input on purchase from Bharat Works Industries
+2025-10-05,PUR-1104,Purchase,SGST Input @9%,518.76,,SGST input on purchase from Bharat Works Industries
+2025-10-05,PUR-1104,Purchase,Sundry Creditors,,6801.48,Purchase from Bharat Works Industries
+2025-10-06,BP-1027,Payment,Sundry Creditors,185399.10,,Payment to Sidh Works Pvt Ltd
+2025-10-06,BP-1027,Payment,HDFC Bank A/c,,185399.10,Payment to Sidh Works Pvt Ltd
+2025-10-06,INV-1026,Sales,Sundry Debtors,107876.14,,Being sales to Neha Gupta
+2025-10-06,INV-1026,Sales,Export Service Income,,91420.46,Sale of goods to Neha Gupta
+2025-10-06,INV-1026,Sales,CGST Output @9%,,8227.84,CGST on sale to Neha Gupta
+2025-10-06,INV-1026,Sales,SGST Output @9%,,8227.84,SGST on sale to Neha Gupta
+2025-10-06,JV-X394,Journal,Other Charges,4753.26,,Unknown adjustment
+2025-10-06,JV-X394,Journal,HDFC Bank A/c,,4753.26,Unknown adjustment
+2025-10-06,PUR-1004,Purchase,Electricity Charges,236759.70,,Purchase from Sidh Mills LLP
+2025-10-06,PUR-1004,Purchase,CGST Input @9%,21308.38,,CGST input on purchase from Sidh Mills LLP
+2025-10-06,PUR-1004,Purchase,SGST Input @9%,21308.38,,SGST input on purchase from Sidh Mills LLP
+2025-10-06,PUR-1004,Purchase,Sundry Creditors,,279376.45,Purchase from Sidh Mills LLP
+2025-10-07,BP-1002,Payment,Sundry Creditors,98373.89,,Payment to Shree Agencies Group
+2025-10-07,BP-1002,Payment,ICICI EEFC USD A/c,,98373.89,Payment to Shree Agencies Group
+2025-10-07,INV-1029,Sales,Sundry Debtors,192292.82,,Being sales to Vikram Kapoor
+2025-10-07,INV-1029,Sales,Service Income - Domestic,,162960.02,Sale of goods to Vikram Kapoor
+2025-10-07,INV-1029,Sales,CGST Output @9%,,14666.40,CGST on sale to Vikram Kapoor
+2025-10-07,INV-1029,Sales,SGST Output @9%,,14666.40,SGST on sale to Vikram Kapoor
+2025-10-07,INV-1079,Sales,Sundry Debtors,132509.50,,Being sales to Pooja Gupta
+2025-10-07,INV-1079,Sales,Export Service Income,,112296.19,Sale of goods to Pooja Gupta
+2025-10-07,INV-1079,Sales,CGST Output @9%,,10106.66,CGST on sale to Pooja Gupta
+2025-10-07,INV-1079,Sales,SGST Output @9%,,10106.66,SGST on sale to Pooja Gupta
+2025-10-07,INV-1080,Sales,Sundry Debtors,151332.18,,Being sales to Meena Bhat
+2025-10-07,INV-1080,Sales,Export Service Income,,128247.61,Sale of goods to Meena Bhat
+2025-10-07,INV-1080,Sales,CGST Output @9%,,11542.29,CGST on sale to Meena Bhat
+2025-10-07,INV-1080,Sales,SGST Output @9%,,11542.29,SGST on sale to Meena Bhat
+2025-10-07,JV-1010,Journal,Postage & Courier,56972.49,,Being postage & courier for the period
+2025-10-07,JV-1010,Journal,ICICI EEFC USD A/c,,56972.49,Being postage & courier for the period
+2025-10-07,JV-1016,Journal,Office Rent,79262.39,,Being office rent for the period
+2025-10-07,JV-1016,Journal,HDFC Bank A/c,,79262.39,Being office rent for the period
+2025-10-08,BP-1013,Payment,Sundry Creditors,205259.46,,Payment to Maa Steel Group
+2025-10-08,BP-1013,Payment,HDFC Bank A/c,,205259.46,Payment to Maa Steel Group
+2025-10-08,BR-1035,Receipt,HDFC Bank A/c,188291.50,,Received from Asha Singh
+2025-10-08,BR-1035,Receipt,Sundry Debtors,,188291.50,Received from Asha Singh
+2025-10-08,BR-1052,Receipt,HDFC Bank A/c,120657.63,,Received from Vikram Mehta
+2025-10-08,BR-1052,Receipt,Sundry Debtors,,120657.63,Received from Vikram Mehta
+2025-10-08,CON-1008,Contra,ICICI EEFC USD A/c,28659.86,,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-10-08,CON-1008,Contra,HDFC Bank A/c,,28659.86,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-10-08,PUR-1031,Purchase,Salaries & Wages,212701.35,,Purchase from Om Industries Pvt Ltd
+2025-10-08,PUR-1031,Purchase,CGST Input @9%,19143.12,,CGST input on purchase from Om Industries Pvt Ltd
+2025-10-08,PUR-1031,Purchase,SGST Input @9%,19143.12,,SGST input on purchase from Om Industries Pvt Ltd
+2025-10-08,PUR-1031,Purchase,Sundry Creditors,,250987.59,Purchase from Om Industries Pvt Ltd
+2025-10-09,BP-1014,Payment,Sundry Creditors,31545.66,,Payment to Om Industries Pvt Ltd
+2025-10-09,BP-1014,Payment,HDFC Bank A/c,,31545.66,Payment to Om Industries Pvt Ltd
+2025-10-09,INV-1025,Sales,Sundry Debtors,130885.87,,Being sales to Meena Kumar
+2025-10-09,INV-1025,Sales,Export Service Income,,110920.23,Sale of goods to Meena Kumar
+2025-10-09,INV-1025,Sales,CGST Output @9%,,9982.82,CGST on sale to Meena Kumar
+2025-10-09,INV-1025,Sales,SGST Output @9%,,9982.82,SGST on sale to Meena Kumar
+2025-10-09,PUR-1002,Purchase,Salaries & Wages,86530.38,,Purchase from Om Industries Pvt Ltd
+2025-10-09,PUR-1002,Purchase,CGST Input @9%,7787.74,,CGST input on purchase from Om Industries Pvt Ltd
+2025-10-09,PUR-1002,Purchase,SGST Input @9%,7787.74,,SGST input on purchase from Om Industries Pvt Ltd
+2025-10-09,PUR-1002,Purchase,Sundry Creditors,,102105.85,Purchase from Om Industries Pvt Ltd
+2025-10-10,BP-1005,Payment,Sundry Creditors,26106.16,,Payment to Krishna Traders Group
+2025-10-10,BP-1005,Payment,HDFC Bank A/c,,26106.16,Payment to Krishna Traders Group
+2025-10-10,BP-1058,Payment,Sundry Creditors,77633.10,,Payment to Lakshmi Services Pvt Ltd
+2025-10-10,BP-1058,Payment,HDFC Bank A/c,,77633.10,Payment to Lakshmi Services Pvt Ltd
+2025-10-10,BR-1017,Receipt,HDFC Bank A/c,16849.07,,Received from Arjun Sharma
+2025-10-10,BR-1017,Receipt,Sundry Debtors,,16849.07,Received from Arjun Sharma
+2025-10-10,INV-1010,Sales,Sundry Debtors,158109.19,,Being sales to Meena Bhat
+2025-10-10,INV-1010,Sales,Export Service Income,,133990.84,Sale of goods to Meena Bhat
+2025-10-10,INV-1010,Sales,CGST Output @9%,,12059.18,CGST on sale to Meena Bhat
+2025-10-10,INV-1010,Sales,SGST Output @9%,,12059.18,SGST on sale to Meena Bhat
+2025-10-10,INV-1020,Sales,Sundry Debtors,139849.86,,Being sales to Arjun Sharma
+2025-10-10,INV-1020,Sales,Export Service Income,,118516.83,Sale of goods to Arjun Sharma
+2025-10-10,INV-1020,Sales,CGST Output @9%,,10666.52,CGST on sale to Arjun Sharma
+2025-10-10,INV-1020,Sales,SGST Output @9%,,10666.52,SGST on sale to Arjun Sharma
+2025-10-11,BP-1034,Payment,Sundry Creditors,178095.42,,Payment to Ganesh Steel Pvt Ltd
+2025-10-11,BP-1034,Payment,HDFC Bank A/c,,178095.42,Payment to Ganesh Steel Pvt Ltd
+2025-10-11,INV-1013,Sales,Sundry Debtors,183855.00,,Being sales to Priya Shah
+2025-10-11,INV-1013,Sales,Service Income - Domestic,,155809.32,Sale of goods to Priya Shah
+2025-10-11,INV-1013,Sales,CGST Output @9%,,14022.84,CGST on sale to Priya Shah
+2025-10-11,INV-1013,Sales,SGST Output @9%,,14022.84,SGST on sale to Priya Shah
+2025-10-12,CON-1012,Contra,ICICI EEFC USD A/c,336894.54,,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-10-12,CON-1012,Contra,HDFC Bank A/c,,336894.54,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-10-12,INV-1073,Sales,Sundry Debtors,144069.03,,Being sales to Rahul Mehta
+2025-10-12,INV-1073,Sales,Export Service Income,,122092.40,Sale of goods to Rahul Mehta
+2025-10-12,INV-1073,Sales,CGST Output @9%,,10988.32,CGST on sale to Rahul Mehta
+2025-10-12,INV-1073,Sales,SGST Output @9%,,10988.32,SGST on sale to Rahul Mehta
+2025-10-12,JV-1028,Journal,Bank Charges,15179.25,,Being bank charges for the period
+2025-10-12,JV-1028,Journal,HDFC Bank A/c,,15179.25,Being bank charges for the period
+2025-10-12,PUR-1019,Purchase,Office Rent,62118.20,,Purchase from Sidh Mills LLP
+2025-10-12,PUR-1019,Purchase,CGST Input @9%,5590.64,,CGST input on purchase from Sidh Mills LLP
+2025-10-12,PUR-1019,Purchase,SGST Input @9%,5590.64,,SGST input on purchase from Sidh Mills LLP
+2025-10-12,PUR-1019,Purchase,Sundry Creditors,,73299.48,Purchase from Sidh Mills LLP
+2025-10-13,BP-1029,Payment,Sundry Creditors,99406.40,,Payment to Bharat Works Industries
+2025-10-13,BP-1029,Payment,HDFC Bank A/c,,99406.40,Payment to Bharat Works Industries
+2025-10-13,BP-1035,Payment,Sundry Creditors,145783.06,,Payment to Lakshmi Enterprises Group
+2025-10-13,BP-1035,Payment,ICICI EEFC USD A/c,,145783.06,Payment to Lakshmi Enterprises Group
+2025-10-13,BP-1054,Payment,Sundry Creditors,184363.53,,Payment to Ganesh Suppliers Pvt Ltd
+2025-10-13,BP-1054,Payment,ICICI EEFC USD A/c,,184363.53,Payment to Ganesh Suppliers Pvt Ltd
+2025-10-13,INV-1023,Sales,Sundry Debtors,70777.65,,Being sales to Pooja Choudhary
+2025-10-13,INV-1023,Sales,Service Income - Domestic,,59981.06,Sale of goods to Pooja Choudhary
+2025-10-13,INV-1023,Sales,CGST Output @9%,,5398.30,CGST on sale to Pooja Choudhary
+2025-10-13,INV-1023,Sales,SGST Output @9%,,5398.30,SGST on sale to Pooja Choudhary
+2025-10-13,INV-1115,Sales,Sundry Debtors,149963.45,,Being sales to Priya Shah
+2025-10-13,INV-1115,Sales,Service Income - Domestic,,127087.67,Sale of goods to Priya Shah
+2025-10-13,INV-1115,Sales,CGST Output @9%,,11437.89,CGST on sale to Priya Shah
+2025-10-13,INV-1115,Sales,SGST Output @9%,,11437.89,SGST on sale to Priya Shah
+2025-10-13,JV-1029,Journal,Bank Charges,51134.48,,Being bank charges for the period
+2025-10-13,JV-1029,Journal,ICICI EEFC USD A/c,,51134.48,Being bank charges for the period
+2025-10-13,JV-X520,Journal,Suspense A/c,8924.06,,Unknown adjustment
+2025-10-13,JV-X520,Journal,HDFC Bank A/c,,8924.06,Unknown adjustment
+2025-10-14,BR-1004,Receipt,HDFC Bank A/c,85481.40,,Received from Rahul Nair
+2025-10-14,BR-1004,Receipt,Sundry Debtors,,85481.40,Received from Rahul Nair
+2025-10-14,CON-1014,Contra,ICICI EEFC USD A/c,141204.14,,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-10-14,CON-1014,Contra,HDFC Bank A/c,,141204.14,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-10-14,INV-1093,Sales,Sundry Debtors,142540.12,,Being sales to Pooja Choudhary
+2025-10-14,INV-1093,Sales,Service Income - Domestic,,120796.71,Sale of goods to Pooja Choudhary
+2025-10-14,INV-1093,Sales,CGST Output @9%,,10871.71,CGST on sale to Pooja Choudhary
+2025-10-14,INV-1093,Sales,SGST Output @9%,,10871.71,SGST on sale to Pooja Choudhary
+2025-10-14,JV-1019,Journal,Bank Charges,69453.58,,Being bank charges for the period
+2025-10-14,JV-1019,Journal,HDFC Bank A/c,,69453.58,Being bank charges for the period
+2025-10-15,BP-1028,Payment,Sundry Creditors,165696.23,,Payment to Krishna Traders Group
+2025-10-15,BP-1028,Payment,ICICI EEFC USD A/c,,165696.23,Payment to Krishna Traders Group
+2025-10-15,BR-1002,Receipt,ICICI EEFC USD A/c,231137.83,,Received from Nitin Sharma
+2025-10-15,BR-1002,Receipt,Sundry Debtors,,231137.83,Received from Nitin Sharma
+2025-10-16,BP-1011,Payment,Sundry Creditors,135285.85,,Payment to Krishna Traders Industries
+2025-10-16,BP-1011,Payment,HDFC Bank A/c,,135285.85,Payment to Krishna Traders Industries
+2025-10-16,CON-1007,Contra,ICICI EEFC USD A/c,300084.13,,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-10-16,CON-1007,Contra,HDFC Bank A/c,,300084.13,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-10-16,INV-1030,Sales,Sundry Debtors,178032.16,,Being sales to Rajesh Kumar
+2025-10-16,INV-1030,Sales,Export Service Income,,150874.71,Sale of goods to Rajesh Kumar
+2025-10-16,INV-1030,Sales,CGST Output @9%,,13578.73,CGST on sale to Rajesh Kumar
+2025-10-16,INV-1030,Sales,SGST Output @9%,,13578.73,SGST on sale to Rajesh Kumar
+2025-10-16,INV-1106,Sales,Sundry Debtors,162163.67,,Being sales to Meena Bhat
+2025-10-16,INV-1106,Sales,Export Service Income,,137426.84,Sale of goods to Meena Bhat
+2025-10-16,INV-1106,Sales,CGST Output @9%,,12368.42,CGST on sale to Meena Bhat
+2025-10-16,INV-1106,Sales,SGST Output @9%,,12368.42,SGST on sale to Meena Bhat
+2025-10-18,BP-1036,Payment,Sundry Creditors,193510.20,,Payment to Lakshmi Services & Bros
+2025-10-18,BP-1036,Payment,ICICI EEFC USD A/c,,193510.20,Payment to Lakshmi Services & Bros
+2025-10-18,INV-1039,Sales,Sundry Debtors,105293.31,,Being sales to Meena Kumar
+2025-10-18,INV-1039,Sales,Export Service Income,,89231.62,Sale of goods to Meena Kumar
+2025-10-18,INV-1039,Sales,CGST Output @9%,,8030.85,CGST on sale to Meena Kumar
+2025-10-18,INV-1039,Sales,SGST Output @9%,,8030.85,SGST on sale to Meena Kumar
+2025-10-18,JV-1030,Journal,Salaries & Wages,32619.90,,Being salaries & wages for the period
+2025-10-18,JV-1030,Journal,HDFC Bank A/c,,32619.90,Being salaries & wages for the period
+2025-10-18,PUR-1010,Purchase,Telephone & Internet,36442.15,,Purchase from Lakshmi Enterprises Group
+2025-10-18,PUR-1010,Purchase,CGST Input @9%,3279.80,,CGST input on purchase from Lakshmi Enterprises Group
+2025-10-18,PUR-1010,Purchase,SGST Input @9%,3279.80,,SGST input on purchase from Lakshmi Enterprises Group
+2025-10-18,PUR-1010,Purchase,Sundry Creditors,,43001.74,Purchase from Lakshmi Enterprises Group
+2025-10-18,PUR-1015,Purchase,Software Subscriptions,36595.34,,Purchase from Maa Steel Group
+2025-10-18,PUR-1015,Purchase,CGST Input @9%,3293.58,,CGST input on purchase from Maa Steel Group
+2025-10-18,PUR-1015,Purchase,SGST Input @9%,3293.58,,SGST input on purchase from Maa Steel Group
+2025-10-18,PUR-1015,Purchase,Sundry Creditors,,43182.50,Purchase from Maa Steel Group
+2025-10-18,PUR-1046,Purchase,Electricity Charges,30189.88,,Purchase from Ganesh Steel Pvt Ltd
+2025-10-18,PUR-1046,Purchase,CGST Input @9%,2717.09,,CGST input on purchase from Ganesh Steel Pvt Ltd
+2025-10-18,PUR-1046,Purchase,SGST Input @9%,2717.09,,SGST input on purchase from Ganesh Steel Pvt Ltd
+2025-10-18,PUR-1046,Purchase,Sundry Creditors,,35624.06,Purchase from Ganesh Steel Pvt Ltd
+2025-10-19,BR-1034,Receipt,HDFC Bank A/c,47284.35,,Received from Arjun Sharma
+2025-10-19,BR-1034,Receipt,Sundry Debtors,,47284.35,Received from Arjun Sharma
+2025-10-19,INV-1097,Sales,Sundry Debtors,173109.96,,Being sales to Swati Joshi
+2025-10-19,INV-1097,Sales,Export Service Income,,146703.36,Sale of goods to Swati Joshi
+2025-10-19,INV-1097,Sales,CGST Output @9%,,13203.30,CGST on sale to Swati Joshi
+2025-10-19,INV-1097,Sales,SGST Output @9%,,13203.30,SGST on sale to Swati Joshi
+2025-10-19,JV-1014,Journal,Software Subscriptions,6933.59,,Being software subscriptions for the period
+2025-10-19,JV-1014,Journal,HDFC Bank A/c,,6933.59,Being software subscriptions for the period
+2025-10-20,BR-1041,Receipt,ICICI EEFC USD A/c,111835.53,,Received from Rajesh Verma
+2025-10-20,BR-1041,Receipt,Sundry Debtors,,111835.53,Received from Rajesh Verma
+2025-10-20,PUR-1045,Purchase,Electricity Charges,17569.31,,Purchase from Krishna Mills Pvt Ltd
+2025-10-20,PUR-1045,Purchase,CGST Input @9%,1581.24,,CGST input on purchase from Krishna Mills Pvt Ltd
+2025-10-20,PUR-1045,Purchase,SGST Input @9%,1581.24,,SGST input on purchase from Krishna Mills Pvt Ltd
+2025-10-20,PUR-1045,Purchase,Sundry Creditors,,20731.79,Purchase from Krishna Mills Pvt Ltd
+2025-10-21,BP-1007,Payment,Sundry Creditors,165804.70,,Payment to Maa Steel Group
+2025-10-21,BP-1007,Payment,ICICI EEFC USD A/c,,165804.70,Payment to Maa Steel Group
+2025-10-21,INV-1109,Sales,Sundry Debtors,208097.54,,Being sales to Nitin Sharma
+2025-10-21,INV-1109,Sales,Export Service Income,,176353.85,Sale of goods to Nitin Sharma
+2025-10-21,INV-1109,Sales,CGST Output @9%,,15871.85,CGST on sale to Nitin Sharma
+2025-10-21,INV-1109,Sales,SGST Output @9%,,15871.85,SGST on sale to Nitin Sharma
+2025-10-21,PUR-1016,Purchase,Travelling Expenses,44042.22,,Purchase from Ratan Agencies & Bros
+2025-10-21,PUR-1016,Purchase,CGST Input @9%,3963.80,,CGST input on purchase from Ratan Agencies & Bros
+2025-10-21,PUR-1016,Purchase,SGST Input @9%,3963.80,,SGST input on purchase from Ratan Agencies & Bros
+2025-10-21,PUR-1016,Purchase,Sundry Creditors,,51969.82,Purchase from Ratan Agencies & Bros
+2025-10-21,PUR-1097,Purchase,Office Rent,30892.95,,Purchase from Ganesh Suppliers Pvt Ltd
+2025-10-21,PUR-1097,Purchase,CGST Input @9%,2780.37,,CGST input on purchase from Ganesh Suppliers Pvt Ltd
+2025-10-21,PUR-1097,Purchase,SGST Input @9%,2780.37,,SGST input on purchase from Ganesh Suppliers Pvt Ltd
+2025-10-21,PUR-1097,Purchase,Sundry Creditors,,36453.68,Purchase from Ganesh Suppliers Pvt Ltd
+2025-10-22,BR-1057,Receipt,ICICI EEFC USD A/c,221865.32,,Received from Asha Singh
+2025-10-22,BR-1057,Receipt,Sundry Debtors,,221865.32,Received from Asha Singh
+2025-10-22,JV-1008,Journal,Office Rent,8924.38,,Being office rent for the period
+2025-10-22,JV-1008,Journal,HDFC Bank A/c,,8924.38,Being office rent for the period
+2025-10-23,BR-1001,Receipt,ICICI EEFC USD A/c,122139.10,,Received from Swati Joshi
+2025-10-23,BR-1001,Receipt,Sundry Debtors,,122139.10,Received from Swati Joshi
+2025-10-24,BP-1039,Payment,Sundry Creditors,278097.13,,Payment to Maa Steel Group
+2025-10-24,BP-1039,Payment,HDFC Bank A/c,,278097.13,Payment to Maa Steel Group
+2025-10-24,BR-1016,Receipt,ICICI EEFC USD A/c,184771.43,,Received from Rajesh Verma
+2025-10-24,BR-1016,Receipt,Sundry Debtors,,184771.43,Received from Rajesh Verma
+2025-10-24,BR-1045,Receipt,ICICI EEFC USD A/c,143389.05,,Received from Rahul Mehta
+2025-10-24,BR-1045,Receipt,Sundry Debtors,,143389.05,Received from Rahul Mehta
+2025-10-24,CON-1011,Contra,ICICI EEFC USD A/c,421386.83,,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-10-24,CON-1011,Contra,HDFC Bank A/c,,421386.83,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-10-24,CON-1015,Contra,HDFC Bank A/c,478029.93,,Transfer from ICICI EEFC USD A/c to HDFC Bank A/c
+2025-10-24,CON-1015,Contra,ICICI EEFC USD A/c,,478029.93,Transfer from ICICI EEFC USD A/c to HDFC Bank A/c
+2025-10-24,INV-1036,Sales,Sundry Debtors,53023.38,,Being sales to Rajesh Kumar
+2025-10-24,INV-1036,Sales,Service Income - Domestic,,44935.07,Sale of goods to Rajesh Kumar
+2025-10-24,INV-1036,Sales,CGST Output @9%,,4044.16,CGST on sale to Rajesh Kumar
+2025-10-24,INV-1036,Sales,SGST Output @9%,,4044.16,SGST on sale to Rajesh Kumar
+2025-10-24,INV-1085,Sales,Sundry Debtors,5515.40,,Being sales to Pooja Choudhary
+2025-10-24,INV-1085,Sales,Export Service Income,,4674.07,Sale of goods to Pooja Choudhary
+2025-10-24,INV-1085,Sales,CGST Output @9%,,420.67,CGST on sale to Pooja Choudhary
+2025-10-24,INV-1085,Sales,SGST Output @9%,,420.67,SGST on sale to Pooja Choudhary
+2025-10-24,INV-1118,Sales,Sundry Debtors,88042.99,,Being sales to Rahul Nair
+2025-10-24,INV-1118,Sales,Export Service Income,,74612.70,Sale of goods to Rahul Nair
+2025-10-24,INV-1118,Sales,CGST Output @9%,,6715.15,CGST on sale to Rahul Nair
+2025-10-24,INV-1118,Sales,SGST Output @9%,,6715.15,SGST on sale to Rahul Nair
+2025-10-24,PUR-1034,Purchase,Bank Charges,180862.61,,Purchase from Krishna Mills Pvt Ltd
+2025-10-24,PUR-1034,Purchase,CGST Input @9%,16277.64,,
+2025-10-24,PUR-1034,Purchase,SGST Input @9%,16277.64,,SGST input on purchase from Krishna Mills Pvt Ltd
+2025-10-24,PUR-1034,Purchase,Sundry Creditors,,213417.88,Purchase from Krishna Mills Pvt Ltd
+2025-10-24,PUR-1039,Purchase,AWS Cloud Services,225701.23,,Purchase from Maa Works Pvt Ltd
+2025-10-24,PUR-1039,Purchase,CGST Input @9%,20313.11,,CGST input on purchase from Maa Works Pvt Ltd
+2025-10-24,PUR-1039,Purchase,SGST Input @9%,20313.11,,SGST input on purchase from Maa Works Pvt Ltd
+2025-10-24,PUR-1039,Purchase,Sundry Creditors,,266327.45,Purchase from Maa Works Pvt Ltd
+2025-10-25,BR-1027,Receipt,ICICI EEFC USD A/c,67366.87,,Received from Arjun Sharma
+2025-10-25,BR-1027,Receipt,Sundry Debtors,,67366.87,Received from Arjun Sharma
+2025-10-25,BR-1065,Receipt,HDFC Bank A/c,237551.20,,Received from Anjali Desai
+2025-10-25,BR-1065,Receipt,Sundry Debtors,,237551.20,Received from Anjali Desai
+2025-10-25,CON-1018,Contra,ICICI EEFC USD A/c,191669.87,,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-10-25,CON-1018,Contra,HDFC Bank A/c,,191669.87,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-10-25,INV-1014,Sales,Sundry Debtors,169833.48,,Being sales to Asha Singh
+2025-10-25,INV-1014,Sales,Export Service Income,,143926.68,Sale of goods to Asha Singh
+2025-10-25,INV-1014,Sales,CGST Output @9%,,12953.40,CGST on sale to Asha Singh
+2025-10-25,INV-1014,Sales,SGST Output @9%,,12953.40,SGST on sale to Asha Singh
+2025-10-25,INV-1091,Sales,Sundry Debtors,158736.09,,Being sales to Rahul Mehta
+2025-10-25,INV-1091,Sales,Service Income - Domestic,,134522.11,Sale of goods to Rahul Mehta
+2025-10-25,INV-1091,Sales,CGST Output @9%,,12106.99,CGST on sale to Rahul Mehta
+2025-10-25,INV-1091,Sales,SGST Output @9%,,12106.99,SGST on sale to Rahul Mehta
+2025-10-25,INV-1108,Sales,Sundry Debtors,189310.33,,Being sales to Vikram Mehta
+2025-10-25,INV-1108,Sales,Export Service Income,,160432.48,Sale of goods to Vikram Mehta
+2025-10-25,INV-1108,Sales,CGST Output @9%,,14438.93,CGST on sale to Vikram Mehta
+2025-10-25,INV-1108,Sales,SGST Output @9%,,14438.93,SGST on sale to Vikram Mehta
+2025-10-25,PUR-1068,Purchase,Software Subscriptions,226988.72,,Purchase from Shree Trading & Co
+2025-10-25,PUR-1068,Purchase,CGST Input @9%,20428.99,,CGST input on purchase from Shree Trading & Co
+2025-10-25,PUR-1068,Purchase,SGST Input @9%,20428.99,,SGST input on purchase from Shree Trading & Co
+2025-10-25,PUR-1068,Purchase,Sundry Creditors,,267846.69,Purchase from Shree Trading & Co
+2025-10-25,PUR-1090,Purchase,AWS Cloud Services,26505.17,,Purchase from Krishna Mills Pvt Ltd
+2025-10-25,PUR-1090,Purchase,CGST Input @9%,2385.47,,CGST input on purchase from Krishna Mills Pvt Ltd
+2025-10-25,PUR-1090,Purchase,SGST Input @9%,2385.47,,SGST input on purchase from Krishna Mills Pvt Ltd
+2025-10-25,PUR-1090,Purchase,Sundry Creditors,,31276.10,Purchase from Krishna Mills Pvt Ltd
+2025-10-26,INV-1049,Sales,Sundry Debtors,128458.25,,Being sales to Rahul Nair
+2025-10-26,INV-1049,Sales,Export Service Income,,108862.92,Sale of goods to Rahul Nair
+2025-10-26,INV-1049,Sales,CGST Output @9%,,9797.67,CGST on sale to Rahul Nair
+2025-10-26,INV-1049,Sales,SGST Output @9%,,9797.67,SGST on sale to Rahul Nair
+2025-10-26,INV-1066,Sales,Sundry Debtors,51046.74,,Being sales to Neha Gupta
+2025-10-26,INV-1066,Sales,Export Service Income,,43259.95,Sale of goods to Neha Gupta
+2025-10-26,INV-1066,Sales,CGST Output @9%,,3893.40,CGST on sale to Neha Gupta
+2025-10-26,INV-1066,Sales,SGST Output @9%,,3893.40,SGST on sale to Neha Gupta
+2025-10-26,INV-1077,Sales,Sundry Debtors,155574.56,,Being sales to Rajesh Kumar
+2025-10-26,INV-1077,Sales,Service Income - Domestic,,131842.85,Sale of goods to Rajesh Kumar
+2025-10-26,INV-1077,Sales,CGST Output @9%,,11865.86,CGST on sale to Rajesh Kumar
+2025-10-26,INV-1077,Sales,SGST Output @9%,,11865.86,SGST on sale to Rajesh Kumar
+2025-10-26,PUR-1013,Purchase,Audit Fees,92372.24,,Purchase from Krishna Traders Group
+2025-10-26,PUR-1013,Purchase,CGST Input @9%,8313.50,,CGST input on purchase from Krishna Traders Group
+2025-10-26,PUR-1013,Purchase,SGST Input @9%,8313.50,,SGST input on purchase from Krishna Traders Group
+2025-10-26,PUR-1013,Purchase,Sundry Creditors,,108999.24,Purchase from Krishna Traders Group
+2025-10-27,BP-1000,Payment,Sundry Creditors,175326.14,,Payment to Sai Mills & Sons
+2025-10-27,BP-1000,Payment,ICICI EEFC USD A/c,,175326.14,Payment to Sai Mills & Sons
+2025-10-27,BR-1039,Receipt,ICICI EEFC USD A/c,112597.78,,Received from Asha Singh
+2025-10-27,BR-1039,Receipt,Sundry Debtors,,112597.78,Received from Asha Singh
+2025-10-27,INV-1018,Sales,Sundry Debtors,14061.33,,Being sales to Vikram Mehta
+2025-10-27,INV-1018,Sales,Service Income - Domestic,,11916.38,Sale of goods to Vikram Mehta
+2025-10-27,INV-1018,Sales,CGST Output @9%,,1072.47,CGST on sale to Vikram Mehta
+2025-10-27,INV-1018,Sales,SGST Output @9%,,1072.47,SGST on sale to Vikram Mehta
+2025-10-27,PUR-1106,Purchase,AWS Cloud Services,199146.06,,Purchase from Krishna Mills Pvt Ltd
+2025-10-27,PUR-1106,Purchase,CGST Input @9%,17923.15,,CGST input on purchase from Krishna Mills Pvt Ltd
+2025-10-27,PUR-1106,Purchase,SGST Input @9%,17923.15,,SGST input on purchase from Krishna Mills Pvt Ltd
+2025-10-27,PUR-1106,Purchase,Sundry Creditors,,234992.35,Purchase from Krishna Mills Pvt Ltd
+2025-10-28,BP-1001,Payment,Sundry Creditors,248862.57,,Payment to Lakshmi Enterprises Group
+2025-10-28,BP-1001,Payment,HDFC Bank A/c,,248862.57,Payment to Lakshmi Enterprises Group
+2025-10-28,BR-1025,Receipt,ICICI EEFC USD A/c,196371.12,,Received from Rahul Nair
+2025-10-28,BR-1025,Receipt,Sundry Debtors,,196371.12,Received from Rahul Nair
+2025-10-28,INV-1082,Sales,Sundry Debtors,85701.34,,Being sales to Meena Kumar
+2025-10-28,INV-1082,Sales,Export Service Income,,72628.25,Sale of goods to Meena Kumar
+2025-10-28,INV-1082,Sales,CGST Output @9%,,6064.88,CGST on sale to Meena Kumar
+2025-10-28,INV-1082,Sales,SGST Output @9%,,6536.55,SGST on sale to Meena Kumar
+2025-10-28,PUR-1054,Purchase,Printing & Stationery,163360.25,,Purchase from Lakshmi Services Pvt Ltd
+2025-10-28,PUR-1054,Purchase,CGST Input @9%,14702.42,,CGST input on purchase from Lakshmi Services Pvt Ltd
+2025-10-28,PUR-1054,Purchase,SGST Input @9%,14702.42,,SGST input on purchase from Lakshmi Services Pvt Ltd
+2025-10-28,PUR-1054,Purchase,Sundry Creditors,,192765.09,Purchase from Lakshmi Services Pvt Ltd
+2025-10-29,BP-1010,Payment,Sundry Creditors,101602.14,,Payment to Maa Works Pvt Ltd
+2025-10-29,BP-1010,Payment,ICICI EEFC USD A/c,,101602.14,Payment to Maa Works Pvt Ltd
+2025-10-29,BP-1020,Payment,Sundry Creditors,287985.34,,Payment to Sidh Mills LLP
+2025-10-29,BP-1020,Payment,HDFC Bank A/c,,287985.34,Payment to Sidh Mills LLP
+2025-10-29,BR-1026,Receipt,HDFC Bank A/c,106356.52,,Received from Vikram Kapoor
+2025-10-29,BR-1026,Receipt,Sundry Debtors,,106356.52,Received from Vikram Kapoor
+2025-10-29,BR-1054,Receipt,ICICI EEFC USD A/c,129756.37,,Received from Pooja Choudhary
+2025-10-29,BR-1054,Receipt,Sundry Debtors,,129756.37,Received from Pooja Choudhary
+2025-10-29,INV-1127,Sales,Sundry Debtors,59240.79,,Being sales to Arjun Sharma
+2025-10-29,INV-1127,Sales,Export Service Income,,50204.06,Sale of goods to Arjun Sharma
+2025-10-29,INV-1127,Sales,CGST Output @9%,,4518.37,CGST on sale to Arjun Sharma
+2025-10-29,INV-1127,Sales,SGST Output @9%,,4518.37,SGST on sale to Arjun Sharma
+2025-10-30,INV-1044,Sales,Sundry Debtors,202803.67,,Being sales to Rajesh Verma
+2025-10-30,INV-1044,Sales,Export Service Income,,171867.52,Sale of goods to Rajesh Verma
+2025-10-30,INV-1044,Sales,CGST Output @9%,,15468.08,CGST on sale to Rajesh Verma
+2025-10-30,INV-1044,Sales,SGST Output @9%,,15468.08,SGST on sale to Rajesh Verma
+2025-10-30,INV-1099,Sales,Sundry Debtors,194419.51,,Being sales to Rahul Mehta
+2025-10-30,INV-1099,Sales,Export Service Income,,164762.30,Sale of goods to Rahul Mehta
+2025-10-30,INV-1099,Sales,CGST Output @9%,,14828.61,CGST on sale to Rahul Mehta
+2025-10-30,INV-1099,Sales,SGST Output @9%,,14828.61,SGST on sale to Rahul Mehta
+2025-10-30,JV-X273,Journal,Adjustment Account,7216.39,,Unknown adjustment
+2025-10-30,JV-X273,Journal,HDFC Bank A/c,,7216.39,Unknown adjustment
+2025-10-30,PUR-1084,Purchase,Postage & Courier,94909.56,,Purchase from Sidh Works Pvt Ltd
+2025-10-30,PUR-1084,Purchase,CGST Input @9%,8541.86,,CGST input on purchase from Sidh Works Pvt Ltd
+2025-10-30,PUR-1084,Purchase,SGST Input @9%,8541.86,,SGST input on purchase from Sidh Works Pvt Ltd
+2025-10-30,PUR-1084,Purchase,Sundry Creditors,,111993.28,Purchase from Sidh Works Pvt Ltd
+2025-10-30,PUR-1103,Purchase,Bank Charges,137675.57,,Purchase from Shree Trading & Sons
+2025-10-30,PUR-1103,Purchase,CGST Input @9%,12390.80,,CGST input on purchase from Shree Trading & Sons
+2025-10-30,PUR-1103,Purchase,SGST Input @9%,12390.80,,SGST input on purchase from Shree Trading & Sons
+2025-10-30,PUR-1103,Purchase,Sundry Creditors,,162457.17,Purchase from Shree Trading & Sons
+2025-10-31,BP-1031,Payment,Sundry Creditors,220190.95,,Payment to Maa Works Pvt Ltd
+2025-10-31,BP-1031,Payment,HDFC Bank A/c,,220190.95,Payment to Maa Works Pvt Ltd
+2025-10-31,PUR-1079,Purchase,Audit Fees,28128.61,,Purchase from Ganesh Suppliers Pvt Ltd
+2025-10-31,PUR-1079,Purchase,CGST Input @9%,2531.57,,CGST input on purchase from Ganesh Suppliers Pvt Ltd
+2025-10-31,PUR-1079,Purchase,SGST Input @9%,2531.57,,SGST input on purchase from Ganesh Suppliers Pvt Ltd
+2025-10-31,PUR-1079,Purchase,Sundry Creditors,,33191.76,Purchase from Ganesh Suppliers Pvt Ltd
+2025-10-31,PUR-1095,Purchase,Telephone & Internet,220535.31,,Purchase from Krishna Mills Pvt Ltd
+2025-10-31,PUR-1095,Purchase,CGST Input @9%,19848.18,,CGST input on purchase from Krishna Mills Pvt Ltd
+2025-10-31,PUR-1095,Purchase,SGST Input @9%,19848.18,,SGST input on purchase from Krishna Mills Pvt Ltd
+2025-10-31,PUR-1095,Purchase,Sundry Creditors,,260231.67,Purchase from Krishna Mills Pvt Ltd
+2025-11-01,BP-1003,Payment,Sundry Creditors,175540.48,,Payment to Maa Works Pvt Ltd
+2025-11-01,BP-1003,Payment,HDFC Bank A/c,,175540.48,Payment to Maa Works Pvt Ltd
+2025-11-01,INV-1076,Sales,Sundry Debtors,98678.57,,
+2025-11-01,INV-1076,Sales,Export Service Income,,83625.91,Sale of goods to Nitin Sharma
+2025-11-01,INV-1076,Sales,CGST Output @9%,,7526.33,CGST on sale to Nitin Sharma
+2025-11-01,INV-1076,Sales,SGST Output @9%,,7526.33,SGST on sale to Nitin Sharma
+2025-11-01,PUR-1036,Purchase,Software Subscriptions,154881.72,,Purchase from Shree Suppliers Pvt Ltd
+2025-11-01,PUR-1036,Purchase,CGST Input @9%,13939.36,,CGST input on purchase from Shree Suppliers Pvt Ltd
+2025-11-01,PUR-1036,Purchase,SGST Input @9%,13939.36,,SGST input on purchase from Shree Suppliers Pvt Ltd
+2025-11-01,PUR-1036,Purchase,Sundry Creditors,,182760.43,Purchase from Shree Suppliers Pvt Ltd
+2025-11-01,PUR-1059,Purchase,AWS Cloud Services,69102.03,,Purchase from Lakshmi Services & Bros
+2025-11-01,PUR-1059,Purchase,CGST Input @9%,6219.19,,CGST input on purchase from Lakshmi Services & Bros
+2025-11-01,PUR-1059,Purchase,SGST Input @9%,6219.19,,SGST input on purchase from Lakshmi Services & Bros
+2025-11-01,PUR-1059,Purchase,Sundry Creditors,,81540.40,Purchase from Lakshmi Services & Bros
+2025-11-02,CON-1021,Contra,HDFC Bank A/c,259603.84,,
+2025-11-02,CON-1021,Contra,ICICI EEFC USD A/c,,259603.84,Transfer from ICICI EEFC USD A/c to HDFC Bank A/c
+2025-11-02,PUR-1040,Purchase,Printing & Stationery,187778.24,,Purchase from Lakshmi Enterprises Group
+2025-11-02,PUR-1040,Purchase,CGST Input @9%,16900.04,,CGST input on purchase from Lakshmi Enterprises Group
+2025-11-02,PUR-1040,Purchase,SGST Input @9%,16900.04,,SGST input on purchase from Lakshmi Enterprises Group
+2025-11-02,PUR-1040,Purchase,Sundry Creditors,,221578.32,Purchase from Lakshmi Enterprises Group
+2025-11-02,PUR-1050,Purchase,Software Subscriptions,10298.69,,Purchase from Bharat Works Industries
+2025-11-02,PUR-1050,Purchase,CGST Input @9%,926.88,,CGST input on purchase from Bharat Works Industries
+2025-11-02,PUR-1050,Purchase,SGST Input @9%,926.88,,SGST input on purchase from Bharat Works Industries
+2025-11-02,PUR-1050,Purchase,Sundry Creditors,,12152.45,Purchase from Bharat Works Industries
+2025-11-03,INV-1048,Sales,Sundry Debtors,201418.85,,Being sales to Meena Bhat
+2025-11-03,INV-1048,Sales,Export Service Income,,170693.94,Sale of goods to Meena Bhat
+2025-11-03,INV-1048,Sales,CGST Output @9%,,15362.46,CGST on sale to Meena Bhat
+2025-11-03,INV-1048,Sales,SGST Output @9%,,15362.46,SGST on sale to Meena Bhat
+2025-11-03,INV-1124,Sales,Sundry Debtors,203502.87,,Being sales to Meena Kumar
+2025-11-03,INV-1124,Sales,Export Service Income,,172460.06,Sale of goods to Meena Kumar
+2025-11-03,INV-1124,Sales,CGST Output @9%,,15521.41,CGST on sale to Meena Kumar
+2025-11-03,INV-1124,Sales,SGST Output @9%,,15521.41,SGST on sale to Meena Kumar
+2025-11-03,JV-1009,Journal,Postage & Courier,95483.12,,Being postage & courier for the period
+2025-11-03,JV-1009,Journal,ICICI EEFC USD A/c,,95483.12,Being postage & courier for the period
+2025-11-03,JV-1023,Journal,Electricity Charges,74264.45,,Being electricity charges for the period
+2025-11-03,JV-1023,Journal,HDFC Bank A/c,,74264.45,Being electricity charges for the period
+2025-11-03,JV-S672,Journal,Sundry Creditors,123524.42,,Refund/advance from vendor
+2025-11-03,JV-S672,Journal,HDFC Bank A/c,,123524.42,Refund/advance from vendor
+2025-11-03,PUR-1008,Purchase,Electricity Charges,212586.75,,Purchase from Krishna Mills Pvt Ltd
+2025-11-03,PUR-1008,Purchase,CGST Input @9%,19132.81,,CGST input on purchase from Krishna Mills Pvt Ltd
+2025-11-03,PUR-1008,Purchase,SGST Input @9%,19132.81,,SGST input on purchase from Krishna Mills Pvt Ltd
+2025-11-03,PUR-1008,Purchase,Sundry Creditors,,250852.37,Purchase from Krishna Mills Pvt Ltd
+2025-11-04,BP-1050,Payment,Sundry Creditors,167400.99,,Payment to Sidh Mills LLP
+2025-11-04,BP-1050,Payment,ICICI EEFC USD A/c,,167400.99,Payment to Sidh Mills LLP
+2025-11-04,CON-1004,Contra,ICICI EEFC USD A/c,464659.76,,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-11-04,CON-1004,Contra,HDFC Bank A/c,,464659.76,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-11-04,INV-1002,Sales,Sundry Debtors,128480.51,,Being sales to Rajesh Verma
+2025-11-04,INV-1002,Sales,Service Income - Domestic,,108881.79,Sale of goods to Rajesh Verma
+2025-11-04,INV-1002,Sales,CGST Output @9%,,9799.36,CGST on sale to Rajesh Verma
+2025-11-04,INV-1002,Sales,SGST Output @9%,,9799.36,SGST on sale to Rajesh Verma
+2025-11-04,INV-1126,Sales,Sundry Debtors,87824.46,,Being sales to Anjali Desai
+2025-11-04,INV-1126,Sales,Service Income - Domestic,,74427.51,Sale of goods to Anjali Desai
+2025-11-04,INV-1126,Sales,CGST Output @9%,,6698.48,CGST on sale to Anjali Desai
+2025-11-04,INV-1126,Sales,SGST Output @9%,,6698.48,SGST on sale to Anjali Desai
+2025-11-05,BP-1023,Payment,Sundry Creditors,247217.58,,Payment to Shree Trading & Co
+2025-11-05,BP-1023,Payment,ICICI EEFC USD A/c,,247217.58,Payment to Shree Trading & Co
+2025-11-05,BR-1007,Receipt,HDFC Bank A/c,223734.29,,Received from Meena Bhat
+2025-11-05,BR-1007,Receipt,Sundry Debtors,,223734.29,Received from Meena Bhat
+2025-11-05,BR-1022,Receipt,ICICI EEFC USD A/c,236907.80,,Received from Arjun Sharma
+2025-11-05,BR-1022,Receipt,Sundry Debtors,,236907.80,Received from Arjun Sharma
+2025-11-05,BR-1042,Receipt,HDFC Bank A/c,8294.49,,Received from Rajesh Kumar
+2025-11-05,BR-1042,Receipt,Sundry Debtors,,8294.49,Received from Rajesh Kumar
+2025-11-05,PUR-1043,Purchase,Travelling Expenses,149846.23,,Purchase from Krishna Traders Industries
+2025-11-05,PUR-1043,Purchase,CGST Input @9%,13486.16,,CGST input on purchase from Krishna Traders Industries
+2025-11-05,PUR-1043,Purchase,SGST Input @9%,13486.16,,SGST input on purchase from Krishna Traders Industries
+2025-11-05,PUR-1043,Purchase,Sundry Creditors,,176818.55,Purchase from Krishna Traders Industries
+2025-11-06,INV-1057,Sales,Sundry Debtors,225063.15,,Being sales to Pooja Choudhary
+2025-11-06,INV-1057,Sales,Export Service Income,,190731.48,Sale of goods to Pooja Choudhary
+2025-11-06,INV-1057,Sales,CGST Output @9%,,17165.84,CGST on sale to Pooja Choudhary
+2025-11-06,INV-1057,Sales,SGST Output @9%,,17165.84,SGST on sale to Pooja Choudhary
+2025-11-06,INV-1089,Sales,Sundry Debtors,203086.54,,Being sales to Meena Kumar
+2025-11-06,INV-1089,Sales,Service Income - Domestic,,172107.24,Sale of goods to Meena Kumar
+2025-11-06,INV-1089,Sales,CGST Output @9%,,15489.65,CGST on sale to Meena Kumar
+2025-11-06,INV-1089,Sales,SGST Output @9%,,15489.65,SGST on sale to Meena Kumar
+2025-11-06,PUR-1033,Purchase,Salaries & Wages,25194.44,,Purchase from Lakshmi Services & Bros
+2025-11-06,PUR-1033,Purchase,CGST Input @9%,2267.50,,CGST input on purchase from Lakshmi Services & Bros
+2025-11-06,PUR-1033,Purchase,SGST Input @9%,2267.50,,SGST input on purchase from Lakshmi Services & Bros
+2025-11-06,PUR-1033,Purchase,Sundry Creditors,,29729.44,Purchase from Lakshmi Services & Bros
+2025-11-06,PUR-1100,Purchase,Postage & Courier,193080.12,,Purchase from Lakshmi Services Pvt Ltd
+2025-11-06,PUR-1100,Purchase,CGST Input @9%,17377.21,,CGST input on purchase from Lakshmi Services Pvt Ltd
+2025-11-06,PUR-1100,Purchase,SGST Input @9%,17377.21,,SGST input on purchase from Lakshmi Services Pvt Ltd
+2025-11-06,PUR-1100,Purchase,Sundry Creditors,,227834.54,Purchase from Lakshmi Services Pvt Ltd
+2025-11-07,BP-1053,Payment,Sundry Creditors,194369.10,,Payment to Krishna Mills Pvt Ltd
+2025-11-07,BP-1053,Payment,HDFC Bank A/c,,194369.10,Payment to Krishna Mills Pvt Ltd
+2025-11-07,BR-1014,Receipt,ICICI EEFC USD A/c,198648.91,,Received from Pooja Choudhary
+2025-11-07,BR-1014,Receipt,Sundry Debtors,,198648.91,Received from Pooja Choudhary
+2025-11-07,BR-1050,Receipt,ICICI EEFC USD A/c,196033.29,,Received from Rahul Mehta
+2025-11-07,BR-1050,Receipt,Sundry Debtors,,196033.29,Received from Rahul Mehta
+2025-11-07,INV-1016,Sales,Sundry Debtors,170996.25,,Being sales to Neha Gupta
+2025-11-07,INV-1016,Sales,Service Income - Domestic,,144912.08,Sale of goods to Neha Gupta
+2025-11-07,INV-1016,Sales,CGST Output @9%,,13042.09,CGST on sale to Neha Gupta
+2025-11-07,INV-1016,Sales,SGST Output @9%,,13042.09,SGST on sale to Neha Gupta
+2025-11-07,PUR-1087,Purchase,AWS Cloud Services,50024.74,,Purchase from Krishna Mills Pvt Ltd
+2025-11-07,PUR-1087,Purchase,CGST Input @9%,4502.23,,
+2025-11-07,PUR-1087,Purchase,SGST Input @9%,4502.23,,SGST input on purchase from Krishna Mills Pvt Ltd
+2025-11-07,PUR-1087,Purchase,Sundry Creditors,,59029.19,Purchase from Krishna Mills Pvt Ltd
+2025-11-08,BP-1018,Payment,Sundry Creditors,142674.42,,Payment to Krishna Traders Group
+2025-11-08,BP-1018,Payment,ICICI EEFC USD A/c,,142674.42,Payment to Krishna Traders Group
+2025-11-08,BR-1000,Receipt,HDFC Bank A/c,141165.25,,Received from Rahul Nair
+2025-11-08,BR-1000,Receipt,Sundry Debtors,,141165.25,Received from Rahul Nair
+2025-11-08,INV-1052,Sales,Sundry Debtors,146888.64,,Being sales to Meena Kumar
+2025-11-08,INV-1052,Sales,Export Service Income,,124481.90,Sale of goods to Meena Kumar
+2025-11-08,INV-1052,Sales,CGST Output @9%,,11203.37,CGST on sale to Meena Kumar
+2025-11-08,INV-1052,Sales,SGST Output @9%,,11203.37,SGST on sale to Meena Kumar
+2025-11-08,INV-1056,Sales,Sundry Debtors,6080.73,,Being sales to Meena Kumar
+2025-11-08,INV-1056,Sales,Export Service Income,,5153.16,Sale of goods to Meena Kumar
+2025-11-08,INV-1056,Sales,CGST Output @9%,,410.75,CGST on sale to Meena Kumar
+2025-11-08,INV-1056,Sales,SGST Output @9%,,463.79,SGST on sale to Meena Kumar
+2025-11-08,JV-1033,Journal,Postage & Courier,42625.57,,Being postage & courier for the period
+2025-11-08,JV-1033,Journal,ICICI EEFC USD A/c,,42625.57,Being postage & courier for the period
+2025-11-09,BP-1019,Payment,Sundry Creditors,278852.51,,Payment to Shree Works & Sons
+2025-11-09,BP-1019,Payment,HDFC Bank A/c,,278852.51,Payment to Shree Works & Sons
+2025-11-09,BR-1038,Receipt,ICICI EEFC USD A/c,97644.75,,Received from Arjun Sharma
+2025-11-09,BR-1038,Receipt,Sundry Debtors,,97722.47,Received from Arjun Sharma
+2025-11-09,CON-1003,Contra,HDFC Bank A/c,367570.61,,Transfer from ICICI EEFC USD A/c to HDFC Bank A/c
+2025-11-09,CON-1003,Contra,ICICI EEFC USD A/c,,367570.61,Transfer from ICICI EEFC USD A/c to HDFC Bank A/c
+2025-11-09,INV-1009,Sales,Sundry Debtors,108757.01,,Being sales to Neha Gupta
+2025-11-09,INV-1009,Sales,Export Service Income,,92166.96,Sale of goods to Neha Gupta
+2025-11-09,INV-1009,Sales,CGST Output @9%,,8295.03,CGST on sale to Neha Gupta
+2025-11-09,INV-1009,Sales,SGST Output @9%,,8295.03,SGST on sale to Neha Gupta
+2025-11-09,INV-1028,Sales,Sundry Debtors,149197.10,,Being sales to Swati Joshi
+2025-11-09,INV-1028,Sales,Service Income - Domestic,,126438.22,Sale of goods to Swati Joshi
+2025-11-09,INV-1028,Sales,CGST Output @9%,,11379.44,CGST on sale to Swati Joshi
+2025-11-09,INV-1028,Sales,SGST Output @9%,,11379.44,SGST on sale to Swati Joshi
+2025-11-10,BP-1037,Payment,Sundry Creditors,130645.35,,Payment to Shree Trading & Sons
+2025-11-10,BP-1037,Payment,HDFC Bank A/c,,130645.35,Payment to Shree Trading & Sons
+2025-11-10,BP-1063,Payment,Sundry Creditors,75784.11,,Payment to Om Industries Pvt Ltd
+2025-11-10,BP-1063,Payment,ICICI EEFC USD A/c,,75784.11,Payment to Om Industries Pvt Ltd
+2025-11-10,BR-1044,Receipt,ICICI EEFC USD A/c,59265.82,,Received from Asha Singh
+2025-11-10,BR-1044,Receipt,Sundry Debtors,,59265.82,Received from Asha Singh
+2025-11-10,JV-1020,Journal,Electricity Charges,60385.20,,Being electricity charges for the period
+2025-11-10,JV-1020,Journal,ICICI EEFC USD A/c,,60385.20,Being electricity charges for the period
+2025-11-10,JV-1021,Journal,Audit Fees,55163.97,,Being audit fees for the period
+2025-11-10,PUR-1062,Purchase,Software Subscriptions,242846.39,,Purchase from Lakshmi Enterprises Group
+2025-11-10,PUR-1062,Purchase,CGST Input @9%,21856.18,,CGST input on purchase from Lakshmi Enterprises Group
+2025-11-10,PUR-1062,Purchase,SGST Input @9%,21856.18,,SGST input on purchase from Lakshmi Enterprises Group
+2025-11-10,PUR-1062,Purchase,Sundry Creditors,,286558.74,Purchase from Lakshmi Enterprises Group
+2025-11-10,PUR-1066,Purchase,Postage & Courier,152751.07,,Purchase from Bharat Works Industries
+2025-11-10,PUR-1066,Purchase,CGST Input @9%,13747.60,,CGST input on purchase from Bharat Works Industries
+2025-11-10,PUR-1066,Purchase,SGST Input @9%,13747.60,,SGST input on purchase from Bharat Works Industries
+2025-11-10,PUR-1066,Purchase,Sundry Creditors,,180246.26,Purchase from Bharat Works Industries
+2025-11-11,BP-1045,Payment,Sundry Creditors,238273.16,,Payment to Ganesh Suppliers Pvt Ltd
+2025-11-11,BP-1045,Payment,HDFC Bank A/c,,238273.16,Payment to Ganesh Suppliers Pvt Ltd
+2025-11-11,CON-1000,Contra,ICICI EEFC USD A/c,228693.31,,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-11-11,CON-1000,Contra,HDFC Bank A/c,,228693.31,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-11-11,CON-1020,Contra,ICICI EEFC USD A/c,463571.71,,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-11-11,CON-1020,Contra,HDFC Bank A/c,,463571.71,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-11-11,INV-1078,Sales,Sundry Debtors,24764.72,,Being sales to Nitin Sharma
+2025-11-11,INV-1078,Sales,Export Service Income,,20987.05,Sale of goods to Nitin Sharma
+2025-11-11,INV-1078,Sales,CGST Output @9%,,1888.84,CGST on sale to Nitin Sharma
+2025-11-11,INV-1078,Sales,SGST Output @9%,,1888.84,SGST on sale to Nitin Sharma
+2025-11-11,INV-1105,Sales,Sundry Debtors,173535.21,,Being sales to Swati Joshi
+2025-11-11,INV-1105,Sales,Export Service Income,,147063.74,Sale of goods to Swati Joshi
+2025-11-11,INV-1105,Sales,CGST Output @9%,,13235.74,CGST on sale to Swati Joshi
+2025-11-11,INV-1105,Sales,SGST Output @9%,,13235.74,SGST on sale to Swati Joshi
+2025-11-11,JV-X791,Journal,Suspense A/c,3392.39,,Unknown adjustment
+2025-11-11,JV-X791,Journal,HDFC Bank A/c,,3392.39,Unknown adjustment
+2025-11-12,BP-1033,Payment,Sundry Creditors,89040.33,,Payment to Krishna Mills Pvt Ltd
+2025-11-12,BP-1033,Payment,ICICI EEFC USD A/c,,89040.33,Payment to Krishna Mills Pvt Ltd
+2025-11-12,CON-1005,Contra,ICICI EEFC USD A/c,35180.28,,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-11-12,CON-1005,Contra,HDFC Bank A/c,,35180.28,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-11-12,JV-1025,Journal,Bank Charges,4743.54,,Being bank charges for the period
+2025-11-12,JV-1025,Journal,ICICI EEFC USD A/c,,4743.54,Being bank charges for the period
+2025-11-12,PUR-1089,Purchase,Travelling Expenses,10803.88,,Purchase from Sidh Mills LLP
+2025-11-12,PUR-1089,Purchase,CGST Input @9%,972.35,,CGST input on purchase from Sidh Mills LLP
+2025-11-12,PUR-1089,Purchase,SGST Input @9%,972.35,,SGST input on purchase from Sidh Mills LLP
+2025-11-12,PUR-1089,Purchase,Sundry Creditors,,12748.58,Purchase from Sidh Mills LLP
+2025-11-13,BP-1032,Payment,Sundry Creditors,160445.33,,Payment to Krishna Traders Group
+2025-11-13,BP-1032,Payment,HDFC Bank A/c,,160445.33,Payment to Krishna Traders Group
+2025-11-13,BR-1003,Receipt,HDFC Bank A/c,128561.75,,Received from Vikram Mehta
+2025-11-13,BR-1003,Receipt,Sundry Debtors,,128561.75,Received from Vikram Mehta
+2025-11-13,INV-1019,Sales,Sundry Debtors,201529.30,,Being sales to Arjun Sharma
+2025-11-13,INV-1019,Sales,Export Service Income,,170787.54,Sale of goods to Arjun Sharma
+2025-11-13,INV-1019,Sales,CGST Output @9%,,15370.88,CGST on sale to Arjun Sharma
+2025-11-13,INV-1019,Sales,SGST Output @9%,,15370.88,SGST on sale to Arjun Sharma
+2025-11-13,JV-1005,Journal,Software Subscriptions,8676.82,,Being software subscriptions for the period
+2025-11-13,JV-1005,Journal,HDFC Bank A/c,,8676.82,Being software subscriptions for the period
+2025-11-13,JV-1006,Journal,Office Rent,30066.80,,Being office rent for the period
+2025-11-13,JV-1006,Journal,ICICI EEFC USD A/c,,30066.80,Being office rent for the period
+2025-11-13,JV-1032,Journal,Office Rent,20744.10,,Being office rent for the period
+2025-11-13,JV-1032,Journal,HDFC Bank A/c,,20744.10,Being office rent for the period
+2025-11-13,PUR-1035,Purchase,AWS Cloud Services,124757.60,,Purchase from Om Industries Pvt Ltd
+2025-11-13,PUR-1035,Purchase,CGST Input @9%,11228.19,,CGST input on purchase from Om Industries Pvt Ltd
+2025-11-13,PUR-1035,Purchase,SGST Input @9%,11228.19,,SGST input on purchase from Om Industries Pvt Ltd
+2025-11-13,PUR-1035,Purchase,Sundry Creditors,,147213.97,Purchase from Om Industries Pvt Ltd
+2025-11-13,PUR-1080,Purchase,Telephone & Internet,99825.13,,Purchase from Maa Works Pvt Ltd
+2025-11-13,PUR-1080,Purchase,CGST Input @9%,8984.26,,CGST input on purchase from Maa Works Pvt Ltd
+2025-11-13,PUR-1080,Purchase,SGST Input @9%,8984.26,,SGST input on purchase from Maa Works Pvt Ltd
+2025-11-13,PUR-1080,Purchase,Sundry Creditors,,117793.65,Purchase from Maa Works Pvt Ltd
+2025-11-13,PUR-1081,Purchase,Audit Fees,244502.03,,Purchase from Krishna Mills Group
+2025-11-13,PUR-1081,Purchase,CGST Input @9%,22005.19,,CGST input on purchase from Krishna Mills Group
+2025-11-13,PUR-1081,Purchase,SGST Input @9%,22005.19,,SGST input on purchase from Krishna Mills Group
+2025-11-13,PUR-1081,Purchase,Sundry Creditors,,288512.40,Purchase from Krishna Mills Group
+2025-11-13,PUR-1093,Purchase,Audit Fees,136631.93,,Purchase from Shree Agencies Group
+2025-11-13,PUR-1093,Purchase,CGST Input @9%,12296.88,,CGST input on purchase from Shree Agencies Group
+2025-11-13,PUR-1093,Purchase,SGST Input @9%,12296.88,,SGST input on purchase from Shree Agencies Group
+2025-11-13,PUR-1093,Purchase,Sundry Creditors,,161225.68,Purchase from Shree Agencies Group
+2025-11-14,BR-1061,Receipt,ICICI EEFC USD A/c,55135.40,,Received from Priya Shah
+2025-11-14,BR-1061,Receipt,Sundry Debtors,,55135.40,Received from Priya Shah
+2025-11-14,PUR-1027,Purchase,AWS Cloud Services,291588.39,,Purchase from Krishna Traders Industries
+2025-11-14,PUR-1027,Purchase,CGST Input @9%,26242.96,,CGST input on purchase from Krishna Traders Industries
+2025-11-14,PUR-1027,Purchase,SGST Input @9%,26242.96,,SGST input on purchase from Krishna Traders Industries
+2025-11-14,PUR-1027,Purchase,Sundry Creditors,,344074.30,Purchase from Krishna Traders Industries
+2025-11-14,PUR-1053,Purchase,AWS Cloud Services,219862.37,,Purchase from Shree Agencies Group
+2025-11-14,PUR-1053,Purchase,CGST Input @9%,19787.62,,CGST input on purchase from Shree Agencies Group
+2025-11-14,PUR-1053,Purchase,SGST Input @9%,19787.62,,SGST input on purchase from Shree Agencies Group
+2025-11-14,PUR-1053,Purchase,Sundry Creditors,,259437.60,Purchase from Shree Agencies Group
+2025-11-14,PUR-1105,Purchase,Telephone & Internet,13213.91,,Purchase from Maa Steel Group
+2025-11-14,PUR-1105,Purchase,CGST Input @9%,1189.25,,CGST input on purchase from Maa Steel Group
+2025-11-14,PUR-1105,Purchase,SGST Input @9%,1189.25,,SGST input on purchase from Maa Steel Group
+2025-11-14,PUR-1105,Purchase,Sundry Creditors,,15592.41,Purchase from Maa Steel Group
+2025-11-15,PUR-1064,Purchase,Travelling Expenses,103462.99,,Purchase from Ratan Agencies & Bros
+2025-11-15,PUR-1064,Purchase,CGST Input @9%,9311.67,,CGST input on purchase from Ratan Agencies & Bros
+2025-11-15,PUR-1064,Purchase,SGST Input @9%,9311.67,,SGST input on purchase from Ratan Agencies & Bros
+2025-11-15,PUR-1064,Purchase,Sundry Creditors,,122086.33,Purchase from Ratan Agencies & Bros
+2025-11-15,PUR-1096,Purchase,Travelling Expenses,58478.91,,Purchase from Ratan Agencies & Bros
+2025-11-15,PUR-1096,Purchase,CGST Input @9%,5263.10,,CGST input on purchase from Ratan Agencies & Bros
+2025-11-15,PUR-1096,Purchase,SGST Input @9%,5263.10,,SGST input on purchase from Ratan Agencies & Bros
+2025-11-15,PUR-1096,Purchase,Sundry Creditors,,69005.11,Purchase from Ratan Agencies & Bros
+2025-11-16,BP-1047,Payment,Sundry Creditors,189214.07,,Payment to Krishna Traders Group
+2025-11-16,BP-1047,Payment,ICICI EEFC USD A/c,,189214.07,Payment to Krishna Traders Group
+2025-11-16,BR-1037,Receipt,HDFC Bank A/c,168789.22,,Received from Arjun Sharma
+2025-11-16,BR-1037,Receipt,Sundry Debtors,,168789.22,Received from Arjun Sharma
+2025-11-16,BR-1060,Receipt,ICICI EEFC USD A/c,92795.95,,Received from Anjali Desai
+2025-11-16,BR-1060,Receipt,Sundry Debtors,,92795.95,Received from Anjali Desai
+2025-11-16,PUR-1026,Purchase,Office Rent,194221.70,,Purchase from Shree Works & Sons
+2025-11-16,PUR-1026,Purchase,CGST Input @9%,17479.96,,CGST input on purchase from Shree Works & Sons
+2025-11-16,PUR-1026,Purchase,SGST Input @9%,17479.96,,SGST input on purchase from Shree Works & Sons
+2025-11-16,PUR-1026,Purchase,Sundry Creditors,,229181.61,Purchase from Shree Works & Sons
+2025-11-16,PUR-1052,Purchase,Telephone & Internet,106668.73,,Purchase from Bharat Works Industries
+2025-11-16,PUR-1052,Purchase,CGST Input @9%,9600.19,,CGST input on purchase from Bharat Works Industries
+2025-11-16,PUR-1052,Purchase,SGST Input @9%,9600.19,,SGST input on purchase from Bharat Works Industries
+2025-11-16,PUR-1052,Purchase,Sundry Creditors,,125869.10,Purchase from Bharat Works Industries
+2025-11-16,PUR-1091,Purchase,AWS Cloud Services,209688.60,,Purchase from Shree Works & Sons
+2025-11-16,PUR-1091,Purchase,CGST Input @9%,8578.17,,CGST input on purchase from Shree Works & Sons
+2025-11-16,PUR-1091,Purchase,SGST Input @9%,8578.17,,SGST input on purchase from Shree Works & Sons
+2025-11-16,PUR-1091,Purchase,Sundry Creditors,,112469.34,Purchase from Shree Works & Sons
+2025-11-16,PUR-1099,Purchase,Bank Charges,181514.02,,Purchase from Lakshmi Services & Bros
+2025-11-16,PUR-1099,Purchase,CGST Input @9%,16336.26,,CGST input on purchase from Lakshmi Services & Bros
+2025-11-16,PUR-1099,Purchase,SGST Input @9%,16336.26,,SGST input on purchase from Lakshmi Services & Bros
+2025-11-16,PUR-1099,Purchase,Sundry Creditors,,214186.54,Purchase from Lakshmi Services & Bros
+2025-11-17,BP-1022,Payment,Sundry Creditors,91025.47,,Payment to Krishna Traders Group
+2025-11-17,BP-1022,Payment,ICICI EEFC USD A/c,,91025.47,Payment to Krishna Traders Group
+2025-11-17,BR-1015,Receipt,HDFC Bank A/c,188552.51,,Received from Vikram Mehta
+2025-11-17,BR-1015,Receipt,Sundry Debtors,,188552.51,Received from Vikram Mehta
+2025-11-17,BR-1036,Receipt,HDFC Bank A/c,195458.44,,Received from Priya Shah
+2025-11-17,BR-1036,Receipt,Sundry Debtors,,195458.44,Received from Priya Shah
+2025-11-17,CON-1019,Contra,ICICI EEFC USD A/c,95912.78,,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-11-17,CON-1019,Contra,HDFC Bank A/c,,95912.78,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-11-17,INV-1017,Sales,Sundry Debtors,233114.02,,Being sales to Vikram Kapoor
+2025-11-17,INV-1017,Sales,Service Income - Domestic,,197554.25,Sale of goods to Vikram Kapoor
+2025-11-17,INV-1017,Sales,CGST Output @9%,,17779.88,CGST on sale to Vikram Kapoor
+2025-11-17,INV-1017,Sales,SGST Output @9%,,17796.83,SGST on sale to Vikram Kapoor
+2025-11-17,PUR-1051,Purchase,Telephone & Internet,221977.90,,Purchase from Krishna Traders Industries
+2025-11-17,PUR-1051,Purchase,CGST Input @9%,19978.01,,CGST input on purchase from Krishna Traders Industries
+2025-11-17,PUR-1051,Purchase,SGST Input @9%,19978.01,,SGST input on purchase from Krishna Traders Industries
+2025-11-17,PUR-1051,Purchase,Sundry Creditors,,261933.92,Purchase from Krishna Traders Industries
+2025-11-18,INV-1060,Sales,Sundry Debtors,33687.87,,Being sales to Rahul Agarwal
+2025-11-18,INV-1060,Sales,Export Service Income,,28549.04,Sale of goods to Rahul Agarwal
+2025-11-18,INV-1060,Sales,CGST Output @9%,,2569.42,CGST on sale to Rahul Agarwal
+2025-11-18,INV-1060,Sales,SGST Output @9%,,2569.42,SGST on sale to Rahul Agarwal
+2025-11-18,INV-1083,Sales,Sundry Debtors,163189.16,,Being sales to Anjali Desai
+2025-11-18,INV-1083,Sales,Export Service Income,,138295.90,Sale of goods to Anjali Desai
+2025-11-18,INV-1083,Sales,CGST Output @9%,,12446.63,CGST on sale to Anjali Desai
+2025-11-18,INV-1083,Sales,SGST Output @9%,,12446.63,SGST on sale to Anjali Desai
+2025-11-18,INV-1100,Sales,Sundry Debtors,21803.69,,Being sales to Swati Joshi
+2025-11-18,INV-1100,Sales,Export Service Income,,18477.70,Sale of goods to Swati Joshi
+2025-11-18,INV-1100,Sales,CGST Output @9%,,1663.00,CGST on sale to Swati Joshi
+2025-11-18,INV-1100,Sales,SGST Output @9%,,1663.00,SGST on sale to Swati Joshi
+2025-11-18,INV-1125,Sales,Sundry Debtors,168184.42,,Being sales to Rajesh Kumar
+2025-11-18,INV-1125,Sales,Export Service Income,,142529.17,Sale of goods to Rajesh Kumar
+2025-11-18,INV-1125,Sales,CGST Output @9%,,12827.63,CGST on sale to Rajesh Kumar
+2025-11-18,INV-1125,Sales,SGST Output @9%,,12827.63,SGST on sale to Rajesh Kumar
+2025-11-18,PUR-1072,Purchase,Telephone & Internet,231654.21,,Purchase from Ratan Agencies & Bros
+2025-11-18,PUR-1072,Purchase,CGST Input @9%,20848.88,,CGST input on purchase from Ratan Agencies & Bros
+2025-11-18,PUR-1072,Purchase,SGST Input @9%,20848.88,,SGST input on purchase from Ratan Agencies & Bros
+2025-11-18,PUR-1072,Purchase,Sundry Creditors,,273351.97,Purchase from Ratan Agencies & Bros
+2025-11-19,BP-1016,Payment,Sundry Creditors,52892.50,,Payment to Om Industries Pvt Ltd
+2025-11-19,BP-1016,Payment,HDFC Bank A/c,,52892.50,Payment to Om Industries Pvt Ltd
+2025-11-19,BP-1021,Payment,Sundry Creditors,17800.48,,Payment to Sidh Works Pvt Ltd
+2025-11-19,BP-1021,Payment,ICICI EEFC USD A/c,,17800.48,Payment to Sidh Works Pvt Ltd
+2025-11-19,BP-1046,Payment,Sundry Creditors,222627.21,,Payment to Lakshmi Services & Bros
+2025-11-19,BP-1046,Payment,HDFC Bank A/c,,222627.21,Payment to Lakshmi Services & Bros
+2025-11-19,INV-1075,Sales,Sundry Debtors,125389.81,,Being sales to Asha Singh
+2025-11-19,INV-1075,Sales,Export Service Income,,106262.55,Sale of goods to Asha Singh
+2025-11-19,INV-1075,Sales,CGST Output @9%,,9563.63,CGST on sale to Asha Singh
+2025-11-19,INV-1075,Sales,SGST Output @9%,,9563.63,SGST on sale to Asha Singh
+2025-11-19,JV-1002,Journal,Travelling Expenses,68055.45,,Being travelling expenses for the period
+2025-11-19,JV-1002,Journal,HDFC Bank A/c,,68055.45,Being travelling expenses for the period
+2025-11-20,BP-1062,Payment,Sundry Creditors,155008.92,,Payment to Shree Trading & Co
+2025-11-20,BP-1062,Payment,HDFC Bank A/c,,155008.92,Payment to Shree Trading & Co
+2025-11-20,INV-1074,Sales,Sundry Debtors,136964.87,,Being sales to Rahul Agarwal
+2025-11-20,INV-1074,Sales,Service Income - Domestic,,116071.92,Sale of goods to Rahul Agarwal
+2025-11-20,INV-1074,Sales,CGST Output @9%,,10446.48,CGST on sale to Rahul Agarwal
+2025-11-20,INV-1074,Sales,SGST Output @9%,,10446.48,SGST on sale to Rahul Agarwal
+2025-11-20,INV-1120,Sales,Sundry Debtors,153347.73,,Being sales to Anjali Desai
+2025-11-20,INV-1120,Sales,Export Service Income,,129955.70,Sale of goods to Anjali Desai
+2025-11-20,INV-1120,Sales,CGST Output @9%,,11696.02,CGST on sale to Anjali Desai
+2025-11-20,INV-1120,Sales,SGST Output @9%,,11696.02,SGST on sale to Anjali Desai
+2025-11-20,JV-1011,Journal,Printing & Stationery,50860.91,,Being printing & stationery for the period
+2025-11-20,JV-1011,Journal,ICICI EEFC USD A/c,,50860.91,Being printing & stationery for the period
+2025-11-21,BR-1005,Receipt,ICICI EEFC USD A/c,114151.74,,Received from Rahul Mehta
+2025-11-21,BR-1005,Receipt,Sundry Debtors,,114151.74,Received from Rahul Mehta
+2025-11-21,BR-1068,Receipt,HDFC Bank A/c,145246.29,,Received from Anjali Desai
+2025-11-21,BR-1068,Receipt,Sundry Debtors,,145246.29,Received from Anjali Desai
+2025-11-21,INV-1038,Sales,Sundry Debtors,201459.61,,Being sales to Rahul Nair
+2025-11-21,INV-1038,Sales,Export Service Income,,170728.48,Sale of goods to Rahul Nair
+2025-11-21,INV-1038,Sales,CGST Output @9%,,15365.57,CGST on sale to Rahul Nair
+2025-11-21,INV-1038,Sales,SGST Output @9%,,15365.57,SGST on sale to Rahul Nair
+2025-11-21,INV-1063,Sales,Sundry Debtors,202958.01,,Being sales to Priya Shah
+2025-11-21,INV-1063,Sales,Service Income - Domestic,,171998.31,Sale of goods to Priya Shah
+2025-11-21,INV-1063,Sales,CGST Output @9%,,15479.85,CGST on sale to Priya Shah
+2025-11-21,INV-1063,Sales,SGST Output @9%,,15479.85,SGST on sale to Priya Shah
+2025-11-21,INV-1114,Sales,Sundry Debtors,135097.47,,Being sales to Swati Joshi
+2025-11-21,INV-1114,Sales,Export Service Income,,114489.38,Sale of goods to Swati Joshi
+2025-11-21,INV-1114,Sales,CGST Output @9%,,10304.05,CGST on sale to Swati Joshi
+2025-11-21,INV-1114,Sales,SGST Output @9%,,10304.05,SGST on sale to Swati Joshi
+2025-11-21,JV-1001,Journal,Audit Fees,92194.27,,Being audit fees for the period
+2025-11-21,JV-1001,Journal,HDFC Bank A/c,,92194.27,Being audit fees for the period
+2025-11-21,PUR-1078,Purchase,Salaries & Wages,176938.88,,Purchase from Shree Trading & Sons
+2025-11-21,PUR-1078,Purchase,CGST Input @9%,9952.81,,CGST input on purchase from Shree Trading & Sons
+2025-11-21,PUR-1078,Purchase,SGST Input @9%,9952.81,,SGST input on purchase from Shree Trading & Sons
+2025-11-21,PUR-1078,Purchase,Sundry Creditors,,130492.42,Purchase from Shree Trading & Sons
+2025-11-22,BR-1033,Receipt,HDFC Bank A/c,104289.35,,Received from Rahul Mehta
+2025-11-22,BR-1033,Receipt,Sundry Debtors,,104289.35,Received from Rahul Mehta
+2025-11-22,BR-1046,Receipt,HDFC Bank A/c,100696.70,,Received from Pooja Choudhary
+2025-11-22,BR-1046,Receipt,Sundry Debtors,,100696.70,Received from Pooja Choudhary
+2025-11-22,JV-1007,Journal,Postage & Courier,53825.17,,Being postage & courier for the period
+2025-11-22,JV-1007,Journal,HDFC Bank A/c,,53825.17,Being postage & courier for the period
+2025-11-22,PUR-1102,Purchase,Salaries & Wages,208372.21,,Purchase from Krishna Traders Group
+2025-11-22,PUR-1102,Purchase,CGST Input @9%,11720.94,,CGST input on purchase from Krishna Traders Group
+2025-11-22,PUR-1102,Purchase,SGST Input @9%,11720.94,,SGST input on purchase from Krishna Traders Group
+2025-11-22,PUR-1102,Purchase,Sundry Creditors,,153674.50,Purchase from Krishna Traders Group
+2025-11-23,BP-1024,Payment,Sundry Creditors,152082.95,,Payment to Shree Works & Sons
+2025-11-23,BP-1024,Payment,HDFC Bank A/c,,152082.95,Payment to Shree Works & Sons
+2025-11-23,BR-1040,Receipt,HDFC Bank A/c,87513.41,,Received from Swati Joshi
+2025-11-23,BR-1040,Receipt,Sundry Debtors,,87513.41,Received from Swati Joshi
+2025-11-23,BR-1069,Receipt,HDFC Bank A/c,159507.67,,Received from Nitin Sharma
+2025-11-23,BR-1069,Receipt,Sundry Debtors,,159507.67,Received from Nitin Sharma
+2025-11-23,INV-1111,Sales,Sundry Debtors,209438.74,,Being sales to Meena Kumar
+2025-11-23,INV-1111,Sales,Service Income - Domestic,,177490.46,Sale of goods to Meena Kumar
+2025-11-23,INV-1111,Sales,CGST Output @9%,,15974.14,CGST on sale to Meena Kumar
+2025-11-23,INV-1111,Sales,SGST Output @9%,,15974.14,SGST on sale to Meena Kumar
+2025-11-23,JV-1022,Journal,Printing & Stationery,87101.33,,Being printing & stationery for the period
+2025-11-23,JV-1022,Journal,ICICI EEFC USD A/c,,87101.33,Being printing & stationery for the period
+2025-11-24,BP-1004,Payment,Sundry Creditors,101731.31,,Payment to Shree Works & Sons
+2025-11-24,BP-1004,Payment,ICICI EEFC USD A/c,,101731.31,Payment to Shree Works & Sons
+2025-11-24,BP-1009,Payment,Sundry Creditors,35502.44,,Payment to Krishna Traders Group
+2025-11-24,BP-1009,Payment,ICICI EEFC USD A/c,,35502.44,Payment to Krishna Traders Group
+2025-11-24,BP-1025,Payment,Sundry Creditors,118401.90,,Payment to Shree Suppliers Pvt Ltd
+2025-11-24,BP-1025,Payment,HDFC Bank A/c,,118401.90,Payment to Shree Suppliers Pvt Ltd
+2025-11-24,BP-1038,Payment,Sundry Creditors,104005.51,,Payment to Lakshmi Services Pvt Ltd
+2025-11-24,BP-1038,Payment,ICICI EEFC USD A/c,,104005.51,Payment to Lakshmi Services Pvt Ltd
+2025-11-24,BP-1061,Payment,Sundry Creditors,198090.64,,Payment to Sidh Mills LLP
+2025-11-24,BP-1061,Payment,HDFC Bank A/c,,198090.64,Payment to Sidh Mills LLP
+2025-11-24,BR-1021,Receipt,ICICI EEFC USD A/c,116986.84,,Received from Pooja Gupta
+2025-11-24,BR-1021,Receipt,Sundry Debtors,,116986.84,Received from Pooja Gupta
+2025-11-24,INV-1040,Sales,Sundry Debtors,76213.29,,Being sales to Rajesh Verma
+2025-11-24,INV-1040,Sales,Service Income - Domestic,,64587.53,Sale of goods to Rajesh Verma
+2025-11-24,INV-1040,Sales,CGST Output @9%,,5812.88,CGST on sale to Rajesh Verma
+2025-11-24,INV-1040,Sales,SGST Output @9%,,5812.88,SGST on sale to Rajesh Verma
+2025-11-24,PUR-1057,Purchase,Software Subscriptions,30851.54,,Purchase from Om Industries Pvt Ltd
+2025-11-24,PUR-1057,Purchase,CGST Input @9%,2776.64,,CGST input on purchase from Om Industries Pvt Ltd
+2025-11-24,PUR-1057,Purchase,SGST Input @9%,2776.64,,SGST input on purchase from Om Industries Pvt Ltd
+2025-11-24,PUR-1057,Purchase,Sundry Creditors,,36404.82,Purchase from Om Industries Pvt Ltd
+2025-11-24,PUR-1063,Purchase,Office Rent,34966.38,,Purchase from Ganesh Suppliers Pvt Ltd
+2025-11-24,PUR-1063,Purchase,CGST Input @9%,3146.98,,CGST input on purchase from Ganesh Suppliers Pvt Ltd
+2025-11-24,PUR-1063,Purchase,SGST Input @9%,3146.98,,SGST input on purchase from Ganesh Suppliers Pvt Ltd
+2025-11-24,PUR-1063,Purchase,Sundry Creditors,,41260.33,Purchase from Ganesh Suppliers Pvt Ltd
+2025-11-25,BR-1056,Receipt,HDFC Bank A/c,162359.54,,Received from Meena Bhat
+2025-11-25,BR-1056,Receipt,Sundry Debtors,,162359.54,Received from Meena Bhat
+2025-11-25,INV-1031,Sales,Sundry Debtors,61684.76,,Being sales to Meena Bhat
+2025-11-25,INV-1031,Sales,Service Income - Domestic,,52275.22,Sale of goods to Meena Bhat
+2025-11-25,INV-1031,Sales,CGST Output @9%,,4704.77,CGST on sale to Meena Bhat
+2025-11-25,INV-1031,Sales,SGST Output @9%,,4704.77,SGST on sale to Meena Bhat
+2025-11-25,PUR-1047,Purchase,Salaries & Wages,436913.66,,Purchase from Shree Works & Sons
+2025-11-25,PUR-1047,Purchase,CGST Input @9%,24576.40,,CGST input on purchase from Shree Works & Sons
+2025-11-25,PUR-1047,Purchase,SGST Input @9%,24576.40,,SGST input on purchase from Shree Works & Sons
+2025-11-25,PUR-1047,Purchase,Sundry Creditors,,322223.83,Purchase from Shree Works & Sons
+2025-11-25,PUR-1060,Purchase,Bank Charges,240254.89,,Purchase from Shree Suppliers Pvt Ltd
+2025-11-25,PUR-1060,Purchase,CGST Input @9%,21622.94,,CGST input on purchase from Shree Suppliers Pvt Ltd
+2025-11-25,PUR-1060,Purchase,SGST Input @9%,21622.94,,SGST input on purchase from Shree Suppliers Pvt Ltd
+2025-11-25,PUR-1060,Purchase,Sundry Creditors,,283500.77,Purchase from Shree Suppliers Pvt Ltd
+2025-11-26,BR-1030,Receipt,ICICI EEFC USD A/c,239904.31,,Received from Nitin Sharma
+2025-11-26,BR-1030,Receipt,Sundry Debtors,,239904.31,Received from Nitin Sharma
+2025-11-26,INV-1041,Sales,Sundry Debtors,35588.35,,Being sales to Meena Kumar
+2025-11-26,INV-1041,Sales,Service Income - Domestic,,30159.62,Sale of goods to Meena Kumar
+2025-11-26,INV-1041,Sales,CGST Output @9%,,2337.90,CGST on sale to Meena Kumar
+2025-11-26,INV-1041,Sales,SGST Output @9%,,2714.37,SGST on sale to Meena Kumar
+2025-11-26,INV-1042,Sales,Sundry Debtors,161381.27,,Being sales to Rahul Mehta
+2025-11-26,INV-1042,Sales,Service Income - Domestic,,136763.79,Sale of goods to Rahul Mehta
+2025-11-26,INV-1042,Sales,CGST Output @9%,,12308.74,CGST on sale to Rahul Mehta
+2025-11-26,INV-1042,Sales,SGST Output @9%,,12308.74,SGST on sale to Rahul Mehta
+2025-11-26,INV-1070,Sales,Sundry Debtors,215542.73,,Being sales to Meena Kumar
+2025-11-26,INV-1070,Sales,Export Service Income,,182663.33,Sale of goods to Meena Kumar
+2025-11-26,INV-1070,Sales,CGST Output @9%,,16439.70,CGST on sale to Meena Kumar
+2025-11-26,INV-1070,Sales,SGST Output @9%,,16439.70,SGST on sale to Meena Kumar
+2025-11-26,PUR-1086,Purchase,Travelling Expenses,205086.07,,Purchase from Lakshmi Services & Bros
+2025-11-26,PUR-1086,Purchase,CGST Input @9%,18457.75,,CGST input on purchase from Lakshmi Services & Bros
+2025-11-26,PUR-1086,Purchase,SGST Input @9%,18457.75,,SGST input on purchase from Lakshmi Services & Bros
+2025-11-26,PUR-1086,Purchase,Sundry Creditors,,242001.56,Purchase from Lakshmi Services & Bros
+2025-11-27,BR-1018,Receipt,ICICI EEFC USD A/c,196997.42,,Received from Neha Gupta
+2025-11-27,BR-1018,Receipt,Sundry Debtors,,196997.42,Received from Neha Gupta
+2025-11-27,CON-1016,Contra,ICICI EEFC USD A/c,456253.68,,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-11-27,CON-1016,Contra,HDFC Bank A/c,,456253.68,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-11-27,INV-1094,Sales,Sundry Debtors,235093.23,,Being sales to Vikram Kapoor
+2025-11-27,INV-1094,Sales,Export Service Income,,199231.55,Sale of goods to Vikram Kapoor
+2025-11-27,INV-1094,Sales,CGST Output @9%,,17930.84,CGST on sale to Vikram Kapoor
+2025-11-27,INV-1094,Sales,SGST Output @9%,,17930.84,SGST on sale to Vikram Kapoor
+2025-11-27,PUR-1011,Purchase,Telephone & Internet,231669.96,,Purchase from Ganesh Steel Pvt Ltd
+2025-11-27,PUR-1011,Purchase,CGST Input @9%,20850.29,,CGST input on purchase from Ganesh Steel Pvt Ltd
+2025-11-27,PUR-1011,Purchase,SGST Input @9%,20850.29,,SGST input on purchase from Ganesh Steel Pvt Ltd
+2025-11-27,PUR-1011,Purchase,Sundry Creditors,,273370.55,Purchase from Ganesh Steel Pvt Ltd
+2025-11-27,PUR-1018,Purchase,Salaries & Wages,15018.70,,Purchase from Ganesh Suppliers Pvt Ltd
+2025-11-27,PUR-1018,Purchase,CGST Input @9%,844.80,,CGST input on purchase from Ganesh Suppliers Pvt Ltd
+2025-11-27,PUR-1018,Purchase,SGST Input @9%,844.80,,SGST input on purchase from Ganesh Suppliers Pvt Ltd
+2025-11-27,PUR-1018,Purchase,Sundry Creditors,,11076.29,Purchase from Ganesh Suppliers Pvt Ltd
+2025-11-28,JV-1004,Journal,Bank Charges,50381.74,,Being bank charges for the period
+2025-11-28,JV-1004,Journal,HDFC Bank A/c,,50381.74,Being bank charges for the period
+2025-11-29,CON-1006,Contra,HDFC Bank A/c,70726.38,,Transfer from ICICI EEFC USD A/c to HDFC Bank A/c
+2025-11-29,CON-1006,Contra,ICICI EEFC USD A/c,,70726.38,Transfer from ICICI EEFC USD A/c to HDFC Bank A/c
+2025-11-29,INV-1037,Sales,Sundry Debtors,23890.33,,Being sales to Rahul Nair
+2025-11-29,INV-1037,Sales,Service Income - Domestic,,20246.04,Sale of goods to Rahul Nair
+2025-11-29,INV-1037,Sales,CGST Output @9%,,1822.15,CGST on sale to Rahul Nair
+2025-11-29,INV-1037,Sales,SGST Output @9%,,1822.15,SGST on sale to Rahul Nair
+2025-11-29,PUR-1030,Purchase,Postage & Courier,235790.55,,Purchase from Lakshmi Enterprises Group
+2025-11-29,PUR-1030,Purchase,CGST Input @9%,21221.15,,CGST input on purchase from Lakshmi Enterprises Group
+2025-11-29,PUR-1030,Purchase,SGST Input @9%,21221.15,,SGST input on purchase from Lakshmi Enterprises Group
+2025-11-29,PUR-1030,Purchase,Sundry Creditors,,278232.85,Purchase from Lakshmi Enterprises Group
+2025-11-29,PUR-1042,Purchase,Electricity Charges,165636.37,,Purchase from Shree Trading & Sons
+2025-11-29,PUR-1042,Purchase,CGST Input @9%,14907.28,,CGST input on purchase from Shree Trading & Sons
+2025-11-29,PUR-1042,Purchase,SGST Input @9%,14907.28,,SGST input on purchase from Shree Trading & Sons
+2025-11-29,PUR-1042,Purchase,Sundry Creditors,,195450.92,Purchase from Shree Trading & Sons
+2025-11-30,PUR-1007,Purchase,Telephone & Internet,241618.14,,Purchase from Shree Works & Sons
+2025-11-30,PUR-1007,Purchase,CGST Input @9%,21745.64,,CGST input on purchase from Shree Works & Sons
+2025-11-30,PUR-1007,Purchase,SGST Input @9%,21745.64,,SGST input on purchase from Shree Works & Sons
+2025-11-30,PUR-1007,Purchase,Sundry Creditors,,285109.41,Purchase from Shree Works & Sons
+2025-12-01,JV-1036,Journal,Audit Fees,75392.98,,Being audit fees for the period
+2025-12-01,JV-1036,Journal,HDFC Bank A/c,,75392.98,Being audit fees for the period
+2025-12-01,PUR-1065,Purchase,Bank Charges,149063.93,,Purchase from Maa Works Pvt Ltd
+2025-12-01,PUR-1065,Purchase,CGST Input @9%,13415.76,,CGST input on purchase from Maa Works Pvt Ltd
+2025-12-01,PUR-1065,Purchase,SGST Input @9%,13415.76,,SGST input on purchase from Maa Works Pvt Ltd
+2025-12-01,PUR-1065,Purchase,Sundry Creditors,,175895.44,Purchase from Maa Works Pvt Ltd
+2025-12-02,BR-1058,Receipt,HDFC Bank A/c,26448.65,,Received from Vikram Kapoor
+2025-12-02,BR-1058,Receipt,Sundry Debtors,,26448.65,Received from Vikram Kapoor
+2025-12-02,INV-1006,Sales,Sundry Debtors,226549.39,,Being sales to Swati Joshi
+2025-12-02,INV-1006,Sales,Service Income - Domestic,,191991.01,Sale of goods to Swati Joshi
+2025-12-02,INV-1006,Sales,CGST Output @9%,,17279.19,CGST on sale to Swati Joshi
+2025-12-02,INV-1006,Sales,SGST Output @9%,,17279.19,SGST on sale to Swati Joshi
+2025-12-02,INV-1047,Sales,Sundry Debtors,60804.22,,Being sales to Arjun Sharma
+2025-12-02,INV-1047,Sales,Service Income - Domestic,,51529.00,Sale of goods to Arjun Sharma
+2025-12-02,INV-1047,Sales,CGST Output @9%,,4637.61,CGST on sale to Arjun Sharma
+2025-12-02,INV-1047,Sales,SGST Output @9%,,4637.61,SGST on sale to Arjun Sharma
+2025-12-02,INV-1062,Sales,Sundry Debtors,12493.97,,Being sales to Rajesh Kumar
+2025-12-02,INV-1062,Sales,Service Income - Domestic,,10588.11,Sale of goods to Rajesh Kumar
+2025-12-02,INV-1062,Sales,CGST Output @9%,,952.93,CGST on sale to Rajesh Kumar
+2025-12-02,INV-1062,Sales,SGST Output @9%,,952.93,SGST on sale to Rajesh Kumar
+2025-12-02,PUR-1071,Purchase,AWS Cloud Services,530295.72,,Purchase from Shree Trading & Sons
+2025-12-02,PUR-1071,Purchase,CGST Input @9%,21693.92,,CGST input on purchase from Shree Trading & Sons
+2025-12-02,PUR-1071,Purchase,SGST Input @9%,21693.92,,SGST input on purchase from Shree Trading & Sons
+2025-12-02,PUR-1071,Purchase,Sundry Creditors,,284431.34,
+2025-12-03,BP-1049,Payment,Sundry Creditors,98201.21,,Payment to Bharat Works Industries
+2025-12-03,BP-1049,Payment,HDFC Bank A/c,,98201.21,Payment to Bharat Works Industries
+2025-12-03,INV-1021,Sales,Sundry Debtors,176650.30,,Being sales to Rajesh Kumar
+2025-12-03,INV-1021,Sales,Export Service Income,,149703.64,
+2025-12-03,INV-1021,Sales,CGST Output @9%,,13473.33,CGST on sale to Rajesh Kumar
+2025-12-03,INV-1021,Sales,SGST Output @9%,,13473.33,SGST on sale to Rajesh Kumar
+2025-12-03,INV-1071,Sales,Sundry Debtors,66947.32,,Being sales to Priya Shah
+2025-12-03,INV-1071,Sales,Service Income - Domestic,,56735.02,Sale of goods to Priya Shah
+2025-12-03,INV-1071,Sales,CGST Output @9%,,5106.15,CGST on sale to Priya Shah
+2025-12-03,INV-1071,Sales,SGST Output @9%,,5106.15,SGST on sale to Priya Shah
+2025-12-03,JV-1015,Journal,Audit Fees,40254.36,,Being audit fees for the period
+2025-12-03,JV-1015,Journal,HDFC Bank A/c,,40254.36,Being audit fees for the period
+2025-12-04,BR-1049,Receipt,HDFC Bank A/c,89335.88,,Received from Rahul Mehta
+2025-12-04,BR-1049,Receipt,Sundry Debtors,,89335.88,Received from Rahul Mehta
+2025-12-04,BR-1067,Receipt,HDFC Bank A/c,89275.56,,Received from Rajesh Kumar
+2025-12-04,BR-1067,Receipt,Sundry Debtors,,89275.56,Received from Rajesh Kumar
+2025-12-04,INV-1086,Sales,Sundry Debtors,211826.30,,Being sales to Rahul Agarwal
+2025-12-04,INV-1086,Sales,Export Service Income,,179513.81,Sale of goods to Rahul Agarwal
+2025-12-04,INV-1086,Sales,CGST Output @9%,,16156.25,CGST on sale to Rahul Agarwal
+2025-12-04,INV-1086,Sales,SGST Output @9%,,16156.25,SGST on sale to Rahul Agarwal
+2025-12-04,INV-1087,Sales,Sundry Debtors,57385.11,,Being sales to Vikram Mehta
+2025-12-04,INV-1087,Sales,Export Service Income,,48631.45,Sale of goods to Vikram Mehta
+2025-12-04,INV-1087,Sales,CGST Output @9%,,4376.83,CGST on sale to Vikram Mehta
+2025-12-04,INV-1087,Sales,SGST Output @9%,,4376.83,SGST on sale to Vikram Mehta
+2025-12-04,PUR-1005,Purchase,Travelling Expenses,63577.91,,Purchase from Shree Trading & Sons
+2025-12-04,PUR-1005,Purchase,CGST Input @9%,5722.01,,CGST input on purchase from Shree Trading & Sons
+2025-12-04,PUR-1005,Purchase,SGST Input @9%,5722.01,,SGST input on purchase from Shree Trading & Sons
+2025-12-04,PUR-1005,Purchase,Sundry Creditors,,75021.93,Purchase from Shree Trading & Sons
+2025-12-05,INV-1119,Sales,Sundry Debtors,88397.87,,Being sales to Anjali Desai
+2025-12-05,INV-1119,Sales,Export Service Income,,74913.45,Sale of goods to Anjali Desai
+2025-12-05,INV-1119,Sales,CGST Output @9%,,6742.21,CGST on sale to Anjali Desai
+2025-12-05,INV-1119,Sales,SGST Output @9%,,6742.21,SGST on sale to Anjali Desai
+2025-12-05,PUR-1061,Purchase,Salaries & Wages,51772.37,,Purchase from Shree Suppliers Pvt Ltd
+2025-12-05,PUR-1061,Purchase,CGST Input @9%,2912.20,,CGST input on purchase from Shree Suppliers Pvt Ltd
+2025-12-05,PUR-1061,Purchase,SGST Input @9%,2912.20,,SGST input on purchase from Shree Suppliers Pvt Ltd
+2025-12-05,PUR-1061,Purchase,Sundry Creditors,,38182.12,Purchase from Shree Suppliers Pvt Ltd
+2025-12-06,BR-1059,Receipt,ICICI EEFC USD A/c,63595.94,,Received from Vikram Mehta
+2025-12-06,BR-1059,Receipt,Sundry Debtors,,63595.94,Received from Vikram Mehta
+2025-12-06,CON-1001,Contra,ICICI EEFC USD A/c,382285.39,,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-12-06,CON-1001,Contra,HDFC Bank A/c,,382285.39,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-12-06,INV-1047-DUP,Sales,Sundry Debtors,60804.22,,Being sales to Arjun Sharma
+2025-12-06,INV-1047-DUP,Sales,Service Income - Domestic,,51529.00,Sale of goods to Arjun Sharma
+2025-12-06,INV-1047-DUP,Sales,CGST Output @9%,,4637.61,CGST on sale to Arjun Sharma
+2025-12-06,INV-1047-DUP,Sales,SGST Output @9%,,4637.61,SGST on sale to Arjun Sharma
+2025-12-06,INV-1081,Sales,Sundry Debtors,92230.25,,Being sales to Vikram Mehta
+2025-12-06,INV-1081,Sales,Export Service Income,,78161.23,Sale of goods to Vikram Mehta
+2025-12-06,INV-1081,Sales,CGST Output @9%,,7034.51,CGST on sale to Vikram Mehta
+2025-12-06,INV-1081,Sales,SGST Output @9%,,7034.51,SGST on sale to Vikram Mehta
+2025-12-06,PUR-1014,Purchase,Software Subscriptions,206515.57,,Purchase from Shree Agencies Group
+2025-12-06,PUR-1014,Purchase,CGST Input @9%,18586.40,,CGST input on purchase from Shree Agencies Group
+2025-12-06,PUR-1014,Purchase,SGST Input @9%,18586.40,,SGST input on purchase from Shree Agencies Group
+2025-12-06,PUR-1014,Purchase,Sundry Creditors,,243688.37,Purchase from Shree Agencies Group
+2025-12-06,PUR-1073,Purchase,Software Subscriptions,143413.94,,Purchase from Om Industries Pvt Ltd
+2025-12-06,PUR-1073,Purchase,CGST Input @9%,12907.26,,CGST input on purchase from Om Industries Pvt Ltd
+2025-12-06,PUR-1073,Purchase,SGST Input @9%,12907.26,,SGST input on purchase from Om Industries Pvt Ltd
+2025-12-06,PUR-1073,Purchase,Sundry Creditors,,169228.45,Purchase from Om Industries Pvt Ltd
+2025-12-06,PUR-1074,Purchase,Salaries & Wages,81955.07,,Purchase from Sidh Mills LLP
+2025-12-06,PUR-1074,Purchase,CGST Input @9%,4609.98,,CGST input on purchase from Sidh Mills LLP
+2025-12-06,PUR-1074,Purchase,SGST Input @9%,4609.98,,SGST input on purchase from Sidh Mills LLP
+2025-12-06,PUR-1074,Purchase,Sundry Creditors,,60441.87,Purchase from Sidh Mills LLP
+2025-12-06,PUR-1094,Purchase,Office Rent,155674.72,,Purchase from Lakshmi Services Pvt Ltd
+2025-12-06,PUR-1094,Purchase,CGST Input @9%,14010.73,,CGST input on purchase from Lakshmi Services Pvt Ltd
+2025-12-06,PUR-1094,Purchase,SGST Input @9%,14010.73,,SGST input on purchase from Lakshmi Services Pvt Ltd
+2025-12-06,PUR-1094,Purchase,Sundry Creditors,,183696.17,
+2025-12-07,BR-1066,Receipt,HDFC Bank A/c,107656.29,,Received from Vikram Kapoor
+2025-12-07,BR-1066,Receipt,Sundry Debtors,,107656.29,Received from Vikram Kapoor
+2025-12-07,INV-1051,Sales,Sundry Debtors,55557.23,,Being sales to Pooja Gupta
+2025-12-07,INV-1051,Sales,Service Income - Domestic,,47082.40,Sale of goods to Pooja Gupta
+2025-12-07,INV-1051,Sales,CGST Output @9%,,4237.42,CGST on sale to Pooja Gupta
+2025-12-07,INV-1051,Sales,SGST Output @9%,,4237.42,SGST on sale to Pooja Gupta
+2025-12-07,INV-1090,Sales,Sundry Debtors,5751.50,,Being sales to Rahul Agarwal
+2025-12-07,INV-1090,Sales,Export Service Income,,4874.15,Sale of goods to Rahul Agarwal
+2025-12-07,INV-1090,Sales,CGST Output @9%,,438.68,CGST on sale to Rahul Agarwal
+2025-12-07,INV-1090,Sales,SGST Output @9%,,438.68,SGST on sale to Rahul Agarwal
+2025-12-08,BP-1008,Payment,Sundry Creditors,268189.82,,Payment to Shree Trading & Co
+2025-12-08,BP-1008,Payment,HDFC Bank A/c,,268189.82,Payment to Shree Trading & Co
+2025-12-08,BP-1060,Payment,Sundry Creditors,232500.51,,Payment to Shree Trading & Sons
+2025-12-08,BP-1060,Payment,ICICI EEFC USD A/c,,232500.51,Payment to Shree Trading & Sons
+2025-12-08,BR-1006,Receipt,HDFC Bank A/c,244794.18,,Received from Rahul Agarwal
+2025-12-08,BR-1006,Receipt,Sundry Debtors,,244794.18,Received from Rahul Agarwal
+2025-12-08,BR-1019,Receipt,HDFC Bank A/c,73398.70,,Received from Rahul Mehta
+2025-12-08,BR-1019,Receipt,Sundry Debtors,,73398.70,Received from Rahul Mehta
+2025-12-08,BR-1028,Receipt,ICICI EEFC USD A/c,134266.90,,Received from Neha Gupta
+2025-12-08,BR-1028,Receipt,Sundry Debtors,,134266.90,Received from Neha Gupta
+2025-12-08,INV-1022,Sales,Export Service Income,,108156.52,Sale of goods to Priya Shah
+2025-12-08,INV-1022,Sales,CGST Output @9%,,9734.08,CGST on sale to Priya Shah
+2025-12-08,INV-1022,Sales,SGST Output @9%,,9734.08,SGST on sale to Priya Shah
+2025-12-08,INV-1024,Sales,Sundry Debtors,164377.40,,Being sales to Priya Shah
+2025-12-08,INV-1024,Sales,Service Income - Domestic,,139302.88,Sale of goods to Priya Shah
+2025-12-08,INV-1024,Sales,CGST Output @9%,,12537.26,CGST on sale to Priya Shah
+2025-12-08,INV-1024,Sales,SGST Output @9%,,12537.26,SGST on sale to Priya Shah
+2025-12-08,INV-1058,Sales,Sundry Debtors,71450.82,,Being sales to Anjali Desai
+2025-12-08,INV-1058,Sales,Service Income - Domestic,,60551.54,Sale of goods to Anjali Desai
+2025-12-08,INV-1058,Sales,CGST Output @9%,,5449.64,CGST on sale to Anjali Desai
+2025-12-08,INV-1058,Sales,SGST Output @9%,,5449.64,SGST on sale to Anjali Desai
+2025-12-08,INV-1059,Sales,Sundry Debtors,213266.69,,Being sales to Vikram Kapoor
+2025-12-08,INV-1059,Sales,Export Service Income,,180734.48,Sale of goods to Vikram Kapoor
+2025-12-08,INV-1059,Sales,CGST Output @9%,,16266.11,CGST on sale to Vikram Kapoor
+2025-12-08,INV-1059,Sales,SGST Output @9%,,16266.11,SGST on sale to Vikram Kapoor
+2025-12-08,INV-1061,Sales,Sundry Debtors,82529.61,,Being sales to Swati Joshi
+2025-12-08,INV-1061,Sales,Export Service Income,,69940.35,Sale of goods to Swati Joshi
+2025-12-08,INV-1061,Sales,CGST Output @9%,,6294.63,CGST on sale to Swati Joshi
+2025-12-08,INV-1061,Sales,SGST Output @9%,,6294.63,SGST on sale to Swati Joshi
+2025-12-08,INV-1096,Sales,Sundry Debtors,181532.38,,Being sales to Meena Bhat
+2025-12-08,INV-1096,Sales,Export Service Income,,153841.00,Sale of goods to Meena Bhat
+2025-12-08,INV-1096,Sales,CGST Output @9%,,13845.69,CGST on sale to Meena Bhat
+2025-12-08,INV-1096,Sales,SGST Output @9%,,13845.69,SGST on sale to Meena Bhat
+2025-12-08,INV-1128,Sales,Sundry Debtors,191357.17,,Being sales to Meena Kumar
+2025-12-08,INV-1128,Sales,Service Income - Domestic,,162167.09,Sale of goods to Meena Kumar
+2025-12-08,INV-1128,Sales,CGST Output @9%,,14595.04,CGST on sale to Meena Kumar
+2025-12-08,INV-1128,Sales,SGST Output @9%,,14595.04,SGST on sale to Meena Kumar
+2025-12-08,JV-1003,Journal,Telephone & Internet,99581.95,,Being telephone & internet for the period
+2025-12-08,JV-1003,Journal,HDFC Bank A/c,,99581.95,Being telephone & internet for the period
+2025-12-08,PUR-1025,Purchase,Postage & Courier,250289.56,,Purchase from Sai Mills & Sons
+2025-12-08,PUR-1025,Purchase,CGST Input @9%,22526.06,,CGST input on purchase from Sai Mills & Sons
+2025-12-08,PUR-1025,Purchase,SGST Input @9%,22526.06,,SGST input on purchase from Sai Mills & Sons
+2025-12-08,PUR-1025,Purchase,Sundry Creditors,,295341.68,Purchase from Sai Mills & Sons
+2025-12-08,PUR-1038,Purchase,Electricity Charges,165068.90,,Purchase from Shree Works & Sons
+2025-12-08,PUR-1038,Purchase,CGST Input @9%,14856.20,,CGST input on purchase from Shree Works & Sons
+2025-12-08,PUR-1038,Purchase,SGST Input @9%,14856.20,,SGST input on purchase from Shree Works & Sons
+2025-12-08,PUR-1038,Purchase,Sundry Creditors,,194781.30,Purchase from Shree Works & Sons
+2025-12-09,PUR-1022,Purchase,Bank Charges,210236.59,,Purchase from Ratan Agencies & Bros
+2025-12-09,PUR-1022,Purchase,CGST Input @9%,18921.29,,CGST input on purchase from Ratan Agencies & Bros
+2025-12-09,PUR-1022,Purchase,SGST Input @9%,18921.29,,SGST input on purchase from Ratan Agencies & Bros
+2025-12-09,PUR-1022,Purchase,Sundry Creditors,,248079.18,Purchase from Ratan Agencies & Bros
+2025-12-10,CON-1013,Contra,HDFC Bank A/c,137581.49,,Transfer from ICICI EEFC USD A/c to HDFC Bank A/c
+2025-12-10,CON-1013,Contra,ICICI EEFC USD A/c,,137581.49,Transfer from ICICI EEFC USD A/c to HDFC Bank A/c
+2025-12-10,INV-1008,Sales,Sundry Debtors,14476.78,,Being sales to Priya Shah
+2025-12-10,INV-1008,Sales,Service Income - Domestic,,12268.46,Sale of goods to Priya Shah
+2025-12-10,INV-1008,Sales,CGST Output @9%,,1104.16,CGST on sale to Priya Shah
+2025-12-10,INV-1008,Sales,SGST Output @9%,,1104.16,SGST on sale to Priya Shah
+2025-12-10,INV-1110,Sales,Sundry Debtors,35213.84,,Being sales to Meena Bhat
+2025-12-10,INV-1110,Sales,Service Income - Domestic,,29842.24,Sale of goods to Meena Bhat
+2025-12-10,INV-1110,Sales,CGST Output @9%,,2685.80,CGST on sale to Meena Bhat
+2025-12-10,INV-1110,Sales,SGST Output @9%,,2685.80,SGST on sale to Meena Bhat
+2025-12-10,PUR-1070,Purchase,Office Rent,123237.45,,Purchase from Lakshmi Services & Bros
+2025-12-10,PUR-1070,Purchase,CGST Input @9%,11091.37,,CGST input on purchase from Lakshmi Services & Bros
+2025-12-10,PUR-1070,Purchase,SGST Input @9%,11091.37,,SGST input on purchase from Lakshmi Services & Bros
+2025-12-10,PUR-1070,Purchase,Sundry Creditors,,145420.19,Purchase from Lakshmi Services & Bros
+2025-12-11,BP-1041,Payment,Sundry Creditors,65802.45,,Payment to Lakshmi Services Pvt Ltd
+2025-12-11,BP-1041,Payment,HDFC Bank A/c,,65802.45,Payment to Lakshmi Services Pvt Ltd
+2025-12-11,BP-1052,Payment,Sundry Creditors,235545.96,,Payment to Krishna Mills Group
+2025-12-11,BP-1052,Payment,HDFC Bank A/c,,235545.96,Payment to Krishna Mills Group
+2025-12-11,BR-1011,Receipt,ICICI EEFC USD A/c,128633.65,,Received from Rahul Mehta
+2025-12-11,BR-1011,Receipt,Sundry Debtors,,128633.65,Received from Rahul Mehta
+2025-12-11,PUR-1044,Purchase,Salaries & Wages,175110.61,,Purchase from Shree Trading & Co
+2025-12-11,PUR-1044,Purchase,CGST Input @9%,9849.97,,CGST input on purchase from Shree Trading & Co
+2025-12-11,PUR-1044,Purchase,SGST Input @9%,9849.97,,SGST input on purchase from Shree Trading & Co
+2025-12-11,PUR-1044,Purchase,Sundry Creditors,,129144.07,Purchase from Shree Trading & Co
+2025-12-12,CON-1010,Contra,HDFC Bank A/c,497828.47,,Transfer from ICICI EEFC USD A/c to HDFC Bank A/c
+2025-12-12,CON-1010,Contra,ICICI EEFC USD A/c,,497828.47,Transfer from ICICI EEFC USD A/c to HDFC Bank A/c
+2025-12-12,INV-1003,Sales,Sundry Debtors,198411.27,,Being sales to Vikram Kapoor
+2025-12-12,INV-1003,Sales,Export Service Income,,168145.14,Sale of goods to Vikram Kapoor
+2025-12-12,INV-1003,Sales,CGST Output @9%,,15133.07,CGST on sale to Vikram Kapoor
+2025-12-12,INV-1003,Sales,SGST Output @9%,,15133.07,SGST on sale to Vikram Kapoor
+2025-12-12,INV-1068,Sales,Sundry Debtors,28137.16,,Being sales to Vikram Kapoor
+2025-12-12,INV-1068,Sales,Service Income - Domestic,,23845.05,Sale of goods to Vikram Kapoor
+2025-12-12,INV-1068,Sales,CGST Output @9%,,2146.05,CGST on sale to Vikram Kapoor
+2025-12-12,INV-1068,Sales,SGST Output @9%,,2146.05,SGST on sale to Vikram Kapoor
+2025-12-12,INV-1102,Sales,Sundry Debtors,179493.14,,Being sales to Pooja Choudhary
+2025-12-12,INV-1102,Sales,Export Service Income,,152112.83,Sale of goods to Pooja Choudhary
+2025-12-12,INV-1102,Sales,CGST Output @9%,,13690.16,CGST on sale to Pooja Choudhary
+2025-12-12,INV-1102,Sales,SGST Output @9%,,13690.16,SGST on sale to Pooja Choudhary
+2025-12-12,JV-1017,Journal,Travelling Expenses,7752.96,,Being travelling expenses for the period
+2025-12-12,JV-1017,Journal,ICICI EEFC USD A/c,,7752.96,Being travelling expenses for the period
+2025-12-12,PUR-1092,Purchase,Telephone & Internet,265551.40,,Purchase from Shree Works & Sons
+2025-12-12,PUR-1092,Purchase,CGST Input @9%,23899.63,,CGST input on purchase from Shree Works & Sons
+2025-12-12,PUR-1092,Purchase,SGST Input @9%,23899.63,,SGST input on purchase from Shree Works & Sons
+2025-12-12,PUR-1092,Purchase,Sundry Creditors,,313350.65,Purchase from Shree Works & Sons
+2025-12-13,BP-1012,Payment,Sundry Creditors,44743.86,,Payment to Bharat Works Industries
+2025-12-13,BP-1012,Payment,HDFC Bank A/c,,44743.86,Payment to Bharat Works Industries
+2025-12-13,BP-1059,Payment,Sundry Creditors,177504.56,,Payment to Shree Agencies Group
+2025-12-13,BP-1059,Payment,HDFC Bank A/c,,177504.56,Payment to Shree Agencies Group
+2025-12-13,BR-1043,Receipt,ICICI EEFC USD A/c,77920.12,,Received from Pooja Gupta
+2025-12-13,BR-1043,Receipt,Sundry Debtors,,77920.12,Received from Pooja Gupta
+2025-12-13,INV-1046,Sales,Sundry Debtors,81917.54,,Being sales to Arjun Sharma
+2025-12-13,INV-1046,Sales,Export Service Income,,69421.64,Sale of goods to Arjun Sharma
+2025-12-13,INV-1046,Sales,CGST Output @9%,,6247.95,CGST on sale to Arjun Sharma
+2025-12-13,INV-1046,Sales,SGST Output @9%,,6247.95,SGST on sale to Arjun Sharma
+2025-12-13,INV-1069,Sales,Sundry Debtors,13590.78,,Being sales to Swati Joshi
+2025-12-13,INV-1069,Sales,Export Service Income,,11517.61,Sale of goods to Swati Joshi
+2025-12-13,INV-1069,Sales,CGST Output @9%,,1036.59,CGST on sale to Swati Joshi
+2025-12-13,INV-1069,Sales,SGST Output @9%,,1036.59,SGST on sale to Swati Joshi
+2025-12-13,PUR-1077,Purchase,Postage & Courier,32389.12,,Purchase from Maa Works Pvt Ltd
+2025-12-13,PUR-1077,Purchase,CGST Input @9%,2915.02,,CGST input on purchase from Maa Works Pvt Ltd
+2025-12-13,PUR-1077,Purchase,SGST Input @9%,2915.02,,SGST input on purchase from Maa Works Pvt Ltd
+2025-12-13,PUR-1077,Purchase,Sundry Creditors,,38219.16,Purchase from Maa Works Pvt Ltd
+2025-12-14,BP-1015,Payment,Sundry Creditors,135959.69,,Payment to Sai Mills & Sons
+2025-12-14,BP-1015,Payment,HDFC Bank A/c,,135959.69,Payment to Sai Mills & Sons
+2025-12-14,BP-1048,Payment,Sundry Creditors,175056.99,,Payment to Shree Agencies Group
+2025-12-14,BP-1048,Payment,ICICI EEFC USD A/c,,175056.99,Payment to Shree Agencies Group
+2025-12-14,INV-1035,Sales,Sundry Debtors,57018.51,,Being sales to Neha Gupta
+2025-12-14,INV-1035,Sales,Service Income - Domestic,,48320.77,Sale of goods to Neha Gupta
+2025-12-14,INV-1035,Sales,CGST Output @9%,,4348.87,CGST on sale to Neha Gupta
+2025-12-14,INV-1035,Sales,SGST Output @9%,,4348.87,SGST on sale to Neha Gupta
+2025-12-14,INV-1107,Sales,Sundry Debtors,167976.32,,Being sales to Nitin Sharma
+2025-12-14,INV-1107,Sales,Service Income - Domestic,,142352.81,Sale of goods to Nitin Sharma
+2025-12-14,INV-1107,Sales,CGST Output @9%,,12811.76,CGST on sale to Nitin Sharma
+2025-12-14,INV-1107,Sales,SGST Output @9%,,12811.76,SGST on sale to Nitin Sharma
+2025-12-14,PUR-1075,Purchase,Electricity Charges,268865.88,,Purchase from Maa Steel Group
+2025-12-14,PUR-1075,Purchase,CGST Input @9%,24197.93,,CGST input on purchase from Maa Steel Group
+2025-12-14,PUR-1075,Purchase,SGST Input @9%,24197.93,,SGST input on purchase from Maa Steel Group
+2025-12-14,PUR-1075,Purchase,Sundry Creditors,,317261.74,Purchase from Maa Steel Group
+2025-12-15,BR-1064,Receipt,ICICI EEFC USD A/c,104117.79,,Received from Arjun Sharma
+2025-12-15,BR-1064,Receipt,Sundry Debtors,,104117.79,Received from Arjun Sharma
+2025-12-15,INV-1095,Sales,Sundry Debtors,155367.45,,Being sales to Vikram Kapoor
+2025-12-15,INV-1095,Sales,Export Service Income,,131667.33,Sale of goods to Vikram Kapoor
+2025-12-15,INV-1095,Sales,CGST Output @9%,,11850.06,CGST on sale to Vikram Kapoor
+2025-12-15,INV-1095,Sales,SGST Output @9%,,11850.06,SGST on sale to Vikram Kapoor
+2025-12-15,INV-1098,Sales,Sundry Debtors,11288.92,,Being sales to Priya Shah
+2025-12-15,INV-1098,Sales,Export Service Income,,9566.88,Sale of goods to Priya Shah
+2025-12-15,INV-1098,Sales,CGST Output @9%,,861.02,CGST on sale to Priya Shah
+2025-12-15,INV-1098,Sales,SGST Output @9%,,861.02,SGST on sale to Priya Shah
+2025-12-15,PUR-1023,Purchase,Bank Charges,10256.46,,Purchase from Lakshmi Services & Bros
+2025-12-15,PUR-1023,Purchase,CGST Input @9%,923.08,,CGST input on purchase from Lakshmi Services & Bros
+2025-12-15,PUR-1023,Purchase,SGST Input @9%,923.08,,SGST input on purchase from Lakshmi Services & Bros
+2025-12-15,PUR-1023,Purchase,Sundry Creditors,,12102.62,Purchase from Lakshmi Services & Bros
+2025-12-15,PUR-1037,Purchase,Office Rent,99101.06,,Purchase from Sidh Mills LLP
+2025-12-15,PUR-1037,Purchase,CGST Input @9%,8919.09,,CGST input on purchase from Sidh Mills LLP
+2025-12-15,PUR-1037,Purchase,SGST Input @9%,8919.09,,SGST input on purchase from Sidh Mills LLP
+2025-12-15,PUR-1037,Purchase,Sundry Creditors,,116939.25,Purchase from Sidh Mills LLP
+2025-12-16,BR-1009,Receipt,ICICI EEFC USD A/c,179249.51,,Received from Arjun Sharma
+2025-12-16,BR-1009,Receipt,Sundry Debtors,,179249.51,Received from Arjun Sharma
+2025-12-16,CON-1022,Contra,ICICI EEFC USD A/c,83885.69,,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-12-16,CON-1022,Contra,HDFC Bank A/c,,83885.69,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-12-16,INV-1015,Sales,Sundry Debtors,110353.20,,Being sales to Vikram Mehta
+2025-12-16,INV-1015,Sales,Export Service Income,,93519.66,Sale of goods to Vikram Mehta
+2025-12-16,INV-1015,Sales,CGST Output @9%,,8416.77,CGST on sale to Vikram Mehta
+2025-12-16,INV-1015,Sales,SGST Output @9%,,8416.77,SGST on sale to Vikram Mehta
+2025-12-16,INV-1122,Sales,Sundry Debtors,87884.65,,Being sales to Priya Shah
+2025-12-16,INV-1122,Sales,Export Service Income,,74478.52,Sale of goods to Priya Shah
+2025-12-16,INV-1122,Sales,CGST Output @9%,,6703.07,CGST on sale to Priya Shah
+2025-12-16,INV-1122,Sales,SGST Output @9%,,6703.07,SGST on sale to Priya Shah
+2025-12-16,JV-1024,Journal,Bank Charges,38412.00,,Being bank charges for the period
+2025-12-16,JV-1024,Journal,HDFC Bank A/c,,38487.70,Being bank charges for the period
+2025-12-16,PUR-1055,Purchase,Printing & Stationery,47229.93,,Purchase from Krishna Traders Industries
+2025-12-16,PUR-1055,Purchase,CGST Input @9%,4250.70,,CGST input on purchase from Krishna Traders Industries
+2025-12-16,PUR-1055,Purchase,SGST Input @9%,4250.70,,SGST input on purchase from Krishna Traders Industries
+2025-12-16,PUR-1055,Purchase,Sundry Creditors,,55731.32,Purchase from Krishna Traders Industries
+2025-12-17,BP-1044,Payment,Sundry Creditors,79980.72,,Payment to Ganesh Suppliers Pvt Ltd
+2025-12-17,BP-1044,Payment,ICICI EEFC USD A/c,,79980.72,Payment to Ganesh Suppliers Pvt Ltd
+2025-12-17,BP-1057,Payment,Sundry Creditors,26450.14,,Payment to Shree Trading & Sons
+2025-12-17,BP-1057,Payment,ICICI EEFC USD A/c,,26450.14,Payment to Shree Trading & Sons
+2025-12-17,INV-1067,Sales,Sundry Debtors,81667.13,,Being sales to Rajesh Verma
+2025-12-17,INV-1067,Sales,Export Service Income,,69209.43,Sale of goods to Rajesh Verma
+2025-12-17,INV-1067,Sales,CGST Output @9%,,6228.85,CGST on sale to Rajesh Verma
+2025-12-17,INV-1067,Sales,SGST Output @9%,,6228.85,SGST on sale to Rajesh Verma
+2025-12-17,INV-1112,Sales,Sundry Debtors,191034.55,,Being sales to Arjun Sharma
+2025-12-17,INV-1112,Sales,Export Service Income,,161893.69,Sale of goods to Arjun Sharma
+2025-12-17,INV-1112,Sales,CGST Output @9%,,13430.07,CGST on sale to Arjun Sharma
+2025-12-17,INV-1112,Sales,SGST Output @9%,,14570.43,SGST on sale to Arjun Sharma
+2025-12-17,INV-1113,Sales,Sundry Debtors,138738.70,,Being sales to Rajesh Kumar
+2025-12-17,INV-1113,Sales,Export Service Income,,117575.17,Sale of goods to Rajesh Kumar
+2025-12-17,INV-1113,Sales,CGST Output @9%,,10581.77,CGST on sale to Rajesh Kumar
+2025-12-17,INV-1113,Sales,SGST Output @9%,,10581.77,SGST on sale to Rajesh Kumar
+2025-12-17,JV-1018,Journal,Salaries & Wages,119469.62,,Being salaries & wages for the period
+2025-12-17,JV-1018,Journal,ICICI EEFC USD A/c,,74668.51,Being salaries & wages for the period
+2025-12-17,PUR-1012,Purchase,Audit Fees,102328.11,,Purchase from Om Industries Pvt Ltd
+2025-12-17,PUR-1012,Purchase,CGST Input @9%,9209.53,,CGST input on purchase from Om Industries Pvt Ltd
+2025-12-17,PUR-1012,Purchase,SGST Input @9%,9209.53,,SGST input on purchase from Om Industries Pvt Ltd
+2025-12-17,PUR-1012,Purchase,Sundry Creditors,,120747.17,Purchase from Om Industries Pvt Ltd
+2025-12-17,PUR-1056,Purchase,Audit Fees,61547.92,,Purchase from Ratan Agencies & Bros
+2025-12-17,PUR-1056,Purchase,CGST Input @9%,5539.32,,CGST input on purchase from Ratan Agencies & Bros
+2025-12-17,PUR-1056,Purchase,SGST Input @9%,5539.32,,SGST input on purchase from Ratan Agencies & Bros
+2025-12-17,PUR-1056,Purchase,Sundry Creditors,,72626.55,Purchase from Ratan Agencies & Bros
+2025-12-18,BP-1040,Payment,Sundry Creditors,122955.93,,Payment to Bharat Works Industries
+2025-12-18,BP-1040,Payment,HDFC Bank A/c,,122955.93,Payment to Bharat Works Industries
+2025-12-18,BP-1056,Payment,Sundry Creditors,90027.79,,Payment to Krishna Mills Group
+2025-12-18,BP-1056,Payment,HDFC Bank A/c,,90027.79,Payment to Krishna Mills Group
+2025-12-18,BR-1047,Receipt,HDFC Bank A/c,148585.52,,Received from Pooja Choudhary
+2025-12-18,BR-1047,Receipt,Sundry Debtors,,148585.52,Received from Pooja Choudhary
+2025-12-18,CON-1010-DUP,Contra,HDFC Bank A/c,497828.47,,Transfer from ICICI EEFC USD A/c to HDFC Bank A/c
+2025-12-18,CON-1010-DUP,Contra,ICICI EEFC USD A/c,,497828.47,Transfer from ICICI EEFC USD A/c to HDFC Bank A/c
+2025-12-18,PUR-1028,Purchase,Telephone & Internet,11840.11,,Purchase from Sai Mills & Sons
+2025-12-18,PUR-1028,Purchase,CGST Input @9%,1065.61,,CGST input on purchase from Sai Mills & Sons
+2025-12-18,PUR-1028,Purchase,SGST Input @9%,1065.61,,SGST input on purchase from Sai Mills & Sons
+2025-12-18,PUR-1028,Purchase,Sundry Creditors,,13971.33,Purchase from Sai Mills & Sons
+2025-12-18,PUR-1058,Purchase,Postage & Courier,155916.80,,Purchase from Shree Works & Sons
+2025-12-18,PUR-1058,Purchase,CGST Input @9%,14032.51,,CGST input on purchase from Shree Works & Sons
+2025-12-18,PUR-1058,Purchase,SGST Input @9%,14032.51,,SGST input on purchase from Shree Works & Sons
+2025-12-18,PUR-1058,Purchase,Sundry Creditors,,183981.82,Purchase from Shree Works & Sons
+2025-12-18,PUR-1088,Purchase,Postage & Courier,96945.39,,Purchase from Ganesh Steel Pvt Ltd
+2025-12-18,PUR-1088,Purchase,CGST Input @9%,8725.08,,CGST input on purchase from Ganesh Steel Pvt Ltd
+2025-12-18,PUR-1088,Purchase,SGST Input @9%,8725.08,,SGST input on purchase from Ganesh Steel Pvt Ltd
+2025-12-18,PUR-1088,Purchase,Sundry Creditors,,114395.56,Purchase from Ganesh Steel Pvt Ltd
+2025-12-18,PUR-1098,Purchase,Bank Charges,178568.58,,Purchase from Shree Works & Sons
+2025-12-18,PUR-1098,Purchase,CGST Input @9%,16071.17,,CGST input on purchase from Shree Works & Sons
+2025-12-18,PUR-1098,Purchase,SGST Input @9%,16071.17,,SGST input on purchase from Shree Works & Sons
+2025-12-18,PUR-1098,Purchase,Sundry Creditors,,210710.92,Purchase from Shree Works & Sons
+2025-12-18,PUR-1101,Purchase,Software Subscriptions,262596.37,,Purchase from Bharat Works Industries
+2025-12-18,PUR-1101,Purchase,CGST Input @9%,23633.68,,CGST input on purchase from Bharat Works Industries
+2025-12-18,PUR-1101,Purchase,SGST Input @9%,23633.68,,SGST input on purchase from Bharat Works Industries
+2025-12-18,PUR-1101,Purchase,Sundry Creditors,,309863.72,Purchase from Bharat Works Industries
+2025-12-19,BP-1026,Payment,Sundry Creditors,85531.24,,Payment to Shree Trading & Co
+2025-12-19,BP-1026,Payment,ICICI EEFC USD A/c,,85531.24,Payment to Shree Trading & Co
+2025-12-19,BR-1008,Receipt,HDFC Bank A/c,111724.29,,Received from Pooja Gupta
+2025-12-19,BR-1008,Receipt,Sundry Debtors,,111724.29,Received from Pooja Gupta
+2025-12-19,BR-1020,Receipt,HDFC Bank A/c,9365.59,,Received from Priya Shah
+2025-12-19,BR-1020,Receipt,Sundry Debtors,,9365.59,Received from Priya Shah
+2025-12-19,BR-1031,Receipt,ICICI EEFC USD A/c,161078.33,,Received from Pooja Choudhary
+2025-12-19,BR-1031,Receipt,Sundry Debtors,,161078.33,Received from Pooja Choudhary
+2025-12-19,INV-1012,Sales,Sundry Debtors,183315.53,,Being sales to Arjun Sharma
+2025-12-19,INV-1012,Sales,Export Service Income,,155352.14,Sale of goods to Arjun Sharma
+2025-12-19,INV-1012,Sales,CGST Output @9%,,13981.70,CGST on sale to Arjun Sharma
+2025-12-19,INV-1012,Sales,SGST Output @9%,,13981.70,SGST on sale to Arjun Sharma
+2025-12-19,INV-1104,Sales,Sundry Debtors,61453.80,,Being sales to Asha Singh
+2025-12-19,INV-1104,Sales,Service Income - Domestic,,52079.49,Sale of goods to Asha Singh
+2025-12-19,INV-1104,Sales,CGST Output @9%,,4687.16,CGST on sale to Asha Singh
+2025-12-19,INV-1104,Sales,SGST Output @9%,,4687.16,SGST on sale to Asha Singh
+2025-12-20,INV-1032,Sales,Sundry Debtors,83159.12,,Being sales to Nitin Sharma
+2025-12-20,INV-1032,Sales,Service Income - Domestic,,70473.83,Sale of goods to Nitin Sharma
+2025-12-20,INV-1032,Sales,CGST Output @9%,,6342.65,CGST on sale to Nitin Sharma
+2025-12-20,INV-1032,Sales,SGST Output @9%,,6342.65,SGST on sale to Nitin Sharma
+2025-12-20,INV-1092,Sales,Sundry Debtors,162825.95,,Being sales to Pooja Choudhary
+2025-12-20,INV-1092,Sales,Service Income - Domestic,,137988.09,Sale of goods to Pooja Choudhary
+2025-12-20,INV-1092,Sales,CGST Output @9%,,12418.93,CGST on sale to Pooja Choudhary
+2025-12-20,INV-1092,Sales,SGST Output @9%,,12418.93,SGST on sale to Pooja Choudhary
+2025-12-20,INV-1121,Sales,Sundry Debtors,6999.98,,Being sales to Priya Shah
+2025-12-20,INV-1121,Sales,Service Income - Domestic,,5932.19,Sale of goods to Priya Shah
+2025-12-20,INV-1121,Sales,CGST Output @9%,,533.90,CGST on sale to Priya Shah
+2025-12-20,INV-1121,Sales,SGST Output @9%,,533.90,SGST on sale to Priya Shah
+2025-12-20,JV-X246,Journal,Reconciliation A/c,5553.50,,Unknown adjustment
+2025-12-20,JV-X246,Journal,HDFC Bank A/c,,5553.50,Unknown adjustment
+2025-12-20,PUR-1024,Purchase,Audit Fees,264259.10,,Purchase from Ganesh Steel Pvt Ltd
+2025-12-20,PUR-1024,Purchase,CGST Input @9%,23783.32,,CGST input on purchase from Ganesh Steel Pvt Ltd
+2025-12-20,PUR-1024,Purchase,SGST Input @9%,23783.32,,SGST input on purchase from Ganesh Steel Pvt Ltd
+2025-12-20,PUR-1024,Purchase,Sundry Creditors,,311825.74,Purchase from Ganesh Steel Pvt Ltd
+2025-12-21,BP-1006,Payment,Sundry Creditors,122632.75,,Payment to Lakshmi Services Pvt Ltd
+2025-12-21,BP-1006,Payment,ICICI EEFC USD A/c,,122632.75,Payment to Lakshmi Services Pvt Ltd
+2025-12-21,BP-1030,Payment,Sundry Creditors,19137.92,,Payment to Shree Works & Sons
+2025-12-21,BP-1030,Payment,HDFC Bank A/c,,19137.92,Payment to Shree Works & Sons
+2025-12-21,BR-1013,Receipt,HDFC Bank A/c,92490.61,,Received from Rajesh Verma
+2025-12-21,BR-1013,Receipt,Sundry Debtors,,92490.61,Received from Rajesh Verma
+2025-12-21,INV-1004,Sales,Sundry Debtors,95507.80,,Being sales to Pooja Choudhary
+2025-12-21,INV-1004,Sales,Export Service Income,,80938.81,Sale of goods to Pooja Choudhary
+2025-12-21,INV-1004,Sales,CGST Output @9%,,7284.50,CGST on sale to Pooja Choudhary
+2025-12-21,INV-1004,Sales,SGST Output @9%,,7284.50,SGST on sale to Pooja Choudhary
+2025-12-21,INV-1043,Sales,Sundry Debtors,119223.97,,Being sales to Meena Kumar
+2025-12-21,INV-1043,Sales,Service Income - Domestic,,101037.26,Sale of goods to Meena Kumar
+2025-12-21,INV-1043,Sales,CGST Output @9%,,9093.36,CGST on sale to Meena Kumar
+2025-12-21,INV-1043,Sales,SGST Output @9%,,9093.36,SGST on sale to Meena Kumar
+2025-12-21,INV-1050,Sales,Sundry Debtors,56199.02,,Being sales to Rajesh Kumar
+2025-12-21,INV-1050,Sales,Export Service Income,,47626.29,Sale of goods to Rajesh Kumar
+2025-12-21,INV-1050,Sales,CGST Output @9%,,4286.37,CGST on sale to Rajesh Kumar
+2025-12-21,INV-1050,Sales,SGST Output @9%,,4286.37,SGST on sale to Rajesh Kumar
+2025-12-21,INV-1123,Sales,Sundry Debtors,18386.17,,Being sales to Meena Kumar
+2025-12-21,INV-1123,Sales,Service Income - Domestic,,15581.50,Sale of goods to Meena Kumar
+2025-12-21,INV-1123,Sales,CGST Output @9%,,1402.34,CGST on sale to Meena Kumar
+2025-12-21,INV-1123,Sales,SGST Output @9%,,1402.34,SGST on sale to Meena Kumar
+2025-12-21,JV-1000,Journal,Office Rent,83926.75,,Being office rent for the period
+2025-12-21,JV-1000,Journal,HDFC Bank A/c,,83926.75,Being office rent for the period
+2025-12-22,INV-1088,Sales,Sundry Debtors,48395.21,,Being sales to Meena Bhat
+2025-12-22,INV-1088,Sales,Export Service Income,,41012.89,Sale of goods to Meena Bhat
+2025-12-22,INV-1088,Sales,CGST Output @9%,,3691.16,CGST on sale to Meena Bhat
+2025-12-22,INV-1088,Sales,SGST Output @9%,,3691.16,SGST on sale to Meena Bhat
+2025-12-22,PUR-1001,Purchase,Audit Fees,176120.59,,Purchase from Shree Works & Sons
+2025-12-22,PUR-1001,Purchase,CGST Input @9%,15850.86,,CGST input on purchase from Shree Works & Sons
+2025-12-22,PUR-1001,Purchase,SGST Input @9%,15850.86,,SGST input on purchase from Shree Works & Sons
+2025-12-22,PUR-1001,Purchase,Sundry Creditors,,207822.30,Purchase from Shree Works & Sons
+2025-12-23,BR-1051,Receipt,ICICI EEFC USD A/c,193105.25,,Received from Pooja Choudhary
+2025-12-23,BR-1051,Receipt,Sundry Debtors,,193105.25,Received from Pooja Choudhary
+2025-12-23,CON-1002,Contra,HDFC Bank A/c,49131.11,,Transfer from ICICI EEFC USD A/c to HDFC Bank A/c
+2025-12-23,CON-1002,Contra,ICICI EEFC USD A/c,,49131.11,Transfer from ICICI EEFC USD A/c to HDFC Bank A/c
+2025-12-23,INV-1011,Sales,Sundry Debtors,149000.25,,Being sales to Nitin Sharma
+2025-12-23,INV-1011,Sales,Service Income - Domestic,,126271.40,Sale of goods to Nitin Sharma
+2025-12-23,INV-1011,Sales,CGST Output @9%,,11364.43,CGST on sale to Nitin Sharma
+2025-12-23,INV-1011,Sales,SGST Output @9%,,11364.43,SGST on sale to Nitin Sharma
+2025-12-23,INV-1101,Sales,Sundry Debtors,173697.83,,Being sales to Vikram Mehta
+2025-12-23,INV-1101,Sales,Export Service Income,,147201.55,Sale of goods to Vikram Mehta
+2025-12-23,INV-1101,Sales,CGST Output @9%,,13248.14,CGST on sale to Vikram Mehta
+2025-12-23,INV-1101,Sales,SGST Output @9%,,13248.14,SGST on sale to Vikram Mehta
+2025-12-23,PUR-1003,Purchase,Office Rent,283563.83,,Purchase from Shree Trading & Co
+2025-12-23,PUR-1003,Purchase,CGST Input @9%,25520.75,,CGST input on purchase from Shree Trading & Co
+2025-12-23,PUR-1003,Purchase,SGST Input @9%,25520.75,,SGST input on purchase from Shree Trading & Co
+2025-12-23,PUR-1003,Purchase,Sundry Creditors,,334605.32,Purchase from Shree Trading & Co
+2025-12-24,BR-1062,Receipt,HDFC Bank A/c,118170.06,,Received from Rajesh Verma
+2025-12-24,BR-1062,Receipt,Sundry Debtors,,118170.06,Received from Rajesh Verma
+2025-12-24,INV-1033,Sales,Sundry Debtors,221070.16,,Being sales to Meena Bhat
+2025-12-24,INV-1033,Sales,Export Service Income,,187347.59,Sale of goods to Meena Bhat
+2025-12-24,INV-1033,Sales,CGST Output @9%,,16861.29,CGST on sale to Meena Bhat
+2025-12-24,INV-1033,Sales,SGST Output @9%,,16861.29,SGST on sale to Meena Bhat
+2025-12-24,JV-X281,Journal,Petty Refund,3370.51,,Unknown adjustment
+2025-12-24,JV-X281,Journal,HDFC Bank A/c,,3370.51,Unknown adjustment
+2025-12-24,JV-X571,Journal,Sundry Adjustments,7709.76,,Unknown adjustment
+2025-12-24,JV-X571,Journal,HDFC Bank A/c,,7709.76,Unknown adjustment
+2025-12-24,PUR-1032,Purchase,Bank Charges,160377.19,,Purchase from Shree Suppliers Pvt Ltd
+2025-12-24,PUR-1032,Purchase,CGST Input @9%,14433.95,,CGST input on purchase from Shree Suppliers Pvt Ltd
+2025-12-24,PUR-1032,Purchase,SGST Input @9%,14433.95,,SGST input on purchase from Shree Suppliers Pvt Ltd
+2025-12-24,PUR-1032,Purchase,Sundry Creditors,,189245.08,Purchase from Shree Suppliers Pvt Ltd
+2025-12-25,BR-1010,Receipt,HDFC Bank A/c,161673.91,,Received from Arjun Sharma
+2025-12-25,BR-1010,Receipt,Sundry Debtors,,161673.91,Received from Arjun Sharma
+2025-12-25,BR-1055,Receipt,HDFC Bank A/c,191400.21,,Received from Nitin Sharma
+2025-12-25,BR-1055,Receipt,Sundry Debtors,,191400.21,Received from Nitin Sharma
+2025-12-25,INV-1084,Sales,Sundry Debtors,100878.15,,Being sales to Vikram Mehta
+2025-12-25,INV-1084,Sales,Service Income - Domestic,,85489.96,Sale of goods to Vikram Mehta
+2025-12-25,INV-1084,Sales,CGST Output @9%,,7694.10,CGST on sale to Vikram Mehta
+2025-12-25,INV-1084,Sales,SGST Output @9%,,7694.10,SGST on sale to Vikram Mehta
+2025-12-25,INV-1103,Sales,Sundry Debtors,6587.68,,Being sales to Neha Gupta
+2025-12-25,INV-1103,Sales,Export Service Income,,5582.78,Sale of goods to Neha Gupta
+2025-12-25,INV-1103,Sales,CGST Output @9%,,502.45,CGST on sale to Neha Gupta
+2025-12-25,INV-1103,Sales,SGST Output @9%,,502.45,SGST on sale to Neha Gupta
+2025-12-25,JV-1026,Journal,Printing & Stationery,35389.92,,Being printing & stationery for the period
+2025-12-25,JV-1026,Journal,HDFC Bank A/c,,35389.92,Being printing & stationery for the period
+2025-12-25,PUR-1000,Purchase,Salaries & Wages,447602.99,,Purchase from Sidh Works Pvt Ltd
+2025-12-25,PUR-1000,Purchase,CGST Input @9%,25177.67,,CGST input on purchase from Sidh Works Pvt Ltd
+2025-12-25,PUR-1000,Purchase,SGST Input @9%,25177.67,,SGST input on purchase from Sidh Works Pvt Ltd
+2025-12-25,PUR-1000,Purchase,Sundry Creditors,,330107.21,Purchase from Sidh Works Pvt Ltd
+2025-12-25,PUR-1029,Purchase,Postage & Courier,252826.97,,Purchase from Krishna Mills Group
+2025-12-25,PUR-1029,Purchase,CGST Input @9%,22754.43,,CGST input on purchase from Krishna Mills Group
+2025-12-25,PUR-1029,Purchase,SGST Input @9%,22754.43,,SGST input on purchase from Krishna Mills Group
+2025-12-25,PUR-1029,Purchase,Sundry Creditors,,298335.82,Purchase from Krishna Mills Group
+2025-12-25,PUR-1041,Purchase,Electricity Charges,278191.14,,Purchase from Lakshmi Services & Bros
+2025-12-25,PUR-1041,Purchase,CGST Input @9%,25037.21,,CGST input on purchase from Lakshmi Services & Bros
+2025-12-25,PUR-1041,Purchase,SGST Input @9%,25037.21,,SGST input on purchase from Lakshmi Services & Bros
+2025-12-25,PUR-1041,Purchase,Sundry Creditors,,328265.55,Purchase from Lakshmi Services & Bros
+2025-12-26,BP-1055,Payment,Sundry Creditors,190588.12,,Payment to Ratan Agencies & Bros
+2025-12-26,BP-1055,Payment,HDFC Bank A/c,,190588.12,Payment to Ratan Agencies & Bros
+2025-12-26,CON-1017,Contra,ICICI EEFC USD A/c,27065.84,,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-12-26,CON-1017,Contra,HDFC Bank A/c,,27065.84,Transfer from HDFC Bank A/c to ICICI EEFC USD A/c
+2025-12-26,INV-1001,Sales,Sundry Debtors,80925.85,,Being sales to Anjali Desai
+2025-12-26,INV-1001,Sales,Service Income - Domestic,,68581.23,Sale of goods to Anjali Desai
+2025-12-26,INV-1001,Sales,CGST Output @9%,,6172.31,CGST on sale to Anjali Desai
+2025-12-26,INV-1001,Sales,SGST Output @9%,,6172.31,SGST on sale to Anjali Desai
+2025-12-26,INV-1005,Sales,Sundry Debtors,71077.19,,Being sales to Neha Gupta
+2025-12-26,INV-1005,Sales,Export Service Income,,60234.91,Sale of goods to Neha Gupta
+2025-12-26,INV-1005,Sales,CGST Output @9%,,5421.14,CGST on sale to Neha Gupta
+2025-12-26,INV-1005,Sales,SGST Output @9%,,5421.14,SGST on sale to Neha Gupta
+2025-12-26,INV-1027,Sales,Sundry Debtors,173377.84,,Being sales to Rahul Nair
+2025-12-26,INV-1027,Sales,Export Service Income,,146930.37,Sale of goods to Rahul Nair
+2025-12-26,INV-1027,Sales,CGST Output @9%,,13223.74,CGST on sale to Rahul Nair
+2025-12-26,INV-1027,Sales,SGST Output @9%,,13223.74,SGST on sale to Rahul Nair
+2025-12-26,INV-1054,Sales,Sundry Debtors,159974.26,,Being sales to Pooja Choudhary
+2025-12-26,INV-1054,Sales,Export Service Income,,135571.41,Sale of goods to Pooja Choudhary
+2025-12-26,INV-1054,Sales,CGST Output @9%,,12201.43,CGST on sale to Pooja Choudhary
+2025-12-26,INV-1054,Sales,SGST Output @9%,,12201.43,SGST on sale to Pooja Choudhary
+2025-12-26,INV-1064,Sales,Sundry Debtors,171201.80,,Being sales to Meena Bhat
+2025-12-26,INV-1064,Sales,Service Income - Domestic,,145086.27,Sale of goods to Meena Bhat
+2025-12-26,INV-1064,Sales,CGST Output @9%,,13057.77,CGST on sale to Meena Bhat
+2025-12-26,INV-1064,Sales,SGST Output @9%,,13057.77,SGST on sale to Meena Bhat
+2025-12-26,JV-1013,Journal,Office Rent,44004.72,,Being office rent for the period
+2025-12-26,JV-1013,Journal,ICICI EEFC USD A/c,,44004.72,Being office rent for the period
+2025-12-26,JV-1031,Journal,Travelling Expenses,99167.44,,Being travelling expenses for the period
+2025-12-26,JV-1031,Journal,ICICI EEFC USD A/c,,99167.44,Being travelling expenses for the period
+2025-12-27,BP-1051,Payment,Sundry Creditors,207029.88,,Payment to Krishna Traders Group
+2025-12-27,BP-1051,Payment,ICICI EEFC USD A/c,,207029.88,Payment to Krishna Traders Group
+2025-12-27,PUR-1048,Purchase,Software Subscriptions,274221.25,,Purchase from Krishna Traders Group
+2025-12-27,PUR-1048,Purchase,CGST Input @9%,24679.92,,CGST input on purchase from Krishna Traders Group
+2025-12-27,PUR-1048,Purchase,SGST Input @9%,24679.92,,SGST input on purchase from Krishna Traders Group
+2025-12-27,PUR-1048,Purchase,Sundry Creditors,,323581.08,Purchase from Krishna Traders Group
+2025-12-28,BP-1017,Payment,Sundry Creditors,183533.01,,Payment to Lakshmi Services Pvt Ltd
+2025-12-28,BP-1017,Payment,HDFC Bank A/c,,183533.01,Payment to Lakshmi Services Pvt Ltd
+2025-12-28,BP-1043,Payment,Sundry Creditors,281540.24,,Payment to Shree Trading & Co
+2025-12-28,BP-1043,Payment,ICICI EEFC USD A/c,,281540.24,
+2025-12-28,INV-1000,Sales,Sundry Debtors,74264.23,,Being sales to Rajesh Verma
+2025-12-28,INV-1000,Sales,Service Income - Domestic,,62935.79,Sale of goods to Rajesh Verma
+2025-12-28,INV-1000,Sales,CGST Output @9%,,5664.22,CGST on sale to Rajesh Verma
+2025-12-28,INV-1000,Sales,SGST Output @9%,,5664.22,SGST on sale to Rajesh Verma
+2025-12-28,INV-1116,Sales,Sundry Debtors,222487.91,,Being sales to Meena Kumar
+2025-12-28,INV-1116,Sales,Service Income - Domestic,,188549.08,Sale of goods to Meena Kumar
+2025-12-28,INV-1116,Sales,CGST Output @9%,,16969.42,CGST on sale to Meena Kumar
+2025-12-28,INV-1116,Sales,SGST Output @9%,,16969.42,SGST on sale to Meena Kumar
+2025-12-28,JV-1034,Journal,Travelling Expenses,53588.35,,Being travelling expenses for the period
+2025-12-28,JV-1034,Journal,HDFC Bank A/c,,53588.35,Being travelling expenses for the period
+2025-12-29,BP-1042,Payment,Sundry Creditors,248827.50,,Payment to Lakshmi Enterprises Group
+2025-12-29,BP-1042,Payment,ICICI EEFC USD A/c,,248827.50,Payment to Lakshmi Enterprises Group
+2025-12-29,BR-1024,Receipt,ICICI EEFC USD A/c,15581.06,,Received from Meena Bhat
+2025-12-29,BR-1024,Receipt,Sundry Debtors,,15581.06,Received from Meena Bhat
+2025-12-29,PUR-1009,Purchase,Postage & Courier,282239.75,,Purchase from Shree Works & Sons
+2025-12-29,PUR-1009,Purchase,CGST Input @9%,25401.58,,CGST input on purchase from Shree Works & Sons
+2025-12-29,PUR-1009,Purchase,SGST Input @9%,25401.58,,SGST input on purchase from Shree Works & Sons
+2025-12-29,PUR-1009,Purchase,Sundry Creditors,,333042.91,Purchase from Shree Works & Sons
+2025-12-29,PUR-1082,Purchase,AWS Cloud Services,446810.10,,Purchase from Ganesh Suppliers Pvt Ltd
+2025-12-29,PUR-1082,Purchase,CGST Input @9%,18278.60,,CGST input on purchase from Ganesh Suppliers Pvt Ltd
+2025-12-29,PUR-1082,Purchase,SGST Input @9%,18278.60,,SGST input on purchase from Ganesh Suppliers Pvt Ltd
+2025-12-29,PUR-1082,Purchase,Sundry Creditors,,239652.69,Purchase from Ganesh Suppliers Pvt Ltd
+2025-12-30,BR-1032,Receipt,HDFC Bank A/c,96884.81,,Received from Swati Joshi
+2025-12-30,BR-1032,Receipt,Sundry Debtors,,96884.81,Received from Swati Joshi
+2025-12-30,BR-1048,Receipt,ICICI EEFC USD A/c,122639.50,,Received from Neha Gupta
+2025-12-30,BR-1048,Receipt,Sundry Debtors,,122639.50,Received from Neha Gupta
+2025-12-30,INV-1007,Sales,Sundry Debtors,206124.50,,Being sales to Rajesh Kumar
+2025-12-30,INV-1007,Sales,Export Service Income,,174681.78,Sale of goods to Rajesh Kumar
+2025-12-30,INV-1007,Sales,CGST Output @9%,,15721.36,CGST on sale to Rajesh Kumar
+2025-12-30,INV-1007,Sales,SGST Output @9%,,15721.36,SGST on sale to Rajesh Kumar
+2025-12-30,INV-1034,Sales,Sundry Debtors,37254.94,,Being sales to Priya Shah
+2025-12-30,INV-1034,Sales,Export Service Income,,31571.98,Sale of goods to Priya Shah
+2025-12-30,INV-1034,Sales,CGST Output @9%,,2841.48,CGST on sale to Priya Shah
+2025-12-30,INV-1034,Sales,SGST Output @9%,,2841.48,SGST on sale to Priya Shah
+2025-12-30,JV-X822,Journal,Adjustment Account,522.13,,Unknown adjustment
+2025-12-30,JV-X822,Journal,HDFC Bank A/c,,522.13,Unknown adjustment
+2025-12-30,PUR-1017,Purchase,Printing & Stationery,41155.38,,Purchase from Sidh Mills LLP
+2025-12-30,PUR-1017,Purchase,CGST Input @9%,3703.99,,CGST input on purchase from Sidh Mills LLP
+2025-12-30,PUR-1017,Purchase,SGST Input @9%,3703.99,,SGST input on purchase from Sidh Mills LLP
+2025-12-30,PUR-1017,Purchase,Sundry Creditors,,48563.35,Purchase from Sidh Mills LLP
+2025-12-30,PUR-1076,Purchase,Postage & Courier,208243.99,,Purchase from Om Industries Pvt Ltd
+2025-12-30,PUR-1076,Purchase,CGST Input @9%,18741.96,,CGST input on purchase from Om Industries Pvt Ltd
+2025-12-30,PUR-1076,Purchase,SGST Input @9%,18741.96,,SGST input on purchase from Om Industries Pvt Ltd
+2025-12-30,PUR-1076,Purchase,Sundry Creditors,,245727.91,Purchase from Om Industries Pvt Ltd
+2026-04-01,INV-1022,Sales,Sundry Debtors,127624.69,,Being sales to Priya Shah

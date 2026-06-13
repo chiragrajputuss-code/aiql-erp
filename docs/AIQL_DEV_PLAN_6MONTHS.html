@@ -1,0 +1,2059 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <title>AIQL ERP — 6-Month Development Plan</title>
+  <style>
+    /* Default styles provided by pandoc.
+    ** See https://pandoc.org/MANUAL.html#variables-for-html for config info.
+    */
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
+  </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.min.css" />
+</head>
+<body>
+<header id="title-block-header">
+<h1 class="title">AIQL ERP — 6-Month Development Plan</h1>
+<p class="subtitle">Hand to Sonnet one day at a time. Each day is a
+focused, self-contained deliverable.</p>
+</header>
+<nav id="TOC" role="doc-toc">
+<ul>
+<li><a href="#aiql-erp--6-month-day-by-day-development-plan"
+id="toc-aiql-erp--6-month-day-by-day-development-plan">AIQL ERP —
+6-Month Day-by-Day Development Plan</a></li>
+<li><a href="#how-to-use-this-plan" id="toc-how-to-use-this-plan">How to
+Use This Plan</a>
+<ul>
+<li><a href="#the-daily-workflow" id="toc-the-daily-workflow">The daily
+workflow</a></li>
+<li><a href="#the-sonnet-prompt-pattern"
+id="toc-the-sonnet-prompt-pattern">The Sonnet prompt pattern</a></li>
+<li><a href="#discipline-rules" id="toc-discipline-rules">Discipline
+rules</a></li>
+<li><a href="#when-a-day-spills-over"
+id="toc-when-a-day-spills-over">When a day spills over</a></li>
+</ul></li>
+<li><a href="#phase-summary" id="toc-phase-summary">Phase
+Summary</a></li>
+<li><a href="#phase-1--v1-launch-ready-days-1-20"
+id="toc-phase-1--v1-launch-ready-days-1-20">Phase 1 — V1 Launch Ready
+(Days 1-20)</a>
+<ul>
+<li><a href="#week-1-foundation" id="toc-week-1-foundation">Week 1:
+Foundation</a></li>
+<li><a href="#week-2-trust--export" id="toc-week-2-trust--export">Week
+2: Trust &amp; Export</a></li>
+<li><a href="#week-3-authentication--billing"
+id="toc-week-3-authentication--billing">Week 3: Authentication &amp;
+Billing</a></li>
+<li><a href="#week-4-differentiator--polish"
+id="toc-week-4-differentiator--polish">Week 4: Differentiator +
+Polish</a></li>
+</ul></li>
+<li><a href="#phase-2--bank-reconciliation-days-21-50"
+id="toc-phase-2--bank-reconciliation-days-21-50">Phase 2 — Bank
+Reconciliation (Days 21-50)</a>
+<ul>
+<li><a href="#weeks-5-6-pdf-parsers"
+id="toc-weeks-5-6-pdf-parsers">Weeks 5-6: PDF Parsers</a></li>
+<li><a href="#weeks-7-8-matching-engine"
+id="toc-weeks-7-8-matching-engine">Weeks 7-8: Matching Engine</a></li>
+<li><a href="#weeks-9-10-workflow-integration"
+id="toc-weeks-9-10-workflow-integration">Weeks 9-10: Workflow
+Integration</a></li>
+</ul></li>
+<li><a href="#phase-3--gstn-auto-reconciliation-days-51-90"
+id="toc-phase-3--gstn-auto-reconciliation-days-51-90">Phase 3 — GSTN
+Auto-Reconciliation (Days 51-90)</a>
+<ul>
+<li><a href="#weeks-11-12-gstn-api-integration"
+id="toc-weeks-11-12-gstn-api-integration">Weeks 11-12: GSTN API
+Integration</a></li>
+<li><a href="#weeks-13-14-gstr-2a2b-pull"
+id="toc-weeks-13-14-gstr-2a2b-pull">Weeks 13-14: GSTR-2A/2B
+Pull</a></li>
+<li><a href="#weeks-15-16-reconciliation-engine"
+id="toc-weeks-15-16-reconciliation-engine">Weeks 15-16: Reconciliation
+Engine</a></li>
+<li><a href="#weeks-17-18-workflow-integration"
+id="toc-weeks-17-18-workflow-integration">Weeks 17-18: Workflow
+Integration</a></li>
+</ul></li>
+<li><a href="#phase-4--tally-live-sync-days-91-130"
+id="toc-phase-4--tally-live-sync-days-91-130">Phase 4 — Tally Live Sync
+(Days 91-130)</a>
+<ul>
+<li><a href="#weeks-19-21-desktop-agent"
+id="toc-weeks-19-21-desktop-agent">Weeks 19-21: Desktop Agent</a></li>
+<li><a href="#weeks-22-23-sync-pipeline"
+id="toc-weeks-22-23-sync-pipeline">Weeks 22-23: Sync Pipeline</a></li>
+<li><a href="#weeks-24-25-real-time-workflow"
+id="toc-weeks-24-25-real-time-workflow">Weeks 24-25: Real-time
+Workflow</a></li>
+<li><a href="#week-26-polish--launch"
+id="toc-week-26-polish--launch">Week 26: Polish + Launch</a></li>
+</ul></li>
+<li><a href="#templates--references"
+id="toc-templates--references">Templates &amp; References</a>
+<ul>
+<li><a href="#sonnet-prompt-template-use-for-any-day"
+id="toc-sonnet-prompt-template-use-for-any-day">Sonnet prompt template
+(use for any day)</a></li>
+<li><a href="#weekly-review-checklist"
+id="toc-weekly-review-checklist">Weekly review checklist</a></li>
+<li><a href="#when-to-deviate-from-the-plan"
+id="toc-when-to-deviate-from-the-plan">When to deviate from the
+plan</a></li>
+<li><a href="#tracking-sheet-template"
+id="toc-tracking-sheet-template">Tracking sheet template</a></li>
+</ul></li>
+<li><a href="#final-notes" id="toc-final-notes">Final Notes</a>
+<ul>
+<li><a href="#what-this-plan-delivers"
+id="toc-what-this-plan-delivers">What this plan delivers</a></li>
+<li><a href="#what-it-doesnt-deliver"
+id="toc-what-it-doesnt-deliver">What it doesn't deliver</a></li>
+<li><a href="#the-critical-reminder" id="toc-the-critical-reminder">The
+critical reminder</a></li>
+</ul></li>
+</ul>
+</nav>
+<h1 id="aiql-erp--6-month-day-by-day-development-plan">AIQL ERP —
+6-Month Day-by-Day Development Plan</h1>
+<p><strong>Total:</strong> 130 working days across 4 phases <strong>Pace
+assumption:</strong> 5 productive engineering days/week, ~6-7 hours each
+<strong>Used with:</strong> Claude Sonnet for execution; this human
+reviews and approves</p>
+<hr />
+<h1 id="how-to-use-this-plan">How to Use This Plan</h1>
+<h2 id="the-daily-workflow">The daily workflow</h2>
+<p>Each day's entry has 6 sections:</p>
+<ol type="1">
+<li><strong>Objective</strong> — One sentence: what done looks like</li>
+<li><strong>Files</strong> — Specific paths to create or modify</li>
+<li><strong>Implementation notes</strong> — Architecture / approach
+guidance</li>
+<li><strong>Tests</strong> — What must pass before "done"</li>
+<li><strong>Acceptance criteria</strong> — Checklist for
+verification</li>
+<li><strong>Sonnet prompt</strong> — Copy-paste this into a fresh Sonnet
+session</li>
+</ol>
+<h2 id="the-sonnet-prompt-pattern">The Sonnet prompt pattern</h2>
+<p>Each prompt includes:</p>
+<ul>
+<li>A "Read first" list of files Sonnet must read for context</li>
+<li>Constraints (file paths, test patterns)</li>
+<li>Acceptance criteria for verification</li>
+<li>Explicit instruction to run tests at the end</li>
+</ul>
+<h2 id="discipline-rules">Discipline rules</h2>
+<ul>
+<li><strong>One day = one focused deliverable.</strong> If it doesn't
+fit a day, split across days.</li>
+<li><strong>Tests pass before "done."</strong> No exceptions.</li>
+<li><strong>Each day stands alone.</strong> Sonnet has no memory between
+sessions; the prompt must be self-contained.</li>
+<li><strong>Friday afternoon = review + plan next week.</strong> Don't
+push features to weekends.</li>
+</ul>
+<h2 id="when-a-day-spills-over">When a day spills over</h2>
+<p>Some days will. Realistic. Mark the day as "carried" and move the
+next day's task. Don't compress to maintain the schedule — quality
+matters more than pace.</p>
+<hr />
+<h1 id="phase-summary">Phase Summary</h1>
+<table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Days</th>
+<th>Weeks</th>
+<th>Calendar weeks (approx)</th>
+<th>Pricing milestone</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>1: V1 Launch Ready</strong></td>
+<td>1-20</td>
+<td>1-4</td>
+<td>Weeks 1-4</td>
+<td>₹999 / ₹2,999 / ₹6,999</td>
+</tr>
+<tr>
+<td><strong>2: Bank Reconciliation</strong></td>
+<td>21-50</td>
+<td>5-10</td>
+<td>Weeks 5-10</td>
+<td>₹1,499 / ₹3,999 / ₹7,999</td>
+</tr>
+<tr>
+<td><strong>3: GSTN Auto-Reconciliation</strong></td>
+<td>51-90</td>
+<td>11-18</td>
+<td>Weeks 11-18</td>
+<td>₹1,999 / ₹4,999 / ₹9,999</td>
+</tr>
+<tr>
+<td><strong>4: Tally Live Sync</strong></td>
+<td>91-130</td>
+<td>19-26</td>
+<td>Weeks 19-26</td>
+<td>₹2,499 / ₹5,999 / ₹11,999</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="phase-1--v1-launch-ready-days-1-20">Phase 1 — V1 Launch Ready
+(Days 1-20)</h1>
+<p><strong>Goal:</strong> Ship a product that can be handed to a paying
+customer.</p>
+<hr />
+<h2 id="week-1-foundation">Week 1: Foundation</h2>
+<h3 id="day-1--complete-demo-data-loader-ui">Day 1 — Complete demo data
+loader UI</h3>
+<p><strong>Objective:</strong> Verify "Load demo data" button works
+end-to-end, polish error handling.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li><code>apps/web/src/components/value-summary-banner.tsx</code>
+(already partially built)</li>
+<li><code>apps/web/src/app/api/v1/onboarding/load-demo/route.ts</code>
+(already built)</li>
+<li><code>apps/web/src/lib/demo-loader.ts</code> (already built)</li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>Demo loader already exists from previous session</li>
+<li>Verify it loads 3 sample companies (kumar_textiles,
+sharma_electronics, techvista)</li>
+<li>Add loading toast + success notification using existing UI
+patterns</li>
+<li>Add <code>unloadDemo</code> button on dashboard once demo is
+loaded</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Manual: click button, see 3 connections appear within 30
+seconds</li>
+<li>Add API integration test:
+<code>POST /api/v1/onboarding/load-demo</code> returns 200 with 3
+connections</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Click "Try with sample data" → 3
+demo connections created</label></li>
+<li><label><input type="checkbox" />Page refreshes to show connections
+list populated</label></li>
+<li><label><input type="checkbox" />Toast notification confirms
+success</label></li>
+<li><label><input type="checkbox" />If clicked twice, doesn't duplicate
+(idempotent)</label></li>
+<li><label><input type="checkbox" />All existing tests still
+pass</label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Read these files first:
+- apps/web/src/components/value-summary-banner.tsx
+- apps/web/src/app/api/v1/onboarding/load-demo/route.ts
+- apps/web/src/lib/demo-loader.ts
+
+Verify the demo loader works end-to-end:
+1. Confirm the button in value-summary-banner triggers POST to /api/v1/onboarding/load-demo
+2. Add a success toast notification after successful load
+3. Add an &quot;Unload demo data&quot; button that appears once demo connections exist
+4. Wire it to a new endpoint /api/v1/onboarding/unload-demo (function already exists in demo-loader.ts)
+5. Add an integration test for both load and unload endpoints in apps/web/src/__tests__/
+6. Run `pnpm --filter web test` and ensure all pass</code></pre>
+<hr />
+<h3 id="day-2--onboarding-wizard-step-1-welcome">Day 2 — Onboarding
+wizard: Step 1 (Welcome)</h3>
+<p><strong>Objective:</strong> First screen a new user sees after
+signup. Two-option choice: load demo or upload your own.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li><code>apps/web/src/app/(dashboard)/onboarding/page.tsx</code>
+(new)</li>
+<li><code>apps/web/src/components/onboarding/welcome-step.tsx</code>
+(new)</li>
+<li><code>apps/web/src/app/(dashboard)/page.tsx</code> (redirect if
+onboarding not complete)</li>
+<li><code>packages/db/prisma/schema.prisma</code> (User model already
+has onboardingComplete)</li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>New route <code>/onboarding</code> that's the landing place after
+first signup</li>
+<li>Two big buttons: "Try with demo data" (uses loader from Day 1) and
+"Upload my own data"</li>
+<li>Sets <code>onboardingComplete=true</code> when either path
+completes</li>
+<li>Existing dashboard redirects to <code>/onboarding</code> if
+<code>!user.onboardingComplete</code></li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Component test for welcome-step rendering</li>
+<li>E2E flow: new user → /onboarding → click demo → /dashboard with
+data</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />New signup automatically routed to
+/onboarding</label></li>
+<li><label><input type="checkbox" />Two clear options shown</label></li>
+<li><label><input type="checkbox" />Choosing demo loads sample data and
+goes to dashboard</label></li>
+<li><label><input type="checkbox" />Choosing upload goes to
+/connections/new</label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Read:
+- apps/web/src/app/(dashboard)/page.tsx
+- apps/web/src/lib/auth.ts
+- packages/db/prisma/schema.prisma (look at User model, note onboardingComplete field)
+
+Build onboarding wizard step 1:
+1. Create apps/web/src/app/(dashboard)/onboarding/page.tsx — protected page for first-time users
+2. Create apps/web/src/components/onboarding/welcome-step.tsx with two CTAs:
+   - &quot;Try with sample data&quot; → calls /api/v1/onboarding/load-demo → redirects to /
+   - &quot;Upload my data&quot; → router.push(&#39;/connections/new&#39;)
+3. Update apps/web/src/app/(dashboard)/page.tsx: if !user.onboardingComplete, redirect to /onboarding
+4. Create POST /api/v1/onboarding/complete endpoint that sets onboardingComplete=true
+5. Call /api/v1/onboarding/complete after either CTA succeeds
+6. Add a Skip link for users who want to explore without onboarding
+7. Use the existing UI patterns (Button, Card components)
+8. Run all tests</code></pre>
+<hr />
+<h3 id="day-3--delete-connection-from-ui">Day 3 — Delete connection from
+UI</h3>
+<p><strong>Objective:</strong> User can remove a connection (and its
+data) from settings.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li><code>apps/web/src/app/(dashboard)/connections/[id]/page.tsx</code>
+(modify)</li>
+<li><code>apps/web/src/app/api/internal/connections/[id]/route.ts</code>
+(already has DELETE)</li>
+<li>New:
+<code>apps/web/src/components/connections/delete-connection-dialog.tsx</code></li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>DELETE endpoint already exists — just need UI</li>
+<li>Use confirmation dialog (require typing the connection name)</li>
+<li>On success: drop the upload table, delete UploadedFile +
+ErpConnection cascade</li>
+<li>Redirect to /connections after deletion</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Test that DELETE cascades properly</li>
+<li>Test that the upload table is dropped</li>
+<li>Test confirmation dialog requires correct typing</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />"Delete connection" button visible
+on connection page (with red accent)</label></li>
+<li><label><input type="checkbox" />Confirmation dialog requires typing
+connection name</label></li>
+<li><label><input type="checkbox" />On confirm: upload table dropped,
+all data removed</label></li>
+<li><label><input type="checkbox" />User redirected to /connections with
+toast</label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Read:
+- apps/web/src/app/(dashboard)/connections/[id]/page.tsx
+- apps/web/src/app/api/internal/connections/[id]/route.ts
+- packages/erp-connectors/src/file-upload/table-creator.ts (dropTempTable function)
+
+Build the &quot;Delete connection&quot; UI:
+1. Add a &quot;Danger Zone&quot; section at the bottom of /connections/[id] page
+2. Create apps/web/src/components/connections/delete-connection-dialog.tsx using shadcn/ui Dialog
+3. Dialog must:
+   - Require typing the exact connection display name
+   - Show warning text about permanent data loss
+   - Disable the confirm button until name matches
+4. On confirm: call DELETE /api/internal/connections/[id]
+5. Make sure the existing DELETE endpoint also drops the upload_ table via dropTempTable
+6. Redirect to /connections with a success toast after deletion
+7. Add a test in apps/web/src/__tests__/connection-delete.test.ts
+8. Run pnpm test</code></pre>
+<hr />
+<h3 id="day-4--privacy-policy--terms-of-service-pages">Day 4 — Privacy
+Policy + Terms of Service pages</h3>
+<p><strong>Objective:</strong> Legal pages required for DPDP Act
+compliance.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li><code>apps/web/src/app/privacy/page.tsx</code> (new)</li>
+<li><code>apps/web/src/app/terms/page.tsx</code> (new)</li>
+<li><code>apps/web/src/app/layout.tsx</code> (footer with links)</li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>Use the template content provided in this prompt below</li>
+<li>Make pages SSR-renderable (no auth required)</li>
+<li>Add footer to main layout with these links</li>
+<li>Don't claim certifications you don't have</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Pages render at /privacy and /terms without auth</li>
+<li>Footer links work from any page</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />/privacy renders standalone (no
+login)</label></li>
+<li><label><input type="checkbox" />/terms renders standalone (no
+login)</label></li>
+<li><label><input type="checkbox" />Both linked from app
+footer</label></li>
+<li><label><input type="checkbox" />Content covers: data collection,
+storage, sharing, deletion, contact</label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Read:
+- apps/web/src/app/layout.tsx
+- packages/db/prisma/schema.prisma (to understand what data is collected)
+
+Build Privacy Policy and Terms of Service:
+1. Create apps/web/src/app/privacy/page.tsx — comprehensive DPDP-compliant privacy policy:
+   - What data we collect (signup info, uploaded GL data, query history)
+   - How it&#39;s stored (AWS RDS Mumbai, encryption at rest)
+   - PII handling (tokenisation before LLM calls)
+   - Data retention (customer-controlled)
+   - User rights (export, delete, audit)
+   - Contact: privacy@aiql.com
+2. Create apps/web/src/app/terms/page.tsx — standard SaaS ToS:
+   - Service description, account responsibilities
+   - Pricing terms, refund policy (none for partial months)
+   - Acceptable use, prohibited uses
+   - Liability limitations (capped to fees paid)
+   - Termination, governing law (Indian jurisdiction)
+3. Update apps/web/src/app/layout.tsx to add a footer with: Privacy | Terms | Security | Contact
+4. Run pnpm typecheck</code></pre>
+<hr />
+<h3 id="day-5--pricing-page">Day 5 — Pricing page</h3>
+<p><strong>Objective:</strong> Public pricing page at
+<code>/pricing</code>. Three tiers + pilot program callout.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li><code>apps/web/src/app/pricing/page.tsx</code> (new)</li>
+<li><code>apps/web/src/components/pricing/pricing-cards.tsx</code>
+(new)</li>
+<li><code>apps/web/src/lib/plans.ts</code> (centralised plan
+definitions)</li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>Three tiers: Starter ₹999, Professional ₹2,999, Business ₹6,999</li>
+<li>Annual toggle (2 months free)</li>
+<li>Pilot callout: "First 50 customers: 50% off for 3 months"</li>
+<li>CTAs: "Start free trial" → /signup, "Talk to sales" → mailto</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Pricing page renders SSR</li>
+<li>Toggle annual/monthly updates prices</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />/pricing renders without
+auth</label></li>
+<li><label><input type="checkbox" />3 tier cards with features clearly
+listed</label></li>
+<li><label><input type="checkbox" />Annual/monthly toggle
+works</label></li>
+<li><label><input type="checkbox" />Pilot program banner
+prominent</label></li>
+<li><label><input type="checkbox" />Footer FAQ section with 5-7 common
+questions</label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Read:
+- apps/web/src/app/layout.tsx
+- apps/web/src/components/ui/* (available UI primitives)
+
+Build /pricing page:
+1. Create apps/web/src/lib/plans.ts:
+   - Export PLANS = [{ id, name, monthlyPrice, annualPrice, features, recommended }]
+   - 3 plans: Starter ₹999, Professional ₹2,999, Business ₹6,999
+   - Annual prices = monthly × 10 (2 months free)
+2. Create apps/web/src/components/pricing/pricing-cards.tsx — 3-column grid with feature lists
+3. Create apps/web/src/app/pricing/page.tsx with:
+   - Hero: &quot;Simple pricing. No surprises.&quot;
+   - Toggle: Monthly | Annual (save 17%)
+   - 3 pricing cards
+   - Pilot banner: &quot;First 50 customers get 50% off for 3 months&quot;
+   - FAQ section (collapsible)
+   - Final CTA: &quot;Start your free trial&quot; → /signup
+4. Add link to /pricing in main nav and footer
+5. Run pnpm typecheck and pnpm --filter web test</code></pre>
+<hr />
+<h2 id="week-2-trust--export">Week 2: Trust &amp; Export</h2>
+<h3 id="day-6--pdf-export-for-findings">Day 6 — PDF export for
+findings</h3>
+<p><strong>Objective:</strong> "Export findings as PDF" button on close
+period / connection scan page.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>New: <code>apps/web/src/lib/pdf-export.ts</code></li>
+<li>New:
+<code>apps/web/src/app/api/v1/exports/findings-pdf/route.ts</code></li>
+<li>Modify: scan results UI to add button</li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>Use <code>@react-pdf/renderer</code> or generate HTML → use
+server-side puppeteer / playwright</li>
+<li>Cleanest: use <code>pdfkit</code> for programmatic PDF
+generation</li>
+<li>PDF includes: company name, scan date, summary stats, table of
+findings with severity colour coding</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Unit test for PDF generation function (returns Buffer)</li>
+<li>Integration test for the export endpoint</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />"Export PDF" button on scan results
+page</label></li>
+<li><label><input type="checkbox" />Generated PDF includes all findings
+with ₹ amounts</label></li>
+<li><label><input type="checkbox" />PDF has company name, period,
+generated-at timestamp</label></li>
+<li><label><input type="checkbox" />Downloads as
+<code>aiql-findings-{company}-{date}.pdf</code></label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Read:
+- apps/web/src/app/(dashboard)/connections/[id]/scan/page.tsx
+- packages/close-engine/src/scanner.ts (for ScanResult type)
+
+Build PDF export for findings:
+1. Install: pnpm add pdfkit @types/pdfkit --filter web
+2. Create apps/web/src/lib/pdf-export.ts:
+   - Function generateFindingsPdf(scanResult, connection): Promise&lt;Buffer&gt;
+   - Header: AIQL logo (text for now), company name, scan period
+   - Summary stats: total findings, total ₹ exposure, severity counts
+   - Findings table grouped by severity (critical/review/info)
+   - Each finding: title, affected rows, ₹ exposure, top 3 examples
+   - Footer: generated-at, &quot;AIQL ERP — aiql.io&quot;
+3. Create apps/web/src/app/api/v1/exports/findings-pdf/route.ts:
+   - POST endpoint takes { connectionId, periodId? }
+   - Auth check, ownership check
+   - Run scan if no recent one, else use latest
+   - Stream PDF response with proper Content-Type and filename headers
+4. Add &quot;Export PDF&quot; button on the scan results page
+5. Add a unit test in packages/close-engine or apps/web tests
+6. Test end-to-end via curl: download a PDF for one of the validate_test connections</code></pre>
+<hr />
+<h3 id="day-7--excel-export-for-findings">Day 7 — Excel export for
+findings</h3>
+<p><strong>Objective:</strong> Same data as PDF but as Excel (.xlsx) for
+analysis.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>New: <code>apps/web/src/lib/excel-export.ts</code></li>
+<li>New:
+<code>apps/web/src/app/api/v1/exports/findings-xlsx/route.ts</code></li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>Use <code>exceljs</code> library</li>
+<li>Multiple sheets: Summary, By Severity, All Findings (with filterable
+columns)</li>
+<li>Format ₹ amounts as currency, dates as dates</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Unit test that returns a valid xlsx buffer</li>
+<li>Test that sheets contain expected data</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />"Export Excel" button alongside PDF
+button</label></li>
+<li><label><input type="checkbox" />xlsx opens cleanly in Excel and
+Google Sheets</label></li>
+<li><label><input type="checkbox" />Columns are properly formatted (₹ as
+currency, dates as dates)</label></li>
+<li><label><input type="checkbox" />Filterable header row
+enabled</label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Read:
+- apps/web/src/lib/pdf-export.ts (from Day 6)
+- apps/web/src/app/api/v1/exports/findings-pdf/route.ts
+
+Build Excel export:
+1. Install: pnpm add exceljs --filter web
+2. Create apps/web/src/lib/excel-export.ts:
+   - Function generateFindingsXlsx(scanResult, connection): Promise&lt;Buffer&gt;
+   - Sheet 1: Summary (counts by severity, total ₹)
+   - Sheet 2: All Findings (columns: code, severity, title, rows, exposure, action)
+   - Sheet 3: Top Issues (top 10 by exposure)
+   - Use exceljs cell formats: currency for ₹, date for timestamps
+   - Enable filter on header row
+   - Freeze first row
+3. Create apps/web/src/app/api/v1/exports/findings-xlsx/route.ts (mirror PDF endpoint)
+4. Add &quot;Export Excel&quot; button next to &quot;Export PDF&quot; on scan results page
+5. Unit test that opening the file returns expected sheets/cells</code></pre>
+<hr />
+<h3 id="day-8--security-one-pager-at-security">Day 8 — Security
+one-pager at <code>/security</code></h3>
+<p><strong>Objective:</strong> Public page explaining security posture.
+Linked from footer.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>New: <code>apps/web/src/app/security/page.tsx</code></li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>Cover: encryption at rest, in transit, PII tokenisation, data
+residency, retention, deletion rights, contact</li>
+<li>Don't claim certifications you don't have (no SOC 2, no ISO
+yet)</li>
+<li>Honest current state with roadmap items marked "in progress"</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Page renders SSR without auth</li>
+<li>Linked from footer</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />/security renders
+cleanly</label></li>
+<li><label><input type="checkbox" />All 8 sections present</label></li>
+<li><label><input type="checkbox" />No false claims (no SOC 2 yet, no
+ISO yet)</label></li>
+<li><label><input type="checkbox" />Contact: <a
+href="mailto:security@aiql.com">security@aiql.com</a></label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Build /security page with these sections:
+
+1. Data residency — AWS RDS ap-south-1 (Mumbai)
+2. Encryption at rest — AES-256 via AWS KMS
+3. Encryption in transit — TLS 1.3
+4. PII handling — tokenised before LLM calls, never logged in plaintext, never sent to third-party AI providers raw
+5. Authentication — Lucia + argon2 password hashing, optional 2FA (planned Q3 2026)
+6. Access controls — role-based, audit logged
+7. Data retention — customer-controlled, default 365 days, deletion within 24 hours of request
+8. Compliance posture — DPDP Act aligned (current), ISO 27001 (in progress Q3 2026), SOC 2 Type II (planned Q1 2027)
+9. Incident response — disclosure within 24 hours per DPDP Act
+10. Contact — security@aiql.com
+
+Use clean visual hierarchy: section headers, icons (lucide-react), short paragraphs. No tables.
+Add to footer alongside Privacy / Terms / Contact.</code></pre>
+<hr />
+<h3 id="day-9--sentry-error-monitoring">Day 9 — Sentry error
+monitoring</h3>
+<p><strong>Objective:</strong> Server + client errors logged to Sentry.
+You see them before customers report.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>New: <code>apps/web/sentry.client.config.ts</code></li>
+<li>New: <code>apps/web/sentry.server.config.ts</code></li>
+<li>New: <code>apps/web/sentry.edge.config.ts</code></li>
+<li>Modify: <code>apps/web/next.config.js</code></li>
+<li>Modify: <code>.env</code> (add <code>SENTRY_DSN</code>)</li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>Sign up for Sentry free tier at sentry.io</li>
+<li>Get DSN, add to .env</li>
+<li>Use <code>@sentry/nextjs</code> with default config</li>
+<li>Mask PII in error context (don't log party names, amounts)</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Throw a test error, confirm it appears in Sentry dashboard</li>
+<li>Verify PII is masked in the error context</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />@sentry/nextjs installed and
+configured</label></li>
+<li><label><input type="checkbox" />SENTRY_DSN in .env</label></li>
+<li><label><input type="checkbox" />Throw an error in dev, see it in
+Sentry dashboard</label></li>
+<li><label><input type="checkbox" />PII (party_name, amount) is scrubbed
+from error context</label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>The user needs to provide a Sentry DSN. Either:
+(a) Ask them to sign up at sentry.io free tier and provide DSN
+(b) Set up with a placeholder DSN they can swap later
+
+Install and configure Sentry for Next.js:
+1. pnpm add @sentry/nextjs --filter web
+2. Run `npx @sentry/wizard@latest -i nextjs` OR manually create:
+   - apps/web/sentry.client.config.ts
+   - apps/web/sentry.server.config.ts
+   - apps/web/sentry.edge.config.ts
+3. Wrap next.config.js with withSentryConfig
+4. Add scrub rules: redact party_name, vendor_name, customer_name, amount fields from error context
+5. Add to .env.example: SENTRY_DSN=
+6. Test by adding an intentional throw in a test API route, verify it appears in Sentry</code></pre>
+<hr />
+<h3 id="day-10--llm-cost-guardrails-verify--enforce">Day 10 — LLM cost
+guardrails (verify + enforce)</h3>
+<p><strong>Objective:</strong> Confirm queryLimit is enforced. Add hard
+daily cap per org.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>Audit: <code>apps/web/src/app/api/v1/query/route.ts</code></li>
+<li>Audit:
+<code>apps/web/src/app/api/v1/llm-proxy/chat/route.ts</code></li>
+<li>New if needed:
+<code>apps/web/src/lib/usage-guardrails.ts</code></li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>Check if <code>queriesUsed &gt;= queryLimit</code> blocks queries
+currently</li>
+<li>If not, add the check at the start of every LLM-calling
+endpoint</li>
+<li>Add daily cap: 100 queries/day per org regardless of plan (prevent
+runaway)</li>
+<li>Return 429 with friendly message: "Daily limit reached, contact
+support"</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Test that 101st query in a day is blocked</li>
+<li>Test that queryLimit blocks at plan limit</li>
+<li>Test that resetting queriesResetAt clears the counter</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Daily hard cap enforced (100/day
+default)</label></li>
+<li><label><input type="checkbox" />Plan limit enforced (queryLimit from
+Organisation)</label></li>
+<li><label><input type="checkbox" />Resetting monthly (queriesResetAt
+cron job)</label></li>
+<li><label><input type="checkbox" />Returns 429 with clear
+message</label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Read:
+- apps/web/src/app/api/v1/query/route.ts
+- apps/web/src/app/api/v1/llm-proxy/chat/route.ts
+- packages/db/prisma/schema.prisma (Organisation.queriesUsed, queryLimit, queriesResetAt)
+
+Audit and enforce LLM cost guardrails:
+1. Check if queryLimit is currently enforced in the query route. If not, add it.
+2. Create apps/web/src/lib/usage-guardrails.ts:
+   - checkOrgQueryAllowance(orgId): Promise&lt;{ allowed: boolean; reason?: string; resetAt?: Date }&gt;
+   - incrementOrgQueryCount(orgId): Promise&lt;void&gt;
+   - Both wrapped in a transaction to avoid races
+3. Add a DAILY_LIMIT constant (default 100/day per org) on top of monthly queryLimit
+4. Track daily via a new field (or use a Redis-like in-memory cache for first version)
+5. Call checkOrgQueryAllowance() at start of /api/v1/query and /api/v1/llm-proxy/chat
+6. Increment after successful response
+7. Return 429 with JSON: { error, dailyLimitReached, planLimitReached, resetAt }
+8. Write tests for both limits</code></pre>
+<hr />
+<h2 id="week-3-authentication--billing">Week 3: Authentication &amp;
+Billing</h2>
+<h3 id="day-11--email-service-integration-resend">Day 11 — Email service
+integration (Resend)</h3>
+<p><strong>Objective:</strong> Centralised email sending via Resend.
+Templates for transactional emails.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>Modify: <code>apps/web/src/lib/email.ts</code> (currently stub)</li>
+<li>Add: <code>apps/web/src/lib/email-templates/</code> (HTML
+templates)</li>
+<li>Add Resend API key to <code>.env</code></li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>Sign up at resend.com (free tier: 100/day, 3K/month)</li>
+<li>Verify aiql.io domain (DNS records)</li>
+<li>Create base template + 3 specific: verify-email, reset-password,
+welcome</li>
+<li>Use React Email or simple HTML strings</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Mock Resend client in tests</li>
+<li>Test that emails fire on signup, verification, password reset</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Resend account set up, domain
+verified</label></li>
+<li><label><input type="checkbox" />sendEmail() function in
+email.ts</label></li>
+<li><label><input type="checkbox" />3 templates ready: verifyEmail,
+resetPassword, welcome</label></li>
+<li><label><input type="checkbox" />Test email sends successfully in
+dev</label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>The user needs to provide a Resend API key. If not provided, use a stub that logs to console.
+
+Read:
+- apps/web/src/lib/email.ts (current stub)
+
+Build email infrastructure:
+1. pnpm add resend --filter web
+2. Update apps/web/src/lib/email.ts:
+   - export async function sendEmail({ to, subject, html, from? }): Promise&lt;void&gt;
+   - Use Resend client when RESEND_API_KEY is set, else console.log
+3. Create apps/web/src/lib/email-templates/:
+   - base.ts — wrapper layout (header, body, footer, AIQL branding)
+   - verify-email.ts — verification link template
+   - reset-password.ts — reset link template
+   - welcome.ts — first-time user welcome
+4. Each template: takes data object, returns { subject, html }
+5. Add RESEND_API_KEY to .env.example
+6. Add a test API route /api/internal/test-email (dev only) to send a test
+7. Test by running the dev server and hitting the test endpoint</code></pre>
+<hr />
+<h3 id="day-12--email-verification-on-signup">Day 12 — Email
+verification on signup</h3>
+<p><strong>Objective:</strong> New signups must verify email before they
+can use the app.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>Modify: <code>apps/web/src/app/api/auth/signup/route.ts</code></li>
+<li>Modify: <code>packages/db/prisma/schema.prisma</code> (add
+User.emailVerified, User.verificationToken)</li>
+<li>New:
+<code>apps/web/src/app/api/auth/verify-email/route.ts</code></li>
+<li>New: <code>apps/web/src/app/verify-email/page.tsx</code></li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>Add <code>emailVerified: DateTime?</code> and
+<code>verificationToken: String?</code> to User</li>
+<li>On signup: create user with <code>emailVerified: null</code>, send
+verification email</li>
+<li>Verify endpoint: token → mark verified, clear token</li>
+<li>Login allowed but limited (banner: "Please verify your email")</li>
+<li>Hard-block after 7 days</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Test signup creates user with unverified status</li>
+<li>Test verification endpoint marks user verified</li>
+<li>Test expired token rejected</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Signup sends verification
+email</label></li>
+<li><label><input type="checkbox" />Click link → user
+verified</label></li>
+<li><label><input type="checkbox" />Verification token expires after 7
+days</label></li>
+<li><label><input type="checkbox" />Unverified users see a
+banner</label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Read:
+- apps/web/src/app/api/auth/signup/route.ts
+- apps/web/src/lib/email.ts (from Day 11)
+- packages/db/prisma/schema.prisma (User model)
+
+Build email verification:
+1. Update Prisma schema — add to User:
+   - emailVerifiedAt: DateTime?
+   - verificationToken: String?
+   - verificationExpiresAt: DateTime?
+2. Run prisma generate (skip db push — use ALTER TABLE via direct SQL like we did before for the lastAppliedAt field)
+3. Update signup route:
+   - Generate verification token (crypto.randomBytes(32).toString(&#39;hex&#39;))
+   - Set verificationExpiresAt = now + 7 days
+   - Send verification email
+4. Create /api/auth/verify-email?token=xxx endpoint:
+   - Find user by token
+   - Check not expired
+   - Set emailVerifiedAt, clear token
+5. Create /verify-email page that calls the endpoint
+6. Add banner to dashboard if !user.emailVerifiedAt
+7. Tests</code></pre>
+<hr />
+<h3 id="day-13--password-reset-flow">Day 13 — Password reset flow</h3>
+<p><strong>Objective:</strong> User can reset forgotten password via
+email link.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>New:
+<code>apps/web/src/app/(auth)/forgot-password/page.tsx</code></li>
+<li>New:
+<code>apps/web/src/app/(auth)/reset-password/page.tsx</code></li>
+<li>New:
+<code>apps/web/src/app/api/auth/forgot-password/route.ts</code></li>
+<li>New:
+<code>apps/web/src/app/api/auth/reset-password/route.ts</code></li>
+<li>Schema: add User.resetToken, User.resetExpiresAt</li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>/forgot-password: enter email → triggers reset email (always returns
+success to prevent email enumeration)</li>
+<li>/reset-password?token=xxx: form to set new password</li>
+<li>Token expires in 1 hour</li>
+<li>After reset: invalidate all existing sessions</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Test request always returns success</li>
+<li>Test reset with valid token works</li>
+<li>Test reset with expired token rejected</li>
+<li>Test sessions invalidated after reset</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />"Forgot password?" link on login
+page</label></li>
+<li><label><input type="checkbox" />Email sent with reset link (or
+success returned silently if email doesn't exist)</label></li>
+<li><label><input type="checkbox" />Reset page accepts new
+password</label></li>
+<li><label><input type="checkbox" />Token expires in 1 hour</label></li>
+<li><label><input type="checkbox" />All sessions invalidated after
+reset</label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Read:
+- apps/web/src/app/(auth)/login/page.tsx
+- apps/web/src/app/api/auth/login/route.ts
+- apps/web/src/lib/email.ts
+
+Build password reset flow:
+1. Schema additions (use direct SQL ALTER):
+   - User.resetToken: String?
+   - User.resetExpiresAt: DateTime?
+2. Create /forgot-password page with email form
+3. Create /api/auth/forgot-password:
+   - Look up user by email
+   - Generate token, set 1-hour expiry
+   - Send reset email
+   - ALWAYS return 200 (no enumeration)
+4. Create /reset-password page with token (query param) + new password form
+5. Create /api/auth/reset-password:
+   - Validate token
+   - Hash new password (argon2)
+   - Update user
+   - Clear token
+   - Invalidate all sessions (lucia.invalidateUserSessions)
+6. Add &quot;Forgot password?&quot; link to login page
+7. Create reset-password.ts email template (already started Day 11)
+8. Tests for all paths</code></pre>
+<hr />
+<h3 id="day-14--razorpay-integration-account--checkout">Day 14 —
+Razorpay integration (account + checkout)</h3>
+<p><strong>Objective:</strong> Customer can upgrade plan via Razorpay
+checkout. Webhook updates DB.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>New: <code>apps/web/src/lib/razorpay.ts</code></li>
+<li>New:
+<code>apps/web/src/app/api/v1/billing/create-order/route.ts</code></li>
+<li>New:
+<code>apps/web/src/app/api/v1/billing/webhook/route.ts</code></li>
+<li>Modify: schema add Subscription model (or just Organisation
+fields)</li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>Sign up at razorpay.com (KYC required, takes 1-2 days for
+business)</li>
+<li>Use Razorpay Subscriptions (recurring) not one-time orders</li>
+<li>Plans created in Razorpay dashboard, IDs stored in env</li>
+<li>Webhook verifies signature, updates
+Organisation.stripeSubscriptionId (rename to billingId)</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Mock Razorpay client</li>
+<li>Test webhook signature validation</li>
+<li>Test subscription state updates</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Razorpay account set up + plans
+created</label></li>
+<li><label><input type="checkbox" />/api/v1/billing/create-order creates
+a Razorpay subscription</label></li>
+<li><label><input type="checkbox" />Webhook receives + verifies +
+updates DB</label></li>
+<li><label><input type="checkbox" />Settings page shows current plan +
+"Manage billing" link</label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>The user needs to set up a Razorpay account first (requires KYC). For now, set up with test API keys.
+
+Read:
+- packages/db/prisma/schema.prisma (Organisation model — note stripeCustomerId/stripeSubscriptionId fields)
+- apps/web/src/lib/plans.ts (from Day 5)
+
+Build Razorpay subscription integration:
+1. pnpm add razorpay --filter web
+2. Create apps/web/src/lib/razorpay.ts:
+   - Razorpay client initialised with env keys
+   - createSubscription(planId, customerInfo): Promise&lt;{ subscriptionId, shortUrl }&gt;
+   - cancelSubscription(subscriptionId): Promise&lt;void&gt;
+   - verifyWebhookSignature(body, signature, secret): boolean
+3. Create /api/v1/billing/create-order:
+   - Takes { planTier: &#39;starter&#39; | &#39;professional&#39; | &#39;business&#39; }
+   - Auth required, gets org
+   - Creates Razorpay subscription
+   - Returns checkout URL
+4. Create /api/v1/billing/webhook:
+   - Verify Razorpay signature
+   - Handle events: subscription.activated, subscription.charged, subscription.cancelled
+   - Update Organisation.stripeSubscriptionId (or rename to billingSubscriptionId)
+   - Update plan field accordingly
+5. Add RAZORPAY_KEY_ID, RAZORPAY_KEY_SECRET, RAZORPAY_WEBHOOK_SECRET to .env.example
+6. Tests for webhook signature verification</code></pre>
+<hr />
+<h3 id="day-15--plan-upgradedowngrade-ui">Day 15 — Plan
+upgrade/downgrade UI</h3>
+<p><strong>Objective:</strong> User can change plans from
+/settings/billing.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>New or modify:
+<code>apps/web/src/app/(dashboard)/settings/billing/page.tsx</code></li>
+<li>New: <code>apps/web/src/components/billing/plan-card.tsx</code></li>
+<li>New:
+<code>apps/web/src/app/api/v1/billing/change-plan/route.ts</code></li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>Show current plan with usage metrics</li>
+<li>Show other plans with "Upgrade" / "Downgrade" buttons</li>
+<li>On change: cancel current Razorpay subscription, create new one</li>
+<li>Show pro-rated bill explanation</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Test plan change cancels old, creates new</li>
+<li>Test downgrade preserves grandfather pricing</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />/settings/billing shows current plan
++ usage</label></li>
+<li><label><input type="checkbox" />Other plans displayed with clear
+upgrade/downgrade paths</label></li>
+<li><label><input type="checkbox" />Click button → Razorpay checkout →
+webhook updates DB → success</label></li>
+<li><label><input type="checkbox" />Confirmation dialog for
+downgrades</label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Read:
+- apps/web/src/lib/plans.ts (from Day 5)
+- apps/web/src/lib/razorpay.ts (from Day 14)
+- apps/web/src/app/(dashboard)/settings/ (existing settings layout)
+
+Build /settings/billing page:
+1. If billing page exists, audit it. Else create.
+2. Create apps/web/src/components/billing/plan-card.tsx — single plan display with action button
+3. Page sections:
+   - Current plan summary (name, price, billing date, usage: queries used/limit)
+   - All available plans (3 cards) with Upgrade/Downgrade CTAs
+   - Cancel subscription button (with confirmation)
+4. Create /api/v1/billing/change-plan:
+   - Cancel current subscription
+   - Create new at the new plan
+   - Update DB
+5. Show pro-rated bill explanation
+6. Add tests</code></pre>
+<hr />
+<h2 id="week-4-differentiator--polish">Week 4: Differentiator +
+Polish</h2>
+<h3 id="day-16--tds-deduction-scanner-check-section-40aia">Day 16 — TDS
+deduction scanner check (Section 40(a)(ia))</h3>
+<p><strong>Objective:</strong> Add a scanner check that flags vendor
+payments above ₹30K with no TDS deducted.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>Modify: <code>packages/close-engine/src/scanner.ts</code> (add check
+function)</li>
+<li>Tests:
+<code>packages/close-engine/src/__tests__/scanner.test.ts</code></li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>TDS thresholds for 194C (contractor): single payment ₹30K OR
+aggregate ₹1L/year</li>
+<li>Detection: find vendor payments where party_name exists,
+voucher_type = Payment, amount &gt; threshold, and no corresponding TDS
+entry on the same voucher</li>
+<li>Output: list of vouchers + total ₹ exposure (which = the disallowed
+expense risk)</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Mock SQL returns vendor payments &gt; 30K</li>
+<li>Verify check identifies them as missing TDS</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />New check function
+<code>checkTdsDeduction</code> added</label></li>
+<li><label><input type="checkbox" />Returns Issue with code
+<code>tds_missing</code></label></li>
+<li><label><input type="checkbox" />Wired into runDataQualityScan
+parallel execution</label></li>
+<li><label><input type="checkbox" />Test cases cover: single payment
+&gt; 30K, aggregate &gt; 1L, payment with TDS (should NOT
+flag)</label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Read:
+- packages/close-engine/src/scanner.ts
+- packages/close-engine/src/__tests__/scanner.test.ts (existing pattern for tests with mocked prisma)
+
+Add TDS deduction scanner check (Section 40(a)(ia)):
+
+1. Add function checkTdsDeduction(table, start, end, colMap, presentColumns) in scanner.ts:
+   - SQL: find payment vouchers where party_name IS NOT NULL, sum(debit_amount) &gt; 30000 per voucher
+   - Cross-check: no entry with account_name LIKE &#39;%TDS%&#39; in same voucher (reference_number match)
+   - Return Issue: code=&#39;tds_missing&#39;, severity=&#39;critical&#39;
+   - title: &quot;N vendor payments missing TDS deduction&quot;
+   - exposure = sum of payments (this is the disallowed expense risk)
+2. Add to runDataQualityScan parallel checks array
+3. Add issue title mapping in task-generator.ts:
+   tds_missing: &quot;Add TDS deduction for ${N} vendor payments&quot;
+4. Add tests in scanner.test.ts:
+   - Mock returns 3 payments, each above 30K, no TDS
+   - Assert issue.affectedRows = 3
+   - Assert issue.severity = &#39;critical&#39;
+5. Run pnpm test</code></pre>
+<hr />
+<h3 id="day-17--cash-payment--10k-scanner-check-section-40a3">Day 17 —
+Cash payment &gt; ₹10K scanner check (Section 40A(3))</h3>
+<p><strong>Objective:</strong> Flag cash payments above ₹10K — Income
+Tax Act disallows the expense.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>Modify: <code>packages/close-engine/src/scanner.ts</code></li>
+<li>Tests: same file</li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>Detection: voucher_type = Payment, account_name LIKE '%cash%' (or
+Petty Cash etc.), debit_amount &gt; 10000</li>
+<li>Section 40A(3) disallows cash payments &gt; ₹10,000 single
+transaction (₹35K for transporters)</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Mock cash payment &gt; 10K → flag</li>
+<li>Mock cash payment &lt;= 10K → don't flag</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Function
+<code>checkCashPayments</code> added</label></li>
+<li><label><input type="checkbox" />Returns Issue with code
+<code>cash_payment_excess</code></label></li>
+<li><label><input type="checkbox" />Threshold configurable (default
+10000)</label></li>
+<li><label><input type="checkbox" />Tests pass</label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Read: packages/close-engine/src/scanner.ts (and the TDS check from Day 16 as reference)
+
+Add Cash payment &gt; ₹10K check (Section 40A(3)):
+1. Function checkCashPayments(...): looks for cash account payments above ₹10,000
+2. SQL: LOWER(account_name) LIKE &#39;%cash%&#39; OR LIKE &#39;%petty cash%&#39;, voucher_type=&#39;Payment&#39;, sum(debit_amount) per voucher &gt; 10000
+3. Issue: code=&#39;cash_payment_excess&#39;, severity=&#39;review&#39;, exposure = sum (disallowance risk)
+4. Title: &quot;${N} cash payments above ₹10K — Section 40A(3) disallowance risk&quot;
+5. Add to runDataQualityScan parallel checks
+6. Add tests</code></pre>
+<hr />
+<h3 id="day-18--cash-receipt--2l-scanner-check-section-269st">Day 18 —
+Cash receipt &gt; ₹2L scanner check (Section 269ST)</h3>
+<p><strong>Objective:</strong> Flag cash receipts above ₹2 lakh —
+penalty under Section 269ST.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>Modify: <code>packages/close-engine/src/scanner.ts</code></li>
+<li>Tests: same file</li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>Detection: voucher_type = Receipt, account_name LIKE '%cash%',
+credit_amount &gt; 200000</li>
+<li>Section 269ST: penalty = amount received in cash above ₹2L</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Mock cash receipt &gt; 2L → flag with severity critical (penalty
+equal to amount)</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Function
+<code>checkCashReceipts</code> added</label></li>
+<li><label><input type="checkbox" />Returns Issue with code
+<code>cash_receipt_excess</code></label></li>
+<li><label><input type="checkbox" />Severity: critical (penalty equal to
+amount)</label></li>
+<li><label><input type="checkbox" />Tests pass</label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Read: packages/close-engine/src/scanner.ts (and existing checks as reference)
+
+Add Cash receipt &gt; ₹2L check (Section 269ST):
+1. Function checkCashReceipts: looks for cash account receipts above ₹2,00,000 single transaction
+2. SQL: similar to cash payment but Receipt type and credit_amount instead
+3. Issue: code=&#39;cash_receipt_excess&#39;, severity=&#39;critical&#39;, exposure = sum (penalty equals amount)
+4. Title: &quot;${N} cash receipts above ₹2L — Section 269ST penalty risk&quot;
+5. Add to runDataQualityScan
+6. Tests</code></pre>
+<hr />
+<h3 id="day-19--account-deletion--data-export-dpdp-compliance">Day 19 —
+Account deletion / data export (DPDP compliance)</h3>
+<p><strong>Objective:</strong> User can delete their account and export
+all their data.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>New:
+<code>apps/web/src/app/(dashboard)/settings/data/page.tsx</code></li>
+<li>New:
+<code>apps/web/src/app/api/v1/account/export/route.ts</code></li>
+<li>New:
+<code>apps/web/src/app/api/v1/account/delete/route.ts</code></li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>Export: ZIP with org info, connections, scans, queries, knowledge
+entries — JSON files</li>
+<li>Delete: confirmation dialog (type org name), cascade delete (Cascade
+in schema handles most), drop upload tables</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Test export generates valid ZIP</li>
+<li>Test delete removes all data</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />/settings/data shows data overview +
+Export + Delete buttons</label></li>
+<li><label><input type="checkbox" />Export downloads ZIP with all org
+data</label></li>
+<li><label><input type="checkbox" />Delete requires typing org name +
+sends confirmation email + 24h grace period</label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Read:
+- apps/web/src/app/(dashboard)/settings/ (existing pages)
+- packages/db/prisma/schema.prisma (all org-related models)
+
+Build DPDP-compliant account management:
+1. Create /settings/data page with:
+   - Data overview (X connections, Y MB stored, Z queries logged)
+   - &quot;Export all data&quot; button
+   - &quot;Delete account&quot; button (danger zone)
+2. Create /api/v1/account/export:
+   - Gather: org info, all connections, all uploads, all scans, all queries, all knowledge
+   - Anonymise tokens if needed
+   - Generate ZIP using node:archiver
+   - Stream response with proper headers
+3. Create /api/v1/account/delete:
+   - Require org name typed exactly
+   - Send email to all team members
+   - Schedule deletion 24 hours later (immediate for now — add scheduling later)
+   - Drop all upload_ tables
+   - Delete Organisation (cascades to all related)
+4. Tests</code></pre>
+<hr />
+<h3 id="day-20--audit-log-for-pii-access">Day 20 — Audit log for PII
+access</h3>
+<p><strong>Objective:</strong> Log who in the org accessed which
+connection's data, when. Surface in settings.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>Schema: add <code>ConnectionAccessLog</code> model</li>
+<li>New: <code>apps/web/src/lib/audit-log.ts</code></li>
+<li>Modify: connection-viewing pages to log</li>
+<li>New:
+<code>apps/web/src/app/(dashboard)/settings/audit/page.tsx</code></li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>New table: connection access log (userId, connectionId, action,
+timestamp, ipAddress)</li>
+<li>Log on every page view of /connections/[id], scan, query</li>
+<li>Settings page lists last 100 entries with filters</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Test that visiting a connection page creates a log entry</li>
+<li>Test that settings page renders logs</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Schema updated with
+ConnectionAccessLog</label></li>
+<li><label><input type="checkbox" />Logging middleware/helper in
+place</label></li>
+<li><label><input type="checkbox" />/settings/audit page shows recent
+access</label></li>
+<li><label><input type="checkbox" />Filters: by user, by connection, by
+action</label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Read: packages/db/prisma/schema.prisma
+
+Build PII access audit logging:
+1. Schema (use ALTER TABLE direct SQL, not prisma db push):
+   ConnectionAccessLog {
+     id           String   @id @default(cuid())
+     orgId        String
+     userId       String
+     connectionId String?
+     action       String   // &#39;view&#39;, &#39;scan&#39;, &#39;query&#39;, &#39;export&#39;
+     ipAddress    String?
+     userAgent    String?
+     metadata     String?  // JSON for action-specific data
+     createdAt    DateTime @default(now())
+     @@index([orgId, createdAt])
+   }
+2. Create apps/web/src/lib/audit-log.ts:
+   - logAccess({ userId, orgId, connectionId, action, request }): Promise&lt;void&gt;
+   - Best-effort (don&#39;t fail the parent request)
+3. Add log calls in:
+   - /connections/[id] page (action: &#39;view&#39;)
+   - /api/v1/connections/[connectionId]/scan (action: &#39;scan&#39;)
+   - /api/v1/query (action: &#39;query&#39;)
+   - export endpoints (action: &#39;export&#39;)
+4. Create /settings/audit page:
+   - Table of last 100 entries
+   - Filters: user, connection, action, date range
+   - CSV export of full log
+5. Tests</code></pre>
+<hr />
+<h1 id="phase-2--bank-reconciliation-days-21-50">Phase 2 — Bank
+Reconciliation (Days 21-50)</h1>
+<p><strong>Goal:</strong> Add the most-used CA workflow. Converts AIQL
+from monthly scanner to weekly tool.</p>
+<hr />
+<h2 id="weeks-5-6-pdf-parsers">Weeks 5-6: PDF Parsers</h2>
+<h3 id="day-21--bank-statement-schema-design">Day 21 — Bank statement
+schema design</h3>
+<p><strong>Objective:</strong> Database tables for bank statements,
+transactions, match status.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>Schema: add BankStatement, BankTransaction, BankMatch</li>
+<li>Migration via direct SQL</li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>BankStatement: per-upload metadata (bank, account, period,
+file)</li>
+<li>BankTransaction: individual rows from statement (date, amount, type,
+description)</li>
+<li>BankMatch: links bank transaction to GL voucher (or
+'unmatched')</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Schema validates</li>
+<li>Basic CRUD works</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />3 new tables in schema</label></li>
+<li><label><input type="checkbox" />Migrations applied</label></li>
+<li><label><input type="checkbox" />Prisma client
+regenerated</label></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Read: packages/db/prisma/schema.prisma
+
+Design bank reconciliation schema. Add 3 models:
+
+BankStatement {
+  id              String @id @default(cuid())
+  connectionId    String
+  bankName        String     // &#39;HDFC&#39;, &#39;ICICI&#39;, &#39;SBI&#39;, &#39;Axis&#39;, &#39;OTHER&#39;
+  accountNumber   String     // last 4 digits stored, full encrypted
+  periodStart     DateTime
+  periodEnd       DateTime
+  openingBalance  Decimal
+  closingBalance  Decimal
+  originalFile    String?    // S3 key
+  uploadedAt      DateTime @default(now())
+  transactions    BankTransaction[]
+}
+
+BankTransaction {
+  id              String @id @default(cuid())
+  statementId     String
+  transactionDate DateTime
+  description     String
+  referenceNumber String?    // cheque no, UTR, etc.
+  amount          Decimal    // positive = credit, negative = debit
+  balance         Decimal?
+  matchedTo       BankMatch?
+  @@index([statementId])
+}
+
+BankMatch {
+  id                  String @id @default(cuid())
+  bankTransactionId   String @unique
+  voucherReference    String?  // GL reference_number
+  matchConfidence     Float    // 0-1
+  matchType           String   // &#39;exact&#39;, &#39;fuzzy&#39;, &#39;manual&#39;, &#39;unmatched&#39;
+  inTransit           Boolean @default(false)
+  note                String?
+  matchedBy           String?
+  matchedAt           DateTime?
+}
+
+Apply via ALTER TABLE direct SQL (similar to the OrgBusinessKnowledge migration pattern).
+Run prisma generate.</code></pre>
+<hr />
+<h3 id="day-22-24--hdfc-pdf-parser">Day 22-24 — HDFC PDF parser</h3>
+<p><strong>Day 22 Objective:</strong> Extract transactions from a
+standard HDFC bank statement PDF.</p>
+<p><strong>Day 23 Objective:</strong> Handle HDFC PDF format
+variations.</p>
+<p><strong>Day 24 Objective:</strong> Tests + edge cases (multi-page,
+transactions split across pages).</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>New: <code>packages/bank-recon/src/parsers/hdfc.ts</code></li>
+<li>New: <code>packages/bank-recon/src/parsers/types.ts</code></li>
+<li>Tests:
+<code>packages/bank-recon/src/__tests__/hdfc.test.ts</code></li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>New monorepo package: <code>packages/bank-recon</code></li>
+<li>Use <code>pdf-parse</code> to extract text, then regex/parsing
+rules</li>
+<li>HDFC has predictable format: Date | Narration | Chq/Ref | Value Date
+| Withdrawal | Deposit | Balance</li>
+<li>Need 5+ real HDFC statements to test against</li>
+</ul>
+<p><strong>Tests:</strong></p>
+<ul>
+<li>Parse a known HDFC statement, assert specific transactions
+extracted</li>
+<li>Edge cases: multi-line narration, empty cells, footer pages</li>
+</ul>
+<p><strong>Acceptance criteria:</strong></p>
+<ul class="task-list">
+<li><label><input type="checkbox" />Function
+<code>parseHdfcStatement(buffer): Promise&lt;BankStatement&gt;</code>
+returns structured data</label></li>
+<li><label><input type="checkbox" />Handles 3+ format
+variations</label></li>
+<li><label><input type="checkbox" />Tests with 5+ real (sanitised) HDFC
+PDFs</label></li>
+</ul>
+<p><strong>Sonnet prompt (Day 22):</strong></p>
+<pre><code>Create new monorepo package packages/bank-recon. Mimic the structure of packages/close-engine.
+
+Build HDFC bank statement PDF parser:
+1. pnpm add pdf-parse --filter @aiql/bank-recon
+2. Create packages/bank-recon/src/parsers/types.ts:
+   - ParsedStatement type matching the BankStatement schema
+   - ParsedTransaction type matching BankTransaction schema
+3. Create packages/bank-recon/src/parsers/hdfc.ts:
+   - export async function parseHdfcStatement(buffer: Buffer): Promise&lt;ParsedStatement&gt;
+   - Use pdf-parse to extract text
+   - Detect HDFC format: header contains &quot;HDFC BANK&quot;, account number in standard place
+   - Extract: account number, period, opening/closing balance
+   - Parse transaction rows: Date | Narration | Chq No | Value Date | Withdrawal | Deposit | Balance
+   - Convert to ParsedTransaction[]
+4. Create packages/bank-recon/package.json with proper dependencies
+5. Write tests/__tests__/hdfc.test.ts with a sample HDFC text dump (no real PDF in repo)
+6. The user will provide a real HDFC PDF for manual verification</code></pre>
+<p><strong>Day 23-24 follow on the same pattern — refine the parser, add
+format variations, comprehensive tests.</strong></p>
+<hr />
+<h3 id="day-25-26--icici-pdf-parser">Day 25-26 — ICICI PDF parser</h3>
+<p><strong>Same pattern as HDFC. ICICI format is similar but column
+order differs.</strong></p>
+<p><strong>Sonnet prompt (Day 25):</strong></p>
+<pre><code>Read:
+- packages/bank-recon/src/parsers/hdfc.ts (built Day 22-24)
+- packages/bank-recon/src/parsers/types.ts
+
+Build ICICI bank statement parser following the HDFC pattern:
+1. Create packages/bank-recon/src/parsers/icici.ts
+2. ICICI format: Date | Mode | Particulars | Deposits | Withdrawals | Balance
+3. Header marker: &quot;ICICI BANK&quot; + account number format
+4. Same return type ParsedStatement
+5. Tests in packages/bank-recon/src/__tests__/icici.test.ts</code></pre>
+<hr />
+<h3 id="day-27-28--sbi-pdf-parser">Day 27-28 — SBI PDF parser</h3>
+<p><strong>Same pattern. SBI has the most format variations of major
+Indian banks.</strong></p>
+<hr />
+<h3 id="day-29--axis-bank-pdf-parser">Day 29 — Axis Bank PDF parser</h3>
+<p><strong>Same pattern.</strong></p>
+<hr />
+<h3 id="day-30--generic-csv-import--parser-dispatcher">Day 30 — Generic
+CSV import + parser dispatcher</h3>
+<p><strong>Objective:</strong> Fallback CSV parser + auto-detect which
+parser to use based on PDF header.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>New: <code>packages/bank-recon/src/parsers/csv.ts</code></li>
+<li>New: <code>packages/bank-recon/src/parsers/dispatcher.ts</code></li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Read all parsers in packages/bank-recon/src/parsers/ (HDFC, ICICI, SBI, Axis)
+
+Build:
+1. Generic CSV parser:
+   - Auto-detect columns using @aiql/erp-connectors mapColumn function
+   - Map to ParsedTransaction[]
+2. Parser dispatcher:
+   - Function detectBankStatement(buffer, filename): { parser: &#39;hdfc&#39; | &#39;icici&#39; | &#39;sbi&#39; | &#39;axis&#39; | &#39;generic_csv&#39;, confidence: number }
+   - Read first page of PDF / first 5 lines of CSV
+   - Look for bank-specific markers
+   - Return appropriate parser
+3. Main entry: parseBankStatement(buffer, filename, hint?): ParsedStatement
+   - Use dispatcher, then call appropriate parser
+   - Fall back to CSV if PDF doesn&#39;t match known formats
+4. Tests for dispatcher with each bank format</code></pre>
+<hr />
+<h2 id="weeks-7-8-matching-engine">Weeks 7-8: Matching Engine</h2>
+<h3 id="day-31--bank-statement-upload-ui--api">Day 31 — Bank statement
+upload UI + API</h3>
+<p><strong>Objective:</strong> User uploads a bank statement; AIQL
+parses, stores, shows summary.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>New:
+<code>apps/web/src/app/(dashboard)/connections/[id]/bank-recon/page.tsx</code></li>
+<li>New:
+<code>apps/web/src/app/(dashboard)/connections/[id]/bank-recon/upload/page.tsx</code></li>
+<li>New:
+<code>apps/web/src/app/api/v1/bank-recon/upload/route.ts</code></li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>Upload page with drag-drop file</li>
+<li>POST file to /api/v1/bank-recon/upload</li>
+<li>Parse, store BankStatement + BankTransactions</li>
+<li>Redirect to /bank-recon/{statementId}</li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Read:
+- apps/web/src/app/(dashboard)/connections/[id]/page.tsx
+- packages/bank-recon/* (parsers built Days 22-30)
+
+Build bank statement upload:
+1. /api/v1/bank-recon/upload POST endpoint:
+   - Accept multipart file
+   - Determine connectionId from query/body
+   - Use bank-recon dispatcher to detect format
+   - Parse statement
+   - Store BankStatement + BankTransactions in DB
+   - Return statementId
+2. /connections/[id]/bank-recon/upload page:
+   - Drag-drop file input
+   - Bank format selector (or auto-detect)
+   - Submit → call API → redirect to results
+3. /connections/[id]/bank-recon page:
+   - List uploaded statements for this connection
+   - &quot;Upload new&quot; CTA
+4. Tests for upload endpoint</code></pre>
+<hr />
+<h3 id="day-32--exact-matching-algorithm">Day 32 — Exact matching
+algorithm</h3>
+<p><strong>Objective:</strong> Match bank transactions to GL vouchers
+where amount + date + ref number match exactly.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>New: <code>packages/bank-recon/src/matching/exact.ts</code></li>
+<li>New:
+<code>apps/web/src/app/api/v1/bank-recon/[statementId]/match/route.ts</code></li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>Query all GL vouchers in the bank statement's period</li>
+<li>For each bank transaction, look for: voucher with same amount, same
+date (or ±1 day), same ref if available</li>
+<li>High-confidence exact matches (1.0)</li>
+<li>Store as BankMatch with type='exact'</li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Build exact matching engine:
+1. Create packages/bank-recon/src/matching/exact.ts:
+   - Function exactMatch(bankTransaction, glVouchers): MatchResult | null
+   - Match criteria: same amount (±₹0.50), same date (±1 day), same reference if available
+   - Returns { voucherReference, confidence: 1.0 } or null
+2. Create /api/v1/bank-recon/[statementId]/match POST endpoint:
+   - Load all bank transactions for statement
+   - Query GL vouchers in statement&#39;s period
+   - For each bank transaction, attempt exact match
+   - Store BankMatch records
+   - Return summary
+3. Tests with mocked GL data</code></pre>
+<hr />
+<h3 id="day-33--fuzzy-matching-algorithm">Day 33 — Fuzzy matching
+algorithm</h3>
+<p><strong>Objective:</strong> Match remaining (unmatched-after-exact)
+transactions using fuzzy criteria.</p>
+<p><strong>Files:</strong></p>
+<ul>
+<li>New: <code>packages/bank-recon/src/matching/fuzzy.ts</code></li>
+</ul>
+<p><strong>Implementation notes:</strong></p>
+<ul>
+<li>For unmatched bank transactions, look for:
+<ul>
+<li>Same amount (±₹1), date within ±7 days, description contains vendor
+name</li>
+<li>Or description similar to voucher narration (Levenshtein
+distance)</li>
+</ul></li>
+<li>Confidence based on closeness: 0.7-0.95</li>
+<li>Store with type='fuzzy'</li>
+</ul>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Build fuzzy matching:
+1. packages/bank-recon/src/matching/fuzzy.ts:
+   - fuzzyMatch(bankTransaction, glVouchers): MatchResult | null
+   - Scoring: amount weight 50%, date weight 30%, description similarity 20%
+   - Threshold: confidence &gt;= 0.7 to suggest a match
+2. Integrate into match endpoint from Day 32 (run fuzzy after exact for remaining)
+3. Tests</code></pre>
+<hr />
+<h3 id="day-34--match-scoring--confidence-levels">Day 34 — Match scoring
++ confidence levels</h3>
+<p><strong>Objective:</strong> Combine exact + fuzzy results, surface
+confidence for user review.</p>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Refine matching engine:
+1. Combine exact + fuzzy results
+2. Add confidence buckets:
+   - &#39;high&#39; (0.95-1.0): auto-confirm, show as matched
+   - &#39;medium&#39; (0.7-0.94): show as &quot;review suggested&quot;
+   - &#39;low&#39; (&lt;0.7): show as unmatched
+3. Update BankMatch records with confidence bucket
+4. Tests</code></pre>
+<hr />
+<h3 id="day-35--match-results-storage--retrieval">Day 35 — Match results
+storage + retrieval</h3>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Build match results API:
+1. GET /api/v1/bank-recon/[statementId]/matches:
+   - Returns categorized: matched (exact), suggested (fuzzy), unmatched (bank side), unmatched (book side)
+   - Pagination for large statements
+2. GET /api/v1/bank-recon/[statementId] returns statement summary + match counts
+3. Tests</code></pre>
+<hr />
+<h3 id="day-36-37--manual-match-ui--persistence">Day 36-37 — Manual
+match UI + persistence</h3>
+<p><strong>Sonnet prompt (Day 36):</strong></p>
+<pre><code>Build manual match UI:
+1. /connections/[id]/bank-recon/[statementId] page:
+   - Three columns: Matched | Suggested | Unmatched
+   - Each transaction shows date, description, amount
+   - Suggested matches show confidence and proposed voucher
+   - Click &quot;Confirm&quot; / &quot;Reject&quot; / &quot;Match to...&quot;
+2. &quot;Match to...&quot; opens modal with searchable list of unmatched GL vouchers
+3. Drag-drop variant (post-MVP)
+4. Tests</code></pre>
+<hr />
+<h3 id="day-38-39--in-transit-tracking--carry-forward">Day 38-39 —
+In-transit tracking + carry-forward</h3>
+<p><strong>Sonnet prompt (Day 38):</strong></p>
+<pre><code>Add in-transit tracking:
+1. UI option to mark unmatched transaction as &quot;in transit&quot; (cheque issued but not cleared)
+2. Updates BankMatch.inTransit = true
+3. Next month: these transactions appear in &quot;carried forward&quot; section
+4. Tests</code></pre>
+<hr />
+<h3 id="day-40--tests-for-matching-engine">Day 40 — Tests for matching
+engine</h3>
+<p><strong>Sonnet prompt:</strong></p>
+<pre><code>Add comprehensive integration tests for bank-recon:
+- End-to-end: upload statement → match → store → retrieve
+- Edge cases: zero transactions, all match, none match
+- Performance: 10K transactions match in &lt; 30 seconds</code></pre>
+<hr />
+<h2 id="weeks-9-10-workflow-integration">Weeks 9-10: Workflow
+Integration</h2>
+<h3 id="day-41-42--bank-recon-dashboard--discrepancy-report-pdf">Day
+41-42 — Bank Recon dashboard + discrepancy report PDF</h3>
+<p><strong>Day 41:</strong></p>
+<pre><code>Build Bank Recon dashboard:
+- Summary cards: matched count, unmatched bank, unmatched book, variance ₹
+- Three-bucket detail view (clickable)
+- &quot;Export discrepancy report&quot; button</code></pre>
+<p><strong>Day 42:</strong></p>
+<pre><code>Reuse pdf-export pattern from Day 6:
+- Generate discrepancy report PDF
+- Include all unmatched transactions
+- Recommended actions</code></pre>
+<hr />
+<h3 id="day-43-44--recurring-patterns-detection">Day 43-44 — Recurring
+patterns detection</h3>
+<pre><code>Detect recurring patterns:
+- &quot;Bank charges always match — auto-confirm next time&quot;
+- &quot;Same vendor pays monthly with similar reference — high confidence match&quot;
+- Reduce review time on subsequent statements</code></pre>
+<hr />
+<h3 id="day-45--bank-recon-as-close-period-task">Day 45 — Bank Recon as
+close period task</h3>
+<pre><code>Integrate into Close Manager:
+- Generate &quot;Reconcile bank account&quot; task during close period creation if BANK accounts exist
+- Task links to bank-recon page
+- Mark complete when all transactions matched or marked</code></pre>
+<hr />
+<h3 id="days-46-50--multi-bank-support-polish-tests-launch">Days 46-50 —
+Multi-bank support, polish, tests, launch</h3>
+<p><strong>Day 46:</strong> Multi-bank per entity support <strong>Day
+47:</strong> End-to-end tests <strong>Day 48:</strong> UI polish
+<strong>Day 49:</strong> Documentation <strong>Day 50:</strong> Phase 2
+launch + pricing announcement email</p>
+<hr />
+<h1 id="phase-3--gstn-auto-reconciliation-days-51-90">Phase 3 — GSTN
+Auto-Reconciliation (Days 51-90)</h1>
+<p><strong>Goal:</strong> Auto-pull GSTR-2A/2B from GST portal,
+reconcile against books. Major pricing justifier.</p>
+<p><strong>Prerequisites:</strong></p>
+<ul>
+<li>GSTN sandbox API access (apply Week 1 of Phase 1 — 6-week
+approval)</li>
+<li>GSP partnership decided (or direct integration)</li>
+</ul>
+<hr />
+<h2 id="weeks-11-12-gstn-api-integration">Weeks 11-12: GSTN API
+Integration</h2>
+<h3 id="days-51-55--gstn-authentication">Days 51-55 — GSTN
+authentication</h3>
+<p><strong>Day 51:</strong> GSTN sandbox status, document API contract,
+set up env vars <strong>Day 52:</strong> Authentication flow — GSTIN
+registration <strong>Day 53:</strong> OTP flow handling (UI + API)
+<strong>Day 54:</strong> Session management + auth token storage
+<strong>Day 55:</strong> Token refresh logic</p>
+<p><strong>Sonnet prompt (Day 52):</strong></p>
+<pre><code>GSTN API requires GSP (GST Suvidha Provider) credentials. The user must have these set up.
+
+Read GSTN public API documentation: https://docs.gstn.org/
+
+Build GSTN authentication module:
+1. Create packages/gstn-integration/ monorepo package
+2. Authentication flow:
+   - User enters GSTIN
+   - Backend calls GSTN auth API
+   - GSTN sends OTP to registered mobile/email
+   - User enters OTP
+   - Backend exchanges for access token
+3. Store encrypted tokens per organisation (use existing crypto infra)
+4. Token TTL handling (refresh before expiry)
+5. Tests with mocked GSTN responses</code></pre>
+<hr />
+<h3
+id="days-56-60--rate-limiting-error-handling-testing-encryption-ui">Days
+56-60 — Rate limiting, error handling, testing, encryption, UI</h3>
+<p><strong>Day 56:</strong> Rate limiting (GSTN throttles aggressively)
++ retry logic with backoff <strong>Day 57:</strong> Comprehensive error
+handling for GSTN-specific errors <strong>Day 58:</strong> Sandbox
+testing scenarios (success, OTP fail, throttle, expired token)
+<strong>Day 59:</strong> GSTN connection UI (Settings → Integrations →
+GSTN) <strong>Day 60:</strong> Encrypted credential storage</p>
+<hr />
+<h2 id="weeks-13-14-gstr-2a2b-pull">Weeks 13-14: GSTR-2A/2B Pull</h2>
+<h3 id="days-61-65--gstr-2a--2b-pull-and-parse">Days 61-65 — GSTR-2A +
+2B pull and parse</h3>
+<p><strong>Day 61:</strong> GSTR-2A pull endpoint <strong>Day
+62:</strong> GSTR-2A JSON parsing <strong>Day 63:</strong> GSTR-2A
+storage schema (GstrPullRecord, GstrInvoice) <strong>Day 64:</strong>
+GSTR-2B pull endpoint <strong>Day 65:</strong> GSTR-2B JSON parsing</p>
+<hr />
+<h3
+id="days-66-70--schema-scheduler-aggregation-status-tracking-tests">Days
+66-70 — Schema, scheduler, aggregation, status tracking, tests</h3>
+<p><strong>Day 66:</strong> GSTR-2B storage + invoice-level records
+<strong>Day 67:</strong> Monthly pull scheduler (cron or queue-based)
+<strong>Day 68:</strong> Vendor-wise aggregation queries <strong>Day
+69:</strong> Supplier filing status tracking <strong>Day 70:</strong>
+Tests for full pull pipeline</p>
+<hr />
+<h2 id="weeks-15-16-reconciliation-engine">Weeks 15-16: Reconciliation
+Engine</h2>
+<h3 id="days-71-75--comparison-logic">Days 71-75 — Comparison logic</h3>
+<p><strong>Day 71:</strong> Books ITC vs 2B ITC comparison engine
+<strong>Day 72:</strong> Invoice-level matching algorithm (invoice no +
+amount + date + GSTIN) <strong>Day 73:</strong> Match scoring for
+invoices <strong>Day 74:</strong> Rule 36(4) compliance check
+(provisional ITC limit) <strong>Day 75:</strong> Provisional ITC
+tracking</p>
+<hr />
+<h3 id="days-76-80--differential-analysis-scorecard-ui-tests">Days 76-80
+— Differential analysis, scorecard, UI, tests</h3>
+<p><strong>Day 76:</strong> Find invoices in 2B not in books <strong>Day
+77:</strong> Find invoices in books not in 2B <strong>Day 78:</strong>
+Vendor scorecard (% filed on time, historical) <strong>Day 79:</strong>
+GST Recon dashboard UI <strong>Day 80:</strong> Tests for reconciliation
+engine</p>
+<hr />
+<h2 id="weeks-17-18-workflow-integration">Weeks 17-18: Workflow
+Integration</h2>
+<h3 id="days-81-85--gstr-3b-prep-follow-up-workflow">Days 81-85 —
+GSTR-3B prep, follow-up workflow</h3>
+<p><strong>Day 81:</strong> GSTR-3B preparation helper (eligible ITC
+summary) <strong>Day 82:</strong> Eligible vs ineligible ITC
+categorisation <strong>Day 83:</strong> Email vendor about late filings
+— template + API <strong>Day 84:</strong> Follow-up workflow UI (track
+status of vendor follow-ups) <strong>Day 85:</strong> ITC at-risk
+dashboard (CFO view)</p>
+<hr />
+<h3 id="days-86-90--trends-integration-launch">Days 86-90 — Trends,
+integration, launch</h3>
+<p><strong>Day 86:</strong> Historical trend visualization (your ITC
+compliance over time) <strong>Day 87:</strong> Integration with TDS
+check (cross-reference vendor data) <strong>Day 88:</strong> GST Recon
+as close period task <strong>Day 89:</strong> End-to-end GST recon tests
+<strong>Day 90:</strong> Phase 3 launch + customer email + pricing
+announcement</p>
+<hr />
+<h1 id="phase-4--tally-live-sync-days-91-130">Phase 4 — Tally Live Sync
+(Days 91-130)</h1>
+<p><strong>Goal:</strong> Desktop agent that auto-pulls Tally data.
+Moves AIQL from monthly to daily product.</p>
+<p><strong>Prerequisites:</strong></p>
+<ul>
+<li>Tally TDL expertise (you learn it Weeks 17-18, or hire
+specialist)</li>
+<li>Code signing certificates (Windows + Mac) — ~₹15K + ₹10K</li>
+</ul>
+<hr />
+<h2 id="weeks-19-21-desktop-agent">Weeks 19-21: Desktop Agent</h2>
+<h3 id="days-91-100--agent-foundation">Days 91-100 — Agent
+foundation</h3>
+<p><strong>Day 91:</strong> Agent architecture design (Tauri vs Electron
+decision) <strong>Day 92:</strong> Tauri setup + cross-platform skeleton
+<strong>Day 93:</strong> Windows agent skeleton (system tray, settings,
+status) <strong>Day 94:</strong> Mac agent skeleton (menu bar, settings,
+status) <strong>Day 95:</strong> TDL/XML data extraction from Tally HTTP
+endpoint <strong>Day 96:</strong> Voucher extraction <strong>Day
+97:</strong> Master data extraction (vendors, customers, accounts,
+GSTINs) <strong>Day 98:</strong> Delta detection logic (last sync
+timestamp, change tracking) <strong>Day 99:</strong> Local SQLite cache
+for sync state <strong>Day 100:</strong> Local PII tokenisation (agent
+strips PII before cloud upload)</p>
+<hr />
+<h3 id="days-101-105--cloud-sync-installer">Days 101-105 — Cloud sync,
+installer</h3>
+<p><strong>Day 101:</strong> Tokenisation key management (key
+generation, secure storage in OS keychain) <strong>Day 102:</strong>
+Cloud sync endpoint (receive deltas from agent) <strong>Day
+103:</strong> Sync state reconciliation (handle conflicts) <strong>Day
+104:</strong> Windows installer (MSI build pipeline) <strong>Day
+105:</strong> Mac installer (pkg build pipeline)</p>
+<hr />
+<h2 id="weeks-22-23-sync-pipeline">Weeks 22-23: Sync Pipeline</h2>
+<h3 id="days-106-115--scheduling-resilience-status">Days 106-115 —
+Scheduling, resilience, status</h3>
+<p><strong>Day 106:</strong> Scheduled sync (cron-based daily at user
+time) <strong>Day 107:</strong> On-demand sync trigger (from agent menu)
+<strong>Day 108:</strong> Conflict detection logic <strong>Day
+109:</strong> Conflict resolution UI (manual review) <strong>Day
+110:</strong> Network resilience — retry with backoff <strong>Day
+111:</strong> Network resilience — offline mode (queue locally)
+<strong>Day 112:</strong> Sync status dashboard (cloud-side view of
+agent health) <strong>Day 113:</strong> Sync error reporting + alerting
+<strong>Day 114:</strong> Agent metrics + telemetry (privacy-preserving)
+<strong>Day 115:</strong> Tests for sync pipeline</p>
+<hr />
+<h2 id="weeks-24-25-real-time-workflow">Weeks 24-25: Real-time
+Workflow</h2>
+<h3 id="days-116-125--notifications-alerts-integration">Days 116-125 —
+Notifications, alerts, integration</h3>
+<p><strong>Day 116:</strong> Auto-trigger scan on new data sync
+<strong>Day 117:</strong> Notification system (email + in-app)
+<strong>Day 118:</strong> Critical finding alerts (immediate)
+<strong>Day 119:</strong> WhatsApp digest integration (via Gupshup or
+Twilio India) <strong>Day 120:</strong> Anomaly alerts — configurable
+thresholds <strong>Day 121:</strong> Alert subscription management (per
+user, per type) <strong>Day 122:</strong> Slack integration (optional)
+<strong>Day 123:</strong> Email digest builder (daily/weekly)
+<strong>Day 124:</strong> Tests for notification system <strong>Day
+125:</strong> Audit trail of syncs</p>
+<hr />
+<h2 id="week-26-polish--launch">Week 26: Polish + Launch</h2>
+<h3 id="days-126-130">Days 126-130</h3>
+<p><strong>Day 126:</strong> Windows code signing (EV certificate)
+<strong>Day 127:</strong> Mac notarization (Apple Developer ID)
+<strong>Day 128:</strong> Auto-update mechanism (electron-updater or
+Tauri equivalent) <strong>Day 129:</strong> Agent documentation for IT
+teams (installation guide, firewall rules) <strong>Day 130:</strong>
+Phase 4 launch + customer email + pricing announcement + celebration</p>
+<hr />
+<h1 id="templates--references">Templates &amp; References</h1>
+<h2 id="sonnet-prompt-template-use-for-any-day">Sonnet prompt template
+(use for any day)</h2>
+<pre><code>[Context section]
+Read these files first to understand the codebase:
+- {specific file paths from the day&#39;s entry}
+
+[Task section]
+[Copy the day&#39;s implementation notes + acceptance criteria]
+
+[Verification section]
+Before declaring done:
+1. Run pnpm typecheck
+2. Run pnpm test (or pnpm --filter {package} test for scoped)
+3. Manually verify the acceptance criteria
+4. Update CLAUDE.md if architecture changed
+
+[Constraints]
+- Use existing patterns and components — don&#39;t introduce new conventions
+- Add new code in the appropriate package — don&#39;t put backend logic in apps/web
+- Follow the existing test patterns (vi.hoisted for mocks, etc.)
+- All tests must pass before marking complete</code></pre>
+<h2 id="weekly-review-checklist">Weekly review checklist</h2>
+<p>Every Friday afternoon (30 minutes):</p>
+<ul class="task-list">
+<li><label><input type="checkbox" />What shipped this week vs
+plan?</label></li>
+<li><label><input type="checkbox" />Any spillover to next
+week?</label></li>
+<li><label><input type="checkbox" />Tests still all
+passing?</label></li>
+<li><label><input type="checkbox" />Production stable (Sentry
+dashboard)?</label></li>
+<li><label><input type="checkbox" />Any customer feedback to
+incorporate?</label></li>
+<li><label><input type="checkbox" />Next week's day-1 prompt ready in
+advance?</label></li>
+</ul>
+<h2 id="when-to-deviate-from-the-plan">When to deviate from the
+plan</h2>
+<p>Acceptable reasons to skip/swap a day:</p>
+<ul>
+<li>Customer urgently needs a feature not on the plan (bug fix,
+integration request)</li>
+<li>A planned feature reveals a deeper architectural issue that needs
+addressing first</li>
+<li>Phase 1 features need to ship faster than planned for an upcoming
+demo</li>
+</ul>
+<p>Not acceptable reasons:</p>
+<ul>
+<li>"I don't feel like building X today"</li>
+<li>"Y looks more interesting"</li>
+<li>"Let me build the agent workflow instead"</li>
+</ul>
+<p><strong>The plan succeeds only if executed in order.</strong>
+Variations compound — by month 3, off-plan work means you've shipped a
+different product than designed.</p>
+<h2 id="tracking-sheet-template">Tracking sheet template</h2>
+<p>Maintain a simple Google Sheet:</p>
+<table>
+<thead>
+<tr>
+<th>Day</th>
+<th>Date</th>
+<th>Title</th>
+<th>Status</th>
+<th>Hours</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>2026-06-02</td>
+<td>Demo loader UI</td>
+<td>Done</td>
+<td>4</td>
+<td>All criteria met</td>
+</tr>
+<tr>
+<td>2</td>
+<td>2026-06-03</td>
+<td>Onboarding step 1</td>
+<td>In progress</td>
+<td>6</td>
+<td>Spillover 1 day</td>
+</tr>
+<tr>
+<td>...</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Update daily. Review weekly. Plan monthly.</p>
+<hr />
+<h1 id="final-notes">Final Notes</h1>
+<h2 id="what-this-plan-delivers">What this plan delivers</h2>
+<p>After 130 days:</p>
+<ul>
+<li>AIQL is feature-complete for Indian SME finance teams + CA
+firms</li>
+<li>Pricing genuinely defensible at ₹2,499 / ₹5,999 / ₹11,999</li>
+<li>30-60 paying customers (parallel customer acquisition runs)</li>
+<li>Real moat: workflow integration (GSTN, Tally, Bank Recon) +
+knowledge base data</li>
+</ul>
+<h2 id="what-it-doesnt-deliver">What it doesn't deliver</h2>
+<p>These come LATER (Year 2):</p>
+<ul>
+<li>ISO 27001 / SOC 2 certifications</li>
+<li>Mobile native app</li>
+<li>Enterprise features (multi-org, BYOK encryption, dedicated
+support)</li>
+<li>International market features</li>
+<li>Banking / lending verticals</li>
+</ul>
+<h2 id="the-critical-reminder">The critical reminder</h2>
+<p>This is a 6-month engineering plan. <strong>It doesn't include
+customer acquisition work</strong> — which is at least equal in time and
+importance. Use the separate Sales Playbook
+(<code>AIQL_SALES_PLAYBOOK.pdf</code>) for that.</p>
+<p>Engineering without customers = expensive prototype. Customers
+without features = unsustainable promises. Both must happen in
+parallel.</p>
+<hr />
+<p><em>Plan generated May 30, 2026. Revise quarterly based on actual
+progress and customer feedback.</em></p>
+</body>
+</html>

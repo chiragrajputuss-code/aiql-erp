@@ -1,0 +1,18 @@
+# env
+.env
+.secrets.local.json
+.env.local
+.env.*.local
+
+# deps
+node_modules/
+
+# build
+.next/
+dist/
+
+# turbo
+.turbo/
+
+# prisma
+packages/db/prisma/migrations/

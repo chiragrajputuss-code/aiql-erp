@@ -1,0 +1,22 @@
+{
+  "name": "aiql-erp",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "lint": "turbo run lint",
+    "typecheck": "turbo run typecheck",
+    "gen:test-data": "node_modules/.pnpm/node_modules/.bin/tsx tools/test-data-generator/index.ts",
+    "smoke-test": "node_modules/.pnpm/node_modules/.bin/tsx tools/smoke-test/index.ts"
+  },
+  "devDependencies": {
+    "@vitest/coverage-v8": "^2.0.0",
+    "tsx": "^4.21.0",
+    "turbo": "^2.0.0",
+    "typescript": "^5.4.0",
+    "vitest": "^2.0.0"
+  },
+  "packageManager": "pnpm@10.33.0"
+}
