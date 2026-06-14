@@ -71,20 +71,24 @@ echo ""
 echo "▶ Step 4/4 — Installing deps, migrating DB, reloading PM2..."
 $SSH << ENDSSH
   set -e
-  cd $EC2_DIR
+  cd /home/ubuntu/aiql-erp
 
   echo "  → Installing production dependencies..."
   pnpm install --frozen-lockfile --prod 2>/dev/null || pnpm install --frozen-lockfile
 
   echo "  → Regenerating Prisma client..."
-  cd packages/db && ../../node_modules/.bin/prisma generate && cd ../..
+  PRISMA=/home/ubuntu/aiql-erp/node_modules/.pnpm/prisma@5.22.0/node_modules/prisma/build/index.js
+  if [ ! -f "\$PRISMA" ]; then
+    PRISMA=\$(find /home/ubuntu/aiql-erp/node_modules -name "index.js" -path "*/prisma/build/*" 2>/dev/null | head -1)
+  fi
+  node "\$PRISMA" generate --schema=/home/ubuntu/aiql-erp/packages/db/prisma/schema.prisma
 
   echo "  → Running DB migrations..."
-  cd packages/db && ../../node_modules/.bin/prisma migrate deploy && cd ../..
+  node "\$PRISMA" migrate deploy --schema=/home/ubuntu/aiql-erp/packages/db/prisma/schema.prisma
 
   echo "  → Reloading PM2..."
-  pm2 reload infra/aws/ecosystem.config.js --env production --update-env 2>/dev/null || \
-  pm2 start infra/aws/ecosystem.config.js --env production
+  pm2 reload /home/ubuntu/aiql-erp/infra/aws/ecosystem.config.js --env production --update-env 2>/dev/null || \
+  pm2 start /home/ubuntu/aiql-erp/infra/aws/ecosystem.config.js --env production
   pm2 save
 
   echo "  → PM2 status:"
