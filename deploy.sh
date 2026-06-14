@@ -76,11 +76,11 @@ $SSH << ENDSSH
   echo "  → Installing production dependencies..."
   pnpm install --frozen-lockfile --prod 2>/dev/null || pnpm install --frozen-lockfile
 
+  echo "  → Loading environment..."
+  set -a && source /home/ubuntu/aiql-erp/apps/web/.env && set +a
+
   echo "  → Regenerating Prisma client..."
-  PRISMA=/home/ubuntu/aiql-erp/node_modules/.pnpm/prisma@5.22.0/node_modules/prisma/build/index.js
-  if [ ! -f "\$PRISMA" ]; then
-    PRISMA=\$(find /home/ubuntu/aiql-erp/node_modules -name "index.js" -path "*/prisma/build/*" 2>/dev/null | head -1)
-  fi
+  PRISMA=\$(find /home/ubuntu/aiql-erp/node_modules -name "index.js" -path "*/prisma/build/*" 2>/dev/null | head -1)
   node "\$PRISMA" generate --schema=/home/ubuntu/aiql-erp/packages/db/prisma/schema.prisma
 
   echo "  → Running DB migrations..."
