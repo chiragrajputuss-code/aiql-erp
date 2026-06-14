@@ -8,6 +8,8 @@ const PUBLIC_PATHS = [
   "/api/auth",
   "/api/v1",
   "/api/webhooks",
+  "/api/billing",
+  "/api/health",
   "/_next",
   "/favicon.ico",
 ];

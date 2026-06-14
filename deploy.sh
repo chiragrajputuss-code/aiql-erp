@@ -74,7 +74,7 @@ $SSH << ENDSSH
   cd /home/ubuntu/aiql-erp
 
   echo "  → Installing production dependencies..."
-  pnpm install --frozen-lockfile --prod 2>/dev/null || pnpm install --frozen-lockfile
+  CI=true pnpm install --frozen-lockfile --prod 2>/dev/null || CI=true pnpm install --frozen-lockfile
 
   echo "  → Loading environment..."
   set -a && source /home/ubuntu/aiql-erp/apps/web/.env && set +a
