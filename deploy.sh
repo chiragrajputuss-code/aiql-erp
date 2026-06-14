@@ -79,12 +79,14 @@ $SSH << ENDSSH
   echo "  → Loading environment..."
   set -a && source /home/ubuntu/aiql-erp/apps/web/.env && set +a
 
+  PRISMA=/home/ubuntu/aiql-erp/node_modules/.pnpm/node_modules/.bin/prisma
+  SCHEMA=/home/ubuntu/aiql-erp/packages/db/prisma/schema.prisma
+
   echo "  → Regenerating Prisma client..."
-  PRISMA=\$(find /home/ubuntu/aiql-erp/node_modules -name "index.js" -path "*/prisma/build/*" 2>/dev/null | head -1)
-  node "\$PRISMA" generate --schema=/home/ubuntu/aiql-erp/packages/db/prisma/schema.prisma
+  "\$PRISMA" generate --schema="\$SCHEMA"
 
   echo "  → Running DB migrations..."
-  node "\$PRISMA" migrate deploy --schema=/home/ubuntu/aiql-erp/packages/db/prisma/schema.prisma
+  "\$PRISMA" migrate deploy --schema="\$SCHEMA"
 
   echo "  → Reloading PM2..."
   pm2 reload /home/ubuntu/aiql-erp/infra/aws/ecosystem.config.js --env production --update-env 2>/dev/null || \
