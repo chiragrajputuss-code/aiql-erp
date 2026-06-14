@@ -3,13 +3,13 @@ name: Deploy to EC2
 on:
   push:
     branches: [main]
-  workflow_dispatch:   # allow manual trigger
+  workflow_dispatch:
 
 jobs:
   deploy:
-    name: Build & Deploy
+    name: Build on GitHub → Deploy to EC2
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 30
 
     steps:
       # ── 1. Checkout ─────────────────────────────────────────────────────────
@@ -36,54 +36,78 @@ jobs:
       - name: Type check
         run: pnpm --filter web typecheck
 
-      # ── 5. Build ────────────────────────────────────────────────────────────
+      # ── 5. Build on GitHub servers (7GB RAM — no OOM) ─────────────────────
       - name: Build
         env:
-          # Minimal env for build — secrets NOT needed at build time for Next.js
-          # (all secrets are runtime-only via SSM/env on EC2)
           DATABASE_URL: ${{ secrets.DATABASE_URL }}
           NEXT_PUBLIC_APP_URL: ${{ secrets.NEXT_PUBLIC_APP_URL }}
+          NODE_OPTIONS: "--max-old-space-size=4096"
         run: pnpm --filter web build
 
-      # ── 6. SSH deploy to EC2 ─────────────────────────────────────────────────
-      # Uses rsync to copy only changed files; PM2 zero-downtime reload
-      - name: Deploy to EC2
+      # ── 6. Setup SSH ─────────────────────────────────────────────────────────
+      - name: Setup SSH
         env:
-          EC2_HOST: ${{ secrets.EC2_HOST }}          # e.g. ec2-13-234-56-78.ap-south-1.compute.amazonaws.com
-          EC2_USER: ${{ secrets.EC2_USER }}          # ubuntu
-          EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}    # contents of pem file
+          EC2_SSH_KEY: ${{ secrets.EC2_SSH_KEY }}
         run: |
-          # Write SSH key
-          echo "$EC2_SSH_KEY" > /tmp/deploy_key.pem
-          chmod 600 /tmp/deploy_key.pem
+          mkdir -p ~/.ssh
+          echo "$EC2_SSH_KEY" > ~/.ssh/deploy_key.pem
+          chmod 600 ~/.ssh/deploy_key.pem
+          echo "StrictHostKeyChecking no" >> ~/.ssh/config
 
-          SSH="ssh -i /tmp/deploy_key.pem -o StrictHostKeyChecking=no $EC2_USER@$EC2_HOST"
-          RSYNC="rsync -az --delete --exclude='.git' --exclude='node_modules' --exclude='.next/cache'"
+      # ── 7. Rsync built output to EC2 (not the whole repo) ────────────────
+      - name: Upload build to EC2
+        env:
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+          EC2_USER: ${{ secrets.EC2_USER }}
+        run: |
+          # Sync built .next folder
+          rsync -az --delete \
+            -e "ssh -i ~/.ssh/deploy_key.pem" \
+            --exclude='.next/cache' \
+            apps/web/.next \
+            $EC2_USER@$EC2_HOST:~/aiql-erp/apps/web/
 
-          echo ">>> Syncing repo to EC2"
-          $RSYNC . $EC2_USER@$EC2_HOST:/home/$EC2_USER/aiql-erp/
+          # Sync source files (for prisma + runtime)
+          rsync -az --delete \
+            -e "ssh -i ~/.ssh/deploy_key.pem" \
+            --exclude='node_modules' \
+            --exclude='.next' \
+            --exclude='.git' \
+            . \
+            $EC2_USER@$EC2_HOST:~/aiql-erp/
 
-          echo ">>> Installing deps + running migrations + reloading PM2"
-          $SSH "
+      # ── 8. Install prod deps + migrate + reload on EC2 ───────────────────
+      - name: Deploy on EC2
+        env:
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+          EC2_USER: ${{ secrets.EC2_USER }}
+        run: |
+          ssh -i ~/.ssh/deploy_key.pem $EC2_USER@$EC2_HOST "
             set -e
             cd ~/aiql-erp
-            pnpm install --frozen-lockfile --prod
+
+            # Install only production deps (no build — already built)
+            pnpm install --frozen-lockfile --prod 2>/dev/null || pnpm install --frozen-lockfile
+
+            # Run any new migrations safely
             pnpm --filter @aiql/db exec prisma migrate deploy
-            pm2 reload ecosystem.config.js --env production --update-env
+
+            # Zero-downtime reload
+            pm2 reload ecosystem.config.js --env production --update-env || \
+            pm2 start ecosystem.config.js --env production
+
             pm2 save
           "
 
-          echo ">>> Deploy complete"
-
-      # ── 7. Health check ─────────────────────────────────────────────────────
+      # ── 9. Health check ───────────────────────────────────────────────────
       - name: Health check
         env:
           NEXT_PUBLIC_APP_URL: ${{ secrets.NEXT_PUBLIC_APP_URL }}
         run: |
-          sleep 5
+          sleep 8
           status=$(curl -s -o /dev/null -w "%{http_code}" "$NEXT_PUBLIC_APP_URL/api/health" || echo "000")
           if [[ "$status" != "200" ]]; then
             echo "Health check failed: HTTP $status"
             exit 1
           fi
-          echo "Health check passed: HTTP $status"
+          echo "✅ Health check passed: HTTP $status"

@@ -163,14 +163,18 @@ model Organisation {
   name String
   slug String @unique
 
-  plan       Plan @default(STARTER)
+  plan       Plan @default(FREE)
   queriesUsed  Int  @default(0)
-  queryLimit   Int  @default(500)
+  queryLimit   Int  @default(100)
   queriesResetAt DateTime
 
-  // Stripe
-  stripeCustomerId     String?
-  stripeSubscriptionId String?
+  // Trial
+  trialEndsAt DateTime?
+
+  // Razorpay
+  razorpayCustomerId     String?
+  razorpaySubscriptionId String?
+  subscriptionStatus     String? // "active" | "halted" | "cancelled" | "expired"
 
   // LLM override
   llmProvider  LLMProvider?

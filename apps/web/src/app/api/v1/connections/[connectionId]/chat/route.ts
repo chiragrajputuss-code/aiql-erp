@@ -11,6 +11,7 @@ import type { EntityDictionary, TokenisationConfig } from "@aiql/tokeniser";
 import type { ERPConnector } from "@aiql/erp-connectors";
 import { textSimilarity } from "@aiql/query-engine/src/rag/text-similarity";
 import { checkRateLimit } from "@/lib/rate-limit";
+import { checkPlanAccess, incrementQueryCount } from "@/lib/billing";
 
 type Ctx = { params: { connectionId: string } };
 
@@ -193,6 +194,15 @@ export async function POST(req: NextRequest, { params }: Ctx) {
     return NextResponse.json(
       { error: `Rate limit exceeded. Up to 20 queries per hour. Resets at ${rateCheck.resetAt.toISOString()}.` },
       { status: 429 }
+    );
+  }
+
+  // ── Plan / trial enforcement ──────────────────────────────────────────────
+  const access = await checkPlanAccess(user.orgId, "query");
+  if (!access.allowed) {
+    return NextResponse.json(
+      { error: access.message, reason: access.reason },
+      { status: 402 },
     );
   }
 

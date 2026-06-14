@@ -19,6 +19,7 @@ import {
   History,
   BookOpen,
   Shield,
+  CreditCard,
 } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { NewFeatureBanner } from "@/components/new-feature-banner";
@@ -63,6 +64,7 @@ const NAV: NavItem[] = [
   { href: "/connections", label: "Connections", icon: Plug, allowedRoles: ["ADMIN", "MEMBER"] },
   { href: "/tokenisation/preview", label: "Tokenisation", icon: ShieldCheck, allowedRoles: ["ADMIN", "MEMBER"] },
   { href: "/usage", label: "Usage", icon: BarChart2 },
+  { href: "/billing", label: "Billing", icon: CreditCard, allowedRoles: ["ADMIN"] },
   { href: "/api-keys", label: "API Keys", icon: Key, allowedRoles: ["ADMIN"] },
   { href: "/settings/general", label: "Settings", icon: Settings, allowedRoles: ["ADMIN", "MEMBER"] },
 ];

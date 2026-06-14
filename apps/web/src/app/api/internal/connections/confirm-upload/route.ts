@@ -4,6 +4,7 @@ import { validateRequest } from "@/lib/auth";
 import { prisma, upsertOrgMappings, seedDefaultPinnedQueries } from "@aiql/db";
 import { createTempTable, resolveRedundancy, validateMappings, getUploadEntityLists, buildUploadSchema } from "@aiql/erp-connectors";
 import { uploadFile } from "@/lib/s3";
+import { checkPlanAccess } from "@/lib/billing";
 
 const schema = z.object({
   connectionId:     z.string(),
@@ -25,6 +26,12 @@ const schema = z.object({
 export async function POST(req: NextRequest) {
   const { user } = await validateRequest();
   if (!user) return NextResponse.json({ error: "Unauthorised" }, { status: 401 });
+
+  // ── Plan / trial enforcement ──────────────────────────────────────────────
+  const access = await checkPlanAccess(user.orgId, "import");
+  if (!access.allowed) {
+    return NextResponse.json({ error: access.message, reason: access.reason }, { status: 402 });
+  }
 
   const body = await req.json();
   const parsed = schema.safeParse(body);

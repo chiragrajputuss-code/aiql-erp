@@ -38,11 +38,17 @@ export async function POST(req: NextRequest) {
   const now = new Date();
   const endOfMonth = new Date(now.getFullYear(), now.getMonth() + 1, 0, 23, 59, 59, 999);
 
+  const trialEndsAt = new Date(now);
+  trialEndsAt.setDate(trialEndsAt.getDate() + 14);
+
   const org = await prisma.organisation.create({
     data: {
       name: orgName,
       slug,
+      plan: "FREE",
+      queryLimit: 100,
       queriesResetAt: endOfMonth,
+      trialEndsAt,
       tokenisationConfig: { create: {} },
     },
   });

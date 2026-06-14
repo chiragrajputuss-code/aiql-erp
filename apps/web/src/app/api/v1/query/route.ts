@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { validateRequest } from "@/lib/auth";
+import { checkPlanAccess } from "@/lib/billing";
 import { prisma } from "@aiql/db";
 import { executeQuery } from "@aiql/query-engine";
 import type { RagStore, RagEntry } from "@aiql/query-engine";
@@ -109,6 +110,12 @@ const requestSchema = z.object({
 export async function POST(req: NextRequest) {
   const { user } = await validateRequest();
   if (!user) return NextResponse.json({ error: "Unauthorised" }, { status: 401 });
+
+  // ── Plan / trial enforcement ──────────────────────────────────────────────
+  const access = await checkPlanAccess(user.orgId, "query");
+  if (!access.allowed) {
+    return NextResponse.json({ error: access.message, reason: access.reason }, { status: 402 });
+  }
 
   const body = await req.json().catch(() => null);
   if (!body) return NextResponse.json({ error: "Invalid JSON" }, { status: 400 });
