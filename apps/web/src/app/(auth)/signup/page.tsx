@@ -57,7 +57,7 @@ export default function SignupPage() {
         setError(msg || "Signup failed");
         return;
       }
-      router.push("/");
+      router.push("/connections");
       router.refresh();
     } finally {
       setLoading(false);

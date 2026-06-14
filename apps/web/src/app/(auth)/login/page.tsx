@@ -11,7 +11,7 @@ import { Separator } from "@/components/ui/separator";
 function LoginForm() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const redirect = searchParams.get("redirect") ?? "/";
+  const redirect = searchParams.get("redirect") ?? "/connections";
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
