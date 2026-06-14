@@ -6,8 +6,8 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "AIQL ERP",
-  description: "AI-powered GL close and audit platform for Indian SMEs.",
+  title: "AccountIQ — Ask your books anything",
+  description: "AI-powered financial intelligence for Indian SMEs. Connect Tally, Zoho Books or GL exports. Query in plain English, catch compliance issues automatically.",
 };
 
 // ─── Site-wide footer ─────────────────────────────────────────────────────────
