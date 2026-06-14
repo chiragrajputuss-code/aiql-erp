@@ -9,7 +9,9 @@ const adapter = new PrismaAdapter(prisma.session, prisma.user);
 export const lucia = new Lucia(adapter, {
   sessionCookie: {
     attributes: {
-      secure: process.env.NODE_ENV === "production",
+      // Only mark Secure when actually served over HTTPS.
+      // On HTTP (EC2 without SSL), Secure cookies are silently dropped by the browser.
+      secure: process.env.COOKIE_SECURE === "true",
     },
   },
   getUserAttributes: (attributes) => ({
