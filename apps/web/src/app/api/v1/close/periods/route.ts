@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { validateRequest } from "@/lib/auth";
+import { checkCloseRunCap, incrementCloseRunCount } from "@/lib/anti-abuse";
 import { prisma, type CloseProfile } from "@aiql/db";
 import {
   createClosePeriodFromTemplate,
@@ -40,6 +41,11 @@ export async function POST(req: NextRequest) {
     const { user } = await validateRequest();
     if (!user) { t.done({ status: 401 }); return NextResponse.json({ error: "Unauthorised" }, { status: 401 }); }
     t.tag({ orgId: user.orgId });
+
+    const closeCheck = await checkCloseRunCap(user.orgId);
+    if (!closeCheck.allowed) {
+      return NextResponse.json({ error: closeCheck.reason, reason: "close_run_cap" }, { status: 402 });
+    }
 
     const body = await req.json();
     const parsed = createSchema.safeParse(body);
@@ -186,6 +192,7 @@ export async function POST(req: NextRequest) {
       intentSource:  resolvedIntent?.source ?? "none",
       watchItemCount: customWatchItems.length,
     });
+    incrementCloseRunCount(user.orgId).catch(() => {});
     return NextResponse.json(
       {
         ...period, mode, profile, reasoning, intent: resolvedIntent,

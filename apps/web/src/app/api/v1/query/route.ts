@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { validateRequest } from "@/lib/auth";
 import { checkPlanAccess } from "@/lib/billing";
+import { checkLifetimeQueryCap } from "@/lib/anti-abuse";
 import { prisma } from "@aiql/db";
 import { executeQuery } from "@aiql/query-engine";
 import type { RagStore, RagEntry } from "@aiql/query-engine";
@@ -115,6 +116,12 @@ export async function POST(req: NextRequest) {
   const access = await checkPlanAccess(user.orgId, "query");
   if (!access.allowed) {
     return NextResponse.json({ error: access.message, reason: access.reason }, { status: 402 });
+  }
+
+  // ── Lifetime query cap (anti-abuse) ───────────────────────────────────────
+  const lifetimeCheck = await checkLifetimeQueryCap(user.orgId);
+  if (!lifetimeCheck.allowed) {
+    return NextResponse.json({ error: lifetimeCheck.reason, reason: "lifetime_query_cap" }, { status: 402 });
   }
 
   const body = await req.json().catch(() => null);
@@ -317,7 +324,7 @@ export async function POST(req: NextRequest) {
     }),
     prisma.organisation.update({
       where: { id: user.orgId },
-      data:  { queriesUsed: { increment: 1 } },
+      data:  { queriesUsed: { increment: 1 }, lifetimeQueriesUsed: { increment: 1 } },
     }),
   ]);
 

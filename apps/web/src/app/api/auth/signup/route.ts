@@ -5,11 +5,13 @@ import { generateIdFromEntropySize } from "lucia";
 import { prisma } from "@aiql/db";
 import { lucia } from "@/lib/auth";
 import { cookies } from "next/headers";
+import { checkIpSignupLimit, checkFingerprintLimit, logSignup, extractIp } from "@/lib/anti-abuse";
 
 const schema = z.object({
   name: z.string().min(1),
   email: z.string().email(),
   password: z.string().min(8),
+  fingerprint: z.string().optional(),
 });
 
 export async function POST(req: NextRequest) {
@@ -19,7 +21,21 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: parsed.error.flatten().fieldErrors }, { status: 400 });
   }
 
-  const { name, email, password } = parsed.data;
+  const { name, email, password, fingerprint } = parsed.data;
+  const ip = extractIp(req);
+
+  // ── Anti-abuse checks ─────────────────────────────────────────────────────
+  const ipCheck = await checkIpSignupLimit(ip);
+  if (!ipCheck.allowed) {
+    return NextResponse.json({ error: ipCheck.reason }, { status: 429 });
+  }
+
+  if (fingerprint) {
+    const fpCheck = await checkFingerprintLimit(fingerprint);
+    if (!fpCheck.allowed) {
+      return NextResponse.json({ error: fpCheck.reason }, { status: 429 });
+    }
+  }
 
   const existing = await prisma.user.findUnique({ where: { email } });
   if (existing) {
@@ -49,9 +65,14 @@ export async function POST(req: NextRequest) {
       queryLimit: 100,
       queriesResetAt: endOfMonth,
       trialEndsAt,
+      signupIp: ip,
+      deviceFingerprint: fingerprint ?? null,
       tokenisationConfig: { create: {} },
     },
   });
+
+  // Log for abuse tracking (fire-and-forget)
+  logSignup(ip, email, org.id, fingerprint).catch(() => {});
 
   const userId = generateIdFromEntropySize(10);
   await prisma.user.create({

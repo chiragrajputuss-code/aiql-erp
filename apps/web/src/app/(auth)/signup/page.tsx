@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import FingerprintJS from "@fingerprintjs/fingerprintjs";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -43,10 +44,13 @@ export default function SignupPage() {
     }
     setLoading(true);
     try {
+      const fp = await FingerprintJS.load();
+      const { visitorId } = await fp.get();
+
       const res = await fetch("/api/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ name, email, password }),
+        body: JSON.stringify({ name, email, password, fingerprint: visitorId }),
       });
       const data = await res.json();
       if (!res.ok) {

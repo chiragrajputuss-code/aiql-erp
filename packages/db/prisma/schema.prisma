@@ -171,6 +171,12 @@ model Organisation {
   // Trial
   trialEndsAt DateTime?
 
+  // Anti-abuse — Phase A
+  signupIp           String?  // IP at signup time
+  deviceFingerprint  String?  // Browser fingerprint hash
+  lifetimeQueriesUsed Int     @default(0) // Never resets — caps free abuse
+  closeRunsUsed      Int      @default(0) // GL close runs on FREE plan
+
   // Razorpay
   razorpayCustomerId     String?
   razorpaySubscriptionId String?
@@ -867,4 +873,19 @@ model ApiKey {
   createdAt DateTime @default(now())
 
   @@map("api_keys")
+}
+
+// ─── Anti-abuse: signup tracking ─────────────────────────────────────────────
+
+model SignupAbuseLog {
+  id          String   @id @default(cuid())
+  ip          String
+  fingerprint String?
+  email       String
+  orgId       String
+  createdAt   DateTime @default(now())
+
+  @@index([ip, createdAt])
+  @@index([fingerprint])
+  @@map("signup_abuse_logs")
 }

@@ -12,6 +12,7 @@ import type { ERPConnector } from "@aiql/erp-connectors";
 import { textSimilarity } from "@aiql/query-engine/src/rag/text-similarity";
 import { checkRateLimit } from "@/lib/rate-limit";
 import { checkPlanAccess, incrementQueryCount } from "@/lib/billing";
+import { checkLifetimeQueryCap, incrementLifetimeQueryCount } from "@/lib/anti-abuse";
 
 type Ctx = { params: { connectionId: string } };
 
@@ -202,6 +203,15 @@ export async function POST(req: NextRequest, { params }: Ctx) {
   if (!access.allowed) {
     return NextResponse.json(
       { error: access.message, reason: access.reason },
+      { status: 402 },
+    );
+  }
+
+  // ── Lifetime query cap (anti-abuse) ───────────────────────────────────────
+  const lifetimeCheck = await checkLifetimeQueryCap(user.orgId);
+  if (!lifetimeCheck.allowed) {
+    return NextResponse.json(
+      { error: lifetimeCheck.reason, reason: "lifetime_query_cap" },
       { status: 402 },
     );
   }
@@ -400,7 +410,7 @@ export async function POST(req: NextRequest, { params }: Ctx) {
     }),
     prisma.organisation.update({
       where: { id: user.orgId },
-      data:  { queriesUsed: { increment: 1 } },
+      data:  { queriesUsed: { increment: 1 }, lifetimeQueriesUsed: { increment: 1 } },
     }),
   ]);
 
