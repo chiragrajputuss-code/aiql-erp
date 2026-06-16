@@ -98,20 +98,21 @@ $SSH << ENDSSH
 ENDSSH
 
 echo ""
+APP_URL="${DOMAIN:-http://$EC2_IP}"
 echo "╔══════════════════════════════════════════════════╗"
 echo "║           ✅ Deploy complete!                    ║"
 echo "╠══════════════════════════════════════════════════╣"
-echo "║  App: http://$EC2_IP"
-echo "║  Health: http://$EC2_IP/api/health"
+echo "║  App: $APP_URL"
+echo "║  Health: $APP_URL/api/health"
 echo "╚══════════════════════════════════════════════════╝"
 echo ""
 
 # ─── Health check ─────────────────────────────────────────────────────────────
 echo "Checking health..."
 sleep 5
-STATUS=$(curl -s -o /dev/null -w "%{http_code}" "http://$EC2_IP/api/health" || echo "000")
+STATUS=$(curl -s -o /dev/null -w "%{http_code}" "$APP_URL/api/health" || echo "000")
 if [[ "$STATUS" == "200" ]]; then
-  echo "✅ Health check passed (HTTP $STATUS)"
+  echo "✅ Health check passed (HTTP $STATUS) — $APP_URL"
 else
   echo "⚠️  Health check returned HTTP $STATUS — check PM2 logs:"
   echo "   ssh -i $PEM_FILE $EC2_USER@$EC2_IP 'pm2 logs aiql-web --lines 30'"
