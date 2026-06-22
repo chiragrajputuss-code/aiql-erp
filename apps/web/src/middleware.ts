@@ -10,6 +10,13 @@ const PUBLIC_PATHS = [
   "/api/webhooks",
   "/api/billing",
   "/api/health",
+  "/api/contact",
+  "/contact",
+  "/pricing",
+  "/terms",
+  "/privacy",
+  "/sitemap.xml",
+  "/robots.txt",
   "/_next",
   "/favicon.ico",
 ];
