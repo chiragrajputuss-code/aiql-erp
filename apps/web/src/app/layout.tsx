@@ -7,9 +7,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 const SITE_URL = process.env.DOMAIN ?? "https://acctqai.com";
 const SITE_NAME = "AccountIQ";
-const TITLE = "AccountIQ — Ask your books anything | AI Finance for Indian SMEs";
+const TITLE = "AccountIQ — Ask your Tally or Zoho Books data in plain English";
 const DESCRIPTION =
-  "AccountIQ connects to Tally, Zoho Books and GL exports. Ask questions in plain English or Hindi — get instant answers, GST summaries, overdue debtors, profit reports and more. Free 14-day trial.";
+  "Type a question, get the number. AccountIQ reads your Tally export or Zoho Books GL and answers in seconds — GST liability, overdue vendors, cash position, TDS gaps. No SQL. No consultant. Starts free.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -19,16 +19,15 @@ export const metadata: Metadata = {
   },
   description: DESCRIPTION,
   keywords: [
-    "Tally AI query",
-    "Zoho Books AI",
-    "GL close automation",
-    "Indian SME accounting software",
-    "ask ERP in English",
-    "finance AI India",
-    "GST summary AI",
+    "Tally query in English",
+    "Zoho Books reports",
+    "GST liability calculator",
+    "TDS reconciliation tool",
+    "month end close checklist India",
+    "GL close software India",
     "accounts receivable India",
+    "overdue debtors report Tally",
     "AccountIQ",
-    "acctqai",
   ],
   authors: [{ name: "AccountIQ", url: SITE_URL }],
   creator: "AccountIQ",
@@ -74,7 +73,7 @@ function SiteFooter() {
             { label: "Privacy",  href: "/privacy" },
             { label: "Terms",    href: "/terms" },
             { label: "Pricing",  href: "/pricing" },
-            { label: "Security", href: "/security" },
+            { label: "Security", href: "/privacy#security" },
             { label: "Contact",  href: "/contact" },
           ].map(({ label, href }) => (
             <Link

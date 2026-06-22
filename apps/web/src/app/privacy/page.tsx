@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — AIQL",
-  description: "How AIQL collects, uses, and protects your financial data.",
+  title: "Privacy Policy — AccountIQ",
+  description: "How AccountIQ collects, uses, and protects your GL and financial data. Stored on AWS Mumbai. PII masked before any AI call.",
 };
 
 // ── Reusable section wrapper ──────────────────────────────────────────────────

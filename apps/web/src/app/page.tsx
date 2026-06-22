@@ -14,7 +14,7 @@ import {
 const BRAND = {
   name: "AccountIQ",
   tagline: "Ask your books anything.",
-  description: "AI-powered financial intelligence for Indian SMEs. Connect your Tally, Zoho or GL export — ask questions in plain English, catch compliance issues automatically, never miss a tax deadline.",
+  description: "Connect your Tally export or Zoho Books GL. Type a question in plain English. Get the answer in under 2 seconds — with the actual numbers from your data, not a guess.",
   primary: "#1B3A5C",
   accent: "#2563EB",
 };
@@ -87,42 +87,42 @@ const FEATURES = [
   {
     icon: <MessageSquare className="h-6 w-6" />,
     title: "Ask in plain English",
-    desc: "Type any finance question naturally. No SQL, no formulas, no training needed. Get instant answers from your actual GL data.",
+    desc: "No SQL. No pivot tables. Just type what you want to know — GST liability, cash balance, overdue vendors — and it pulls the numbers straight from your GL.",
     magic: "\"What is my GST liability this quarter?\" → answered in 2 seconds",
     color: "bg-blue-50 text-blue-600",
   },
   {
     icon: <Bell className="h-6 w-6" />,
     title: "Daily Pulse at 8 AM",
-    desc: "Every morning, AccountIQ emails you a digest of compliance deadlines, TDS alerts, and cashflow warnings — before your day starts.",
+    desc: "Before you open your laptop, AccountIQ has already checked your books. GST filing dates, TDS deposit gaps, overdue payments — waiting in your inbox at 8 AM.",
     magic: "Never miss a GST filing, TDS deposit, or advance tax instalment",
     color: "bg-amber-50 text-amber-600",
   },
   {
     icon: <FileSearch className="h-6 w-6" />,
     title: "Document Scanner",
-    desc: "Upload Form 26Q, GSTR-1, GSTR-3B, or ITR. AccountIQ scans for errors — wrong PAN, rate deviations, missing HSN codes.",
+    desc: "Drop in your Form 26Q, GSTR-1, GSTR-3B, or ITR. AccountIQ reads it and flags the problems — wrong PANs, rate mismatches, missing HSN codes — before the department does.",
     magic: "Caught ₹6,200 TDS under-deposit before the penalty notice arrived",
     color: "bg-red-50 text-red-600",
   },
   {
     icon: <GitCompare className="h-6 w-6" />,
     title: "GL Reconciliation",
-    desc: "Automatically cross-match your GL against Form 26Q and GSTR-1. Every invoice, every deductee — reconciled in seconds.",
+    desc: "Cross-checks your GL against Form 26Q and GSTR-1 line by line. If an invoice is in your GSTR but not in the GL (or the other way around), it shows up immediately.",
     magic: "Invoice in GSTR-1 but missing from GL — flagged automatically",
     color: "bg-purple-50 text-purple-600",
   },
   {
     icon: <CheckCircle2 className="h-6 w-6" />,
     title: "Month-end Close",
-    desc: "Structured close checklist, reconciliation tasks, and flux analysis. Know exactly what's pending and who owns it.",
+    desc: "A proper close checklist with tasks, owners, and status. Not a spreadsheet shared on WhatsApp. Flux analysis tells you why numbers moved — not just that they did.",
     magic: "Close time reduced from 5 days to 1 day for our beta customers",
     color: "bg-green-50 text-green-600",
   },
   {
     icon: <Shield className="h-6 w-6" />,
-    title: "PII Protection built-in",
-    desc: "Vendor names, customer names, and amounts are masked before reaching the AI. Your sensitive data never leaves your account.",
+    title: "Your data stays yours",
+    desc: "Vendor names, customer names, and amounts are replaced with tokens before anything touches an AI model. The model never sees real business data — only your server does.",
     magic: "AI sees tokens — your actual data stays in your database",
     color: "bg-slate-50 text-slate-600",
   },
@@ -133,21 +133,21 @@ const FEATURES = [
 const STEPS = [
   {
     number: "01",
-    title: "Connect your books",
-    desc: "Upload your Tally export, Zoho Books GL, or any Excel/CSV file. Takes 60 seconds. No IT required.",
-    detail: "Supports Tally XML, Zoho Books exports, and any standard GL format. Column mapping is automatic.",
+    title: "Upload your GL file",
+    desc: "Export from Tally or Zoho Books, drag the file in. AccountIQ figures out your columns — no mapping, no setup call.",
+    detail: "Works with Tally XML exports, Zoho Books GL downloads, and most Excel/CSV formats from other accounting software.",
   },
   {
     number: "02",
-    title: "Ask anything",
-    desc: "Type your question in plain English. AccountIQ understands Indian accounting — GST, TDS, ledger names, voucher types.",
-    detail: "3-layer AI pipeline: template engine first (free, instant), then learned patterns, then LLM. 70% of queries answered without AI cost.",
+    title: "Type your question",
+    desc: "In English, Hindi, or Hinglish — whatever you type. It knows Indian accounting terms: GST, TDS, voucher types, ledger groups.",
+    detail: "Standard reports (GST summary, cash balance, overdue debtors) run from pre-built templates — no AI model called, no cost, answers in under 50ms.",
   },
   {
     number: "03",
-    title: "Get answers + alerts",
-    desc: "Instant answers with real numbers from your data. Plus proactive alerts for compliance deadlines and anomalies.",
-    detail: "All answers computed server-side from actual rows — no AI hallucination. Every number is traceable to source.",
+    title: "Read the answer",
+    desc: "Numbers pulled directly from your data rows. Not a chatbot making things up — every figure is traceable back to a GL entry.",
+    detail: "Compliance alerts run alongside your queries. If something looks wrong — a TDS gap, a missed deposit — you'll see it in the same session.",
   },
 ];
 
@@ -436,7 +436,7 @@ export default function LandingPage() {
               {/* Badge */}
               <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-100 rounded-full px-4 py-1.5 text-sm font-medium">
                 <Zap className="h-3.5 w-3.5" />
-                Built for Indian SMEs · GST + TDS + GL
+                Works with Tally · Zoho Books · GL exports
               </div>
 
               {/* Headline */}
@@ -488,10 +488,10 @@ export default function LandingPage() {
       <section className="border-y border-slate-100 bg-white py-10 px-6">
         <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { value: "< 2s", label: "Average query time" },
-            { value: "70%", label: "Queries answered free (no AI cost)" },
-            { value: "₹0", label: "Cost for template queries" },
-            { value: "8 AM", label: "Daily compliance pulse" },
+            { value: "< 2s", label: "Most queries answered in under 2 seconds" },
+            { value: "70%", label: "Answered without calling any AI model" },
+            { value: "₹0", label: "Extra cost for standard reports" },
+            { value: "8 AM", label: "Compliance digest lands in your inbox" },
           ].map(({ value, label }) => (
             <div key={label}>
               <div className="text-3xl font-bold text-[#1B3A5C]">{value}</div>
@@ -505,8 +505,8 @@ export default function LandingPage() {
       <section id="how-it-works" className="py-24 px-6 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#1B3A5C]">Up and running in 60 seconds</h2>
-            <p className="text-slate-500 mt-3 text-lg">No IT setup. No training. No SQL.</p>
+            <h2 className="text-4xl font-bold text-[#1B3A5C]">Three steps, no IT department needed</h2>
+            <p className="text-slate-500 mt-3 text-lg">Upload a file. Ask a question. Read the answer.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -533,9 +533,9 @@ export default function LandingPage() {
       <section id="features" className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#1B3A5C]">The magic it does</h2>
+            <h2 className="text-4xl font-bold text-[#1B3A5C]">What it actually does</h2>
             <p className="text-slate-500 mt-3 text-lg max-w-xl mx-auto">
-              Six things AccountIQ does automatically that used to take your team hours every month.
+              Six things your finance team spends hours on every month. AccountIQ handles them in the background.
             </p>
           </div>
 
@@ -569,9 +569,9 @@ export default function LandingPage() {
                 <Bell className="h-3.5 w-3.5 text-amber-400" />
                 Daily Pulse — 8 AM every morning
               </div>
-              <h2 className="text-4xl font-bold">Never miss a compliance deadline again</h2>
+              <h2 className="text-4xl font-bold">The deadline email you actually want</h2>
               <p className="text-slate-300 text-lg leading-relaxed">
-                AccountIQ monitors your GL continuously and sends a personalized compliance digest every morning — GST filing dates, TDS deposit deadlines, advance tax instalments, and cashflow warnings.
+                Every morning at 8 AM, AccountIQ reads your books and tells you what needs attention today — GST filing dates, pending TDS deposits, advance tax instalments due, vendors waiting to be paid. One email, real numbers, no fluff.
               </p>
               <div className="space-y-3">
                 {[
@@ -626,7 +626,7 @@ export default function LandingPage() {
       <section className="py-24 px-6 bg-slate-50">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#1B3A5C]">Trusted by finance teams across India</h2>
+            <h2 className="text-4xl font-bold text-[#1B3A5C]">What our early users say</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {TESTIMONIALS.map((t) => (
@@ -651,8 +651,8 @@ export default function LandingPage() {
       <section id="pricing" className="py-24 px-6 bg-white">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#1B3A5C]">Simple, transparent pricing</h2>
-            <p className="text-slate-500 mt-3 text-lg">14-day free trial on all plans. No credit card required.</p>
+            <h2 className="text-4xl font-bold text-[#1B3A5C]">Pricing that makes sense for Indian businesses</h2>
+            <p className="text-slate-500 mt-3 text-lg">14-day free trial. No credit card. Cancel from the dashboard — no calls, no forms.</p>
             <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 border border-green-100 rounded-full px-4 py-1.5 text-sm font-medium mt-4">
               <Check className="h-3.5 w-3.5" />
               Annual billing saves 2 months
@@ -723,7 +723,7 @@ export default function LandingPage() {
             Your books are talking.<br />Are you listening?
           </h2>
           <p className="text-slate-300 text-lg">
-            Join finance teams across India who use AccountIQ to close faster, stay compliant, and get instant answers from their GL data.
+            Your Tally data has answers to most of the questions your team spends hours digging for. AccountIQ just makes them a lot easier to find.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
             <Link
@@ -776,7 +776,7 @@ export default function LandingPage() {
           </div>
           <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
             <p className="text-xs">© {new Date().getFullYear()} AccountIQ · Made in India 🇮🇳</p>
-            <p className="text-xs">GST · TDS · GL · Tally · Zoho Books · Indian SMEs</p>
+            <p className="text-xs">Tally · Zoho Books · GST · TDS · Month-end Close</p>
           </div>
         </div>
       </footer>

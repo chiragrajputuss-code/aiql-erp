@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — AIQL",
-  description: "AIQL Terms of Service — your rights and responsibilities when using the platform.",
+  title: "Terms of Service — AccountIQ",
+  description: "AccountIQ Terms of Service — your rights and responsibilities when using the platform.",
 };
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {

@@ -4,8 +4,8 @@ import { PricingCards } from "@/components/pricing/pricing-cards";
 import { Sparkles, IndianRupee, Clock, Shield } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Pricing — AIQL",
-  description: "Simple, transparent pricing for AI-powered GL close. Starter ₹999, Professional ₹2,999, Business ₹6,999.",
+  title: "Pricing — AccountIQ",
+  description: "AccountIQ plans start at ₹999/month. 14-day free trial on all plans. Tally GL queries, GST reconciliation, TDS checks, month-end close — no credit card needed to start.",
 };
 
 const FAQ = [
