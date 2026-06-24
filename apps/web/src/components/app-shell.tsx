@@ -8,9 +8,7 @@ import {
   MessageSquare,
   ClipboardList,
   Plug,
-  ShieldCheck,
   BarChart2,
-  Key,
   Settings,
   Menu,
   LogOut,
@@ -18,7 +16,6 @@ import {
   Building2,
   History,
   BookOpen,
-  Shield,
   CreditCard,
 } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -59,13 +56,10 @@ const NAV: NavItem[] = [
   { href: "/query",   label: "Query Studio", icon: MessageSquare, allowedRoles: ["ADMIN", "MEMBER"] },
   { href: "/history", label: "History",      icon: History,       allowedRoles: ["ADMIN", "MEMBER"] },
   { href: "/close",   label: "Close Manager", icon: ClipboardList },
-  { href: "/knowledge", label: "Knowledge", icon: BookOpen, allowedRoles: ["ADMIN", "MEMBER"] },
-  { href: "/llm-privacy-demo", label: "Privacy Demo", icon: Shield, allowedRoles: ["ADMIN", "MEMBER"] },
   { href: "/connections", label: "Connections", icon: Plug, allowedRoles: ["ADMIN", "MEMBER"] },
-  { href: "/tokenisation/preview", label: "Tokenisation", icon: ShieldCheck, allowedRoles: ["ADMIN", "MEMBER"] },
+  { href: "/knowledge", label: "Knowledge", icon: BookOpen, allowedRoles: ["ADMIN", "MEMBER"] },
   { href: "/usage", label: "Usage", icon: BarChart2 },
   { href: "/billing", label: "Billing", icon: CreditCard, allowedRoles: ["ADMIN"] },
-  { href: "/api-keys", label: "API Keys", icon: Key, allowedRoles: ["ADMIN"] },
   { href: "/settings/general", label: "Settings", icon: Settings, allowedRoles: ["ADMIN", "MEMBER"] },
 ];
 

@@ -5,6 +5,7 @@ export type {
   DocScanResult,
   Form26QRow,
   Gstr1Row,
+  Gstr2BRow,
   Gstr3BSummary,
   ItrSummary,
 } from "./types";
@@ -20,6 +21,9 @@ export type { TdsSection }                 from "./tds-26q/sections";
 export { parseGstr1 }   from "./gstr-1/parser";
 export { scanGstr1 }    from "./gstr-1/scanner";
 
+// ─── GSTR-2B ─────────────────────────────────────────────────────────────────
+export { parseGstr2B }  from "./gstr-2b/parser";
+
 // ─── GSTR-3B ─────────────────────────────────────────────────────────────────
 export { parseGstr3B }  from "./gstr-3b/parser";
 
@@ -28,5 +32,6 @@ export { parseItr }     from "./itr/parser";
 
 // ─── Reconciliation ───────────────────────────────────────────────────────────
 export type { ReconSeverity, ReconGap, ReconResult, GlRow } from "./reconciliation/types";
-export { reconcileGl26Q }   from "./reconciliation/gl-26q";
-export { reconcileGlGstr1 } from "./reconciliation/gl-gstr1";
+export { reconcileGl26Q }    from "./reconciliation/gl-26q";
+export { reconcileGlGstr1 }  from "./reconciliation/gl-gstr1";
+export { reconcileGlGstr2B } from "./reconciliation/gl-gstr2b";

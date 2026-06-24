@@ -3,9 +3,10 @@ import { z } from "zod";
 import { validateRequest } from "@/lib/auth";
 import { prisma } from "@aiql/db";
 import {
-  parseForm26Q, parseGstr1,
-  reconcileGl26Q, reconcileGlGstr1,
+  parseForm26Q, parseGstr1, parseGstr2B,
+  reconcileGl26Q, reconcileGlGstr1, reconcileGlGstr2B,
 } from "@aiql/doc-parsers";
+import { upsertVendorComplianceRecords } from "@/lib/vendor-compliance";
 
 type Ctx = { params: { connectionId: string } };
 
@@ -40,14 +41,16 @@ export async function POST(req: NextRequest, ctx: Ctx) {
     // Determine the secondary document to reconcile
     let secTableName: string;
     let documentType: string;
+    let docPeriodStart: Date | null;
 
     if (body.documentId) {
       const doc = await prisma.workspaceDocument.findFirst({
         where: { id: body.documentId, connectionId },
       });
       if (!doc) return NextResponse.json({ error: "Document not found" }, { status: 404 });
-      secTableName = doc.tableName;
-      documentType = doc.documentType;
+      secTableName   = doc.tableName;
+      documentType   = doc.documentType;
+      docPeriodStart = doc.periodStart;
     } else {
       // Primary UploadedFile — must be a non-GL type
       if (glFile.documentType === "GL") {
@@ -56,8 +59,9 @@ export async function POST(req: NextRequest, ctx: Ctx) {
           { status: 400 }
         );
       }
-      secTableName = glFile.tableName;
-      documentType = glFile.documentType;
+      secTableName   = glFile.tableName;
+      documentType   = glFile.documentType;
+      docPeriodStart = glFile.periodStart;
 
       // Need a GL somewhere — check for a WorkspaceDocument of type GL
       const glDoc = await prisma.workspaceDocument.findFirst({
@@ -70,9 +74,6 @@ export async function POST(req: NextRequest, ctx: Ctx) {
           { status: 404 }
         );
       }
-      // Swap: glFile is actually the doc, glDoc is the real GL
-      secTableName = glFile.tableName;
-      documentType = glFile.documentType;
       // fetch GL rows from workspace doc
       const glRows = await prisma.$queryRawUnsafe<Record<string, unknown>[]>(
         `SELECT * FROM "${glDoc.tableName}" ORDER BY ctid LIMIT 100000`
@@ -80,7 +81,7 @@ export async function POST(req: NextRequest, ctx: Ctx) {
       const docRows = await prisma.$queryRawUnsafe<Record<string, unknown>[]>(
         `SELECT * FROM "${secTableName}" ORDER BY ctid LIMIT 50000`
       );
-      return runReconciliation(glRows, docRows, documentType, connectionId);
+      return runReconciliation(glRows, docRows, documentType, connectionId, docPeriodStart);
     }
 
     // Standard path: glFile is GL, secTableName is the document
@@ -100,7 +101,7 @@ export async function POST(req: NextRequest, ctx: Ctx) {
       ),
     ]);
 
-    return runReconciliation(glRows, docRows, documentType, connectionId);
+    return runReconciliation(glRows, docRows, documentType, connectionId, docPeriodStart);
   } catch (err) {
     console.error("[reconcile POST]", err);
     return NextResponse.json(
@@ -110,12 +111,13 @@ export async function POST(req: NextRequest, ctx: Ctx) {
   }
 }
 
-function runReconciliation(
-  glRows:      Record<string, unknown>[],
-  docRows:     Record<string, unknown>[],
-  docType:     string,
+async function runReconciliation(
+  glRows:       Record<string, unknown>[],
+  docRows:      Record<string, unknown>[],
+  docType:      string,
   connectionId: string,
-): NextResponse {
+  docPeriodStart: Date | null = null,
+): Promise<NextResponse> {
   let result;
 
   if (docType === "FORM_26Q") {
@@ -124,6 +126,13 @@ function runReconciliation(
   } else if (docType === "GSTR_1") {
     const parsed = parseGstr1(docRows);
     result = reconcileGlGstr1(glRows, parsed, connectionId);
+  } else if (docType === "GSTR_2B") {
+    const parsed = parseGstr2B(docRows);
+    result = reconcileGlGstr2B(glRows, parsed, connectionId);
+    // Persist vendor risk before the raw table expires (90 days)
+    await upsertVendorComplianceRecords(connectionId, docPeriodStart, result.gaps).catch((err) =>
+      console.error("[reconcile] vendor compliance upsert failed", err)
+    );
   } else {
     return NextResponse.json(
       { error: `No reconciliation engine for document type: ${docType}` },

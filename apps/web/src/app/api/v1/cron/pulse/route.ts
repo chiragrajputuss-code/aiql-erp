@@ -4,6 +4,7 @@ import {
   generateComplianceAlerts,
   computeSnapshotFromRows,
   computeTdsAlerts,
+  computeVendorComplianceAlerts,
   type WorkspaceContext,
 } from "@aiql/pulse-engine";
 import { sendPulseEmail, type PulseEmailVariant } from "@/lib/pulse-email/send";
@@ -124,7 +125,21 @@ async function runForSubscription(
     }
   }
 
-  const allAlerts = [...complianceAlerts, ...tdsAlerts];
+  // Vendor GST-filing compliance — survives even after the source GSTR-2B
+  // table has expired, since it reads from the persisted VendorComplianceRecord.
+  let vendorAlerts: ReturnType<typeof computeVendorComplianceAlerts> = [];
+  const latestVendorRecord = await prisma.vendorComplianceRecord.findFirst({
+    where: { connectionId: connection.id },
+    orderBy: { createdAt: "desc" },
+  });
+  if (latestVendorRecord) {
+    const latestPeriodRecords = await prisma.vendorComplianceRecord.findMany({
+      where: { connectionId: connection.id, period: latestVendorRecord.period },
+    });
+    vendorAlerts = computeVendorComplianceAlerts(latestPeriodRecords, today);
+  }
+
+  const allAlerts = [...complianceAlerts, ...tdsAlerts, ...vendorAlerts];
 
   // Determine email variant
   const isFirstTime = uploadedFile

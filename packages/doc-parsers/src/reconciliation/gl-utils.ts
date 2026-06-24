@@ -81,6 +81,26 @@ export function filterSalesRows(rows: GlRow[]): GlRow[] {
   });
 }
 
+// ─── Purchase keyword filter ──────────────────────────────────────────────────
+
+const PURCHASE_KEYWORDS = [
+  "purchase", "inward supply", "purchase invoice", "expense", "gst purchase",
+];
+
+const PURCHASE_VOUCHER_TYPES = ["purchase", "purchase invoice", "bill"];
+
+export function filterPurchaseRows(rows: GlRow[]): GlRow[] {
+  return rows.filter((row) => {
+    const fields = [row.account_name, row.account_group, row.description]
+      .filter(Boolean).map((f) => f!.toLowerCase());
+    const voucher = (row.voucher_type ?? "").toLowerCase();
+    return (
+      fields.some((f) => PURCHASE_KEYWORDS.some((kw) => f.includes(kw))) ||
+      PURCHASE_VOUCHER_TYPES.some((vt) => voucher.includes(vt))
+    );
+  });
+}
+
 // ─── Amount helpers ───────────────────────────────────────────────────────────
 
 export function effectiveAmount(row: GlRow): number {

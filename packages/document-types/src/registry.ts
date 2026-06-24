@@ -2,6 +2,7 @@ import type { DocumentType, DocumentTypeDefinition } from "./types";
 import { GL_DEFINITION }      from "./definitions/gl";
 import { TDS_26Q_DEFINITION } from "./definitions/tds-26q";
 import { GSTR_1_DEFINITION }  from "./definitions/gstr-1";
+import { GSTR_2B_DEFINITION } from "./definitions/gstr-2b";
 import { GSTR_3B_DEFINITION } from "./definitions/gstr-3b";
 import { ITR_DEFINITION }     from "./definitions/itr";
 
@@ -10,6 +11,7 @@ import { ITR_DEFINITION }     from "./definitions/itr";
 const REGISTRY: DocumentTypeDefinition[] = [
   TDS_26Q_DEFINITION,
   GSTR_1_DEFINITION,
+  GSTR_2B_DEFINITION,
   GSTR_3B_DEFINITION,
   ITR_DEFINITION,
   GL_DEFINITION,      // Most general — evaluate last

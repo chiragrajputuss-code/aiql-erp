@@ -23,6 +23,7 @@ const DOC_TYPES = [
   { value: "GL",             label: "General Ledger",  icon: "📊", chatEnabled: true },
   { value: "TDS_RETURN_26Q", label: "Form 26Q (TDS)",  icon: "📋", chatEnabled: false },
   { value: "GSTR_1",         label: "GSTR-1",          icon: "🧾", chatEnabled: false },
+  { value: "GSTR_2B",        label: "GSTR-2B (ITC)",   icon: "📥", chatEnabled: false },
   { value: "GSTR_3B",        label: "GSTR-3B",         icon: "🧾", chatEnabled: false },
   { value: "ITR",            label: "ITR",             icon: "📁", chatEnabled: false },
   { value: "OTHER",          label: "Other",           icon: "📄", chatEnabled: false },

@@ -6,6 +6,7 @@ export type DocumentType =
   | "GL"
   | "TDS_RETURN_26Q"
   | "GSTR_1"
+  | "GSTR_2B"
   | "GSTR_3B"
   | "ITR"
   | "OTHER";

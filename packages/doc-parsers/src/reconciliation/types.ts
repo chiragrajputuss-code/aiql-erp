@@ -17,7 +17,7 @@ export interface ReconGap {
 }
 
 export interface ReconResult {
-  type:             "GL_26Q" | "GL_GSTR1";
+  type:             "GL_26Q" | "GL_GSTR1" | "GL_GSTR2B";
   connectionId:     string;
   reconciledAt:     Date;
   durationMs:       number;

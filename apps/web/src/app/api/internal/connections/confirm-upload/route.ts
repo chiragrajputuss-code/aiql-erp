@@ -16,7 +16,7 @@ const schema = z.object({
     skip:            z.boolean().optional(),
   })),
   // Document type metadata (from auto-detect + user confirm step)
-  documentType:      z.enum(["GL", "TDS_RETURN_26Q", "GSTR_1", "GSTR_3B", "ITR", "OTHER"]).default("GL"),
+  documentType:      z.enum(["GL", "TDS_RETURN_26Q", "GSTR_1", "GSTR_2B", "GSTR_3B", "ITR", "OTHER"]).default("GL"),
   dataIntent:        z.enum(["CURRENT_OPERATIONAL", "HISTORICAL"]).default("CURRENT_OPERATIONAL"),
   userConfirmedType: z.boolean().default(false),
   periodStart:       z.string().nullable().optional(),  // ISO date string

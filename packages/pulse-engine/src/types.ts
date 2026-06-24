@@ -9,6 +9,7 @@ export type AlertCategory =
   | "tds_calculator"
   | "gstr1_deadline"
   | "gstr3b_deadline"
+  | "vendor_gst_filing"
   | "advance_tax"
   | "itr_deadline"
   | "unresolved_scan"

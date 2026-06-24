@@ -28,7 +28,7 @@ interface ReconGap {
 }
 
 interface ReconResult {
-  type:           "GL_26Q" | "GL_GSTR1";
+  type:           "GL_26Q" | "GL_GSTR1" | "GL_GSTR2B";
   connectionId:   string;
   reconciledAt:   string;
   durationMs:     number;
@@ -65,8 +65,9 @@ const SEVERITY_META: Record<ReconSeverity, { icon: React.ReactNode; color: strin
 };
 
 const RECON_LABELS: Record<string, string> = {
-  GL_26Q:  "GL ↔ Form 26Q (TDS)",
-  GL_GSTR1: "GL ↔ GSTR-1 (Outward Supplies)",
+  GL_26Q:    "GL ↔ Form 26Q (TDS)",
+  GL_GSTR1:  "GL ↔ GSTR-1 (Outward Supplies)",
+  GL_GSTR2B: "GL ↔ GSTR-2B (Vendor ITC)",
 };
 
 function GapCard({ gap }: { gap: ReconGap }) {

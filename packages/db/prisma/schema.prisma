@@ -140,6 +140,7 @@ enum DocumentType {
   GL               // General Ledger — transaction register
   TDS_RETURN_26Q   // Form 26Q — quarterly TDS return
   GSTR_1           // GSTR-1 — outward supplies return
+  GSTR_2B          // GSTR-2B — auto-drafted inward supplies / ITC statement
   GSTR_3B          // GSTR-3B — monthly summary return
   ITR              // Income Tax Return
   OTHER            // Unknown / generic table
@@ -299,6 +300,7 @@ model ErpConnection {
   accountMappings    OrgAccountMapping[]
   pinnedQueries      PinnedQuery[]
   pulseSubscription  PulseSubscription?
+  vendorCompliance   VendorComplianceRecord[]
 
   @@map("erp_connections")
 }
@@ -364,6 +366,30 @@ model WorkspaceDocument {
 
   @@index([connectionId, documentType])
   @@map("workspace_documents")
+}
+
+// Persisted per-vendor GST-filing compliance, written once per processed
+// GSTR-2B reconciliation run. Must outlive the raw WorkspaceDocument table,
+// which expires after 90 days — this is the only way to show a multi-month
+// vendor risk trend once the underlying monthly tables have been dropped.
+model VendorComplianceRecord {
+  id            String   @id @default(cuid())
+  connectionId  String
+  connection    ErpConnection @relation(fields: [connectionId], references: [id], onDelete: Cascade)
+
+  vendorName     String
+  vendorGstin    String?
+  period         String   // "MM-YYYY"
+  invoicesTotal  Int
+  invoicesAtRisk Int      // not filed by vendor / missing from GSTR-2B
+  amountAtRisk   Float
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@unique([connectionId, vendorName, period])
+  @@index([connectionId, vendorGstin])
+  @@map("vendor_compliance_records")
 }
 
 // ─── Query Engine ─────────────────────────────────────────────────────────────
