@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { FileSpreadsheet, RefreshCw, AlertCircle, ArrowLeft, Calendar, MessageCircle, Bell } from "lucide-react";
+import { FileSpreadsheet, RefreshCw, AlertCircle, ArrowLeft, Calendar, MessageCircle, Bell, TrendingUp } from "lucide-react";
 import { DeleteConnectionDialog } from "@/components/connections/delete-connection-dialog";
 
 export default async function ConnectionDetailPage({ params }: { params: { id: string } }) {
@@ -145,6 +145,13 @@ export default async function ConnectionDetailPage({ params }: { params: { id: s
                   <Bell className="h-4 w-4" />Daily Pulse
                 </Link>
               </Button>
+              {connection.uploadedFile?.documentType === "GSTR_2B" && (
+                <Button asChild variant="outline" size="sm" className="gap-2 border-violet-200 text-violet-700 hover:bg-violet-50">
+                  <Link href={`/connections/${connection.id}/vendor-compliance`}>
+                    <TrendingUp className="h-4 w-4" />Vendor ITC Scorecard
+                  </Link>
+                </Button>
+              )}
               <Button variant="outline" size="sm" className="gap-2" disabled>
                 <RefreshCw className="h-4 w-4" />Update Data
               </Button>

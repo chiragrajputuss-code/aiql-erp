@@ -79,25 +79,25 @@ User question
 
 ## Template Library — Priority Order
 
-Currently: 9 templates. Target: 50 templates covering Indian SME finance.
+Currently: 50+ templates. Target: 50 templates covering Indian SME finance — ✅ REACHED.
 
-**Tier 1 — Add immediately (highest frequency)**
-- [ ] Cash & bank balance
-- [ ] Overdue debtors (30/60/90 day buckets)
-- [ ] GST summary (CGST/SGST/IGST)
-- [ ] Vendor ledger (all transactions for one vendor)
-- [ ] Customer ledger (all transactions for one customer)
-- [ ] Purchase register by date range
-- [ ] Sales register by date range
-- [ ] Salary & payroll summary
+**Tier 1 — ✅ All done**
+- [x] Cash & bank balance
+- [x] Overdue debtors (30/60/90 day buckets)
+- [x] GST summary (CGST/SGST/IGST)
+- [x] Vendor ledger (all transactions for one vendor)
+- [x] Customer ledger (all transactions for one customer)
+- [x] Purchase register by date range
+- [x] Sales register by date range
+- [x] Salary & payroll summary
 
-**Tier 2 — Next sprint**
-- [ ] Profit & Loss summary
-- [ ] Balance sheet snapshot
-- [ ] Expense by voucher type
-- [ ] TDS summary
-- [ ] Bank reconciliation summary
-- [ ] Advance payments outstanding
+**Tier 2 — ✅ All done**
+- [x] Profit & Loss summary
+- [x] Balance sheet snapshot
+- [x] Expense by voucher type
+- [x] TDS summary
+- [x] Bank reconciliation summary
+- [x] Advance payments outstanding
 
 ---
 
