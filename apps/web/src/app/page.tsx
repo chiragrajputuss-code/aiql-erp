@@ -733,12 +733,12 @@ export default function LandingPage() {
               Start free for 14 days
               <ArrowRight className="h-4 w-4" />
             </Link>
-            <a
-              href="mailto:sales@accountiq.in"
+            <Link
+              href="/contact"
               className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-8 py-4 rounded-xl font-semibold text-base hover:bg-white/10 transition-colors"
             >
               Talk to us
-            </a>
+            </Link>
           </div>
           <p className="text-slate-400 text-sm">No credit card · Setup in 60 seconds · Cancel anytime</p>
         </div>

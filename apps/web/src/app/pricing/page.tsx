@@ -133,7 +133,7 @@ export default function PricingPage() {
             Multi-branch CA firms, large CFO offices, or bank/NBFC teams — we can build a tailored deployment with on-premise data options, custom scanner rules, and dedicated support.
           </p>
           <a
-            href="mailto:sales@aiql.com?subject=AIQL Custom/Enterprise"
+            href="/contact"
             className="inline-flex items-center gap-1.5 text-sm font-medium text-[#1B3A5C] hover:underline"
           >
             Talk to our team →

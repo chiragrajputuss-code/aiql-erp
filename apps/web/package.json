@@ -16,6 +16,7 @@
     "@aiql/doc-parsers": "workspace:*",
     "@aiql/document-types": "workspace:*",
     "@aiql/erp-connectors": "workspace:*",
+    "@aiql/investigation-engine": "workspace:*",
     "@aiql/pulse-engine": "workspace:*",
     "@aiql/query-engine": "workspace:*",
     "@aiql/schema-intel": "workspace:*",

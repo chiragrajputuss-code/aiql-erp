@@ -9,6 +9,7 @@
  */
 
 import { prisma } from "@aiql/db";
+import { isTestAccount } from "./billing";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -91,9 +92,12 @@ export async function checkLifetimeQueryCap(orgId: string): Promise<{
 }> {
   const org = await prisma.organisation.findUnique({
     where: { id: orgId },
-    select: { plan: true, lifetimeQueriesUsed: true, subscriptionStatus: true },
+    select: { plan: true, lifetimeQueriesUsed: true, subscriptionStatus: true, users: { select: { email: true } } },
   });
   if (!org) return { allowed: false, reason: "Organisation not found." };
+
+  // Permanent test accounts have no caps
+  if (isTestAccount(org.users)) return { allowed: true };
 
   // Paid plans have no lifetime cap
   if (PAID_PLANS.includes(org.plan)) return { allowed: true };
@@ -125,9 +129,12 @@ export async function checkCloseRunCap(orgId: string): Promise<{
 }> {
   const org = await prisma.organisation.findUnique({
     where: { id: orgId },
-    select: { plan: true, closeRunsUsed: true, subscriptionStatus: true },
+    select: { plan: true, closeRunsUsed: true, subscriptionStatus: true, users: { select: { email: true } } },
   });
   if (!org) return { allowed: false, reason: "Organisation not found." };
+
+  // Permanent test accounts have no caps
+  if (isTestAccount(org.users)) return { allowed: true };
 
   if (PAID_PLANS.includes(org.plan)) return { allowed: true };
   if (org.subscriptionStatus === "active") return { allowed: true };

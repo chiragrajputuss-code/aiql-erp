@@ -84,7 +84,7 @@ export const PLANS: Plan[] = [
     queryLimit:    "unlimited",
     recommended:   false,
     ctaLabel:      "Talk to us",
-    ctaHref:       "mailto:sales@aiql.com?subject=AIQL Business Plan",
+    ctaHref:       "/contact",
     features: [
       { text: "Unlimited connections",                          included: true, highlight: true },
       { text: "Unlimited queries",                              included: true, highlight: true },

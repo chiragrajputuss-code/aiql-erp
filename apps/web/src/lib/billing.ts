@@ -7,6 +7,25 @@
 
 import { prisma } from "@aiql/db";
 
+// ─── Permanent test accounts ────────────────────────────────────────────────────
+// Orgs whose admin/member email is in this list bypass ALL billing enforcement:
+// no trial expiry, no query limit, no upgrade banners. Used for internal
+// testing/demo accounts. Match is case-insensitive.
+
+export const TEST_ACCOUNT_EMAILS: ReadonlySet<string> = new Set([
+  "df@as.com",
+]);
+
+export function isTestAccountEmail(email: string | null | undefined): boolean {
+  if (!email) return false;
+  return TEST_ACCOUNT_EMAILS.has(email.trim().toLowerCase());
+}
+
+/** True if any of the org's user emails is a permanent test account. */
+export function isTestAccount(emails: { email: string }[]): boolean {
+  return emails.some((u) => isTestAccountEmail(u.email));
+}
+
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 export type AccessResult =
@@ -60,10 +79,14 @@ export async function checkPlanAccess(
       subscriptionStatus: true,
       queriesUsed: true,
       queryLimit: true,
+      users: { select: { email: true } },
     },
   });
 
   if (!org) return { allowed: false, reason: "plan_limit", message: "Organisation not found." };
+
+  // Permanent test accounts bypass all enforcement.
+  if (isTestAccount(org.users)) return { allowed: true };
 
   const now = new Date();
   const isTrialActive = org.trialEndsAt ? org.trialEndsAt > now : false;
@@ -115,10 +138,26 @@ export async function getOrgBillingState(orgId: string): Promise<OrgBillingState
       subscriptionStatus: true,
       queriesUsed: true,
       queryLimit: true,
+      users: { select: { email: true } },
     },
   });
 
   if (!org) return null;
+
+  // Permanent test accounts always appear fully active with no limits.
+  if (isTestAccount(org.users)) {
+    return {
+      plan: "ENTERPRISE",
+      trialEndsAt: null,
+      isTrialActive: true,
+      trialDaysLeft: 9999,
+      isSubscriptionActive: true,
+      subscriptionStatus: "active",
+      queriesUsed: org.queriesUsed,
+      queryLimit: 999999,
+      queriesLeft: 999999,
+    };
+  }
 
   const now = new Date();
   const isTrialActive = org.trialEndsAt ? org.trialEndsAt > now : false;

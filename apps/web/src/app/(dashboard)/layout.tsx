@@ -4,6 +4,7 @@ import { getCurrentUser } from "@/lib/auth";
 import { prisma } from "@aiql/db";
 import AppShell from "@/components/app-shell";
 import { AlertCircle, Zap } from "lucide-react";
+import { isTestAccount } from "@/lib/billing";
 
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   const user = await getCurrentUser();
@@ -18,18 +19,22 @@ export default async function DashboardLayout({ children }: { children: React.Re
       trialEndsAt: true,
       subscriptionStatus: true,
       razorpaySubscriptionId: true,
+      users: { select: { email: true } },
     },
   });
 
   if (!org) redirect("/login");
 
   const now = new Date();
+  const testAccount = isTestAccount(org.users);
   const isTrialActive = org.trialEndsAt ? org.trialEndsAt > now : false;
   const trialDaysLeft = org.trialEndsAt
     ? Math.max(0, Math.ceil((org.trialEndsAt.getTime() - now.getTime()) / 86_400_000))
     : 0;
   const isSubscriptionActive = org.subscriptionStatus === "active";
-  const trialExpired = !isTrialActive && !isSubscriptionActive;
+  // Permanent test accounts never see trial banners.
+  const trialExpired = !testAccount && !isTrialActive && !isSubscriptionActive;
+  const showTrialCountdown = !testAccount && isTrialActive && trialDaysLeft <= 5;
 
   return (
     <AppShell user={user} org={org}>
@@ -49,7 +54,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
           </Link>
         </div>
       )}
-      {isTrialActive && trialDaysLeft <= 5 && (
+      {showTrialCountdown && (
         <div className="bg-amber-500 text-white px-4 py-2.5 flex items-center justify-between gap-4 text-sm">
           <div className="flex items-center gap-2">
             <Zap className="h-4 w-4 shrink-0" />

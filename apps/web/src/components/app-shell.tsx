@@ -17,6 +17,7 @@ import {
   History,
   BookOpen,
   CreditCard,
+  Search,
 } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { NewFeatureBanner } from "@/components/new-feature-banner";
@@ -53,6 +54,7 @@ type NavItem = {
 
 const NAV: NavItem[] = [
   { href: "/", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/investigations", label: "Investigations", icon: Search, allowedRoles: ["ADMIN", "MEMBER"] },
   { href: "/query",   label: "Query Studio", icon: MessageSquare, allowedRoles: ["ADMIN", "MEMBER"] },
   { href: "/history", label: "History",      icon: History,       allowedRoles: ["ADMIN", "MEMBER"] },
   { href: "/close",   label: "Close Manager", icon: ClipboardList },

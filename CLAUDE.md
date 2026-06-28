@@ -123,15 +123,52 @@ Token map is held in memory for the request duration only, never persisted.
 
 ---
 
+## Investigation Engine (the Financial Investigation Platform layer)
+
+AccountIQ is evolving from an "AI Query Platform" (user must ask) into a
+**Financial Investigation Platform** (the system proactively investigates and
+surfaces findings + evidence + recommended actions). The Query Engine becomes a
+drill-down capability, not the front door.
+
+`packages/investigation-engine` is **pure** (no DB, no network) — like
+`pulse-engine`. The web app injects the context resolver (Prisma-backed,
+`apps/web/src/lib/investigations/context-resolver.ts`), persistence
+(`persist.ts`), and the LLM function (`llm-fn.ts`, wrapping `safeLlmCall`).
+
+**Eight frozen architecture principles — every investigation must obey these:**
+1. Business Context is resolved before execution begins
+2. Investigations declare **capabilities** (`Capability` enum), not connectors
+3. The **Runner** resolves dependencies, not the investigations
+4. Every investigation runs against an **immutable snapshot** (memoized accessors)
+5. The LLM **explains** evidence — it never generates it. `Finding.llmSummary` is
+   the ONLY LLM-written field; `run()` must never call the LLM or write to the DB
+6. Evidence is **materialized** at run time (`Evidence.rows`), not referenced —
+   so a Finding survives the 90-day raw-table expiry
+7. Findings are **superseded, never deleted** (`InvestigationRunStatus`: a new
+   run for the same org+period marks the prior CURRENT run SUPERSEDED)
+8. Every Finding declares its **resolution condition** (`resolvesWhen`)
+
+**Five-question rule (production gate):** a Finding is not ready unless it answers
+(1) business question, (2) evidence, (3) ₹ impact (`impactRs`; `null` = real but
+unquantifiable, `0` = no ₹ impact), (4) recommendation, (5) verification steps.
+The `Finding` type makes all five required — an incomplete finding won't compile.
+
+Adding an investigation = one file in `src/investigations/`, registered in
+`registry.ts` and added to a profile in `profiles.ts`. The runner and UI need no
+changes. First investigation: `gst-vendor-itc` (wraps `reconcileGlGstr2B`).
+
+---
+
 ## Package Structure
 
 ```
 packages/
-  query-engine/      — Core pipeline (template → RAG → LLM)
-  tokeniser/         — PII masking, Hindi/Hinglish preprocessing
-  schema-intel/      — ERP schema introspection and normalisation
-  erp-connectors/    — Tally, Zoho Books, file upload connectors
-  db/                — Prisma schema and client
+  query-engine/        — Core pipeline (template → RAG → LLM)
+  investigation-engine/— Pure financial-investigation framework (findings/evidence)
+  tokeniser/           — PII masking, Hindi/Hinglish preprocessing
+  schema-intel/        — ERP schema introspection and normalisation
+  erp-connectors/      — Tally, Zoho Books, file upload connectors
+  db/                  — Prisma schema and client
 
 apps/
   web/               — Next.js 14 app (dashboard + API routes)

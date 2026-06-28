@@ -100,24 +100,35 @@ function StepType({ onSelect }: { onSelect: (t: WizardStep) => void }) {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         {[
           { id: "upload" as WizardStep, emoji: "📊", title: "Upload File", sub: "Excel / CSV", time: "~2 min",
-            highlight: true, desc: "Upload any spreadsheet — AIQL auto-detects columns" },
+            highlight: true, comingSoon: false, desc: "Upload any spreadsheet — AIQL auto-detects columns" },
           { id: "tally" as WizardStep, emoji: "📒", title: "Tally Prime", sub: "Cloud VPS", time: "~5 min",
-            highlight: false, desc: "Connect to Tally Prime running on cloud server" },
+            highlight: false, comingSoon: true, desc: "Connect to Tally Prime running on cloud server" },
           { id: "zoho" as WizardStep, emoji: "📗", title: "Zoho Books", sub: "OAuth 2.0", time: "~1 min",
-            highlight: false, desc: "Connect via Zoho's secure OAuth flow" },
+            highlight: false, comingSoon: true, desc: "Connect via Zoho's secure OAuth flow" },
         ].map((opt) => (
           <button
             key={opt.id}
-            onClick={() => onSelect(opt.id)}
-            className={`rounded-xl border-2 p-5 text-left transition-all hover:shadow-md ${
-              opt.highlight ? "border-[#1B3A5C] bg-[#1B3A5C]/5" : "border-slate-200 hover:border-slate-300"
+            onClick={() => !opt.comingSoon && onSelect(opt.id)}
+            disabled={opt.comingSoon}
+            aria-disabled={opt.comingSoon}
+            className={`relative rounded-xl border-2 p-5 text-left transition-all ${
+              opt.comingSoon
+                ? "border-slate-200 bg-slate-50 opacity-60 cursor-not-allowed"
+                : opt.highlight
+                ? "border-[#1B3A5C] bg-[#1B3A5C]/5 hover:shadow-md"
+                : "border-slate-200 hover:border-slate-300 hover:shadow-md"
             }`}
           >
+            {opt.comingSoon && (
+              <span className="absolute top-3 right-3 rounded-full bg-slate-200 text-slate-600 text-[10px] font-semibold px-2 py-0.5">
+                Coming soon
+              </span>
+            )}
             <div className="text-3xl mb-3">{opt.emoji}</div>
             <p className="font-semibold text-slate-900">{opt.title}</p>
             <p className="text-xs text-muted-foreground">{opt.sub}</p>
             <p className="mt-2 text-xs text-slate-600">{opt.desc}</p>
-            <p className="mt-3 text-xs font-medium text-[#1B3A5C]">{opt.time}</p>
+            {!opt.comingSoon && <p className="mt-3 text-xs font-medium text-[#1B3A5C]">{opt.time}</p>}
           </button>
         ))}
       </div>

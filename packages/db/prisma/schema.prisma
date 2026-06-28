@@ -212,6 +212,7 @@ model Organisation {
   llmProxyApiKeys    LlmProxyApiKey[]
   llmProxyAuditLogs  LlmProxyAuditLog[]
   pulseSubscriptions PulseSubscription[]
+  investigationRuns  InvestigationRun[]
 
   @@map("organisations")
 }
@@ -390,6 +391,78 @@ model VendorComplianceRecord {
   @@unique([connectionId, vendorName, period])
   @@index([connectionId, vendorGstin])
   @@map("vendor_compliance_records")
+}
+
+// ─── Investigation Engine ──────────────────────────────────────────────────────
+// Persisted result of one investigation run ("session") — one click of
+// "Run Investigation" produces one InvestigationRun across all investigations in
+// the profile. Findings are SUPERSEDED, never deleted (Principle 7): on a new
+// run for the same (orgId, period) the prior CURRENT run is marked SUPERSEDED.
+
+enum InvestigationRunStatus {
+  RUNNING
+  CURRENT
+  SUPERSEDED
+  FAILED
+}
+
+model InvestigationRun {
+  id        String @id @default(cuid())
+  orgId     String
+  org       Organisation @relation(fields: [orgId], references: [id], onDelete: Cascade)
+
+  period      String                 // "MM-YYYY"
+  snapshotId  String                 // immutable context snapshot id, e.g. "CTX-20260701-001"
+  resolvedAt  DateTime               // when the BusinessContext snapshot was resolved
+  status      InvestigationRunStatus @default(RUNNING)
+  triggeredBy String                 // "user" | "cron"
+
+  startedAt   DateTime  @default(now())
+  completedAt DateTime?
+  durationMs  Int?
+
+  healthScore      Int?
+  totalImpactRs    Float @default(0)
+  criticalCount    Int   @default(0)
+  warningCount     Int   @default(0)
+  opportunityCount Int   @default(0)
+
+  executiveSummary   String?  // LLM-generated, nullable (graceful degradation)
+  investigationsJson String   // per-investigation status/skip reasons (JSON)
+
+  findings InvestigationFinding[]
+
+  @@index([orgId, status])
+  @@index([orgId, period])
+  @@map("investigation_runs")
+}
+
+model InvestigationFinding {
+  id    String @id @default(cuid())
+  runId String
+  run   InvestigationRun @relation(fields: [runId], references: [id], onDelete: Cascade)
+
+  investigationId String   // "gst-vendor-itc"
+  code            String   // "GST-ITC-002"
+  category        String
+  severity        String   // critical | warning | opportunity | info
+  title           String
+  impactRs        Float?   // null = impact exists but not quantifiable
+
+  businessQuestion String
+  conclusion       String
+  llmSummary       String?
+
+  evidenceJson       String   // Evidence[] MATERIALIZED (Principle 6)
+  recommendationJson String   // Recommendation
+  verificationJson   String   // string[]
+  resolvesWhen       String
+
+  status    String   @default("open") // open | resolved | snoozed
+  createdAt DateTime @default(now())
+
+  @@index([runId, severity])
+  @@map("investigation_findings")
 }
 
 // ─── Query Engine ─────────────────────────────────────────────────────────────
