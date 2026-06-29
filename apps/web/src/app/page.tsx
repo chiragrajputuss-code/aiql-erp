@@ -1,248 +1,95 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import {
-  MessageSquare, Upload, Zap, Shield, Bell, FileSearch,
-  GitCompare, CheckCircle2, ChevronRight, ArrowRight,
-  BarChart3, AlertCircle, TrendingUp, Check, Star,
-  Menu, X, Play,
+  Search, Upload, Activity, ShieldCheck, ArrowRight, AlertCircle,
+  AlertTriangle, TrendingUp, Check, Menu, X, Receipt, Wallet, Users,
+  FileText, Sparkles, Lock, CheckCircle2, ChevronRight,
 } from "lucide-react";
 
 // ─── Brand ───────────────────────────────────────────────────────────────────
 
 const BRAND = {
   name: "AccountIQ",
-  tagline: "Ask your books anything.",
-  description: "Connect your Tally export or Zoho Books GL. Type a question in plain English. Get the answer in under 2 seconds — with the actual numbers from your data, not a guess.",
   primary: "#1B3A5C",
-  accent: "#2563EB",
 };
 
-// ─── Demo chat data ───────────────────────────────────────────────────────────
+// ─── Hero interactive preview data ────────────────────────────────────────────
 
-const DEMO_QA = [
-  {
-    q: "What is my total GST liability for Q2?",
-    a: "Your Q2 GST liability is ₹4,82,310 — CGST ₹2,18,440 · SGST ₹2,18,440 · IGST ₹45,430. Filing due in 8 days.",
-    rows: [
-      { Month: "July 2025", CGST: "₹68,200", SGST: "₹68,200", IGST: "₹14,100" },
-      { Month: "August 2025", CGST: "₹79,440", SGST: "₹79,440", IGST: "₹18,200" },
-      { Month: "September 2025", CGST: "₹70,800", SGST: "₹70,800", IGST: "₹13,130" },
-    ],
-  },
-  {
-    q: "Show top 5 vendors by payment this year",
-    a: "5 vendors · ₹38,24,500 total payments this financial year.",
-    rows: [
-      { Vendor: "Infosys BPM Ltd", Amount: "₹12,40,000", TDS: "₹1,24,000" },
-      { Vendor: "Tata Consultancy", Amount: "₹9,80,000", TDS: "₹98,000" },
-      { Vendor: "Wipro Ltd", Amount: "₹7,20,000", TDS: "₹72,000" },
-      { Vendor: "HCL Technologies", Amount: "₹5,44,500", TDS: "₹54,450" },
-      { Vendor: "Tech Mahindra", Amount: "₹3,40,000", TDS: "₹34,000" },
-    ],
-  },
-  {
-    q: "Any overdue vendor payments?",
-    a: "3 vendors have payments overdue by more than 30 days. Total overdue: ₹6,84,200.",
-    rows: [
-      { Vendor: "Sharma Traders", Overdue: "₹2,40,000", Days: "45 days" },
-      { Vendor: "Mehta Supplies", Overdue: "₹1,94,200", Days: "38 days" },
-      { Vendor: "Kumar & Sons", Overdue: "₹2,50,000", Days: "32 days" },
-    ],
-  },
-  {
-    q: "Compare Q1 vs Q2 total expenses",
-    a: "Expenses increased 18.4% from Q1 to Q2. Biggest jump in employee costs (+32%) and office expenses (+24%).",
-    rows: [
-      { Category: "Employee costs", "Q1": "₹8,40,000", "Q2": "₹11,09,000", Change: "+32%" },
-      { Category: "Office expenses", "Q1": "₹1,20,000", "Q2": "₹1,49,000", Change: "+24%" },
-      { Category: "Travel", "Q1": "₹84,000", "Q2": "₹91,000", Change: "+8%" },
-      { Category: "Software", "Q1": "₹62,000", "Q2": "₹64,000", Change: "+3%" },
-    ],
-  },
-  {
-    q: "Is my TDS deducted and deposited correctly?",
-    a: "⚠️ Found a mismatch — ₹48,200 TDS deducted but only ₹42,000 deposited. Section 194J under-deposited.",
-    rows: [
-      { Section: "194C", Deducted: "₹24,000", Deposited: "₹24,000", Status: "✅ OK" },
-      { Section: "194J", Deducted: "₹48,200", Deposited: "₹42,000", Status: "⚠️ Gap ₹6,200" },
-      { Section: "194H", Deducted: "₹18,000", Deposited: "₹18,000", Status: "✅ OK" },
-    ],
-  },
-  {
-    q: "What is my cash position today?",
-    a: "Current cash & bank balance: ₹24,18,440 across 3 accounts.",
-    rows: [
-      { Account: "HDFC Current A/c", Balance: "₹14,20,000" },
-      { Account: "SBI Savings A/c", Balance: "₹8,44,440" },
-      { Account: "Petty Cash", Balance: "₹1,54,000" },
-    ],
-  },
+const PREVIEW_STEPS = [
+  "Reading General Ledger…",
+  "Cross-checking GST records…",
+  "Scanning payments for duplicates…",
+  "Aging receivables…",
+  "Writing your report…",
 ];
 
-// ─── Features ────────────────────────────────────────────────────────────────
-
-const FEATURES = [
-  {
-    icon: <MessageSquare className="h-6 w-6" />,
-    title: "Ask in plain English",
-    desc: "No SQL. No pivot tables. Just type what you want to know — GST liability, cash balance, overdue vendors — and it pulls the numbers straight from your GL.",
-    magic: "\"What is my GST liability this quarter?\" → answered in 2 seconds",
-    color: "bg-blue-50 text-blue-600",
-  },
-  {
-    icon: <Bell className="h-6 w-6" />,
-    title: "Daily Pulse at 8 AM",
-    desc: "Before you open your laptop, AccountIQ has already checked your books. GST filing dates, TDS deposit gaps, overdue payments — waiting in your inbox at 8 AM.",
-    magic: "Never miss a GST filing, TDS deposit, or advance tax instalment",
-    color: "bg-amber-50 text-amber-600",
-  },
-  {
-    icon: <FileSearch className="h-6 w-6" />,
-    title: "Document Scanner",
-    desc: "Drop in your Form 26Q, GSTR-1, GSTR-3B, or ITR. AccountIQ reads it and flags the problems — wrong PANs, rate mismatches, missing HSN codes — before the department does.",
-    magic: "Caught ₹6,200 TDS under-deposit before the penalty notice arrived",
-    color: "bg-red-50 text-red-600",
-  },
-  {
-    icon: <GitCompare className="h-6 w-6" />,
-    title: "GL Reconciliation",
-    desc: "Cross-checks your GL against Form 26Q and GSTR-1 line by line. If an invoice is in your GSTR but not in the GL (or the other way around), it shows up immediately.",
-    magic: "Invoice in GSTR-1 but missing from GL — flagged automatically",
-    color: "bg-purple-50 text-purple-600",
-  },
-  {
-    icon: <CheckCircle2 className="h-6 w-6" />,
-    title: "Month-end Close",
-    desc: "A proper close checklist with tasks, owners, and status. Not a spreadsheet shared on WhatsApp. Flux analysis tells you why numbers moved — not just that they did.",
-    magic: "Close time reduced from 5 days to 1 day for our beta customers",
-    color: "bg-green-50 text-green-600",
-  },
-  {
-    icon: <Shield className="h-6 w-6" />,
-    title: "Your data stays yours",
-    desc: "Vendor names, customer names, and amounts are replaced with tokens before anything touches an AI model. The model never sees real business data — only your server does.",
-    magic: "AI sees tokens — your actual data stays in your database",
-    color: "bg-slate-50 text-slate-600",
-  },
+const PREVIEW_FINDINGS = [
+  { sev: "critical" as const, title: "₹1,24,500 ITC at risk — 3 vendors haven't filed GSTR-1", tag: "GST & Compliance" },
+  { sev: "critical" as const, title: "Possible duplicate payment of ₹68,000 to a steel vendor", tag: "Risk & Control" },
+  { sev: "warning"  as const, title: "₹4,70,000 stuck in receivables beyond 60 days", tag: "Cash Health" },
+  { sev: "opportunity" as const, title: "₹25,000 of unclaimed Input Tax Credit available", tag: "Opportunity" },
 ];
 
-// ─── How it works ────────────────────────────────────────────────────────────
+const SEV_DOT: Record<string, string> = {
+  critical: "bg-red-500", warning: "bg-amber-500", opportunity: "bg-emerald-500",
+};
+const SEV_PILL: Record<string, string> = {
+  critical: "bg-red-100 text-red-700", warning: "bg-amber-100 text-amber-700", opportunity: "bg-emerald-100 text-emerald-700",
+};
+
+// ─── Drill-down questions (AI is a follow-up tool, not the hero) ───────────────
+
+const DRILL_QUESTIONS = [
+  "Why did expenses increase this month?",
+  "Show the invoices behind this finding.",
+  "Which vendors contributed to this issue?",
+  "Explain this recommendation in detail.",
+];
+
+// ─── What we investigate ──────────────────────────────────────────────────────
+
+const INVESTIGATES = [
+  "Compliance", "Vendor Risk", "Cash Movement", "Expense Analysis",
+  "Profit Changes", "Receivables", "Duplicate Payments", "Working Capital",
+];
+
+// ─── Capabilities (one investigation, complete visibility) ────────────────────
+
+const CAPABILITIES = [
+  { icon: <Receipt className="h-5 w-5" />,    title: "Compliance",        desc: "Identify GST and filing issues before they affect working capital.", color: "bg-blue-50 text-blue-600" },
+  { icon: <Users className="h-5 w-5" />,      title: "Vendor Risk",       desc: "Know which vendors require immediate attention.", color: "bg-purple-50 text-purple-600" },
+  { icon: <TrendingUp className="h-5 w-5" />, title: "Financial Changes", desc: "Understand why profits, expenses or cash flow changed.", color: "bg-amber-50 text-amber-600" },
+  { icon: <Wallet className="h-5 w-5" />,     title: "Cash Health",       desc: "See where money is moving and what needs attention.", color: "bg-emerald-50 text-emerald-600" },
+  { icon: <FileText className="h-5 w-5" />,   title: "Executive Summary", desc: "Explain this month's financial story in minutes, not hours.", color: "bg-slate-100 text-slate-600" },
+];
+
+// ─── How it works ─────────────────────────────────────────────────────────────
 
 const STEPS = [
-  {
-    number: "01",
-    title: "Upload your GL file",
-    desc: "Export from Tally or Zoho Books, drag the file in. AccountIQ figures out your columns — no mapping, no setup call.",
-    detail: "Works with Tally XML exports, Zoho Books GL downloads, and most Excel/CSV formats from other accounting software.",
-  },
-  {
-    number: "02",
-    title: "Type your question",
-    desc: "In English, Hindi, or Hinglish — whatever you type. It knows Indian accounting terms: GST, TDS, voucher types, ledger groups.",
-    detail: "Standard reports (GST summary, cash balance, overdue debtors) run from pre-built templates — no AI model called, no cost, answers in under 50ms.",
-  },
-  {
-    number: "03",
-    title: "Read the answer",
-    desc: "Numbers pulled directly from your data rows. Not a chatbot making things up — every figure is traceable back to a GL entry.",
-    detail: "Compliance alerts run alongside your queries. If something looks wrong — a TDS gap, a missed deposit — you'll see it in the same session.",
-  },
+  { n: "1", title: "Upload your accounting data", desc: "Import your Tally or ERP export securely. AccountIQ recognises your ledger and GST documents automatically — no mapping, no setup call." },
+  { n: "2", title: "AccountIQ investigates your business", desc: "The investigation engine reviews your financial data and identifies exactly what deserves attention — risks, compliance gaps, unusual changes and opportunities." },
+  { n: "3", title: "Review findings and take action", desc: "Understand each issue, verify the supporting transactions, and resolve it before it impacts your business — every finding comes with a recommended action." },
 ];
 
-// ─── Pricing ─────────────────────────────────────────────────────────────────
+// ─── Pricing ──────────────────────────────────────────────────────────────────
 
 const PLANS = [
   {
-    name: "Starter",
-    price: "₹999",
-    period: "/month",
-    annual: "₹9,990/year (save 2 months)",
-    desc: "Perfect for a single business owner or CA managing one entity.",
-    cta: "Start free trial",
-    highlight: false,
-    features: [
-      "1 connection",
-      "GL file uploads",
-      "100 AI queries/month",
-      "Hindi / Hinglish queries",
-      "1 team member",
-      "Email support",
-    ],
-    missing: [
-      "Document scanner (26Q, GSTR)",
-      "Daily Pulse emails",
-      "GL Reconciliation",
-      "Close engine",
-    ],
+    name: "Starter", price: "₹999", period: "/month", annual: "₹9,990/year",
+    desc: "For a single business or CA managing one entity.", cta: "Start free", highlight: false,
+    features: ["1 company", "Monthly investigations", "GST & vendor ITC checks", "Evidence on every finding", "1 team member", "Email support"],
   },
   {
-    name: "Growth",
-    price: "₹2,999",
-    period: "/month",
-    annual: "₹29,990/year (save 2 months)",
-    desc: "For growing businesses and CAs managing multiple clients.",
-    cta: "Start free trial",
-    highlight: true,
-    features: [
-      "5 connections",
-      "GL file uploads",
-      "500 AI queries/month",
-      "Hindi / Hinglish queries",
-      "5 team members",
-      "Document scanner (26Q, GSTR-1, GSTR-3B, ITR)",
-      "Daily Pulse emails at 8 AM IST",
-      "GL ↔ 26Q reconciliation",
-      "GL ↔ GSTR-1 reconciliation",
-      "Month-end close engine",
-      "Priority email support",
-    ],
-    missing: [],
+    name: "Growth", price: "₹2,999", period: "/month", annual: "₹29,990/year",
+    desc: "For growing businesses and CAs managing multiple clients.", cta: "Start free", highlight: true,
+    features: ["5 companies", "All investigation types", "Duplicate-payment & cash checks", "Receivables & expense analysis", "Drill-down follow-up questions", "5 team members", "Daily Pulse alerts", "Priority support"],
   },
   {
-    name: "Enterprise",
-    price: "Custom",
-    period: "",
-    annual: "Annual billing only",
-    desc: "For large firms, multi-entity groups, and enterprise finance teams.",
-    cta: "Contact us",
-    highlight: false,
-    features: [
-      "Unlimited connections",
-      "Unlimited AI queries",
-      "Unlimited team members",
-      "Tally & Zoho Books live connector",
-      "Custom SQL templates",
-      "White-label option",
-      "Dedicated account manager",
-      "SLA guarantee",
-      "On-premise deployment option",
-    ],
-    missing: [],
-  },
-];
-
-// ─── Testimonials (placeholder) ───────────────────────────────────────────────
-
-const TESTIMONIALS = [
-  {
-    quote: "We used to spend 3 days every month just reconciling TDS. AccountIQ does it in minutes and catches mismatches we always missed.",
-    name: "Rajesh Mehta",
-    role: "CFO, Mumbai",
-    stars: 5,
-  },
-  {
-    quote: "My clients ask me questions constantly. Now I just open AccountIQ and type the question — the answer is there in seconds with the actual numbers.",
-    name: "CA Priya Sharma",
-    role: "Chartered Accountant, Pune",
-    stars: 5,
-  },
-  {
-    quote: "The 8 AM pulse email is the first thing I read every morning. It told me about an advance tax deadline I had completely forgotten about.",
-    name: "Anita Gupta",
-    role: "Finance Manager, Bengaluru",
-    stars: 5,
+    name: "Enterprise", price: "Custom", period: "", annual: "Annual billing",
+    desc: "For large firms, multi-entity groups and CFO offices.", cta: "Talk to us", highlight: false,
+    features: ["Unlimited companies", "Custom investigations", "Tally & Zoho connectors", "Dedicated account manager", "SLA guarantee", "On-premise option"],
   },
 ];
 
@@ -250,171 +97,120 @@ const TESTIMONIALS = [
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const links = [
+    { label: "How it works", href: "#how-it-works" },
+    { label: "What we investigate", href: "#investigates" },
+    { label: "Pricing", href: "#pricing" },
+    { label: "Sample report", href: "/sample-report" },
+  ];
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-slate-100">
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        {/* Logo */}
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-[#1B3A5C] flex items-center justify-center">
             <span className="text-white text-xs font-bold">IQ</span>
           </div>
           <span className="font-bold text-[#1B3A5C] text-lg">{BRAND.name}</span>
         </div>
-
-        {/* Desktop nav */}
         <div className="hidden md:flex items-center gap-8">
-          {["Features", "How it works", "Pricing"].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase().replace(/ /g, "-")}`}
-              className="text-sm text-slate-600 hover:text-[#1B3A5C] transition-colors font-medium"
-            >
-              {item}
-            </a>
+          {links.map((l) => (
+            <a key={l.label} href={l.href} className="text-sm text-slate-600 hover:text-[#1B3A5C] transition-colors font-medium">{l.label}</a>
           ))}
         </div>
-
-        {/* CTAs */}
         <div className="hidden md:flex items-center gap-3">
-          <Link href="/login" className="text-sm text-slate-600 hover:text-slate-900 font-medium px-4 py-2">
-            Log in
-          </Link>
-          <Link
-            href="/register"
-            className="text-sm bg-[#1B3A5C] text-white px-5 py-2 rounded-lg font-medium hover:bg-[#1B3A5C]/90 transition-colors"
-          >
-            Start free trial
-          </Link>
+          <Link href="/login" className="text-sm text-slate-600 hover:text-slate-900 font-medium px-4 py-2">Log in</Link>
+          <Link href="/contact" className="text-sm bg-[#1B3A5C] text-white px-5 py-2 rounded-lg font-medium hover:bg-[#1B3A5C]/90 transition-colors">Book a demo</Link>
         </div>
-
-        {/* Mobile menu button */}
-        <button className="md:hidden p-2" onClick={() => setOpen(!open)}>
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+        <button className="md:hidden p-2" onClick={() => setOpen(!open)}>{open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</button>
       </div>
-
-      {/* Mobile menu */}
       {open && (
         <div className="md:hidden bg-white border-t border-slate-100 px-6 py-4 space-y-4">
-          {["Features", "How it works", "Pricing"].map((item) => (
-            <a
-              key={item}
-              href={`#${item.toLowerCase().replace(/ /g, "-")}`}
-              className="block text-sm text-slate-600 font-medium py-2"
-              onClick={() => setOpen(false)}
-            >
-              {item}
-            </a>
+          {links.map((l) => (
+            <a key={l.label} href={l.href} className="block text-sm text-slate-600 font-medium py-2" onClick={() => setOpen(false)}>{l.label}</a>
           ))}
           <Link href="/login" className="block text-sm text-slate-600 py-2">Log in</Link>
-          <Link href="/register" className="block text-sm bg-[#1B3A5C] text-white px-5 py-2.5 rounded-lg font-medium text-center">
-            Start free trial
-          </Link>
+          <Link href="/contact" className="block text-sm bg-[#1B3A5C] text-white px-5 py-2.5 rounded-lg font-medium text-center">Book a demo</Link>
         </div>
       )}
     </nav>
   );
 }
 
-// ─── Interactive Demo ─────────────────────────────────────────────────────────
+// ─── Hero interactive preview ─────────────────────────────────────────────────
 
-function InteractiveDemo() {
-  const [activeIdx, setActiveIdx] = useState(0);
-  const active = DEMO_QA[activeIdx];
-  const cols = Object.keys(active.rows[0]);
+function HeroPreview() {
+  const [phase, setPhase] = useState<"analysing" | "report">("analysing");
+  const [step, setStep] = useState(0);
+
+  useEffect(() => {
+    if (phase === "analysing") {
+      if (step >= PREVIEW_STEPS.length) { const t = setTimeout(() => setPhase("report"), 500); return () => clearTimeout(t); }
+      const t = setTimeout(() => setStep((s) => s + 1), 520);
+      return () => clearTimeout(t);
+    }
+    // hold the report, then loop
+    const t = setTimeout(() => { setStep(0); setPhase("analysing"); }, 5200);
+    return () => clearTimeout(t);
+  }, [phase, step]);
 
   return (
-    <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden max-w-2xl w-full">
-      {/* Window chrome */}
+    <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden w-full max-w-md">
       <div className="bg-slate-50 border-b border-slate-200 px-4 py-3 flex items-center gap-2">
         <div className="w-3 h-3 rounded-full bg-red-400" />
         <div className="w-3 h-3 rounded-full bg-yellow-400" />
         <div className="w-3 h-3 rounded-full bg-green-400" />
-        <span className="ml-2 text-xs text-slate-400 font-medium">AccountIQ — AI Chat</span>
+        <span className="ml-2 text-xs text-slate-400 font-medium flex items-center gap-1.5">
+          <Search className="h-3 w-3" /> AccountIQ — Investigation
+        </span>
       </div>
 
-      {/* Question chips */}
-      <div className="px-4 pt-4 pb-2">
-        <p className="text-[10px] font-semibold text-slate-400 uppercase tracking-wide mb-2">
-          Try a sample question
-        </p>
-        <div className="flex flex-wrap gap-1.5">
-          {DEMO_QA.map((item, i) => (
-            <button
-              key={i}
-              onClick={() => setActiveIdx(i)}
-              className={`text-xs px-3 py-1.5 rounded-full border transition-all ${
-                activeIdx === i
-                  ? "bg-[#1B3A5C] text-white border-[#1B3A5C]"
-                  : "bg-white text-slate-600 border-slate-200 hover:border-[#1B3A5C] hover:text-[#1B3A5C]"
-              }`}
-            >
-              {item.q.length > 30 ? item.q.slice(0, 30) + "…" : item.q}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      {/* Chat */}
-      <div className="px-4 pb-4 space-y-3">
-        {/* User message */}
-        <div className="flex justify-end">
-          <div className="bg-[#1B3A5C] text-white rounded-2xl rounded-tr-sm px-4 py-2.5 max-w-xs text-sm">
-            {active.q}
+      <div className="p-4 min-h-[330px]">
+        {phase === "analysing" ? (
+          <div>
+            <div className="flex items-center gap-2 text-[#1B3A5C] text-sm font-semibold mb-3">
+              <Activity className="h-4 w-4 animate-pulse" /> Investigating May 2026…
+            </div>
+            <div className="space-y-2">
+              {PREVIEW_STEPS.map((s, i) => {
+                const done = i < step, active = i === step;
+                return (
+                  <div key={i} className={`flex items-center gap-2 text-xs transition-opacity ${done || active ? "opacity-100" : "opacity-30"}`}>
+                    {done ? <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
+                      : active ? <div className="h-3.5 w-3.5 rounded-full border-2 border-[#1B3A5C] border-t-transparent animate-spin" />
+                      : <div className="h-3.5 w-3.5 rounded-full border-2 border-slate-200" />}
+                    <span className="text-slate-600">{s}</span>
+                  </div>
+                );
+              })}
+            </div>
+            <div className="h-1.5 rounded-full bg-slate-100 overflow-hidden mt-4">
+              <div className="h-full bg-gradient-to-r from-[#1B3A5C] to-blue-500 transition-all duration-500" style={{ width: `${(step / PREVIEW_STEPS.length) * 100}%` }} />
+            </div>
           </div>
-        </div>
-
-        {/* Assistant message */}
-        <div className="flex gap-2 items-start">
-          <div className="w-7 h-7 rounded-full bg-[#1B3A5C]/10 flex items-center justify-center shrink-0">
-            <span className="text-xs font-bold text-[#1B3A5C]">IQ</span>
-          </div>
-          <div className="bg-white border border-slate-200 rounded-2xl rounded-tl-sm px-4 py-3 flex-1">
-            <div className="flex items-center gap-2 mb-2">
-              <span className="text-[10px] font-semibold bg-green-100 text-green-700 border border-green-200 px-2 py-0.5 rounded">
-                Template
+        ) : (
+          <div className="animate-in fade-in duration-500">
+            <div className="flex items-center justify-between mb-3">
+              <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-full px-2.5 py-0.5 flex items-center gap-1">
+                <CheckCircle2 className="h-3 w-3" /> 4 findings · ₹8.5L in play
               </span>
-              <span className="text-[10px] text-slate-400">answered in 48ms</span>
+              <span className="text-[10px] text-slate-400">May 2026</span>
             </div>
-            <p className="text-sm font-medium text-slate-900 mb-2">{active.a}</p>
-
-            {/* Mini table */}
-            <div className="rounded border border-slate-100 overflow-hidden text-xs">
-              <table className="w-full">
-                <thead className="bg-slate-50">
-                  <tr>
-                    {cols.map((c) => (
-                      <th key={c} className="px-2 py-1.5 text-left text-slate-500 font-medium border-r last:border-0 whitespace-nowrap">
-                        {c}
-                      </th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody className="divide-y divide-slate-100">
-                  {active.rows.map((row, i) => (
-                    <tr key={i} className="hover:bg-slate-50">
-                      {cols.map((c) => (
-                        <td key={c} className="px-2 py-1.5 text-slate-700 border-r last:border-0 whitespace-nowrap">
-                          {(row as Record<string, string>)[c]}
-                        </td>
-                      ))}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+            <div className="space-y-2">
+              {PREVIEW_FINDINGS.map((f, i) => (
+                <div key={i} className="rounded-lg border border-slate-200 p-2.5">
+                  <div className="flex items-center gap-2 mb-1">
+                    <span className={`h-2 w-2 rounded-full ${SEV_DOT[f.sev]}`} />
+                    <span className={`text-[9px] font-semibold rounded px-1.5 py-0.5 ${SEV_PILL[f.sev]}`}>{f.tag}</span>
+                  </div>
+                  <p className="text-xs text-slate-700 leading-snug">{f.title}</p>
+                </div>
+              ))}
             </div>
+            <Link href="/sample-report" className="mt-3 flex items-center justify-center gap-1 text-xs font-semibold text-[#1B3A5C] hover:underline">
+              View the full report <ArrowRight className="h-3 w-3" />
+            </Link>
           </div>
-        </div>
-      </div>
-
-      {/* Input bar (decorative) */}
-      <div className="border-t border-slate-100 px-4 py-3 bg-slate-50/50 flex items-center gap-2">
-        <div className="flex-1 bg-white border border-slate-200 rounded-xl px-3 py-2 text-sm text-slate-400">
-          Ask about your GL data…
-        </div>
-        <div className="w-9 h-9 bg-[#1B3A5C] rounded-xl flex items-center justify-center">
-          <ChevronRight className="h-4 w-4 text-white" />
-        </div>
+        )}
       </div>
     </div>
   );
@@ -427,356 +223,271 @@ export default function LandingPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* ── Hero ──────────────────────────────────────────────────────────── */}
+      {/* ── Hero ── */}
       <section className="pt-32 pb-20 px-6 bg-gradient-to-b from-slate-50 to-white">
         <div className="max-w-6xl mx-auto">
-          <div className="flex flex-col lg:flex-row items-center gap-16">
-            {/* Left */}
-            <div className="flex-1 space-y-8">
-              {/* Badge */}
+          <div className="flex flex-col lg:flex-row items-center gap-14">
+            <div className="flex-1 space-y-7">
               <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-100 rounded-full px-4 py-1.5 text-sm font-medium">
-                <Zap className="h-3.5 w-3.5" />
-                Works with Tally · Zoho Books · GL exports
+                <ShieldCheck className="h-3.5 w-3.5" /> Financial Investigation Platform for Indian finance teams
               </div>
-
-              {/* Headline */}
-              <div className="space-y-3">
-                <h1 className="text-5xl lg:text-6xl font-bold text-[#1B3A5C] leading-tight">
-                  Ask your books<br />
-                  <span className="text-blue-600">anything.</span>
-                </h1>
-                <p className="text-xl text-slate-600 max-w-lg leading-relaxed">
-                  {BRAND.description}
-                </p>
-              </div>
-
-              {/* CTAs */}
+              <h1 className="text-4xl lg:text-[3.4rem] font-bold text-[#1B3A5C] leading-[1.08]">
+                Upload your financial data.<br />
+                <span className="text-blue-600">Know what deserves your attention</span> before it costs you money.
+              </h1>
+              <p className="text-lg text-slate-600 max-w-xl leading-relaxed">
+                AccountIQ automatically investigates your books to surface financial risks, compliance issues, unusual changes and opportunities — so your finance team knows exactly what needs attention before month-end.
+              </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link
-                  href="/register"
-                  className="inline-flex items-center justify-center gap-2 bg-[#1B3A5C] text-white px-8 py-4 rounded-xl font-semibold text-base hover:bg-[#1B3A5C]/90 transition-colors shadow-lg shadow-[#1B3A5C]/20"
-                >
-                  Start free trial — 14 days
-                  <ArrowRight className="h-4 w-4" />
+                <Link href="/sample-report" className="inline-flex items-center justify-center gap-2 bg-[#1B3A5C] text-white px-7 py-4 rounded-xl font-semibold text-base hover:bg-[#1B3A5C]/90 transition-colors shadow-lg shadow-[#1B3A5C]/20">
+                  View a sample investigation <ArrowRight className="h-4 w-4" />
                 </Link>
-                <a
-                  href="#how-it-works"
-                  className="inline-flex items-center justify-center gap-2 bg-white text-slate-700 px-8 py-4 rounded-xl font-semibold text-base border border-slate-200 hover:border-slate-400 transition-colors"
-                >
-                  <Play className="h-4 w-4" />
-                  See how it works
-                </a>
+                <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-white text-slate-700 px-7 py-4 rounded-xl font-semibold text-base border border-slate-200 hover:border-slate-400 transition-colors">
+                  Book a demo
+                </Link>
               </div>
-
-              {/* Trust signals */}
-              <div className="flex flex-wrap items-center gap-6 text-sm text-slate-500">
-                <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-green-500" />No credit card required</span>
-                <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-green-500" />Setup in 60 seconds</span>
-                <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-green-500" />Cancel anytime</span>
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-500">
+                <span className="flex items-center gap-1.5"><Lock className="h-4 w-4 text-slate-400" /> Read-only — never modifies your books</span>
+                <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-emerald-500" /> Works alongside your ERP</span>
               </div>
             </div>
-
-            {/* Right — Interactive demo */}
-            <div className="flex-1 flex justify-center">
-              <InteractiveDemo />
+            <div className="flex-1 flex justify-center w-full">
+              <HeroPreview />
             </div>
           </div>
         </div>
       </section>
 
-      {/* ── Stats bar ─────────────────────────────────────────────────────── */}
-      <section className="border-y border-slate-100 bg-white py-10 px-6">
-        <div className="max-w-4xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-          {[
-            { value: "< 2s", label: "Most queries answered in under 2 seconds" },
-            { value: "70%", label: "Answered without calling any AI model" },
-            { value: "₹0", label: "Extra cost for standard reports" },
-            { value: "8 AM", label: "Compliance digest lands in your inbox" },
-          ].map(({ value, label }) => (
-            <div key={label}>
-              <div className="text-3xl font-bold text-[#1B3A5C]">{value}</div>
-              <div className="text-sm text-slate-500 mt-1">{label}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* ── How it works ──────────────────────────────────────────────────── */}
-      <section id="how-it-works" className="py-24 px-6 bg-slate-50">
+      {/* ── From data to decisions ── */}
+      <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#1B3A5C]">Three steps, no IT department needed</h2>
-            <p className="text-slate-500 mt-3 text-lg">Upload a file. Ask a question. Read the answer.</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8">
-            {STEPS.map((step) => (
-              <div key={step.number} className="relative">
-                {/* Connector line */}
-                <div className="hidden md:block absolute top-8 left-full w-full h-px bg-slate-200 -translate-x-8 z-0" />
-
-                <div className="bg-white rounded-2xl p-8 border border-slate-200 relative z-10 h-full">
-                  <div className="text-5xl font-bold text-slate-100 mb-4">{step.number}</div>
-                  <h3 className="text-xl font-bold text-[#1B3A5C] mb-3">{step.title}</h3>
-                  <p className="text-slate-600 mb-4 leading-relaxed">{step.desc}</p>
-                  <p className="text-xs text-slate-400 leading-relaxed border-t border-slate-100 pt-4">
-                    {step.detail}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Features / Magic ──────────────────────────────────────────────── */}
-      <section id="features" className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#1B3A5C]">What it actually does</h2>
-            <p className="text-slate-500 mt-3 text-lg max-w-xl mx-auto">
-              Six things your finance team spends hours on every month. AccountIQ handles them in the background.
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <h2 className="text-3xl font-bold text-[#1B3A5C]">From financial data to financial decisions</h2>
+            <p className="text-lg text-slate-600 mt-3">
+              Most finance software tells you <span className="font-semibold text-slate-800">what happened</span>. AccountIQ helps you understand <span className="font-semibold text-slate-800">what deserves your attention and why.</span>
             </p>
           </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {FEATURES.map((f) => (
-              <div
-                key={f.title}
-                className="group rounded-2xl border border-slate-200 p-6 hover:shadow-lg hover:border-slate-300 transition-all duration-200 bg-white"
-              >
-                <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-5 ${f.color}`}>
-                  {f.icon}
-                </div>
-                <h3 className="text-lg font-bold text-[#1B3A5C] mb-2">{f.title}</h3>
-                <p className="text-slate-500 text-sm leading-relaxed mb-4">{f.desc}</p>
-                <div className="flex items-start gap-2 bg-slate-50 rounded-lg px-3 py-2.5 mt-auto">
-                  <Zap className="h-3.5 w-3.5 text-amber-500 shrink-0 mt-0.5" />
-                  <p className="text-xs text-slate-600 italic">{f.magic}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Compliance section ────────────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-gradient-to-br from-[#1B3A5C] to-[#0f2238] text-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-6">
-              <div className="inline-flex items-center gap-2 bg-white/10 rounded-full px-4 py-1.5 text-sm">
-                <Bell className="h-3.5 w-3.5 text-amber-400" />
-                Daily Pulse — 8 AM every morning
-              </div>
-              <h2 className="text-4xl font-bold">The deadline email you actually want</h2>
-              <p className="text-slate-300 text-lg leading-relaxed">
-                Every morning at 8 AM, AccountIQ reads your books and tells you what needs attention today — GST filing dates, pending TDS deposits, advance tax instalments due, vendors waiting to be paid. One email, real numbers, no fluff.
-              </p>
-              <div className="space-y-3">
-                {[
-                  "GSTR-1 due in 3 days · ₹4,82,310 liability",
-                  "TDS deposit overdue · Section 194J · ₹6,200 gap",
-                  "Advance tax instalment · 15 Dec · ₹1,20,000 due",
-                  "Vendor payment overdue · 3 vendors · ₹6,84,200",
-                ].map((alert) => (
-                  <div key={alert} className="flex items-center gap-3 bg-white/10 rounded-xl px-4 py-3">
-                    <AlertCircle className="h-4 w-4 text-amber-400 shrink-0" />
-                    <span className="text-sm text-slate-200">{alert}</span>
-                  </div>
-                ))}
-              </div>
-            </div>
-
-            <div className="space-y-4">
-              <div className="bg-white/10 rounded-2xl p-6 border border-white/10">
-                <div className="flex items-center gap-3 mb-4">
-                  <div className="w-10 h-10 bg-white/20 rounded-xl flex items-center justify-center">
-                    <BarChart3 className="h-5 w-5 text-white" />
-                  </div>
-                  <div>
-                    <div className="font-semibold">Monthly Snapshot</div>
-                    <div className="text-xs text-slate-400">October 2025</div>
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { label: "Total Revenue", value: "₹48,40,000" },
-                    { label: "Total Expenses", value: "₹31,20,000" },
-                    { label: "GST Liability", value: "₹4,82,310" },
-                    { label: "Net Profit", value: "₹17,20,000" },
-                  ].map(({ label, value }) => (
-                    <div key={label} className="bg-white/10 rounded-xl p-3">
-                      <div className="text-xs text-slate-400 mb-1">{label}</div>
-                      <div className="font-bold text-lg">{value}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-              <div className="flex items-center gap-2 bg-green-500/20 border border-green-500/30 rounded-xl px-4 py-3">
-                <TrendingUp className="h-4 w-4 text-green-400" />
-                <span className="text-sm text-green-300">Revenue up 12% vs last month · 3 compliance alerts</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Testimonials ──────────────────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-slate-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#1B3A5C]">What our early users say</h2>
-          </div>
           <div className="grid md:grid-cols-3 gap-6">
-            {TESTIMONIALS.map((t) => (
-              <div key={t.name} className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm">
-                <div className="flex gap-0.5 mb-4">
-                  {Array.from({ length: t.stars }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-amber-400 text-amber-400" />
-                  ))}
-                </div>
-                <p className="text-slate-700 leading-relaxed mb-6 text-sm">"{t.quote}"</p>
-                <div>
-                  <div className="font-semibold text-[#1B3A5C] text-sm">{t.name}</div>
-                  <div className="text-xs text-slate-400">{t.role}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Pricing ───────────────────────────────────────────────────────── */}
-      <section id="pricing" className="py-24 px-6 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-[#1B3A5C]">Pricing that makes sense for Indian businesses</h2>
-            <p className="text-slate-500 mt-3 text-lg">14-day free trial. No credit card. Cancel from the dashboard — no calls, no forms.</p>
-            <div className="inline-flex items-center gap-2 bg-green-50 text-green-700 border border-green-100 rounded-full px-4 py-1.5 text-sm font-medium mt-4">
-              <Check className="h-3.5 w-3.5" />
-              Annual billing saves 2 months
-            </div>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6 items-start">
-            {PLANS.map((plan) => (
-              <div
-                key={plan.name}
-                className={`rounded-2xl border p-8 relative ${
-                  plan.highlight
-                    ? "border-[#1B3A5C] shadow-xl shadow-[#1B3A5C]/10 bg-white"
-                    : "border-slate-200 bg-white"
-                }`}
-              >
-                {plan.highlight && (
-                  <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#1B3A5C] text-white text-xs font-semibold px-4 py-1 rounded-full">
-                    Most Popular
-                  </div>
-                )}
-
-                <div className="mb-6">
-                  <h3 className="text-lg font-bold text-[#1B3A5C]">{plan.name}</h3>
-                  <p className="text-slate-500 text-sm mt-1">{plan.desc}</p>
-                  <div className="mt-4 flex items-baseline gap-1">
-                    <span className="text-4xl font-bold text-[#1B3A5C]">{plan.price}</span>
-                    <span className="text-slate-400 text-sm">{plan.period}</span>
-                  </div>
-                  <p className="text-xs text-slate-400 mt-1">{plan.annual}</p>
-                </div>
-
-                <Link
-                  href={plan.name === "Enterprise" ? "mailto:sales@accountiq.in" : "/register"}
-                  className={`w-full block text-center py-3 rounded-xl font-semibold text-sm transition-colors mb-6 ${
-                    plan.highlight
-                      ? "bg-[#1B3A5C] text-white hover:bg-[#1B3A5C]/90"
-                      : "bg-slate-100 text-[#1B3A5C] hover:bg-slate-200"
-                  }`}
-                >
-                  {plan.cta}
-                </Link>
-
-                <div className="space-y-2.5">
-                  {plan.features.map((f) => (
-                    <div key={f} className="flex items-start gap-2.5 text-sm">
-                      <Check className="h-4 w-4 text-green-500 shrink-0 mt-0.5" />
-                      <span className="text-slate-700">{f}</span>
-                    </div>
-                  ))}
-                  {plan.missing.map((f) => (
-                    <div key={f} className="flex items-start gap-2.5 text-sm opacity-40">
-                      <X className="h-4 w-4 text-slate-400 shrink-0 mt-0.5" />
-                      <span className="text-slate-500">{f}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Final CTA ─────────────────────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-gradient-to-br from-[#1B3A5C] to-[#0f2238]">
-        <div className="max-w-3xl mx-auto text-center space-y-8">
-          <h2 className="text-4xl lg:text-5xl font-bold text-white">
-            Your books are talking.<br />Are you listening?
-          </h2>
-          <p className="text-slate-300 text-lg">
-            Your Tally data has answers to most of the questions your team spends hours digging for. AccountIQ just makes them a lot easier to find.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link
-              href="/register"
-              className="inline-flex items-center justify-center gap-2 bg-white text-[#1B3A5C] px-8 py-4 rounded-xl font-bold text-base hover:bg-slate-100 transition-colors shadow-lg"
-            >
-              Start free for 14 days
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-            <Link
-              href="/contact"
-              className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-8 py-4 rounded-xl font-semibold text-base hover:bg-white/10 transition-colors"
-            >
-              Talk to us
-            </Link>
-          </div>
-          <p className="text-slate-400 text-sm">No credit card · Setup in 60 seconds · Cancel anytime</p>
-        </div>
-      </section>
-
-      {/* ── Footer ────────────────────────────────────────────────────────── */}
-      <footer className="bg-[#0a1929] text-slate-400 py-12 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-10">
-            <div className="col-span-2 md:col-span-1">
-              <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-                  <span className="text-white text-xs font-bold">IQ</span>
-                </div>
-                <span className="font-bold text-white">{BRAND.name}</span>
-              </div>
-              <p className="text-sm leading-relaxed">AI-powered financial intelligence for Indian SMEs.</p>
-            </div>
             {[
-              { title: "Product", links: ["Features", "Pricing", "Security", "Changelog"] },
-              { title: "Company", links: ["About", "Blog", "Careers", "Contact"] },
-              { title: "Legal", links: ["Privacy", "Terms", "Refund Policy"] },
-            ].map(({ title, links }) => (
-              <div key={title}>
-                <h4 className="text-white font-semibold text-sm mb-3">{title}</h4>
-                <ul className="space-y-2">
-                  {links.map((l) => (
-                    <li key={l}>
-                      <a href="#" className="text-sm hover:text-white transition-colors">{l}</a>
+              { icon: <Search className="h-6 w-6" />, color: "bg-red-50 text-red-600", title: "Investigate financial risks", desc: "Automatically detect unusual expenses, cash movement, GST mismatches and vendor risks — before they become costly problems." },
+              { icon: <FileText className="h-6 w-6" />, color: "bg-blue-50 text-blue-600", title: "Evidence behind every finding", desc: "Every recommendation is backed by invoices, ledger entries and supporting transactions — so your team can trust every insight." },
+              { icon: <Sparkles className="h-6 w-6" />, color: "bg-emerald-50 text-emerald-600", title: "Ask follow-up questions", desc: "Need more detail? Just ask. AccountIQ explains every finding in plain English and links back to the underlying data." },
+            ].map((c) => (
+              <div key={c.title} className="rounded-2xl border border-slate-200 p-6 hover:shadow-md hover:border-slate-300 transition-all">
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${c.color}`}>{c.icon}</div>
+                <h3 className="font-semibold text-lg text-slate-900 mt-4">{c.title}</h3>
+                <p className="text-slate-600 text-sm mt-2 leading-relaxed">{c.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── How it works ── */}
+      <section id="how-it-works" className="py-20 px-6 bg-slate-50">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-14">
+            <h2 className="text-3xl font-bold text-[#1B3A5C]">How it works</h2>
+            <p className="text-lg text-slate-600 mt-3">Three steps from raw data to a decision you can act on.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-8">
+            {STEPS.map((s) => (
+              <div key={s.n} className="relative">
+                <div className="w-11 h-11 rounded-full bg-[#1B3A5C] text-white flex items-center justify-center font-bold text-lg">{s.n}</div>
+                <h3 className="font-semibold text-lg text-slate-900 mt-4">{s.title}</h3>
+                <p className="text-slate-600 text-sm mt-2 leading-relaxed">{s.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── One investigation, complete visibility ── */}
+      <section className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <h2 className="text-3xl font-bold text-[#1B3A5C]">One investigation. Complete financial visibility.</h2>
+            <p className="text-lg text-slate-600 mt-3">Instead of searching through reports, you receive a single prioritised investigation report.</p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
+            {CAPABILITIES.map((c) => (
+              <div key={c.title} className="rounded-2xl border border-slate-200 p-5 hover:shadow-md hover:border-slate-300 transition-all">
+                <div className={`w-10 h-10 rounded-lg flex items-center justify-center ${c.color}`}>{c.icon}</div>
+                <h3 className="font-semibold text-slate-900 mt-3">{c.title}</h3>
+                <p className="text-slate-500 text-xs mt-1.5 leading-relaxed">{c.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link href="/sample-report" className="inline-flex items-center gap-2 text-[#1B3A5C] font-semibold hover:underline">
+              See a real investigation report <ArrowRight className="h-4 w-4" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Before closing your books (the conversion section) ── */}
+      <section className="py-20 px-6 bg-[#1B3A5C] text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold">Before closing your books…</h2>
+          <p className="text-white/70 text-lg mt-3">Can you confidently answer these questions?</p>
+          <div className="grid sm:grid-cols-2 gap-3 mt-10 text-left">
+            {[
+              "Why did profits change this month?",
+              "Are there any GST risks?",
+              "Which vendors need attention?",
+              "What unusual expenses occurred?",
+              "Where is cash leaking?",
+              "What should management know?",
+            ].map((q) => (
+              <div key={q} className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-3">
+                <CheckCircle2 className="h-5 w-5 text-emerald-400 shrink-0" />
+                <span className="text-white/90">{q}</span>
+              </div>
+            ))}
+          </div>
+          <p className="text-white/70 mt-8">If not — run an AccountIQ investigation.</p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mt-5">
+            <Link href="/sample-report" className="inline-flex items-center justify-center gap-2 bg-white text-[#1B3A5C] px-7 py-3.5 rounded-xl font-bold hover:bg-slate-100">
+              View a sample investigation <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link href="/contact" className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-white/10">
+              Book a demo
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Need more detail (drill-down) ── */}
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 className="text-3xl font-bold text-[#1B3A5C]">Need more detail? Just ask.</h2>
+            <p className="text-lg text-slate-600 mt-3 leading-relaxed">
+              Every finding can be explored further in plain English — no SQL, no report building. The query engine becomes your drill-down tool, not another dashboard to learn.
+            </p>
+            <ul className="mt-6 space-y-2.5">
+              {DRILL_QUESTIONS.map((q) => (
+                <li key={q} className="flex items-center gap-3 text-slate-700">
+                  <ChevronRight className="h-4 w-4 text-[#1B3A5C] shrink-0" />
+                  <span className="text-sm">{q}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+          <div className="bg-slate-50 border border-slate-200 rounded-2xl p-5 space-y-3">
+            <div className="flex justify-end">
+              <div className="bg-[#1B3A5C] text-white rounded-2xl rounded-tr-sm px-4 py-2.5 text-sm max-w-xs">Which vendors contributed to the ITC risk?</div>
+            </div>
+            <div className="flex gap-2 items-start">
+              <div className="w-7 h-7 rounded-full bg-[#1B3A5C]/10 flex items-center justify-center shrink-0"><span className="text-xs font-bold text-[#1B3A5C]">IQ</span></div>
+              <div className="bg-white border border-slate-200 rounded-2xl rounded-tl-sm px-4 py-3 flex-1 text-sm text-slate-700">
+                Three vendors account for the ₹1,24,500 at risk: Agarwal Stationery (₹12,780), Sindhwani Rubber (₹16,920) and Bright Tools (₹94,300). All three have unfiled GSTR-1 for May.
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── What we investigate (replaces testimonials) ── */}
+      <section id="investigates" className="py-20 px-6 bg-slate-50">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl font-bold text-[#1B3A5C]">What AccountIQ investigates</h2>
+          <p className="text-lg text-slate-600 mt-3">A growing library of investigations, all evidence-backed.</p>
+          <div className="flex flex-wrap justify-center gap-3 mt-10">
+            {INVESTIGATES.map((i) => (
+              <span key={i} className="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2 text-sm font-medium text-slate-700">
+                <CheckCircle2 className="h-4 w-4 text-emerald-500" /> {i}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Pricing ── */}
+      <section id="pricing" className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-4">
+            <h2 className="text-3xl font-bold text-[#1B3A5C]">Built for finance teams</h2>
+            <p className="text-lg text-slate-600 mt-3">Simple pricing. No usage limits. No AI credits. No hidden costs.</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6 mt-12">
+            {PLANS.map((p) => (
+              <div key={p.name} className={`rounded-2xl border p-6 flex flex-col ${p.highlight ? "border-[#1B3A5C] shadow-xl ring-1 ring-[#1B3A5C]/10 relative" : "border-slate-200"}`}>
+                {p.highlight && <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#1B3A5C] text-white text-xs font-semibold px-3 py-1 rounded-full">Most popular</span>}
+                <h3 className="font-bold text-lg text-slate-900">{p.name}</h3>
+                <p className="text-sm text-slate-500 mt-1 min-h-[40px]">{p.desc}</p>
+                <div className="mt-4 flex items-baseline gap-1">
+                  <span className="text-3xl font-bold text-slate-900">{p.price}</span>
+                  <span className="text-slate-500 text-sm">{p.period}</span>
+                </div>
+                <p className="text-xs text-slate-400 mt-1">{p.annual}</p>
+                <Link href={p.name === "Enterprise" ? "/contact" : "/register"}
+                  className={`mt-5 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm transition-colors ${p.highlight ? "bg-[#1B3A5C] text-white hover:bg-[#1B3A5C]/90" : "bg-slate-100 text-slate-800 hover:bg-slate-200"}`}>
+                  {p.cta}
+                </Link>
+                <ul className="mt-6 space-y-2.5">
+                  {p.features.map((f) => (
+                    <li key={f} className="flex items-start gap-2 text-sm text-slate-600">
+                      <Check className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" /> {f}
                     </li>
                   ))}
                 </ul>
               </div>
             ))}
           </div>
-          <div className="border-t border-white/10 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <p className="text-xs">© {new Date().getFullYear()} AccountIQ · Made in India 🇮🇳</p>
-            <p className="text-xs">Tally · Zoho Books · GST · TDS · Month-end Close</p>
+        </div>
+      </section>
+
+      {/* ── Final CTA ── */}
+      <section className="py-24 px-6 bg-gradient-to-br from-[#1B3A5C] to-[#15314d] text-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold">Your financial investigation partner</h2>
+          <p className="text-white/80 text-lg mt-4 leading-relaxed">
+            Helping finance teams discover, understand and act — before financial problems become financial losses.
+          </p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
+            <Link href="/sample-report" className="inline-flex items-center justify-center gap-2 bg-white text-[#1B3A5C] px-8 py-4 rounded-xl font-bold hover:bg-slate-100">
+              View a sample investigation <ArrowRight className="h-4 w-4" />
+            </Link>
+            <Link href="/contact" className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-8 py-4 rounded-xl font-semibold hover:bg-white/10">
+              Book a demo
+            </Link>
+          </div>
+          <p className="text-white/50 text-sm mt-4">No credit card · Read-only · Works alongside your ERP</p>
+        </div>
+      </section>
+
+      {/* ── Footer ── */}
+      <footer className="bg-slate-900 text-slate-400 py-12 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex flex-col md:flex-row justify-between gap-8">
+            <div className="max-w-sm">
+              <div className="flex items-center gap-2 mb-3">
+                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center"><span className="text-white text-xs font-bold">IQ</span></div>
+                <span className="font-bold text-white text-lg">{BRAND.name}</span>
+              </div>
+              <p className="font-semibold text-slate-200">Financial Investigation Platform</p>
+              <p className="text-sm mt-1">Helping finance teams understand what deserves attention before it costs them money.</p>
+            </div>
+            <div className="flex gap-12 text-sm">
+              <div className="space-y-2">
+                <p className="text-slate-200 font-semibold mb-3">Product</p>
+                <Link href="/sample-report" className="block hover:text-white">Sample report</Link>
+                <a href="#how-it-works" className="block hover:text-white">How it works</a>
+                <a href="#pricing" className="block hover:text-white">Pricing</a>
+              </div>
+              <div className="space-y-2">
+                <p className="text-slate-200 font-semibold mb-3">Company</p>
+                <Link href="/contact" className="block hover:text-white">Contact</Link>
+                <Link href="/privacy" className="block hover:text-white">Privacy</Link>
+                <Link href="/terms" className="block hover:text-white">Terms</Link>
+              </div>
+            </div>
+          </div>
+          <div className="border-t border-white/10 mt-10 pt-6 text-xs flex flex-col sm:flex-row justify-between gap-2">
+            <span>© {new Date().getFullYear()} {BRAND.name}. All rights reserved.</span>
+            <span>Made for Indian finance teams · Read-only · Evidence-backed</span>
           </div>
         </div>
       </footer>

@@ -13,6 +13,7 @@ const PUBLIC_PATHS = [
   "/api/contact",
   "/contact",
   "/pricing",
+  "/sample-report",
   "/terms",
   "/privacy",
   "/sitemap.xml",
