@@ -36,22 +36,19 @@ export default function ContactPage() {
       <nav className="border-b border-slate-100 sticky top-0 bg-white/95 backdrop-blur z-50">
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
-            <div
-              className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-sm"
-              style={{ backgroundColor: BRAND_BLUE }}
-            >
-              A
+            <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs" style={{ backgroundColor: BRAND_BLUE }}>
+              IQ
             </div>
-            <span className="font-semibold" style={{ color: BRAND_BLUE }}>AccountIQ</span>
+            <span className="font-bold text-lg" style={{ color: BRAND_BLUE }}>AccountIQ</span>
           </Link>
           <div className="flex items-center gap-4">
-            <Link href="/login" className="text-sm text-slate-600 hover:text-slate-900">Sign in</Link>
+            <Link href="/login" className="text-sm text-slate-600 hover:text-slate-900">Log in</Link>
             <Link
-              href="/signup"
-              className="text-sm text-white px-4 py-2 rounded-lg font-medium"
+              href="/sample-report"
+              className="text-sm text-white px-4 py-2 rounded-lg font-medium hover:opacity-90 transition-opacity"
               style={{ backgroundColor: BRAND_BLUE }}
             >
-              Start free trial
+              View a sample investigation
             </Link>
           </div>
         </div>
@@ -61,10 +58,9 @@ export default function ContactPage() {
         <div className="grid md:grid-cols-2 gap-16">
           {/* Left — info */}
           <div>
-            <h1 className="text-4xl font-bold text-slate-900 mb-4">Get in touch</h1>
+            <h1 className="text-4xl font-bold text-slate-900 mb-4">See AccountIQ on your own books</h1>
             <p className="text-lg text-slate-600 mb-10">
-              Have a question about AccountIQ? Want to see a demo for your team?
-              We&apos;re happy to help — usually reply within a few hours.
+              Book a 20-minute walkthrough and we&apos;ll run a live investigation on a sample of your data — you&apos;ll see exactly what it finds. Questions about pricing, security or fit? Ask away. We usually reply within a few hours.
             </p>
 
             <div className="space-y-6">
@@ -95,23 +91,22 @@ export default function ContactPage() {
                   <MessageSquare className="w-5 h-5 text-purple-600" />
                 </div>
                 <div>
-                  <p className="font-medium text-slate-900">Free demo call</p>
+                  <p className="font-medium text-slate-900">Live investigation demo</p>
                   <p className="text-sm text-slate-500">
-                    Mention &quot;Demo&quot; in your message and we&apos;ll set up a screen-share
-                    walkthrough with your own Tally/Zoho data.
+                    Pick &quot;Request a demo&quot; below and we&apos;ll run AccountIQ on a sample of your own books, live on a screen-share.
                   </p>
                 </div>
               </div>
             </div>
 
             <div className="mt-12 p-5 bg-slate-50 rounded-xl border border-slate-100">
-              <p className="text-sm font-medium text-slate-700 mb-2">Common questions</p>
+              <p className="text-sm font-medium text-slate-700 mb-2">Questions we hear most</p>
               <ul className="space-y-2 text-sm text-slate-600">
                 {[
-                  "Does it work with my version of Tally?",
-                  "Can my CA or accountant use it?",
-                  "Is my financial data secure?",
-                  "Do I need to install anything?",
+                  "Does it work alongside my existing ERP?",
+                  "Can my CA or accountant use it too?",
+                  "How is my financial data kept secure?",
+                  "What does it actually find in my books?",
                 ].map((q) => (
                   <li key={q} className="flex items-center gap-2">
                     <CheckCircle2 className="w-4 h-4 text-green-500 flex-shrink-0" />
@@ -119,7 +114,7 @@ export default function ContactPage() {
                   </li>
                 ))}
               </ul>
-              <p className="text-xs text-slate-400 mt-3">Just ask in the form — we cover all of these.</p>
+              <p className="text-xs text-slate-400 mt-3">Ask any of these in the form — we&apos;ll walk you through it.</p>
             </div>
           </div>
 

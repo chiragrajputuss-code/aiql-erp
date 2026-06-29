@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Link from "next/link";
 import "./globals.css";
+import { SiteFooter } from "@/components/site-footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
 const SITE_URL = process.env.DOMAIN ?? "https://acctqai.com";
 const SITE_NAME = "AccountIQ";
-const TITLE = "AccountIQ — Ask your Tally or Zoho Books data in plain English";
+const TITLE = "AccountIQ — Know what deserves your attention before it costs you money";
 const DESCRIPTION =
-  "Type a question, get the number. AccountIQ reads your Tally export or Zoho Books GL and answers in seconds — GST liability, overdue vendors, cash position, TDS gaps. No SQL. No consultant. Starts free.";
+  "AccountIQ is a financial investigation platform for Indian finance teams. Upload your books and it surfaces GST risks, vendor issues, duplicate payments, cash leaks and opportunities — each with the evidence and the action to take, before month-end.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -19,14 +19,14 @@ export const metadata: Metadata = {
   },
   description: DESCRIPTION,
   keywords: [
-    "Tally query in English",
-    "Zoho Books reports",
-    "GST liability calculator",
+    "financial investigation platform",
+    "GST reconciliation India",
+    "GSTR-2B ITC tracking",
+    "vendor compliance India",
+    "duplicate payment detection",
+    "month end close India",
     "TDS reconciliation tool",
-    "month end close checklist India",
-    "GL close software India",
-    "accounts receivable India",
-    "overdue debtors report Tally",
+    "finance team software India",
     "AccountIQ",
   ],
   authors: [{ name: "AccountIQ", url: SITE_URL }],
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: TITLE,
     description: DESCRIPTION,
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "AccountIQ — Ask your books anything" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "AccountIQ — Financial Investigation Platform" }],
   },
   twitter: {
     card: "summary_large_image",
@@ -56,39 +56,6 @@ export const metadata: Metadata = {
     canonical: SITE_URL,
   },
 };
-
-// ─── Site-wide footer ─────────────────────────────────────────────────────────
-// Rendered on all pages including dashboard, legal, and public pages.
-// Kept minimal — auth pages suppress it via their own full-page layout.
-
-function SiteFooter() {
-  return (
-    <footer className="border-t border-slate-100 bg-white mt-auto">
-      <div className="max-w-6xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
-        <p className="text-[11px] text-slate-400">
-          © {new Date().getFullYear()} AIQL · AI-powered GL close for Indian SMEs
-        </p>
-        <nav className="flex items-center gap-5">
-          {[
-            { label: "Privacy",  href: "/privacy" },
-            { label: "Terms",    href: "/terms" },
-            { label: "Pricing",  href: "/pricing" },
-            { label: "Security", href: "/privacy#security" },
-            { label: "Contact",  href: "/contact" },
-          ].map(({ label, href }) => (
-            <Link
-              key={label}
-              href={href}
-              className="text-[11px] text-slate-400 hover:text-slate-600 transition-colors"
-            >
-              {label}
-            </Link>
-          ))}
-        </nav>
-      </div>
-    </footer>
-  );
-}
 
 // ─── Root layout ──────────────────────────────────────────────────────────────
 
@@ -108,11 +75,6 @@ const jsonLd = {
       "@type": "UnitPriceSpecification",
       billingDuration: "P1M",
     },
-  },
-  aggregateRating: {
-    "@type": "AggregateRating",
-    ratingValue: "4.8",
-    reviewCount: "24",
   },
 };
 

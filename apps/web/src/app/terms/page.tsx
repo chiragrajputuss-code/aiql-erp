@@ -22,7 +22,7 @@ export default function TermsPage() {
     <div className="min-h-screen bg-white">
       <header className="border-b border-slate-100 px-6 py-4">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-lg font-bold text-[#1B3A5C]">AIQL</Link>
+          <Link href="/" className="text-lg font-bold text-[#1B3A5C]">AccountIQ</Link>
           <Link href="/signup" className="text-sm text-[#1B3A5C] hover:underline font-medium">
             Sign up free →
           </Link>
@@ -34,25 +34,25 @@ export default function TermsPage() {
         <p className="text-sm text-slate-400 mb-10">Effective date: {effectiveDate}</p>
 
         <p className="text-slate-600 text-sm leading-relaxed mb-8">
-          These Terms of Service (&quot;Terms&quot;) govern your access to and use of AIQL, an
-          AI-powered General Ledger close and audit platform (&quot;Service&quot;) operated by AIQL
+          These Terms of Service (&quot;Terms&quot;) govern your access to and use of AccountIQ, a
+          financial investigation platform (&quot;Service&quot;) operated by AccountIQ
           (&quot;we&quot;, &quot;us&quot;). By creating an account or using the Service, you agree to
           these Terms. If you do not agree, do not use the Service.
         </p>
 
         <Section title="1. Service Description">
-          <p>AIQL is a professional financial analysis tool that connects to your uploaded GL data, runs automated data-quality checks, and answers plain-English queries about your accounts. It is designed for finance professionals — CAs, CFOs, and accountants — working with Indian SME books.</p>
+          <p>AccountIQ is a professional financial analysis tool that connects to your uploaded GL data, runs automated data-quality checks, and answers plain-English queries about your accounts. It is designed for finance professionals — CAs, CFOs, and accountants — working with Indian SME books.</p>
           <p>The Service is provided on a subscription basis. We offer three plans (Starter, Professional, Business) billed monthly or annually as described on the <Link href="/pricing" className="text-[#1B3A5C] underline">pricing page</Link>.</p>
         </Section>
 
         <Section title="2. Accounts and Eligibility">
           <p>You must be at least 18 years old and capable of forming a legally binding contract under Indian law to use the Service.</p>
           <p>Each subscription is for one <strong>organisation</strong>. The first user to register an email domain creates the org and becomes the Admin. Admins may invite team members within the plan limits.</p>
-          <p>You are responsible for maintaining the confidentiality of your login credentials and for all activity under your account. Notify us immediately at <a href="mailto:support@aiql.com" className="text-[#1B3A5C] underline">support@aiql.com</a> if you suspect unauthorised access.</p>
+          <p>You are responsible for maintaining the confidentiality of your login credentials and for all activity under your account. Notify us immediately at <a href="mailto:support@acctqai.com" className="text-[#1B3A5C] underline">support@acctqai.com</a> if you suspect unauthorised access.</p>
         </Section>
 
         <Section title="3. Acceptable Use">
-          <p>You may use AIQL to analyse your own organisation&apos;s GL data, or GL data for which you have a legitimate professional mandate (e.g., as an auditor or CA for a client).</p>
+          <p>You may use AccountIQ to analyse your own organisation&apos;s GL data, or GL data for which you have a legitimate professional mandate (e.g., as an auditor or CA for a client).</p>
           <p><strong>You must not:</strong></p>
           <ul className="list-disc list-inside space-y-1 pl-2">
             <li>Upload data you are not authorised to access or analyse</li>
@@ -78,19 +78,19 @@ export default function TermsPage() {
         </Section>
 
         <Section title="6. Intellectual Property">
-          <p>AIQL, its SQL template library, prompt engineering, and all associated IP remain our exclusive property. Nothing in these Terms grants you a licence to copy, distribute, or create derivative works from the Service or its underlying technology.</p>
+          <p>AccountIQ, its SQL template library, prompt engineering, and all associated IP remain our exclusive property. Nothing in these Terms grants you a licence to copy, distribute, or create derivative works from the Service or its underlying technology.</p>
           <p>You grant us a limited, non-exclusive licence to process your uploaded data solely to provide and improve the Service for your organisation.</p>
         </Section>
 
         <Section title="7. Accuracy of Output">
-          <p>AIQL uses AI to generate SQL queries and financial summaries. <strong>Outputs must be reviewed by a qualified finance professional before being relied upon for decisions, filings, or client deliverables.</strong> We are not a registered auditor and nothing in the Service constitutes audit assurance or legal/tax advice.</p>
+          <p>AccountIQ uses AI to generate SQL queries and financial summaries. <strong>Outputs must be reviewed by a qualified finance professional before being relied upon for decisions, filings, or client deliverables.</strong> We are not a registered auditor and nothing in the Service constitutes audit assurance or legal/tax advice.</p>
           <p>You are responsible for verifying all AI-generated outputs against source records.</p>
         </Section>
 
         <Section title="8. Limitation of Liability">
           <p>To the maximum extent permitted by Indian law, our aggregate liability arising out of or related to these Terms shall not exceed the total fees you paid to us in the <strong>3 months preceding the claim</strong>.</p>
           <p>We are not liable for indirect, incidental, or consequential damages including lost profits, data loss, or business interruption, even if advised of the possibility of such damages.</p>
-          <p>We do not warrant that the Service will be uninterrupted or error-free. Planned maintenance is communicated 48 hours in advance at status.aiql.com.</p>
+          <p>We do not warrant that the Service will be uninterrupted or error-free. Planned maintenance is communicated 48 hours in advance at status.acctqai.com.</p>
         </Section>
 
         <Section title="9. Termination">
@@ -103,7 +103,7 @@ export default function TermsPage() {
         </Section>
 
         <Section title="11. Dispute Resolution">
-          <p>Before initiating legal proceedings, you agree to first notify us at <a href="mailto:legal@aiql.com" className="text-[#1B3A5C] underline">legal@aiql.com</a> and give us 30 days to resolve the dispute informally. If unresolved, disputes shall be referred to arbitration under the Arbitration and Conciliation Act 1996 (India).</p>
+          <p>Before initiating legal proceedings, you agree to first notify us at <a href="mailto:legal@acctqai.com" className="text-[#1B3A5C] underline">legal@acctqai.com</a> and give us 30 days to resolve the dispute informally. If unresolved, disputes shall be referred to arbitration under the Arbitration and Conciliation Act 1996 (India).</p>
         </Section>
 
         <Section title="12. Changes to These Terms">
@@ -112,9 +112,9 @@ export default function TermsPage() {
 
         <Section title="13. Contact">
           <p>
-            For billing: <a href="mailto:billing@aiql.com" className="text-[#1B3A5C] underline">billing@aiql.com</a><br />
-            For legal/terms: <a href="mailto:legal@aiql.com" className="text-[#1B3A5C] underline">legal@aiql.com</a><br />
-            For support: <a href="mailto:support@aiql.com" className="text-[#1B3A5C] underline">support@aiql.com</a>
+            For billing: <a href="mailto:billing@acctqai.com" className="text-[#1B3A5C] underline">billing@acctqai.com</a><br />
+            For legal/terms: <a href="mailto:legal@acctqai.com" className="text-[#1B3A5C] underline">legal@acctqai.com</a><br />
+            For support: <a href="mailto:support@acctqai.com" className="text-[#1B3A5C] underline">support@acctqai.com</a>
           </p>
         </Section>
 

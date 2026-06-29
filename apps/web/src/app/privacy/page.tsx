@@ -27,7 +27,7 @@ export default function PrivacyPage() {
       {/* Nav */}
       <header className="border-b border-slate-100 px-6 py-4">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-lg font-bold text-[#1B3A5C]">AIQL</Link>
+          <Link href="/" className="text-lg font-bold text-[#1B3A5C]">AccountIQ</Link>
           <Link href="/signup" className="text-sm text-[#1B3A5C] hover:underline font-medium">
             Sign up free →
           </Link>
@@ -39,8 +39,8 @@ export default function PrivacyPage() {
         <p className="text-sm text-slate-400 mb-10">Effective date: {effectiveDate}</p>
 
         <p className="text-slate-600 text-sm leading-relaxed mb-8">
-          AIQL (&quot;we&quot;, &quot;our&quot;, &quot;the Service&quot;) is an AI-assisted GL close
-          and audit tool for Indian finance teams. This Privacy Policy describes what data we
+          AccountIQ (&quot;we&quot;, &quot;our&quot;, &quot;the Service&quot;) is a financial investigation
+          platform for Indian finance teams. This Privacy Policy describes what data we
           collect, how we use and protect it, and your rights as a data principal under the{" "}
           <strong>Digital Personal Data Protection Act 2023 (DPDP Act)</strong> and applicable
           Indian law.
@@ -69,7 +69,7 @@ export default function PrivacyPage() {
 
         <Section title="4. Data Retention">
           <p><strong>Uploaded files:</strong> GL tables are retained for <strong>90 days</strong> from upload, after which they are automatically deleted. You can re-upload to extend this window. You can also delete a connection at any time from Settings → Connections, which immediately drops the GL table.</p>
-          <p><strong>Query logs:</strong> Retained indefinitely to support your RAG history. You can request deletion via <a href="mailto:privacy@aiql.com" className="text-[#1B3A5C] underline">privacy@aiql.com</a>.</p>
+          <p><strong>Query logs:</strong> Retained indefinitely to support your RAG history. You can request deletion via <a href="mailto:privacy@acctqai.com" className="text-[#1B3A5C] underline">privacy@acctqai.com</a>.</p>
           <p><strong>Account data:</strong> Retained until you delete your account. On deletion, all personal data and GL tables are removed within 30 days.</p>
         </Section>
 
@@ -84,7 +84,7 @@ export default function PrivacyPage() {
           </ul>
           <p>
             To exercise these rights, email{" "}
-            <a href="mailto:privacy@aiql.com" className="text-[#1B3A5C] underline">privacy@aiql.com</a>{" "}
+            <a href="mailto:privacy@acctqai.com" className="text-[#1B3A5C] underline">privacy@acctqai.com</a>{" "}
             from your registered email address. We will respond within 7 business days.
           </p>
         </Section>
@@ -105,7 +105,7 @@ export default function PrivacyPage() {
         </Section>
 
         <Section title="8. Children">
-          <p>AIQL is a professional finance tool not intended for users under 18. We do not knowingly collect data from minors.</p>
+          <p>AccountIQ is a professional finance tool not intended for users under 18. We do not knowingly collect data from minors.</p>
         </Section>
 
         <Section title="9. Changes to This Policy">
@@ -115,10 +115,10 @@ export default function PrivacyPage() {
         <Section title="10. Contact">
           <p>
             <strong>Data Protection Officer:</strong>{" "}
-            <a href="mailto:privacy@aiql.com" className="text-[#1B3A5C] underline">privacy@aiql.com</a>
+            <a href="mailto:privacy@acctqai.com" className="text-[#1B3A5C] underline">privacy@acctqai.com</a>
           </p>
           <p>
-            AIQL — AI-Powered GL Close Platform<br />
+            AccountIQ — Financial Investigation Platform<br />
             India (registered under Indian law)
           </p>
         </Section>
@@ -126,7 +126,7 @@ export default function PrivacyPage() {
         <div className="border-t border-slate-100 pt-6 mt-8">
           <p className="text-xs text-slate-400">
             Last updated: {effectiveDate} · For questions, email{" "}
-            <a href="mailto:privacy@aiql.com" className="underline">privacy@aiql.com</a>
+            <a href="mailto:privacy@acctqai.com" className="underline">privacy@acctqai.com</a>
           </p>
           <div className="flex gap-4 mt-3 text-xs text-slate-400">
             <Link href="/terms" className="hover:text-slate-600">Terms of Service</Link>

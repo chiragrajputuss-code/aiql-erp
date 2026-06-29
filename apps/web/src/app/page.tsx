@@ -552,7 +552,7 @@ export default function LandingPage() {
                   <span className="text-slate-500 text-sm">{p.period}</span>
                 </div>
                 <p className="text-xs text-slate-400 mt-1">{p.annual}</p>
-                <Link href={p.name === "Enterprise" ? "/contact" : "/register"}
+                <Link href={p.name === "Enterprise" ? "/contact" : "/signup"}
                   className={`mt-5 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm transition-colors ${p.highlight ? "bg-[#1B3A5C] text-white hover:bg-[#1B3A5C]/90" : "bg-slate-100 text-slate-800 hover:bg-slate-200"}`}>
                   {p.cta}
                 </Link>

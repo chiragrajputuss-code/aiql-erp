@@ -43,14 +43,14 @@ function LoginForm() {
   return (
     <Card className="shadow-lg">
       <CardHeader className="space-y-1">
-        <div className="flex items-center gap-2 mb-2">
-          <div className="w-8 h-8 rounded-lg bg-[#1B3A5C] flex items-center justify-center text-white font-bold text-sm">
-            A
+        <div className="flex items-center gap-2 mb-2 lg:hidden">
+          <div className="w-8 h-8 rounded-lg bg-[#1B3A5C] flex items-center justify-center text-white font-bold text-xs">
+            IQ
           </div>
-          <span className="font-semibold text-[#1B3A5C]">AIQL</span>
+          <span className="font-bold text-[#1B3A5C]">AccountIQ</span>
         </div>
         <CardTitle className="text-2xl">Welcome back</CardTitle>
-        <CardDescription>Sign in to your account</CardDescription>
+        <CardDescription>Sign in to continue your investigations.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <form onSubmit={handleSubmit} className="space-y-4">
