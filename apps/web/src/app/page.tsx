@@ -1,11 +1,11 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import {
-  Search, Upload, Activity, ShieldCheck, ArrowRight, AlertCircle,
-  AlertTriangle, TrendingUp, Check, Menu, X, Receipt, Wallet, Users,
-  FileText, Sparkles, Lock, CheckCircle2, ChevronRight,
+  Search, Activity, ShieldCheck, ArrowRight,
+  TrendingUp, Check, Menu, X, Receipt, Wallet, Users,
+  FileText, Sparkles, Lock, CheckCircle2, ChevronRight, EyeOff, ServerCog,
 } from "lucide-react";
 
 // ─── Brand ───────────────────────────────────────────────────────────────────
@@ -216,6 +216,99 @@ function HeroPreview() {
   );
 }
 
+// ─── Scroll reveal (wow on scroll) ────────────────────────────────────────────
+
+function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: number }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [shown, setShown] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setShown(true); obs.disconnect(); } },
+      { threshold: 0.12 },
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  return (
+    <div
+      ref={ref}
+      style={{ transitionDelay: `${delay}ms` }}
+      className={`transition-all duration-700 ease-out ${shown ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}`}
+    >
+      {children}
+    </div>
+  );
+}
+
+// ─── Privacy showcase (highlights protection — never the mechanism) ───────────
+
+const PRIVACY_ROWS = [
+  { raw: ["Sharma Traders Pvt Ltd", "INV-2026-0412", "₹2,40,000"], label: "Vendor" },
+  { raw: ["Rajesh Auto Components",  "SI-2026-007",   "₹1,56,000"], label: "Customer" },
+  { raw: ["Mehta Steel Industries",  "PV-2026-118",   "₹68,000"],   label: "Vendor" },
+];
+
+function mask(s: string): string {
+  // Display-only masking for the demo — shows the OUTCOME (hidden), not the method.
+  return s.replace(/[A-Za-z0-9]/g, "•");
+}
+
+function PrivacyShowcase() {
+  const [secured, setSecured] = useState(true);
+
+  // Auto-toggle so it feels alive; users can also click.
+  useEffect(() => {
+    const t = setInterval(() => setSecured((s) => !s), 2600);
+    return () => clearInterval(t);
+  }, []);
+
+  return (
+    <div className="rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden">
+      <div className="flex items-center justify-between px-4 py-3 border-b border-slate-100 bg-slate-50">
+        <span className="text-xs font-semibold text-slate-500 uppercase tracking-wide">Your data, before it&apos;s processed</span>
+        <button
+          onClick={() => setSecured((s) => !s)}
+          className={`inline-flex items-center gap-1.5 text-[11px] font-semibold rounded-full px-2.5 py-1 border transition-colors ${
+            secured ? "bg-emerald-50 text-emerald-700 border-emerald-200" : "bg-amber-50 text-amber-700 border-amber-200"
+          }`}
+        >
+          {secured ? <><Lock className="h-3 w-3" /> Protected</> : <><EyeOff className="h-3 w-3" /> Raw values</>}
+        </button>
+      </div>
+      <table className="w-full text-xs">
+        <thead>
+          <tr className="text-left text-slate-400 border-b border-slate-100">
+            <th className="px-4 py-2 font-medium">Party</th>
+            <th className="px-4 py-2 font-medium">Reference</th>
+            <th className="px-4 py-2 font-medium text-right">Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          {PRIVACY_ROWS.map((r, i) => (
+            <tr key={i} className="border-b border-slate-50 last:border-0">
+              <td className="px-4 py-2.5">
+                <span className={`font-medium transition-all duration-500 ${secured ? "text-slate-400 tracking-tight blur-[0.3px]" : "text-slate-800"}`}>
+                  {secured ? mask(r.raw[0]) : r.raw[0]}
+                </span>
+              </td>
+              <td className="px-4 py-2.5 font-mono text-slate-600">{secured ? mask(r.raw[1]) : r.raw[1]}</td>
+              <td className="px-4 py-2.5 text-right tabular-nums text-slate-700">{secured ? mask(r.raw[2]) : r.raw[2]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div className="px-4 py-3 bg-emerald-50/50 border-t border-emerald-100 flex items-center gap-2">
+        <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" />
+        <span className="text-[11px] text-emerald-800">
+          Names, references and amounts are <b>encrypted &amp; masked</b> before any analysis runs — and never exposed to any AI model.
+        </span>
+      </div>
+    </div>
+  );
+}
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function LandingPage() {
@@ -302,13 +395,50 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── One investigation, complete visibility ── */}
+      {/* ── Privacy by design ── */}
       <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+          <Reveal>
+            <div>
+              <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full px-3 py-1 text-xs font-semibold">
+                <ShieldCheck className="h-3.5 w-3.5" /> Privacy by design
+              </div>
+              <h2 className="text-3xl font-bold text-[#1B3A5C] mt-4">Your numbers never leave your control</h2>
+              <p className="text-lg text-slate-600 mt-3 leading-relaxed">
+                Sensitive details — vendor and customer names, references and amounts — are encrypted and masked before anything is processed. The investigation runs on protected data, and no AI model ever sees your real business information.
+              </p>
+              <ul className="mt-6 space-y-3">
+                {[
+                  { icon: <Lock className="h-4 w-4" />, t: "Encrypted before processing", d: "Sensitive fields are protected the moment your file is read." },
+                  { icon: <EyeOff className="h-4 w-4" />, t: "Never exposed to AI", d: "Models only ever work on masked values — never your real data." },
+                  { icon: <ServerCog className="h-4 w-4" />, t: "Read-only, always", d: "AccountIQ analyses your books — it never modifies them." },
+                ].map((x) => (
+                  <li key={x.t} className="flex gap-3">
+                    <span className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">{x.icon}</span>
+                    <div>
+                      <p className="font-semibold text-slate-800 text-sm">{x.t}</p>
+                      <p className="text-slate-500 text-sm">{x.d}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </Reveal>
+          <Reveal delay={120}>
+            <PrivacyShowcase />
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── One investigation, complete visibility ── */}
+      <section className="py-20 px-6 bg-slate-50">
         <div className="max-w-6xl mx-auto">
-          <div className="text-center max-w-2xl mx-auto mb-14">
-            <h2 className="text-3xl font-bold text-[#1B3A5C]">One investigation. Complete financial visibility.</h2>
-            <p className="text-lg text-slate-600 mt-3">Instead of searching through reports, you receive a single prioritised investigation report.</p>
-          </div>
+          <Reveal>
+            <div className="text-center max-w-2xl mx-auto mb-14">
+              <h2 className="text-3xl font-bold text-[#1B3A5C]">One investigation. Complete financial visibility.</h2>
+              <p className="text-lg text-slate-600 mt-3">Instead of searching through reports, you receive a single prioritised investigation report.</p>
+            </div>
+          </Reveal>
           <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-4">
             {CAPABILITIES.map((c) => (
               <div key={c.title} className="rounded-2xl border border-slate-200 p-5 hover:shadow-md hover:border-slate-300 transition-all">
