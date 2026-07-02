@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import {
-  Search, Activity, ShieldCheck, ArrowRight,
+  Search, ShieldCheck, ArrowRight, IndianRupee,
   TrendingUp, Check, Menu, X, Receipt, Wallet, Users,
   FileText, Sparkles, Lock, CheckCircle2, ChevronRight, EyeOff, ServerCog,
 } from "lucide-react";
@@ -15,28 +15,38 @@ const BRAND = {
   primary: "#1B3A5C",
 };
 
-// ─── Hero interactive preview data ────────────────────────────────────────────
+// ─── Hero interactive preview data — real findings, surfaced immediately ──────
 
-const PREVIEW_STEPS = [
-  "Reading General Ledger…",
-  "Cross-checking GST records…",
-  "Scanning payments for duplicates…",
-  "Aging receivables…",
-  "Writing your report…",
+type HeroSev = "critical" | "warning" | "opportunity";
+
+const HERO_FINDINGS: {
+  sev: HeroSev; cat: string; impact: string; title: string; vendor: string; reason: string; action: string;
+}[] = [
+  {
+    sev: "critical", cat: "GST & Compliance", impact: "₹4,80,000",
+    title: "Input Tax Credit blocked", vendor: "ABC Industries",
+    reason: "Vendor hasn't filed GSTR-1 — this credit will be reversed.",
+    action: "Hold payment and send a filing reminder today.",
+  },
+  {
+    sev: "critical", cat: "Risk & Control", impact: "₹68,000",
+    title: "Duplicate payment detected", vendor: "Mehta Steel Industries",
+    reason: "Invoice INV-MSI-041 was paid twice — on 7 May and 22 May.",
+    action: "Recover ₹68,000 from the vendor or adjust the next bill.",
+  },
+  {
+    sev: "warning", cat: "Cash Health", impact: "₹4,70,000",
+    title: "Receivables stuck beyond 60 days", vendor: "Rajesh Auto Components",
+    reason: "₹2.1L overdue 74 days; ₹4.7L aged across 4 customers.",
+    action: "Call your two largest overdue customers this week.",
+  },
 ];
 
-const PREVIEW_FINDINGS = [
-  { sev: "critical" as const, title: "₹1,24,500 ITC at risk — 3 vendors haven't filed GSTR-1", tag: "GST & Compliance" },
-  { sev: "critical" as const, title: "Possible duplicate payment of ₹68,000 to a steel vendor", tag: "Risk & Control" },
-  { sev: "warning"  as const, title: "₹4,70,000 stuck in receivables beyond 60 days", tag: "Cash Health" },
-  { sev: "opportunity" as const, title: "₹25,000 of unclaimed Input Tax Credit available", tag: "Opportunity" },
-];
-
-const SEV_DOT: Record<string, string> = {
-  critical: "bg-red-500", warning: "bg-amber-500", opportunity: "bg-emerald-500",
-};
-const SEV_PILL: Record<string, string> = {
-  critical: "bg-red-100 text-red-700", warning: "bg-amber-100 text-amber-700", opportunity: "bg-emerald-100 text-emerald-700",
+// Severity that screams — critical is visually dominant.
+const HERO_SEV: Record<HeroSev, { card: string; bar: string; pill: string; impact: string; dot: string; label: string }> = {
+  critical:    { card: "bg-red-50 border-red-200",      bar: "bg-red-500",     pill: "bg-red-600 text-white",        impact: "text-red-600",     dot: "bg-red-500",     label: "CRITICAL" },
+  warning:     { card: "bg-amber-50 border-amber-200",  bar: "bg-amber-400",   pill: "bg-amber-500 text-white",      impact: "text-amber-600",   dot: "bg-amber-500",   label: "NEEDS ATTENTION" },
+  opportunity: { card: "bg-emerald-50 border-emerald-200", bar: "bg-emerald-400", pill: "bg-emerald-600 text-white", impact: "text-emerald-600", dot: "bg-emerald-500", label: "OPPORTUNITY" },
 };
 
 // ─── Drill-down questions (AI is a follow-up tool, not the hero) ───────────────
@@ -139,78 +149,63 @@ function Navbar() {
 // ─── Hero interactive preview ─────────────────────────────────────────────────
 
 function HeroPreview() {
-  const [phase, setPhase] = useState<"analysing" | "report">("analysing");
-  const [step, setStep] = useState(0);
+  const [idx, setIdx] = useState(0);
 
   useEffect(() => {
-    if (phase === "analysing") {
-      if (step >= PREVIEW_STEPS.length) { const t = setTimeout(() => setPhase("report"), 500); return () => clearTimeout(t); }
-      const t = setTimeout(() => setStep((s) => s + 1), 520);
-      return () => clearTimeout(t);
-    }
-    // hold the report, then loop
-    const t = setTimeout(() => { setStep(0); setPhase("analysing"); }, 5200);
-    return () => clearTimeout(t);
-  }, [phase, step]);
+    const t = setInterval(() => setIdx((i) => (i + 1) % HERO_FINDINGS.length), 4200);
+    return () => clearInterval(t);
+  }, []);
+
+  const f = HERO_FINDINGS[idx];
+  const s = HERO_SEV[f.sev];
 
   return (
     <div className="bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden w-full max-w-md">
-      <div className="bg-slate-50 border-b border-slate-200 px-4 py-3 flex items-center gap-2">
-        <div className="w-3 h-3 rounded-full bg-red-400" />
-        <div className="w-3 h-3 rounded-full bg-yellow-400" />
-        <div className="w-3 h-3 rounded-full bg-green-400" />
-        <span className="ml-2 text-xs text-slate-400 font-medium flex items-center gap-1.5">
-          <Search className="h-3 w-3" /> AccountIQ — Investigation
-        </span>
+      {/* Window chrome */}
+      <div className="bg-slate-50 border-b border-slate-200 px-4 py-3 flex items-center justify-between">
+        <div className="flex items-center gap-2">
+          <div className="w-3 h-3 rounded-full bg-red-400" />
+          <div className="w-3 h-3 rounded-full bg-yellow-400" />
+          <div className="w-3 h-3 rounded-full bg-green-400" />
+          <span className="ml-2 text-xs text-slate-400 font-medium flex items-center gap-1.5">
+            <Search className="h-3 w-3" /> Investigation Report · May 2026
+          </span>
+        </div>
+        <span className="text-[10px] font-semibold text-slate-500">3 findings · ₹6.2L</span>
       </div>
 
-      <div className="p-4 min-h-[330px]">
-        {phase === "analysing" ? (
-          <div>
-            <div className="flex items-center gap-2 text-[#1B3A5C] text-sm font-semibold mb-3">
-              <Activity className="h-4 w-4 animate-pulse" /> Investigating May 2026…
-            </div>
-            <div className="space-y-2">
-              {PREVIEW_STEPS.map((s, i) => {
-                const done = i < step, active = i === step;
-                return (
-                  <div key={i} className={`flex items-center gap-2 text-xs transition-opacity ${done || active ? "opacity-100" : "opacity-30"}`}>
-                    {done ? <CheckCircle2 className="h-3.5 w-3.5 text-emerald-500" />
-                      : active ? <div className="h-3.5 w-3.5 rounded-full border-2 border-[#1B3A5C] border-t-transparent animate-spin" />
-                      : <div className="h-3.5 w-3.5 rounded-full border-2 border-slate-200" />}
-                    <span className="text-slate-600">{s}</span>
-                  </div>
-                );
-              })}
-            </div>
-            <div className="h-1.5 rounded-full bg-slate-100 overflow-hidden mt-4">
-              <div className="h-full bg-gradient-to-r from-[#1B3A5C] to-blue-500 transition-all duration-500" style={{ width: `${(step / PREVIEW_STEPS.length) * 100}%` }} />
-            </div>
+      {/* One real finding, screaming by severity */}
+      <div className="p-4 min-h-[300px] flex flex-col">
+        <div key={idx} className={`rounded-xl border-l-[5px] border ${s.card} p-4 animate-in fade-in slide-in-from-bottom-2 duration-500 flex-1`} style={{ borderLeftColor: "currentColor" }}>
+          <div className="flex items-center gap-2 mb-3">
+            <span className={`h-2.5 w-2.5 rounded-full ${s.dot} ${f.sev === "critical" ? "animate-pulse" : ""}`} />
+            <span className={`text-[10px] font-bold rounded px-2 py-0.5 ${s.pill}`}>{s.label}</span>
+            <span className="text-[10px] text-slate-500 font-medium uppercase tracking-wide">{f.cat}</span>
           </div>
-        ) : (
-          <div className="animate-in fade-in duration-500">
-            <div className="flex items-center justify-between mb-3">
-              <span className="text-[11px] font-semibold text-emerald-700 bg-emerald-50 border border-emerald-200 rounded-full px-2.5 py-0.5 flex items-center gap-1">
-                <CheckCircle2 className="h-3 w-3" /> 4 findings · ₹8.5L in play
-              </span>
-              <span className="text-[10px] text-slate-400">May 2026</span>
-            </div>
-            <div className="space-y-2">
-              {PREVIEW_FINDINGS.map((f, i) => (
-                <div key={i} className="rounded-lg border border-slate-200 p-2.5">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className={`h-2 w-2 rounded-full ${SEV_DOT[f.sev]}`} />
-                    <span className={`text-[9px] font-semibold rounded px-1.5 py-0.5 ${SEV_PILL[f.sev]}`}>{f.tag}</span>
-                  </div>
-                  <p className="text-xs text-slate-700 leading-snug">{f.title}</p>
-                </div>
-              ))}
-            </div>
-            <Link href="/sample-report" className="mt-3 flex items-center justify-center gap-1 text-xs font-semibold text-[#1B3A5C] hover:underline">
-              View the full report <ArrowRight className="h-3 w-3" />
-            </Link>
+
+          <div className="flex items-end justify-between gap-3">
+            <p className="font-semibold text-slate-900 text-[15px]">{f.title}</p>
+            <p className={`text-2xl font-extrabold tabular-nums shrink-0 ${s.impact}`}>{f.impact}</p>
           </div>
-        )}
+          <p className="text-xs text-slate-500 mt-0.5">{f.vendor}</p>
+
+          <div className="mt-3 pt-3 border-t border-black/5 space-y-1.5">
+            <p className="text-xs text-slate-600"><span className="font-semibold text-slate-700">Why:</span> {f.reason}</p>
+            <p className="text-xs text-slate-600"><span className="font-semibold text-slate-700">Do this:</span> {f.action}</p>
+          </div>
+        </div>
+
+        {/* dots + link */}
+        <div className="flex items-center justify-between mt-3">
+          <div className="flex gap-1.5">
+            {HERO_FINDINGS.map((_, i) => (
+              <span key={i} className={`h-1.5 rounded-full transition-all ${i === idx ? "w-5 bg-[#1B3A5C]" : "w-1.5 bg-slate-200"}`} />
+            ))}
+          </div>
+          <Link href="/sample-report" className="flex items-center gap-1 text-xs font-semibold text-[#1B3A5C] hover:underline">
+            See the full report <ArrowRight className="h-3 w-3" />
+          </Link>
+        </div>
       </div>
     </div>
   );
@@ -322,21 +317,21 @@ export default function LandingPage() {
           <div className="flex flex-col lg:flex-row items-center gap-14">
             <div className="flex-1 space-y-7">
               <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-100 rounded-full px-4 py-1.5 text-sm font-medium">
-                <ShieldCheck className="h-3.5 w-3.5" /> Financial Investigation Platform for Indian finance teams
+                <ShieldCheck className="h-3.5 w-3.5" /> Financial investigations for Indian finance teams
               </div>
-              <h1 className="text-4xl lg:text-[3.4rem] font-bold text-[#1B3A5C] leading-[1.08]">
-                Upload your financial data.<br />
-                <span className="text-blue-600">Know what deserves your attention</span> before it costs you money.
+              <h1 className="text-4xl lg:text-[3.3rem] font-bold text-[#1B3A5C] leading-[1.08]">
+                Stop searching through reports.<br />
+                <span className="text-blue-600">Know exactly what needs your attention</span> before you close your books.
               </h1>
               <p className="text-lg text-slate-600 max-w-xl leading-relaxed">
-                AccountIQ automatically investigates your books to surface financial risks, compliance issues, unusual changes and opportunities — so your finance team knows exactly what needs attention before month-end.
+                AccountIQ investigates your books and flags <strong className="text-slate-800">GST risks, vendor issues, unusual expenses, compliance gaps and cash-flow changes</strong> — so your team knows what to fix first.
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/sample-report" className="inline-flex items-center justify-center gap-2 bg-[#1B3A5C] text-white px-7 py-4 rounded-xl font-semibold text-base hover:bg-[#1B3A5C]/90 transition-colors shadow-lg shadow-[#1B3A5C]/20">
-                  View a sample investigation <ArrowRight className="h-4 w-4" />
+                <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-[#1B3A5C] text-white px-7 py-4 rounded-xl font-semibold text-base hover:bg-[#1B3A5C]/90 transition-colors shadow-lg shadow-[#1B3A5C]/20">
+                  Book a demo <ArrowRight className="h-4 w-4" />
                 </Link>
-                <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-white text-slate-700 px-7 py-4 rounded-xl font-semibold text-base border border-slate-200 hover:border-slate-400 transition-colors">
-                  Book a demo
+                <Link href="/sample-report" className="inline-flex items-center justify-center gap-2 bg-white text-slate-700 px-7 py-4 rounded-xl font-semibold text-base border border-slate-200 hover:border-slate-400 transition-colors">
+                  See a sample investigation
                 </Link>
               </div>
               <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-500">
@@ -362,9 +357,9 @@ export default function LandingPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: <Search className="h-6 w-6" />, color: "bg-red-50 text-red-600", title: "Investigate financial risks", desc: "Automatically detect unusual expenses, cash movement, GST mismatches and vendor risks — before they become costly problems." },
-              { icon: <FileText className="h-6 w-6" />, color: "bg-blue-50 text-blue-600", title: "Evidence behind every finding", desc: "Every recommendation is backed by invoices, ledger entries and supporting transactions — so your team can trust every insight." },
-              { icon: <Sparkles className="h-6 w-6" />, color: "bg-emerald-50 text-emerald-600", title: "Ask follow-up questions", desc: "Need more detail? Just ask. AccountIQ explains every finding in plain English and links back to the underlying data." },
+              { icon: <Search className="h-6 w-6" />, color: "bg-red-50 text-red-600", title: "Find risks first", desc: "GST mismatches, vendor issues, unusual expenses and cash leaks — surfaced before they cost you." },
+              { icon: <FileText className="h-6 w-6" />, color: "bg-blue-50 text-blue-600", title: "Evidence, not guesses", desc: "Every finding is backed by the actual invoices and ledger entries. Nothing is a black box." },
+              { icon: <Sparkles className="h-6 w-6" />, color: "bg-emerald-50 text-emerald-600", title: "Ask anything", desc: "Want more detail? Ask in plain English. Every finding links back to the source data." },
             ].map((c) => (
               <div key={c.title} className="rounded-2xl border border-slate-200 p-6 hover:shadow-md hover:border-slate-300 transition-all">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${c.color}`}>{c.icon}</div>
@@ -392,6 +387,45 @@ export default function LandingPage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Why AccountIQ (vs Tally + Excel) ── */}
+      <section className="py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <Reveal>
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-[#1B3A5C]">Why not just Tally and Excel?</h2>
+              <p className="text-lg text-slate-600 mt-3">Because spreadsheets don&apos;t tell you what you missed.</p>
+            </div>
+          </Reveal>
+          <div className="grid md:grid-cols-2 gap-6">
+            <Reveal>
+              <div className="rounded-2xl border border-slate-200 p-6 h-full">
+                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-4">Without AccountIQ</p>
+                <ul className="space-y-3">
+                  {["Export reports, rebuild the same pivots every month", "Eyeball ledgers for anything unusual", "Find the GST mismatch after the credit is reversed", "Hope nobody paid an invoice twice", "Spend the close prepping summaries by hand"].map((t) => (
+                    <li key={t} className="flex gap-3 text-sm text-slate-600"><X className="h-4 w-4 text-slate-300 shrink-0 mt-0.5" /> {t}</li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+            <Reveal delay={120}>
+              <div className="rounded-2xl border-2 border-[#1B3A5C] bg-[#1B3A5C]/[0.03] p-6 h-full">
+                <p className="text-xs font-semibold text-[#1B3A5C] uppercase tracking-wide mb-4">With AccountIQ</p>
+                <ul className="space-y-3">
+                  {["Upload once — a prioritised report comes back in minutes", "Risks, anomalies and opportunities surfaced automatically", "Catch blocked ITC before it's reversed", "Duplicate payments flagged with both vouchers", "The executive summary is written for you"].map((t) => (
+                    <li key={t} className="flex gap-3 text-sm text-slate-700 font-medium"><Check className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" /> {t}</li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          </div>
+          <Reveal>
+            <p className="text-center text-slate-500 mt-8 text-sm">
+              <span className="font-semibold text-slate-700">The ROI:</span> turn hours of month-end investigation into minutes — and catch the risks that cost real money before they hit your working capital.
+            </p>
+          </Reveal>
         </div>
       </section>
 
@@ -453,6 +487,34 @@ export default function LandingPage() {
               See a real investigation report <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* ── Every investigation answers (trust) ── */}
+      <section className="py-20 px-6 bg-slate-50">
+        <div className="max-w-4xl mx-auto">
+          <Reveal>
+            <div className="text-center mb-10">
+              <h2 className="text-3xl font-bold text-[#1B3A5C]">Every finding answers five questions</h2>
+              <p className="text-lg text-slate-600 mt-3">No vague alerts. No black box. Just clear, verifiable findings.</p>
+            </div>
+          </Reveal>
+          <Reveal delay={100}>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-5 gap-3">
+              {[
+                { q: "What changed?", icon: <Search className="h-5 w-5" /> },
+                { q: "Why?", icon: <FileText className="h-5 w-5" /> },
+                { q: "How much money?", icon: <IndianRupee className="h-5 w-5" /> },
+                { q: "What should I do?", icon: <Sparkles className="h-5 w-5" /> },
+                { q: "Can I verify it?", icon: <ShieldCheck className="h-5 w-5" /> },
+              ].map((x) => (
+                <div key={x.q} className="rounded-xl bg-white border border-slate-200 p-4 text-center">
+                  <div className="w-10 h-10 rounded-lg bg-[#1B3A5C]/[0.06] text-[#1B3A5C] flex items-center justify-center mx-auto">{x.icon}</div>
+                  <p className="font-semibold text-slate-800 text-sm mt-3">{x.q}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
         </div>
       </section>
 

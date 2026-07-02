@@ -430,6 +430,10 @@ model InvestigationRun {
   executiveSummary   String?  // LLM-generated, nullable (graceful degradation)
   investigationsJson String   // per-investigation status/skip reasons (JSON)
 
+  // Reasoning layer (Tier 1) — computed, LLM-narrated; nullable for older runs.
+  proactiveObservationJson String?  // ProactiveObservation JSON ("one more thing")
+  boardBriefJson           String?  // BoardBrief JSON (Board Meeting Mode)
+
   findings InvestigationFinding[]
 
   @@index([orgId, status])

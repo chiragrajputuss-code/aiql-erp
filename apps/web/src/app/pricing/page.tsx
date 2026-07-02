@@ -180,11 +180,11 @@ export default function PricingPage() {
             <div className="absolute right-6 top-1/2 -translate-y-1/2 opacity-10"><Sparkles className="w-24 h-24" /></div>
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 relative z-10">
               <div>
-                <p className="font-semibold text-white text-base">Early Adopter Pilot — first 50 customers</p>
-                <p className="text-blue-200 text-sm mt-1">Get <strong className="text-white">50% off your first 3 months</strong> on any plan. Limited spots remaining.</p>
+                <p className="font-semibold text-white text-base">We&apos;re launching — be a founding customer</p>
+                <p className="text-blue-200 text-sm mt-1">Our first 50 customers get <strong className="text-white">50% off for 3 months</strong> and a direct line to the founder.</p>
               </div>
               <Link href="/contact" className="inline-flex shrink-0 items-center gap-1.5 bg-white text-[#1B3A5C] font-semibold text-sm rounded-lg px-5 py-2.5 hover:bg-blue-50 transition-colors">
-                Claim your spot →
+                Talk to the founder →
               </Link>
             </div>
           </div>

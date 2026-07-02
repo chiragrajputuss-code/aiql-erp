@@ -2,12 +2,17 @@ import { NextResponse } from "next/server";
 import { validateRequest } from "@/lib/auth";
 import { prisma } from "@aiql/db";
 
+// Accounts allowed to view the signups dashboard.
+const ADMIN_EMAILS = new Set([
+  "chirag.rajput070991@gmail.com",
+  "chirag@canvas.space",
+]);
+
 export async function GET() {
   const { user } = await validateRequest();
   if (!user) return NextResponse.json({ error: "Unauthorised" }, { status: 401 });
 
-  // Only allow chirag's account (hardcoded admin guard)
-  if (user.email !== "chirag.rajput070991@gmail.com") {
+  if (!ADMIN_EMAILS.has(user.email.trim().toLowerCase())) {
     return NextResponse.json({ error: "Forbidden" }, { status: 403 });
   }
 
