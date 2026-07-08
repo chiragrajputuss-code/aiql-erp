@@ -5,7 +5,7 @@ import SettingsNav from "@/components/settings/settings-nav";
 export default async function SettingsLayout({ children }: { children: React.ReactNode }) {
   const user = await getCurrentUser();
   if (!user) redirect("/login");
-  if (user.role !== "ADMIN") redirect("/");
+  if (user.role !== "ADMIN") redirect("/dashboard");
 
   return (
     <div className="max-w-3xl">

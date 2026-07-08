@@ -9,7 +9,7 @@ export default async function OnboardingPage() {
   if (!user) redirect("/login");
 
   // If onboarding already complete, send them to the dashboard.
-  if (user.onboardingComplete) redirect("/");
+  if (user.onboardingComplete) redirect("/dashboard");
 
   // Render outside the dashboard chrome — WelcomeStep provides its own full-page layout.
   return <WelcomeStep />;

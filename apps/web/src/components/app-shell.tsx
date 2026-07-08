@@ -53,7 +53,7 @@ type NavItem = {
 };
 
 const NAV: NavItem[] = [
-  { href: "/", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/investigations", label: "Investigations", icon: Search, allowedRoles: ["ADMIN", "MEMBER"] },
   { href: "/query",   label: "Query Studio", icon: MessageSquare, allowedRoles: ["ADMIN", "MEMBER"] },
   { href: "/history", label: "History",      icon: History,       allowedRoles: ["ADMIN", "MEMBER"] },
