@@ -427,7 +427,18 @@ function StepMapping({ state, onBack, onConfirm }: {
         onUserEdited={() => setUserConfirmedType(true)}
       />
 
-      {/* Active column mappings */}
+      {/* Non-GL documents (GSTR-2B, GSTR-1, 26Q…) are stored with their native columns */}
+      {docType !== "GL" && (
+        <div className="rounded-lg border border-blue-200 bg-blue-50/50 px-4 py-3 text-sm text-blue-800">
+          <p className="font-medium">Columns stored as-is</p>
+          <p className="text-xs text-blue-700 mt-0.5">
+            {state.headers.length} columns will be kept exactly as they are in your {docType.replace("_", "-")} file — no mapping needed. AccountIQ reads this document type natively.
+          </p>
+        </div>
+      )}
+
+      {/* Active column mappings — GL only */}
+      {docType === "GL" && (<>
       <div className="rounded-lg border overflow-hidden">
         <p className="text-xs font-semibold uppercase tracking-wide text-slate-500 px-3 pt-3 pb-1">Column mapping</p>
         <table className="w-full text-sm">
@@ -479,6 +490,7 @@ function StepMapping({ state, onBack, onConfirm }: {
           </div>
         </details>
       )}
+      </>)}
 
       {/* Preview */}
       <div>

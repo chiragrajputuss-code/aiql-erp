@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { z } from "zod";
 import { validateRequest } from "@/lib/auth";
 import { prisma, upsertOrgMappings, seedDefaultPinnedQueries } from "@aiql/db";
-import { createTempTable, resolveRedundancy, validateMappings, getUploadEntityLists, buildUploadSchema } from "@aiql/erp-connectors";
+import { createTempTable, createNativeTable, resolveRedundancy, validateMappings, getUploadEntityLists, buildUploadSchema } from "@aiql/erp-connectors";
 import { uploadFile } from "@/lib/s3";
 import { checkPlanAccess } from "@/lib/billing";
 
@@ -59,42 +59,65 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: "No pending upload data found — re-upload the file" }, { status: 400 });
   }
 
-  // Apply mapping as ColumnMappingResult[] (non-skipped)
-  const asColumnMappings = confirmedMapping
-    .filter((m) => !m.skip)
-    .map((m) => ({
-      originalName:    m.originalName,
-      canonicalName:   m.canonicalName,
-      confidence:      m.confidence,
-      detectionMethod: m.detectionMethod as never,
-    }));
+  // GL files are canonicalised to the query schema; GST/tax documents are stored
+  // with their NATIVE columns so the doc-parsers (parseGstr2B, …) can read them.
+  const isGl = documentType === "GL";
 
-  // Redundancy + validation
-  const resolved   = resolveRedundancy(asColumnMappings as never, "transaction");
-  const validation = validateMappings(resolved);
+  let tableName: string;
+  let columnMappingJson: string;
+  let rawSchema: unknown;
+  let entityLists: unknown = null;
+  let canonicalColumns: string[] = [];
+  let droppedColumns: string[] = [];
+  let warnings: string[] = [];
+  let mappingsToSave: { sourceColumnName: string; canonicalField: string }[] = [];
 
-  if (!validation.isValid) {
-    return NextResponse.json({ error: "Invalid mapping", details: validation.errors }, { status: 422 });
+  if (isGl) {
+    // ── GL: canonical mapping path ──
+    const asColumnMappings = confirmedMapping
+      .filter((m) => !m.skip)
+      .map((m) => ({
+        originalName:    m.originalName,
+        canonicalName:   m.canonicalName,
+        confidence:      m.confidence,
+        detectionMethod: m.detectionMethod as never,
+      }));
+
+    const resolved   = resolveRedundancy(asColumnMappings as never, "transaction");
+    const validation = validateMappings(resolved);
+    if (!validation.isValid) {
+      return NextResponse.json({ error: "Invalid mapping", details: validation.errors }, { status: 422 });
+    }
+
+    tableName         = await createTempTable(user.orgId, connection.id, resolved, cached.rows);
+    columnMappingJson = JSON.stringify(resolved);
+    rawSchema         = buildUploadSchema(tableName, resolved, cached.rows.length);
+    entityLists       = await getUploadEntityLists(tableName);
+    canonicalColumns  = validation.canonicalColumns;
+    droppedColumns    = validation.droppedColumns;
+    warnings          = validation.warnings;
+    mappingsToSave    = confirmedMapping
+      .filter((m) => !m.skip && m.canonicalName)
+      .map((m) => ({ sourceColumnName: m.originalName, canonicalField: m.canonicalName! }));
+  } else {
+    // ── Non-GL (GSTR-2B / GSTR-1 / 26Q / 3B / ITR / OTHER): native columns ──
+    if (!cached.rows.length) {
+      return NextResponse.json({ error: "The file has no data rows." }, { status: 422 });
+    }
+    const native      = await createNativeTable(user.orgId, connection.id, cached.headers, cached.rows);
+    tableName         = native.tableName;
+    columnMappingJson = JSON.stringify(native.columns);
+    rawSchema         = { documentType, native: true, tableName, columns: native.columns };
+    canonicalColumns  = native.columns.map((c) => c.columnName);
   }
-
-  // Create temp table
-  const tableName = await createTempTable(user.orgId, connection.id, resolved, cached.rows);
-
-  // Build schema + entity dictionary
-  const rawSchema    = buildUploadSchema(tableName, resolved, cached.rows.length);
-  const entityLists  = await getUploadEntityLists(tableName);
 
   // Expiry: 90 days
   const expiresAt = new Date(Date.now() + 90 * 24 * 60 * 60 * 1000);
 
-  // Build org-level mappings to persist (only confirmed, non-skipped, with a canonical target)
-  const mappingsToSave = confirmedMapping
-    .filter((m) => !m.skip && m.canonicalName)
-    .map((m) => ({ sourceColumnName: m.originalName, canonicalField: m.canonicalName! }));
-
   // Persist DB records + org column mappings in parallel
   await Promise.all([
-    seedDefaultPinnedQueries(user.orgId, connectionId),
+    // Pinned query templates are GL-chat oriented — only for GL uploads.
+    isGl ? seedDefaultPinnedQueries(user.orgId, connectionId) : Promise.resolve(),
     prisma.$transaction([
       prisma.uploadedFile.upsert({
         where:  { connectionId },
@@ -105,7 +128,7 @@ export async function POST(req: NextRequest) {
           sizeBytes:     cached.sizeBytes,
           rowCount:      cached.rows.length,
           tableName,
-          columnMapping: JSON.stringify(resolved),
+          columnMapping: columnMappingJson,
           expiresAt,
           documentType:      documentType as never,
           dataIntent:        dataIntent as never,
@@ -116,7 +139,7 @@ export async function POST(req: NextRequest) {
         update: {
           rowCount:      cached.rows.length,
           tableName,
-          columnMapping: JSON.stringify(resolved),
+          columnMapping: columnMappingJson,
           expiresAt,
           documentType:      documentType as never,
           dataIntent:        dataIntent as never,
@@ -131,7 +154,7 @@ export async function POST(req: NextRequest) {
           status:               "ACTIVE",
           schemaCacheJson:      JSON.stringify(rawSchema),
           schemaCachedAt:       new Date(),
-          entityDictionaryJson: JSON.stringify(entityLists),
+          entityDictionaryJson: entityLists ? JSON.stringify(entityLists) : null,
         },
       }),
     ]),
@@ -144,8 +167,8 @@ export async function POST(req: NextRequest) {
     ok:               true,
     tableName,
     rowCount:         cached.rows.length,
-    canonicalColumns: validation.canonicalColumns,
-    droppedColumns:   validation.droppedColumns,
-    warnings:         validation.warnings,
+    canonicalColumns,
+    droppedColumns,
+    warnings,
   });
 }

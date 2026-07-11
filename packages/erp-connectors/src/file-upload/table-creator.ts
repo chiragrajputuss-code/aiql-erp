@@ -103,6 +103,78 @@ export async function createTempTable(
   return tableName;
 }
 
+// ─── Native-column table (for non-GL documents: GSTR-2B, GSTR-1, 26Q, …) ──────
+//
+// GL files are canonicalised to CANONICAL_SCHEMA. GST/tax documents don't fit
+// that GL shape, so we store them with their NATIVE (sanitised) column names —
+// the doc-parsers (e.g. parseGstr2B) read those native headers directly.
+
+/** Sanitise a source header into a safe, alias-matchable Postgres column name. */
+function safeColumn(header: string): string {
+  return header
+    .toLowerCase()
+    .trim()
+    .replace(/[^a-z0-9]+/g, "_")
+    .replace(/^_+|_+$/g, "")
+    .slice(0, 60) || "col";
+}
+
+export interface NativeTableResult {
+  tableName: string;
+  columns:   { originalName: string; columnName: string }[];
+}
+
+/**
+ * Create a table preserving the file's original columns (all TEXT) and insert
+ * rows. Used for documents whose native schema must survive to the parser.
+ */
+export async function createNativeTable(
+  orgId:   string,
+  fileId:  string,
+  headers: string[],
+  rows:    Record<string, unknown>[],
+): Promise<NativeTableResult> {
+  const tableName = buildTableName(orgId, fileId);
+
+  // Map headers → unique safe column names (dedupe collisions).
+  const seen = new Set<string>();
+  const columns = headers.map((h) => {
+    let c = safeColumn(h);
+    let n = 2;
+    while (seen.has(c)) c = `${safeColumn(h)}_${n++}`;
+    seen.add(c);
+    return { originalName: h, columnName: c };
+  });
+
+  const colDefs = columns.map((c) => `"${c.columnName}" TEXT`).join(",\n  ");
+  await prisma.$executeRawUnsafe(`DROP TABLE IF EXISTS "${tableName}"`);
+  await prisma.$executeRawUnsafe(`CREATE TABLE "${tableName}" (\n  ${colDefs}\n)`);
+
+  const BATCH = 400;
+  for (let i = 0; i < rows.length; i += BATCH) {
+    const batch = rows.slice(i, i + BATCH);
+    const placeholders: string[] = [];
+    const values: unknown[] = [];
+    let p = 1;
+    for (const row of batch) {
+      const ph: string[] = [];
+      for (const c of columns) {
+        const v = row[c.originalName];
+        ph.push(`$${p++}`);
+        values.push(v === null || v === undefined || v === "" ? null : String(v));
+      }
+      placeholders.push(`(${ph.join(",")})`);
+    }
+    const colList = columns.map((c) => `"${c.columnName}"`).join(",");
+    await prisma.$executeRawUnsafe(
+      `INSERT INTO "${tableName}" (${colList}) VALUES ${placeholders.join(",")}`,
+      ...values,
+    );
+  }
+
+  return { tableName, columns };
+}
+
 export async function dropTempTable(tableName: string): Promise<void> {
   const safe = `upload_${tableName.replace(/[^a-z0-9_]/gi, "")}`.slice(0, 63);
   // Only drop tables with our prefix to be safe

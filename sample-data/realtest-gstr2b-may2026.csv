@@ -1,0 +1,10 @@
+supplier_gstin,supplier_name,invoice_no,invoice_date,invoice_value,taxable_value,igst,cgst,sgst,cess,itc_eligibility,itc_eligible_amount,itc_reason,supply_type,hsn_code,place_of_supply
+27AABCM1234K1Z5,Mahalaxmi Steel Rolling Mills,MSRM/26/0412,2026-05-04,105020,89000,0,8010,8010,0,Yes,16020,,B2B,7208,27
+27AABCM1234K1Z5,Mahalaxmi Steel Rolling Mills,MSRM/26/0447,2026-05-09,79060,67000,0,6030,6030,0,Yes,12060,,B2B,7214,27
+27AACFD5678L1Z3,Deccan Freight Carriers,DFC-2026-0221,2026-05-06,40710,34500,0,3105,3105,0,Yes,6210,,B2B,9965,27
+27AAECS3456N1Z8,Shree Packaging Industries,SPI/INV/2605,2026-05-12,25724,21800,0,1962,1962,0,Yes,3924,,B2B,4819,27
+27AAGCK2345Q1Z4,K.T.S. Enterprises,KTS-2026-089,2026-05-15,18408,15600,0,1404,1404,0,Yes,2808,,B2B,8207,27
+27AAHCS6789R1Z2,Sunrise Lubricants,SL-2026-334,2026-05-18,14632,12400,0,1116,1116,0,Yes,2232,,B2B,2710,27
+27AADCP9012M1Z1,Poona Chemicals & Solvents,PCS-2026-118,2026-05-20,49560,42000,0,3780,3780,0,No,0,Supplier GSTR-1 not filed for the period,B2B,3814,27
+07AAICN0123S1Z9,Nashik Electricals,NE/2026/077,2026-05-22,11564,9800,1764,0,0,0,No,0,Blocked credit under section 17(5),B2B,8537,07
+27AAHCS6789R1Z2,Sunrise Lubricants,SL-2026-361,2026-05-19,17700,15000,0,1350,1350,0,Yes,2700,,B2B,2710,27

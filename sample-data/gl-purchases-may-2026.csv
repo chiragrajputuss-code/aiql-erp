@@ -1,0 +1,15 @@
+transaction_date,voucher_type,account_name,account_group,description,party_name,reference_number,debit_amount,credit_amount,net_amount
+2026-05-03,Purchase,Raw Material Purchases,Direct Expenses,Purchase of steel rods - INV,Mehta Steel Industries,INV-MSI-2026-041,89500,0,89500
+2026-05-05,Purchase,Packing Material Purchases,Direct Expenses,Packing boxes and tape,Sharma Packaging Pvt Ltd,INV-SPL-0512,12750,0,12750
+2026-05-08,Purchase,IT & Software,Indirect Expenses,Annual software subscription,TechNova Solutions LLP,TECHNS-INV-2600,45000,0,45000
+2026-05-10,Purchase,Office Supplies,Indirect Expenses,Printer cartridges and stationery,Agarwal Stationery Mart,AGW-B2026-88,4200,0,4200
+2026-05-12,Purchase,Raw Material Purchases,Direct Expenses,Aluminium sheets 10mm,Gupta Metal Works,GMW-INV-0334,67800,0,67800
+2026-05-15,Purchase,Electrical & Maintenance,Indirect Expenses,UPS battery replacement,Ravi Electricals,RE-INV-2026-19,8500,0,8500
+2026-05-17,Purchase,Freight & Logistics,Direct Expenses,Inward freight charges - April batch,Speedway Logistics Pvt Ltd,SWL-MAY-001,23600,0,23600
+2026-05-19,Purchase,Raw Material Purchases,Direct Expenses,Copper wire - 500 metres,Kumar Electrical Stores,KES-2026-055,31200,0,31200
+2026-05-21,Purchase,Marketing & Advertising,Indirect Expenses,Digital marketing campaign - May,Pixel Ads Agency,PAA-INV-0209,18000,0,18000
+2026-05-24,Purchase,Repairs & Maintenance,Indirect Expenses,Compressor servicing and parts,Joshi Engineering Works,JEW-SRV-2026-7,6800,0,6800
+2026-05-26,Purchase,Raw Material Purchases,Direct Expenses,Plastic granules - 200 kg,Patel Polymer Industries,PPI-INV-MAY26-3,54000,0,54000
+2026-05-28,Purchase,Professional Fees,Indirect Expenses,Legal consultation - contract review,Desai & Associates Advocates,DA-INV-2605,15000,0,15000
+2026-05-29,Purchase,Raw Material Purchases,Direct Expenses,Rubber seals and gaskets,Sindhwani Rubber Products,SRP-2026-0091,9400,0,9400
+2026-05-30,Purchase,IT & Software,Indirect Expenses,Cloud hosting - AWS May 2026,Amazon Web Services India,AWS-IN-2026-05,7200,0,7200

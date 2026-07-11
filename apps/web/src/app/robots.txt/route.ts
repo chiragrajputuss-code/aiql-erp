@@ -5,6 +5,8 @@ export function GET() {
   const body = `User-agent: *
 Allow: /
 Allow: /pricing
+Allow: /sample-report
+Allow: /resources
 Allow: /contact
 Allow: /terms
 Allow: /privacy

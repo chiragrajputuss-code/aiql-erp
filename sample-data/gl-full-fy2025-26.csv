@@ -1,0 +1,118 @@
+transaction_date,voucher_type,account_name,account_group,description,party_name,reference_number,debit_amount,credit_amount,net_amount
+2025-04-01,Journal,SBI Current Account,Bank Accounts,Opening balance brought forward,,OB-2025-001,0,0,482000
+2025-04-03,Sales,Sales - Domestic,Direct Income,Invoice to Rajesh Auto Components,Rajesh Auto Components Pvt Ltd,SI-2025-001,0,125000,125000
+2025-04-05,Purchase,Raw Material Purchases,Direct Expenses,Steel rods - April batch,Mehta Steel Industries,PI-2025-001,68000,0,68000
+2025-04-07,Payment,SBI Current Account,Bank Accounts,Payment to Mehta Steel,Mehta Steel Industries,PV-2025-001,68000,0,68000
+2025-04-10,Sales,Sales - Domestic,Direct Income,Invoice to Tata Motors ancillary,Bharat Forge Supplies,SI-2025-002,0,210000,210000
+2025-04-12,Receipt,SBI Current Account,Bank Accounts,Receipt from Rajesh Auto,Rajesh Auto Components Pvt Ltd,RV-2025-001,0,125000,125000
+2025-04-15,Purchase,Packing Material Purchases,Direct Expenses,Cartons - April,Sharma Packaging Pvt Ltd,PI-2025-002,14500,0,14500
+2025-04-18,Purchase,Salary & Wages,Indirect Expenses,April salary - production staff,,SAL-APR-2025,185000,0,185000
+2025-04-20,Payment,SBI Current Account,Bank Accounts,Salary disbursed April,,SAL-APR-2025,185000,0,185000
+2025-04-22,Sales,Sales - Domestic,Direct Income,Invoice to Mahindra vendors,Mahindra Component Works,SI-2025-003,0,98000,98000
+2025-04-25,Purchase,IT & Software,Indirect Expenses,ERP subscription Q1,TechNova Solutions LLP,PI-2025-003,45000,0,45000
+2025-04-28,Sales,Sales - Export,Direct Income,Export to UAE client,Gulf Auto Parts LLC,SI-2025-004,0,345000,345000
+2025-04-30,Journal,GST Payable,Current Liabilities,GST liability April,,GST-APR-2025,0,38700,38700
+2025-05-02,Sales,Sales - Domestic,Direct Income,Invoice - brake pads batch,Rajesh Auto Components Pvt Ltd,SI-2025-005,0,145000,145000
+2025-05-05,Purchase,Raw Material Purchases,Direct Expenses,Aluminium ingots,Gupta Metal Works,PI-2025-004,92000,0,92000
+2025-05-08,Purchase,Freight & Logistics,Direct Expenses,Outward freight - May,Speedway Logistics Pvt Ltd,PI-2025-005,18500,0,18500
+2025-05-10,Receipt,SBI Current Account,Bank Accounts,Receipt from Bharat Forge,Bharat Forge Supplies,RV-2025-002,0,210000,210000
+2025-05-12,Sales,Sales - Domestic,Direct Income,Invoice to new customer,Krishna Trading Co,SI-2025-006,0,76500,76500
+2025-05-15,Purchase,Salary & Wages,Indirect Expenses,May salary - all staff,,SAL-MAY-2025,210000,0,210000
+2025-05-17,Payment,SBI Current Account,Bank Accounts,Salary disbursed May,,SAL-MAY-2025,210000,0,210000
+2025-05-19,Purchase,Electrical & Maintenance,Indirect Expenses,Factory electrical repairs,Ravi Electricals,PI-2025-006,12000,0,12000
+2025-05-22,Sales,Sales - Domestic,Direct Income,Invoice - casting parts,Mahindra Component Works,SI-2025-007,0,134000,134000
+2025-05-25,Purchase,Office Supplies,Indirect Expenses,Stationery and office items,Agarwal Stationery Mart,PI-2025-007,6200,0,6200
+2025-05-28,Payment,HDFC OD Account,Bank Accounts,Advance to supplier,Patel Polymer Industries,ADV-2025-001,50000,0,50000
+2025-05-30,Journal,GST Payable,Current Liabilities,GST liability May,,GST-MAY-2025,0,47250,47250
+2025-06-02,Sales,Sales - Domestic,Direct Income,Invoice - engine gaskets,Rajesh Auto Components Pvt Ltd,SI-2025-008,0,189000,189000
+2025-06-05,Purchase,Raw Material Purchases,Direct Expenses,Copper wire coils,Kumar Electrical Stores,PI-2025-008,44000,0,44000
+2025-06-07,Receipt,SBI Current Account,Bank Accounts,Receipt from Krishna Trading,Krishna Trading Co,RV-2025-003,0,76500,76500
+2025-06-10,Sales,Sales - Domestic,Direct Income,Invoice - rubber mouldings,Bharat Forge Supplies,SI-2025-009,0,98000,98000
+2025-06-12,Purchase,Marketing & Advertising,Indirect Expenses,Trade fair stall - AutoExpo,Pixel Ads Agency,PI-2025-009,35000,0,35000
+2025-06-15,Purchase,Salary & Wages,Indirect Expenses,June salary - all staff,,SAL-JUN-2025,215000,0,215000
+2025-06-18,Payment,SBI Current Account,Bank Accounts,Salary disbursed June,,SAL-JUN-2025,215000,0,215000
+2025-06-20,Purchase,Professional Fees,Indirect Expenses,Audit and tax filing fees,Desai & Associates Advocates,PI-2025-010,22000,0,22000
+2025-06-22,Receipt,SBI Current Account,Bank Accounts,Receipt from Mahindra Component,Mahindra Component Works,RV-2025-004,0,134000,134000
+2025-06-25,Sales,Sales - Domestic,Direct Income,Quarter-end invoice - bulk order,Tata AutoComp Systems,SI-2025-010,0,425000,425000
+2025-06-28,Journal,TDS Payable,Current Liabilities,TDS deducted on professional fees,,TDS-Q1-2025,0,2200,2200
+2025-06-30,Journal,GST Payable,Current Liabilities,GST liability June,,GST-JUN-2025,0,52200,52200
+2025-07-03,Sales,Sales - Domestic,Direct Income,Invoice - pressed parts,Rajesh Auto Components Pvt Ltd,SI-2025-011,0,112000,112000
+2025-07-05,Purchase,Raw Material Purchases,Direct Expenses,Steel plates - Q2 stock,Mehta Steel Industries,PI-2025-011,78000,0,78000
+2025-07-08,Purchase,Salary & Wages,Indirect Expenses,July salary,,SAL-JUL-2025,215000,0,215000
+2025-07-10,Receipt,SBI Current Account,Bank Accounts,Receipt from Tata AutoComp,Tata AutoComp Systems,RV-2025-005,0,425000,425000
+2025-07-15,Sales,Sales - Domestic,Direct Income,Invoice - gearbox components,Bharat Forge Supplies,SI-2025-012,0,267000,267000
+2025-07-18,Purchase,Repairs & Maintenance,Indirect Expenses,CNC machine overhaul,Joshi Engineering Works,PI-2025-012,48000,0,48000
+2025-07-22,Purchase,IT & Software,Indirect Expenses,Cloud hosting Q2,Amazon Web Services India,PI-2025-013,21600,0,21600
+2025-07-25,Sales,Sales - Export,Direct Income,Export order - Germany,Euro Parts GmbH,SI-2025-013,0,520000,520000
+2025-07-28,Journal,GST Payable,Current Liabilities,GST liability July,,GST-JUL-2025,0,58500,58500
+2025-07-30,Payment,SBI Current Account,Bank Accounts,Advance tax payment Q1,,ADVTAX-Q1-2025,125000,0,125000
+2025-08-02,Sales,Sales - Domestic,Direct Income,Invoice - suspension parts,Mahindra Component Works,SI-2025-014,0,178000,178000
+2025-08-05,Purchase,Raw Material Purchases,Direct Expenses,Brass fittings - 500 units,Sindhwani Rubber Products,PI-2025-014,31500,0,31500
+2025-08-08,Purchase,Salary & Wages,Indirect Expenses,August salary,,SAL-AUG-2025,215000,0,215000
+2025-08-12,Receipt,SBI Current Account,Bank Accounts,Receipt from Bharat Forge,Bharat Forge Supplies,RV-2025-006,0,267000,267000
+2025-08-15,Sales,Sales - Domestic,Direct Income,Independence Day bulk order,Krishna Trading Co,SI-2025-015,0,95000,95000
+2025-08-19,Purchase,Marketing & Advertising,Indirect Expenses,Digital marketing Q2,Pixel Ads Agency,PI-2025-015,28000,0,28000
+2025-08-22,Payment,SBI Current Account,Bank Accounts,GST payment July,,GST-PAY-JUL,58500,0,58500
+2025-08-28,Journal,GST Payable,Current Liabilities,GST liability August,,GST-AUG-2025,0,63450,63450
+2025-09-02,Sales,Sales - Domestic,Direct Income,Invoice - fuel injection parts,Tata AutoComp Systems,SI-2025-016,0,312000,312000
+2025-09-05,Purchase,Raw Material Purchases,Direct Expenses,Aluminium die casting blanks,Gupta Metal Works,PI-2025-016,105000,0,105000
+2025-09-08,Purchase,Salary & Wages,Indirect Expenses,September salary,,SAL-SEP-2025,220000,0,220000
+2025-09-12,Receipt,SBI Current Account,Bank Accounts,Receipt from Mahindra,Mahindra Component Works,RV-2025-007,0,178000,178000
+2025-09-15,Sales,Sales - Domestic,Direct Income,Invoice - brake drums batch,Rajesh Auto Components Pvt Ltd,SI-2025-017,0,156000,156000
+2025-09-19,Purchase,Professional Fees,Indirect Expenses,Legal retainer Q2,Desai & Associates Advocates,PI-2025-017,18000,0,18000
+2025-09-22,Purchase,Freight & Logistics,Direct Expenses,Export freight - Germany order,Speedway Logistics Pvt Ltd,PI-2025-018,34000,0,34000
+2025-09-28,Journal,TDS Payable,Current Liabilities,TDS deducted Q2,,TDS-Q2-2025,0,3600,3600
+2025-09-30,Journal,GST Payable,Current Liabilities,GST liability September,,GST-SEP-2025,0,71820,71820
+2025-10-03,Sales,Sales - Domestic,Direct Income,Festive season bulk order,Bharat Forge Supplies,SI-2025-018,0,445000,445000
+2025-10-05,Purchase,Raw Material Purchases,Direct Expenses,Steel coils - Diwali stock,Mehta Steel Industries,PI-2025-019,135000,0,135000
+2025-10-08,Purchase,Salary & Wages,Indirect Expenses,October salary + Diwali bonus,,SAL-OCT-2025,295000,0,295000
+2025-10-12,Receipt,SBI Current Account,Bank Accounts,Receipt from Tata AutoComp,Tata AutoComp Systems,RV-2025-008,0,312000,312000
+2025-10-15,Sales,Sales - Export,Direct Income,Export - UAE Q3,Gulf Auto Parts LLC,SI-2025-019,0,480000,480000
+2025-10-18,Payment,SBI Current Account,Bank Accounts,Advance tax Q2,,ADVTAX-Q2-2025,140000,0,140000
+2025-10-22,Purchase,IT & Software,Indirect Expenses,New laptop - accounts team,TechNova Solutions LLP,PI-2025-020,65000,0,65000
+2025-10-25,Sales,Sales - Domestic,Direct Income,Invoice - oil seals batch,Mahindra Component Works,SI-2025-020,0,198000,198000
+2025-10-28,Journal,GST Payable,Current Liabilities,GST liability October,,GST-OCT-2025,0,89100,89100
+2025-11-02,Sales,Sales - Domestic,Direct Income,Invoice - steering components,Tata AutoComp Systems,SI-2025-021,0,356000,356000
+2025-11-05,Purchase,Raw Material Purchases,Direct Expenses,Copper billets - 200 kg,Kumar Electrical Stores,PI-2025-021,58500,0,58500
+2025-11-08,Purchase,Salary & Wages,Indirect Expenses,November salary,,SAL-NOV-2025,220000,0,220000
+2025-11-10,Receipt,SBI Current Account,Bank Accounts,Receipt from Bharat Forge,Bharat Forge Supplies,RV-2025-009,0,445000,445000
+2025-11-15,Sales,Sales - Domestic,Direct Income,Invoice - suspension arms,Rajesh Auto Components Pvt Ltd,SI-2025-022,0,134000,134000
+2025-11-18,Purchase,Marketing & Advertising,Indirect Expenses,Year-end catalogue printing,Pixel Ads Agency,PI-2025-022,42000,0,42000
+2025-11-22,Purchase,Electrical & Maintenance,Indirect Expenses,Generator AMC - annual,Ravi Electricals,PI-2025-023,24000,0,24000
+2025-11-28,Journal,GST Payable,Current Liabilities,GST liability November,,GST-NOV-2025,0,94500,94500
+2025-12-02,Sales,Sales - Domestic,Direct Income,Invoice - gearbox housings,Bharat Forge Supplies,SI-2025-023,0,289000,289000
+2025-12-05,Purchase,Raw Material Purchases,Direct Expenses,Zinc die casting alloy,Patel Polymer Industries,PI-2025-024,76000,0,76000
+2025-12-08,Purchase,Salary & Wages,Indirect Expenses,December salary,,SAL-DEC-2025,220000,0,220000
+2025-12-10,Receipt,SBI Current Account,Bank Accounts,Receipt from Mahindra,Mahindra Component Works,RV-2025-010,0,198000,198000
+2025-12-15,Sales,Sales - Domestic,Direct Income,Invoice - fuel pump components,Krishna Trading Co,SI-2025-024,0,112000,112000
+2025-12-18,Purchase,Repairs & Maintenance,Indirect Expenses,Hydraulic press service,Joshi Engineering Works,PI-2025-025,32000,0,32000
+2025-12-22,Purchase,Professional Fees,Indirect Expenses,Year-end audit fees,Desai & Associates Advocates,PI-2025-026,35000,0,35000
+2025-12-28,Journal,TDS Payable,Current Liabilities,TDS deducted Q3,,TDS-Q3-2025,0,5300,5300
+2025-12-31,Journal,GST Payable,Current Liabilities,GST liability December,,GST-DEC-2025,0,102600,102600
+2026-01-03,Sales,Sales - Domestic,Direct Income,New year order - brake parts,Tata AutoComp Systems,SI-2026-001,0,423000,423000
+2026-01-05,Purchase,Raw Material Purchases,Direct Expenses,Steel round bars - Q4 stock,Mehta Steel Industries,PI-2026-001,118000,0,118000
+2026-01-08,Purchase,Salary & Wages,Indirect Expenses,January salary,,SAL-JAN-2026,225000,0,225000
+2026-01-10,Receipt,SBI Current Account,Bank Accounts,Receipt from Rajesh Auto,Rajesh Auto Components Pvt Ltd,RV-2026-001,0,134000,134000
+2026-01-15,Sales,Sales - Export,Direct Income,Export - Germany Q4,Euro Parts GmbH,SI-2026-002,0,615000,615000
+2026-01-18,Purchase,IT & Software,Indirect Expenses,Cloud hosting Q3+Q4,Amazon Web Services India,PI-2026-002,43200,0,43200
+2026-01-22,Payment,SBI Current Account,Bank Accounts,Advance tax Q3,,ADVTAX-Q3-2026,165000,0,165000
+2026-01-25,Sales,Sales - Domestic,Direct Income,Invoice - engine mounts,Mahindra Component Works,SI-2026-003,0,245000,245000
+2026-01-28,Journal,GST Payable,Current Liabilities,GST liability January,,GST-JAN-2026,0,118800,118800
+2026-02-03,Sales,Sales - Domestic,Direct Income,Invoice - clutch plates,Rajesh Auto Components Pvt Ltd,SI-2026-004,0,178000,178000
+2026-02-05,Purchase,Raw Material Purchases,Direct Expenses,Aluminium extrusions,Gupta Metal Works,PI-2026-003,89000,0,89000
+2026-02-08,Purchase,Salary & Wages,Indirect Expenses,February salary,,SAL-FEB-2026,225000,0,225000
+2026-02-10,Receipt,SBI Current Account,Bank Accounts,Receipt from Tata AutoComp,Tata AutoComp Systems,RV-2026-002,0,423000,423000
+2026-02-15,Sales,Sales - Domestic,Direct Income,Invoice - differential housing,Bharat Forge Supplies,SI-2026-005,0,334000,334000
+2026-02-19,Purchase,Packing Material Purchases,Direct Expenses,Export grade packaging,Sharma Packaging Pvt Ltd,PI-2026-004,19500,0,19500
+2026-02-22,Purchase,Marketing & Advertising,Indirect Expenses,Google Ads - Feb campaign,Pixel Ads Agency,PI-2026-005,22000,0,22000
+2026-02-28,Journal,GST Payable,Current Liabilities,GST liability February,,GST-FEB-2026,0,126900,126900
+2026-03-02,Sales,Sales - Domestic,Direct Income,Invoice - valve assemblies,Tata AutoComp Systems,SI-2026-006,0,512000,512000
+2026-03-05,Purchase,Raw Material Purchases,Direct Expenses,Bearing steel rods - year-end stock,Mehta Steel Industries,PI-2026-005,156000,0,156000
+2026-03-08,Purchase,Salary & Wages,Indirect Expenses,March salary,,SAL-MAR-2026,225000,0,225000
+2026-03-10,Receipt,SBI Current Account,Bank Accounts,Receipt from Bharat Forge,Bharat Forge Supplies,RV-2026-003,0,334000,334000
+2026-03-15,Sales,Sales - Domestic,Direct Income,Year-end invoice - Rajesh Auto,Rajesh Auto Components Pvt Ltd,SI-2026-007,0,267000,267000
+2026-03-18,Purchase,Professional Fees,Indirect Expenses,CA fees - annual accounts,Desai & Associates Advocates,PI-2026-006,45000,0,45000
+2026-03-22,Purchase,Repairs & Maintenance,Indirect Expenses,Factory floor maintenance,Joshi Engineering Works,PI-2026-007,28500,0,28500
+2026-03-25,Payment,SBI Current Account,Bank Accounts,Final advance tax FY 2025-26,,ADVTAX-FY2526,185000,0,185000
+2026-03-28,Journal,TDS Payable,Current Liabilities,TDS deducted Q4,,TDS-Q4-2026,0,6750,6750
+2026-03-31,Journal,GST Payable,Current Liabilities,GST liability March - year end,,GST-MAR-2026,0,143550,143550

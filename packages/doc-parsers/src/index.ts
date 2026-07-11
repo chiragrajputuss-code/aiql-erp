@@ -35,3 +35,9 @@ export type { ReconSeverity, ReconGap, ReconResult, GlRow } from "./reconciliati
 export { reconcileGl26Q }    from "./reconciliation/gl-26q";
 export { reconcileGlGstr1 }  from "./reconciliation/gl-gstr1";
 export { reconcileGlGstr2B } from "./reconciliation/gl-gstr2b";
+
+// ─── GL utilities (shared by investigations) ──────────────────────────────────
+export {
+  parseGlRows, filterPurchaseRows, filterSalesRows, filterPaymentRows,
+  effectiveAmount, sumAmount, normaliseName, nameSimilarity, normalizeInvoiceNo,
+} from "./reconciliation/gl-utils";

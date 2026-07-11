@@ -143,6 +143,11 @@ export const COLUMN_ALIASES: Record<string, string> = {
   "transaction id": "reference_number", "txn id": "reference_number",
   "bill no": "reference_number", "bill number": "reference_number",
   "order no": "reference_number",
+  "supplier invoice no": "reference_number", "supplier invoice number": "reference_number",
+  "supplier invoice": "reference_number", "party invoice no": "reference_number",
+  "party bill no": "reference_number", "invoice ref": "reference_number",
+  "bill ref": "reference_number", "supplier ref": "reference_number",
+  "vendor invoice no": "reference_number", "original invoice no": "reference_number",
 
   // ── document_number (cheque numbers, instrument numbers — distinct from voucher) ──
   "cheque no": "document_number", "check no": "document_number",

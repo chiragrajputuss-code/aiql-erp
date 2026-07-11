@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AccountIQ — Complete Product Flow</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 13px;
+    line-height: 1.6;
+    color: #1a202c;
+    background: #fff;
+    padding: 0;
+  }
+
+  .page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 48px 52px;
+  }
+
+  /* Cover */
+  .cover {
+    text-align: center;
+    padding: 60px 0 40px;
+    border-bottom: 3px solid #1B3A5C;
+    margin-bottom: 36px;
+  }
+  .cover .logo {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1B3A5C;
+    letter-spacing: -1px;
+  }
+  .cover .logo span { color: #2563EB; }
+  .cover .tagline {
+    font-size: 15px;
+    color: #4a5568;
+    margin-top: 8px;
+    font-style: italic;
+  }
+  .cover .meta {
+    margin-top: 20px;
+    font-size: 11px;
+    color: #718096;
+  }
+  .cover .badges {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 16px;
+  }
+  .badge {
+    background: #EBF4FF;
+    color: #1B3A5C;
+    border: 1px solid #BEE3F8;
+    border-radius: 20px;
+    padding: 3px 12px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .badge.green { background: #F0FFF4; color: #276749; border-color: #9AE6B4; }
+  .badge.amber { background: #FFFBEB; color: #92400E; border-color: #FCD34D; }
+
+  /* Section headings */
+  h1 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1B3A5C;
+    margin: 32px 0 10px;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #EBF4FF;
+  }
+  h2 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2D3748;
+    margin: 20px 0 6px;
+  }
+  h3 {
+    font-size: 13px;
+    font-weight: 700;
+    color: #4A5568;
+    margin: 14px 0 4px;
+  }
+
+  p { margin-bottom: 8px; color: #2D3748; }
+
+  /* Step boxes */
+  .step {
+    border-left: 4px solid #2563EB;
+    background: #F7FAFF;
+    border-radius: 0 8px 8px 0;
+    padding: 12px 16px;
+    margin: 12px 0;
+  }
+  .step .step-title {
+    font-weight: 700;
+    color: #1B3A5C;
+    font-size: 13px;
+    margin-bottom: 4px;
+  }
+  .step .step-num {
+    display: inline-block;
+    background: #2563EB;
+    color: white;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    margin-right: 6px;
+  }
+
+  /* Pipeline diagram */
+  .pipeline {
+    background: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 12px 0;
+    font-family: 'Courier New', monospace;
+    font-size: 11px;
+    line-height: 1.8;
+    color: #2D3748;
+  }
+  .pipeline .layer {
+    background: white;
+    border: 1px solid #CBD5E0;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin: 6px 0;
+  }
+  .pipeline .layer .l-title { font-weight: 700; color: #1B3A5C; font-size: 11px; }
+  .pipeline .layer .l-meta { color: #718096; font-size: 10px; }
+  .pipeline .arrow { text-align: center; color: #A0AEC0; font-size: 14px; }
+
+  /* Gap codes table */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+    font-size: 12px;
+  }
+  th {
+    background: #1B3A5C;
+    color: white;
+    padding: 8px 10px;
+    text-align: left;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  td {
+    padding: 7px 10px;
+    border-bottom: 1px solid #E2E8F0;
+    vertical-align: top;
+  }
+  tr:nth-child(even) td { background: #F7FAFF; }
+  .pill {
+    display: inline-block;
+    border-radius: 10px;
+    padding: 1px 8px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .pill.critical { background: #FEE2E2; color: #991B1B; }
+  .pill.review   { background: #FEF3C7; color: #92400E; }
+  .pill.info     { background: #DBEAFE; color: #1E40AF; }
+
+  /* Feature grid */
+  .feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin: 10px 0;
+  }
+  .feature-card {
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: #FAFAFA;
+  }
+  .feature-card .icon { font-size: 16px; margin-bottom: 4px; }
+  .feature-card .f-title { font-weight: 700; font-size: 12px; color: #1B3A5C; }
+  .feature-card .f-desc { font-size: 11px; color: #718096; margin-top: 2px; }
+
+  /* Moat table */
+  .moat-table th { background: #1a3a5c; }
+  .moat-table td:last-child { color: #276749; font-weight: 600; }
+
+  /* Pricing */
+  .pricing-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    margin: 12px 0;
+  }
+  .price-card {
+    border: 1px solid #E2E8F0;
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+  }
+  .price-card.featured { border-color: #2563EB; background: #EBF4FF; }
+  .price-card .plan { font-weight: 700; font-size: 12px; color: #1B3A5C; }
+  .price-card .price { font-size: 20px; font-weight: 800; color: #2563EB; margin: 4px 0; }
+  .price-card .price span { font-size: 11px; font-weight: 400; color: #718096; }
+  .price-card .features { font-size: 10px; color: #4A5568; text-align: left; margin-top: 6px; }
+  .price-card .features li { margin: 2px 0; list-style: none; }
+  .price-card .features li::before { content: "✓ "; color: #38A169; }
+
+  /* Tech stack */
+  .tech-row { display: flex; gap: 8px; flex-wrap: wrap; margin: 6px 0; }
+  .tech-tag {
+    background: #EDF2F7;
+    border-radius: 4px;
+    padding: 2px 8px;
+    font-size: 11px;
+    color: #2D3748;
+    font-family: 'Courier New', monospace;
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 2px solid #EBF4FF;
+    text-align: center;
+    font-size: 11px;
+    color: #A0AEC0;
+  }
+
+  ul { padding-left: 18px; margin: 6px 0; }
+  li { margin-bottom: 3px; }
+
+  /* Highlight box */
+  .highlight {
+    background: linear-gradient(135deg, #EBF4FF 0%, #F0FFF4 100%);
+    border: 1px solid #BEE3F8;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin: 12px 0;
+  }
+  .highlight strong { color: #1B3A5C; }
+
+  @media print {
+    body { font-size: 12px; }
+    .page { padding: 32px 40px; }
+    h1 { page-break-before: auto; }
+    .step, .pipeline, table, .pricing-grid { page-break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Cover -->
+  <div class="cover">
+    <div class="logo">Account<span>IQ</span></div>
+    <div class="tagline">AI-powered ERP query &amp; GST compliance for Indian SMEs</div>
+    <div class="badges">
+      <span class="badge">Live at acctqai.com</span>
+      <span class="badge green">GSTR-2B ITC Tracking</span>
+      <span class="badge amber">Made for Indian Finance Teams</span>
+    </div>
+    <div class="meta">Product Overview · June 2026 · Confidential</div>
+  </div>
+
+  <!-- What it is -->
+  <h1>What is AccountIQ?</h1>
+  <p>AccountIQ connects to a company's ERP data — Tally exports, Zoho Books, or raw General Ledger files — and lets finance teams query their books in plain English, run GST and TDS compliance checks, and receive daily automated alerts. No SQL knowledge needed. No waiting for a data analyst or CA.</p>
+
+  <div class="highlight">
+    <strong>Core insight:</strong> Indian SMEs lose real money every month because vendors don't file their GSTR-1 on time — blocking Input Tax Credit without warning. AccountIQ is the only product that proactively tracks this at the invoice level, before the government reversal notice arrives.
+  </div>
+
+  <!-- Who it's for -->
+  <h1>Who It's For</h1>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="icon">🏭</div>
+      <div class="f-title">SME Finance Managers &amp; CFOs</div>
+      <div class="f-desc">Companies with ₹5Cr–₹500Cr turnover who use Tally or Zoho Books</div>
+    </div>
+    <div class="feature-card">
+      <div class="icon">📊</div>
+      <div class="f-title">Accountants &amp; CA Firms</div>
+      <div class="f-desc">Teams that manage monthly GST reconciliation for multiple clients</div>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🏗️</div>
+      <div class="f-title">Manufacturing &amp; Trading</div>
+      <div class="f-desc">High purchase volume businesses with many vendors — ITC tracking is critical</div>
+    </div>
+    <div class="feature-card">
+      <div class="icon">🔍</div>
+      <div class="f-title">Anyone waiting for reports</div>
+      <div class="f-desc">Teams that currently wait days to get a simple "cash balance" answer</div>
+    </div>
+  </div>
+
+  <!-- User Journey -->
+  <h1>Complete User Journey</h1>
+
+  <div class="step">
+    <div class="step-title"><span class="step-num">1</span> Sign Up &amp; Onboard</div>
+    <p>User signs up at <strong>acctqai.com</strong>. After email verification, a short wizard collects company name, ERP type (Tally / Zoho Books / File Upload), and role (CFO / Finance Manager / Accountant). Takes under 2 minutes.</p>
+  </div>
+
+  <div class="step">
+    <div class="step-title"><span class="step-num">2</span> Connect Data — Upload Files</div>
+    <p>User goes to <strong>Connections → New</strong> and uploads an Excel or CSV export from their ERP. The system auto-detects the document type by scoring column headers:</p>
+    <ul>
+      <li><strong>GL</strong> — transaction_date, voucher_type, debit/credit amounts</li>
+      <li><strong>GSTR-1</strong> — gstin_of_recipient, outward supply columns</li>
+      <li><strong>GSTR-2B</strong> — supplier_gstin, itc_eligibility columns</li>
+      <li><strong>Form 26Q</strong> — deductee_pan, tds_amount columns</li>
+      <li>GSTR-3B, ITR, OTHER</li>
+    </ul>
+    <p style="margin-top:6px">User confirms the detected type and data period. File is parsed into a structured database table. Data is retained for 90 days (users re-upload monthly, matching their filing cycle).</p>
+  </div>
+
+  <div class="step">
+    <div class="step-title"><span class="step-num">3</span> Query Studio — Ask AI</div>
+    <p>User opens a GL connection and clicks <strong>Ask AI</strong>. They type questions in English, Hindi, or Hinglish:</p>
+    <ul>
+      <li><em>"May mein kitna GST pay karna hai?"</em></li>
+      <li><em>"Show overdue debtors above 60 days"</em></li>
+      <li><em>"Top 5 vendors by spend this quarter"</em></li>
+      <li><em>"Cash and bank balance as of today"</em></li>
+    </ul>
+  </div>
+
+  <!-- Pipeline -->
+  <h2>How the Query Pipeline Works</h2>
+  <p>Every question passes through 4 layers in order. Each layer is cheaper and faster than the next. A query stops at the first layer that can answer it.</p>
+
+  <div class="pipeline">
+    <div class="layer">
+      <div class="l-title">Layer 1 — Template Engine</div>
+      <div class="l-meta">50+ hand-written SQL templates · ₹0 cost · &lt;50ms · handles ~70% of queries</div>
+      Matched by keyword/regex patterns on the question. Returns SQL instantly with 100% accuracy. The template library encodes Indian SME finance knowledge — Tally voucher types, GST naming, Hindi/Hinglish patterns.
+    </div>
+    <div class="arrow">↓ no match</div>
+    <div class="layer">
+      <div class="l-title">Layer 2 — RAG (Past Q→SQL pairs)</div>
+      <div class="l-meta">~₹0.001/query · 100–200ms · handles ~20% of queries</div>
+      Retrieves the 3 most similar past questions, injects them as few-shot examples into the LLM prompt. Every query run by any user improves accuracy for all future similar queries.
+    </div>
+    <div class="arrow">↓ LLM called with context</div>
+    <div class="layer">
+      <div class="l-title">Layer 3 — LLM (Last Resort)</div>
+      <div class="l-meta">Groq Llama 3.3 70B (free) for simple · Claude Haiku for complex · handles &lt;10% over time</div>
+      Result is stored back to RAG so the same question never hits the LLM twice. Cost per query decreases as usage grows.
+    </div>
+    <div class="arrow">↓ SQL error</div>
+    <div class="layer">
+      <div class="l-title">Layer 4 — Execution Feedback Loop</div>
+      <div class="l-meta">SQL error sent back to LLM → retry once</div>
+      Catches column name mismatches and syntax errors automatically.
+    </div>
+  </div>
+
+  <div class="highlight">
+    <strong>Privacy guarantee:</strong> Before any LLM sees data, a tokeniser masks all PII. Vendor names become <code>VENDOR_T001</code>, amounts become <code>AMT_T002</code>. Real customer data never leaves the server in LLM prompts.
+  </div>
+
+  <div class="step">
+    <div class="step-title"><span class="step-num">4</span> Compliance Reconciliation</div>
+    <p>User goes to a connection → <strong>Reconcile tab</strong>. Selects a second compliance document to compare against. The system runs automated matching and surfaces every gap.</p>
+  </div>
+
+  <h2>Three Reconciliation Types</h2>
+
+  <h3>GL ↔ Form 26Q (TDS Reconciliation)</h3>
+  <p>Checks payment entries in the GL against TDS deducted in the 26Q return. Finds: payments above ₹30K where TDS wasn't deducted, wrong rates applied, missing deductee PANs.</p>
+
+  <h3>GL ↔ GSTR-1 (Outward Supply Reconciliation)</h3>
+  <p>Checks sales invoices in the GL against what was reported in the GSTR-1 filing. Finds: invoices filed but not in GL, amount mismatches, party name discrepancies.</p>
+
+  <h3>GL ↔ GSTR-2B (Vendor ITC Reconciliation) — Our Moat</h3>
+  <p>Checks purchase invoices in the GL against the government's GSTR-2B inward supply statement. This is what no other tool does proactively.</p>
+
+  <table>
+    <tr>
+      <th>Gap Code</th>
+      <th>Severity</th>
+      <th>What it means</th>
+      <th>Business impact</th>
+    </tr>
+    <tr>
+      <td><strong>G2BGL-002</strong></td>
+      <td><span class="pill critical">Critical</span></td>
+      <td>GL has invoice, GSTR-2B doesn't</td>
+      <td>Vendor hasn't filed GSTR-1 — ITC will be blocked on reversal</td>
+    </tr>
+    <tr>
+      <td><strong>G2BGL-003</strong></td>
+      <td><span class="pill review">Review</span></td>
+      <td>GSTR-2B has invoice, GL doesn't</td>
+      <td>ITC is available but was never booked — free money left unclaimed</td>
+    </tr>
+    <tr>
+      <td><strong>G2BGL-004</strong></td>
+      <td><span class="pill review">Review</span></td>
+      <td>Matched, but ITC marked ineligible</td>
+      <td>Credit blocked — shown with exact reason from GSTN</td>
+    </tr>
+    <tr>
+      <td><strong>G2BGL-005</strong></td>
+      <td><span class="pill review">Review</span></td>
+      <td>Vendor name mismatch on same invoice</td>
+      <td>Possible wrong-vendor booking in GL</td>
+    </tr>
+    <tr>
+      <td><strong>G2BGL-001</strong></td>
+      <td><span class="pill info">Info</span></td>
+      <td>Overall purchase vs taxable total variance</td>
+      <td>Summary-level mismatch flag</td>
+    </tr>
+  </table>
+
+  <div class="step">
+    <div class="step-title"><span class="step-num">5</span> Vendor ITC Scorecard</div>
+    <p>After reconciliation runs, per-vendor compliance scores are persisted permanently (surviving the 90-day file expiry). User goes to <strong>Vendor ITC Scorecard</strong> on the connection page to see:</p>
+    <ul>
+      <li><strong>Red vendors</strong> — &gt;30% of invoices at risk across trailing periods</li>
+      <li><strong>Amber vendors</strong> — 10–30% at risk, watching</li>
+      <li><strong>Green vendors</strong> — ≤10% risk, consistently filing</li>
+      <li>₹ ITC at risk per vendor for the current period</li>
+      <li>Period-by-period history table per vendor — expandable</li>
+    </ul>
+    <p style="margin-top:6px">This is the <strong>first time Indian SMEs can see which vendors are a compliance risk before the government reversal notice arrives.</strong></p>
+  </div>
+
+  <div class="step">
+    <div class="step-title"><span class="step-num">6</span> Daily Pulse — Automated Alerts</div>
+    <p>User enables Daily Pulse on a connection. Every morning at 8 AM, the system automatically:</p>
+    <ul>
+      <li>Computes a financial snapshot (account balances, movement totals)</li>
+      <li>Checks for TDS gaps on recent payment entries</li>
+      <li>Checks for vendor GST filing risk from persisted compliance records</li>
+      <li>Alerts on upcoming compliance deadlines (GSTR-1 due, advance tax dates)</li>
+      <li>Emails the admin a severity-coded digest</li>
+      <li>Stores the digest in-app for review anytime</li>
+    </ul>
+    <p style="margin-top:6px">Cadence: Daily or Weekly. Individual alert categories can be snoozed.</p>
+  </div>
+
+  <!-- Supporting features -->
+  <h1>Supporting Features</h1>
+  <div class="feature-grid">
+    <div class="feature-card">
+      <div class="f-title">🔍 Data Quality Scan</div>
+      <div class="f-desc">Flags missing dates, inconsistent voucher types, duplicate entries, suspicious transactions</div>
+    </div>
+    <div class="feature-card">
+      <div class="f-title">📈 Flux Analysis</div>
+      <div class="f-desc">Period-over-period variance on account balances — automatic explanations</div>
+    </div>
+    <div class="feature-card">
+      <div class="f-title">🗺️ Account Mapping</div>
+      <div class="f-desc">Maps raw Tally/Zoho account names to a standard chart of accounts</div>
+    </div>
+    <div class="feature-card">
+      <div class="f-title">📋 Schema Inspector</div>
+      <div class="f-desc">Shows detected columns, canonical mappings, and data confidence scores</div>
+    </div>
+    <div class="feature-card">
+      <div class="f-title">🔔 Period Close Assistant</div>
+      <div class="f-desc">Guided checklist for monthly close — marks tasks complete as checks pass</div>
+    </div>
+    <div class="feature-card">
+      <div class="f-title">🔑 API Access</div>
+      <div class="f-desc">Programmatic API keys for integration with existing finance workflows (roadmap)</div>
+    </div>
+  </div>
+
+  <!-- Why defensible -->
+  <h1>Why AccountIQ is Defensible</h1>
+  <table class="moat-table">
+    <tr>
+      <th>Problem</th>
+      <th>What existing tools do</th>
+      <th>What AccountIQ does</th>
+    </tr>
+    <tr>
+      <td>"What's my cash balance?"</td>
+      <td>Export to Excel, build pivot table</td>
+      <td>Ask in plain English, answer in &lt;1 second</td>
+    </tr>
+    <tr>
+      <td>TDS compliance check</td>
+      <td>CA checks manually, once a quarter</td>
+      <td>Auto-flagged on every payment entry</td>
+    </tr>
+    <tr>
+      <td>GSTR-1 reconciliation</td>
+      <td>CA compares printouts manually</td>
+      <td>Automated gap list in seconds</td>
+    </tr>
+    <tr>
+      <td><strong>GSTR-2B vendor ITC tracking</strong></td>
+      <td><strong>Nobody checks until reversal notice</strong></td>
+      <td><strong>Proactive alert before damage hits</strong></td>
+    </tr>
+    <tr>
+      <td>Monthly financial reports</td>
+      <td>Wait for accountant (days)</td>
+      <td>Daily automated digest in email</td>
+    </tr>
+    <tr>
+      <td>Hindi/Hinglish queries</td>
+      <td>Not supported anywhere</td>
+      <td>Native support built into tokeniser</td>
+    </tr>
+  </table>
+
+  <p style="margin-top:10px">The 50+ template library encodes Indian SME finance knowledge (Tally voucher types, GST invoice naming conventions, Indian fiscal year logic) that cannot be replicated with a generic ChatGPT wrapper. The RAG system means the product gets smarter with every query — cost per query decreases as usage grows, while accuracy increases.</p>
+
+  <!-- Pricing -->
+  <h1>Pricing</h1>
+  <div class="pricing-grid">
+    <div class="price-card">
+      <div class="plan">Starter</div>
+      <div class="price">₹999<span>/month</span></div>
+      <ul class="features">
+        <li>1 connection</li>
+        <li>Query Studio</li>
+        <li>Basic reconciliation</li>
+        <li>Daily Pulse alerts</li>
+        <li>90-day data retention</li>
+      </ul>
+    </div>
+    <div class="price-card featured">
+      <div class="plan">Pro</div>
+      <div class="price">₹2,499<span>/month</span></div>
+      <ul class="features">
+        <li>5 connections</li>
+        <li>All reconciliation types</li>
+        <li>GSTR-2B Vendor Scorecard</li>
+        <li>Flux Analysis</li>
+        <li>Priority support</li>
+      </ul>
+    </div>
+    <div class="price-card">
+      <div class="plan">Enterprise</div>
+      <div class="price">₹5,999<span>/month</span></div>
+      <ul class="features">
+        <li>Unlimited connections</li>
+        <li>API access</li>
+        <li>Custom templates</li>
+        <li>Dedicated onboarding</li>
+        <li>SLA guarantee</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Tech Stack -->
+  <h1>Tech Stack</h1>
+  <h3>Frontend</h3>
+  <div class="tech-row">
+    <span class="tech-tag">Next.js 14</span>
+    <span class="tech-tag">Tailwind CSS</span>
+    <span class="tech-tag">shadcn/ui</span>
+    <span class="tech-tag">TypeScript</span>
+  </div>
+  <h3>Backend</h3>
+  <div class="tech-row">
+    <span class="tech-tag">Next.js API Routes</span>
+    <span class="tech-tag">Prisma ORM</span>
+    <span class="tech-tag">PostgreSQL (AWS RDS)</span>
+    <span class="tech-tag">pnpm monorepo</span>
+  </div>
+  <h3>AI / LLM</h3>
+  <div class="tech-row">
+    <span class="tech-tag">Groq Llama 3.3 70B</span>
+    <span class="tech-tag">Claude Haiku (fallback)</span>
+    <span class="tech-tag">RAG (text similarity)</span>
+    <span class="tech-tag">Custom tokeniser (PII masking)</span>
+  </div>
+  <h3>Infrastructure</h3>
+  <div class="tech-row">
+    <span class="tech-tag">AWS EC2</span>
+    <span class="tech-tag">PM2</span>
+    <span class="tech-tag">nginx + Certbot SSL</span>
+    <span class="tech-tag">Razorpay billing</span>
+  </div>
+
+  <!-- Current Status -->
+  <h1>Current Status</h1>
+  <table>
+    <tr><th>Feature</th><th>Status</th></tr>
+    <tr><td>GL upload + Query Studio (Ask AI)</td><td>✅ Live</td></tr>
+    <tr><td>Form 26Q TDS Reconciliation</td><td>✅ Live</td></tr>
+    <tr><td>GSTR-1 Outward Supply Reconciliation</td><td>✅ Live</td></tr>
+    <tr><td>GSTR-2B Vendor ITC Reconciliation</td><td>✅ Live</td></tr>
+    <tr><td>Vendor ITC Scorecard (risk bands)</td><td>✅ Live</td></tr>
+    <tr><td>Daily Pulse email alerts</td><td>✅ Live</td></tr>
+    <tr><td>Razorpay billing &amp; subscriptions</td><td>✅ Live</td></tr>
+    <tr><td>Data Quality Scan, Flux Analysis</td><td>✅ Live</td></tr>
+    <tr><td>Tally direct connector</td><td>🔜 Roadmap</td></tr>
+    <tr><td>Zoho Books direct connector</td><td>🔜 Roadmap</td></tr>
+    <tr><td>Live GSTN API pull (GSTR-2B auto-fetch)</td><td>🔜 Roadmap</td></tr>
+    <tr><td>Vector embedding RAG (Phase 2)</td><td>🔜 Next sprint</td></tr>
+  </table>
+
+  <div class="footer">
+    AccountIQ · acctqai.com · chirag@canvas.space · Confidential — June 2026
+  </div>
+
+</div>
+</body>
+</html>

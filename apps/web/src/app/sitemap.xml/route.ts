@@ -1,20 +1,31 @@
 import { NextResponse } from "next/server";
+import { ARTICLES } from "../resources/articles";
 
 // lastmod must reflect the actual date content was last changed.
 // Using a dynamic "today" for every page would waste Google's crawl budget
 // by signalling a change on every request. Static pages get a real date.
 const STATIC_PAGES = [
-  { path: "/",        priority: "1.0", changefreq: "monthly", lastmod: "2026-06-22" },
-  { path: "/pricing", priority: "0.9", changefreq: "monthly", lastmod: "2026-06-22" },
-  { path: "/contact", priority: "0.7", changefreq: "yearly",  lastmod: "2026-06-22" },
-  { path: "/terms",   priority: "0.3", changefreq: "yearly",  lastmod: "2026-06-01" },
-  { path: "/privacy", priority: "0.3", changefreq: "yearly",  lastmod: "2026-06-01" },
+  { path: "/",              priority: "1.0", changefreq: "monthly", lastmod: "2026-07-10" },
+  { path: "/sample-report", priority: "0.9", changefreq: "monthly", lastmod: "2026-07-10" },
+  { path: "/pricing",       priority: "0.9", changefreq: "monthly", lastmod: "2026-07-10" },
+  { path: "/resources",     priority: "0.8", changefreq: "weekly",  lastmod: "2026-07-10" },
+  { path: "/contact",       priority: "0.7", changefreq: "yearly",  lastmod: "2026-06-22" },
+  { path: "/terms",         priority: "0.3", changefreq: "yearly",  lastmod: "2026-06-01" },
+  { path: "/privacy",       priority: "0.3", changefreq: "yearly",  lastmod: "2026-06-01" },
 ];
 
 export function GET() {
   const domain = process.env.DOMAIN ?? "https://acctqai.com";
 
-  const urls = STATIC_PAGES.map(
+  // Content-hub articles — sourced from the shared registry so new posts appear
+  // automatically with their real lastmod.
+  const articlePages = ARTICLES.map((a) => ({
+    path: `/resources/${a.slug}`, priority: "0.7", changefreq: "monthly", lastmod: a.updated,
+  }));
+
+  const allPages = [...STATIC_PAGES, ...articlePages];
+
+  const urls = allPages.map(
     ({ path, priority, changefreq, lastmod }) => `  <url>
     <loc>${domain}${path}</loc>
     <lastmod>${lastmod}</lastmod>

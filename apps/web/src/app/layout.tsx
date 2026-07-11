@@ -7,9 +7,9 @@ const inter = Inter({ subsets: ["latin"] });
 
 const SITE_URL = process.env.DOMAIN ?? "https://acctqai.com";
 const SITE_NAME = "AccountIQ";
-const TITLE = "AccountIQ — Know what deserves your attention before it costs you money";
+const TITLE = "GSTR-2B Reconciliation Software for CAs & SMEs | AccountIQ";
 const DESCRIPTION =
-  "AccountIQ is a financial investigation platform for Indian finance teams. Upload your books and it surfaces GST risks, vendor issues, duplicate payments, cash leaks and opportunities — each with the evidence and the action to take, before month-end.";
+  "Reconcile GSTR-2B with your books. Catch blocked ITC, duplicate payments and cash risks — each with the evidence and the action to take. Built for Indian CAs & SMEs.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -19,14 +19,15 @@ export const metadata: Metadata = {
   },
   description: DESCRIPTION,
   keywords: [
-    "financial investigation platform",
-    "GST reconciliation India",
-    "GSTR-2B ITC tracking",
-    "vendor compliance India",
+    "GSTR-2B reconciliation",
+    "GST reconciliation software",
+    "input tax credit reconciliation",
+    "ITC mismatch GSTR-2B",
     "duplicate payment detection",
-    "month end close India",
-    "TDS reconciliation tool",
-    "finance team software India",
+    "GSTR-2B vs purchase register",
+    "GST reconciliation for CA",
+    "Tally GST reconciliation",
+    "vendor GSTR-1 not filed ITC",
     "AccountIQ",
   ],
   authors: [{ name: "AccountIQ", url: SITE_URL }],
@@ -44,13 +45,13 @@ export const metadata: Metadata = {
     siteName: SITE_NAME,
     title: TITLE,
     description: DESCRIPTION,
-    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "AccountIQ — Financial Investigation Platform" }],
+    // Preview image is supplied by app/opengraph-image.tsx (generated PNG).
   },
   twitter: {
     card: "summary_large_image",
     title: TITLE,
     description: DESCRIPTION,
-    images: ["/og-image.png"],
+    // Preview image is supplied by app/twitter-image.tsx (generated PNG).
   },
   alternates: {
     canonical: SITE_URL,
@@ -59,24 +60,43 @@ export const metadata: Metadata = {
 
 // ─── Root layout ──────────────────────────────────────────────────────────────
 
-const jsonLd = {
-  "@context": "https://schema.org",
-  "@type": "SoftwareApplication",
-  name: "AccountIQ",
-  url: SITE_URL,
-  applicationCategory: "BusinessApplication",
-  operatingSystem: "Web",
-  description: DESCRIPTION,
-  offers: {
-    "@type": "Offer",
-    price: "999",
-    priceCurrency: "INR",
-    priceSpecification: {
-      "@type": "UnitPriceSpecification",
-      billingDuration: "P1M",
+const jsonLd = [
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "AccountIQ",
+    url: SITE_URL,
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    description: DESCRIPTION,
+    offers: {
+      "@type": "Offer",
+      price: "999",
+      priceCurrency: "INR",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        billingDuration: "P1M",
+      },
     },
   },
-};
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: SITE_NAME,
+    url: SITE_URL,
+    logo: `${SITE_URL}/opengraph-image`,
+    description:
+      "AccountIQ investigates the books of Indian SMEs and their CAs — surfacing GST/ITC risk, duplicate payments and cash leaks with evidence and recommended actions.",
+    areaServed: "IN",
+    knowsAbout: [
+      "GST reconciliation",
+      "GSTR-2B input tax credit",
+      "duplicate payment detection",
+      "vendor compliance",
+      "month-end close",
+    ],
+  },
+];
 
 export default function RootLayout({
   children,

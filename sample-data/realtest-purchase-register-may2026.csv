@@ -1,0 +1,13 @@
+transaction_date,voucher_type,account_name,account_group,description,party_name,reference_number,debit_amount,credit_amount,net_amount
+2026-05-04,Purchase,Steel & Metal Purchases,Direct Expenses,MS steel coils - 12mm,Mahalaxmi Steel Rolling Mills,MSRM/26/0412,105020,0,89000
+2026-05-09,Purchase,Steel & Metal Purchases,Direct Expenses,Steel rounds - EN8,Mahalaxmi Steel Rolling Mills,MSRM/26/0447,79060,0,67000
+2026-05-06,Purchase,Freight Inward,Direct Expenses,Inward freight - steel consignment,Deccan Freight Carriers,DFC-2026-0221,40710,0,34500
+2026-05-12,Purchase,Packing Material,Direct Expenses,Corrugated boxes & strapping,Shree Packaging Industries,SPI/INV/2605,25724,0,21800
+2026-05-15,Purchase,Tools & Consumables,Indirect Expenses,Carbide cutting tools,Kirloskar Tools Supply,KTS-2026-089,18408,0,15600
+2026-05-18,Purchase,Lubricants & Oils,Indirect Expenses,Machine lubricant - 200L,Sunrise Lubricants,SL-2026-334,14632,0,12400
+2026-05-20,Purchase,Chemicals & Solvents,Direct Expenses,Industrial solvents,Poona Chemicals & Solvents,PCS-2026-118,49560,0,42000
+2026-05-22,Purchase,Electrical Maintenance,Indirect Expenses,Control panel spares,Nashik Electricals,NE/2026/077,11564,0,9800
+2026-05-24,Purchase,Chemicals & Solvents,Direct Expenses,Degreasing chemicals,Poona Chemicals & Solvents,PCS-2026-145,33040,0,28000
+2026-05-26,Purchase,Freight Inward,Direct Expenses,Outstation transport - dispatch,Vidarbha Transport Co,VTC-26-1189,28320,0,24000
+2026-05-28,Purchase,Fasteners & Hardware,Direct Expenses,High-tensile bolts & nuts,Bharat Fasteners Pvt Ltd,BF/2026/512,21830,0,18500
+2026-05-30,Purchase,Office Supplies,Indirect Expenses,Stationery & consumables,Gupta Trading Company,GT-2026-77,7316,0,6200

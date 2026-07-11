@@ -85,9 +85,12 @@ export function filterSalesRows(rows: GlRow[]): GlRow[] {
 
 const PURCHASE_KEYWORDS = [
   "purchase", "inward supply", "purchase invoice", "expense", "gst purchase",
+  "purc", "creditor", "raw material", "input",
 ];
 
-const PURCHASE_VOUCHER_TYPES = ["purchase", "purchase invoice", "bill"];
+const PURCHASE_VOUCHER_TYPES = [
+  "purchase", "purchase invoice", "bill", "purc", "purchase a/c", "gst purchase",
+];
 
 export function filterPurchaseRows(rows: GlRow[]): GlRow[] {
   return rows.filter((row) => {
@@ -99,6 +102,39 @@ export function filterPurchaseRows(rows: GlRow[]): GlRow[] {
       PURCHASE_VOUCHER_TYPES.some((vt) => voucher.includes(vt))
     );
   });
+}
+
+// ─── Payment keyword filter ───────────────────────────────────────────────────
+// Payments made out — the pool the duplicate-payment investigation scans.
+
+const PAYMENT_KEYWORDS = ["payment to", "paid to", "vendor payment", "supplier payment"];
+
+const PAYMENT_VOUCHER_TYPES = [
+  "payment", "bank payment", "cash payment", "contra", "pymt", "bank pymt", "payment voucher",
+];
+
+export function filterPaymentRows(rows: GlRow[]): GlRow[] {
+  return rows.filter((row) => {
+    const fields = [row.account_name, row.account_group, row.description]
+      .filter(Boolean).map((f) => f!.toLowerCase());
+    const voucher = (row.voucher_type ?? "").toLowerCase();
+    return (
+      PAYMENT_VOUCHER_TYPES.some((vt) => voucher.includes(vt)) ||
+      fields.some((f) => PAYMENT_KEYWORDS.some((kw) => f.includes(kw)))
+    );
+  });
+}
+
+// ─── Invoice-number normalisation ─────────────────────────────────────────────
+// Strip separators and leading zeros so "INV/2024/001" and "INV-2024-1" match.
+
+export function normalizeInvoiceNo(ref: string | null | undefined): string {
+  if (!ref) return "";
+  return String(ref)
+    .toUpperCase()
+    .replace(/[\s/\-_.#]/g, "")           // drop separators
+    .replace(/(^|[A-Z])0+(\d)/g, "$1$2")  // drop leading zeros in numeric runs
+    .trim();
 }
 
 // ─── Amount helpers ───────────────────────────────────────────────────────────

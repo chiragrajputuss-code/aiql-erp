@@ -6,6 +6,7 @@ import {
   Search, ShieldCheck, ArrowRight, IndianRupee,
   TrendingUp, Check, Menu, X, Receipt, Wallet, Users,
   FileText, Sparkles, Lock, CheckCircle2, ChevronRight, EyeOff, ServerCog,
+  Building2, Briefcase, Layers, Fingerprint, FileSearch, Boxes, Loader2,
 } from "lucide-react";
 
 // ─── Brand ───────────────────────────────────────────────────────────────────
@@ -108,9 +109,10 @@ const PLANS = [
 function Navbar() {
   const [open, setOpen] = useState(false);
   const links = [
+    { label: "For CAs", href: "#for-cas" },
     { label: "How it works", href: "#how-it-works" },
-    { label: "What we investigate", href: "#investigates" },
     { label: "Pricing", href: "#pricing" },
+    { label: "Resources", href: "/resources" },
     { label: "Sample report", href: "/sample-report" },
   ];
   return (
@@ -304,6 +306,148 @@ function PrivacyShowcase() {
   );
 }
 
+// ─── Practice scanner (the CA multiplier) ─────────────────────────────────────
+//
+// Shows the OUTCOME of one pass across a whole client book: books scanned,
+// issues found, money surfaced — with findings streaming in. Client identities
+// are masked (•). The finding *types* are the value we show; the detection
+// method is never shown here or anywhere. This doubles as the privacy signal.
+
+type ScanTone = "critical" | "warning" | "opportunity";
+
+const SCAN_TONE: Record<ScanTone, { dot: string; text: string; chip: string }> = {
+  critical:    { dot: "bg-red-500",     text: "text-red-600",     chip: "border-red-200 bg-red-50" },
+  warning:     { dot: "bg-amber-500",   text: "text-amber-600",   chip: "border-amber-200 bg-amber-50" },
+  opportunity: { dot: "bg-emerald-500", text: "text-emerald-600", chip: "border-emerald-200 bg-emerald-50" },
+};
+
+type ScanClient = { name: string; issue: null | { label: string; tone: ScanTone; amount: number } };
+
+const SCAN_CLIENTS: ScanClient[] = [
+  { name: "M••••• Steel Pvt Ltd",  issue: { label: "Duplicate payment",         tone: "critical",    amount: 54000 } },
+  { name: "S•••• Traders",         issue: null },
+  { name: "V••••• Transport Co",   issue: { label: "ITC at risk · unfiled",     tone: "critical",    amount: 76700 } },
+  { name: "B•••• Tools & Dies",    issue: null },
+  { name: "P•••• Chemicals",       issue: { label: "ITC marked ineligible",     tone: "warning",     amount: 9324 } },
+  { name: "R•••• Auto Components", issue: { label: "Receivables aged 74+ days",  tone: "warning",     amount: 210000 } },
+  { name: "N•••• Electricals",     issue: null },
+  { name: "G•••• Fasteners",       issue: { label: "ITC available, not booked",  tone: "opportunity", amount: 15000 } },
+  { name: "A•••• Packaging",       issue: null },
+  { name: "K•••• Textiles",        issue: { label: "Duplicate vendor bill",      tone: "critical",    amount: 38200 } },
+  { name: "D•••• Logistics",       issue: null },
+  { name: "S•••• Pharma Dist.",    issue: null },
+];
+
+function PracticeScanner() {
+  const ref = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(false);
+  const [step, setStep] = useState(0);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) setActive(true); }, { threshold: 0.3 });
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!active) return;
+    const N = SCAN_CLIENTS.length;
+    const t = setInterval(() => setStep((s) => (s >= N + 7 ? 0 : s + 1)), 360); // pause ~7 ticks, then replay
+    return () => clearInterval(t);
+  }, [active]);
+
+  const done = Math.min(step, SCAN_CLIENTS.length);
+  const scanning = step < SCAN_CLIENTS.length ? step : -1;
+  const resolved = SCAN_CLIENTS.slice(0, done);
+  const issues = resolved.filter((c) => c.issue);
+  const money = issues.reduce((s, c) => s + (c.issue?.amount ?? 0), 0);
+  const stream = issues.slice(-3).reverse();
+
+  return (
+    <div ref={ref} className="bg-white rounded-2xl shadow-2xl border border-slate-200 overflow-hidden">
+      {/* chrome */}
+      <div className="bg-slate-50 border-b border-slate-200 px-4 py-3 flex items-center justify-between">
+        <span className="text-xs text-slate-500 font-medium flex items-center gap-1.5">
+          <FileSearch className="h-3.5 w-3.5" /> Practice Scan · May 2026
+        </span>
+        <span className="text-[10px] font-semibold text-slate-400 flex items-center gap-1">
+          {done < SCAN_CLIENTS.length
+            ? <><Loader2 className="h-3 w-3 animate-spin" /> scanning…</>
+            : <><Check className="h-3 w-3 text-emerald-500" /> one pass complete</>}
+        </span>
+      </div>
+
+      {/* live stats */}
+      <div className="grid grid-cols-3 divide-x divide-slate-100 border-b border-slate-100">
+        {[
+          { label: "Client books", val: `${done}/${SCAN_CLIENTS.length}`, tone: "text-slate-900" },
+          { label: "Issues found", val: `${issues.length}`,               tone: "text-red-600" },
+          { label: "Money found",  val: `₹${money.toLocaleString("en-IN")}`, tone: "text-emerald-600" },
+        ].map((s) => (
+          <div key={s.label} className="px-3 py-3 text-center">
+            <p className={`text-lg font-extrabold tabular-nums ${s.tone}`}>{s.val}</p>
+            <p className="text-[10px] uppercase tracking-wide text-slate-400 font-semibold mt-0.5">{s.label}</p>
+          </div>
+        ))}
+      </div>
+
+      <div className="grid sm:grid-cols-2">
+        {/* client grid */}
+        <div className="p-3 grid grid-cols-1 gap-1.5 border-r border-slate-100">
+          {SCAN_CLIENTS.map((c, i) => {
+            const isDone = i < done;
+            const isScan = i === scanning;
+            const tone = c.issue ? SCAN_TONE[c.issue.tone] : null;
+            return (
+              <div
+                key={i}
+                className={`flex items-center gap-2 rounded-lg px-2.5 py-1.5 text-[11px] border transition-all duration-300 ${
+                  isScan ? "border-blue-200 bg-blue-50"
+                  : isDone && tone ? tone.chip
+                  : isDone ? "border-slate-100 bg-slate-50"
+                  : "border-transparent bg-slate-50/40 opacity-40"
+                }`}
+              >
+                {isScan
+                  ? <Loader2 className="h-3 w-3 text-blue-500 animate-spin shrink-0" />
+                  : isDone && tone ? <span className={`h-2 w-2 rounded-full ${tone.dot} shrink-0`} />
+                  : isDone ? <Check className="h-3 w-3 text-emerald-500 shrink-0" />
+                  : <span className="h-2 w-2 rounded-full bg-slate-200 shrink-0" />}
+                <span className="font-medium text-slate-500 truncate">{c.name}</span>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* finding stream */}
+        <div className="p-3 space-y-2 bg-slate-50/40 min-h-[220px]">
+          <p className="text-[10px] uppercase tracking-wide text-slate-400 font-semibold px-0.5">Findings as they surface</p>
+          {stream.length === 0 && (
+            <p className="text-[11px] text-slate-400 px-0.5 pt-2">Scanning your client book…</p>
+          )}
+          {stream.map((c, i) => {
+            const tone = SCAN_TONE[c.issue!.tone];
+            return (
+              <div key={`${c.name}-${i}`} className={`rounded-lg border ${tone.chip} p-2.5 animate-in fade-in slide-in-from-right-2 duration-500`}>
+                <div className="flex items-center justify-between gap-2">
+                  <span className={`h-2 w-2 rounded-full ${tone.dot}`} />
+                  <span className={`text-xs font-bold tabular-nums ml-auto ${tone.text}`}>₹{c.issue!.amount.toLocaleString("en-IN")}</span>
+                </div>
+                <p className="text-[12px] font-semibold text-slate-800 mt-1">{c.issue!.label}</p>
+                <p className="text-[10px] text-slate-500 mt-0.5 flex items-center gap-1">
+                  <Lock className="h-2.5 w-2.5" /> {c.name}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function LandingPage() {
@@ -317,14 +461,14 @@ export default function LandingPage() {
           <div className="flex flex-col lg:flex-row items-center gap-14">
             <div className="flex-1 space-y-7">
               <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-100 rounded-full px-4 py-1.5 text-sm font-medium">
-                <ShieldCheck className="h-3.5 w-3.5" /> Financial investigations for Indian finance teams
+                <ShieldCheck className="h-3.5 w-3.5" /> For Indian finance teams &amp; the CAs who run their books
               </div>
               <h1 className="text-4xl lg:text-[3.3rem] font-bold text-[#1B3A5C] leading-[1.08]">
                 Stop searching through reports.<br />
                 <span className="text-blue-600">Know exactly what needs your attention</span> before you close your books.
               </h1>
               <p className="text-lg text-slate-600 max-w-xl leading-relaxed">
-                AccountIQ investigates your books and flags <strong className="text-slate-800">GST risks, vendor issues, unusual expenses, compliance gaps and cash-flow changes</strong> — so your team knows what to fix first.
+                AccountIQ investigates your books and flags <strong className="text-slate-800">GST risks, vendor issues, unusual expenses, compliance gaps and cash-flow changes</strong> — so your team knows what to fix first. <span className="text-slate-800 font-medium">One business or a hundred client books — investigated in a single pass.</span>
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-[#1B3A5C] text-white px-7 py-4 rounded-xl font-semibold text-base hover:bg-[#1B3A5C]/90 transition-colors shadow-lg shadow-[#1B3A5C]/20">
@@ -343,6 +487,69 @@ export default function LandingPage() {
               <HeroPreview />
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── For Chartered Accountants (the multiplier) ── */}
+      <section id="for-cas" className="py-20 px-6 bg-gradient-to-b from-white to-slate-50 border-y border-slate-100">
+        <div className="max-w-6xl mx-auto">
+          <Reveal>
+            <div className="text-center max-w-2xl mx-auto mb-12">
+              <div className="inline-flex items-center gap-2 bg-[#1B3A5C]/[0.06] text-[#1B3A5C] border border-[#1B3A5C]/10 rounded-full px-4 py-1.5 text-sm font-semibold">
+                <Briefcase className="h-3.5 w-3.5" /> For Chartered Accountants
+              </div>
+              <h2 className="text-3xl font-bold text-[#1B3A5C] mt-4">One pass across your entire client book.</h2>
+              <p className="text-lg text-slate-600 mt-3">
+                Stop rebuilding the same reconciliation for every client. Run every book through the same investigation at once — and get a prioritised list of what to fix, and what to bill for, per client.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid lg:grid-cols-2 gap-10 items-center">
+            <Reveal>
+              <div>
+                <ul className="space-y-4">
+                  {[
+                    { icon: <Layers className="h-4 w-4" />,   t: "Your whole book, in minutes", d: "Point AccountIQ at each client's Tally or ERP export. Every book is investigated in the same pass — no per-client setup." },
+                    { icon: <Search className="h-4 w-4" />,   t: "Catch it before the auditor does", d: "Blocked ITC, duplicate payments, ineligible credit — flagged with the evidence, so you're never the one who missed it." },
+                    { icon: <IndianRupee className="h-4 w-4" />, t: "Turn month-end into billable value", d: "Hand each client a health check that finds real money. What was unbillable review becomes a service you charge for." },
+                    { icon: <Fingerprint className="h-4 w-4" />, t: "Their data stays protected", d: "Every client's names, references and amounts are masked before anything is processed — and never shown to any AI model." },
+                  ].map((x) => (
+                    <li key={x.t} className="flex gap-3.5">
+                      <span className="w-9 h-9 rounded-lg bg-[#1B3A5C]/[0.06] text-[#1B3A5C] flex items-center justify-center shrink-0">{x.icon}</span>
+                      <div>
+                        <p className="font-semibold text-slate-800">{x.t}</p>
+                        <p className="text-slate-600 text-sm mt-0.5 leading-relaxed">{x.d}</p>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* defensibility — depth without the recipe */}
+                <div className="mt-7 rounded-xl border border-slate-200 bg-white p-4 flex items-start gap-3">
+                  <Boxes className="h-5 w-5 text-[#1B3A5C] shrink-0 mt-0.5" />
+                  <p className="text-sm text-slate-600 leading-relaxed">
+                    <span className="font-semibold text-slate-800">40+ cross-checks run on every book</span>, and the library grows each month. The findings are yours — the engine that produces them stays ours.
+                  </p>
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <PracticeScanner />
+            </Reveal>
+          </div>
+
+          <Reveal>
+            <div className="flex flex-col sm:flex-row gap-3 justify-center mt-12">
+              <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-[#1B3A5C] text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-[#1B3A5C]/90 transition-colors shadow-lg shadow-[#1B3A5C]/20">
+                Bring AccountIQ to your practice <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link href="/sample-report" className="inline-flex items-center justify-center gap-2 bg-white text-slate-700 px-7 py-3.5 rounded-xl font-semibold border border-slate-200 hover:border-slate-400 transition-colors">
+                See what a client report looks like
+              </Link>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -666,6 +873,7 @@ export default function LandingPage() {
               <div className="space-y-2">
                 <p className="text-slate-200 font-semibold mb-3">Product</p>
                 <Link href="/sample-report" className="block hover:text-white">Sample report</Link>
+                <Link href="/resources" className="block hover:text-white">Resources</Link>
                 <a href="#how-it-works" className="block hover:text-white">How it works</a>
                 <a href="#pricing" className="block hover:text-white">Pricing</a>
               </div>

@@ -14,12 +14,18 @@ const PUBLIC_PATHS = [
   "/contact",
   "/pricing",
   "/sample-report",
+  "/resources",
   "/terms",
   "/privacy",
   "/sitemap.xml",
   "/robots.txt",
   "/_next",
   "/favicon.ico",
+  // Generated metadata images — social/search crawlers fetch these unauthenticated.
+  "/opengraph-image",
+  "/twitter-image",
+  "/icon",
+  "/apple-icon",
 ];
 
 export function middleware(request: NextRequest) {

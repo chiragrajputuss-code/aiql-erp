@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>AccountIQ — Product Overview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; font-size: 12.5px; line-height: 1.55; color: #1a202c; }
+  .page { max-width: 800px; margin: 0 auto; padding: 44px 52px; }
+  .cover { text-align: center; padding: 50px 0 34px; border-bottom: 3px solid #1B3A5C; margin-bottom: 30px; }
+  .cover .logo { font-size: 34px; font-weight: 800; color: #1B3A5C; letter-spacing: -1px; }
+  .cover .logo span { color: #2563EB; }
+  .cover .tagline { font-size: 16px; color: #2D3748; margin-top: 10px; font-weight: 600; }
+  .cover .sub { font-size: 13px; color: #718096; margin-top: 6px; }
+  .cover .badges { display: flex; justify-content: center; gap: 8px; margin-top: 16px; flex-wrap: wrap; }
+  .badge { background: #EBF4FF; color: #1B3A5C; border: 1px solid #BEE3F8; border-radius: 20px; padding: 3px 12px; font-size: 11px; font-weight: 600; }
+  .badge.green { background: #F0FFF4; color: #276749; border-color: #9AE6B4; }
+  h1 { font-size: 19px; font-weight: 700; color: #1B3A5C; margin: 30px 0 10px; padding-bottom: 6px; border-bottom: 2px solid #EBF4FF; }
+  h2 { font-size: 14px; font-weight: 700; color: #2D3748; margin: 18px 0 5px; }
+  p { margin-bottom: 8px; color: #2D3748; }
+  ul { padding-left: 18px; margin: 6px 0 10px; }
+  li { margin-bottom: 3px; }
+  .highlight { background: linear-gradient(135deg, #EBF4FF 0%, #F0FFF4 100%); border: 1px solid #BEE3F8; border-radius: 8px; padding: 12px 16px; margin: 12px 0; }
+  .highlight strong { color: #1B3A5C; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 11.5px; }
+  th { background: #1B3A5C; color: white; padding: 7px 10px; text-align: left; font-size: 11px; font-weight: 600; }
+  td { padding: 6px 10px; border-bottom: 1px solid #E2E8F0; vertical-align: top; }
+  tr:nth-child(even) td { background: #F7FAFF; }
+  .pill { display: inline-block; border-radius: 10px; padding: 1px 8px; font-size: 10px; font-weight: 700; }
+  .pill.crit { background: #FEE2E2; color: #991B1B; } .pill.warn { background: #FEF3C7; color: #92400E; }
+  .pill.opp { background: #D1FAE5; color: #065F46; } .pill.live { background: #D1FAE5; color: #065F46; } .pill.soon { background: #E2E8F0; color: #475569; }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin: 8px 0; }
+  .card { border: 1px solid #E2E8F0; border-radius: 8px; padding: 10px 12px; background: #FAFAFA; }
+  .card .t { font-weight: 700; font-size: 12px; color: #1B3A5C; }
+  .card .d { font-size: 11px; color: #718096; margin-top: 2px; }
+  .pipeline { background: #F8FAFC; border: 1px solid #E2E8F0; border-radius: 10px; padding: 14px 18px; margin: 10px 0; font-size: 11px; }
+  .pipeline .layer { background: white; border: 1px solid #CBD5E0; border-radius: 6px; padding: 7px 11px; margin: 5px 0; }
+  .pipeline .arrow { text-align: center; color: #A0AEC0; font-size: 13px; }
+  .tag { background: #EDF2F7; border-radius: 4px; padding: 2px 8px; font-size: 11px; color: #2D3748; font-family: 'Courier New', monospace; display:inline-block; margin:2px; }
+  .footer { margin-top: 36px; padding-top: 14px; border-top: 2px solid #EBF4FF; text-align: center; font-size: 11px; color: #A0AEC0; }
+  .princ { counter-reset: p; }
+  .princ .row { display:flex; gap:10px; padding:5px 0; border-bottom:1px solid #EEF2F7; }
+  .princ .n { width:22px; height:22px; background:#1B3A5C; color:white; border-radius:50%; font-size:11px; font-weight:700; display:flex; align-items:center; justify-content:center; flex-shrink:0; }
+  @media print { .page { padding: 30px 40px; } table, .pipeline, .grid2 { page-break-inside: avoid; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="cover">
+    <div class="logo">Account<span>IQ</span></div>
+    <div class="tagline">The Financial Investigation Platform for Indian finance teams</div>
+    <div class="sub">Know what deserves your attention before it costs you money.</div>
+    <div class="badges">
+      <span class="badge">acctqai.com</span>
+      <span class="badge green">Investigation Engine — Live</span>
+      <span class="badge">Read-only · Evidence-backed</span>
+    </div>
+    <div class="sub" style="margin-top:14px">Product Overview · July 2026 · Confidential</div>
+  </div>
+
+  <h1>What AccountIQ Is</h1>
+  <p>AccountIQ connects to a company's accounting data — Tally exports, Zoho Books, or uploaded General Ledger and GST files — and <strong>automatically investigates the books</strong>. Instead of waiting for someone to ask the right question, it proactively surfaces GST risks, vendor issues, duplicate payments, unusual expenses, cash leaks and opportunities — each with the supporting evidence, the rupee impact, and a recommended action, before month-end.</p>
+  <div class="highlight">
+    <strong>The shift:</strong> AccountIQ is moving from an "AI query tool" (you must ask) to a <strong>Financial Investigation Platform</strong> (the system investigates and tells you what to fix first). The query engine becomes a drill-down capability — not the front door.
+  </div>
+
+  <h1>The Core Problem</h1>
+  <p>Indian SME finance teams lose real money to things they only discover after the fact:</p>
+  <ul>
+    <li><strong>Blocked ITC</strong> — a vendor doesn't file GSTR-1, so Input Tax Credit is reversed weeks later, with interest.</li>
+    <li><strong>Duplicate payments</strong> — the same invoice paid twice, caught (if ever) at year-end.</li>
+    <li><strong>Cash stuck</strong> in receivables nobody chased; <strong>TDS gaps</strong>; <strong>expense spikes</strong> nobody flagged.</li>
+  </ul>
+  <p>Today this is done manually — exporting reports, rebuilding pivots, eyeballing ledgers. AccountIQ automates the investigation.</p>
+
+  <h1>How It Works</h1>
+  <div class="pipeline">
+    <div class="layer"><b>1 · Upload</b> — Import your Tally/ERP export. Document types (GL, GSTR-2B, GSTR-1, Form 26Q…) are auto-detected; columns auto-mapped.</div>
+    <div class="arrow">↓</div>
+    <div class="layer"><b>2 · Investigate</b> — The engine reviews the data against GST records and history, and produces a prioritised report of findings.</div>
+    <div class="arrow">↓</div>
+    <div class="layer"><b>3 · Review &amp; act</b> — Each finding shows the evidence, ₹ impact and recommended action. Drill deeper by asking follow-up questions in plain English.</div>
+  </div>
+
+  <h1>Every Finding Answers Five Questions</h1>
+  <p>This is the trust model — no vague alerts, no black box. A finding isn't production-ready unless it answers all five:</p>
+  <table>
+    <tr><th>#</th><th>Question</th><th>Field</th></tr>
+    <tr><td>1</td><td>What business question does this answer?</td><td>businessQuestion</td></tr>
+    <tr><td>2</td><td>What evidence proves it?</td><td>evidence (materialised rows)</td></tr>
+    <tr><td>3</td><td>How much money / risk is involved?</td><td>impactRs</td></tr>
+    <tr><td>4</td><td>What should the team do next?</td><td>recommendation</td></tr>
+    <tr><td>5</td><td>How can they verify it?</td><td>verificationSteps</td></tr>
+  </table>
+
+  <h1>Eight Architecture Principles (frozen)</h1>
+  <div class="princ">
+    <div class="row"><span class="n">1</span><span>Business Context is resolved before execution begins.</span></div>
+    <div class="row"><span class="n">2</span><span>Investigations declare <b>capabilities</b> (e.g. GENERAL_LEDGER, INPUT_TAX_CREDIT), not connectors.</span></div>
+    <div class="row"><span class="n">3</span><span>The Runner resolves dependencies — investigations never self-discover data.</span></div>
+    <div class="row"><span class="n">4</span><span>Every investigation runs against an <b>immutable snapshot</b> (reproducible, no mid-run drift).</span></div>
+    <div class="row"><span class="n">5</span><span>The LLM <b>explains</b> evidence — it never generates it. One AI-written field only.</span></div>
+    <div class="row"><span class="n">6</span><span>Evidence is <b>materialised</b> at run time, so a finding survives the 90-day raw-data expiry.</span></div>
+    <div class="row"><span class="n">7</span><span>Findings are <b>superseded, never deleted</b> — full history for trends and disputes.</span></div>
+    <div class="row"><span class="n">8</span><span>Every finding declares its <b>resolution condition</b> (what makes it go away).</span></div>
+  </div>
+
+  <h1>Privacy by Design</h1>
+  <p>Sensitive fields — vendor and customer names, references and amounts — are <strong>encrypted and masked before any analysis runs</strong>, and are never exposed to any AI model. The platform is strictly <strong>read-only</strong>: it analyses your books, it never modifies them. Data is stored in AWS Mumbai (ap-south-1), isolated per organisation.</p>
+
+  <h1>The Investigation Library</h1>
+  <table>
+    <tr><th>Investigation</th><th>What it answers</th><th>Status</th></tr>
+    <tr><td><b>GST Vendor ITC</b></td><td>Which vendors are putting my Input Tax Credit at risk?</td><td><span class="pill live">LIVE</span></td></tr>
+    <tr><td>Vendor Risk</td><td>Which vendors need attention (filing trend, concentration)?</td><td><span class="pill soon">NEXT</span></td></tr>
+    <tr><td>Cash Health</td><td>Where is money moving; what's stuck in receivables?</td><td><span class="pill soon">NEXT</span></td></tr>
+    <tr><td>Duplicate Payment</td><td>Have we paid any invoice more than once?</td><td><span class="pill soon">PLANNED</span></td></tr>
+    <tr><td>Expense Analysis</td><td>Which expenses changed abnormally this month?</td><td><span class="pill soon">PLANNED</span></td></tr>
+    <tr><td>Profit / Margin</td><td>Why did profit or margin change?</td><td><span class="pill soon">PLANNED</span></td></tr>
+    <tr><td>Receivables / Working Capital</td><td>What's overdue; where can we free up cash?</td><td><span class="pill soon">PLANNED</span></td></tr>
+  </table>
+  <p style="font-size:11px;color:#718096">Adding an investigation = one file, registered in the registry — the runner and UI need no changes. The framework is the moat.</p>
+
+  <h1>Sample Investigation (what a report looks like)</h1>
+  <p>A live, interactive sample runs at <b>acctqai.com/sample-report</b> on fictional data. It produces findings such as:</p>
+  <table>
+    <tr><th>Finding</th><th>Severity</th><th>₹ Impact</th></tr>
+    <tr><td>3 vendors haven't filed GSTR-1 — ITC at risk</td><td><span class="pill crit">Critical</span></td><td>₹1,24,500</td></tr>
+    <tr><td>Duplicate payment to a steel vendor</td><td><span class="pill crit">Critical</span></td><td>₹68,000</td></tr>
+    <tr><td>Receivables stuck beyond 60 days</td><td><span class="pill warn">Attention</span></td><td>₹4,70,000</td></tr>
+    <tr><td>Marketing spend up 181% vs 3-month average</td><td><span class="pill warn">Attention</span></td><td>₹76,000</td></tr>
+    <tr><td>Unclaimed ITC available in GSTR-2B</td><td><span class="pill opp">Opportunity</span></td><td>₹25,000</td></tr>
+    <tr><td>TDS not deducted on professional fees</td><td><span class="pill warn">Attention</span></td><td>₹2,200</td></tr>
+  </table>
+
+  <h1>Supporting Capabilities</h1>
+  <div class="grid2">
+    <div class="card"><div class="t">GL ↔ GSTR-2B reconciliation</div><div class="d">Vendor ITC risk — the moat check.</div></div>
+    <div class="card"><div class="t">GL ↔ GSTR-1 reconciliation</div><div class="d">Outward-supply filing vs the books.</div></div>
+    <div class="card"><div class="t">GL ↔ Form 26Q (TDS)</div><div class="d">TDS deduction & deposit gaps.</div></div>
+    <div class="card"><div class="t">Vendor ITC Scorecard</div><div class="d">Per-vendor risk bands, persisted across months.</div></div>
+    <div class="card"><div class="t">Daily Pulse</div><div class="d">8 AM email — deadlines, TDS gaps, vendor filing risk.</div></div>
+    <div class="card"><div class="t">Drill-down Query (plain English)</div><div class="d">50+ templates → RAG → LLM. Now a follow-up tool.</div></div>
+    <div class="card"><div class="t">Data Quality Scan &amp; Flux</div><div class="d">Bad-data detection; period-over-period variance.</div></div>
+    <div class="card"><div class="t">Month-end Close engine</div><div class="d">Checklist, owners, status — not a WhatsApp sheet.</div></div>
+  </div>
+
+  <h1>Why Not Just Tally + Excel?</h1>
+  <table>
+    <tr><th>Without AccountIQ</th><th>With AccountIQ</th></tr>
+    <tr><td>Export reports, rebuild the same pivots monthly</td><td>Upload once — a prioritised report in minutes</td></tr>
+    <tr><td>Eyeball ledgers for anything unusual</td><td>Risks &amp; anomalies surfaced automatically</td></tr>
+    <tr><td>Find the GST mismatch after ITC is reversed</td><td>Catch blocked ITC before it's reversed</td></tr>
+    <tr><td>Hope nobody paid an invoice twice</td><td>Duplicate payments flagged with both vouchers</td></tr>
+    <tr><td>Prep management summaries by hand</td><td>The executive summary is written for you</td></tr>
+  </table>
+  <p><b>The ROI:</b> hours of month-end investigation become minutes — and the risks that cost real money are caught before they hit working capital.</p>
+
+  <h1>Pricing</h1>
+  <table>
+    <tr><th>Plan</th><th>Price</th><th>For</th></tr>
+    <tr><td>Starter</td><td>₹999/mo (₹9,990/yr)</td><td>One business or a CA with one entity</td></tr>
+    <tr><td>Growth</td><td>₹2,999/mo (₹29,990/yr)</td><td>Growing businesses &amp; multi-client CAs</td></tr>
+    <tr><td>Enterprise</td><td>Custom</td><td>Large firms, multi-entity groups, CFO offices</td></tr>
+  </table>
+  <p style="font-size:11px;color:#718096">Simple pricing — no usage limits, no AI credits, no hidden costs. 14-day free trial.</p>
+
+  <h1>Tech Stack</h1>
+  <h2>Frontend</h2>
+  <div><span class="tag">Next.js 14</span><span class="tag">Tailwind CSS</span><span class="tag">TypeScript</span></div>
+  <h2>Backend &amp; Data</h2>
+  <div><span class="tag">Prisma ORM</span><span class="tag">PostgreSQL (AWS RDS Mumbai)</span><span class="tag">pnpm monorepo</span><span class="tag">pure investigation-engine pkg</span></div>
+  <h2>AI &amp; Privacy</h2>
+  <div><span class="tag">Groq Llama 3.3 70B</span><span class="tag">Claude (fallback)</span><span class="tag">PII tokeniser (mask in/out)</span></div>
+  <h2>Infrastructure</h2>
+  <div><span class="tag">AWS EC2 + PM2</span><span class="tag">nginx + Certbot SSL</span><span class="tag">Razorpay billing</span></div>
+
+  <h1>Current Status</h1>
+  <table>
+    <tr><th>Area</th><th>Status</th></tr>
+    <tr><td>Investigation engine + GST Vendor ITC investigation</td><td><span class="pill live">Live (v1)</span></td></tr>
+    <tr><td>Investigation report UI, run/report APIs, persistence</td><td><span class="pill live">Live</span></td></tr>
+    <tr><td>GSTR-2B / GSTR-1 / 26Q reconciliation + Vendor Scorecard</td><td><span class="pill live">Live</span></td></tr>
+    <tr><td>Daily Pulse, Query engine, Close engine, Razorpay</td><td><span class="pill live">Live</span></td></tr>
+    <tr><td>Repositioned marketing site + interactive sample report</td><td><span class="pill live">Built</span></td></tr>
+    <tr><td>Investigations #2–3 (Vendor Risk, Cash Health)</td><td><span class="pill soon">Next</span></td></tr>
+    <tr><td>Tally / Zoho live connectors, live GSTN API pull</td><td><span class="pill soon">Roadmap</span></td></tr>
+  </table>
+
+  <div class="footer">
+    AccountIQ · acctqai.com · chirag@canvas.space · Financial Investigation Platform · Confidential — July 2026
+  </div>
+
+</div>
+</body>
+</html>

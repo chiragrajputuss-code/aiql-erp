@@ -1,0 +1,22 @@
+ALL 1842 pain reviews by domain
+1063  57.7%  Product quality (bugs/pricing/support/UX)
+ 200  10.9%  Fraud / unauthorized / security
+ 128   6.9%  Money stuck / settlement / not credited
+ 119   6.5%  Receivables / collections / overdue
+ 106   5.8%  Cash flow / balance visibility
+  97   5.3%  Reporting / analytics / MIS
+  61   3.3%  Data accuracy / sync
+  39   2.1%  Reconciliation / mismatch
+  26   1.4%  Duplicate / wrong / failed payment
+   3   0.2%  GST / ITC / compliance
+
+FINANCIAL-DOMAIN only (779)
+ 200  25.7%  Fraud / unauthorized / security
+ 128  16.4%  Money stuck / settlement / not credited
+ 119  15.3%  Receivables / collections / overdue
+ 106  13.6%  Cash flow / balance visibility
+  97  12.5%  Reporting / analytics / MIS
+  61   7.8%  Data accuracy / sync
+  39   5.0%  Reconciliation / mismatch
+  26   3.3%  Duplicate / wrong / failed payment
+   3   0.4%  GST / ITC / compliance
