@@ -22,20 +22,20 @@ const PLANS = [
     monthly: 2999, annualMonthly: 2499, annualTotal: 29990,
     desc: "For growing businesses and CAs managing several clients.",
     cta: "Start free", href: "/signup", highlight: true,
-    features: ["5 companies", "All investigation types", "Duplicate-payment & cash checks", "Receivables & expense analysis", "Drill-down follow-up questions", "5 team members", "Daily Pulse alerts", "Priority support"],
+    features: ["5 companies", "GST/ITC + duplicate-payment checks", "Vendor ITC scorecard", "Month-end close & flux analysis", "Drill-down follow-up questions", "5 team members", "Compliance calendar & TDS reminders", "Priority support"],
   },
   {
     name: "Enterprise",
     monthly: null, annualMonthly: null, annualTotal: null,
-    desc: "For large firms, multi-entity groups and CFO offices.",
+    desc: "For large firms, multi-entity groups and CA practices.",
     cta: "Talk to us", href: "/contact", highlight: false,
-    features: ["Unlimited companies", "Custom investigations", "Tally & Zoho connectors", "Dedicated account manager", "SLA guarantee", "On-premise option"],
+    features: ["Unlimited companies / client books", "Whole-practice scan in one pass", "Custom investigations (built with you)", "Dedicated account manager", "Tally & Zoho auto-sync (coming soon)"],
   },
 ];
 
 const VALUE = [
   { icon: <Clock className="w-5 h-5 text-emerald-500" />, title: "Hours back every month", body: "What used to take days of comparing reports and chasing mismatches arrives as a prioritised report in minutes." },
-  { icon: <IndianRupee className="w-5 h-5 text-amber-500" />, title: "Rupees at risk, surfaced", body: "ITC at risk, duplicate payments, stuck receivables and TDS gaps — each with the exact amount in play and the action to take." },
+  { icon: <IndianRupee className="w-5 h-5 text-amber-500" />, title: "Rupees at risk, surfaced", body: "Blocked ITC, unfiled vendors and duplicate payments — each with the exact amount in play and the action to take." },
   { icon: <Lock className="w-5 h-5 text-violet-500" />, title: "Your data stays yours", body: "Names, references and amounts are encrypted and masked before anything is analysed — never exposed to any AI model." },
 ];
 

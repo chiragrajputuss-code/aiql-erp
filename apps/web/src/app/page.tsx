@@ -36,10 +36,10 @@ const HERO_FINDINGS: {
     action: "Recover ₹68,000 from the vendor or adjust the next bill.",
   },
   {
-    sev: "warning", cat: "Cash Health", impact: "₹4,70,000",
-    title: "Receivables stuck beyond 60 days", vendor: "Rajesh Auto Components",
-    reason: "₹2.1L overdue 74 days; ₹4.7L aged across 4 customers.",
-    action: "Call your two largest overdue customers this week.",
+    sev: "opportunity", cat: "GST & Compliance", impact: "₹15,000",
+    title: "ITC available but not booked", vendor: "Sunrise Lubricants",
+    reason: "GSTR-2B shows credit you haven't claimed — the invoice isn't in your books.",
+    action: "Book the invoice and claim the credit before GSTR-3B.",
   },
 ];
 
@@ -61,20 +61,40 @@ const DRILL_QUESTIONS = [
 
 // ─── What we investigate ──────────────────────────────────────────────────────
 
+// The checks the investigation engine actually runs today (GST-ITC-001…005 +
+// DUP-PAY-001…002). Seven — not a marketing number.
 const INVESTIGATES = [
-  "Compliance", "Vendor Risk", "Cash Movement", "Expense Analysis",
-  "Profit Changes", "Receivables", "Duplicate Payments", "Working Capital",
+  "Purchase invoices missing from GSTR-2B",
+  "Vendor hasn't filed GSTR-1",
+  "ITC marked ineligible",
+  "ITC available but not booked",
+  "Supplier name mismatch",
+  "Duplicate payment (same bill, paid twice)",
+  "Probable duplicate (same payee & amount)",
 ];
 
 // ─── Capabilities (one investigation, complete visibility) ────────────────────
 
+// Only what the product actually does today. Anything not built is listed
+// separately under "Coming soon" — never implied here.
 const CAPABILITIES = [
-  { icon: <Receipt className="h-5 w-5" />,    title: "Compliance",        desc: "Identify GST and filing issues before they affect working capital.", color: "bg-blue-50 text-blue-600" },
-  { icon: <Users className="h-5 w-5" />,      title: "Vendor Risk",       desc: "Know which vendors require immediate attention.", color: "bg-purple-50 text-purple-600" },
-  { icon: <TrendingUp className="h-5 w-5" />, title: "Financial Changes", desc: "Understand why profits, expenses or cash flow changed.", color: "bg-amber-50 text-amber-600" },
-  { icon: <Wallet className="h-5 w-5" />,     title: "Cash Health",       desc: "See where money is moving and what needs attention.", color: "bg-emerald-50 text-emerald-600" },
-  { icon: <FileText className="h-5 w-5" />,   title: "Executive Summary", desc: "Explain this month's financial story in minutes, not hours.", color: "bg-slate-100 text-slate-600" },
+  { icon: <Receipt className="h-5 w-5" />,    title: "GST & ITC",           desc: "Reconcile your books against GSTR-2B — blocked credit, unfiled vendors, ineligible ITC.", color: "bg-blue-50 text-blue-600" },
+  { icon: <Wallet className="h-5 w-5" />,     title: "Duplicate Payments",  desc: "Catch the same bill paid twice, with both vouchers as evidence.", color: "bg-red-50 text-red-600" },
+  { icon: <Users className="h-5 w-5" />,      title: "Vendor ITC Scorecard", desc: "See which vendors repeatedly put your input tax credit at risk.", color: "bg-purple-50 text-purple-600" },
+  { icon: <TrendingUp className="h-5 w-5" />, title: "Month-End Close",     desc: "Flux analysis on every account — what changed vs last period, and why.", color: "bg-amber-50 text-amber-600" },
+  { icon: <FileText className="h-5 w-5" />,   title: "Executive Summary",   desc: "A board-ready brief of the month's findings, written for you.", color: "bg-slate-100 text-slate-600" },
 ];
+
+// Things you can ASK (query engine, 50+ templates) — real, but answered on
+// demand, not surfaced automatically. Kept distinct from investigations.
+const ASKABLE = [
+  "Cash & bank balance", "Overdue debtors (30/60/90)", "Profit & loss summary",
+  "Expense by voucher type", "TDS summary", "Vendor & customer ledgers",
+  "Purchase & sales registers", "Bank reconciliation",
+];
+
+// Not built yet. Stated plainly rather than implied.
+const COMING_SOON = ["Receivables investigation", "Cash-flow monitoring", "Tally & Zoho auto-sync"];
 
 // ─── How it works ─────────────────────────────────────────────────────────────
 
@@ -95,12 +115,12 @@ const PLANS = [
   {
     name: "Growth", price: "₹2,999", period: "/month", annual: "₹29,990/year",
     desc: "For growing businesses and CAs managing multiple clients.", cta: "Start free", highlight: true,
-    features: ["5 companies", "All investigation types", "Duplicate-payment & cash checks", "Receivables & expense analysis", "Drill-down follow-up questions", "5 team members", "Daily Pulse alerts", "Priority support"],
+    features: ["5 companies", "GST/ITC + duplicate-payment checks", "Vendor ITC scorecard", "Month-end close & flux analysis", "Drill-down follow-up questions", "5 team members", "Compliance calendar & TDS reminders", "Priority support"],
   },
   {
     name: "Enterprise", price: "Custom", period: "", annual: "Annual billing",
-    desc: "For large firms, multi-entity groups and CFO offices.", cta: "Talk to us", highlight: false,
-    features: ["Unlimited companies", "Custom investigations", "Tally & Zoho connectors", "Dedicated account manager", "SLA guarantee", "On-premise option"],
+    desc: "For large firms, multi-entity groups and CA practices.", cta: "Talk to us", highlight: false,
+    features: ["Unlimited companies / client books", "Whole-practice scan in one pass", "Custom investigations (built with you)", "Dedicated account manager", "Tally & Zoho auto-sync (coming soon)"],
   },
 ];
 
@@ -329,11 +349,11 @@ const SCAN_CLIENTS: ScanClient[] = [
   { name: "V••••• Transport Co",   issue: { label: "ITC at risk · unfiled",     tone: "critical",    amount: 76700 } },
   { name: "B•••• Tools & Dies",    issue: null },
   { name: "P•••• Chemicals",       issue: { label: "ITC marked ineligible",     tone: "warning",     amount: 9324 } },
-  { name: "R•••• Auto Components", issue: { label: "Receivables aged 74+ days",  tone: "warning",     amount: 210000 } },
+  { name: "R•••• Auto Components", issue: { label: "Supplier name mismatch",     tone: "warning",     amount: 0 } },
   { name: "N•••• Electricals",     issue: null },
   { name: "G•••• Fasteners",       issue: { label: "ITC available, not booked",  tone: "opportunity", amount: 15000 } },
   { name: "A•••• Packaging",       issue: null },
-  { name: "K•••• Textiles",        issue: { label: "Duplicate vendor bill",      tone: "critical",    amount: 38200 } },
+  { name: "K•••• Textiles",        issue: { label: "Duplicate payment",          tone: "critical",    amount: 38200 } },
   { name: "D•••• Logistics",       issue: null },
   { name: "S•••• Pharma Dist.",    issue: null },
 ];
@@ -468,7 +488,7 @@ export default function LandingPage() {
                 <span className="text-blue-600">Know exactly what needs your attention</span> before you close your books.
               </h1>
               <p className="text-lg text-slate-600 max-w-xl leading-relaxed">
-                AccountIQ investigates your books and flags <strong className="text-slate-800">GST risks, vendor issues, unusual expenses, compliance gaps and cash-flow changes</strong> — so your team knows what to fix first. <span className="text-slate-800 font-medium">One business or a hundred client books — investigated in a single pass.</span>
+                AccountIQ reconciles your books against GSTR-2B and flags <strong className="text-slate-800">blocked ITC, unfiled vendors and duplicate payments</strong> — each with the evidence and the rupee impact. <span className="text-slate-800 font-medium">One business or a hundred client books — investigated in a single pass.</span>
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-[#1B3A5C] text-white px-7 py-4 rounded-xl font-semibold text-base hover:bg-[#1B3A5C]/90 transition-colors shadow-lg shadow-[#1B3A5C]/20">
@@ -529,7 +549,7 @@ export default function LandingPage() {
                 <div className="mt-7 rounded-xl border border-slate-200 bg-white p-4 flex items-start gap-3">
                   <Boxes className="h-5 w-5 text-[#1B3A5C] shrink-0 mt-0.5" />
                   <p className="text-sm text-slate-600 leading-relaxed">
-                    <span className="font-semibold text-slate-800">40+ cross-checks run on every book</span>, and the library grows each month. The findings are yours — the engine that produces them stays ours.
+                    <span className="font-semibold text-slate-800">Every client book runs through the same GST/ITC and duplicate-payment checks</span> — with new investigations added as we build them. The findings are yours; the engine that produces them stays ours.
                   </p>
                 </div>
               </div>
@@ -564,7 +584,7 @@ export default function LandingPage() {
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: <Search className="h-6 w-6" />, color: "bg-red-50 text-red-600", title: "Find risks first", desc: "GST mismatches, vendor issues, unusual expenses and cash leaks — surfaced before they cost you." },
+              { icon: <Search className="h-6 w-6" />, color: "bg-red-50 text-red-600", title: "Find risks first", desc: "Blocked ITC, unfiled vendors and duplicate payments — surfaced before they cost you." },
               { icon: <FileText className="h-6 w-6" />, color: "bg-blue-50 text-blue-600", title: "Evidence, not guesses", desc: "Every finding is backed by the actual invoices and ledger entries. Nothing is a black box." },
               { icon: <Sparkles className="h-6 w-6" />, color: "bg-emerald-50 text-emerald-600", title: "Ask anything", desc: "Want more detail? Ask in plain English. Every finding links back to the source data." },
             ].map((c) => (
@@ -732,11 +752,11 @@ export default function LandingPage() {
           <p className="text-white/70 text-lg mt-3">Can you confidently answer these questions?</p>
           <div className="grid sm:grid-cols-2 gap-3 mt-10 text-left">
             {[
-              "Why did profits change this month?",
-              "Are there any GST risks?",
-              "Which vendors need attention?",
-              "What unusual expenses occurred?",
-              "Where is cash leaking?",
+              "Is any of my input tax credit blocked?",
+              "Which vendors haven't filed their GSTR-1?",
+              "Did we pay any invoice twice?",
+              "Is there ITC in GSTR-2B we never booked?",
+              "What changed vs last month, and why?",
               "What should management know?",
             ].map((q) => (
               <div key={q} className="flex items-center gap-3 bg-white/5 border border-white/10 rounded-xl px-4 py-3">
@@ -790,15 +810,51 @@ export default function LandingPage() {
 
       {/* ── What we investigate (replaces testimonials) ── */}
       <section id="investigates" className="py-20 px-6 bg-slate-50">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl font-bold text-[#1B3A5C]">What AccountIQ investigates</h2>
-          <p className="text-lg text-slate-600 mt-3">A growing library of investigations, all evidence-backed.</p>
-          <div className="flex flex-wrap justify-center gap-3 mt-10">
-            {INVESTIGATES.map((i) => (
-              <span key={i} className="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2 text-sm font-medium text-slate-700">
-                <CheckCircle2 className="h-4 w-4 text-emerald-500" /> {i}
-              </span>
-            ))}
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold text-[#1B3A5C]">What AccountIQ investigates</h2>
+            <p className="text-lg text-slate-600 mt-3">
+              Every check we run today — stated plainly. No vague categories.
+            </p>
+          </div>
+
+          {/* Automatic — the investigation report */}
+          <div className="mt-10">
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide text-center mb-4">Surfaced automatically, with evidence</p>
+            <div className="flex flex-wrap justify-center gap-3">
+              {INVESTIGATES.map((i) => (
+                <span key={i} className="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2 text-sm font-medium text-slate-700">
+                  <CheckCircle2 className="h-4 w-4 text-emerald-500" /> {i}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* On demand — the query engine */}
+          <div className="mt-10">
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide text-center mb-4">Answered when you ask, in plain English</p>
+            <div className="flex flex-wrap justify-center gap-2.5">
+              {ASKABLE.map((i) => (
+                <span key={i} className="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-3.5 py-1.5 text-xs font-medium text-slate-600">
+                  <Sparkles className="h-3.5 w-3.5 text-blue-500" /> {i}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          {/* Not built — said out loud */}
+          <div className="mt-10 rounded-xl border border-slate-200 bg-white p-5 text-center">
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">Not built yet — on the roadmap</p>
+            <div className="flex flex-wrap justify-center gap-2.5">
+              {COMING_SOON.map((i) => (
+                <span key={i} className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-full px-3.5 py-1.5 text-xs font-medium text-slate-400">
+                  {i}
+                </span>
+              ))}
+            </div>
+            <p className="text-xs text-slate-400 mt-3">
+              We&apos;d rather tell you what we don&apos;t do than have you find out after you sign up.
+            </p>
           </div>
         </div>
       </section>

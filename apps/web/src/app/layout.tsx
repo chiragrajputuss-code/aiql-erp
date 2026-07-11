@@ -9,7 +9,7 @@ const SITE_URL = process.env.DOMAIN ?? "https://acctqai.com";
 const SITE_NAME = "AccountIQ";
 const TITLE = "GSTR-2B Reconciliation Software for CAs & SMEs | AccountIQ";
 const DESCRIPTION =
-  "Reconcile GSTR-2B with your books. Catch blocked ITC, duplicate payments and cash risks — each with the evidence and the action to take. Built for Indian CAs & SMEs.";
+  "Reconcile GSTR-2B with your books. Catch blocked ITC, unfiled vendors and duplicate payments — each with the evidence and the rupee impact. Built for Indian CAs & SMEs.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -86,7 +86,7 @@ const jsonLd = [
     url: SITE_URL,
     logo: `${SITE_URL}/opengraph-image`,
     description:
-      "AccountIQ investigates the books of Indian SMEs and their CAs — surfacing GST/ITC risk, duplicate payments and cash leaks with evidence and recommended actions.",
+      "AccountIQ investigates the books of Indian SMEs and their CAs — reconciling GSTR-2B to surface blocked ITC, unfiled vendors and duplicate payments, with evidence and recommended actions.",
     areaServed: "IN",
     knowsAbout: [
       "GST reconciliation",
