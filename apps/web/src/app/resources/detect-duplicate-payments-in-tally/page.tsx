@@ -18,6 +18,9 @@ export const metadata: Metadata = {
     url: URL,
     title: article.metaTitle,
     description: article.description,
+    // Next replaces the parent's `openGraph` object wholesale, so the root
+    // opengraph-image does NOT cascade here — it must be named explicitly.
+    images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: article.title }],
   },
 };
 
