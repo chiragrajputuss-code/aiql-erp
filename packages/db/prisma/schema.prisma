@@ -992,3 +992,21 @@ model SignupAbuseLog {
   @@index([fingerprint])
   @@map("signup_abuse_logs")
 }
+
+/// Inbound contact / demo requests from the public site.
+/// Persisted BEFORE the notification email is attempted, so a mail failure
+/// can never lose a lead.
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  email     String
+  subject   String
+  message   String
+  emailed   Boolean  @default(false)   // did the notification email actually send?
+  emailError String?                   // why it didn't, if it didn't
+  createdAt DateTime @default(now())
+
+  @@index([createdAt])
+  @@index([email])
+  @@map("contact_submissions")
+}
