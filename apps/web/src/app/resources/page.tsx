@@ -16,7 +16,7 @@ export default function ResourcesPage() {
       {/* Nav */}
       <header className="border-b border-slate-100 px-6 py-4">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-lg font-bold text-[#1B3A5C]">AccountIQ</Link>
+          <Link href="/" className="text-lg font-bold text-[#1B3A5C]">AcctQAI</Link>
           <Link href="/signup" className="text-sm text-[#1B3A5C] hover:underline font-medium">
             Sign up free →
           </Link>
@@ -62,7 +62,7 @@ export default function ResourcesPage() {
         <div className="mt-14 rounded-2xl bg-slate-50 border border-slate-200 p-6 text-center">
           <p className="text-slate-700 font-medium">See these findings on real books.</p>
           <p className="text-slate-500 text-sm mt-1">
-            AccountIQ investigates your Tally or ERP export and surfaces GST/ITC risk and duplicate payments with evidence.
+            AcctQAI investigates your Tally or ERP export and surfaces GST/ITC risk and duplicate payments with evidence.
           </p>
           <Link
             href="/sample-report"

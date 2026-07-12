@@ -13,8 +13,8 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
       <div className="hidden lg:flex flex-col justify-between bg-gradient-to-br from-[#1B3A5C] to-[#15314d] text-white p-12 relative overflow-hidden">
         <div className="relative z-10">
           <Link href="/" className="inline-flex items-center gap-2">
-            <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center"><span className="text-white text-sm font-bold">IQ</span></div>
-            <span className="font-bold text-xl">AccountIQ</span>
+            <div className="w-9 h-9 rounded-lg bg-white/10 flex items-center justify-center"><span className="text-white text-sm font-bold">AQ</span></div>
+            <span className="font-bold text-xl">AcctQAI</span>
           </Link>
         </div>
 
@@ -23,7 +23,7 @@ export default function AuthLayout({ children }: { children: React.ReactNode }) 
             Know what deserves your attention before it costs you money.
           </h2>
           <p className="text-white/70 mt-4 leading-relaxed">
-            AccountIQ investigates your books and surfaces the risks, compliance gaps and opportunities that matter — each with the evidence and the action to take.
+            AcctQAI investigates your books and surfaces the risks, compliance gaps and opportunities that matter — each with the evidence and the action to take.
           </p>
 
           {/* Mini finding preview */}

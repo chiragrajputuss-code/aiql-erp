@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — AccountIQ",
-  description: "How AccountIQ collects, uses, and protects your GL and financial data. Stored on AWS Mumbai. PII masked before any AI call.",
+  title: "Privacy Policy — AcctQAI",
+  description: "How AcctQAI collects, uses, and protects your GL and financial data. Stored on AWS Mumbai. PII masked before any AI call.",
 };
 
 // ── Reusable section wrapper ──────────────────────────────────────────────────
@@ -27,7 +27,7 @@ export default function PrivacyPage() {
       {/* Nav */}
       <header className="border-b border-slate-100 px-6 py-4">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-lg font-bold text-[#1B3A5C]">AccountIQ</Link>
+          <Link href="/" className="text-lg font-bold text-[#1B3A5C]">AcctQAI</Link>
           <Link href="/signup" className="text-sm text-[#1B3A5C] hover:underline font-medium">
             Sign up free →
           </Link>
@@ -39,7 +39,7 @@ export default function PrivacyPage() {
         <p className="text-sm text-slate-400 mb-10">Effective date: {effectiveDate}</p>
 
         <p className="text-slate-600 text-sm leading-relaxed mb-8">
-          AccountIQ (&quot;we&quot;, &quot;our&quot;, &quot;the Service&quot;) is a financial investigation
+          AcctQAI (&quot;we&quot;, &quot;our&quot;, &quot;the Service&quot;) is a financial investigation
           platform for Indian finance teams. This Privacy Policy describes what data we
           collect, how we use and protect it, and your rights as a data principal under the{" "}
           <strong>Digital Personal Data Protection Act 2023 (DPDP Act)</strong> and applicable
@@ -105,7 +105,7 @@ export default function PrivacyPage() {
         </Section>
 
         <Section title="8. Children">
-          <p>AccountIQ is a professional finance tool not intended for users under 18. We do not knowingly collect data from minors.</p>
+          <p>AcctQAI is a professional finance tool not intended for users under 18. We do not knowingly collect data from minors.</p>
         </Section>
 
         <Section title="9. Changes to This Policy">
@@ -118,7 +118,7 @@ export default function PrivacyPage() {
             <a href="mailto:privacy@acctqai.com" className="text-[#1B3A5C] underline">privacy@acctqai.com</a>
           </p>
           <p>
-            AccountIQ — Financial Investigation Platform<br />
+            AcctQAI — Financial Investigation Platform<br />
             India (registered under Indian law)
           </p>
         </Section>

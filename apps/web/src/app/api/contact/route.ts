@@ -58,7 +58,7 @@ export async function POST(req: NextRequest) {
     try {
       await sendEmail(
         TO,
-        `[AccountIQ Contact] ${subjectLabel} — from ${name}`,
+        `[AcctQAI Contact] ${subjectLabel} — from ${name}`,
         `
 <div style="font-family:sans-serif;max-width:600px">
   <h2 style="color:#1B3A5C">New contact form submission</h2>

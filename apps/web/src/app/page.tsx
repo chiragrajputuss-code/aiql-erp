@@ -12,7 +12,7 @@ import {
 // ─── Brand ───────────────────────────────────────────────────────────────────
 
 const BRAND = {
-  name: "AccountIQ",
+  name: "AcctQAI",
   primary: "#1B3A5C",
 };
 
@@ -99,8 +99,8 @@ const COMING_SOON = ["Receivables investigation", "Cash-flow monitoring", "Tally
 // ─── How it works ─────────────────────────────────────────────────────────────
 
 const STEPS = [
-  { n: "1", title: "Upload your accounting data", desc: "Import your Tally or ERP export securely. AccountIQ recognises your ledger and GST documents automatically — no mapping, no setup call." },
-  { n: "2", title: "AccountIQ investigates your business", desc: "The investigation engine reviews your financial data and identifies exactly what deserves attention — risks, compliance gaps, unusual changes and opportunities." },
+  { n: "1", title: "Upload your accounting data", desc: "Import your Tally or ERP export securely. AcctQAI recognises your ledger and GST documents automatically — no mapping, no setup call." },
+  { n: "2", title: "AcctQAI investigates your business", desc: "The investigation engine reviews your financial data and identifies exactly what deserves attention — risks, compliance gaps, unusual changes and opportunities." },
   { n: "3", title: "Review findings and take action", desc: "Understand each issue, verify the supporting transactions, and resolve it before it impacts your business — every finding comes with a recommended action." },
 ];
 
@@ -140,7 +140,7 @@ function Navbar() {
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 rounded-lg bg-[#1B3A5C] flex items-center justify-center">
-            <span className="text-white text-xs font-bold">IQ</span>
+            <span className="text-white text-xs font-bold">AQ</span>
           </div>
           <span className="font-bold text-[#1B3A5C] text-lg">{BRAND.name}</span>
         </div>
@@ -488,7 +488,7 @@ export default function LandingPage() {
                 <span className="text-blue-600">Know exactly what needs your attention</span> before you close your books.
               </h1>
               <p className="text-lg text-slate-600 max-w-xl leading-relaxed">
-                AccountIQ reconciles your books against GSTR-2B and flags <strong className="text-slate-800">blocked ITC, unfiled vendors and duplicate payments</strong> — each with the evidence and the rupee impact. <span className="text-slate-800 font-medium">One business or a hundred client books — investigated in a single pass.</span>
+                AcctQAI reconciles your books against GSTR-2B and flags <strong className="text-slate-800">blocked ITC, unfiled vendors and duplicate payments</strong> — each with the evidence and the rupee impact. <span className="text-slate-800 font-medium">One business or a hundred client books — investigated in a single pass.</span>
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-[#1B3A5C] text-white px-7 py-4 rounded-xl font-semibold text-base hover:bg-[#1B3A5C]/90 transition-colors shadow-lg shadow-[#1B3A5C]/20">
@@ -530,7 +530,7 @@ export default function LandingPage() {
               <div>
                 <ul className="space-y-4">
                   {[
-                    { icon: <Layers className="h-4 w-4" />,   t: "Your whole book, in minutes", d: "Point AccountIQ at each client's Tally or ERP export. Every book is investigated in the same pass — no per-client setup." },
+                    { icon: <Layers className="h-4 w-4" />,   t: "Your whole book, in minutes", d: "Point AcctQAI at each client's Tally or ERP export. Every book is investigated in the same pass — no per-client setup." },
                     { icon: <Search className="h-4 w-4" />,   t: "Catch it before the auditor does", d: "Blocked ITC, duplicate payments, ineligible credit — flagged with the evidence, so you're never the one who missed it." },
                     { icon: <IndianRupee className="h-4 w-4" />, t: "Turn month-end into billable value", d: "Hand each client a health check that finds real money. What was unbillable review becomes a service you charge for." },
                     { icon: <Fingerprint className="h-4 w-4" />, t: "Their data stays protected", d: "Every client's names, references and amounts are masked before anything is processed — and never shown to any AI model." },
@@ -563,7 +563,7 @@ export default function LandingPage() {
           <Reveal>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-12">
               <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-[#1B3A5C] text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-[#1B3A5C]/90 transition-colors shadow-lg shadow-[#1B3A5C]/20">
-                Bring AccountIQ to your practice <ArrowRight className="h-4 w-4" />
+                Bring AcctQAI to your practice <ArrowRight className="h-4 w-4" />
               </Link>
               <Link href="/sample-report" className="inline-flex items-center justify-center gap-2 bg-white text-slate-700 px-7 py-3.5 rounded-xl font-semibold border border-slate-200 hover:border-slate-400 transition-colors">
                 See what a client report looks like
@@ -579,7 +579,7 @@ export default function LandingPage() {
           <div className="text-center max-w-2xl mx-auto mb-14">
             <h2 className="text-3xl font-bold text-[#1B3A5C]">From financial data to financial decisions</h2>
             <p className="text-lg text-slate-600 mt-3">
-              Most finance software tells you <span className="font-semibold text-slate-800">what happened</span>. AccountIQ helps you understand <span className="font-semibold text-slate-800">what deserves your attention and why.</span>
+              Most finance software tells you <span className="font-semibold text-slate-800">what happened</span>. AcctQAI helps you understand <span className="font-semibold text-slate-800">what deserves your attention and why.</span>
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
@@ -617,7 +617,7 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* ── Why AccountIQ (vs Tally + Excel) ── */}
+      {/* ── Why AcctQAI (vs Tally + Excel) ── */}
       <section className="py-20 px-6">
         <div className="max-w-4xl mx-auto">
           <Reveal>
@@ -629,7 +629,7 @@ export default function LandingPage() {
           <div className="grid md:grid-cols-2 gap-6">
             <Reveal>
               <div className="rounded-2xl border border-slate-200 p-6 h-full">
-                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-4">Without AccountIQ</p>
+                <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-4">Without AcctQAI</p>
                 <ul className="space-y-3">
                   {["Export reports, rebuild the same pivots every month", "Eyeball ledgers for anything unusual", "Find the GST mismatch after the credit is reversed", "Hope nobody paid an invoice twice", "Spend the close prepping summaries by hand"].map((t) => (
                     <li key={t} className="flex gap-3 text-sm text-slate-600"><X className="h-4 w-4 text-slate-300 shrink-0 mt-0.5" /> {t}</li>
@@ -639,7 +639,7 @@ export default function LandingPage() {
             </Reveal>
             <Reveal delay={120}>
               <div className="rounded-2xl border-2 border-[#1B3A5C] bg-[#1B3A5C]/[0.03] p-6 h-full">
-                <p className="text-xs font-semibold text-[#1B3A5C] uppercase tracking-wide mb-4">With AccountIQ</p>
+                <p className="text-xs font-semibold text-[#1B3A5C] uppercase tracking-wide mb-4">With AcctQAI</p>
                 <ul className="space-y-3">
                   {["Upload once — a prioritised report comes back in minutes", "Risks, anomalies and opportunities surfaced automatically", "Catch blocked ITC before it's reversed", "Duplicate payments flagged with both vouchers", "The executive summary is written for you"].map((t) => (
                     <li key={t} className="flex gap-3 text-sm text-slate-700 font-medium"><Check className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" /> {t}</li>
@@ -672,7 +672,7 @@ export default function LandingPage() {
                 {[
                   { icon: <Lock className="h-4 w-4" />, t: "Encrypted before processing", d: "Sensitive fields are protected the moment your file is read." },
                   { icon: <EyeOff className="h-4 w-4" />, t: "Never exposed to AI", d: "Models only ever work on masked values — never your real data." },
-                  { icon: <ServerCog className="h-4 w-4" />, t: "Read-only, always", d: "AccountIQ analyses your books — it never modifies them." },
+                  { icon: <ServerCog className="h-4 w-4" />, t: "Read-only, always", d: "AcctQAI analyses your books — it never modifies them." },
                 ].map((x) => (
                   <li key={x.t} className="flex gap-3">
                     <span className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">{x.icon}</span>
@@ -765,7 +765,7 @@ export default function LandingPage() {
               </div>
             ))}
           </div>
-          <p className="text-white/70 mt-8">If not — run an AccountIQ investigation.</p>
+          <p className="text-white/70 mt-8">If not — run an AcctQAI investigation.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mt-5">
             <Link href="/sample-report" className="inline-flex items-center justify-center gap-2 bg-white text-[#1B3A5C] px-7 py-3.5 rounded-xl font-bold hover:bg-slate-100">
               View a sample investigation <ArrowRight className="h-4 w-4" />
@@ -799,7 +799,7 @@ export default function LandingPage() {
               <div className="bg-[#1B3A5C] text-white rounded-2xl rounded-tr-sm px-4 py-2.5 text-sm max-w-xs">Which vendors contributed to the ITC risk?</div>
             </div>
             <div className="flex gap-2 items-start">
-              <div className="w-7 h-7 rounded-full bg-[#1B3A5C]/10 flex items-center justify-center shrink-0"><span className="text-xs font-bold text-[#1B3A5C]">IQ</span></div>
+              <div className="w-7 h-7 rounded-full bg-[#1B3A5C]/10 flex items-center justify-center shrink-0"><span className="text-xs font-bold text-[#1B3A5C]">AQ</span></div>
               <div className="bg-white border border-slate-200 rounded-2xl rounded-tl-sm px-4 py-3 flex-1 text-sm text-slate-700">
                 Three vendors account for the ₹1,24,500 at risk: Agarwal Stationery (₹12,780), Sindhwani Rubber (₹16,920) and Bright Tools (₹94,300). All three have unfiled GSTR-1 for May.
               </div>
@@ -812,7 +812,7 @@ export default function LandingPage() {
       <section id="investigates" className="py-20 px-6 bg-slate-50">
         <div className="max-w-4xl mx-auto">
           <div className="text-center">
-            <h2 className="text-3xl font-bold text-[#1B3A5C]">What AccountIQ investigates</h2>
+            <h2 className="text-3xl font-bold text-[#1B3A5C]">What AcctQAI investigates</h2>
             <p className="text-lg text-slate-600 mt-3">
               Every check we run today — stated plainly. No vague categories.
             </p>
@@ -919,7 +919,7 @@ export default function LandingPage() {
           <div className="flex flex-col md:flex-row justify-between gap-8">
             <div className="max-w-sm">
               <div className="flex items-center gap-2 mb-3">
-                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center"><span className="text-white text-xs font-bold">IQ</span></div>
+                <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center"><span className="text-white text-xs font-bold">AQ</span></div>
                 <span className="font-bold text-white text-lg">{BRAND.name}</span>
               </div>
               <p className="font-semibold text-slate-200">Financial Investigation Platform</p>

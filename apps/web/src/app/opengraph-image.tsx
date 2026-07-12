@@ -4,7 +4,7 @@ import { ImageResponse } from "next/og";
 // so it needs no external design asset. Child segments can override with their
 // own opengraph-image file.
 
-export const alt = "AccountIQ — GSTR-2B reconciliation & duplicate-payment detection for Indian CAs & SMEs";
+export const alt = "AcctQAI — GSTR-2B reconciliation & duplicate-payment detection for Indian CAs & SMEs";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -39,9 +39,9 @@ export default function OpengraphImage() {
               fontWeight: 800,
             }}
           >
-            IQ
+            AQ
           </div>
-          <div style={{ fontSize: "40px", fontWeight: 800 }}>AccountIQ</div>
+          <div style={{ fontSize: "40px", fontWeight: 800 }}>AcctQAI</div>
         </div>
 
         {/* Headline */}

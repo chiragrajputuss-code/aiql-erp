@@ -61,10 +61,10 @@ export default function DuplicatePaymentsTallyArticle() {
       "@type": "Article",
       headline: article.title,
       description: article.description,
-      author: { "@type": "Organization", name: "AccountIQ" },
+      author: { "@type": "Organization", name: "AcctQAI" },
       publisher: {
         "@type": "Organization",
-        name: "AccountIQ",
+        name: "AcctQAI",
         logo: { "@type": "ImageObject", url: `${SITE_URL}/opengraph-image` },
       },
       datePublished: article.updated,
@@ -98,7 +98,7 @@ export default function DuplicatePaymentsTallyArticle() {
       {/* Nav */}
       <header className="border-b border-slate-100 px-6 py-4">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-lg font-bold text-[#1B3A5C]">AccountIQ</Link>
+          <Link href="/" className="text-lg font-bold text-[#1B3A5C]">AcctQAI</Link>
           <Link href="/signup" className="text-sm text-[#1B3A5C] hover:underline font-medium">Sign up free →</Link>
         </div>
       </header>
@@ -241,7 +241,7 @@ export default function DuplicatePaymentsTallyArticle() {
               <ShieldCheck className="h-5 w-5" /> Doing this automatically
             </div>
             <p className="text-slate-700 text-sm leading-relaxed">
-              AccountIQ reads your Tally or Excel export and runs exactly this kind of check across
+              AcctQAI reads your Tally or Excel export and runs exactly this kind of check across
               your whole ledger — every ledger, every month, with fuzzy payee and reference handling
               — then hands you each likely duplicate with <strong>both vouchers and the rupee
               amount</strong>, so you can confirm and recover. For CAs, it runs across your entire
@@ -301,7 +301,7 @@ export default function DuplicatePaymentsTallyArticle() {
         </div>
 
         <p className="text-xs text-slate-400 mt-8 border-t border-slate-100 pt-6">
-          Written by the AccountIQ team from patterns seen on real Indian SME ledgers. This guide is
+          Written by the AcctQAI team from patterns seen on real Indian SME ledgers. This guide is
           general information, not tax or accounting advice — confirm any duplicate against your
           source vouchers before acting.
         </p>

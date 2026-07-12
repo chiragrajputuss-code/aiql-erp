@@ -215,7 +215,7 @@ export async function GET(req: NextRequest) {
   }
 
   const today   = new Date();
-  const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://app.aiql.in";
+  const baseUrl = process.env.NEXT_PUBLIC_APP_URL ?? "https://acctqai.com";
 
   // Fetch all active DAILY/WEEKLY subscriptions
   const subscriptions = await prisma.pulseSubscription.findMany({

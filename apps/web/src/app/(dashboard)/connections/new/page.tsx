@@ -432,7 +432,7 @@ function StepMapping({ state, onBack, onConfirm }: {
         <div className="rounded-lg border border-blue-200 bg-blue-50/50 px-4 py-3 text-sm text-blue-800">
           <p className="font-medium">Columns stored as-is</p>
           <p className="text-xs text-blue-700 mt-0.5">
-            {state.headers.length} columns will be kept exactly as they are in your {docType.replace("_", "-")} file — no mapping needed. AccountIQ reads this document type natively.
+            {state.headers.length} columns will be kept exactly as they are in your {docType.replace("_", "-")} file — no mapping needed. AcctQAI reads this document type natively.
           </p>
         </div>
       )}

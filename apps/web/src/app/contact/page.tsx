@@ -39,7 +39,7 @@ export default function ContactPage() {
             <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs" style={{ backgroundColor: BRAND_BLUE }}>
               IQ
             </div>
-            <span className="font-bold text-lg" style={{ color: BRAND_BLUE }}>AccountIQ</span>
+            <span className="font-bold text-lg" style={{ color: BRAND_BLUE }}>AcctQAI</span>
           </Link>
           <div className="flex items-center gap-4">
             <Link href="/login" className="text-sm text-slate-600 hover:text-slate-900">Log in</Link>
@@ -58,7 +58,7 @@ export default function ContactPage() {
         <div className="grid md:grid-cols-2 gap-16">
           {/* Left — info */}
           <div>
-            <h1 className="text-4xl font-bold text-slate-900 mb-4">See AccountIQ on your own books</h1>
+            <h1 className="text-4xl font-bold text-slate-900 mb-4">See AcctQAI on your own books</h1>
             <p className="text-lg text-slate-600 mb-10">
               Book a 20-minute walkthrough and we&apos;ll run a live investigation on a sample of your data — you&apos;ll see exactly what it finds. Questions about pricing, security or fit? Ask away. We usually reply within a few hours.
             </p>
@@ -93,7 +93,7 @@ export default function ContactPage() {
                 <div>
                   <p className="font-medium text-slate-900">Live investigation demo</p>
                   <p className="text-sm text-slate-500">
-                    Pick &quot;Request a demo&quot; below and we&apos;ll run AccountIQ on a sample of your own books, live on a screen-share.
+                    Pick &quot;Request a demo&quot; below and we&apos;ll run AcctQAI on a sample of your own books, live on a screen-share.
                   </p>
                 </div>
               </div>

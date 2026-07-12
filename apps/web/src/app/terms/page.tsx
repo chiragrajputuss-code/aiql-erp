@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Terms of Service — AccountIQ",
-  description: "AccountIQ Terms of Service — your rights and responsibilities when using the platform.",
+  title: "Terms of Service — AcctQAI",
+  description: "AcctQAI Terms of Service — your rights and responsibilities when using the platform.",
 };
 
 function Section({ title, children }: { title: string; children: React.ReactNode }) {
@@ -22,7 +22,7 @@ export default function TermsPage() {
     <div className="min-h-screen bg-white">
       <header className="border-b border-slate-100 px-6 py-4">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-lg font-bold text-[#1B3A5C]">AccountIQ</Link>
+          <Link href="/" className="text-lg font-bold text-[#1B3A5C]">AcctQAI</Link>
           <Link href="/signup" className="text-sm text-[#1B3A5C] hover:underline font-medium">
             Sign up free →
           </Link>
@@ -34,14 +34,14 @@ export default function TermsPage() {
         <p className="text-sm text-slate-400 mb-10">Effective date: {effectiveDate}</p>
 
         <p className="text-slate-600 text-sm leading-relaxed mb-8">
-          These Terms of Service (&quot;Terms&quot;) govern your access to and use of AccountIQ, a
-          financial investigation platform (&quot;Service&quot;) operated by AccountIQ
+          These Terms of Service (&quot;Terms&quot;) govern your access to and use of AcctQAI, a
+          financial investigation platform (&quot;Service&quot;) operated by AcctQAI
           (&quot;we&quot;, &quot;us&quot;). By creating an account or using the Service, you agree to
           these Terms. If you do not agree, do not use the Service.
         </p>
 
         <Section title="1. Service Description">
-          <p>AccountIQ is a professional financial analysis tool that connects to your uploaded GL data, runs automated data-quality checks, and answers plain-English queries about your accounts. It is designed for finance professionals — CAs, CFOs, and accountants — working with Indian SME books.</p>
+          <p>AcctQAI is a professional financial analysis tool that connects to your uploaded GL data, runs automated data-quality checks, and answers plain-English queries about your accounts. It is designed for finance professionals — CAs, CFOs, and accountants — working with Indian SME books.</p>
           <p>The Service is provided on a subscription basis. We offer three plans (Starter, Professional, Business) billed monthly or annually as described on the <Link href="/pricing" className="text-[#1B3A5C] underline">pricing page</Link>.</p>
         </Section>
 
@@ -52,7 +52,7 @@ export default function TermsPage() {
         </Section>
 
         <Section title="3. Acceptable Use">
-          <p>You may use AccountIQ to analyse your own organisation&apos;s GL data, or GL data for which you have a legitimate professional mandate (e.g., as an auditor or CA for a client).</p>
+          <p>You may use AcctQAI to analyse your own organisation&apos;s GL data, or GL data for which you have a legitimate professional mandate (e.g., as an auditor or CA for a client).</p>
           <p><strong>You must not:</strong></p>
           <ul className="list-disc list-inside space-y-1 pl-2">
             <li>Upload data you are not authorised to access or analyse</li>
@@ -78,12 +78,12 @@ export default function TermsPage() {
         </Section>
 
         <Section title="6. Intellectual Property">
-          <p>AccountIQ, its SQL template library, prompt engineering, and all associated IP remain our exclusive property. Nothing in these Terms grants you a licence to copy, distribute, or create derivative works from the Service or its underlying technology.</p>
+          <p>AcctQAI, its SQL template library, prompt engineering, and all associated IP remain our exclusive property. Nothing in these Terms grants you a licence to copy, distribute, or create derivative works from the Service or its underlying technology.</p>
           <p>You grant us a limited, non-exclusive licence to process your uploaded data solely to provide and improve the Service for your organisation.</p>
         </Section>
 
         <Section title="7. Accuracy of Output">
-          <p>AccountIQ uses AI to generate SQL queries and financial summaries. <strong>Outputs must be reviewed by a qualified finance professional before being relied upon for decisions, filings, or client deliverables.</strong> We are not a registered auditor and nothing in the Service constitutes audit assurance or legal/tax advice.</p>
+          <p>AcctQAI uses AI to generate SQL queries and financial summaries. <strong>Outputs must be reviewed by a qualified finance professional before being relied upon for decisions, filings, or client deliverables.</strong> We are not a registered auditor and nothing in the Service constitutes audit assurance or legal/tax advice.</p>
           <p>You are responsible for verifying all AI-generated outputs against source records.</p>
         </Section>
 

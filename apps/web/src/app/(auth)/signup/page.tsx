@@ -75,7 +75,7 @@ export default function SignupPage() {
           <div className="w-8 h-8 rounded-lg bg-[#1B3A5C] flex items-center justify-center text-white font-bold text-xs">
             IQ
           </div>
-          <span className="font-bold text-[#1B3A5C]">AccountIQ</span>
+          <span className="font-bold text-[#1B3A5C]">AcctQAI</span>
         </div>
         <CardTitle className="text-2xl">Start investigating your books</CardTitle>
         <CardDescription>Create your account — free for 14 days, no credit card needed.</CardDescription>

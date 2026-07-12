@@ -59,10 +59,10 @@ export default function VendorNotFiledGstr1Article() {
       "@type": "Article",
       headline: article.title,
       description: article.description,
-      author: { "@type": "Organization", name: "AccountIQ" },
+      author: { "@type": "Organization", name: "AcctQAI" },
       publisher: {
         "@type": "Organization",
-        name: "AccountIQ",
+        name: "AcctQAI",
         logo: { "@type": "ImageObject", url: `${SITE_URL}/opengraph-image` },
       },
       datePublished: article.updated,
@@ -95,7 +95,7 @@ export default function VendorNotFiledGstr1Article() {
 
       <header className="border-b border-slate-100 px-6 py-4">
         <div className="max-w-3xl mx-auto flex items-center justify-between">
-          <Link href="/" className="text-lg font-bold text-[#1B3A5C]">AccountIQ</Link>
+          <Link href="/" className="text-lg font-bold text-[#1B3A5C]">AcctQAI</Link>
           <Link href="/signup" className="text-sm text-[#1B3A5C] hover:underline font-medium">Sign up free →</Link>
         </div>
       </header>
@@ -218,7 +218,7 @@ export default function VendorNotFiledGstr1Article() {
               <ShieldCheck className="h-5 w-5" /> Doing this automatically
             </div>
             <p className="text-slate-700 text-sm leading-relaxed">
-              AccountIQ reconciles your purchase register against GSTR-2B and flags every booked
+              AcctQAI reconciles your purchase register against GSTR-2B and flags every booked
               invoice that is <strong>missing from GSTR-2B</strong> — with the vendor and the exact{" "}
               <strong>rupee ITC at risk</strong>, ranked by amount, and with the false-mismatch cases
               filtered out. For CAs, it runs across the whole client book in one pass.
@@ -284,7 +284,7 @@ export default function VendorNotFiledGstr1Article() {
         </div>
 
         <p className="text-xs text-slate-400 mt-8 border-t border-slate-100 pt-6">
-          Written by the AccountIQ team. This guide is general information based on the CGST Act as
+          Written by the AcctQAI team. This guide is general information based on the CGST Act as
           it currently stands, not tax advice — confirm the treatment of any specific invoice with
           your CA, as GST provisions and time limits change.
         </p>

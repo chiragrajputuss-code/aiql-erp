@@ -115,7 +115,7 @@ export default function BillingPage() {
       const rzp = new window.Razorpay({
         key: data.keyId,
         subscription_id: data.subscriptionId,
-        name: "AccountIQ",
+        name: "AcctQAI",
         description: `${planKey.replace("_", " ")} subscription`,
         theme: { color: "#1B3A5C" },
         handler: () => {
@@ -148,7 +148,7 @@ export default function BillingPage() {
     <div className="max-w-4xl mx-auto px-6 py-10 space-y-10">
       <div>
         <h1 className="text-2xl font-bold text-slate-900">Billing & Plan</h1>
-        <p className="text-slate-500 mt-1 text-sm">Manage your AccountIQ subscription</p>
+        <p className="text-slate-500 mt-1 text-sm">Manage your AcctQAI subscription</p>
       </div>
 
       {/* ── Status card ─────────────────────────────────────────────────── */}
@@ -289,7 +289,7 @@ export default function BillingPage() {
 
           <p className="text-center text-xs text-slate-400">
             Payments processed securely by Razorpay · UPI · Net banking · Cards accepted ·{" "}
-            <a href="mailto:support@accountiq.in" className="underline">Contact us</a> for Enterprise
+            <a href="mailto:support@acctqai.com" className="underline">Contact us</a> for Enterprise
           </p>
         </>
       )}
@@ -300,7 +300,7 @@ export default function BillingPage() {
           <h2 className="font-semibold text-slate-900 mb-1">Your subscription</h2>
           <p className="text-sm text-slate-500 mb-4">
             Manage your subscription via Razorpay. To cancel or change plan, contact{" "}
-            <a href="mailto:support@accountiq.in" className="text-blue-600 underline">support@accountiq.in</a>.
+            <a href="mailto:support@acctqai.com" className="text-blue-600 underline">support@acctqai.com</a>.
           </p>
           <div className="grid grid-cols-2 gap-4 text-sm">
             <div className="bg-slate-50 rounded-xl p-4">

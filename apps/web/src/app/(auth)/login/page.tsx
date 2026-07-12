@@ -47,7 +47,7 @@ function LoginForm() {
           <div className="w-8 h-8 rounded-lg bg-[#1B3A5C] flex items-center justify-center text-white font-bold text-xs">
             IQ
           </div>
-          <span className="font-bold text-[#1B3A5C]">AccountIQ</span>
+          <span className="font-bold text-[#1B3A5C]">AcctQAI</span>
         </div>
         <CardTitle className="text-2xl">Welcome back</CardTitle>
         <CardDescription>Sign in to continue your investigations.</CardDescription>

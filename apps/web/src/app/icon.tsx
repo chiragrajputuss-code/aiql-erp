@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-// Generated favicon — the "IQ" monogram on the brand navy. Real PNG, no asset file.
+// Generated favicon — the "AQ" monogram on the brand navy. Real PNG, no asset file.
 
 export const size = { width: 32, height: 32 };
 export const contentType = "image/png";
@@ -23,7 +23,7 @@ export default function Icon() {
           fontFamily: "sans-serif",
         }}
       >
-        IQ
+        AQ
       </div>
     ),
     { ...size },

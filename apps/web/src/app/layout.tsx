@@ -6,8 +6,8 @@ import { SiteFooter } from "@/components/site-footer";
 const inter = Inter({ subsets: ["latin"] });
 
 const SITE_URL = process.env.DOMAIN ?? "https://acctqai.com";
-const SITE_NAME = "AccountIQ";
-const TITLE = "GSTR-2B Reconciliation Software for CAs & SMEs | AccountIQ";
+const SITE_NAME = "AcctQAI";
+const TITLE = "GSTR-2B Reconciliation Software for CAs & SMEs | AcctQAI";
 const DESCRIPTION =
   "Reconcile GSTR-2B with your books. Catch blocked ITC, unfiled vendors and duplicate payments — each with the evidence and the rupee impact. Built for Indian CAs & SMEs.";
 
@@ -28,11 +28,11 @@ export const metadata: Metadata = {
     "GST reconciliation for CA",
     "Tally GST reconciliation",
     "vendor GSTR-1 not filed ITC",
-    "AccountIQ",
+    "AcctQAI",
   ],
-  authors: [{ name: "AccountIQ", url: SITE_URL }],
-  creator: "AccountIQ",
-  publisher: "AccountIQ",
+  authors: [{ name: "AcctQAI", url: SITE_URL }],
+  creator: "AcctQAI",
+  publisher: "AcctQAI",
   robots: {
     index: true,
     follow: true,
@@ -64,7 +64,7 @@ const jsonLd = [
   {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "AccountIQ",
+    name: "AcctQAI",
     url: SITE_URL,
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
@@ -86,7 +86,7 @@ const jsonLd = [
     url: SITE_URL,
     logo: `${SITE_URL}/opengraph-image`,
     description:
-      "AccountIQ investigates the books of Indian SMEs and their CAs — reconciling GSTR-2B to surface blocked ITC, unfiled vendors and duplicate payments, with evidence and recommended actions.",
+      "AcctQAI investigates the books of Indian SMEs and their CAs — reconciling GSTR-2B to surface blocked ITC, unfiled vendors and duplicate payments, with evidence and recommended actions.",
     areaServed: "IN",
     knowsAbout: [
       "GST reconciliation",

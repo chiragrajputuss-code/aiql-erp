@@ -27,7 +27,7 @@ export async function sendEmail(to: string, subject: string, html: string): Prom
     return;
   }
   await getTransporter().sendMail({
-    from: `AIQL <${process.env.GMAIL_USER}>`,
+    from: `AcctQAI <${process.env.GMAIL_USER}>`,
     to,
     subject,
     html,

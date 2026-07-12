@@ -40,9 +40,9 @@ const VALUE = [
 ];
 
 const FAQ = [
-  { q: "Does AccountIQ replace my ERP?", a: "No. AccountIQ works alongside your existing accounting software — Tally, Zoho or any GL export. It reads your data and investigates it; it never replaces your books." },
-  { q: "Does AccountIQ modify my accounting data?", a: "Never. AccountIQ is strictly read-only. It analyses your data and recommends actions — every change stays in your hands." },
-  { q: "Is this just another reporting tool?", a: "No. Reports tell you what happened. AccountIQ tells you what deserves your attention and why — with the supporting evidence and a recommended action for every finding." },
+  { q: "Does AcctQAI replace my ERP?", a: "No. AcctQAI works alongside your existing accounting software — Tally, Zoho or any GL export. It reads your data and investigates it; it never replaces your books." },
+  { q: "Does AcctQAI modify my accounting data?", a: "Never. AcctQAI is strictly read-only. It analyses your data and recommends actions — every change stays in your hands." },
+  { q: "Is this just another reporting tool?", a: "No. Reports tell you what happened. AcctQAI tells you what deserves your attention and why — with the supporting evidence and a recommended action for every finding." },
   { q: "Is there a free trial?", a: "Yes — every plan includes a 14-day free trial. No credit card required. Explore with a sample investigation or upload your own books." },
   { q: "Is my data safe?", a: "Your data is stored in AWS Mumbai (ap-south-1), isolated per organisation. Sensitive fields — vendor and customer names, references and amounts — are encrypted and masked before any analysis runs, and are never exposed to any AI model." },
   { q: "Can I switch plans later?", a: "Yes. Upgrades take effect immediately and are charged pro-rata. Downgrades apply from your next billing cycle." },
@@ -70,8 +70,8 @@ function Header() {
     <header className="sticky top-0 z-40 bg-white/90 backdrop-blur border-b border-slate-100 px-6 py-3.5">
       <div className="max-w-5xl mx-auto flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2">
-          <div className="w-8 h-8 rounded-lg bg-[#1B3A5C] flex items-center justify-center"><span className="text-white text-xs font-bold">IQ</span></div>
-          <span className="text-lg font-bold text-[#1B3A5C]">AccountIQ</span>
+          <div className="w-8 h-8 rounded-lg bg-[#1B3A5C] flex items-center justify-center"><span className="text-white text-xs font-bold">AQ</span></div>
+          <span className="text-lg font-bold text-[#1B3A5C]">AcctQAI</span>
         </Link>
         <div className="flex items-center gap-3">
           <Link href="/login" className="text-sm text-slate-600 hover:text-slate-900 px-3 py-2">Log in</Link>
@@ -214,7 +214,7 @@ export default function PricingPage() {
         {/* CTA */}
         <Reveal>
           <div className="mt-16 rounded-2xl bg-gradient-to-br from-[#1B3A5C] to-[#15314d] text-white p-8 text-center">
-            <h2 className="text-2xl font-bold">See what AccountIQ finds in your books</h2>
+            <h2 className="text-2xl font-bold">See what AcctQAI finds in your books</h2>
             <p className="text-white/80 mt-2 max-w-lg mx-auto">Start free, or watch a sample investigation run end-to-end first.</p>
             <div className="flex flex-col sm:flex-row gap-3 justify-center mt-6">
               <Link href="/signup" className="inline-flex items-center justify-center gap-2 bg-white text-[#1B3A5C] px-7 py-3.5 rounded-xl font-bold hover:bg-slate-100">

@@ -13,7 +13,7 @@ export function SiteFooter() {
     <footer className="border-t border-slate-100 bg-white mt-auto">
       <div className="max-w-6xl mx-auto px-6 py-5 flex flex-col sm:flex-row items-center justify-between gap-3">
         <p className="text-[11px] text-slate-400">
-          © {new Date().getFullYear()} AccountIQ · Financial Investigation Platform for Indian finance teams
+          © {new Date().getFullYear()} AcctQAI · Financial Investigation Platform for Indian finance teams
         </p>
         <nav className="flex items-center gap-5">
           {[
