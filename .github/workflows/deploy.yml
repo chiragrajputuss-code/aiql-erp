@@ -32,6 +32,14 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      # ── 3b. Generate Prisma client ──────────────────────────────────────────
+      # Without this the @prisma/client types do not exist, so every Prisma call
+      # in the web app typechecks as `any` and the Type check step fails with
+      # TS7006 / TS2614 ("@aiql/db has no exported member ..."). pnpm does not
+      # run the package's postinstall for us here, so call it explicitly.
+      - name: Generate Prisma client
+        run: pnpm --filter @aiql/db db:generate
+
       # ── 4. Type check ───────────────────────────────────────────────────────
       - name: Type check
         run: pnpm --filter web typecheck
