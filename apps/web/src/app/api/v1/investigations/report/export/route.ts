@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { validateRequest } from "@/lib/auth";
 import { prisma } from "@aiql/db";
 import { buildAuditPdf, type AuditFindingInput } from "@/lib/audit-report-pdf";
+import { getOrgBillingState, PDF_EXPORT_PLANS } from "@/lib/billing";
 
 // GET /api/v1/investigations/report/export
 // Renders the latest CURRENT investigation run as the client-facing
@@ -24,6 +25,22 @@ function safeParse<T>(json: string | null | undefined, fallback: T): T {
 export async function GET(_req: NextRequest) {
   const { user } = await validateRequest();
   if (!user) return NextResponse.json({ error: "Unauthorised" }, { status: 401 });
+
+  // The working-paper PDF is the Firm-plan artefact. Findings and evidence are
+  // always visible in the app on every plan — only the exported document is
+  // gated. (Test accounts resolve to ENTERPRISE inside getOrgBillingState.)
+  const billing = await getOrgBillingState(user.orgId);
+  if (!billing || !PDF_EXPORT_PLANS.has(billing.plan)) {
+    return NextResponse.json(
+      {
+        error: "PDF export is part of the Firm plan",
+        message:
+          "All findings and evidence stay fully visible on the Free plan. The downloadable working-paper PDF (with evidence annexure) is included in the Firm plan — ₹30,000/year for your whole practice, unlimited clients.",
+        upgrade: "/settings/billing",
+      },
+      { status: 402 },
+    );
+  }
 
   const [run, org] = await Promise.all([
     prisma.investigationRun.findFirst({

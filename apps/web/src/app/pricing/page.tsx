@@ -9,27 +9,51 @@ import {
 
 // ─── Plans ────────────────────────────────────────────────────────────────────
 
+// Two real tiers. Principle: the truth is free — findings and evidence are
+// never gated. The Firm plan charges for scale (unlimited clients), the
+// working-paper artefact, and named support. Priced per FIRM, not per client —
+// that is how CA practices actually buy software.
 const PLANS = [
   {
-    name: "Starter",
-    monthly: 999, annualMonthly: 832, annualTotal: 9990,
-    desc: "For a single business or a CA managing one entity.",
+    name: "Free",
+    priceLabel: "₹0", priceSub: "free forever",
+    desc: "Prove it on your own files. No card, no expiry.",
     cta: "Start free", href: "/signup", highlight: false,
-    features: ["1 company", "Monthly investigations", "GST & vendor ITC checks", "Evidence on every finding", "1 team member", "Email support"],
+    features: [
+      "2 client books per month",
+      "GST/ITC reconciliation + duplicate-payment checks",
+      "Every finding with full evidence rows — nothing held back",
+      "Vendor filing-pattern intelligence (spot habitual late filers)",
+      "Month-end close & flux analysis",
+      "Drill-down questions in plain English",
+    ],
   },
   {
-    name: "Growth",
-    monthly: 2999, annualMonthly: 2499, annualTotal: 29990,
-    desc: "For growing businesses and CAs managing several clients.",
-    cta: "Start free", href: "/signup", highlight: true,
-    features: ["5 companies", "GST/ITC + duplicate-payment checks", "Vendor ITC scorecard", "Month-end close & flux analysis", "Drill-down follow-up questions", "5 team members", "Compliance calendar & TDS reminders", "Priority support"],
+    name: "Firm",
+    priceLabel: "₹30,000", priceSub: "/year · per firm",
+    desc: "For CA practices. One price, your whole client book.",
+    cta: "Start free, upgrade anytime", href: "/signup", highlight: true,
+    features: [
+      "Everything in Free",
+      "Unlimited client books",
+      "Working-paper PDF export — population counts + evidence annexure",
+      "Whole-practice scan in one pass",
+      "Named WhatsApp support through filing season",
+      "5 team members",
+      "GST invoice on every payment · cancel anytime",
+    ],
   },
   {
-    name: "Enterprise",
-    monthly: null, annualMonthly: null, annualTotal: null,
-    desc: "For large firms, multi-entity groups and CA practices.",
+    name: "Custom",
+    priceLabel: "Let's talk", priceSub: "",
+    desc: "Multi-entity groups, special requirements.",
     cta: "Talk to us", href: "/contact", highlight: false,
-    features: ["Unlimited companies / client books", "Whole-practice scan in one pass", "Custom investigations (built with you)", "Dedicated account manager", "Tally & Zoho auto-sync (coming soon)"],
+    features: [
+      "Everything in Firm",
+      "Multi-entity / group structures",
+      "Custom investigations (built with you)",
+      "Dedicated onboarding",
+    ],
   },
 ];
 
@@ -43,7 +67,8 @@ const FAQ = [
   { q: "Does AcctQAI replace my ERP?", a: "No. AcctQAI works alongside your existing accounting software — Tally, Zoho or any GL export. It reads your data and investigates it; it never replaces your books." },
   { q: "Does AcctQAI modify my accounting data?", a: "Never. AcctQAI is strictly read-only. It analyses your data and recommends actions — every change stays in your hands." },
   { q: "Is this just another reporting tool?", a: "No. Reports tell you what happened. AcctQAI tells you what deserves your attention and why — with the supporting evidence and a recommended action for every finding." },
-  { q: "Is there a free trial?", a: "Yes — every plan includes a 14-day free trial. No credit card required. Explore with a sample investigation or upload your own books." },
+  { q: "Is there a free trial?", a: "Better — there's a free plan, forever. Run full investigations on 2 client books a month with every finding and all the evidence, no card required. Upgrade to Firm only when you want your whole practice on it." },
+  { q: "Why is the Firm plan priced per firm and not per client?", a: "Because that's how a practice actually works. ₹30,000 a year across, say, 80 clients is about ₹375 per client — and many firms bill clients ₹2,000–3,000 for a compliance health check built on the output. The tool should cost less than the first client covers." },
   { q: "Is my data safe?", a: "Your data is stored in AWS Mumbai (ap-south-1), isolated per organisation. Sensitive fields — vendor and customer names, references and amounts — are encrypted and masked before any analysis runs, and are never exposed to any AI model." },
   { q: "Can I switch plans later?", a: "Yes. Upgrades take effect immediately and are charged pro-rata. Downgrades apply from your next billing cycle." },
   { q: "What payment methods do you accept?", a: "UPI, credit/debit cards and net banking, all processed securely via Razorpay. A GST invoice is provided on every payment." },
@@ -104,7 +129,6 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function PricingPage() {
-  const [annual, setAnnual] = useState(true);
 
   return (
     <div className="min-h-screen bg-white">
@@ -116,27 +140,12 @@ export default function PricingPage() {
             <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-100 rounded-full px-3 py-1 text-xs font-semibold mb-4">
               <ShieldCheck className="h-3.5 w-3.5" /> Built for finance teams
             </div>
-            <h1 className="text-4xl font-bold text-slate-900 tracking-tight">Simple pricing. No usage limits.</h1>
+            <h1 className="text-4xl font-bold text-slate-900 tracking-tight">Free to prove it. One price for your whole firm.</h1>
             <p className="text-slate-500 text-lg max-w-xl mx-auto leading-relaxed mt-3">
-              No AI credits. No per-query metering. No hidden costs. Just investigations that pay for themselves the first time they catch something.
+              Findings and evidence are never paywalled. The Firm plan buys scale — unlimited clients, the working-paper export, and a person who answers in filing season.
             </p>
           </div>
         </Reveal>
-
-        {/* Billing toggle */}
-        <div className="flex items-center justify-center gap-3 mb-10">
-          <span className={`text-sm font-medium ${!annual ? "text-slate-900" : "text-slate-400"}`}>Monthly</span>
-          <button
-            onClick={() => setAnnual((a) => !a)}
-            className={`relative w-12 h-6 rounded-full transition-colors ${annual ? "bg-[#1B3A5C]" : "bg-slate-300"}`}
-            aria-label="Toggle annual billing"
-          >
-            <span className={`absolute top-0.5 left-0.5 w-5 h-5 rounded-full bg-white transition-transform ${annual ? "translate-x-6" : ""}`} />
-          </button>
-          <span className={`text-sm font-medium ${annual ? "text-slate-900" : "text-slate-400"}`}>
-            Annual <span className="text-emerald-600 font-semibold">· save 2 months</span>
-          </span>
-        </div>
 
         {/* Plans */}
         <div className="grid md:grid-cols-3 gap-6">
@@ -147,17 +156,11 @@ export default function PricingPage() {
                 <h3 className="font-bold text-lg text-slate-900">{p.name}</h3>
                 <p className="text-sm text-slate-500 mt-1 min-h-[40px]">{p.desc}</p>
                 <div className="mt-4 flex items-baseline gap-1 min-h-[44px]">
-                  {p.monthly === null ? (
-                    <span className="text-3xl font-bold text-slate-900">Custom</span>
-                  ) : (
-                    <>
-                      <span className="text-3xl font-bold text-slate-900 tabular-nums">₹{(annual ? p.annualMonthly! : p.monthly).toLocaleString("en-IN")}</span>
-                      <span className="text-slate-500 text-sm">/month</span>
-                    </>
-                  )}
+                  <span className="text-3xl font-bold text-slate-900 tabular-nums">{p.priceLabel}</span>
+                  {p.priceSub && <span className="text-slate-500 text-sm">{p.priceSub}</span>}
                 </div>
                 <p className="text-xs text-slate-400 mt-1 min-h-[16px]">
-                  {p.annualTotal ? (annual ? `₹${p.annualTotal.toLocaleString("en-IN")} billed yearly` : "billed monthly") : "Annual billing"}
+                  {p.name === "Firm" ? "≈ ₹375 per client per year at 80 clients" : p.name === "Free" ? "No credit card required" : " "}
                 </p>
                 <Link href={p.href} className={`mt-5 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm transition-colors ${p.highlight ? "bg-[#1B3A5C] text-white hover:bg-[#1B3A5C]/90" : "bg-slate-100 text-slate-800 hover:bg-slate-200"}`}>
                   {p.cta} {p.href === "/signup" && <ArrowRight className="h-4 w-4" />}

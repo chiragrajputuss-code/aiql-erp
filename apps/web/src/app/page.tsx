@@ -99,28 +99,30 @@ const COMING_SOON = ["Receivables investigation", "Cash-flow monitoring", "Tally
 // ─── How it works ─────────────────────────────────────────────────────────────
 
 const STEPS = [
-  { n: "1", title: "Upload your accounting data", desc: "Import your Tally or ERP export securely. AcctQAI recognises your ledger and GST documents automatically — no mapping, no setup call." },
-  { n: "2", title: "AcctQAI investigates your business", desc: "The investigation engine reviews your financial data and identifies exactly what deserves attention — risks, compliance gaps, unusual changes and opportunities." },
-  { n: "3", title: "Review findings and take action", desc: "Understand each issue, verify the supporting transactions, and resolve it before it impacts your business — every finding comes with a recommended action." },
+  { n: "1", title: "Upload your files", desc: "The exports you already have from Tally or your accounting software. Takes two minutes. Nothing to install, nothing changes in your books." },
+  { n: "2", title: "We check them", desc: "AcctQAI goes through your books the way a careful accountant would — every entry, not a sample." },
+  { n: "3", title: "You see what's leaking", desc: "A simple report: what's wrong, how many rupees are involved, and what to do about it. Every finding comes with the proof, so you can verify it yourself." },
 ];
 
 // ─── Pricing ──────────────────────────────────────────────────────────────────
 
+// Two real tiers: findings and evidence are never paywalled. Firm pricing is
+// per PRACTICE, not per client — that is how CA firms actually buy software.
 const PLANS = [
   {
-    name: "Starter", price: "₹999", period: "/month", annual: "₹9,990/year",
-    desc: "For a single business or CA managing one entity.", cta: "Start free", highlight: false,
-    features: ["1 company", "Monthly investigations", "GST & vendor ITC checks", "Evidence on every finding", "1 team member", "Email support"],
+    name: "Free", price: "₹0", period: "", annual: "Free forever · no card",
+    desc: "Prove it on your own files. No expiry.", cta: "Start free", highlight: false,
+    features: ["2 client books per month", "GST/ITC + duplicate-payment checks", "Every finding with full evidence rows", "Vendor filing-pattern intelligence", "Month-end close & flux analysis", "Drill-down questions in plain English"],
   },
   {
-    name: "Growth", price: "₹2,999", period: "/month", annual: "₹29,990/year",
-    desc: "For growing businesses and CAs managing multiple clients.", cta: "Start free", highlight: true,
-    features: ["5 companies", "GST/ITC + duplicate-payment checks", "Vendor ITC scorecard", "Month-end close & flux analysis", "Drill-down follow-up questions", "5 team members", "Compliance calendar & TDS reminders", "Priority support"],
+    name: "Firm", price: "₹30,000", period: "/year", annual: "Per firm · unlimited clients",
+    desc: "For CA practices. One price, your whole client book.", cta: "Start free", highlight: true,
+    features: ["Everything in Free", "Unlimited client books", "Working-paper PDF export with evidence annexure", "Whole-practice scan in one pass", "Named WhatsApp support through filing season", "5 team members"],
   },
   {
-    name: "Enterprise", price: "Custom", period: "", annual: "Annual billing",
-    desc: "For large firms, multi-entity groups and CA practices.", cta: "Talk to us", highlight: false,
-    features: ["Unlimited companies / client books", "Whole-practice scan in one pass", "Custom investigations (built with you)", "Dedicated account manager", "Tally & Zoho auto-sync (coming soon)"],
+    name: "Custom", price: "Let's talk", period: "", annual: "Multi-entity groups",
+    desc: "Group structures and special requirements.", cta: "Talk to us", highlight: false,
+    features: ["Everything in Firm", "Multi-entity / group structures", "Custom investigations (built with you)", "Dedicated onboarding"],
   },
 ];
 
@@ -481,21 +483,24 @@ export default function LandingPage() {
           <div className="flex flex-col lg:flex-row items-center gap-14">
             <div className="flex-1 space-y-7">
               <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-100 rounded-full px-4 py-1.5 text-sm font-medium">
-                <ShieldCheck className="h-3.5 w-3.5" /> For Indian finance teams &amp; the CAs who run their books
+                <ShieldCheck className="h-3.5 w-3.5" /> For Indian businesses &amp; their CAs
               </div>
               <h1 className="text-4xl lg:text-[3.3rem] font-bold text-[#1B3A5C] leading-[1.08]">
-                Stop searching through reports.<br />
-                <span className="text-blue-600">Know exactly what needs your attention</span> before you close your books.
+                Your books are leaking money.<br />
+                <span className="text-blue-600">Quietly.</span>
               </h1>
               <p className="text-lg text-slate-600 max-w-xl leading-relaxed">
-                AcctQAI reconciles your books against GSTR-2B and flags <strong className="text-slate-800">blocked ITC, unfiled vendors and duplicate payments</strong> — each with the evidence and the rupee impact. <span className="text-slate-800 font-medium">One business or a hundred client books — investigated in a single pass.</span>
+                A supplier skips a GST filing — and your tax credit dies. The same bill gets paid twice — once from the site, once from the office. <strong className="text-slate-800">Nobody notices until the money is gone.</strong>
+              </p>
+              <p className="text-lg text-slate-600 max-w-xl leading-relaxed">
+                AcctQAI finds these leaks in your books and shows you the proof. <span className="text-slate-800 font-medium">Free to check. No card needed.</span>
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/contact" className="inline-flex items-center justify-center gap-2 bg-[#1B3A5C] text-white px-7 py-4 rounded-xl font-semibold text-base hover:bg-[#1B3A5C]/90 transition-colors shadow-lg shadow-[#1B3A5C]/20">
-                  Book a demo <ArrowRight className="h-4 w-4" />
+                <Link href="/signup" className="inline-flex items-center justify-center gap-2 bg-[#1B3A5C] text-white px-7 py-4 rounded-xl font-semibold text-base hover:bg-[#1B3A5C]/90 transition-colors shadow-lg shadow-[#1B3A5C]/20">
+                  Check my books — free <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link href="/sample-report" className="inline-flex items-center justify-center gap-2 bg-white text-slate-700 px-7 py-4 rounded-xl font-semibold text-base border border-slate-200 hover:border-slate-400 transition-colors">
-                  See a sample investigation
+                  See what it found for others
                 </Link>
               </div>
               <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-500">
@@ -577,16 +582,16 @@ export default function LandingPage() {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <h2 className="text-3xl font-bold text-[#1B3A5C]">From financial data to financial decisions</h2>
+            <h2 className="text-3xl font-bold text-[#1B3A5C]">Two leaks. Every business has at least one.</h2>
             <p className="text-lg text-slate-600 mt-3">
-              Most finance software tells you <span className="font-semibold text-slate-800">what happened</span>. AcctQAI helps you understand <span className="font-semibold text-slate-800">what deserves your attention and why.</span>
+              They don&apos;t show up in any report. Each entry looks fine on its own. That&apos;s why they survive for months.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: <Search className="h-6 w-6" />, color: "bg-red-50 text-red-600", title: "Find risks first", desc: "Blocked ITC, unfiled vendors and duplicate payments — surfaced before they cost you." },
-              { icon: <FileText className="h-6 w-6" />, color: "bg-blue-50 text-blue-600", title: "Evidence, not guesses", desc: "Every finding is backed by the actual invoices and ledger entries. Nothing is a black box." },
-              { icon: <Sparkles className="h-6 w-6" />, color: "bg-emerald-50 text-emerald-600", title: "Ask anything", desc: "Want more detail? Ask in plain English. Every finding links back to the source data." },
+              { icon: <Receipt className="h-6 w-6" />, color: "bg-red-50 text-red-600", title: "The tax credit that dies", desc: "You bought goods and paid the GST. But your credit only becomes real if the supplier files their return. When they don't, that money silently disappears — and you find out months later, at the worst time." },
+              { icon: <Wallet className="h-6 w-6" />, color: "bg-amber-50 text-amber-600", title: "The bill paid twice", desc: "Accounts pays a bill from the bank. The owner also pays it on UPI. Or it's entered twice with a slightly different number. Your software never warns you — it just records both." },
+              { icon: <IndianRupee className="h-6 w-6" />, color: "bg-emerald-50 text-emerald-600", title: "What we found on one month's books", desc: "₹76,700 of tax credit at risk. ₹54,000 paid twice. ₹15,000 of credit never claimed. About ₹1.4 lakh — in one sample month, in one business. Want to know what's in yours?" },
             ].map((c) => (
               <div key={c.title} className="rounded-2xl border border-slate-200 p-6 hover:shadow-md hover:border-slate-300 transition-all">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${c.color}`}>{c.icon}</div>
@@ -594,6 +599,12 @@ export default function LandingPage() {
                 <p className="text-slate-600 text-sm mt-2 leading-relaxed">{c.desc}</p>
               </div>
             ))}
+          </div>
+          <div className="text-center mt-10">
+            <Link href="/signup" className="inline-flex items-center gap-2 bg-[#1B3A5C] text-white px-7 py-3.5 rounded-xl font-semibold hover:bg-[#1B3A5C]/90 transition-colors">
+              Find out what&apos;s in my books <ArrowRight className="h-4 w-4" />
+            </Link>
+            <p className="text-xs text-slate-400 mt-2">Free · no card · your data stays masked and read-only</p>
           </div>
         </div>
       </section>
@@ -864,7 +875,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-4">
             <h2 className="text-3xl font-bold text-[#1B3A5C]">Built for finance teams</h2>
-            <p className="text-lg text-slate-600 mt-3">Simple pricing. No usage limits. No AI credits. No hidden costs.</p>
+            <p className="text-lg text-slate-600 mt-3">Free to prove it on your own files. One flat price for your whole firm.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 mt-12">
             {PLANS.map((p) => (

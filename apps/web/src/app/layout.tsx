@@ -69,15 +69,26 @@ const jsonLd = [
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description: DESCRIPTION,
-    offers: {
-      "@type": "Offer",
-      price: "999",
-      priceCurrency: "INR",
-      priceSpecification: {
-        "@type": "UnitPriceSpecification",
-        billingDuration: "P1M",
+    // Two-tier model: free forever (2 client books/month) + Firm at
+    // Rs 30,000/year per firm with unlimited clients.
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Free",
+        price: "0",
+        priceCurrency: "INR",
       },
-    },
+      {
+        "@type": "Offer",
+        name: "Firm",
+        price: "30000",
+        priceCurrency: "INR",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          billingDuration: "P1Y",
+        },
+      },
+    ],
   },
   {
     "@context": "https://schema.org",
