@@ -23,6 +23,10 @@ export { scanGstr1 }    from "./gstr-1/scanner";
 
 // ─── GSTR-2B ─────────────────────────────────────────────────────────────────
 export { parseGstr2B }  from "./gstr-2b/parser";
+export {
+  buildFilingProfiles, lookupProfile, isLikelyLateNotMissing, GSTR1_DUE_DAY,
+} from "./gstr-2b/filing-behaviour";
+export type { SupplierFilingProfile, FilingPattern } from "./gstr-2b/filing-behaviour";
 
 // ─── GSTR-3B ─────────────────────────────────────────────────────────────────
 export { parseGstr3B }  from "./gstr-3b/parser";
@@ -41,3 +45,4 @@ export {
   parseGlRows, filterPurchaseRows, filterSalesRows, filterPaymentRows,
   effectiveAmount, sumAmount, normaliseName, nameSimilarity, normalizeInvoiceNo,
 } from "./reconciliation/gl-utils";
+export { parseNum, parseIndianDate } from "./coerce";

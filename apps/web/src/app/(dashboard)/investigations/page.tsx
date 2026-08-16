@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import {
   Search, AlertCircle, AlertTriangle, TrendingUp, Info,
   Loader2, RefreshCw, ChevronDown, ShieldCheck, Clock,
-  Lightbulb, Presentation, Printer, ArrowLeft,
+  Lightbulb, Presentation, Printer, ArrowLeft, Download,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -372,6 +372,11 @@ export default function InvestigationsPage() {
           </p>
         </div>
         <div className="flex items-center gap-2">
+          {run && (
+            <a href="/api/v1/investigations/report/export" className="inline-flex items-center gap-2 rounded-md border border-slate-200 px-3 py-2 text-sm font-medium hover:bg-slate-50" title="Download the client-facing Health Check PDF">
+              <Download className="h-4 w-4" /> Download PDF
+            </a>
+          )}
           {run?.boardBrief && (
             <Button variant="outline" onClick={() => setBoardMode(true)} className="gap-2">
               <Presentation className="h-4 w-4" /> Board Meeting Mode

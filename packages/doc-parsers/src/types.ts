@@ -124,6 +124,16 @@ export interface Gstr2BRow {
   hsnCode:       string | null;
   placeOfSupply: string;
 
+  // Supplier filing behaviour — carried per-invoice in GSTR-2B itself.
+  // GSTN emits `supfildt` (the date the supplier actually FILED the GSTR-1
+  // carrying this invoice) and `supprd` (the return period it was filed in).
+  // These are what separate a genuine non-filer from a habitual late filer:
+  // an invoice filed on the 17th still arrives, just in a later GSTR-2B. Used
+  // to avoid raising "vendor hasn't filed, ITC at risk" on vendors who always
+  // file late, and to warn against rejecting such records in IMS.
+  supplierFiledDate:   Date | null;   // supfildt
+  supplierFiledPeriod: string | null; // supprd — "MMYYYY"
+
   // Source
   _rowIndex: number;
   _raw:      Record<string, unknown>;

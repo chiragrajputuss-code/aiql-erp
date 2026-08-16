@@ -206,8 +206,24 @@ function normaliseValue(raw: unknown, canonicalName: string): unknown {
 
   if (def.pgType === "date") {
     if (raw instanceof Date) return raw.toISOString().split("T")[0];
-    // Try parse dd/mm/yyyy
     const s = String(raw).trim();
+    if (!s) return null;
+    // Already ISO — keep as-is.
+    if (/^\d{4}-\d{1,2}-\d{1,2}/.test(s)) return s.slice(0, 10);
+    // Tally alphabetic: d-Mon-yyyy / d Mon yy  (e.g. "1-Apr-2026")
+    const alpha = s.match(/^(\d{1,2})[-/ ]([A-Za-z]{3,9})[-/ ](\d{2,4})$/);
+    if (alpha) {
+      const MONTHS: Record<string, string> = {
+        jan: "01", feb: "02", mar: "03", apr: "04", may: "05", jun: "06",
+        jul: "07", aug: "08", sep: "09", oct: "10", nov: "11", dec: "12",
+      };
+      const mm = MONTHS[alpha[2].toLowerCase().slice(0, 3)];
+      if (mm) {
+        const year = alpha[3].length === 2 ? `20${alpha[3]}` : alpha[3];
+        return `${year}-${mm}-${alpha[1].padStart(2, "0")}`;
+      }
+    }
+    // Numeric day-first: dd/mm/yyyy or dd-mm-yyyy (Indian convention)
     const dm = s.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{2,4})$/);
     if (dm) {
       const [, d, m, y] = dm;

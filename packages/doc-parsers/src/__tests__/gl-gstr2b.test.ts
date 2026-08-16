@@ -34,6 +34,8 @@ function gstr2bRow(overrides: Partial<Gstr2BRow> = {}): Gstr2BRow {
     supplyType:    "B2B",
     hsnCode:       null,
     placeOfSupply: "27",
+    supplierFiledDate:   null,
+    supplierFiledPeriod: null,
     _rowIndex: 0,
     _raw: {},
     ...overrides,

@@ -1,23 +1,18 @@
 import type { GlRow } from "./types";
+import { parseNum, parseIndianDate } from "../coerce";
 
 // ─── Parse raw DB rows into typed GlRows ─────────────────────────────────────
+// Amount/date coercion is delegated to the shared robust parsers so Tally/Busy
+// exports (₹, Dr/Cr, day-first dates, "1-Apr-2026") are read correctly.
 
-function num(v: unknown): number {
-  if (!v && v !== 0) return 0;
-  const n = Number(String(v).replace(/,/g, ""));
-  return isNaN(n) ? 0 : n;
-}
+const num = parseNum;
 
 function str(v: unknown): string | null {
   if (v === null || v === undefined || String(v).trim() === "") return null;
   return String(v).trim();
 }
 
-function parseDate(v: unknown): Date | null {
-  if (!v) return null;
-  const d = new Date(String(v));
-  return isNaN(d.getTime()) ? null : d;
-}
+const parseDate = parseIndianDate;
 
 export function parseGlRows(rows: Record<string, unknown>[]): GlRow[] {
   return rows.map((r) => ({
@@ -132,8 +127,14 @@ export function normalizeInvoiceNo(ref: string | null | undefined): string {
   if (!ref) return "";
   return String(ref)
     .toUpperCase()
-    .replace(/[\s/\-_.#]/g, "")           // drop separators
-    .replace(/(^|[A-Z])0+(\d)/g, "$1$2")  // drop leading zeros in numeric runs
+    .trim()
+    // Drop leading zeros from every numeric run — while separators still mark
+    // the run boundaries. Must run BEFORE separators are stripped, else e.g.
+    // "MSRM/26/0412" fuses to "MSRM260412" and the zero on "0412" is no longer
+    // at a boundary. `(^|[^0-9])` = a run starts at string-start, a letter, or a
+    // separator, so this catches "0412", "INV0412" and "0001" alike.
+    .replace(/(^|[^0-9])0+(\d)/g, "$1$2")
+    .replace(/[\s/\-_.#]/g, "")           // then drop separators
     .trim();
 }
 

@@ -14,18 +14,31 @@ export default function ContactPage() {
   const [subject, setSubject] = useState("");
   const [message, setMessage] = useState("");
   const [status, setStatus]   = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setStatus("sending");
+    setErrorMsg("");
     try {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ name, email, subject, message }),
       });
-      setStatus(res.ok ? "sent" : "error");
+      if (res.ok) {
+        setStatus("sent");
+        return;
+      }
+      // Surface *why* it failed instead of a blanket "something went wrong".
+      if (res.status === 400) {
+        setErrorMsg("Please check the form — add a valid email, pick a topic, and write at least 10 characters.");
+      } else {
+        setErrorMsg("Something went wrong on our side. Please email us directly at support@acctqai.com");
+      }
+      setStatus("error");
     } catch {
+      setErrorMsg("Couldn't reach the server. Please check your connection, or email us at support@acctqai.com");
       setStatus("error");
     }
   }
@@ -37,7 +50,7 @@ export default function ContactPage() {
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-2">
             <div className="w-8 h-8 rounded-lg flex items-center justify-center text-white font-bold text-xs" style={{ backgroundColor: BRAND_BLUE }}>
-              IQ
+              AQ
             </div>
             <span className="font-bold text-lg" style={{ color: BRAND_BLUE }}>AcctQAI</span>
           </Link>
@@ -140,6 +153,7 @@ export default function ContactPage() {
                     onChange={(e) => setName(e.target.value)}
                     placeholder="Ravi Sharma"
                     required
+                    maxLength={100}
                   />
                 </div>
 
@@ -180,12 +194,15 @@ export default function ContactPage() {
                     rows={5}
                     placeholder="Tell us about your business and what you'd like to do…"
                     required
+                    minLength={10}
+                    maxLength={5000}
                     className="w-full border border-slate-200 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none"
                   />
+                  <p className="text-xs text-slate-400">{message.length < 10 ? `At least ${10 - message.length} more character${10 - message.length === 1 ? "" : "s"}` : " "}</p>
                 </div>
 
                 {status === "error" && (
-                  <p className="text-sm text-red-600">Something went wrong. Please email us directly at support@acctqai.com</p>
+                  <p className="text-sm text-red-600">{errorMsg || "Something went wrong. Please email us directly at support@acctqai.com"}</p>
                 )}
 
                 <Button

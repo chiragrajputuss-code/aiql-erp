@@ -1,0 +1,16 @@
+Name,Firm,City,Source,Warm/Cold,Contact (phone/email/LinkedIn),Date Reached,Stage,File Received?,Rs Found,Feedback / Notes,Intros Given,Next Action
+# STAGES: 1-Reached  2-Replied  3-Conversation  4-Agreed to try  5-File received  6-Report delivered  7-Onboarded (feedback given)  8-Referral/testimonial  X-Passed
+# SOURCE examples: Friend intro / Own network / LinkedIn / CAclubindia / TaxGuru / WhatsApp group / ICAI branch / Cold email / Referral from <name>
+# GOAL: 50 reached -> 10 onboarded (stage 7+).  Track the ONE number that matters: Rs Found per client book.
+,,,,,,,,,,,,
+[EXAMPLE] Rakesh Menon,Menon & Associates,Pune,Friend intro,Warm,+91-98xxxxxx,2026-07-12,4-Agreed to try,No,,Wants a simple client first; nervous about data,0,Send column template + free-audit steps
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,
+,,,,,,,,,,,,

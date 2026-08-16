@@ -1,4 +1,5 @@
 import type { Gstr2BRow } from "../types";
+import { parseNum, parseIndianDate } from "../coerce";
 
 // ─── Column aliases (for Excel exports — already-flat rows) ──────────────────
 
@@ -45,6 +46,17 @@ const ALIASES: Record<Gstr2BField, string[]> = {
   ],
   hsnCode: ["hsn_code", "hsn", "sac_code", "sac", "hsn_sac"],
   placeOfSupply: ["place_of_supply", "pos", "supply_state", "state_code", "state"],
+  // GSTN carries the supplier's actual GSTR-1 filing date and period on every
+  // 2B record. Most tools ignore these; they are what distinguishes "vendor
+  // never filed" from "vendor always files late".
+  supplierFiledDate: [
+    "supfildt", "supplier_filing_date", "supplier_filed_date", "gstr1_filing_date",
+    "filing_date", "date_of_filing", "supplier_gstr1_filed_on",
+  ],
+  supplierFiledPeriod: [
+    "supprd", "supplier_filing_period", "supplier_period", "gstr1_period",
+    "return_period", "filing_period",
+  ],
 };
 
 // ─── Helpers (shared parsing primitives — same pattern as gstr-1/parser.ts) ──
@@ -72,22 +84,12 @@ function str(v: unknown): string {
   return v === null || v === undefined ? "" : String(v).trim();
 }
 
-function num(v: unknown): number {
-  if (!v && v !== 0) return 0;
-  const n = Number(String(v).replace(/,/g, ""));
-  return isNaN(n) ? 0 : n;
-}
+const num = parseNum;
 
+// Kept as a named wrapper so existing call sites read unchanged. Robust to
+// GSTN-portal date formats, Tally "d-Mon-yyyy", and Indian day-first ordering.
 function parseDate(v: unknown): Date | null {
-  if (!v) return null;
-  const s = String(v).trim();
-  const ddmmyyyy = s.match(/^(\d{1,2})[\/\-](\d{1,2})[\/\-](\d{4})$/);
-  if (ddmmyyyy) {
-    const d = new Date(parseInt(ddmmyyyy[3]), parseInt(ddmmyyyy[2]) - 1, parseInt(ddmmyyyy[1]));
-    return isNaN(d.getTime()) ? null : d;
-  }
-  const iso = new Date(s);
-  return isNaN(iso.getTime()) ? null : iso;
+  return parseIndianDate(v);
 }
 
 function bool(v: unknown): boolean {
@@ -202,6 +204,8 @@ export function parseGstr2B(rows: Record<string, unknown>[] | Record<string, unk
         supplyType:    str(pick(raw, lookup, ALIASES.supplyType)) || "B2B",
         hsnCode:       str(pick(raw, lookup, ALIASES.hsnCode)) || null,
         placeOfSupply: str(pick(raw, lookup, ALIASES.placeOfSupply)),
+        supplierFiledDate:   parseDate(pick(raw, lookup, ALIASES.supplierFiledDate)),
+        supplierFiledPeriod: str(pick(raw, lookup, ALIASES.supplierFiledPeriod)) || null,
         _rowIndex:     idx,
         _raw:          raw,
       };
