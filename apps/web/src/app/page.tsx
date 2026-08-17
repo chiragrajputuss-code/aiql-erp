@@ -153,7 +153,7 @@ function Navbar() {
         </div>
         <div className="hidden md:flex items-center gap-3">
           <Link href="/login" className="text-sm text-slate-600 hover:text-slate-900 font-medium px-4 py-2">Log in</Link>
-          <Link href="/contact" className="text-sm bg-[#1B3A5C] text-white px-5 py-2 rounded-lg font-medium hover:bg-[#1B3A5C]/90 transition-colors">Book a demo</Link>
+          <Link href="/signup" className="text-sm bg-[#1B3A5C] text-white px-5 py-2 rounded-lg font-medium hover:bg-[#1B3A5C]/90 transition-colors">Start free</Link>
         </div>
         <button className="md:hidden p-2" onClick={() => setOpen(!open)}>{open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}</button>
       </div>
@@ -163,7 +163,7 @@ function Navbar() {
             <a key={l.label} href={l.href} className="block text-sm text-slate-600 font-medium py-2" onClick={() => setOpen(false)}>{l.label}</a>
           ))}
           <Link href="/login" className="block text-sm text-slate-600 py-2">Log in</Link>
-          <Link href="/contact" className="block text-sm bg-[#1B3A5C] text-white px-5 py-2.5 rounded-lg font-medium text-center">Book a demo</Link>
+          <Link href="/signup" className="block text-sm bg-[#1B3A5C] text-white px-5 py-2.5 rounded-lg font-medium text-center">Start free</Link>
         </div>
       )}
     </nav>
@@ -477,35 +477,51 @@ export default function LandingPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* ── Hero ── */}
-      <section className="pt-32 pb-20 px-6 bg-gradient-to-b from-slate-50 to-white">
-        <div className="max-w-6xl mx-auto">
+      {/* ── Hero — the brand banner ── */}
+      <section
+        className="relative pt-32 pb-24 px-6 overflow-hidden"
+        style={{ background: "linear-gradient(120deg, #24507e 0%, #1B3A5C 55%, #12293f 100%)" }}
+      >
+        {/* subtle blueprint grid, fading in from the right */}
+        <div
+          aria-hidden
+          className="absolute inset-0 opacity-[0.07] pointer-events-none"
+          style={{
+            backgroundImage:
+              "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
+            backgroundSize: "44px 44px",
+            maskImage: "linear-gradient(90deg, transparent, #000 45%)",
+            WebkitMaskImage: "linear-gradient(90deg, transparent, #000 45%)",
+          }}
+        />
+        <div className="max-w-6xl mx-auto relative">
           <div className="flex flex-col lg:flex-row items-center gap-14">
             <div className="flex-1 space-y-7">
-              <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-100 rounded-full px-4 py-1.5 text-sm font-medium">
+              <div className="inline-flex items-center gap-2 bg-white/10 text-white/90 border border-white/20 rounded-full px-4 py-1.5 text-sm font-medium backdrop-blur-sm">
                 <ShieldCheck className="h-3.5 w-3.5" /> For Indian businesses &amp; their CAs
               </div>
-              <h1 className="text-4xl lg:text-[3.3rem] font-bold text-[#1B3A5C] leading-[1.08]">
+              <h1 className="text-4xl lg:text-[3.4rem] font-bold text-white leading-[1.08] tracking-tight">
                 Your books are leaking money.<br />
-                <span className="text-blue-600">Quietly.</span>
+                <span className="text-[#8FB4EE]">Quietly.</span>
               </h1>
-              <p className="text-lg text-slate-600 max-w-xl leading-relaxed">
-                A supplier skips a GST filing — and your tax credit dies. The same bill gets paid twice — once from the site, once from the office. <strong className="text-slate-800">Nobody notices until the money is gone.</strong>
+              <p className="text-lg text-white/75 max-w-xl leading-relaxed">
+                A supplier skips a GST filing — and your tax credit dies. The same bill gets paid twice — once from the site, once from the office. <strong className="text-white font-semibold">Nobody notices until the money is gone.</strong>
               </p>
-              <p className="text-lg text-slate-600 max-w-xl leading-relaxed">
-                AcctQAI finds these leaks in your books and shows you the proof. <span className="text-slate-800 font-medium">Free to check. No card needed.</span>
+              <p className="text-lg text-white/75 max-w-xl leading-relaxed">
+                AcctQAI finds these leaks in your books and shows you the proof. <span className="text-white font-medium">Free to check. No card needed.</span>
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
-                <Link href="/signup" className="inline-flex items-center justify-center gap-2 bg-[#1B3A5C] text-white px-7 py-4 rounded-xl font-semibold text-base hover:bg-[#1B3A5C]/90 transition-colors shadow-lg shadow-[#1B3A5C]/20">
+                <Link href="/signup" className="inline-flex items-center justify-center gap-2 bg-white text-[#1B3A5C] px-7 py-4 rounded-xl font-bold text-base hover:bg-blue-50 transition-colors shadow-lg shadow-black/20">
                   Check my books — free <ArrowRight className="h-4 w-4" />
                 </Link>
-                <Link href="/sample-report" className="inline-flex items-center justify-center gap-2 bg-white text-slate-700 px-7 py-4 rounded-xl font-semibold text-base border border-slate-200 hover:border-slate-400 transition-colors">
+                <Link href="/sample-report" className="inline-flex items-center justify-center gap-2 text-white px-7 py-4 rounded-xl font-semibold text-base border border-white/30 hover:bg-white/10 transition-colors">
                   See what it found for others
                 </Link>
               </div>
-              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-slate-500">
-                <span className="flex items-center gap-1.5"><Lock className="h-4 w-4 text-slate-400" /> Read-only — never modifies your books</span>
-                <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-emerald-500" /> Works alongside your ERP</span>
+              <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/60">
+                <span className="flex items-center gap-1.5"><Lock className="h-4 w-4" /> Read-only — never modifies your books</span>
+                <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-emerald-400" /> Works alongside your ERP</span>
+                <span className="flex items-center gap-1.5"><IndianRupee className="h-4 w-4 text-[#8FB4EE]" /> Every entry checked — not a sample</span>
               </div>
             </div>
             <div className="flex-1 flex justify-center w-full">
@@ -582,6 +598,7 @@ export default function LandingPage() {
       <section className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-14">
+            <p className="text-xs font-bold tracking-[0.18em] text-blue-600 uppercase mb-3">The problem</p>
             <h2 className="text-3xl font-bold text-[#1B3A5C]">Two leaks. Every business has at least one.</h2>
             <p className="text-lg text-slate-600 mt-3">
               They don&apos;t show up in any report. Each entry looks fine on its own. That&apos;s why they survive for months.
@@ -613,6 +630,7 @@ export default function LandingPage() {
       <section id="how-it-works" className="py-20 px-6 bg-slate-50">
         <div className="max-w-5xl mx-auto">
           <div className="text-center mb-14">
+            <p className="text-xs font-bold tracking-[0.18em] text-blue-600 uppercase mb-3">Three steps</p>
             <h2 className="text-3xl font-bold text-[#1B3A5C]">How it works</h2>
             <p className="text-lg text-slate-600 mt-3">Three steps from raw data to a decision you can act on.</p>
           </div>
@@ -874,7 +892,8 @@ export default function LandingPage() {
       <section id="pricing" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-4">
-            <h2 className="text-3xl font-bold text-[#1B3A5C]">Built for finance teams</h2>
+            <p className="text-xs font-bold tracking-[0.18em] text-blue-600 uppercase mb-3">Pricing</p>
+            <h2 className="text-3xl font-bold text-[#1B3A5C]">Free to prove it. One price for your firm.</h2>
             <p className="text-lg text-slate-600 mt-3">Free to prove it on your own files. One flat price for your whole firm.</p>
           </div>
           <div className="grid md:grid-cols-3 gap-6 mt-12">
