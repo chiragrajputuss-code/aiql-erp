@@ -78,6 +78,21 @@ All four come from one motion: real client books flowing through it via CAs.
 
 ## 8. Go-to-market (the actual plan)
 
+**Positioning line: "Computed, not generated."**
+AcctQAI must never present as an AI-wrapper. The truthful claims that separate it
+from LLM-wrapper tools (and from AI-cost risk):
+- Findings come from deterministic rules — same input, same report, to the rupee.
+  An auditor can re-perform it. (Honesty note: Audcrix/CORAA also market
+  determinism — this is table-stakes trust copy in the audit niche, NOT a moat.)
+- AI writes exactly one field (the narration). It never calculates a number and
+  never sees real names/amounts (masked first). The report renders with the AI
+  switched off — verified in tests.
+- Therefore: no AI credits, no per-query metering, ever — and AI COGS is a
+  rounding error (~₹50–200/customer/yr), so token-price shocks hurt LLM-in-the-
+  loop competitors, not us. Free hosted/open-source models are a tailwind (swap
+  via safeLlmCall), not a threat — customers buy checks + evidence + deadlines +
+  accountability, not a model.
+
 **The motion: give away an audit, don't sell software.**
 > "Send me one client's purchase register + GSTR-2B. I'll send back every invoice where ITC is at risk and any bill paid twice. Free, no signup. If it finds nothing, you've lost ten minutes."
 

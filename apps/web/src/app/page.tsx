@@ -522,6 +522,7 @@ export default function LandingPage() {
                 <span className="flex items-center gap-1.5"><Lock className="h-4 w-4" /> Read-only — never modifies your books</span>
                 <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-emerald-400" /> Works alongside your ERP</span>
                 <span className="flex items-center gap-1.5"><IndianRupee className="h-4 w-4 text-[#8FB4EE]" /> Every entry checked — not a sample</span>
+                <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-emerald-400" /> Computed, not generated — same answer every run</span>
               </div>
             </div>
             <div className="flex-1 flex justify-center w-full">
@@ -622,6 +623,44 @@ export default function LandingPage() {
               Find out what&apos;s in my books <ArrowRight className="h-4 w-4" />
             </Link>
             <p className="text-xs text-slate-400 mt-2">Free · no card · your data stays masked and read-only</p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Computed, not generated (anti-wrapper positioning) ── */}
+      <section className="py-20 px-6 bg-white border-y border-slate-100">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center max-w-2xl mx-auto mb-14">
+            <p className="text-xs font-bold tracking-[0.18em] text-blue-600 uppercase mb-3">Why it&apos;s different</p>
+            <h2 className="text-3xl font-bold text-[#1B3A5C]">Computed, not generated.</h2>
+            <p className="text-lg text-slate-600 mt-3">
+              AcctQAI is not a chatbot wrapped around your books. Every finding comes from fixed accounting rules — the kind an auditor can re-check.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: <Check className="h-6 w-6" />, color: "bg-emerald-50 text-emerald-600",
+                title: "Same answer, every time",
+                desc: "Run the same file twice and you get the same report, to the rupee. Findings come from accounting rules, not AI guesswork — so you can verify any of them against your own records.",
+              },
+              {
+                icon: <FileText className="h-6 w-6" />, color: "bg-blue-50 text-blue-600",
+                title: "AI writes one sentence. Never a number.",
+                desc: "Every amount, every match, every finding is calculated. AI is only used to phrase the summary — and the report still works with the AI switched off entirely.",
+              },
+              {
+                icon: <Lock className="h-6 w-6" />, color: "bg-violet-50 text-violet-600",
+                title: "No AI credits. No metering.",
+                desc: "Because the engine doesn't burn AI to do its job, we never charge per query or per document. And your names and amounts are masked before anything is processed.",
+              },
+            ].map((c) => (
+              <div key={c.title} className="rounded-2xl border border-slate-200 p-6 hover:shadow-md hover:border-slate-300 transition-all">
+                <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${c.color}`}>{c.icon}</div>
+                <h3 className="font-semibold text-lg text-slate-900 mt-4">{c.title}</h3>
+                <p className="text-slate-600 text-sm mt-2 leading-relaxed">{c.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

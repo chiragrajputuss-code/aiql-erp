@@ -139,6 +139,7 @@ These decide your roadmap. Ask them in every conversation:
 - **"What does it cost?"** → *"Free while I'm shaping it. Later, ₹25–40k a year for your whole firm, unlimited clients — not per client."* **← NEVER add a findings guarantee here.**
 - **"I'm too busy."** → *"That's the point. Send one file, I do the work, you read one page."*
 - **"We already use [competitor]."** → *"Genuinely useful to know — what does it do well, and what do you still do by hand around it?"* **This is a research win, not a loss. Log it.**
+- **"Is this one of those AI/ChatGPT tools?"** → *"No — and that matters for your file. Every finding is computed by fixed rules: run the same data twice, you get the same report to the rupee, so anyone can re-perform it. AI only phrases the summary — it never calculates a number and never sees real names or amounts. The report runs even with the AI switched off."* **This is the trust answer for a profession that must re-perform work — deliver it word for word.**
 
 ---
 
