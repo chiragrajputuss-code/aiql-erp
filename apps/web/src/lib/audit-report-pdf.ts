@@ -57,6 +57,7 @@ export interface AuditReportInput {
   totalAtRiskRs:      number;
   totalOpportunityRs: number;
   summary:            string;  // board brief narratedSummary
+  ledgerNote?:        string;  // "Since March 2026, AcctQAI has identified Rs X…, of which Rs Y no longer appears."
   findings:           AuditFindingInput[];
   generatedOn:        string;  // passed in — caller stamps the date
 }
@@ -128,7 +129,15 @@ export function buildAuditPdf(input: AuditReportInput): Promise<Buffer> {
     doc.fillColor(COLORS.slate600).font("Helvetica").fontSize(10);
     const sumH = doc.heightOfString(input.summary, { width: CONTENT_W });
     doc.text(input.summary, M, y, { width: CONTENT_W });
-    y += sumH + 16;
+    y += sumH + 8;
+
+    if (input.ledgerNote) {
+      doc.fillColor(COLORS.opp).font("Helvetica-Oblique").fontSize(9);
+      const noteH = doc.heightOfString(input.ledgerNote, { width: CONTENT_W });
+      doc.text(input.ledgerNote, M, y, { width: CONTENT_W });
+      y += noteH + 8;
+    }
+    y += 8;
 
     // ── Findings heading ─────────────────────────────────────────────────────
     doc.fillColor(COLORS.slate400).font("Helvetica-Bold").fontSize(9)

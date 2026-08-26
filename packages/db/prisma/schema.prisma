@@ -497,6 +497,13 @@ model InvestigationFinding {
   resolvedAt      DateTime?
   matchKey        String?
 
+  // Human-confirmed disposition of a resolved finding (Phase 3.7). AcctQAI
+  // can only prove a finding no longer appears, not that money reached a
+  // bank account — this is the human's own confirmation, never inferred.
+  // Also the disposition-label data needed to tune precision later.
+  disposition   String?   // "recovered" | "not_an_issue"
+  dispositionAt DateTime?
+
   @@index([runId, severity])
   @@index([runId, changeStatus])
   @@index([matchKey])

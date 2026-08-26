@@ -51,12 +51,21 @@ interface Finding {
 }
 
 interface ResolvedFinding {
-  id:         string;
-  code:       string;
-  title:      string;
-  category:   string;
-  impactRs:   number | null;
-  resolvedAt: string | null;
+  id:            string;
+  code:          string;
+  title:         string;
+  category:      string;
+  impactRs:      number | null;
+  resolvedAt:    string | null;
+  disposition:   "recovered" | "not_an_issue" | null;
+  dispositionAt: string | null;
+}
+
+interface Ledger {
+  foundTotalRs:    number;
+  resolvedTotalRs: number;
+  openTotalRs:     number;
+  firstRunAt:      string | null;
 }
 
 interface HistoryRun {
@@ -122,6 +131,7 @@ interface Run {
   outcomes:         Outcome[];
   counts:           { new: number; carried: number; resolved: number };
   resolvedRs:       number;
+  ledger:           Ledger;
   findings:         Finding[];
   resolvedFindings: ResolvedFinding[];
   proactiveObservation: ProactiveObservation | null;
@@ -129,6 +139,10 @@ interface Run {
 }
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────
+
+function formatMonthYear(iso: string): string {
+  return new Date(iso).toLocaleDateString("en-IN", { month: "long", year: "numeric" });
+}
 
 function formatINR(n: number): string {
   if (n >= 1_00_00_000) return `₹${(n / 1_00_00_000).toFixed(2)} Cr`;
@@ -428,6 +442,24 @@ export default function InvestigationsPage() {
     loadReport(connectionId, runId);
   }
 
+  async function dispositionFinding(id: string, disposition: "recovered" | "not_an_issue") {
+    try {
+      const res = await fetch(`/api/v1/investigations/findings/${id}/disposition`, {
+        method:  "POST",
+        headers: { "Content-Type": "application/json" },
+        body:    JSON.stringify({ disposition }),
+      });
+      if (!res.ok) return;
+      const data = await res.json();
+      setRun((prev) => prev && {
+        ...prev,
+        resolvedFindings: prev.resolvedFindings.map((f) =>
+          f.id === id ? { ...f, disposition: data.disposition, dispositionAt: data.dispositionAt } : f
+        ),
+      });
+    } catch { /* best-effort — leave the buttons in place to retry */ }
+  }
+
   async function runInvestigation() {
     setRunning(true);
     setError(null);
@@ -674,13 +706,40 @@ export default function InvestigationsPage() {
                   <span className="text-sm font-semibold text-emerald-700">{formatINR(run.resolvedRs)}</span>
                 )}
               </div>
-              <ul className="mt-2 space-y-1">
+              {run.ledger.firstRunAt && (
+                <p className="text-xs text-emerald-700/80 mt-1">
+                  Since {formatMonthYear(run.ledger.firstRunAt)}, AcctQAI has identified {formatINR(run.ledger.foundTotalRs)} for this client, of which {formatINR(run.ledger.resolvedTotalRs)} no longer appears.
+                </p>
+              )}
+              <ul className="mt-2 space-y-1.5">
                 {run.resolvedFindings.map((f) => (
-                  <li key={f.id} className="flex items-center justify-between gap-3 text-sm text-slate-700 border-b border-emerald-100 last:border-0 pb-1 last:pb-0">
+                  <li key={f.id} className="flex items-center justify-between gap-3 text-sm text-slate-700 border-b border-emerald-100 last:border-0 pb-1.5 last:pb-0">
                     <span>{f.title}</span>
-                    {f.impactRs !== null && f.impactRs > 0 && (
-                      <span className="text-xs font-medium text-emerald-700 shrink-0">{formatINR(f.impactRs)}</span>
-                    )}
+                    <div className="flex items-center gap-2 shrink-0">
+                      {f.impactRs !== null && f.impactRs > 0 && (
+                        <span className="text-xs font-medium text-emerald-700">{formatINR(f.impactRs)}</span>
+                      )}
+                      {f.disposition ? (
+                        <span className="text-[10px] text-muted-foreground">
+                          {f.disposition === "recovered" ? "Marked recovered" : "Marked not an issue"}
+                        </span>
+                      ) : (
+                        <div className="flex items-center gap-1">
+                          <button
+                            onClick={() => dispositionFinding(f.id, "recovered")}
+                            className="text-[10px] px-1.5 py-0.5 rounded border border-emerald-300 text-emerald-700 hover:bg-emerald-100"
+                          >
+                            Recovered
+                          </button>
+                          <button
+                            onClick={() => dispositionFinding(f.id, "not_an_issue")}
+                            className="text-[10px] px-1.5 py-0.5 rounded border border-slate-300 text-slate-600 hover:bg-slate-100"
+                          >
+                            Was not an issue
+                          </button>
+                        </div>
+                      )}
+                    </div>
                   </li>
                 ))}
               </ul>

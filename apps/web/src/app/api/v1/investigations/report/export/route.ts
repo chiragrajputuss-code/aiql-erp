@@ -3,6 +3,7 @@ import { validateRequest } from "@/lib/auth";
 import { prisma } from "@aiql/db";
 import { buildAuditPdf, type AuditFindingInput } from "@/lib/audit-report-pdf";
 import { getOrgBillingState, PDF_EXPORT_PLANS } from "@/lib/billing";
+import { computeLedger } from "@/lib/investigations/ledger";
 
 // GET /api/v1/investigations/report/export
 // Renders the latest CURRENT investigation run as the client-facing
@@ -15,6 +16,14 @@ function periodLabel(mmYyyy: string): string {
   if (!m) return mmYyyy;
   const mi = parseInt(m[1], 10) - 1;
   return `${MONTHS[mi] ?? m[1]} ${m[2]}`;
+}
+
+// Mirrors audit-report-pdf.ts's rs() — pdfkit's built-in Helvetica can't
+// render the ₹ glyph, so the PDF (and this sentence, which feeds it) uses
+// "Rs " everywhere for a clean, tofu-free render in every viewer.
+function rsLabel(n: number): string {
+  if (n === 0) return "Rs 0";
+  return "Rs " + Math.round(n).toLocaleString("en-IN");
 }
 
 function safeParse<T>(json: string | null | undefined, fallback: T): T {
@@ -62,6 +71,14 @@ export async function GET(req: NextRequest) {
 
   if (!run) return NextResponse.json({ error: "No investigation has been run yet." }, { status: 404 });
 
+  // The resolved-value ledger sentence — only once there's something to show
+  // (a client's very first run has nothing resolved yet, so the sentence
+  // would read as a hollow claim).
+  const ledger = await computeLedger(user.orgId, { connectionId: run.connectionId });
+  const ledgerNote = ledger.resolvedTotalRs > 0 && ledger.firstRunAt
+    ? `Since ${ledger.firstRunAt.toLocaleDateString("en-IN", { month: "long", year: "numeric" })}, AcctQAI has identified ${rsLabel(ledger.foundTotalRs)} for this client, of which ${rsLabel(ledger.resolvedTotalRs)} no longer appears.`
+    : undefined;
+
   const severityOrder: Record<string, number> = { critical: 0, warning: 1, opportunity: 2, info: 3 };
 
   const findings: AuditFindingInput[] = run.findings
@@ -102,6 +119,7 @@ export async function GET(req: NextRequest) {
     totalAtRiskRs,
     totalOpportunityRs,
     summary,
+    ledgerNote,
     findings,
     generatedOn:        new Date().toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" }),
   });

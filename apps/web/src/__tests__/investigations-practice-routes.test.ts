@@ -5,7 +5,7 @@ const { mockPrisma, mockBuildBusinessContext, mockPersistRun, mockRunReport } = 
   mockPrisma: {
     erpConnection:        { findFirst: vi.fn(), findMany: vi.fn() },
     investigationRun:     { findFirst: vi.fn(), findMany: vi.fn() },
-    investigationFinding: { findMany: vi.fn() },
+    investigationFinding: { findMany: vi.fn(), aggregate: vi.fn() },
     organisation:         { findUnique: vi.fn() },
   },
   mockBuildBusinessContext: vi.fn(),
@@ -52,6 +52,7 @@ beforeEach(() => {
   });
   mockPersistRun.mockResolvedValue({ runId: "run-1" });
   mockPrisma.investigationFinding.findMany.mockResolvedValue([]);
+  mockPrisma.investigationFinding.aggregate.mockResolvedValue({ _sum: { impactRs: 0 } });
   mockBuildBusinessContext.mockResolvedValue({
     organizationId: "org-1", connectionId: "conn-1",
     period: { label: "05-2026" }, snapshotId: "CTX-1", resolvedAt: new Date(),

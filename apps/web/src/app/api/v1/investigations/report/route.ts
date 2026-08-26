@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { validateRequest } from "@/lib/auth";
 import { prisma } from "@aiql/db";
+import { computeLedger } from "@/lib/investigations/ledger";
 
 // Returns one investigation run, shaped as the Investigation Report (JSON
 // fields parsed back to objects). Three ways to select which run:
@@ -51,13 +52,19 @@ export async function GET(req: NextRequest) {
   // finding's status/resolvedAt is set exactly once, by the single run whose
   // comparedToRunId points at it, so this is unambiguous even for a run
   // several periods in the past.
-  const resolvedFindings = run.comparedToRunId
-    ? await prisma.investigationFinding.findMany({
-        where:   { runId: run.comparedToRunId, status: "resolved" },
-        orderBy: { resolvedAt: "asc" },
-        select:  { id: true, code: true, title: true, category: true, impactRs: true, resolvedAt: true },
-      })
-    : [];
+  const [resolvedFindings, ledger] = await Promise.all([
+    run.comparedToRunId
+      ? prisma.investigationFinding.findMany({
+          where:   { runId: run.comparedToRunId, status: "resolved" },
+          orderBy: { resolvedAt: "asc" },
+          select:  {
+            id: true, code: true, title: true, category: true, impactRs: true, resolvedAt: true,
+            disposition: true, dispositionAt: true,
+          },
+        })
+      : Promise.resolve([]),
+    computeLedger(user.orgId, { connectionId: run.connectionId }),
+  ]);
 
   const severityOrder: Record<string, number> = { critical: 0, warning: 1, opportunity: 2, info: 3 };
 
@@ -103,10 +110,17 @@ export async function GET(req: NextRequest) {
       boardBrief:           run.boardBriefJson ? safeParse(run.boardBriefJson, null) : null,
       counts:     { new: run.newCount, carried: run.carriedCount, resolved: run.resolvedCount },
       resolvedRs: run.resolvedRs,
+      ledger: {
+        foundTotalRs:    ledger.foundTotalRs,
+        resolvedTotalRs: ledger.resolvedTotalRs,
+        openTotalRs:     ledger.openTotalRs,
+        firstRunAt:      ledger.firstRunAt?.toISOString() ?? null,
+      },
       findings,
       resolvedFindings: resolvedFindings.map((f) => ({
         id: f.id, code: f.code, title: f.title, category: f.category,
         impactRs: f.impactRs, resolvedAt: f.resolvedAt?.toISOString() ?? null,
+        disposition: f.disposition, dispositionAt: f.dispositionAt?.toISOString() ?? null,
       })),
     },
   });
