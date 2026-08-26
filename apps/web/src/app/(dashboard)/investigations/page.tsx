@@ -43,9 +43,32 @@ interface Finding {
   conclusion:       string;
   llmSummary:       string | null;
   resolvesWhen:     string;
+  changeStatus:     "new" | "carried" | null;
+  firstSeenPeriod:  string | null;
   evidence:         Evidence[];
   recommendation:   Recommendation | null;
   verificationSteps: string[];
+}
+
+interface ResolvedFinding {
+  id:         string;
+  code:       string;
+  title:      string;
+  category:   string;
+  impactRs:   number | null;
+  resolvedAt: string | null;
+}
+
+interface HistoryRun {
+  runId:         string;
+  period:        string;
+  startedAt:     string;
+  status:        string;
+  healthScore:   number | null;
+  totalImpactRs: number;
+  criticalCount: number;
+  counts:        { new: number; carried: number; resolved: number };
+  resolvedRs:    number;
 }
 
 interface Outcome {
@@ -86,6 +109,7 @@ interface Run {
   id:               string;
   connectionId:     string | null;
   period:           string;
+  status:           string;
   snapshotId:       string;
   resolvedAt:       string;
   completedAt:      string | null;
@@ -96,7 +120,10 @@ interface Run {
   opportunityCount: number;
   executiveSummary: string | null;
   outcomes:         Outcome[];
+  counts:           { new: number; carried: number; resolved: number };
+  resolvedRs:       number;
   findings:         Finding[];
+  resolvedFindings: ResolvedFinding[];
   proactiveObservation: ProactiveObservation | null;
   boardBrief:           BoardBrief | null;
 }
@@ -131,6 +158,14 @@ function FindingCard({ f }: { f: Finding }) {
           <div className="flex-1 min-w-0">
             <div className="flex items-center gap-2 flex-wrap">
               <Badge className={`text-[10px] ${meta.pill}`}>{meta.label}</Badge>
+              {f.changeStatus === "new" && (
+                <Badge className="text-[10px] bg-violet-100 text-violet-700 border-violet-200">NEW</Badge>
+              )}
+              {f.changeStatus === "carried" && f.firstSeenPeriod && (
+                <Badge className="text-[10px] bg-slate-100 text-slate-600 border-slate-200">
+                  CARRIED since {f.firstSeenPeriod}
+                </Badge>
+              )}
               {f.impactRs !== null && f.impactRs > 0 && (
                 <span className="text-sm font-semibold text-slate-800">{formatINR(f.impactRs)}</span>
               )}
@@ -341,6 +376,10 @@ export default function InvestigationsPage() {
   const [clientsLoaded, setClientsLoaded] = useState(false);
   const [connectionId, setConnectionId] = useState<string | null>(null);
 
+  // ── Period selector (history) ──
+  const [history, setHistory]     = useState<HistoryRun[]>([]);
+  const [selectedRunId, setSelectedRunId] = useState<string | null>(null); // null = latest
+
   async function loadClients(): Promise<ClientOption[]> {
     try {
       const res = await fetch("/api/v1/investigations/clients");
@@ -354,11 +393,25 @@ export default function InvestigationsPage() {
     }
   }
 
-  async function loadReport(forConnectionId: string | null) {
+  async function loadHistory(forConnectionId: string | null) {
+    try {
+      const qs  = forConnectionId ? `?connectionId=${encodeURIComponent(forConnectionId)}` : "";
+      const res = await fetch(`/api/v1/investigations/history${qs}`);
+      if (!res.ok) { setHistory([]); return; }
+      const data = await res.json();
+      setHistory(data.runs as HistoryRun[]);
+    } catch {
+      setHistory([]);
+    }
+  }
+
+  async function loadReport(forConnectionId: string | null, forRunId: string | null = null) {
     setLoading(true);
     setError(null);
     try {
-      const qs  = forConnectionId ? `?connectionId=${encodeURIComponent(forConnectionId)}` : "";
+      const qs = forRunId
+        ? `?runId=${encodeURIComponent(forRunId)}`
+        : forConnectionId ? `?connectionId=${encodeURIComponent(forConnectionId)}` : "";
       const res = await fetch(`/api/v1/investigations/report${qs}`);
       if (!res.ok) throw new Error(await res.text());
       const data = await res.json();
@@ -368,6 +421,11 @@ export default function InvestigationsPage() {
     } finally {
       setLoading(false);
     }
+  }
+
+  function selectPeriod(runId: string | null) {
+    setSelectedRunId(runId);
+    loadReport(connectionId, runId);
   }
 
   async function runInvestigation() {
@@ -384,7 +442,8 @@ export default function InvestigationsPage() {
         const msg = body?.detail ? `${body.error}: ${body.detail}` : body?.error;
         throw new Error(msg ?? (await res.text()));
       }
-      await loadReport(connectionId);
+      setSelectedRunId(null); // a fresh run is always the latest
+      await Promise.all([loadReport(connectionId), loadHistory(connectionId)]);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Investigation failed");
     } finally {
@@ -394,11 +453,13 @@ export default function InvestigationsPage() {
 
   function selectClient(id: string | null) {
     setConnectionId(id);
+    setSelectedRunId(null);
     try {
       if (id) localStorage.setItem(LAST_CLIENT_KEY, id);
       else localStorage.removeItem(LAST_CLIENT_KEY);
     } catch { /* localStorage unavailable — selection just won't persist */ }
     loadReport(id);
+    loadHistory(id);
   }
 
   // On mount: load the client list, pick a sensible default (last-viewed if
@@ -417,7 +478,7 @@ export default function InvestigationsPage() {
       if (!initial && list.length > 0) initial = list[0].connectionId;
 
       setConnectionId(initial);
-      await loadReport(initial);
+      await Promise.all([loadReport(initial), loadHistory(initial)]);
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -465,7 +526,7 @@ export default function InvestigationsPage() {
           always clear which book is loaded; this is what makes practice mode
           usable once a firm adds a second client. */}
       {clientsLoaded && clients.length > 0 && (
-        <div className="flex items-center gap-2 -mt-2">
+        <div className="flex items-center gap-2 -mt-2 flex-wrap">
           <Building2 className="h-4 w-4 text-muted-foreground shrink-0" />
           <label htmlFor="client-switcher" className="text-xs text-muted-foreground shrink-0">Client book:</label>
           <select
@@ -480,6 +541,29 @@ export default function InvestigationsPage() {
               </option>
             ))}
           </select>
+
+          {/* Period selector — jump to any past run for this client, CURRENT
+              or SUPERSEDED, so history stays reachable instead of only ever
+              showing the latest. */}
+          {history.length > 1 && (
+            <>
+              <Clock className="h-4 w-4 text-muted-foreground shrink-0 ml-2" />
+              <label htmlFor="period-selector" className="text-xs text-muted-foreground shrink-0">Period:</label>
+              <select
+                id="period-selector"
+                value={selectedRunId ?? history[0]?.runId ?? ""}
+                onChange={(e) => selectPeriod(e.target.value || null)}
+                className="text-sm border border-slate-200 rounded-md px-2 py-1.5 bg-white max-w-xs"
+              >
+                {history.map((h, i) => (
+                  <option key={h.runId} value={h.runId}>
+                    {h.period}{i === 0 ? " (latest)" : ""}
+                    {h.criticalCount > 0 ? ` — ${h.criticalCount} critical` : ""}
+                  </option>
+                ))}
+              </select>
+            </>
+          )}
         </div>
       )}
 
@@ -511,6 +595,12 @@ export default function InvestigationsPage() {
 
       {!loading && run && (
         <>
+          {run.status !== "CURRENT" && (
+            <div className="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2 text-xs text-slate-600">
+              Viewing {run.period} — a past period, superseded by a later run. Switch the period selector above to jump back to the latest.
+            </div>
+          )}
+
           {/* Summary cards */}
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             <Card className="border-red-200 bg-red-50/30"><CardContent className="pt-4">
@@ -567,6 +657,33 @@ export default function InvestigationsPage() {
           ) : (
             <div className="space-y-2">
               {run.findings.map((f) => <FindingCard key={f.id} f={f} />)}
+            </div>
+          )}
+
+          {/* No longer appearing — findings from the prior run this one was
+              compared against that don't show up again (absence-as-evidence).
+              Wording discipline: "no longer appears", never "recovered" —
+              the product can prove a finding is gone, not that money moved. */}
+          {run.resolvedFindings.length > 0 && (
+            <div className="rounded-xl border border-emerald-200 bg-emerald-50/30 p-4">
+              <div className="flex items-center justify-between flex-wrap gap-2">
+                <p className="text-xs font-semibold text-emerald-700 uppercase tracking-wide">
+                  No longer appearing since last run
+                </p>
+                {run.resolvedRs > 0 && (
+                  <span className="text-sm font-semibold text-emerald-700">{formatINR(run.resolvedRs)}</span>
+                )}
+              </div>
+              <ul className="mt-2 space-y-1">
+                {run.resolvedFindings.map((f) => (
+                  <li key={f.id} className="flex items-center justify-between gap-3 text-sm text-slate-700 border-b border-emerald-100 last:border-0 pb-1 last:pb-0">
+                    <span>{f.title}</span>
+                    {f.impactRs !== null && f.impactRs > 0 && (
+                      <span className="text-xs font-medium text-emerald-700 shrink-0">{formatINR(f.impactRs)}</span>
+                    )}
+                  </li>
+                ))}
+              </ul>
             </div>
           )}
 

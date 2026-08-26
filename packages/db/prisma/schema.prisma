@@ -434,6 +434,15 @@ model InvestigationRun {
   // compute NEW/CARRIED/RESOLVED. Null for a client's first run.
   comparedToRunId String?
 
+  // Diff counts against comparedToRunId, persisted at write time (from
+  // RunDiff) rather than recomputed on read — resolvedAt on a finding is
+  // only ever set once, so reconstructing "resolved by run X" later from
+  // timestamps alone would be ambiguous. All 0 for a client's first run.
+  newCount     Int   @default(0)
+  carriedCount Int   @default(0)
+  resolvedCount Int  @default(0)
+  resolvedRs   Float @default(0)
+
   healthScore      Int?
   totalImpactRs    Float @default(0)
   criticalCount    Int   @default(0)

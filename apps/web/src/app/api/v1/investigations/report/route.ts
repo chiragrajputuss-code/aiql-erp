@@ -2,34 +2,62 @@ import { NextRequest, NextResponse } from "next/server";
 import { validateRequest } from "@/lib/auth";
 import { prisma } from "@aiql/db";
 
-// Returns the latest CURRENT investigation run for a client (?connectionId=),
-// shaped as the Investigation Report (JSON fields parsed back to objects).
-// Without connectionId: the latest CURRENT run for the org, for backward
-// compatibility with the legacy single-business path — once a firm has more
-// than one client, the caller should always pass connectionId (see the client
-// switcher on the investigations page). Returns { run: null } if no
-// investigation has been run yet for the requested scope.
+// Returns one investigation run, shaped as the Investigation Report (JSON
+// fields parsed back to objects). Three ways to select which run:
+//   ?runId=        — that exact run, CURRENT or SUPERSEDED (a period doesn't
+//                    stop existing once a later run supersedes it) — the
+//                    period selector on the investigations page uses this.
+//   ?connectionId= — the latest CURRENT run for that client.
+//   (neither)      — the latest CURRENT run for the org, for backward
+//                    compatibility with the legacy single-business path.
+// Every path verifies the run/connection belongs to user.orgId before
+// returning anything — a run belonging to another org 404s, same as an
+// unowned connectionId. Returns { run: null } if nothing has been run yet
+// for the requested scope.
 export async function GET(req: NextRequest) {
   const { user } = await validateRequest();
   if (!user) return NextResponse.json({ error: "Unauthorised" }, { status: 401 });
 
-  const connectionId = new URL(req.url).searchParams.get("connectionId");
+  const url = new URL(req.url);
+  const runId        = url.searchParams.get("runId");
+  const connectionId = url.searchParams.get("connectionId");
 
-  if (connectionId) {
-    const owned = await prisma.erpConnection.findFirst({
-      where:  { id: connectionId, orgId: user.orgId },
-      select: { id: true },
+  let run;
+  if (runId) {
+    run = await prisma.investigationRun.findFirst({
+      where:   { id: runId, orgId: user.orgId },
+      include: { findings: { orderBy: { createdAt: "asc" } } },
     });
-    if (!owned) return NextResponse.json({ error: "Connection not found" }, { status: 404 });
+    if (!run) return NextResponse.json({ error: "Run not found" }, { status: 404 });
+  } else {
+    if (connectionId) {
+      const owned = await prisma.erpConnection.findFirst({
+        where:  { id: connectionId, orgId: user.orgId },
+        select: { id: true },
+      });
+      if (!owned) return NextResponse.json({ error: "Connection not found" }, { status: 404 });
+    }
+
+    run = await prisma.investigationRun.findFirst({
+      where:   { orgId: user.orgId, status: "CURRENT", ...(connectionId ? { connectionId } : {}) },
+      orderBy: { startedAt: "desc" },
+      include: { findings: { orderBy: { createdAt: "asc" } } },
+    });
+    if (!run) return NextResponse.json({ run: null });
   }
 
-  const run = await prisma.investigationRun.findFirst({
-    where:   { orgId: user.orgId, status: "CURRENT", ...(connectionId ? { connectionId } : {}) },
-    orderBy: { startedAt: "desc" },
-    include: { findings: { orderBy: { createdAt: "asc" } } },
-  });
-
-  if (!run) return NextResponse.json({ run: null });
+  // Findings this run's diff marked resolved on the PRIOR run (absence-as-
+  // evidence — see run-diff.ts) — "no longer appears since this run." A
+  // finding's status/resolvedAt is set exactly once, by the single run whose
+  // comparedToRunId points at it, so this is unambiguous even for a run
+  // several periods in the past.
+  const resolvedFindings = run.comparedToRunId
+    ? await prisma.investigationFinding.findMany({
+        where:   { runId: run.comparedToRunId, status: "resolved" },
+        orderBy: { resolvedAt: "asc" },
+        select:  { id: true, code: true, title: true, category: true, impactRs: true, resolvedAt: true },
+      })
+    : [];
 
   const severityOrder: Record<string, number> = { critical: 0, warning: 1, opportunity: 2, info: 3 };
 
@@ -47,6 +75,8 @@ export async function GET(req: NextRequest) {
       llmSummary:       f.llmSummary,
       resolvesWhen:     f.resolvesWhen,
       status:           f.status,
+      changeStatus:     f.changeStatus,
+      firstSeenPeriod:  f.firstSeenPeriod,
       evidence:        safeParse(f.evidenceJson, []),
       recommendation:  safeParse(f.recommendationJson, null),
       verificationSteps: safeParse(f.verificationJson, []),
@@ -58,6 +88,7 @@ export async function GET(req: NextRequest) {
       id:               run.id,
       connectionId:     run.connectionId,
       period:           run.period,
+      status:           run.status,
       snapshotId:       run.snapshotId,
       resolvedAt:       run.resolvedAt.toISOString(),
       completedAt:      run.completedAt?.toISOString() ?? null,
@@ -70,7 +101,13 @@ export async function GET(req: NextRequest) {
       outcomes:         safeParse(run.investigationsJson, []),
       proactiveObservation: run.proactiveObservationJson ? safeParse(run.proactiveObservationJson, null) : null,
       boardBrief:           run.boardBriefJson ? safeParse(run.boardBriefJson, null) : null,
+      counts:     { new: run.newCount, carried: run.carriedCount, resolved: run.resolvedCount },
+      resolvedRs: run.resolvedRs,
       findings,
+      resolvedFindings: resolvedFindings.map((f) => ({
+        id: f.id, code: f.code, title: f.title, category: f.category,
+        impactRs: f.impactRs, resolvedAt: f.resolvedAt?.toISOString() ?? null,
+      })),
     },
   });
 }

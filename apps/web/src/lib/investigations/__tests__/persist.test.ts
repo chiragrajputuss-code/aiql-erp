@@ -134,6 +134,22 @@ describe("persistRun — historical continuity", () => {
     });
   });
 
+  it("persists the diff counts + resolvedRs onto the run itself (Phase 3.6 history API)", async () => {
+    mockPrisma.investigationRun.findFirst.mockResolvedValue({
+      id: "run-prior",
+      findings: [{ matchKey: "GST-ITC-002:gone", code: "GST-ITC-002", impactRs: 15000, firstSeenPeriod: "03-2026" }],
+    });
+    const f = finding(); // new (no matching matchKey in the prior findings above)
+
+    await persistRun(CTX, report([f]), "user", new Date());
+
+    const createArg = mockPrisma.investigationRun.create.mock.calls[0][0];
+    expect(createArg.data.newCount).toBe(1);
+    expect(createArg.data.carriedCount).toBe(0);
+    expect(createArg.data.resolvedCount).toBe(1);
+    expect(createArg.data.resolvedRs).toBe(15000);
+  });
+
   it("legacy path (connectionId null) diffs against the org's own null-connection history, not another client's", async () => {
     const legacyCtx: BusinessContext = { ...CTX, connectionId: null };
     await persistRun(legacyCtx, report([finding()]), "user", new Date());
