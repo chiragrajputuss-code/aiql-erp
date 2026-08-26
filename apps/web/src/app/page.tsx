@@ -115,9 +115,9 @@ const PLANS = [
     features: ["2 client books per month", "GST/ITC + duplicate-payment checks", "Every finding with full evidence rows", "Vendor filing-pattern intelligence", "Month-end close & flux analysis", "Drill-down questions in plain English"],
   },
   {
-    name: "Firm", price: "₹30,000", period: "/year", annual: "Per firm · unlimited clients",
-    desc: "For CA practices. One price, your whole client book.", cta: "Start free", highlight: true,
-    features: ["Everything in Free", "Unlimited client books", "Working-paper PDF export with evidence annexure", "Whole-practice scan in one pass", "Named WhatsApp support through filing season", "5 team members"],
+    name: "Firm", price: "₹30,000", period: "/year", annual: "Per firm · unlimited uploads",
+    desc: "For CA practices. One price covers every client you upload.", cta: "Start free", highlight: true,
+    features: ["Everything in Free", "Unlimited uploads", "Working-paper PDF export with evidence annexure", "Named WhatsApp support through filing season", "5 team members"],
   },
   {
     name: "Custom", price: "Let's talk", period: "", annual: "Multi-entity groups",
@@ -330,10 +330,11 @@ function PrivacyShowcase() {
 
 // ─── Practice scanner (the CA multiplier) ─────────────────────────────────────
 //
-// Shows the OUTCOME of one pass across a whole client book: books scanned,
-// issues found, money surfaced — with findings streaming in. Client identities
-// are masked (•). The finding *types* are the value we show; the detection
-// method is never shown here or anywhere. This doubles as the privacy signal.
+// Illustrative animation of what per-client checks look like across a sample
+// client list — NOT a live multi-client dashboard (that doesn't exist yet).
+// Client identities are masked (•). The finding *types* are the value we show;
+// the detection method is never shown here or anywhere. Doubles as the privacy
+// signal. Captioned honestly on the homepage — see the "For CAs" section.
 
 type ScanTone = "critical" | "warning" | "opportunity";
 
@@ -540,9 +541,9 @@ export default function LandingPage() {
               <div className="inline-flex items-center gap-2 bg-[#1B3A5C]/[0.06] text-[#1B3A5C] border border-[#1B3A5C]/10 rounded-full px-4 py-1.5 text-sm font-semibold">
                 <Briefcase className="h-3.5 w-3.5" /> For Chartered Accountants
               </div>
-              <h2 className="text-3xl font-bold text-[#1B3A5C] mt-4">One pass across your entire client book.</h2>
+              <h2 className="text-3xl font-bold text-[#1B3A5C] mt-4">Built for how a practice actually works.</h2>
               <p className="text-lg text-slate-600 mt-3">
-                Stop rebuilding the same reconciliation for every client. Run every book through the same investigation at once — and get a prioritised list of what to fix, and what to bill for, per client.
+                Stop rebuilding the same reconciliation for every client. Upload one client&apos;s book and get the same rigorous investigation, evidence attached, ready to review or bill for — no custom setup per client.
               </p>
             </div>
           </Reveal>
@@ -552,7 +553,7 @@ export default function LandingPage() {
               <div>
                 <ul className="space-y-4">
                   {[
-                    { icon: <Layers className="h-4 w-4" />,   t: "Your whole book, in minutes", d: "Point AcctQAI at each client's Tally or ERP export. Every book is investigated in the same pass — no per-client setup." },
+                    { icon: <Layers className="h-4 w-4" />,   t: "No setup per client", d: "Point AcctQAI at each client's Tally or ERP export and it runs the same checks immediately — nothing to configure client by client." },
                     { icon: <Search className="h-4 w-4" />,   t: "Catch it before the auditor does", d: "Blocked ITC, duplicate payments, ineligible credit — flagged with the evidence, so you're never the one who missed it." },
                     { icon: <IndianRupee className="h-4 w-4" />, t: "Turn month-end into billable value", d: "Hand each client a health check that finds real money. What was unbillable review becomes a service you charge for." },
                     { icon: <Fingerprint className="h-4 w-4" />, t: "Their data stays protected", d: "Every client's names, references and amounts are masked before anything is processed — and never shown to any AI model." },
@@ -578,7 +579,10 @@ export default function LandingPage() {
             </Reveal>
 
             <Reveal delay={120}>
-              <PracticeScanner />
+              <div>
+                <PracticeScanner />
+                <p className="text-xs text-slate-400 mt-3 text-center">Illustrative — each client book is investigated as its own upload today. A combined practice view is on our roadmap.</p>
+              </div>
             </Reveal>
           </div>
 

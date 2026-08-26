@@ -31,13 +31,12 @@ const PLANS = [
   {
     name: "Firm",
     priceLabel: "₹30,000", priceSub: "/year · per firm",
-    desc: "For CA practices. One price, your whole client book.",
+    desc: "For CA practices. One price covers every client you upload.",
     cta: "Start free, upgrade anytime", href: "/signup", highlight: true,
     features: [
       "Everything in Free",
-      "Unlimited client books",
+      "Unlimited uploads",
       "Working-paper PDF export — population counts + evidence annexure",
-      "Whole-practice scan in one pass",
       "Named WhatsApp support through filing season",
       "5 team members",
       "GST invoice on every payment · cancel anytime",
