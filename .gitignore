@@ -16,3 +16,6 @@ dist/
 
 # prisma
 packages/db/prisma/migrations/
+
+# Stale in-place TS build artifacts — packages resolve via src/*.ts (see package.json "main")
+packages/*/src/**/*.js
