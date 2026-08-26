@@ -22,6 +22,11 @@ export default async function DashboardPage() {
     }),
   ]);
 
+  // Once a firm has grown past a handful of clients, the practice dashboard
+  // (one row per client, sorted by what needs attention) is the more useful
+  // landing screen than a single-business cash view.
+  if (connections.length > 3) redirect("/practice");
+
   return (
     <CashDashboard
       userName={user.name ?? null}

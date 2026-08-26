@@ -54,6 +54,7 @@ type NavItem = {
 
 const NAV: NavItem[] = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
+  { href: "/practice", label: "Practice", icon: Building2, allowedRoles: ["ADMIN", "MEMBER"] },
   { href: "/investigations", label: "Investigations", icon: Search, allowedRoles: ["ADMIN", "MEMBER"] },
   { href: "/query",   label: "Query Studio", icon: MessageSquare, allowedRoles: ["ADMIN", "MEMBER"] },
   { href: "/history", label: "History",      icon: History,       allowedRoles: ["ADMIN", "MEMBER"] },

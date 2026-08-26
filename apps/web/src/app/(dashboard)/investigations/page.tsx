@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import { useSearchParams } from "next/navigation";
 import {
   Search, AlertCircle, AlertTriangle, TrendingUp, Info,
   Loader2, RefreshCw, ChevronDown, ShieldCheck, Clock,
@@ -379,6 +380,7 @@ function BoardView({ run, onBack }: { run: Run; onBack: () => void }) {
 const LAST_CLIENT_KEY = "acctqai:investigations:lastConnectionId";
 
 export default function InvestigationsPage() {
+  const searchParams = useSearchParams();
   const [run, setRun]         = useState<Run | null>(null);
   const [loading, setLoading] = useState(true);
   const [running, setRunning] = useState(false);
@@ -494,22 +496,30 @@ export default function InvestigationsPage() {
     loadHistory(id);
   }
 
-  // On mount: load the client list, pick a sensible default (last-viewed if
-  // still valid, else the most recent client, else the legacy org-wide view),
-  // then load that client's report.
+  // On mount: load the client list, pick a sensible default — an explicit
+  // ?connectionId= (e.g. the "View"/"Run" link from the practice dashboard)
+  // wins, then last-viewed if still valid, then the most recent client, then
+  // the legacy org-wide view — then load that client's report.
   useEffect(() => {
     (async () => {
       const list = await loadClients();
       setClients(list);
 
       let initial: string | null = null;
-      try {
-        const saved = localStorage.getItem(LAST_CLIENT_KEY);
-        if (saved && list.some((c) => c.connectionId === saved)) initial = saved;
-      } catch { /* ignore */ }
+      const fromUrl = searchParams.get("connectionId");
+      if (fromUrl && list.some((c) => c.connectionId === fromUrl)) initial = fromUrl;
+      if (!initial) {
+        try {
+          const saved = localStorage.getItem(LAST_CLIENT_KEY);
+          if (saved && list.some((c) => c.connectionId === saved)) initial = saved;
+        } catch { /* ignore */ }
+      }
       if (!initial && list.length > 0) initial = list[0].connectionId;
 
       setConnectionId(initial);
+      try {
+        if (initial) localStorage.setItem(LAST_CLIENT_KEY, initial);
+      } catch { /* ignore */ }
       await Promise.all([loadReport(initial), loadHistory(initial)]);
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
