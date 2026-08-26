@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import {
   Search, AlertCircle, AlertTriangle, TrendingUp, Info,
   Loader2, RefreshCw, ChevronDown, ShieldCheck, Clock,
-  Lightbulb, Presentation, Printer, ArrowLeft, Download,
+  Lightbulb, Presentation, Printer, ArrowLeft, Download, Building2,
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -75,8 +75,16 @@ interface BoardBrief {
   narratedSummary:       string;
 }
 
+interface ClientOption {
+  connectionId: string;
+  displayName:  string;
+  periodStart:  string | null;
+  periodEnd:    string | null;
+}
+
 interface Run {
   id:               string;
+  connectionId:     string | null;
   period:           string;
   snapshotId:       string;
   resolvedAt:       string;
@@ -319,6 +327,8 @@ function BoardView({ run, onBack }: { run: Run; onBack: () => void }) {
 
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
+const LAST_CLIENT_KEY = "acctqai:investigations:lastConnectionId";
+
 export default function InvestigationsPage() {
   const [run, setRun]         = useState<Run | null>(null);
   const [loading, setLoading] = useState(true);
@@ -326,9 +336,30 @@ export default function InvestigationsPage() {
   const [error, setError]     = useState<string | null>(null);
   const [boardMode, setBoardMode] = useState(false);
 
-  async function loadReport() {
+  // ── Client switcher (practice mode) ──
+  const [clients, setClients]           = useState<ClientOption[]>([]);
+  const [clientsLoaded, setClientsLoaded] = useState(false);
+  const [connectionId, setConnectionId] = useState<string | null>(null);
+
+  async function loadClients(): Promise<ClientOption[]> {
     try {
-      const res = await fetch("/api/v1/investigations/report");
+      const res = await fetch("/api/v1/investigations/clients");
+      if (!res.ok) return [];
+      const data = await res.json();
+      return data.clients as ClientOption[];
+    } catch {
+      return [];
+    } finally {
+      setClientsLoaded(true);
+    }
+  }
+
+  async function loadReport(forConnectionId: string | null) {
+    setLoading(true);
+    setError(null);
+    try {
+      const qs  = forConnectionId ? `?connectionId=${encodeURIComponent(forConnectionId)}` : "";
+      const res = await fetch(`/api/v1/investigations/report${qs}`);
       if (!res.ok) throw new Error(await res.text());
       const data = await res.json();
       setRun(data.run);
@@ -343,9 +374,17 @@ export default function InvestigationsPage() {
     setRunning(true);
     setError(null);
     try {
-      const res = await fetch("/api/v1/investigations/run", { method: "POST", headers: { "Content-Type": "application/json" }, body: "{}" });
-      if (!res.ok) throw new Error(await res.text());
-      await loadReport();
+      const res = await fetch("/api/v1/investigations/run", {
+        method:  "POST",
+        headers: { "Content-Type": "application/json" },
+        body:    JSON.stringify(connectionId ? { connectionId } : {}),
+      });
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        const msg = body?.detail ? `${body.error}: ${body.detail}` : body?.error;
+        throw new Error(msg ?? (await res.text()));
+      }
+      await loadReport(connectionId);
     } catch (e) {
       setError(e instanceof Error ? e.message : "Investigation failed");
     } finally {
@@ -353,7 +392,35 @@ export default function InvestigationsPage() {
     }
   }
 
-  useEffect(() => { loadReport(); }, []);
+  function selectClient(id: string | null) {
+    setConnectionId(id);
+    try {
+      if (id) localStorage.setItem(LAST_CLIENT_KEY, id);
+      else localStorage.removeItem(LAST_CLIENT_KEY);
+    } catch { /* localStorage unavailable — selection just won't persist */ }
+    loadReport(id);
+  }
+
+  // On mount: load the client list, pick a sensible default (last-viewed if
+  // still valid, else the most recent client, else the legacy org-wide view),
+  // then load that client's report.
+  useEffect(() => {
+    (async () => {
+      const list = await loadClients();
+      setClients(list);
+
+      let initial: string | null = null;
+      try {
+        const saved = localStorage.getItem(LAST_CLIENT_KEY);
+        if (saved && list.some((c) => c.connectionId === saved)) initial = saved;
+      } catch { /* ignore */ }
+      if (!initial && list.length > 0) initial = list[0].connectionId;
+
+      setConnectionId(initial);
+      await loadReport(initial);
+    })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (boardMode && run?.boardBrief) {
     return <BoardView run={run} onBack={() => setBoardMode(false)} />;
@@ -373,7 +440,11 @@ export default function InvestigationsPage() {
         </div>
         <div className="flex items-center gap-2">
           {run && (
-            <a href="/api/v1/investigations/report/export" className="inline-flex items-center gap-2 rounded-md border border-slate-200 px-3 py-2 text-sm font-medium hover:bg-slate-50" title="Download the client-facing Health Check PDF">
+            <a
+              href={`/api/v1/investigations/report/export${connectionId ? `?connectionId=${encodeURIComponent(connectionId)}` : ""}`}
+              className="inline-flex items-center gap-2 rounded-md border border-slate-200 px-3 py-2 text-sm font-medium hover:bg-slate-50"
+              title="Download the client-facing Health Check PDF"
+            >
               <Download className="h-4 w-4" /> Download PDF
             </a>
           )}
@@ -388,6 +459,29 @@ export default function InvestigationsPage() {
           </Button>
         </div>
       </div>
+
+      {/* Client switcher — only shown once at least one GL client book exists.
+          A single-business account with one connection still sees it, so it's
+          always clear which book is loaded; this is what makes practice mode
+          usable once a firm adds a second client. */}
+      {clientsLoaded && clients.length > 0 && (
+        <div className="flex items-center gap-2 -mt-2">
+          <Building2 className="h-4 w-4 text-muted-foreground shrink-0" />
+          <label htmlFor="client-switcher" className="text-xs text-muted-foreground shrink-0">Client book:</label>
+          <select
+            id="client-switcher"
+            value={connectionId ?? ""}
+            onChange={(e) => selectClient(e.target.value || null)}
+            className="text-sm border border-slate-200 rounded-md px-2 py-1.5 bg-white max-w-xs"
+          >
+            {clients.map((c) => (
+              <option key={c.connectionId} value={c.connectionId}>
+                {c.displayName}{c.periodEnd ? ` — ${c.periodEnd.slice(0, 7)}` : ""}
+              </option>
+            ))}
+          </select>
+        </div>
+      )}
 
       {error && (
         <Card className="border-red-200 bg-red-50"><CardContent className="pt-4 text-sm text-red-700">{error}</CardContent></Card>
