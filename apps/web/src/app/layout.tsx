@@ -69,24 +69,14 @@ const jsonLd = [
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description: DESCRIPTION,
-    // Two-tier model: free forever (2 client books/month) + Firm at
-    // Rs 30,000/year per firm with unlimited clients.
+    // Founding-free model (docs/PLAN-PRACTICE-MODE.md Phase 5): free for
+    // founding firms through 2027, unlimited clients — one real offer.
     offers: [
       {
         "@type": "Offer",
-        name: "Free",
+        name: "Founding access",
         price: "0",
         priceCurrency: "INR",
-      },
-      {
-        "@type": "Offer",
-        name: "Firm",
-        price: "30000",
-        priceCurrency: "INR",
-        priceSpecification: {
-          "@type": "UnitPriceSpecification",
-          billingDuration: "P1Y",
-        },
       },
     ],
   },

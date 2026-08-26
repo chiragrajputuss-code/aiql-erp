@@ -106,24 +106,17 @@ const STEPS = [
 
 // ─── Pricing ──────────────────────────────────────────────────────────────────
 
-// Two real tiers: findings and evidence are never paywalled. Firm pricing is
-// per PRACTICE, not per client — that is how CA firms actually buy software.
-const PLANS = [
-  {
-    name: "Free", price: "₹0", period: "", annual: "Free forever · no card",
-    desc: "Prove it on your own files. No expiry.", cta: "Start free", highlight: false,
-    features: ["2 client books per month", "GST/ITC + duplicate-payment checks", "Every finding with full evidence rows", "Vendor filing-pattern intelligence", "Month-end close & flux analysis", "Drill-down questions in plain English"],
-  },
-  {
-    name: "Firm", price: "₹30,000", period: "/year", annual: "Per firm · unlimited uploads",
-    desc: "For CA practices. One price covers every client you upload.", cta: "Start free", highlight: true,
-    features: ["Everything in Free", "Unlimited uploads", "Working-paper PDF export with evidence annexure", "Named WhatsApp support through filing season", "5 team members"],
-  },
-  {
-    name: "Custom", price: "Let's talk", period: "", annual: "Multi-entity groups",
-    desc: "Group structures and special requirements.", cta: "Talk to us", highlight: false,
-    features: ["Everything in Firm", "Multi-entity / group structures", "Custom investigations (built with you)", "Dedicated onboarding"],
-  },
+// One real offer, not three: free for founding firms through 2027, not
+// "forever" — a surprise invoice after a silent free year is how goodwill
+// dies. See apps/web/src/app/pricing/page.tsx for the full breakdown.
+const INCLUDED = [
+  "Unlimited client books",
+  "GST/ITC + duplicate-payment checks",
+  "Every finding with full evidence rows",
+  "Vendor filing-pattern intelligence",
+  "Month-end close & flux analysis",
+  "Working-paper PDF export",
+  "Drill-down questions in plain English",
 ];
 
 // ─── Navbar ───────────────────────────────────────────────────────────────────
@@ -936,33 +929,33 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-4">
             <p className="text-xs font-bold tracking-[0.18em] text-blue-600 uppercase mb-3">Pricing</p>
-            <h2 className="text-3xl font-bold text-[#1B3A5C]">Free to prove it. One price for your firm.</h2>
-            <p className="text-lg text-slate-600 mt-3">Free to prove it on your own files. One flat price for your whole firm.</p>
+            <h2 className="text-3xl font-bold text-[#1B3A5C]">Free for founding firms — through 2027.</h2>
+            <p className="text-lg text-slate-600 mt-3">Every finding, every client book, full evidence. Nothing held back and nothing charged while we build this with our first users.</p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 mt-12">
-            {PLANS.map((p) => (
-              <div key={p.name} className={`rounded-2xl border p-6 flex flex-col ${p.highlight ? "border-[#1B3A5C] shadow-xl ring-1 ring-[#1B3A5C]/10 relative" : "border-slate-200"}`}>
-                {p.highlight && <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-[#1B3A5C] text-white text-xs font-semibold px-3 py-1 rounded-full">Most popular</span>}
-                <h3 className="font-bold text-lg text-slate-900">{p.name}</h3>
-                <p className="text-sm text-slate-500 mt-1 min-h-[40px]">{p.desc}</p>
-                <div className="mt-4 flex items-baseline gap-1">
-                  <span className="text-3xl font-bold text-slate-900">{p.price}</span>
-                  <span className="text-slate-500 text-sm">{p.period}</span>
-                </div>
-                <p className="text-xs text-slate-400 mt-1">{p.annual}</p>
-                <Link href={p.name === "Enterprise" ? "/contact" : "/signup"}
-                  className={`mt-5 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm transition-colors ${p.highlight ? "bg-[#1B3A5C] text-white hover:bg-[#1B3A5C]/90" : "bg-slate-100 text-slate-800 hover:bg-slate-200"}`}>
-                  {p.cta}
-                </Link>
-                <ul className="mt-6 space-y-2.5">
-                  {p.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-sm text-slate-600">
-                      <Check className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" /> {f}
-                    </li>
-                  ))}
-                </ul>
+          <div className="max-w-lg mx-auto mt-12">
+            <div className="rounded-2xl border border-[#1B3A5C] shadow-xl ring-1 ring-[#1B3A5C]/10 p-8">
+              <h3 className="font-bold text-lg text-slate-900">Founding access</h3>
+              <p className="text-sm text-slate-500 mt-1">Everything, for every client you upload.</p>
+              <div className="mt-4 flex items-baseline gap-1">
+                <span className="text-3xl font-bold text-slate-900">₹0</span>
+                <span className="text-slate-500 text-sm">through 2027</span>
               </div>
-            ))}
+              <p className="text-xs text-slate-400 mt-1">No credit card required</p>
+              <Link href="/signup"
+                className="mt-5 inline-flex w-full items-center justify-center gap-2 px-5 py-3 rounded-xl font-semibold text-sm transition-colors bg-[#1B3A5C] text-white hover:bg-[#1B3A5C]/90">
+                Start free
+              </Link>
+              <ul className="mt-6 space-y-2.5">
+                {INCLUDED.map((f) => (
+                  <li key={f} className="flex items-start gap-2 text-sm text-slate-600">
+                    <Check className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" /> {f}
+                  </li>
+                ))}
+              </ul>
+              <p className="text-xs text-slate-400 mt-6 pt-4 border-t border-slate-100 leading-relaxed">
+                Free for founding firms through 2027. We&apos;ll introduce pricing after that — founding firms will get notice and preferential terms.
+              </p>
+            </div>
           </div>
         </div>
       </section>

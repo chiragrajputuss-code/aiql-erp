@@ -46,30 +46,26 @@ export interface OrgBillingState {
 
 // ─── Plan query limits ────────────────────────────────────────────────────────
 
-// Pricing model (Aug 2026): two real tiers.
-//   FREE          — free forever: 2 client books, full findings + evidence.
-//                   The truth is never paywalled; free proves the engine.
-//   PROFESSIONAL  — the "Firm" plan: Rs 30,000/year per firm, UNLIMITED
-//                   clients. Charges for scale, the working-paper PDF and
-//                   named support — not for findings.
-//   STARTER       — legacy tier, no longer sold (kept for existing rows).
-//   ENTERPRISE    — custom / test accounts.
+// Pricing model (Aug 2026 → founding-free, see docs/PLAN-PRACTICE-MODE.md
+// Phase 5): free for founding firms through 2027 — unlimited clients,
+// unlimited queries, nothing gated. These limits stay in place (rather than
+// being deleted) purely so they can be reintroduced after 2027; they are not
+// currently enforced against anyone.
+//   FREE          — founding-free: unlimited client books, unlimited queries.
+//   PROFESSIONAL / STARTER / ENTERPRISE — legacy tiers, no longer sold.
 export const PLAN_QUERY_LIMITS: Record<string, number> = {
-  FREE:         100,
+  FREE:         999999,
   STARTER:      500,
   PROFESSIONAL: 999999,
   ENTERPRISE:   999999,
 };
 
 export const PLAN_CONNECTION_LIMITS: Record<string, number> = {
-  FREE:         2,        // 2 client books — enough to prove it, not to run a practice
+  FREE:         999999,
   STARTER:      5,        // legacy
-  PROFESSIONAL: 999999,   // Firm plan: unlimited client books
+  PROFESSIONAL: 999999,   // legacy Firm plan
   ENTERPRISE:   999999,
 };
-
-/** Plans allowed to download the working-paper PDF (the paid artefact). */
-export const PDF_EXPORT_PLANS = new Set(["PROFESSIONAL", "ENTERPRISE"]);
 
 // ─── Core access check ────────────────────────────────────────────────────────
 

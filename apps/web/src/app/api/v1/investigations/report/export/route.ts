@@ -2,7 +2,6 @@ import { NextRequest, NextResponse } from "next/server";
 import { validateRequest } from "@/lib/auth";
 import { prisma } from "@aiql/db";
 import { buildAuditPdf, type AuditFindingInput } from "@/lib/audit-report-pdf";
-import { getOrgBillingState, PDF_EXPORT_PLANS } from "@/lib/billing";
 import { computeLedger } from "@/lib/investigations/ledger";
 
 // GET /api/v1/investigations/report/export
@@ -42,22 +41,6 @@ export async function GET(req: NextRequest) {
       select: { id: true },
     });
     if (!owned) return NextResponse.json({ error: "Connection not found" }, { status: 404 });
-  }
-
-  // The working-paper PDF is the Firm-plan artefact. Findings and evidence are
-  // always visible in the app on every plan — only the exported document is
-  // gated. (Test accounts resolve to ENTERPRISE inside getOrgBillingState.)
-  const billing = await getOrgBillingState(user.orgId);
-  if (!billing || !PDF_EXPORT_PLANS.has(billing.plan)) {
-    return NextResponse.json(
-      {
-        error: "PDF export is part of the Firm plan",
-        message:
-          "All findings and evidence stay fully visible on the Free plan. The downloadable working-paper PDF (with evidence annexure) is included in the Firm plan — ₹30,000/year for your whole practice, unlimited clients.",
-        upgrade: "/settings/billing",
-      },
-      { status: 402 },
-    );
   }
 
   const [run, org] = await Promise.all([
