@@ -125,3 +125,95 @@ describe("buildBusinessContext — explicit connectionId (practice mode)", () =>
     expect(ctx.itc).toBeNull(); // NOT itc-X
   });
 });
+
+describe("buildBusinessContext — itc.getTrailingRows (Phase 3.4)", () => {
+  // parseGstr2B is mocked as identity, so we can tag rows by their source
+  // table to prove which months actually got pulled in.
+  function mockRowsPerTable(map: Record<string, unknown[]>) {
+    mockPrisma.$queryRawUnsafe.mockImplementation((sql: string) => {
+      const m = /FROM "([^"]+)"/.exec(sql);
+      const table = m?.[1] ?? "";
+      return Promise.resolve(map[table] ?? []);
+    });
+  }
+
+  it("pulls prior months' rows, oldest first, excluding the current period", async () => {
+    mockPrisma.erpConnection.findMany.mockResolvedValue([
+      conn({ id: "gl-A",  documentType: "GL",      periodStart: "2026-05-01", periodEnd: "2026-05-31" }),
+      conn({ id: "itc-05", documentType: "GSTR_2B", periodStart: "2026-05-01", periodEnd: "2026-05-31", tableName: "t05" }),
+      conn({ id: "itc-04", documentType: "GSTR_2B", periodStart: "2026-04-01", periodEnd: "2026-04-30", tableName: "t04" }),
+      conn({ id: "itc-03", documentType: "GSTR_2B", periodStart: "2026-03-01", periodEnd: "2026-03-31", tableName: "t03" }),
+    ]);
+    mockRowsPerTable({
+      t05: [{ tag: "may" }],   // current period — must NOT appear in trailing
+      t04: [{ tag: "apr" }],
+      t03: [{ tag: "mar" }],
+    });
+
+    const ctx = await buildBusinessContext({ orgId: ORG, connectionId: "gl-A", year: 2026, month: 5 });
+    const trailing = await ctx.itc!.getTrailingRows(6);
+
+    expect(trailing).toEqual([{ tag: "mar" }, { tag: "apr" }]); // oldest first, no "may"
+  });
+
+  it("skips a month with no GSTR-2B uploaded, rather than erroring", async () => {
+    mockPrisma.erpConnection.findMany.mockResolvedValue([
+      conn({ id: "gl-A",  documentType: "GL",      periodStart: "2026-05-01", periodEnd: "2026-05-31" }),
+      conn({ id: "itc-05", documentType: "GSTR_2B", periodStart: "2026-05-01", periodEnd: "2026-05-31", tableName: "t05" }),
+      // April missing entirely.
+      conn({ id: "itc-03", documentType: "GSTR_2B", periodStart: "2026-03-01", periodEnd: "2026-03-31", tableName: "t03" }),
+    ]);
+    mockRowsPerTable({ t05: [{ tag: "may" }], t03: [{ tag: "mar" }] });
+
+    const ctx = await buildBusinessContext({ orgId: ORG, connectionId: "gl-A", year: 2026, month: 5 });
+    const trailing = await ctx.itc!.getTrailingRows(6);
+    expect(trailing).toEqual([{ tag: "mar" }]);
+  });
+
+  it("CORRECTNESS: skips an ambiguous month (two clients' filings) rather than guessing", async () => {
+    mockPrisma.erpConnection.findMany.mockResolvedValue([
+      conn({ id: "gl-A",   documentType: "GL",      periodStart: "2026-05-01", periodEnd: "2026-05-31" }),
+      conn({ id: "itc-05", documentType: "GSTR_2B", periodStart: "2026-05-01", periodEnd: "2026-05-31", tableName: "t05" }),
+      // Two DIFFERENT clients' April filings — ambiguous, must be skipped.
+      conn({ id: "itc-04a", documentType: "GSTR_2B", periodStart: "2026-04-01", periodEnd: "2026-04-30", tableName: "t04a" }),
+      conn({ id: "itc-04b", documentType: "GSTR_2B", periodStart: "2026-04-01", periodEnd: "2026-04-30", tableName: "t04b" }),
+      conn({ id: "itc-03",  documentType: "GSTR_2B", periodStart: "2026-03-01", periodEnd: "2026-03-31", tableName: "t03" }),
+    ]);
+    mockRowsPerTable({
+      t05: [{ tag: "may" }], t04a: [{ tag: "apr-A" }], t04b: [{ tag: "apr-B" }], t03: [{ tag: "mar" }],
+    });
+
+    const ctx = await buildBusinessContext({ orgId: ORG, connectionId: "gl-A", year: 2026, month: 5 });
+    const trailing = await ctx.itc!.getTrailingRows(6);
+    // April excluded entirely — neither apr-A nor apr-B guessed.
+    expect(trailing).toEqual([{ tag: "mar" }]);
+  });
+
+  it("returns an empty array (never throws) when nothing is available", async () => {
+    mockPrisma.erpConnection.findMany.mockResolvedValue([
+      conn({ id: "gl-A",  documentType: "GL",      periodStart: "2026-05-01", periodEnd: "2026-05-31" }),
+      conn({ id: "itc-05", documentType: "GSTR_2B", periodStart: "2026-05-01", periodEnd: "2026-05-31" }),
+    ]);
+    const ctx = await buildBusinessContext({ orgId: ORG, connectionId: "gl-A", year: 2026, month: 5 });
+    await expect(ctx.itc!.getTrailingRows(6)).resolves.toEqual([]);
+  });
+
+  it("memoizes: a second call for the same `periods` does not re-query", async () => {
+    mockPrisma.erpConnection.findMany.mockResolvedValue([
+      conn({ id: "gl-A",  documentType: "GL",      periodStart: "2026-05-01", periodEnd: "2026-05-31" }),
+      conn({ id: "itc-05", documentType: "GSTR_2B", periodStart: "2026-05-01", periodEnd: "2026-05-31" }),
+      conn({ id: "itc-04", documentType: "GSTR_2B", periodStart: "2026-04-01", periodEnd: "2026-04-30", tableName: "t04" }),
+    ]);
+    mockRowsPerTable({ t04: [{ tag: "apr" }] });
+
+    const ctx = await buildBusinessContext({ orgId: ORG, connectionId: "gl-A", year: 2026, month: 5 });
+    const callsBefore = mockPrisma.$queryRawUnsafe.mock.calls.length;
+    await ctx.itc!.getTrailingRows(6);
+    const callsAfterFirst = mockPrisma.$queryRawUnsafe.mock.calls.length;
+    await ctx.itc!.getTrailingRows(6);
+    const callsAfterSecond = mockPrisma.$queryRawUnsafe.mock.calls.length;
+
+    expect(callsAfterFirst).toBeGreaterThan(callsBefore);
+    expect(callsAfterSecond).toBe(callsAfterFirst); // no new queries on the repeat call
+  });
+});

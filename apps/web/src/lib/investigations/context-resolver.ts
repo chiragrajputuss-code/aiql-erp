@@ -7,7 +7,7 @@
 // Prisma — only the resolved context.
 
 import { prisma } from "@aiql/db";
-import { parseGstr2B } from "@aiql/doc-parsers";
+import { parseGstr2B, type Gstr2BRow } from "@aiql/doc-parsers";
 import {
   Capability,
   type BusinessContext,
@@ -93,6 +93,26 @@ function pickSource(
   return candidates[0];
 }
 
+/**
+ * GSTR-2B sources covering the given month, across the WHOLE org — there is
+ * no per-client link between a GL connection and its GSTR-2B connection yet,
+ * so this can return 0 (nothing uploaded), 1 (safe, unambiguous) or 2+
+ * (unsafe: two different clients' filings both cover this month and there is
+ * no way to tell which belongs to the client being investigated). Callers
+ * decide what "2+" means for their use case — the current period throws
+ * (AmbiguousItcSourceError, a whole run is at stake); trailing-period history
+ * just skips the month (a softer signal, degrading is fine).
+ */
+function itcSourcesForPeriod(sources: DataSource[], year: number, month: number): DataSource[] {
+  return sources.filter((s) => {
+    if (s.documentType !== "GSTR_2B") return false;
+    if (!s.periodStart) return false;
+    const start = s.periodStart, end = s.periodEnd ?? s.periodStart;
+    const lo = new Date(year, month - 1, 1), hi = new Date(year, month, 0);
+    return start <= hi && end >= lo;
+  });
+}
+
 function toPeriod(year: number, month: number): InvestigationPeriod {
   const start = new Date(year, month - 1, 1);
   const end   = new Date(year, month, 0);
@@ -168,13 +188,7 @@ export async function buildBusinessContext(params: ResolveParams): Promise<Busin
   // no per-client link yet — see AmbiguousItcSourceError above). Zero is
   // fine (no ITC capability); exactly one is safe and matches today's
   // single-business behaviour; two or more is unsafe to guess between.
-  const itcCandidates = sources.filter((s) => {
-    if (s.documentType !== "GSTR_2B") return false;
-    if (!s.periodStart) return false;
-    const start = s.periodStart, end = s.periodEnd ?? s.periodStart;
-    const lo = new Date(year!, month! - 1, 1), hi = new Date(year!, month!, 0);
-    return start <= hi && end >= lo;
-  });
+  const itcCandidates = itcSourcesForPeriod(sources, year!, month!);
   if (itcCandidates.length > 1) {
     throw new AmbiguousItcSourceError(period.label, itcCandidates.map((s) => s.connectionId));
   }
@@ -208,6 +222,8 @@ export async function buildBusinessContext(params: ResolveParams): Promise<Busin
     getPeriodEnd:    () => glSource.periodEnd,
   } : null;
 
+  const trailingRowsCache = new Map<number, Promise<Gstr2BRow[]>>();
+
   const itc: ItcAccessor | null = itcSource ? {
     getRows: makeMemo(async () => {
       const rows = await prisma.$queryRawUnsafe<Record<string, unknown>[]>(
@@ -216,6 +232,44 @@ export async function buildBusinessContext(params: ResolveParams): Promise<Busin
       return parseGstr2B(rows);
     }),
     getConnectionId: () => itcSource.connectionId,
+
+    // Up to `periods` prior months' GSTR-2B, oldest first, excluding the
+    // current period. Only months with an UNAMBIGUOUS source (see
+    // itcSourcesForPeriod) are included — an ambiguous month (two clients'
+    // filings both covering it) is silently skipped rather than guessed,
+    // exactly like the current-period resolution above but non-fatal, since
+    // this only feeds an optional secondary signal (filing-pattern
+    // intelligence), not the investigation's core capability check.
+    getTrailingRows: (periods: number) => {
+      const cached = trailingRowsCache.get(periods);
+      if (cached) return cached;
+
+      const promise = (async () => {
+        const monthSources: DataSource[] = [];
+        let y = year!, m = month!;
+        for (let i = 0; i < periods; i++) {
+          m -= 1;
+          if (m < 1) { m = 12; y -= 1; }
+          const candidates = itcSourcesForPeriod(sources, y, m);
+          if (candidates.length === 1) monthSources.push(candidates[0]);
+          // 0 candidates: nothing uploaded for that month, skip.
+          // 2+ candidates: ambiguous across clients, skip rather than guess.
+        }
+        monthSources.reverse(); // oldest first
+
+        const allRows: Gstr2BRow[] = [];
+        for (const src of monthSources) {
+          const rows = await prisma.$queryRawUnsafe<Record<string, unknown>[]>(
+            `SELECT * FROM "${src.tableName}" ORDER BY ctid LIMIT ${DOC_ROW_LIMIT}`,
+          );
+          allRows.push(...parseGstr2B(rows));
+        }
+        return allRows;
+      })();
+
+      trailingRowsCache.set(periods, promise);
+      return promise;
+    },
   } : null;
 
   // Staleness: based on the freshest relevant data source.

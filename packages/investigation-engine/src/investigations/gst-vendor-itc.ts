@@ -12,8 +12,10 @@
 // Pure: reads only via ctx accessors + the pure reconcileGlGstr2B function.
 // No LLM, no DB (Principles 5 & "pure engine").
 
-import { reconcileGlGstr2B } from "@aiql/doc-parsers";
-import type { ReconGap } from "@aiql/doc-parsers";
+import {
+  reconcileGlGstr2B, buildFilingProfiles, lookupProfile, isLikelyLateNotMissing,
+} from "@aiql/doc-parsers";
+import type { ReconGap, SupplierFilingProfile } from "@aiql/doc-parsers";
 import type { BusinessContext } from "../context";
 import { Capability } from "../capabilities";
 import type { Finding, FindingSeverity, InvestigationDefinition } from "../types";
@@ -73,6 +75,57 @@ function buildNotFiledFinding(gaps: ReconGap[], period: string): Finding | null 
     ],
     conclusion:   `${relevant.length} invoice${relevant.length > 1 ? "s" : ""} booked in your GL (${vendorLabel}) do not appear in GSTR-2B for ${period}. The likely cause is that the supplier has not filed GSTR-1, putting ${rupees(totalAtRisk)} of ITC at risk.`,
     resolvesWhen: `All listed invoices appear in GSTR-2B for ${period} (i.e. the suppliers file their GSTR-1).`,
+    status:       "open",
+  };
+}
+
+// ── Finding 1b: invoices from habitually-late filers — a timing note, not a
+// risk (Phase 3.4). A vendor who files after the 11th every month is not a
+// defaulter; their invoice simply lands in a LATER GSTR-2B. Without this, a
+// "not filed, ITC at risk" alert fires on the same vendor every month even
+// though nothing is actually wrong — the exact false positive that trains a
+// CA to ignore the tool. Only fires with >=2 trailing periods of evidence
+// (isLikelyLateNotMissing degrades to false otherwise, so with a thin history
+// every gap still goes through buildNotFiledFinding above, unchanged). ─────
+function buildExpectedLaterFinding(
+  gaps:     ReconGap[],
+  profiles: Map<string, SupplierFilingProfile>,
+  period:   string,
+): Finding | null {
+  if (gaps.length === 0) return null;
+
+  const totalPending = sumVariance(gaps);
+  const vendors = [...new Set(gaps.map((g) => g.party).filter(Boolean))] as string[];
+  const vendorLabel = vendors.length > 0 ? vendors.slice(0, 3).join(", ") : "these suppliers";
+  const plural = vendors.length > 1;
+
+  const evidence = gaps.map((g) => {
+    const base = evidenceFromGap(g, "gl_vs_gstr2b_filing_pattern");
+    const profile = lookupProfile(profiles, null, g.party);
+    return profile ? { ...base, description: `${base.description} ${profile.summary}` } : base;
+  });
+
+  return {
+    code:     "GST-ITC-006",
+    category: "operations",
+    severity: "info",
+    title:    `${gaps.length} invoice${gaps.length > 1 ? "s" : ""} not yet in GSTR-2B — expected next period, not at risk`,
+    impactRs: totalPending,
+    businessQuestion: BUSINESS_QUESTION,
+    evidence,
+    recommendation: {
+      action:          `No action needed yet for ${vendorLabel} — based on the last several months, they consistently file after the due date and this invoice should appear once they do. Do not reject ${gaps.length > 1 ? "these" : "it"} in IMS.`,
+      owner:           "Finance Manager",
+      priority:        "this_month",
+      expectedBenefit: `Avoid mistakenly rejecting a genuine invoice in IMS, or chasing a vendor who hasn't actually done anything wrong.`,
+      deadline:        null,
+    },
+    verificationSteps: [
+      "Check next month's GSTR-2B to confirm the invoice appears once the supplier files.",
+      "If it still hasn't appeared after two further periods, treat it as a genuine non-filer instead.",
+    ],
+    conclusion: `${gaps.length} invoice${gaps.length > 1 ? "s are" : " is"} missing from GSTR-2B for ${period}, but ${vendorLabel} ${plural ? "have" : "has"} historically filed late — based on your recent filing history, this credit is expected to appear once ${plural ? "they" : "they"} do.`,
+    resolvesWhen: `The invoice(s) appear in a later GSTR-2B, or the filing pattern breaks and this should be re-classified as at risk.`,
     status:       "open",
   };
 }
@@ -218,12 +271,28 @@ export const GST_VENDOR_ITC: InvestigationDefinition = {
     const gl  = ctx.gl!;
     const itc = ctx.itc!;
 
-    const [glRows, gstrRows] = await Promise.all([gl.getRawRows(), itc.getRows()]);
+    const [glRows, gstrRows, trailingRows] = await Promise.all([
+      gl.getRawRows(), itc.getRows(), itc.getTrailingRows(6),
+    ]);
     const recon = reconcileGlGstr2B(glRows, gstrRows, gl.getConnectionId());
     const period = ctx.period.label;
 
+    // Split "not filed" gaps by filing pattern: a vendor with a habitual-late
+    // history should not re-trigger the same critical alert every month (see
+    // buildExpectedLaterFinding above). Only G2BGL-002 gaps carry a GL-only
+    // party name (nothing matched in GSTR-2B for these), so lookup is by name.
+    const filingProfiles = buildFilingProfiles(trailingRows);
+    const notFiledGaps = recon.gaps.filter((g) => g.code === "G2BGL-002");
+    const atRiskGaps: ReconGap[] = [];
+    const likelyLateGaps: ReconGap[] = [];
+    for (const g of notFiledGaps) {
+      const profile = lookupProfile(filingProfiles, null, g.party);
+      (isLikelyLateNotMissing(profile) ? likelyLateGaps : atRiskGaps).push(g);
+    }
+
     const findings = [
-      buildNotFiledFinding(recon.gaps, period),
+      buildNotFiledFinding(atRiskGaps, period),
+      buildExpectedLaterFinding(likelyLateGaps, filingProfiles, period),
       buildIneligibleFinding(recon.gaps, period),
       buildUnbookedFinding(recon.gaps, period),
       buildNameMismatchFinding(recon.gaps),

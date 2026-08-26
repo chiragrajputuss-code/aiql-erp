@@ -36,6 +36,12 @@ export interface GlAccessor {
 
 export interface ItcAccessor {
   getRows():         Promise<Gstr2BRow[]>;  // already parsed via parseGstr2B, memoized
+  // Rows from up to N prior GSTR-2B periods for this SAME client (not just
+  // the current period), oldest to newest, excluding the current period.
+  // Powers supplier filing-pattern intelligence (buildFilingProfiles) —
+  // needs >= 2 periods to say anything; with fewer it degrades to an empty
+  // array rather than guessing. Memoized per `periods` value.
+  getTrailingRows(periods: number): Promise<Gstr2BRow[]>;
   getConnectionId(): string;
 }
 

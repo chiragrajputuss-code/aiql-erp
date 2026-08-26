@@ -57,6 +57,7 @@ const PERIOD: InvestigationPeriod = {
 function makeContext(opts: {
   glRows?:  Record<string, unknown>[];
   gstrRows?: Gstr2BRow[];
+  trailingGstrRows?: Gstr2BRow[]; // for filing-pattern (supfildt) tests
   withItc?: boolean;          // default true
 }): BusinessContext {
   const withItc = opts.withItc ?? true;
@@ -81,6 +82,7 @@ function makeContext(opts: {
     },
     itc: withItc ? {
       getRows:         async () => opts.gstrRows ?? [],
+      getTrailingRows: async () => opts.trailingGstrRows ?? [],
       getConnectionId: () => "conn-itc",
     } : null,
     vendorCompliance: null,
@@ -151,6 +153,76 @@ describe("GST Vendor ITC investigation", () => {
 
     const findings = await GST_VENDOR_ITC.run(ctx);
     expect(findings).toHaveLength(0);
+  });
+
+  it("softens a not-filed gap into GST-ITC-006 for a habitual-late-filing vendor", async () => {
+    // Six trailing periods, all filed after the 11th → "habitual_late" with
+    // observations >= 2, so isLikelyLateNotMissing() returns true.
+    // supplierGstin is null: a not-filed gap only carries the GL-side vendor
+    // NAME (nothing matched in GSTR-2B), so the profile must be keyed by name
+    // for lookupProfile(filingProfiles, null, g.party) to find it.
+    const trailingGstrRows: Gstr2BRow[] = [15, 16, 14, 17, 20, 18].map((day, i) =>
+      gstr2bRow({
+        supplierName: "Mehta Supplies", supplierGstin: null,
+        invoiceNo: `OLD-${i}`, supplierFiledDate: new Date(2026, 0 + i, day),
+      }),
+    );
+    const ctx = makeContext({
+      glRows: [glRow({ reference_number: "INV-200", vendor_name: "Mehta Supplies", net_amount: 15000 })],
+      gstrRows: [],
+      trailingGstrRows,
+    });
+
+    const findings = await GST_VENDOR_ITC.run(ctx);
+    const atRisk  = findings.find((x) => x.code === "GST-ITC-002");
+    const expected = findings.find((x) => x.code === "GST-ITC-006");
+
+    expect(atRisk).toBeUndefined();
+    expect(expected).toBeDefined();
+    expect(expected!.severity).toBe("info");
+    expect(expected!.impactRs).toBe(15000);
+    expect(expected!.evidence[0].description).toContain("Mehta Supplies");
+    expect(expected!.recommendation.action).toContain("No action needed yet");
+    expect(expected!.resolvesWhen.length).toBeGreaterThan(0);
+  });
+
+  it("keeps GST-ITC-002 unchanged for a vendor with no trailing filing history", async () => {
+    const ctx = makeContext({
+      glRows: [glRow({ reference_number: "INV-200", vendor_name: "Mehta Supplies", net_amount: 15000 })],
+      gstrRows: [],
+      trailingGstrRows: [], // no history at all → profile lookup returns null
+    });
+
+    const findings = await GST_VENDOR_ITC.run(ctx);
+    const atRisk  = findings.find((x) => x.code === "GST-ITC-002");
+    const expected = findings.find((x) => x.code === "GST-ITC-006");
+
+    expect(atRisk).toBeDefined();
+    expect(atRisk!.severity).toBe("critical");
+    expect(expected).toBeUndefined();
+  });
+
+  it("keeps GST-ITC-002 unchanged for an on-time filer (only one late period)", async () => {
+    // 3 periods, only 1 late → lateCount/observations = 0.33, below the 0.6
+    // habitual_late threshold, so pattern is "erratic", not "habitual_late".
+    const trailingGstrRows: Gstr2BRow[] = [5, 8, 15].map((day, i) =>
+      gstr2bRow({
+        supplierName: "Kumar Co", supplierGstin: null,
+        invoiceNo: `OLD-${i}`, supplierFiledDate: new Date(2026, 0 + i, day),
+      }),
+    );
+    const ctx = makeContext({
+      glRows: [glRow({ reference_number: "INV-500", vendor_name: "Kumar Co", net_amount: 9000 })],
+      gstrRows: [],
+      trailingGstrRows,
+    });
+
+    const findings = await GST_VENDOR_ITC.run(ctx);
+    const atRisk  = findings.find((x) => x.code === "GST-ITC-002");
+    const expected = findings.find((x) => x.code === "GST-ITC-006");
+
+    expect(atRisk).toBeDefined();
+    expect(expected).toBeUndefined();
   });
 });
 
