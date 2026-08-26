@@ -29,9 +29,9 @@ describe("Organisation CRUD", () => {
     });
     expect(org.id).toBeTruthy();
     expect(org.slug).toBe(slug);
-    expect(org.plan).toBe("STARTER");
+    expect(org.plan).toBe("FREE");
     expect(org.queriesUsed).toBe(0);
-    expect(org.queryLimit).toBe(500);
+    expect(org.queryLimit).toBe(100);
   });
 
   it("enforces unique slugs", async () => {
