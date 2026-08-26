@@ -11,6 +11,7 @@ const PUBLIC_PATHS = [
   "/api/billing",
   "/api/health",
   "/api/contact",
+  "/api/assistant",
   "/contact",
   "/pricing",
   "/sample-report",

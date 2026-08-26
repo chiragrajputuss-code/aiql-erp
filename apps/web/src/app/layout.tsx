@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { SiteFooter } from "@/components/site-footer";
+import { AssistantWidget } from "@/components/assistant-widget";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -115,6 +116,7 @@ export default function RootLayout({
       <body className={`${inter.className} flex flex-col min-h-screen`}>
         <div className="flex-1">{children}</div>
         <SiteFooter />
+        <AssistantWidget />
       </body>
     </html>
   );

@@ -16,4 +16,4 @@ export type { ConfidenceBreakdown, ConfidenceComponents, Verdict, QueryTemplate 
 export { matchTemplate, getSqlForTemplate } from "./template-matcher";
 export type { TemplateMatch } from "./template-matcher";
 export { checkGuardrails } from "./guardrails";
-export type { GuardrailResult } from "./guardrails";
+export type { GuardrailResult, GuardrailOptions } from "./guardrails";

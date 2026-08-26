@@ -68,4 +68,9 @@ describe("middleware", () => {
     // Root is in PUBLIC_PATHS
     expect(res?.status).not.toBe(307);
   });
+
+  it("allows /api/assistant through without session — the site widget is unauthenticated by design", () => {
+    const res = middleware(mockReq("http://localhost/api/assistant"));
+    expect(res?.headers?.get?.("location")).toBeFalsy();
+  });
 });

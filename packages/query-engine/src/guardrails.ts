@@ -147,7 +147,20 @@ async function classifyWithLLM(question: string): Promise<GuardrailResult> {
 
 // ─── Main export ──────────────────────────────────────────────────────────────
 
-export async function checkGuardrails(question: string): Promise<GuardrailResult> {
+export interface GuardrailOptions {
+  // Skip the LLM classifier entirely — injection regex and the financial
+  // keyword fast-pass still run, but a question that matches neither
+  // returns pass:true instead of calling Groq, so the caller can defer the
+  // on-topic decision to its own logic at zero token cost. Defaults to true
+  // (the query pipeline's existing behaviour is unchanged).
+  llmClassify?: boolean;
+}
+
+export async function checkGuardrails(
+  question: string,
+  opts: GuardrailOptions = {},
+): Promise<GuardrailResult> {
+  const llmClassify = opts.llmClassify ?? true;
   const q = question.trim();
 
   // Too short to be meaningful
@@ -176,5 +189,6 @@ export async function checkGuardrails(question: string): Promise<GuardrailResult
   }
 
   // ── Phase 3: LLM classifier for everything else ───────────────────────────
+  if (!llmClassify) return { pass: true };
   return classifyWithLLM(q);
 }
