@@ -53,3 +53,6 @@ export type { InvestigationProfile } from "./profiles";
 
 export { GST_VENDOR_ITC } from "./investigations/gst-vendor-itc";
 export { DUPLICATE_PAYMENT } from "./investigations/duplicate-payment";
+
+export { diffRuns, computeMatchKey } from "./run-diff";
+export type { RunDiff, DiffedFinding, PriorFindingRef, ResolvedFindingRef } from "./run-diff";

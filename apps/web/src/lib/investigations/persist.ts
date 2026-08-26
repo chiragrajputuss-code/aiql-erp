@@ -11,9 +11,19 @@
 // client A changed. With ctx.connectionId === null (the pre-practice-mode
 // legacy path), Prisma's exact-null filter matches `connectionId IS NULL`,
 // so single-business behaviour is unchanged.
+//
+// Historical continuity (Phase 3): before writing the new run, this diffs its
+// findings against the client's most recent prior CURRENT run — whatever
+// period that was, not just this exact period, so both "did May's issue get
+// fixed by June" and "re-running May after fixing something" count as
+// resolution (see run-diff.ts). Findings the prior run had that no longer
+// appear are marked resolved on THAT prior row (absence-as-evidence,
+// Principle 8) — never deleted. New findings are stamped new/carried plus a
+// matchKey so a later run can diff against them in turn.
 
 import { prisma } from "@aiql/db";
-import type { BusinessContext, ReportResult } from "@aiql/investigation-engine";
+import { diffRuns } from "@aiql/investigation-engine";
+import type { BusinessContext, ReportResult, PriorFindingRef } from "@aiql/investigation-engine";
 
 export async function persistRun(
   ctx:        BusinessContext,
@@ -24,6 +34,25 @@ export async function persistRun(
   const durationMs = Date.now() - startedAt.getTime();
 
   const runId = await prisma.$transaction(async (tx) => {
+    // The most recent prior CURRENT run for this client, any period — this is
+    // what gets diffed against and what resolved findings are written back
+    // onto. Read BEFORE the supersede step below so a same-period re-run
+    // still finds its own predecessor.
+    const priorRun = await tx.investigationRun.findFirst({
+      where:   { orgId: ctx.organizationId, connectionId: ctx.connectionId, status: "CURRENT" },
+      orderBy: { startedAt: "desc" },
+      include: { findings: { select: { matchKey: true, code: true, impactRs: true, firstSeenPeriod: true } } },
+    });
+
+    const priorFindings: PriorFindingRef[] = (priorRun?.findings ?? []).map((f) => ({
+      matchKey:        f.matchKey,
+      code:            f.code,
+      impactRs:        f.impactRs,
+      firstSeenPeriod: f.firstSeenPeriod,
+    }));
+
+    const diff = diffRuns(report.findings, priorFindings, ctx.period.label);
+
     // Supersede prior CURRENT runs for this client (connection) + period only.
     await tx.investigationRun.updateMany({
       where: {
@@ -35,10 +64,21 @@ export async function persistRun(
       data: { status: "SUPERSEDED" },
     });
 
+    // Findings that no longer appear are resolved on the prior run's own
+    // rows — that run stays SUPERSEDED (or CURRENT, if it covered a
+    // different period), its findings are never deleted, only marked.
+    if (diff.resolved.length > 0 && priorRun) {
+      await tx.investigationFinding.updateMany({
+        where: { runId: priorRun.id, matchKey: { in: diff.resolved.map((r) => r.matchKey) } },
+        data:  { status: "resolved", resolvedAt: new Date() },
+      });
+    }
+
     const run = await tx.investigationRun.create({
       data: {
-        orgId:        ctx.organizationId,
-        connectionId: ctx.connectionId,
+        orgId:           ctx.organizationId,
+        connectionId:    ctx.connectionId,
+        comparedToRunId: priorRun?.id ?? null,
         period:      ctx.period.label,
         snapshotId:  ctx.snapshotId,
         resolvedAt:  ctx.resolvedAt,
@@ -57,7 +97,7 @@ export async function persistRun(
         proactiveObservationJson: report.proactiveObservation ? JSON.stringify(report.proactiveObservation) : null,
         boardBriefJson: report.boardBrief ? JSON.stringify(report.boardBrief) : null,
         findings: {
-          create: report.findings.map((f) => ({
+          create: diff.findings.map((f) => ({
             investigationId:    findingInvestigationId(f.code),
             code:               f.code,
             category:           f.category,
@@ -72,6 +112,9 @@ export async function persistRun(
             verificationJson:   JSON.stringify(f.verificationSteps),
             resolvesWhen:       f.resolvesWhen,
             status:             f.status,
+            changeStatus:       f.changeStatus,
+            firstSeenPeriod:    f.firstSeenPeriod,
+            matchKey:           f.matchKey,
           })),
         },
       },
