@@ -31,7 +31,8 @@ function makeContext(glRows: Record<string, unknown>[], withGl = true): Business
   const capabilities = new Set<Capability>();
   if (withGl) capabilities.add(Capability.GENERAL_LEDGER);
   return Object.freeze({
-    organizationId: "org-1", period: PERIOD, snapshotId: "CTX-TEST", resolvedAt: new Date(),
+    organizationId: "org-1", connectionId: withGl ? "conn-gl" : null,
+    period: PERIOD, snapshotId: "CTX-TEST", resolvedAt: new Date(),
     profileId: "indian-sme-default", isStale: false, dataAsOf: new Date(), capabilities,
     gl: withGl ? {
       getRawRows: async () => glRows,

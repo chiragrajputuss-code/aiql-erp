@@ -49,6 +49,11 @@ export interface VendorComplianceAccessor {
 export interface BusinessContext {
   // Identity — immutable
   readonly organizationId: string;
+  // The client book (GL connection) under investigation. Null only for
+  // legacy/single-entity resolution paths that predate practice mode — never
+  // guess a value here; a wrong connectionId would misattribute findings to
+  // the wrong client.
+  readonly connectionId:   string | null;
   readonly period:         InvestigationPeriod;
   readonly snapshotId:     string;   // "CTX-20260701-001"
   readonly resolvedAt:     Date;

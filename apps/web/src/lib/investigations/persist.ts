@@ -1,9 +1,16 @@
 // ─── Investigation persistence (web side) ────────────────────────────────────
 //
 // Writes one InvestigationRun + its findings, and supersedes the prior CURRENT
-// run for the same (orgId, period) — findings are SUPERSEDED, never deleted
-// (Principle 7). Evidence/recommendation/verification are serialised to JSON
-// (materialized, Principle 6).
+// run for the same (orgId, connectionId, period) — findings are SUPERSEDED,
+// never deleted (Principle 7). Evidence/recommendation/verification are
+// serialised to JSON (materialized, Principle 6).
+//
+// Scoping the supersede by connectionId (not just orgId+period) is what makes
+// practice mode work: without it, running client B's investigation would mark
+// client A's still-open findings as superseded, even though nothing about
+// client A changed. With ctx.connectionId === null (the pre-practice-mode
+// legacy path), Prisma's exact-null filter matches `connectionId IS NULL`,
+// so single-business behaviour is unchanged.
 
 import { prisma } from "@aiql/db";
 import type { BusinessContext, ReportResult } from "@aiql/investigation-engine";
@@ -17,15 +24,21 @@ export async function persistRun(
   const durationMs = Date.now() - startedAt.getTime();
 
   const runId = await prisma.$transaction(async (tx) => {
-    // Supersede prior CURRENT runs for this org+period.
+    // Supersede prior CURRENT runs for this client (connection) + period only.
     await tx.investigationRun.updateMany({
-      where: { orgId: ctx.organizationId, period: ctx.period.label, status: "CURRENT" },
-      data:  { status: "SUPERSEDED" },
+      where: {
+        orgId:        ctx.organizationId,
+        connectionId: ctx.connectionId,
+        period:       ctx.period.label,
+        status:       "CURRENT",
+      },
+      data: { status: "SUPERSEDED" },
     });
 
     const run = await tx.investigationRun.create({
       data: {
-        orgId:       ctx.organizationId,
+        orgId:        ctx.organizationId,
+        connectionId: ctx.connectionId,
         period:      ctx.period.label,
         snapshotId:  ctx.snapshotId,
         resolvedAt:  ctx.resolvedAt,

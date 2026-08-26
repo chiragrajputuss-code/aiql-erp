@@ -22,9 +22,18 @@ function safeParse<T>(json: string | null | undefined, fallback: T): T {
   try { return JSON.parse(json) as T; } catch { return fallback; }
 }
 
-export async function GET(_req: NextRequest) {
+export async function GET(req: NextRequest) {
   const { user } = await validateRequest();
   if (!user) return NextResponse.json({ error: "Unauthorised" }, { status: 401 });
+
+  const connectionId = new URL(req.url).searchParams.get("connectionId");
+  if (connectionId) {
+    const owned = await prisma.erpConnection.findFirst({
+      where:  { id: connectionId, orgId: user.orgId },
+      select: { id: true },
+    });
+    if (!owned) return NextResponse.json({ error: "Connection not found" }, { status: 404 });
+  }
 
   // The working-paper PDF is the Firm-plan artefact. Findings and evidence are
   // always visible in the app on every plan — only the exported document is
@@ -44,7 +53,7 @@ export async function GET(_req: NextRequest) {
 
   const [run, org] = await Promise.all([
     prisma.investigationRun.findFirst({
-      where:   { orgId: user.orgId, status: "CURRENT" },
+      where:   { orgId: user.orgId, status: "CURRENT", ...(connectionId ? { connectionId } : {}) },
       orderBy: { startedAt: "desc" },
       include: { findings: { orderBy: { createdAt: "asc" } } },
     }),

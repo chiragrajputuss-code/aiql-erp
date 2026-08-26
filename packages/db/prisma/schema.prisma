@@ -302,6 +302,8 @@ model ErpConnection {
   pinnedQueries      PinnedQuery[]
   pulseSubscription  PulseSubscription?
   vendorCompliance   VendorComplianceRecord[]
+  investigationRuns  InvestigationRun[]
+  columnMappings     OrgColumnMapping[]
 
   @@map("erp_connections")
 }
@@ -411,6 +413,13 @@ model InvestigationRun {
   orgId     String
   org       Organisation @relation(fields: [orgId], references: [id], onDelete: Cascade)
 
+  // The client book (GL connection) this run investigated. Null only for
+  // legacy rows created before practice mode — those predate per-client scope
+  // and must never be attributed to a specific client. A firm holds one
+  // CURRENT run per (orgId, connectionId, period), not one per (orgId, period).
+  connectionId String?
+  connection   ErpConnection? @relation(fields: [connectionId], references: [id], onDelete: Cascade)
+
   period      String                 // "MM-YYYY"
   snapshotId  String                 // immutable context snapshot id, e.g. "CTX-20260701-001"
   resolvedAt  DateTime               // when the BusinessContext snapshot was resolved
@@ -420,6 +429,10 @@ model InvestigationRun {
   startedAt   DateTime  @default(now())
   completedAt DateTime?
   durationMs  Int?
+
+  // Which prior run (if any) this run's findings were diffed against to
+  // compute NEW/CARRIED/RESOLVED. Null for a client's first run.
+  comparedToRunId String?
 
   healthScore      Int?
   totalImpactRs    Float @default(0)
@@ -436,8 +449,8 @@ model InvestigationRun {
 
   findings InvestigationFinding[]
 
+  @@index([orgId, connectionId, period])
   @@index([orgId, status])
-  @@index([orgId, period])
   @@map("investigation_runs")
 }
 
@@ -465,7 +478,19 @@ model InvestigationFinding {
   status    String   @default("open") // open | resolved | snoozed
   createdAt DateTime @default(now())
 
+  // Cross-run continuity (historical layer). changeStatus/firstSeenPeriod are
+  // computed once per run from a diff against the prior run for the same
+  // client; resolvedAt is set when a previously-open finding no longer
+  // appears (absence-as-evidence — see run-diff.ts). matchKey is the
+  // deterministic identity used to match a finding across runs.
+  changeStatus    String?   // "new" | "carried" | "resolved"
+  firstSeenPeriod String?   // "MM-YYYY" — the period this finding first appeared
+  resolvedAt      DateTime?
+  matchKey        String?
+
   @@index([runId, severity])
+  @@index([runId, changeStatus])
+  @@index([matchKey])
   @@map("investigation_findings")
 }
 
@@ -873,12 +898,19 @@ model OrgColumnMapping {
   orgId            String
   org              Organisation @relation(fields: [orgId], references: [id], onDelete: Cascade)
 
+  // Scopes a mapping to one client's file format. Null = org-level default,
+  // used when a connection has no mapping of its own (see resolution order in
+  // upsertOrgMappings). Without this, in a multi-client firm one client's
+  // "Party" -> canonicalField mapping silently overwrites another's.
+  connectionId     String?
+  connection       ErpConnection? @relation(fields: [connectionId], references: [id], onDelete: Cascade)
+
   sourceColumnName String   // e.g. "Dr Amt", "Debit Amount", "उधार राशि"
   canonicalField   String   // e.g. "debit_amount", "credit_amount", "date", "description"
   confirmedAt      DateTime @default(now())
   updatedAt        DateTime @updatedAt
 
-  @@unique([orgId, sourceColumnName])
+  @@unique([orgId, connectionId, sourceColumnName])
   @@map("org_column_mappings")
 }
 

@@ -2,15 +2,29 @@ import { NextRequest, NextResponse } from "next/server";
 import { validateRequest } from "@/lib/auth";
 import { prisma } from "@aiql/db";
 
-// Returns the latest CURRENT investigation run for the org, shaped as the
-// Investigation Report (JSON fields parsed back to objects). Returns
-// { run: null } if no investigation has been run yet.
-export async function GET(_req: NextRequest) {
+// Returns the latest CURRENT investigation run for a client (?connectionId=),
+// shaped as the Investigation Report (JSON fields parsed back to objects).
+// Without connectionId: the latest CURRENT run for the org, for backward
+// compatibility with the legacy single-business path — once a firm has more
+// than one client, the caller should always pass connectionId (see the client
+// switcher on the investigations page). Returns { run: null } if no
+// investigation has been run yet for the requested scope.
+export async function GET(req: NextRequest) {
   const { user } = await validateRequest();
   if (!user) return NextResponse.json({ error: "Unauthorised" }, { status: 401 });
 
+  const connectionId = new URL(req.url).searchParams.get("connectionId");
+
+  if (connectionId) {
+    const owned = await prisma.erpConnection.findFirst({
+      where:  { id: connectionId, orgId: user.orgId },
+      select: { id: true },
+    });
+    if (!owned) return NextResponse.json({ error: "Connection not found" }, { status: 404 });
+  }
+
   const run = await prisma.investigationRun.findFirst({
-    where:   { orgId: user.orgId, status: "CURRENT" },
+    where:   { orgId: user.orgId, status: "CURRENT", ...(connectionId ? { connectionId } : {}) },
     orderBy: { startedAt: "desc" },
     include: { findings: { orderBy: { createdAt: "asc" } } },
   });
@@ -42,6 +56,7 @@ export async function GET(_req: NextRequest) {
   return NextResponse.json({
     run: {
       id:               run.id,
+      connectionId:     run.connectionId,
       period:           run.period,
       snapshotId:       run.snapshotId,
       resolvedAt:       run.resolvedAt.toISOString(),

@@ -107,28 +107,85 @@ function makeMemo<T>(loader: () => Promise<T>): () => Promise<T> {
 
 export interface ResolveParams {
   orgId:  string;
-  // Optional explicit period; if omitted, derived from the latest GL source.
+  // Which client book (GL connection) to investigate. Omit only for the
+  // legacy single-business path — it then falls back to "the org's latest GL
+  // connection", exactly as before practice mode. Never guessed when supplied.
+  connectionId?: string;
+  // Optional explicit period; if omitted, derived from the chosen GL source.
   year?:  number;
   month?: number;
+}
+
+/**
+ * Thrown instead of silently pairing the wrong client's data. GL and GSTR-2B
+ * uploads are always separate ErpConnection rows (every upload creates a new
+ * one — see confirm-upload route), linked only by period overlap. That is
+ * safe while an org has at most one GL connection, but once a firm has
+ * multiple clients' GL books under one org, more than one GSTR-2B candidate
+ * can cover the same period and there is currently no explicit link telling
+ * the resolver which one belongs to which client. Guessing here would produce
+ * a confidently wrong report attributed to the wrong business — worse than no
+ * report at all — so this throws and the caller must resolve the ambiguity
+ * (e.g. archive the stale connection) until explicit GL<->2B linking ships.
+ */
+export class AmbiguousItcSourceError extends Error {
+  constructor(period: string, candidateConnectionIds: string[]) {
+    super(
+      `Multiple GSTR-2B files cover ${period} across this organisation ` +
+      `(connections: ${candidateConnectionIds.join(", ")}). AcctQAI cannot yet ` +
+      `auto-match a GSTR-2B to a specific client's GL — this is on our roadmap. ` +
+      `Keep only one active GSTR-2B connection per period per client until then.`
+    );
+    this.name = "AmbiguousItcSourceError";
+  }
 }
 
 export async function buildBusinessContext(params: ResolveParams): Promise<BusinessContext> {
   const { orgId } = params;
   const sources = await gatherDataSources(orgId);
 
-  // Determine the period: explicit, else the latest GL source's period, else now.
-  const latestGl = pickSource(sources, "GL", null);
+  // Pick the GL source: the requested client, or (legacy path) the org's most
+  // recent GL of any client.
+  const glSource = params.connectionId
+    ? sources.find((s) => s.documentType === "GL" && s.connectionId === params.connectionId) ?? null
+    : pickSource(sources, "GL", null);
+
+  if (params.connectionId && !glSource) {
+    throw new Error(`No GL upload found for connection ${params.connectionId}.`);
+  }
+
+  // Determine the period: explicit, else the chosen GL source's period, else now.
   let year  = params.year;
   let month = params.month;
   if ((!year || !month)) {
-    const ref = latestGl?.periodEnd ?? latestGl?.periodStart ?? null;
+    const ref = glSource?.periodEnd ?? glSource?.periodStart ?? null;
     if (ref) { year = ref.getFullYear(); month = ref.getMonth() + 1; }
     else { const now = new Date(); year = now.getFullYear(); month = now.getMonth() + 1; }
   }
   const period = toPeriod(year!, month!);
 
-  const glSource  = pickSource(sources, "GL", { year: year!, month: month! });
-  const itcSource = pickSource(sources, "GSTR_2B", { year: year!, month: month! });
+  // GSTR-2B: candidates covering this period, across the WHOLE org (there is
+  // no per-client link yet — see AmbiguousItcSourceError above). Zero is
+  // fine (no ITC capability); exactly one is safe and matches today's
+  // single-business behaviour; two or more is unsafe to guess between.
+  const itcCandidates = sources.filter((s) => {
+    if (s.documentType !== "GSTR_2B") return false;
+    if (!s.periodStart) return false;
+    const start = s.periodStart, end = s.periodEnd ?? s.periodStart;
+    const lo = new Date(year!, month! - 1, 1), hi = new Date(year!, month!, 0);
+    return start <= hi && end >= lo;
+  });
+  if (itcCandidates.length > 1) {
+    throw new AmbiguousItcSourceError(period.label, itcCandidates.map((s) => s.connectionId));
+  }
+  // Zero period-covering candidates: only the legacy (no explicit client)
+  // path falls back to "most recent GSTR-2B of any period" — safe there
+  // because a single-business org has nothing else it could be. Once a
+  // client is explicitly selected, reaching for some OTHER client's stale
+  // 2B data would be silently wrong, so this run simply has no ITC
+  // capability for the period instead of guessing.
+  const itcSource = itcCandidates[0]
+    ?? (params.connectionId ? null : pickSource(sources, "GSTR_2B", { year: year!, month: month! }));
 
   const capabilities = new Set<Capability>();
   if (glSource)  capabilities.add(Capability.GENERAL_LEDGER);
@@ -174,6 +231,10 @@ export async function buildBusinessContext(params: ResolveParams): Promise<Busin
 
   return Object.freeze({
     organizationId: orgId,
+    // Reflects whichever client book this run actually investigated —
+    // explicitly chosen, or (legacy path) whatever the org's latest GL
+    // resolved to. Null only when there is no GL at all.
+    connectionId: glSource?.connectionId ?? null,
     period,
     snapshotId,
     resolvedAt: new Date(),
