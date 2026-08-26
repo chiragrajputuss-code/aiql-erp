@@ -9,13 +9,13 @@ import {
 
 // ─── Founding-free panel ──────────────────────────────────────────────────────
 
-// One real offer, not three. Free for founding firms through 2027 — not
+// One real offer, not three. Free for founding firms through 2027, not
 // "forever": a surprise invoice after a silent free year is how goodwill
 // dies, so we say plainly what's true today and what changes later.
 const INCLUDED = [
   "Unlimited client books",
   "GST/ITC reconciliation + duplicate-payment checks",
-  "Every finding with full evidence rows — nothing held back",
+  "Every finding with full evidence rows, nothing held back",
   "Vendor filing-pattern intelligence (spot habitual late filers)",
   "Month-end close & flux analysis",
   "Working-paper PDF export",
@@ -24,18 +24,18 @@ const INCLUDED = [
 
 const VALUE = [
   { icon: <Clock className="w-5 h-5 text-emerald-500" />, title: "Hours back every month", body: "What used to take days of comparing reports and chasing mismatches arrives as a prioritised report in minutes." },
-  { icon: <IndianRupee className="w-5 h-5 text-amber-500" />, title: "Rupees at risk, surfaced", body: "Blocked ITC, unfiled vendors and duplicate payments — each with the exact amount in play and the action to take." },
-  { icon: <Lock className="w-5 h-5 text-violet-500" />, title: "Your data stays yours", body: "Names, references and amounts are encrypted and masked before anything is analysed — never exposed to any AI model." },
+  { icon: <IndianRupee className="w-5 h-5 text-amber-500" />, title: "Rupees at risk, flagged", body: "Blocked ITC, unfiled vendors and duplicate payments, each with the exact amount in play and the action to take." },
+  { icon: <Lock className="w-5 h-5 text-violet-500" />, title: "Your data stays yours", body: "Names, references and amounts are encrypted and masked before anything is analysed, never exposed to any AI model." },
 ];
 
 const FAQ = [
-  { q: "Does AcctQAI replace my ERP?", a: "No. AcctQAI works alongside your existing accounting software — Tally, Zoho or any GL export. It reads your data and investigates it; it never replaces your books." },
-  { q: "Does AcctQAI modify my accounting data?", a: "Never. AcctQAI is strictly read-only. It analyses your data and recommends actions — every change stays in your hands." },
-  { q: "Is this just another reporting tool?", a: "No. Reports tell you what happened. AcctQAI tells you what deserves your attention and why — with the supporting evidence and a recommended action for every finding." },
-  { q: "Is this an AI chatbot wrapped around my books?", a: "No. Every finding is computed by fixed accounting rules — run the same file twice and you get the same report, to the rupee. AI is only used to phrase the summary; it never calculates a number, never sees your real names or amounts (they're masked first), and the report works even with the AI switched off. That's also why we never charge AI credits or per-query fees." },
-  { q: "Is there a free trial?", a: "No trial and no card required. AcctQAI is free for founding firms through 2027 — run full investigations on every client book you upload, with every finding and all the evidence." },
-  { q: "Will AcctQAI always be free?", a: "No — we'll introduce pricing after 2027. Founding firms (anyone signed up before then) will get advance notice and preferential terms. We won't turn on a surprise invoice." },
-  { q: "Is my data safe?", a: "Your data is stored in AWS Mumbai (ap-south-1), isolated per organisation. Sensitive fields — vendor and customer names, references and amounts — are encrypted and masked before any analysis runs, and are never exposed to any AI model." },
+  { q: "Does AcctQAI replace my ERP?", a: "No. AcctQAI works alongside your existing accounting software, Tally, Zoho or any GL export. It reads your data and investigates it; it never replaces your books." },
+  { q: "Does AcctQAI modify my accounting data?", a: "Never. AcctQAI is strictly read-only. It analyses your data and recommends actions, and every change stays in your hands." },
+  { q: "Is this just another reporting tool?", a: "No. Reports tell you what happened. AcctQAI tells you what deserves your attention and why, with the supporting evidence and a recommended action for every finding." },
+  { q: "Is this an AI chatbot wrapped around my books?", a: "No. Every finding is computed by fixed accounting rules. Run the same file twice and you get the same report, to the rupee. AI is only used to phrase the summary; it never calculates a number, never sees your real names or amounts (they're masked first), and the report works even with the AI switched off. That's also why we never charge AI credits or per-query fees." },
+  { q: "Is there a free trial?", a: "No trial and no card required. AcctQAI is free for founding firms through 2027: run full investigations on every client book you upload, with every finding and all the evidence." },
+  { q: "Will AcctQAI always be free?", a: "No, we'll introduce pricing after 2027. Founding firms (anyone signed up before then) will get advance notice and preferential terms. We won't turn on a surprise invoice." },
+  { q: "Is my data safe?", a: "Your data is stored in AWS Mumbai (ap-south-1), isolated per organisation. Sensitive fields, including vendor and customer names, references and amounts, are encrypted and masked before any analysis runs, and are never exposed to any AI model." },
   { q: "What happens to my data if I cancel?", a: "Your uploaded data is retained for 30 days after cancellation so you can export it. After 30 days it is permanently deleted." },
 ];
 
@@ -104,9 +104,9 @@ export default function PricingPage() {
             <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 border border-blue-100 rounded-full px-3 py-1 text-xs font-semibold mb-4">
               <ShieldCheck className="h-3.5 w-3.5" /> Built for finance teams
             </div>
-            <h1 className="text-4xl font-bold text-slate-900 tracking-tight">Free for founding firms — through 2027.</h1>
+            <h1 className="text-4xl font-bold text-slate-900 tracking-tight">Free for founding firms through 2027.</h1>
             <p className="text-slate-500 text-lg max-w-xl mx-auto leading-relaxed mt-3">
-              Every finding, every client book, full evidence — nothing held back and nothing charged while we build AcctQAI with our first users.
+              Every finding, every client book, full evidence. Nothing held back and nothing charged while we build AcctQAI with our first users.
             </p>
           </div>
         </Reveal>
@@ -132,7 +132,7 @@ export default function PricingPage() {
               ))}
             </ul>
             <p className="text-xs text-slate-400 mt-6 pt-4 border-t border-slate-100 leading-relaxed">
-              Free for founding firms through 2027. We&apos;ll introduce pricing after that — founding firms will get notice and preferential terms.
+              Free for founding firms through 2027. We&apos;ll introduce pricing after that; founding firms will get notice and preferential terms.
             </p>
           </div>
         </Reveal>

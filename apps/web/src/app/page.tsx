@@ -16,7 +16,7 @@ const BRAND = {
   primary: "#1B3A5C",
 };
 
-// ─── Hero interactive preview data — real findings, surfaced immediately ──────
+// ─── Hero interactive preview data: real findings, shown immediately ──────
 
 type HeroSev = "critical" | "warning" | "opportunity";
 
@@ -26,24 +26,24 @@ const HERO_FINDINGS: {
   {
     sev: "critical", cat: "GST & Compliance", impact: "₹4,80,000",
     title: "Input Tax Credit blocked", vendor: "ABC Industries",
-    reason: "Vendor hasn't filed GSTR-1 — this credit will be reversed.",
+    reason: "Vendor hasn't filed GSTR-1, so this credit will be reversed.",
     action: "Hold payment and send a filing reminder today.",
   },
   {
     sev: "critical", cat: "Risk & Control", impact: "₹68,000",
     title: "Duplicate payment detected", vendor: "Mehta Steel Industries",
-    reason: "Invoice INV-MSI-041 was paid twice — on 7 May and 22 May.",
+    reason: "Invoice INV-MSI-041 was paid twice, on 7 May and 22 May.",
     action: "Recover ₹68,000 from the vendor or adjust the next bill.",
   },
   {
     sev: "opportunity", cat: "GST & Compliance", impact: "₹15,000",
     title: "ITC available but not booked", vendor: "Sunrise Lubricants",
-    reason: "GSTR-2B shows credit you haven't claimed — the invoice isn't in your books.",
+    reason: "GSTR-2B shows credit you haven't claimed because the invoice isn't in your books.",
     action: "Book the invoice and claim the credit before GSTR-3B.",
   },
 ];
 
-// Severity that screams — critical is visually dominant.
+// Severity that screams: critical is visually dominant.
 const HERO_SEV: Record<HeroSev, { card: string; bar: string; pill: string; impact: string; dot: string; label: string }> = {
   critical:    { card: "bg-red-50 border-red-200",      bar: "bg-red-500",     pill: "bg-red-600 text-white",        impact: "text-red-600",     dot: "bg-red-500",     label: "CRITICAL" },
   warning:     { card: "bg-amber-50 border-amber-200",  bar: "bg-amber-400",   pill: "bg-amber-500 text-white",      impact: "text-amber-600",   dot: "bg-amber-500",   label: "NEEDS ATTENTION" },
@@ -62,7 +62,7 @@ const DRILL_QUESTIONS = [
 // ─── What we investigate ──────────────────────────────────────────────────────
 
 // The checks the investigation engine actually runs today (GST-ITC-001…005 +
-// DUP-PAY-001…002). Seven — not a marketing number.
+// DUP-PAY-001…002). Seven, not a marketing number.
 const INVESTIGATES = [
   "Purchase invoices missing from GSTR-2B",
   "Vendor hasn't filed GSTR-1",
@@ -76,17 +76,17 @@ const INVESTIGATES = [
 // ─── Capabilities (one investigation, complete visibility) ────────────────────
 
 // Only what the product actually does today. Anything not built is listed
-// separately under "Coming soon" — never implied here.
+// separately under "Coming soon", never implied here.
 const CAPABILITIES = [
-  { icon: <Receipt className="h-5 w-5" />,    title: "GST & ITC",           desc: "Reconcile your books against GSTR-2B — blocked credit, unfiled vendors, ineligible ITC.", color: "bg-blue-50 text-blue-600" },
-  { icon: <Wallet className="h-5 w-5" />,     title: "Duplicate Payments",  desc: "Catch the same bill paid twice, with both vouchers as evidence.", color: "bg-red-50 text-red-600" },
-  { icon: <Users className="h-5 w-5" />,      title: "Vendor ITC Scorecard", desc: "See which vendors repeatedly put your input tax credit at risk.", color: "bg-purple-50 text-purple-600" },
-  { icon: <TrendingUp className="h-5 w-5" />, title: "Month-End Close",     desc: "Flux analysis on every account — what changed vs last period, and why.", color: "bg-amber-50 text-amber-600" },
-  { icon: <FileText className="h-5 w-5" />,   title: "Executive Summary",   desc: "A board-ready brief of the month's findings, written for you.", color: "bg-slate-100 text-slate-600" },
+  { icon: <Receipt className="h-5 w-5" />,    title: "GST & ITC",           desc: "Checks every purchase in your books against GSTR-2B and flags credit that is blocked, unclaimed, or marked ineligible.", color: "bg-blue-50 text-blue-600" },
+  { icon: <Wallet className="h-5 w-5" />,     title: "Duplicate Payments",  desc: "Finds the same bill paid twice and shows you both vouchers side by side.", color: "bg-red-50 text-red-600" },
+  { icon: <Users className="h-5 w-5" />,      title: "Vendor ITC Scorecard", desc: "Shows which suppliers keep putting your input tax credit at risk, month after month.", color: "bg-purple-50 text-purple-600" },
+  { icon: <TrendingUp className="h-5 w-5" />, title: "Month-End Close",     desc: "Compares every account against the previous period and explains what moved.", color: "bg-amber-50 text-amber-600" },
+  { icon: <FileText className="h-5 w-5" />,   title: "Executive Summary",   desc: "A one-page brief of the month you can hand to a partner or a client without rewriting it.", color: "bg-slate-100 text-slate-600" },
 ];
 
-// Things you can ASK (query engine, 50+ templates) — real, but answered on
-// demand, not surfaced automatically. Kept distinct from investigations.
+// Things you can ASK (query engine, 50+ templates): real, but answered on
+// demand, not shown automatically. Kept distinct from investigations.
 const ASKABLE = [
   "Cash & bank balance", "Overdue debtors (30/60/90)", "Profit & loss summary",
   "Expense by voucher type", "TDS summary", "Vendor & customer ledgers",
@@ -99,15 +99,15 @@ const COMING_SOON = ["Receivables investigation", "Cash-flow monitoring", "Tally
 // ─── How it works ─────────────────────────────────────────────────────────────
 
 const STEPS = [
-  { n: "1", title: "Upload your files", desc: "The exports you already have from Tally or your accounting software. Takes two minutes. Nothing to install, nothing changes in your books." },
-  { n: "2", title: "We check them", desc: "AcctQAI goes through your books the way a careful accountant would — every entry, not a sample." },
-  { n: "3", title: "You see what's leaking", desc: "A simple report: what's wrong, how many rupees are involved, and what to do about it. Every finding comes with the proof, so you can verify it yourself." },
+  { n: "1", title: "Upload your files", desc: "Export from Tally the way you normally do and upload the file. It takes about two minutes. There is nothing to install and your books are never written to." },
+  { n: "2", title: "Every entry gets checked", desc: "Not a sample, not the top fifty vendors. This is the part that would take an article assistant the better half of two days." },
+  { n: "3", title: "You get a short report", desc: "What is wrong, how much money is involved, and what to do next. Each finding lists the invoices behind it, so you can check any of it against your own records before you act." },
 ];
 
 // ─── Pricing ──────────────────────────────────────────────────────────────────
 
 // One real offer, not three: free for founding firms through 2027, not
-// "forever" — a surprise invoice after a silent free year is how goodwill
+// "forever": a surprise invoice after a silent free year is how goodwill
 // dies. See apps/web/src/app/pricing/page.tsx for the full breakdown.
 const INCLUDED = [
   "Unlimited client books",
@@ -254,7 +254,7 @@ function Reveal({ children, delay = 0 }: { children: React.ReactNode; delay?: nu
   );
 }
 
-// ─── Privacy showcase (highlights protection — never the mechanism) ───────────
+// ─── Privacy showcase (highlights protection, never the mechanism) ───────────
 
 const PRIVACY_ROWS = [
   { raw: ["Sharma Traders Pvt Ltd", "INV-2026-0412", "₹2,40,000"], label: "Vendor" },
@@ -263,7 +263,7 @@ const PRIVACY_ROWS = [
 ];
 
 function mask(s: string): string {
-  // Display-only masking for the demo — shows the OUTCOME (hidden), not the method.
+  // Display-only masking for the demo: shows the OUTCOME (hidden), not the method.
   return s.replace(/[A-Za-z0-9]/g, "•");
 }
 
@@ -314,7 +314,7 @@ function PrivacyShowcase() {
       <div className="px-4 py-3 bg-emerald-50/50 border-t border-emerald-100 flex items-center gap-2">
         <ShieldCheck className="h-4 w-4 text-emerald-600 shrink-0" />
         <span className="text-[11px] text-emerald-800">
-          Names, references and amounts are <b>encrypted &amp; masked</b> before any analysis runs — and never exposed to any AI model.
+          Names, references and amounts are <b>encrypted &amp; masked</b> before any analysis runs, and are never exposed to any AI model.
         </span>
       </div>
     </div>
@@ -323,11 +323,12 @@ function PrivacyShowcase() {
 
 // ─── Practice scanner (the CA multiplier) ─────────────────────────────────────
 //
-// Illustrative animation of what per-client checks look like across a sample
-// client list — NOT a live multi-client dashboard (that doesn't exist yet).
-// Client identities are masked (•). The finding *types* are the value we show;
-// the detection method is never shown here or anywhere. Doubles as the privacy
-// signal. Captioned honestly on the homepage — see the "For CAs" section.
+// A decorative animation with sample client names, not a live data feed. The
+// real Practice dashboard lives at apps/web/src/app/(dashboard)/practice, one
+// row per actual client. Client identities here are masked (•). The finding
+// *types* are the value we show; the detection method is never shown here or
+// anywhere. Doubles as the privacy signal, captioned honestly below (see the
+// "For CAs" section).
 
 type ScanTone = "critical" | "warning" | "opportunity";
 
@@ -439,7 +440,7 @@ function PracticeScanner() {
 
         {/* finding stream */}
         <div className="p-3 space-y-2 bg-slate-50/40 min-h-[220px]">
-          <p className="text-[10px] uppercase tracking-wide text-slate-400 font-semibold px-0.5">Findings as they surface</p>
+          <p className="text-[10px] uppercase tracking-wide text-slate-400 font-semibold px-0.5">Findings as they come in</p>
           {stream.length === 0 && (
             <p className="text-[11px] text-slate-400 px-0.5 pt-2">Scanning your client book…</p>
           )}
@@ -471,7 +472,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-white">
       <Navbar />
 
-      {/* ── Hero — the brand banner ── */}
+      {/* ── Hero: the brand banner ── */}
       <section
         className="relative pt-32 pb-24 px-6 overflow-hidden"
         style={{ background: "linear-gradient(120deg, #24507e 0%, #1B3A5C 55%, #12293f 100%)" }}
@@ -495,28 +496,28 @@ export default function LandingPage() {
                 <ShieldCheck className="h-3.5 w-3.5" /> For Indian businesses &amp; their CAs
               </div>
               <h1 className="text-4xl lg:text-[3.4rem] font-bold text-white leading-[1.08] tracking-tight">
-                Your books are leaking money.<br />
-                <span className="text-[#8FB4EE]">Quietly.</span>
+                Money leaves your books<br />
+                <span className="text-[#8FB4EE]">without anyone noticing.</span>
               </h1>
               <p className="text-lg text-white/75 max-w-xl leading-relaxed">
-                A supplier skips a GST filing — and your tax credit dies. The same bill gets paid twice — once from the site, once from the office. <strong className="text-white font-semibold">Nobody notices until the money is gone.</strong>
+                One of your suppliers forgets to file their GST return, and the credit you were counting on never reaches you. Or a bill gets paid twice, once by the office and once from the site. <strong className="text-white font-semibold">Both look perfectly normal in the ledger.</strong>
               </p>
               <p className="text-lg text-white/75 max-w-xl leading-relaxed">
-                AcctQAI finds these leaks in your books and shows you the proof. <span className="text-white font-medium">Free to check. No card needed.</span>
+                AcctQAI reads your books and tells you where this is happening, with the invoices to prove it. <span className="text-white font-medium">Free to check. No card needed.</span>
               </p>
               <div className="flex flex-col sm:flex-row gap-3">
                 <Link href="/signup" className="inline-flex items-center justify-center gap-2 bg-white text-[#1B3A5C] px-7 py-4 rounded-xl font-bold text-base hover:bg-blue-50 transition-colors shadow-lg shadow-black/20">
-                  Check my books — free <ArrowRight className="h-4 w-4" />
+                  Check my books, free <ArrowRight className="h-4 w-4" />
                 </Link>
                 <Link href="/sample-report" className="inline-flex items-center justify-center gap-2 text-white px-7 py-4 rounded-xl font-semibold text-base border border-white/30 hover:bg-white/10 transition-colors">
                   See what it found for others
                 </Link>
               </div>
               <div className="flex flex-wrap items-center gap-x-5 gap-y-2 text-sm text-white/60">
-                <span className="flex items-center gap-1.5"><Lock className="h-4 w-4" /> Read-only — never modifies your books</span>
+                <span className="flex items-center gap-1.5"><Lock className="h-4 w-4" /> Read-only, never modifies your books</span>
                 <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-emerald-400" /> Works alongside your ERP</span>
-                <span className="flex items-center gap-1.5"><IndianRupee className="h-4 w-4 text-[#8FB4EE]" /> Every entry checked — not a sample</span>
-                <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-emerald-400" /> Computed, not generated — same answer every run</span>
+                <span className="flex items-center gap-1.5"><IndianRupee className="h-4 w-4 text-[#8FB4EE]" /> Every entry checked, not a sample</span>
+                <span className="flex items-center gap-1.5"><Check className="h-4 w-4 text-emerald-400" /> The same answer, every run</span>
               </div>
             </div>
             <div className="flex-1 flex justify-center w-full">
@@ -534,9 +535,9 @@ export default function LandingPage() {
               <div className="inline-flex items-center gap-2 bg-[#1B3A5C]/[0.06] text-[#1B3A5C] border border-[#1B3A5C]/10 rounded-full px-4 py-1.5 text-sm font-semibold">
                 <Briefcase className="h-3.5 w-3.5" /> For Chartered Accountants
               </div>
-              <h2 className="text-3xl font-bold text-[#1B3A5C] mt-4">Built for how a practice actually works.</h2>
+              <h2 className="text-3xl font-bold text-[#1B3A5C] mt-4">One pass across your entire client book.</h2>
               <p className="text-lg text-slate-600 mt-3">
-                Stop rebuilding the same reconciliation for every client. Upload one client&apos;s book and get the same rigorous investigation, evidence attached, ready to review or bill for — no custom setup per client.
+                You are running the same reconciliation for every client, by hand, in the same two weeks of the month. AcctQAI does that checking for you and gives you a list per client of what needs fixing and what is worth billing for.
               </p>
             </div>
           </Reveal>
@@ -546,10 +547,10 @@ export default function LandingPage() {
               <div>
                 <ul className="space-y-4">
                   {[
-                    { icon: <Layers className="h-4 w-4" />,   t: "No setup per client", d: "Point AcctQAI at each client's Tally or ERP export and it runs the same checks immediately — nothing to configure client by client." },
-                    { icon: <Search className="h-4 w-4" />,   t: "Catch it before the auditor does", d: "Blocked ITC, duplicate payments, ineligible credit — flagged with the evidence, so you're never the one who missed it." },
+                    { icon: <Layers className="h-4 w-4" />,   t: "No setup per client", d: "Point AcctQAI at each client's Tally or ERP export and it runs the same checks immediately, with nothing to configure client by client." },
+                    { icon: <Search className="h-4 w-4" />,   t: "Catch it before the auditor does", d: "Blocked ITC, duplicate payments, ineligible credit: flagged with the evidence, so you're never the one who missed it." },
                     { icon: <IndianRupee className="h-4 w-4" />, t: "Turn month-end into billable value", d: "Hand each client a health check that finds real money. What was unbillable review becomes a service you charge for." },
-                    { icon: <Fingerprint className="h-4 w-4" />, t: "Their data stays protected", d: "Every client's names, references and amounts are masked before anything is processed — and never shown to any AI model." },
+                    { icon: <Fingerprint className="h-4 w-4" />, t: "Their data stays protected", d: "Every client's names, references and amounts are masked before anything is processed, and never shown to any AI model." },
                   ].map((x) => (
                     <li key={x.t} className="flex gap-3.5">
                       <span className="w-9 h-9 rounded-lg bg-[#1B3A5C]/[0.06] text-[#1B3A5C] flex items-center justify-center shrink-0">{x.icon}</span>
@@ -561,11 +562,11 @@ export default function LandingPage() {
                   ))}
                 </ul>
 
-                {/* defensibility — depth without the recipe */}
+                {/* defensibility: depth without the recipe */}
                 <div className="mt-7 rounded-xl border border-slate-200 bg-white p-4 flex items-start gap-3">
                   <Boxes className="h-5 w-5 text-[#1B3A5C] shrink-0 mt-0.5" />
                   <p className="text-sm text-slate-600 leading-relaxed">
-                    <span className="font-semibold text-slate-800">Every client book runs through the same GST/ITC and duplicate-payment checks</span> — with new investigations added as we build them. The findings are yours; the engine that produces them stays ours.
+                    <span className="font-semibold text-slate-800">Every client book runs through the same GST/ITC and duplicate-payment checks</span>, with new investigations added as we build them. The findings are yours; the engine that produces them stays ours.
                   </p>
                 </div>
               </div>
@@ -574,7 +575,7 @@ export default function LandingPage() {
             <Reveal delay={120}>
               <div>
                 <PracticeScanner />
-                <p className="text-xs text-slate-400 mt-3 text-center">Illustrative — each client book is investigated as its own upload today. A combined practice view is on our roadmap.</p>
+                <p className="text-xs text-slate-400 mt-3 text-center">This is what opens once your firm has a few clients uploaded: one row each, sorted by what needs attention first.</p>
               </div>
             </Reveal>
           </div>
@@ -597,16 +598,16 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-14">
             <p className="text-xs font-bold tracking-[0.18em] text-blue-600 uppercase mb-3">The problem</p>
-            <h2 className="text-3xl font-bold text-[#1B3A5C]">Two leaks. Every business has at least one.</h2>
+            <h2 className="text-3xl font-bold text-[#1B3A5C]">Where the money actually goes</h2>
             <p className="text-lg text-slate-600 mt-3">
-              They don&apos;t show up in any report. Each entry looks fine on its own. That&apos;s why they survive for months.
+              Neither of these shows up as a problem in any report you run. Every entry looks correct on its own, which is exactly why they go unnoticed for months.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
-              { icon: <Receipt className="h-6 w-6" />, color: "bg-red-50 text-red-600", title: "The tax credit that dies", desc: "You bought goods and paid the GST. But your credit only becomes real if the supplier files their return. When they don't, that money silently disappears — and you find out months later, at the worst time." },
-              { icon: <Wallet className="h-6 w-6" />, color: "bg-amber-50 text-amber-600", title: "The bill paid twice", desc: "Accounts pays a bill from the bank. The owner also pays it on UPI. Or it's entered twice with a slightly different number. Your software never warns you — it just records both." },
-              { icon: <IndianRupee className="h-6 w-6" />, color: "bg-emerald-50 text-emerald-600", title: "What we found on one month's books", desc: "₹76,700 of tax credit at risk. ₹54,000 paid twice. ₹15,000 of credit never claimed. About ₹1.4 lakh — in one sample month, in one business. Want to know what's in yours?" },
+              { icon: <Receipt className="h-6 w-6" />, color: "bg-red-50 text-red-600", title: "Credit you never get back", desc: "You paid GST on a purchase, so you expect to claim it back. That only works if your supplier files their return on time. When they don't, the credit never reaches you, and most businesses find out while they are already filing." },
+              { icon: <Wallet className="h-6 w-6" />, color: "bg-amber-50 text-amber-600", title: "The same bill, paid twice", desc: "Your accounts team pays a bill by bank transfer. The same bill gets paid again on UPI by someone at the site, or entered a second time with the invoice number written slightly differently. Tally records both without complaint." },
+              { icon: <IndianRupee className="h-6 w-6" />, color: "bg-emerald-50 text-emerald-600", title: "What one month looked like", desc: "On a month of sample data we found ₹76,700 of credit at risk, a ₹54,000 bill paid twice, and ₹15,000 sitting unclaimed. That is roughly ₹1.4 lakh in one month, for one business. Yours will look different." },
             ].map((c) => (
               <div key={c.title} className="rounded-2xl border border-slate-200 p-6 hover:shadow-md hover:border-slate-300 transition-all">
                 <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${c.color}`}>{c.icon}</div>
@@ -628,28 +629,28 @@ export default function LandingPage() {
       <section className="py-20 px-6 bg-white border-y border-slate-100">
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-2xl mx-auto mb-14">
-            <p className="text-xs font-bold tracking-[0.18em] text-blue-600 uppercase mb-3">Why it&apos;s different</p>
-            <h2 className="text-3xl font-bold text-[#1B3A5C]">Computed, not generated.</h2>
+            <p className="text-xs font-bold tracking-[0.18em] text-blue-600 uppercase mb-3">How it works underneath</p>
+            <h2 className="text-3xl font-bold text-[#1B3A5C]">Where the numbers come from</h2>
             <p className="text-lg text-slate-600 mt-3">
-              AcctQAI is not a chatbot wrapped around your books. Every finding comes from fixed accounting rules — the kind an auditor can re-check.
+              AcctQAI is not a chatbot sitting on top of your books. Findings are worked out by fixed accounting rules, the kind an auditor can re-check line by line.
             </p>
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             {[
               {
                 icon: <Check className="h-6 w-6" />, color: "bg-emerald-50 text-emerald-600",
-                title: "Same answer, every time",
-                desc: "Run the same file twice and you get the same report, to the rupee. Findings come from accounting rules, not AI guesswork — so you can verify any of them against your own records.",
+                title: "The same answer every time",
+                desc: "Run the same file twice and the report comes back identical, down to the rupee. Nothing is invented on the fly, so you can take any finding to your own records and it will hold up.",
               },
               {
                 icon: <FileText className="h-6 w-6" />, color: "bg-blue-50 text-blue-600",
-                title: "AI writes one sentence. Never a number.",
-                desc: "Every amount, every match, every finding is calculated. AI is only used to phrase the summary — and the report still works with the AI switched off entirely.",
+                title: "AI never touches the numbers",
+                desc: "Every amount and every match is calculated by the software. The only thing AI does is phrase the summary paragraph, and the report still works if you switch it off.",
               },
               {
                 icon: <Lock className="h-6 w-6" />, color: "bg-violet-50 text-violet-600",
-                title: "No AI credits. No metering.",
-                desc: "Because the engine doesn't burn AI to do its job, we never charge per query or per document. And your names and amounts are masked before anything is processed.",
+                title: "No AI credits, no metering",
+                desc: "We don't charge per query or per document, because the engine doesn't need AI to do its work. Vendor names and amounts are masked before anything is processed.",
               },
             ].map((c) => (
               <div key={c.title} className="rounded-2xl border border-slate-200 p-6 hover:shadow-md hover:border-slate-300 transition-all">
@@ -706,7 +707,7 @@ export default function LandingPage() {
               <div className="rounded-2xl border-2 border-[#1B3A5C] bg-[#1B3A5C]/[0.03] p-6 h-full">
                 <p className="text-xs font-semibold text-[#1B3A5C] uppercase tracking-wide mb-4">With AcctQAI</p>
                 <ul className="space-y-3">
-                  {["Upload once — a prioritised report comes back in minutes", "Risks, anomalies and opportunities surfaced automatically", "Catch blocked ITC before it's reversed", "Duplicate payments flagged with both vouchers", "The executive summary is written for you"].map((t) => (
+                  {["Upload once, get a prioritised report back in minutes", "Risks, anomalies and opportunities flagged automatically", "Catch blocked ITC before it's reversed", "Duplicate payments flagged with both vouchers", "The executive summary is written for you"].map((t) => (
                     <li key={t} className="flex gap-3 text-sm text-slate-700 font-medium"><Check className="h-4 w-4 text-emerald-500 shrink-0 mt-0.5" /> {t}</li>
                   ))}
                 </ul>
@@ -715,7 +716,7 @@ export default function LandingPage() {
           </div>
           <Reveal>
             <p className="text-center text-slate-500 mt-8 text-sm">
-              <span className="font-semibold text-slate-700">The ROI:</span> turn hours of month-end investigation into minutes — and catch the risks that cost real money before they hit your working capital.
+              <span className="font-semibold text-slate-700">The ROI:</span> turn hours of month-end investigation into minutes, and catch the risks that cost real money before they hit your working capital.
             </p>
           </Reveal>
         </div>
@@ -731,13 +732,13 @@ export default function LandingPage() {
               </div>
               <h2 className="text-3xl font-bold text-[#1B3A5C] mt-4">Your numbers never leave your control</h2>
               <p className="text-lg text-slate-600 mt-3 leading-relaxed">
-                Sensitive details — vendor and customer names, references and amounts — are encrypted and masked before anything is processed. The investigation runs on protected data, and no AI model ever sees your real business information.
+                Vendor names, customer names, invoice references and amounts are masked before any processing begins. The checks run on the protected version, so no AI model ever receives your real business information. Your data stays in India and is deleted after 90 days.
               </p>
               <ul className="mt-6 space-y-3">
                 {[
                   { icon: <Lock className="h-4 w-4" />, t: "Encrypted before processing", d: "Sensitive fields are protected the moment your file is read." },
-                  { icon: <EyeOff className="h-4 w-4" />, t: "Never exposed to AI", d: "Models only ever work on masked values — never your real data." },
-                  { icon: <ServerCog className="h-4 w-4" />, t: "Read-only, always", d: "AcctQAI analyses your books — it never modifies them." },
+                  { icon: <EyeOff className="h-4 w-4" />, t: "Never exposed to AI", d: "Models only ever work on masked values, never your real data." },
+                  { icon: <ServerCog className="h-4 w-4" />, t: "Read-only, always", d: "AcctQAI analyses your books; it never modifies them." },
                 ].map((x) => (
                   <li key={x.t} className="flex gap-3">
                     <span className="w-8 h-8 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">{x.icon}</span>
@@ -830,7 +831,7 @@ export default function LandingPage() {
               </div>
             ))}
           </div>
-          <p className="text-white/70 mt-8">If not — run an AcctQAI investigation.</p>
+          <p className="text-white/70 mt-8">If not, run an AcctQAI investigation.</p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mt-5">
             <Link href="/sample-report" className="inline-flex items-center justify-center gap-2 bg-white text-[#1B3A5C] px-7 py-3.5 rounded-xl font-bold hover:bg-slate-100">
               View a sample investigation <ArrowRight className="h-4 w-4" />
@@ -848,7 +849,7 @@ export default function LandingPage() {
           <div>
             <h2 className="text-3xl font-bold text-[#1B3A5C]">Need more detail? Just ask.</h2>
             <p className="text-lg text-slate-600 mt-3 leading-relaxed">
-              Every finding can be explored further in plain English — no SQL, no report building. The query engine becomes your drill-down tool, not another dashboard to learn.
+              Every finding can be explored further in plain English: no SQL, no report building. The query engine becomes your drill-down tool, not another dashboard to learn.
             </p>
             <ul className="mt-6 space-y-2.5">
               {DRILL_QUESTIONS.map((q) => (
@@ -879,13 +880,13 @@ export default function LandingPage() {
           <div className="text-center">
             <h2 className="text-3xl font-bold text-[#1B3A5C]">What AcctQAI investigates</h2>
             <p className="text-lg text-slate-600 mt-3">
-              Every check we run today — stated plainly. No vague categories.
+              Every check we run today, stated plainly. No vague categories.
             </p>
           </div>
 
-          {/* Automatic — the investigation report */}
+          {/* Automatic: the investigation report */}
           <div className="mt-10">
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide text-center mb-4">Surfaced automatically, with evidence</p>
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide text-center mb-4">Flagged automatically, with evidence</p>
             <div className="flex flex-wrap justify-center gap-3">
               {INVESTIGATES.map((i) => (
                 <span key={i} className="inline-flex items-center gap-2 bg-white border border-slate-200 rounded-full px-4 py-2 text-sm font-medium text-slate-700">
@@ -895,7 +896,7 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* On demand — the query engine */}
+          {/* On demand: the query engine */}
           <div className="mt-10">
             <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide text-center mb-4">Answered when you ask, in plain English</p>
             <div className="flex flex-wrap justify-center gap-2.5">
@@ -907,9 +908,9 @@ export default function LandingPage() {
             </div>
           </div>
 
-          {/* Not built — said out loud */}
+          {/* Not built: said out loud */}
           <div className="mt-10 rounded-xl border border-slate-200 bg-white p-5 text-center">
-            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">Not built yet — on the roadmap</p>
+            <p className="text-xs font-semibold text-slate-400 uppercase tracking-wide mb-3">Not built yet, on the roadmap</p>
             <div className="flex flex-wrap justify-center gap-2.5">
               {COMING_SOON.map((i) => (
                 <span key={i} className="inline-flex items-center gap-2 bg-slate-50 border border-slate-200 rounded-full px-3.5 py-1.5 text-xs font-medium text-slate-400">
@@ -929,7 +930,7 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-4">
             <p className="text-xs font-bold tracking-[0.18em] text-blue-600 uppercase mb-3">Pricing</p>
-            <h2 className="text-3xl font-bold text-[#1B3A5C]">Free for founding firms — through 2027.</h2>
+            <h2 className="text-3xl font-bold text-[#1B3A5C]">Free for founding firms through 2027.</h2>
             <p className="text-lg text-slate-600 mt-3">Every finding, every client book, full evidence. Nothing held back and nothing charged while we build this with our first users.</p>
           </div>
           <div className="max-w-lg mx-auto mt-12">
@@ -953,7 +954,7 @@ export default function LandingPage() {
                 ))}
               </ul>
               <p className="text-xs text-slate-400 mt-6 pt-4 border-t border-slate-100 leading-relaxed">
-                Free for founding firms through 2027. We&apos;ll introduce pricing after that — founding firms will get notice and preferential terms.
+                Free for founding firms through 2027. We&apos;ll introduce pricing after that; founding firms will get notice and preferential terms.
               </p>
             </div>
           </div>
@@ -963,9 +964,9 @@ export default function LandingPage() {
       {/* ── Final CTA ── */}
       <section className="py-24 px-6 bg-gradient-to-br from-[#1B3A5C] to-[#15314d] text-white">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold">Your financial investigation partner</h2>
+          <h2 className="text-3xl lg:text-4xl font-bold">See what is sitting in your books</h2>
           <p className="text-white/80 text-lg mt-4 leading-relaxed">
-            Helping finance teams discover, understand and act — before financial problems become financial losses.
+            It takes one file and about two minutes. If there is nothing to find, you will know that too.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center mt-8">
             <Link href="/sample-report" className="inline-flex items-center justify-center gap-2 bg-white text-[#1B3A5C] px-8 py-4 rounded-xl font-bold hover:bg-slate-100">
