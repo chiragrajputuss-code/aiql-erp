@@ -21,6 +21,12 @@ const schema = z.object({
   userConfirmedType: z.boolean().default(false),
   periodStart:       z.string().nullable().optional(),  // ISO date string
   periodEnd:         z.string().nullable().optional(),
+  // Default: this confirmed mapping is scoped to THIS client's connection
+  // only, so one client's file quirks never silently become another
+  // client's auto-suggested default. Opt in to write the org-wide default
+  // instead (connectionId: null) — for firms whose clients share one file
+  // format, e.g. the same Tally export template every time.
+  applyToAllClients: z.boolean().default(false),
 });
 
 export async function POST(req: NextRequest) {
@@ -37,7 +43,7 @@ export async function POST(req: NextRequest) {
   const parsed = schema.safeParse(body);
   if (!parsed.success) return NextResponse.json({ error: parsed.error.flatten() }, { status: 400 });
 
-  const { connectionId, confirmedMapping, documentType, dataIntent, userConfirmedType, periodStart, periodEnd } = parsed.data;
+  const { connectionId, confirmedMapping, documentType, dataIntent, userConfirmedType, periodStart, periodEnd, applyToAllClients } = parsed.data;
 
   const connection = await prisma.erpConnection.findFirst({
     where: { id: connectionId, orgId: user.orgId },
@@ -159,7 +165,7 @@ export async function POST(req: NextRequest) {
       }),
     ]),
     mappingsToSave.length > 0
-      ? upsertOrgMappings(user.orgId, mappingsToSave)
+      ? upsertOrgMappings(user.orgId, mappingsToSave, applyToAllClients ? null : connectionId)
       : Promise.resolve(),
   ]);
 

@@ -367,6 +367,7 @@ function StepMapping({ state, onBack, onConfirm }: {
   const [periodEnd, setPeriodEnd] = useState(
     state.period?.periodEnd ? new Date(state.period.periodEnd).toISOString().slice(0, 10) : ""
   );
+  const [applyToAllClients, setApplyToAllClients] = useState(false);
 
   const active  = mappings.filter((m) => !m.skip);
   const skipped = mappings.filter((m) => m.skip);
@@ -390,6 +391,7 @@ function StepMapping({ state, onBack, onConfirm }: {
           userConfirmedType,
           periodStart:      periodStart || null,
           periodEnd:        periodEnd   || null,
+          applyToAllClients,
         }),
       });
       const data = await res.json();
@@ -472,6 +474,20 @@ function StepMapping({ state, onBack, onConfirm }: {
           </tbody>
         </table>
       </div>
+
+      {/* Mapping scope */}
+      <label className="flex items-start gap-2 text-xs text-slate-600 px-1">
+        <input
+          type="checkbox"
+          checked={applyToAllClients}
+          onChange={(e) => setApplyToAllClients(e.target.checked)}
+          className="mt-0.5"
+        />
+        <span>
+          Save this mapping as my firm&apos;s default for <strong>all</strong> clients, not just this one.
+          Leave unchecked if different clients use different file formats.
+        </span>
+      </label>
 
       {/* Skipped columns */}
       {skipped.length > 0 && (

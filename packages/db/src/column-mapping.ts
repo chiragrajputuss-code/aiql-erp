@@ -5,13 +5,15 @@ export interface ColumnMappingInput {
   canonicalField: string;
 }
 
-// NOTE: OrgColumnMapping now carries an optional connectionId so a firm's
-// clients can each have their own file format without one overwriting
-// another's (see the unique index in the practice-mode migration). This
-// module still only ever writes/reads connectionId: null — i.e. today's
-// org-level-default behaviour, UNCHANGED. Threading a real connectionId
-// through so a client's own mapping is preferred over the org default is
-// Phase 3.5 of docs/PLAN-PRACTICE-MODE.md, not done here.
+// OrgColumnMapping carries an optional connectionId so a firm's clients can
+// each have their own file format without one overwriting another's (see the
+// unique index in the practice-mode migration). upsertOrgMappings' caller
+// (confirm-upload) defaults to scoping a save to the connectionId just
+// confirmed; "apply to all clients" is an explicit opt-in that passes null
+// instead (Phase 3.5 of docs/PLAN-PRACTICE-MODE.md). getOrgMappings/
+// clearOrgMappings still read/clear only the org-level (null) tier — the
+// "org default" resolution step for a brand-new upload, which by definition
+// cannot yet have a connection-scoped mapping of its own to read.
 
 /**
  * Persist one or more column mappings for an org (optionally scoped to one
