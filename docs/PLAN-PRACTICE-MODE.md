@@ -31,6 +31,50 @@ a client.
 
 ---
 
+## How the phases relate (read this before picking one up)
+
+These are not seven independent features. They are one product with a single
+spine: **a client book, investigated repeatedly over time.** Three of the seven
+phases exist only to make that spine real, and the rest sit on top of it.
+
+```
+                    Phase 2:  WHOSE books        (per-client runs)
+                                  |
+                    Phase 3:  ACROSS TIME        (history, diff, resolution)
+                                  |
+        +-------------------------+-------------------------+
+        |                         |                         |
+   Phase 4:                  Phase 5:                  Phases 6 + 7:
+   the practice view         the commercial model      how it is explained
+   (change, not snapshot)    (free year -> retention)  (assistant, copy)
+```
+
+- **Phase 2 answers "whose books?"** Without it a firm holds one client's
+  findings at a time, so nothing else about a practice is meaningful.
+- **Phase 3 answers "compared to when?"** It is the load-bearing one. Every
+  downstream promise — retention after a free year, a weekly dashboard worth
+  opening, a working paper an auditor accepts, a value claim backed by the
+  customer's own data — is a statement about change over time. The product
+  currently cannot make any of them.
+- **Phase 4** renders what Phase 3 computes. Building it first produces a
+  prettier snapshot of the same amnesia.
+- **Phase 5** (free through 2027) is a bet that a year of use creates something
+  a firm will not walk away from. Phases 2 and 3 are what that year accumulates:
+  per-client run history, finding lifecycles, mapped file formats, vendor filing
+  patterns. Ship 5 before 2 and 3 and the year accumulates nothing.
+- **Phases 6 and 7** describe the product. They must never describe more than
+  Phases 2–4 have actually built — see the claim rules in each.
+
+**The one number that ties it together.** "Rupees found per client book, and how
+much of it stopped appearing" is the metric for the business, the column in the
+dashboard, the line in the working paper, and the renewal argument. It is
+currently uncountable, because nothing tracks a finding across two runs. Phase 3
+is what makes it countable.
+
+**Dependency order is therefore 1 -> 2 -> 3 -> 4**, then 5, 6, 7 in any order.
+
+---
+
 # PHASE 1 — Correct two false claims on the live pricing page
 
 **Why first:** the site currently promises capability that does not exist. Ship
@@ -45,7 +89,7 @@ In the `PLANS` array (both files), the "Firm" plan lists:
 **Change to** (accurate today):
 - `"Unlimited uploads"`
 - `"Working-paper PDF export with evidence annexure"` (keep)
-- Remove the whole-practice line entirely until Phase 3 ships.
+- Remove the whole-practice line entirely until Phase 4 ships.
 
 **Acceptance:** no claim on either page describes cross-client behaviour.
 `pnpm --filter web build` clean.
@@ -178,7 +222,222 @@ simultaneously; switching the selector shows each correctly.
 
 ---
 
-# PHASE 3 — Practice dashboard (the weekly habit)
+# PHASE 3 — Historical continuity (the through-line)
+
+## Why this phase exists
+
+Read as a whole product rather than a list of features, the system has one
+structural absence: **it has no memory of itself.** Every run is an island.
+
+Four gaps, confirmed in the code, all the same root cause:
+
+| Gap | Evidence | Consequence |
+|---|---|---|
+| Findings never resolve | `resolvesWhen` is written on every finding (6 call sites) but nothing reads it; no code ever sets `status` to `resolved` | A finding fixed last month reappears as if new. The product can never say "this went away." |
+| Prior runs are unreadable | `SUPERSEDED` appears only in `persist.ts`. No API, no UI, no query returns a superseded run | Principle 7 preserves history into storage nothing can read. Write-only data. |
+| Filing profiles cannot work | `buildFilingProfiles()` needs >= 2 periods (`observations < 2` -> `"unknown"`), but `context-resolver.ts:131` loads exactly one period of GSTR-2B | **The `supfildt` work shipped in August is dead code.** It can never classify a habitual late filer. |
+| Column mappings collide across clients | `OrgColumnMapping` is `@@unique([orgId, sourceColumnName])` | In a firm, client A's "Party" mapping overwrites client B's. Breaks the moment practice mode ships. |
+
+**Why this is the connective tissue.** Every strategic goal in this document
+depends on accumulated history, and none of them work without this phase:
+
+- **The founding-free retention bet** — "after a year they cannot leave" requires
+  a year of *something* to lose. Today a year of use accumulates nothing readable.
+- **The practice dashboard (Phase 4)** — "which client needs me this week" is a
+  question about *change*, not about a snapshot.
+- **The working-paper artefact** — an auditor's file needs prior-period
+  comparison; that is what makes it a working paper rather than a report.
+- **The sales motion** — "we found X, and Y no longer appears" is the only claim
+  that proves value, and it requires resolution tracking.
+- **The one metric that matters** (rupees found per client book) is currently
+  uncountable across time.
+
+Do this immediately after Phase 2 and **before** the dashboard, because the
+dashboard should display change rather than a static snapshot.
+
+## 3.1 Schema
+
+`InvestigationFinding` — add:
+```prisma
+  /// How this finding relates to the previous run for the same client.
+  changeStatus    String?   // "new" | "carried" | "resolved"
+  /// Period this finding was first seen (MM-YYYY). Enables age tracking.
+  firstSeenPeriod String?
+  /// Set when a previously-open finding no longer appears.
+  resolvedAt      DateTime?
+  /// Stable identity used to match a finding across runs (see 3.2).
+  matchKey        String?
+
+  @@index([runId, changeStatus])
+  @@index([matchKey])
+```
+
+`InvestigationRun` — add `comparedToRunId String?` (which run the diff was taken
+against; null for a first run).
+
+`OrgColumnMapping` — scope to a client:
+```prisma
+  connectionId String?
+```
+Rows with `connectionId = NULL` remain org-level defaults (see 3.5).
+
+**Migration** — RDS-safe, new folder under `packages/db/prisma/migrations/`:
+```sql
+ALTER TABLE "investigation_findings" ADD COLUMN IF NOT EXISTS "changeStatus"    TEXT;
+ALTER TABLE "investigation_findings" ADD COLUMN IF NOT EXISTS "firstSeenPeriod" TEXT;
+ALTER TABLE "investigation_findings" ADD COLUMN IF NOT EXISTS "resolvedAt"      TIMESTAMP(3);
+ALTER TABLE "investigation_findings" ADD COLUMN IF NOT EXISTS "matchKey"        TEXT;
+CREATE INDEX IF NOT EXISTS "investigation_findings_runId_changeStatus_idx"
+  ON "investigation_findings" ("runId", "changeStatus");
+CREATE INDEX IF NOT EXISTS "investigation_findings_matchKey_idx"
+  ON "investigation_findings" ("matchKey");
+
+ALTER TABLE "investigation_runs" ADD COLUMN IF NOT EXISTS "comparedToRunId" TEXT;
+
+ALTER TABLE "org_column_mappings" ADD COLUMN IF NOT EXISTS "connectionId" TEXT;
+-- Confirm the existing constraint name with \d org_column_mappings first.
+DO $$ BEGIN
+  ALTER TABLE "org_column_mappings"
+    DROP CONSTRAINT IF EXISTS "org_column_mappings_orgId_sourceColumnName_key";
+EXCEPTION WHEN undefined_object THEN NULL; END $$;
+CREATE UNIQUE INDEX IF NOT EXISTS "org_column_mappings_org_conn_col_key"
+  ON "org_column_mappings" ("orgId", COALESCE("connectionId", ''), "sourceColumnName");
+```
+Backfill: existing findings get `changeStatus = NULL` (unknown), **not** `"new"`.
+Do not fabricate history.
+
+## 3.2 The run diff — NEW / CARRIED / RESOLVED
+
+**Where:** a new pure module `packages/investigation-engine/src/run-diff.ts`.
+The web layer supplies the prior run's findings, so the engine stays DB-free.
+
+**Match key.** A finding must be identifiable across periods without being
+byte-identical. Derive `matchKey` deterministically per code family:
+- `GST-ITC-*` -> `code + normalizeInvoiceNo(reference) + normaliseName(party)`
+- `DUP-PAY-*` -> `code + normaliseName(payee) + amount + normalizeInvoiceNo(reference)`
+
+Reuse `normalizeInvoiceNo` and `normaliseName` from `@aiql/doc-parsers` — they
+already absorb the format variance this depends on. Where a finding aggregates
+several rows, key on the sorted set of row identities (hashed), so a 4-invoice
+finding and a 5-invoice finding of the same type are not treated as identical.
+
+```ts
+export interface RunDiff {
+  findings: Finding[];   // this run's findings, each stamped
+  resolved: { matchKey: string; code: string; impactRs: number | null }[];
+  counts:   { new: number; carried: number; resolved: number };
+  resolvedRs: number;    // sum of impactRs of resolved findings
+}
+export function diffRuns(current: Finding[], prior: PriorFinding[], period: string): RunDiff;
+```
+Rules:
+- in current, not in prior -> `changeStatus = "new"`, `firstSeenPeriod = period`
+- in both -> `"carried"`, `firstSeenPeriod` copied from the prior finding
+- in prior, not in current -> the **prior** finding is marked resolved (3.3); it
+  does not appear in the current run's finding list
+
+**Pure-function tests required:** all three transitions; a carried finding whose
+amount changed (still carried, amount updated); determinism (same inputs, same
+keys); and no false match between two genuinely different invoices.
+
+## 3.3 Close the loop on `resolvesWhen`
+
+Principle 8 says every finding declares its resolution condition, and nothing
+acts on it. Do not parse the prose. Use **absence as evidence**: a deterministic
+check that no longer produces the finding is the condition being met.
+
+In `persist.ts`, inside the existing transaction:
+1. Load the most recent prior CURRENT run for this `(orgId, connectionId)`.
+2. Compute the diff.
+3. For each resolved prior finding: set `status = "resolved"`, `resolvedAt = now()`.
+   **Never delete** — Principle 7 holds.
+4. Stamp new findings with `changeStatus` / `firstSeenPeriod` / `matchKey`, and
+   set `comparedToRunId` on the run.
+
+> **Period semantics.** Comparing May to June answers "did it get fixed". A
+> re-run of May after fixing something is *also* resolution. Compare against the
+> most recent prior run for that client whatever its period, and record which run
+> was compared so the UI can say "since your 12 June run".
+
+## 3.4 Feed the filing profiles multi-period data (fixes dead code)
+
+`context-resolver.ts` loads one period of GSTR-2B, so `buildFilingProfiles()`
+always returns `"unknown"` and the August `supfildt` work does nothing. Extend
+`ItcAccessor`:
+
+```ts
+export interface ItcAccessor {
+  getRows(): Promise<Gstr2BRow[]>;                        // current period (unchanged)
+  getTrailingRows(periods: number): Promise<Gstr2BRow[]>; // NEW - memoized
+  getConnectionId(): string;
+}
+```
+Implement by selecting this client's GSTR-2B uploads for the last N periods
+(default 6) and concatenating parsed rows. Then in `gst-vendor-itc.ts`, build
+profiles from the trailing set and use `isLikelyLateNotMissing()` to soften
+`GST-ITC-002`: instead of "ITC at risk", emit "expected in a later GSTR-2B — do
+not reject this in IMS", with the pattern sentence as evidence.
+
+Degrade honestly: with fewer than 2 periods available, behaviour is exactly as
+today. Never claim a pattern from a single observation.
+
+## 3.5 Per-client column mappings
+
+`upsertOrgMappings` and its read path take `connectionId`. Resolution order when
+mapping a new upload: **this connection's saved mapping -> org-level default
+(`connectionId IS NULL`) -> auto-detection.** Saving writes against the
+connection; an explicit "apply to all clients" action writes the org-level row.
+
+This is also a retention asset: a firm that has mapped 80 clients' file formats
+holds hours of configuration that does not travel to a competitor.
+
+## 3.6 History API + UI
+
+- `GET /api/v1/investigations/history?connectionId=&limit=` ->
+  `[{ runId, period, startedAt, status, healthScore, totalImpactRs,
+     criticalCount, counts: { new, carried, resolved }, resolvedRs }]`
+- `GET /api/v1/investigations/report?runId=` -> any run by id, **after verifying
+  it belongs to `user.orgId`**, so a superseded run is viewable.
+- **UI:** a period selector on the investigations page; each finding carries a
+  badge (`NEW`, or `CARRIED since May`); and a "No longer appearing" group
+  listing what went away this period with the rupee total.
+
+Without this, Principle 7 preserves history into storage nothing can read.
+
+## 3.7 The resolved-value ledger (the payoff)
+
+Aggregate per client and per firm: `found_total`, `resolved_total`
+(sum of `impactRs` where `status = "resolved"`), `open_total`, and the same for
+the trailing 12 months.
+
+Surface it in three places, because it is the same fact the whole business rests on:
+1. **Practice dashboard (Phase 4)** — a "resolved to date" column.
+2. **The working-paper PDF** — "Since [first run], AcctQAI has identified X for
+   this client, of which Y no longer appears."
+3. **The renewal conversation** — the honest version of the value claim, computed
+   from the customer's own data rather than from sample files.
+
+**Wording discipline.** The product can prove a finding *no longer appears*. It
+cannot prove money reached a bank account. Say "resolved" or "no longer appears",
+never "we recovered", unless a human confirms it. Add a lightweight confirm
+action on a resolved finding ("Recovered" / "Was not an issue") — that also
+produces the disposition labels needed to tune precision later.
+
+## 3.8 Acceptance
+
+- Run client A, fix one issue, re-run: the fixed finding is absent from the new
+  run and the prior one shows `status = "resolved"` with `resolvedAt` set.
+- Second run shows NEW / CARRIED badges correctly; carried findings keep their
+  original `firstSeenPeriod`.
+- With 3 periods of GSTR-2B uploaded, a supplier who filed after the 11th in all
+  three is classified `habitual_late`, and `GST-ITC-002` is softened accordingly.
+- Two clients in one firm hold different column mappings for the same header.
+- A superseded run is viewable through the history API; a run belonging to
+  another org returns 404.
+
+---
+
+# PHASE 4 — Practice dashboard (the weekly habit)
 
 **This is the screen a CA opens.** One row per client book.
 
@@ -206,7 +465,7 @@ Add "Practice" to the dashboard nav. Make it the landing page when the org has
 
 ---
 
-# PHASE 4 — Founding-free model
+# PHASE 5 — Founding-free model
 
 **Decision:** free for founding firms **through 2027**, not "free forever" — a
 surprise invoice after a silent free year is how goodwill dies.
@@ -230,7 +489,7 @@ gated; `grep -ri "30,000\|₹30k" apps/web/src` returns only historical/FAQ cont
 
 ---
 
-# PHASE 5 — Site assistant (curated, guardrailed, near-zero token cost)
+# PHASE 6 — Site assistant (curated, guardrailed, near-zero token cost)
 
 **Purpose.** A CA landing on the site has real questions. The assistant answers
 them instantly and precisely, and in doing so demonstrates domain competence.
@@ -243,7 +502,7 @@ filed their 3B by 30 September."* Curated is not the cheap version. It is the
 version that achieves the goal — and it cannot hallucinate tax advice to a
 professional who is personally liable for acting on it.
 
-## 5.1 Requirements (all mandatory)
+## 6.1 Requirements (all mandatory)
 
 | Requirement | How it is met |
 |---|---|
@@ -254,7 +513,7 @@ professional who is personally liable for acting on it.
 | No tax advice | Enforced by content rule + a unit test over the corpus |
 | Abuse / cost protection | Per-IP rate limit, input length cap |
 
-## 5.2 The corpus
+## 6.2 The corpus
 
 New file: `apps/web/src/lib/assistant/answers.ts`
 
@@ -295,11 +554,11 @@ export const ANSWERS: CuratedAnswer[] = [ /* ~30 entries */ ];
    your CA decides the treatment for a specific case."*
 2. **Never state a product capability that does not exist.** Cross-check against
    the honest capability list on the homepage. If the practice dashboard
-   (Phase 3) has not shipped, the assistant must not describe it.
+   (Phase 4) has not shipped, the assistant must not describe it.
 3. **No hedging filler.** A CA reading "it depends on various factors" learns
    nothing and concludes the tool is generic. Be specific or refuse.
 
-## 5.3 Matching
+## 6.3 Matching
 
 ```ts
 export function matchAnswer(question: string): CuratedAnswer | null;
@@ -309,7 +568,7 @@ export function matchAnswer(question: string): CuratedAnswer | null;
   only if at least one pattern hits. Ties break by earliest array position.
 - **No fuzzy/embedding matching in this phase.** Deterministic and free.
 
-## 5.4 API — `POST /api/assistant`
+## 6.4 API — `POST /api/assistant`
 
 Request `{ question: string }`, response
 `{ matched: boolean; answer: string; cta?: {label,href}; refusalReason?: "injection" | "off_topic" | "no_match" }`
@@ -341,7 +600,7 @@ fine at this stage). Exceeded → HTTP 429 with a plain message.
 `{ matched, refusalReason, timestamp }` so the top unmatched *categories* can be
 reviewed later without storing free text.
 
-## 5.5 UI
+## 6.5 UI
 
 `apps/web/src/components/assistant-widget.tsx`, mounted on the marketing pages
 only (home, pricing, resources, sample-report, contact). **Not** in the dashboard.
@@ -355,7 +614,7 @@ only (home, pricing, resources, sample-report, contact). **Not** in the dashboar
   *"I can't check your books from here. Sign up free and upload one file — it
   takes about two minutes."* → `/signup`.
 
-## 5.6 Tests (required)
+## 6.6 Tests (required)
 
 `apps/web/src/lib/assistant/__tests__/answers.test.ts`
 - Every `topic: "domain"` answer contains a disclaimer sentence.
@@ -369,7 +628,7 @@ only (home, pricing, resources, sample-report, contact). **Not** in the dashboar
 - Unknown-but-plausible ("do you support Zoho payroll") → `no_match` refusal,
   not a fabricated yes.
 
-## 5.7 Explicitly out of scope for this phase
+## 6.7 Explicitly out of scope for this phase
 
 Retrieval over the published articles; any LLM call; conversation memory;
 persistence of question text. Revisit only after real unmatched questions have
@@ -377,7 +636,7 @@ accumulated — the log from 5.4 tells you what to add.
 
 ---
 
-# PHASE 6 — Rewrite the site copy so it reads as human-written
+# PHASE 7 — Rewrite the site copy so it reads as human-written
 
 **The problem.** The current marketing copy has the recognisable signature of
 machine writing. `apps/web/src/app/page.tsx` alone contains **49 em-dashes**; a
@@ -385,7 +644,7 @@ person writing this page would use three or four. This matters commercially: the
 audience is chartered accountants, who read carefully for a living, and generic
 copy signals a generic product.
 
-## 6.1 The tells to remove (diagnostic — apply beyond the examples below)
+## 7.1 The tells to remove (diagnostic — apply beyond the examples below)
 
 | Tell | Example currently on the site | Why it reads as machine-written |
 |---|---|---|
@@ -397,7 +656,7 @@ copy signals a generic product.
 | Abstract nouns doing the work | "financial investigation partner", "complete visibility" | Says nothing a CA can picture |
 | Perfect parallelism across cards | Every card the same length and shape | Real cards are uneven |
 
-## 6.2 Voice rules (apply to every page, including future copy)
+## 7.2 Voice rules (apply to every page, including future copy)
 
 1. **Cap em-dashes at 5 per page.** Replace with a full stop, a comma, or a plain
    connector (and / but / so / because).
@@ -417,9 +676,9 @@ copy signals a generic product.
 8. **Never claim what does not exist.** Cross-check every capability sentence
    against the honest capability list. This rule outranks all the others.
 
-## 6.3 Exact rewrites — `apps/web/src/app/page.tsx`
+## 7.3 Exact rewrites — `apps/web/src/app/page.tsx`
 
-Apply these verbatim. Where a block is not listed, apply §6.2 by judgement.
+Apply these verbatim. Where a block is not listed, apply §7.2 by judgement.
 
 ### Hero headline + body
 
@@ -535,13 +794,13 @@ understand and act — before financial problems become financial losses."
 AFTER: `See what is sitting in your books` + "It takes one file and about two
 minutes. If there is nothing to find, you will know that too."
 
-## 6.4 The other pages
+## 7.4 The other pages
 
-Apply §6.2 to `pricing/page.tsx`, `sample-report/page.tsx`, `resources/page.tsx`,
+Apply §7.2 to `pricing/page.tsx`, `sample-report/page.tsx`, `resources/page.tsx`,
 `contact/page.tsx` and the two article pages under `resources/`. The articles are
 the strongest writing on the site already — light touch, mainly em-dash reduction.
 
-## 6.5 Images, logo, favicon
+## 7.5 Images, logo, favicon
 
 No change. The AQ monogram, the navy banner and the generated OG card are
 consistent across site, PDF and LinkedIn, and consistency is what reads as
@@ -549,10 +808,10 @@ established. **Do not introduce stock photography or illustrations of people** �
 generic business stock imagery is itself a strong "template site" signal. If a
 visual is needed, prefer a real screenshot of the findings table.
 
-## 6.6 Acceptance
+## 7.6 Acceptance
 
 - `grep -o "—" apps/web/src/app/page.tsx | wc -l` ≤ 5 (same for each marketing page).
-- No banned word from §6.2 rule 5 appears in any marketing page.
+- No banned word from §7.2 rule 5 appears in any marketing page.
 - No sentence fragment used as a paragraph.
 - Every capability sentence maps to a shipped feature.
 - `pnpm --filter web build` clean; read the page aloud once — anything you would
@@ -563,15 +822,19 @@ visual is needed, prefer a real screenshot of the findings table.
 # Suggested sequencing & commits
 
 1. `fix: correct unsupported practice claims on pricing pages` (Phase 1)
-2. `feat: per-client investigation runs` (Phase 2 — schema + migration + engine + API)
+2. `feat: per-client investigation runs` (Phase 2 - schema, migration, engine, API)
 3. `feat: client switcher on investigations` (Phase 2.7 + tests)
-4. `feat: practice dashboard` (Phase 3)
-5. `feat: founding-free model` (Phase 4)
-6. `feat: curated site assistant` (Phase 5)
-7. `copy: rewrite marketing pages in a human voice` (Phase 6 — can ship any time
-   after Phase 1; do it before any outreach campaign drives traffic)
+4. `feat: run diff and finding resolution` (Phase 3.1-3.3)
+5. `fix: feed filing profiles multi-period GSTR-2B` (Phase 3.4 - revives dead code)
+6. `feat: per-client column mappings` (Phase 3.5)
+7. `feat: investigation history API and period selector` (Phase 3.6-3.7)
+8. `feat: practice dashboard` (Phase 4)
+9. `feat: founding-free model` (Phase 5)
+10. `feat: curated site assistant` (Phase 6)
+11. `copy: rewrite marketing pages in a human voice` (Phase 7 - any time after
+    Phase 1; before outreach drives traffic)
 
-Ship 1 immediately. 2 and 3 are the ones that make the product usable by a firm —
-and they are the precondition for the free-year retention strategy, because
-without per-client history there is nothing for a firm to accumulate and nothing
-to lose by leaving.
+Ship 1 immediately. Phases 2 and 3 are the ones that turn this from a
+single-business tool into something a practice can use and will not want to
+leave. Everything after them is presentation or commercial packaging, and none
+of it holds weight until the product can remember its own work.
