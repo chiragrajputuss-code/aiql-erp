@@ -13,6 +13,30 @@ const MAX_QUESTION_LENGTH = 500;
 const NO_MATCH_ANSWER =
   "I don't have a good answer for that one. You can ask us directly at /contact, or sign up free and run it on your own file.";
 
+// checkGuardrails' own "too short" message is written for the in-app GL-query
+// pipeline ("ask a question about your financial data... 'Show AP aging'") —
+// wrong context entirely for an anonymous visitor asking this widget about
+// GST or the product. This widget's own wording replaces it.
+const TOO_SHORT_ANSWER =
+  "Ask me a full question, like \"What is Rule 37A?\" or \"What does AcctQAI cost?\"";
+
+// Small talk — greetings and acknowledgements are always answered warmly,
+// checked before the length cap so a 2-character "ok" or "hi" never falls
+// into checkGuardrails' generic too-short refusal.
+const SMALL_TALK_PATTERN = /^(hi|hello|hey|yo|ok|okay|k|kk|thanks|thank you|thx|ty|cool|great|nice|got it|gotcha|sure|yes|no|bye|goodbye)[.!]?$/i;
+const SMALL_TALK_REPLY =
+  "Happy to help. Ask me anything about GST/ITC or about AcctQAI itself, e.g. \"What is Rule 37A?\" or \"What does AcctQAI check?\"";
+
+// A bare follow-up word ("explain", "why", "more") with no subject of its
+// own — this widget has no memory of earlier questions (docs/PLAN-PRACTICE-
+// MODE.md 6.7 explicitly rules conversation memory out of this phase), so
+// the honest fix is to ask for the full question rather than either
+// fabricating context or giving the same dead-end as a genuinely unanswerable
+// question.
+const FOLLOWUP_PATTERN = /^(explain|why|more|elaborate|details?|go on|tell me more|how|what)[?.!]?$/i;
+const FOLLOWUP_REPLY =
+  "I don't keep track of earlier questions, so ask the full thing you'd like explained, e.g. \"Explain Rule 37A\" or \"Why does ITC get blocked?\"";
+
 // Registration gate is on ACTION, never on information (6.5) — this never
 // blocks an answer, it only appends a signup nudge when the question is
 // asking AcctQAI to act on the asker's own data right now.
@@ -40,6 +64,15 @@ export async function POST(req: NextRequest) {
 
   const body = await req.json().catch(() => null);
   const question = typeof body?.question === "string" ? body.question : "";
+  const trimmed = question.trim();
+
+  // 0. Small talk — greetings/acknowledgements are real, common, and safe;
+  // answer them before anything else so "hi" or "ok" never trips the length
+  // or guardrail checks meant for actual questions.
+  if (SMALL_TALK_PATTERN.test(trimmed)) {
+    logQuery({ matched: true });
+    return NextResponse.json({ matched: true, answer: SMALL_TALK_REPLY });
+  }
 
   // 1. Length cap — an essay-length "question" is abuse or a paste, never a
   // question, so it never reaches the guardrail check at all.
@@ -54,7 +87,11 @@ export async function POST(req: NextRequest) {
   const guard = await checkGuardrails(question, { llmClassify: false });
   if (!guard.pass) {
     logQuery({ matched: false, refusalReason: guard.reason });
-    return NextResponse.json({ matched: false, answer: guard.message, refusalReason: guard.reason });
+    // guard.reason === "off_topic" here only ever means checkGuardrails' own
+    // q.length < 3 check fired (llmClassify:false skips its other off_topic
+    // path) — use this widget's own wording instead of the query-pipeline's.
+    const answer = guard.reason === "off_topic" ? TOO_SHORT_ANSWER : guard.message;
+    return NextResponse.json({ matched: false, answer, refusalReason: guard.reason });
   }
 
   // 3. Curated corpus match.
@@ -78,6 +115,14 @@ export async function POST(req: NextRequest) {
   if (askingAboutOwnBooks) {
     logQuery({ matched: true });
     return NextResponse.json({ matched: true, answer: OWN_BOOKS_NOTE, cta: OWN_BOOKS_CTA });
+  }
+
+  // A bare follow-up word ("explain", "why") with nothing to explain — the
+  // widget has no conversation memory, so ask for the full question instead
+  // of giving the same dead-end as a genuinely unanswerable question.
+  if (FOLLOWUP_PATTERN.test(trimmed)) {
+    logQuery({ matched: false, refusalReason: "no_match" });
+    return NextResponse.json({ matched: false, answer: FOLLOWUP_REPLY, refusalReason: "no_match" as const });
   }
 
   // 4. No match.

@@ -49,14 +49,40 @@ describe("POST /api/assistant", () => {
     expect(body.answer).not.toContain("ignore all previous instructions");
   });
 
-  it("refuses off-topic guardrail results (e.g. a too-short question)", async () => {
+  it("refuses off-topic guardrail results with this widget's own wording, not the GL-query pipeline's", async () => {
     mockCheckGuardrails.mockResolvedValue({
-      pass: false, reason: "off_topic", message: "Please ask a question about your financial data.",
+      pass: false, reason: "off_topic",
+      message: "Please ask a question about your financial data — for example: 'Show AP aging by vendor'.",
     });
-    const res = await POST(req({ question: "hi" }));
+    // "zq" is short enough to trip checkGuardrails' own length<3 check but
+    // isn't in the small-talk list, so it still reaches checkGuardrails.
+    const res = await POST(req({ question: "zq" }));
     const body = await res.json();
     expect(body.matched).toBe(false);
     expect(body.refusalReason).toBe("off_topic");
+    expect(body.answer).not.toContain("financial data");
+    expect(body.answer).toContain("full question");
+  });
+
+  it("answers small talk warmly without ever calling checkGuardrails", async () => {
+    for (const q of ["hi", "ok", "Thanks!", "kk", "no"]) {
+      mockCheckGuardrails.mockClear();
+      const res = await POST(req({ question: q }));
+      const body = await res.json();
+      expect(body.matched, `"${q}" should be matched`).toBe(true);
+      expect(mockCheckGuardrails, `"${q}" should not reach checkGuardrails`).not.toHaveBeenCalled();
+    }
+  });
+
+  it("nudges instead of giving the generic refusal on a bare follow-up word with nothing to explain", async () => {
+    for (const q of ["explain", "why", "more", "elaborate"]) {
+      const res = await POST(req({ question: q }));
+      const body = await res.json();
+      expect(body.matched, `"${q}"`).toBe(false);
+      expect(body.refusalReason, `"${q}"`).toBe("no_match");
+      expect(body.answer, `"${q}"`).toContain("I don't keep track of earlier questions");
+      expect(body.answer, `"${q}" should not get the generic dead-end`).not.toContain("/contact");
+    }
   });
 
   it("falls through to the honest no_match refusal for an off-domain question that passes guardrails", async () => {
