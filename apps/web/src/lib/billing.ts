@@ -34,6 +34,11 @@ export type AccessResult =
 
 export interface OrgBillingState {
   plan: string;
+  // True for FREE-plan orgs (and test accounts) — free for founding firms
+  // through 2027, never gated by trial expiry or subscription status. The
+  // billing page uses this to show an honest "founding access" panel
+  // instead of the legacy trial/upgrade flow.
+  isFoundingFree: boolean;
   trialEndsAt: Date | null;
   isTrialActive: boolean;
   trialDaysLeft: number;
@@ -95,6 +100,15 @@ export async function checkPlanAccess(
   // Permanent test accounts bypass all enforcement.
   if (isTestAccount(org.users)) return { allowed: true };
 
+  // Founding-free (Phase 5): FREE-plan orgs are never gated by trial expiry,
+  // subscription status, or query count — free for founding firms through
+  // 2027. The actual enforcement below reads org.trialEndsAt/queryLimit
+  // (per-row DB columns set by startTrial()), NOT the PLAN_QUERY_LIMITS /
+  // PLAN_CONNECTION_LIMITS maps above — those are unread reference constants
+  // today. Revisit this bypass (and wire real per-org limits) when pricing
+  // is actually introduced after 2027.
+  if (org.plan === "FREE") return { allowed: true };
+
   const now = new Date();
   const isTrialActive = org.trialEndsAt ? org.trialEndsAt > now : false;
   const isSubscriptionActive = org.subscriptionStatus === "active";
@@ -155,6 +169,7 @@ export async function getOrgBillingState(orgId: string): Promise<OrgBillingState
   if (isTestAccount(org.users)) {
     return {
       plan: "ENTERPRISE",
+      isFoundingFree: true,
       trialEndsAt: null,
       isTrialActive: true,
       trialDaysLeft: 9999,
@@ -174,6 +189,7 @@ export async function getOrgBillingState(orgId: string): Promise<OrgBillingState
 
   return {
     plan: org.plan,
+    isFoundingFree: org.plan === "FREE",
     trialEndsAt: org.trialEndsAt,
     isTrialActive,
     trialDaysLeft,

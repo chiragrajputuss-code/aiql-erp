@@ -7,6 +7,7 @@ import { Check, X, AlertCircle, CheckCircle2, Loader2, Zap, CreditCard } from "l
 
 interface BillingState {
   plan: string;
+  isFoundingFree: boolean;
   trialEndsAt: string | null;
   isTrialActive: boolean;
   trialDaysLeft: number;
@@ -140,6 +141,38 @@ export default function BillingPage() {
   }
 
   if (!state) return null;
+
+  // Founding-free (Phase 5): no trial, no subscription, nothing to buy.
+  // Showing the legacy trial/upgrade flow here would flatly contradict
+  // what every marketing page says — see docs/PLAN-PRACTICE-MODE.md Phase 5.
+  if (state.isFoundingFree) {
+    return (
+      <div className="max-w-4xl mx-auto px-6 py-10 space-y-10">
+        <div>
+          <h1 className="text-2xl font-bold text-slate-900">Billing & Plan</h1>
+          <p className="text-slate-500 mt-1 text-sm">Manage your AcctQAI subscription</p>
+        </div>
+
+        <div className="rounded-2xl border border-emerald-200 bg-emerald-50 p-6">
+          <div className="flex items-start gap-4">
+            <CheckCircle2 className="h-6 w-6 text-emerald-500 shrink-0 mt-0.5" />
+            <div className="flex-1">
+              <div className="font-semibold text-slate-900 text-base">Founding access — free through 2027</div>
+              <p className="text-sm text-slate-600 mt-1">
+                Unlimited client books, unlimited queries, nothing gated. We&apos;ll introduce pricing after 2027 — founding firms get advance notice and preferential terms first, never a surprise invoice.
+              </p>
+              <div className="mt-4">
+                <div className="flex justify-between text-xs text-slate-500 mb-1">
+                  <span>Queries used this month</span>
+                  <span>{state.queriesUsed} / Unlimited</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
 
   const isActive = state.isSubscriptionActive;
   const pctUsed = Math.min(100, Math.round((state.queriesUsed / state.queryLimit) * 100));
