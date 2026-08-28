@@ -100,39 +100,23 @@ export async function checkPlanAccess(
   // Permanent test accounts bypass all enforcement.
   if (isTestAccount(org.users)) return { allowed: true };
 
-  // Founding-free (Phase 5): FREE-plan orgs are never gated by trial expiry,
-  // subscription status, or query count — free for founding firms through
-  // 2027. The actual enforcement below reads org.trialEndsAt/queryLimit
-  // (per-row DB columns set by startTrial()), NOT the PLAN_QUERY_LIMITS /
-  // PLAN_CONNECTION_LIMITS maps above — those are unread reference constants
-  // today. Revisit this bypass (and wire real per-org limits) when pricing
-  // is actually introduced after 2027.
-  if (org.plan === "FREE") return { allowed: true };
-
-  const now = new Date();
-  const isTrialActive = org.trialEndsAt ? org.trialEndsAt > now : false;
-  const isSubscriptionActive = org.subscriptionStatus === "active";
-  const hasPaidPlan = isSubscriptionActive && org.razorpaySubscriptionId != null;
-
-  // If neither trial nor active subscription — block
-  if (!isTrialActive && !hasPaidPlan) {
-    return {
-      allowed: false,
-      reason: "trial_expired",
-      message:
-        "Your 14-day free trial has ended. Upgrade to continue querying your GL data.",
-    };
-  }
-
-  // Query limit check (applies to all plans)
-  if (action === "query" && org.queriesUsed >= org.queryLimit) {
-    return {
-      allowed: false,
-      reason: "query_limit",
-      message: `You've used all ${org.queryLimit} queries this month. Upgrade your plan for more.`,
-    };
-  }
-
+  // Founding-free (Phase 5): nobody is gated by trial expiry, subscription
+  // status, or query count right now — free for founding firms through
+  // 2027. This is intentionally unconditional, not scoped to plan==="FREE":
+  // checked the production org table (2026-08-28) and every existing org is
+  // either FREE or STARTER (the schema's pre-Phase-5 default), none has an
+  // active subscription — "STARTER" here just means "signed up before the
+  // founding-free pricing model shipped," not "a real paying customer on a
+  // legacy tier." The actual enforcement below reads org.trialEndsAt/
+  // queryLimit (per-row DB columns set by startTrial()), NOT the
+  // PLAN_QUERY_LIMITS / PLAN_CONNECTION_LIMITS maps above — those are unread
+  // reference constants today. Revisit this bypass (scope it back down, and
+  // wire real per-org limits) when pricing is actually introduced after
+  // 2027 and a genuine paid subscription flow exists. The trial_expired/
+  // query_limit logic this replaced is in git history (see the commit that
+  // added this comment) — restore from there rather than reconstructing it,
+  // since org.trialEndsAt/queryLimit semantics may need a fresh look by then
+  // anyway (e.g. per-plan values, a real subscription flow).
   return { allowed: true };
 }
 
@@ -187,13 +171,19 @@ export async function getOrgBillingState(orgId: string): Promise<OrgBillingState
     ? Math.max(0, Math.ceil((org.trialEndsAt.getTime() - now.getTime()) / 86_400_000))
     : 0;
 
+  // Matches checkPlanAccess: founding-free applies to everyone right now,
+  // not just plan==="FREE" — the only org that should see the legacy trial/
+  // subscribe UI is one with a genuinely active paid subscription, and none
+  // exist today (checked production 2026-08-28).
+  const isSubscriptionActive = org.subscriptionStatus === "active";
+
   return {
     plan: org.plan,
-    isFoundingFree: org.plan === "FREE",
+    isFoundingFree: !isSubscriptionActive,
     trialEndsAt: org.trialEndsAt,
     isTrialActive,
     trialDaysLeft,
-    isSubscriptionActive: org.subscriptionStatus === "active",
+    isSubscriptionActive,
     subscriptionStatus: org.subscriptionStatus,
     queriesUsed: org.queriesUsed,
     queryLimit: org.queryLimit,

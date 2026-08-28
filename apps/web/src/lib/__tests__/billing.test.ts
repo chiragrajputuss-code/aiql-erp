@@ -32,76 +32,45 @@ beforeEach(() => {
 });
 
 // ─── checkPlanAccess ────────────────────────────────────────────────────────
+//
+// Founding-free (Phase 5, broadened after a real user got blocked live):
+// checkPlanAccess is unconditional for any existing org right now — not
+// scoped to plan==="FREE". Production had zero orgs with an active paid
+// subscription when this was written; the legacy STARTER/PROFESSIONAL plan
+// value on pre-Phase-5 signups is not a real paid tier today.
 
-describe("checkPlanAccess — FREE plan (founding-free, Phase 5)", () => {
-  it("is always allowed even with a long-expired trial (this is the bug that blocked real users)", async () => {
-    mockPrisma.organisation.findUnique.mockResolvedValue(org({ plan: "FREE", trialEndsAt: YESTERDAY }));
-    const result = await checkPlanAccess("org-1", "query");
-    expect(result.allowed).toBe(true);
+describe("checkPlanAccess — unconditional founding-free access", () => {
+  it("is always allowed regardless of plan, even with a long-expired trial (the bug that blocked a real user)", async () => {
+    for (const plan of ["FREE", "STARTER", "PROFESSIONAL", "ENTERPRISE"]) {
+      mockPrisma.organisation.findUnique.mockResolvedValue(org({ plan, trialEndsAt: YESTERDAY }));
+      const result = await checkPlanAccess("org-1", "query");
+      expect(result.allowed, `plan=${plan}`).toBe(true);
+    }
   });
 
   it("is always allowed with trialEndsAt null (never had a trial set)", async () => {
-    mockPrisma.organisation.findUnique.mockResolvedValue(org({ plan: "FREE", trialEndsAt: null }));
+    mockPrisma.organisation.findUnique.mockResolvedValue(org({ trialEndsAt: null }));
     const result = await checkPlanAccess("org-1", "query");
     expect(result.allowed).toBe(true);
   });
 
-  it("is allowed even when queriesUsed has exceeded queryLimit (unlimited, not gated by the stale DB column)", async () => {
+  it("is allowed even when queriesUsed has exceeded queryLimit", async () => {
     mockPrisma.organisation.findUnique.mockResolvedValue(
-      org({ plan: "FREE", trialEndsAt: YESTERDAY, queriesUsed: 5000, queryLimit: 100 }),
+      org({ queriesUsed: 5000, queryLimit: 100 }),
     );
     const result = await checkPlanAccess("org-1", "query");
     expect(result.allowed).toBe(true);
   });
 
-  it("never even reaches a Date comparison for FREE orgs (bypass happens before trial logic)", async () => {
-    mockPrisma.organisation.findUnique.mockResolvedValue(org({ plan: "FREE", trialEndsAt: YESTERDAY }));
-    const result = await checkPlanAccess("org-1", "import");
-    expect(result.allowed).toBe(true);
-  });
-});
-
-describe("checkPlanAccess — legacy plans keep their existing enforcement", () => {
-  it("blocks a STARTER org with an expired trial and no active subscription", async () => {
-    mockPrisma.organisation.findUnique.mockResolvedValue(
-      org({ plan: "STARTER", trialEndsAt: YESTERDAY, subscriptionStatus: null }),
-    );
-    const result = await checkPlanAccess("org-1", "query");
-    expect(result.allowed).toBe(false);
-    if (!result.allowed) expect(result.reason).toBe("trial_expired");
+  it("is allowed for a non-'query' action too (import, scan, reconcile, close)", async () => {
+    mockPrisma.organisation.findUnique.mockResolvedValue(org({ trialEndsAt: YESTERDAY }));
+    for (const action of ["import", "scan", "reconcile", "close"] as const) {
+      const result = await checkPlanAccess("org-1", action);
+      expect(result.allowed, action).toBe(true);
+    }
   });
 
-  it("allows a STARTER org with an active trial", async () => {
-    mockPrisma.organisation.findUnique.mockResolvedValue(
-      org({ plan: "STARTER", trialEndsAt: TOMORROW }),
-    );
-    const result = await checkPlanAccess("org-1", "query");
-    expect(result.allowed).toBe(true);
-  });
-
-  it("allows a STARTER org with an active paid subscription past trial", async () => {
-    mockPrisma.organisation.findUnique.mockResolvedValue(
-      org({ plan: "STARTER", trialEndsAt: YESTERDAY, subscriptionStatus: "active", razorpaySubscriptionId: "sub_123" }),
-    );
-    const result = await checkPlanAccess("org-1", "query");
-    expect(result.allowed).toBe(true);
-  });
-
-  it("still enforces the query_limit for a non-FREE org that has an active subscription", async () => {
-    mockPrisma.organisation.findUnique.mockResolvedValue(
-      org({
-        plan: "STARTER", trialEndsAt: YESTERDAY, subscriptionStatus: "active", razorpaySubscriptionId: "sub_123",
-        queriesUsed: 500, queryLimit: 500,
-      }),
-    );
-    const result = await checkPlanAccess("org-1", "query");
-    expect(result.allowed).toBe(false);
-    if (!result.allowed) expect(result.reason).toBe("query_limit");
-  });
-});
-
-describe("checkPlanAccess — test accounts and missing orgs", () => {
-  it("bypasses everything for a permanent test account, even on an expired-trial STARTER plan", async () => {
+  it("bypasses everything for a permanent test account too", async () => {
     mockPrisma.organisation.findUnique.mockResolvedValue(
       org({ plan: "STARTER", trialEndsAt: YESTERDAY, users: [{ email: "df@as.com" }] }),
     );
@@ -120,8 +89,16 @@ describe("checkPlanAccess — test accounts and missing orgs", () => {
 // ─── getOrgBillingState ─────────────────────────────────────────────────────
 
 describe("getOrgBillingState — isFoundingFree", () => {
-  it("is true for a FREE-plan org regardless of trial state", async () => {
+  it("is true for a FREE-plan org", async () => {
     mockPrisma.organisation.findUnique.mockResolvedValue(org({ plan: "FREE", trialEndsAt: YESTERDAY }));
+    const state = await getOrgBillingState("org-1");
+    expect(state?.isFoundingFree).toBe(true);
+  });
+
+  it("is true for a legacy STARTER/PROFESSIONAL org with no active subscription (matches checkPlanAccess)", async () => {
+    mockPrisma.organisation.findUnique.mockResolvedValue(
+      org({ plan: "STARTER", trialEndsAt: YESTERDAY, subscriptionStatus: null }),
+    );
     const state = await getOrgBillingState("org-1");
     expect(state?.isFoundingFree).toBe(true);
   });
@@ -132,9 +109,19 @@ describe("getOrgBillingState — isFoundingFree", () => {
     expect(state?.isFoundingFree).toBe(true);
   });
 
-  it("is false for a legacy STARTER/PROFESSIONAL org", async () => {
-    mockPrisma.organisation.findUnique.mockResolvedValue(org({ plan: "STARTER" }));
+  it("is false only for an org with a genuinely active paid subscription", async () => {
+    mockPrisma.organisation.findUnique.mockResolvedValue(
+      org({ plan: "STARTER", subscriptionStatus: "active", razorpaySubscriptionId: "sub_123" }),
+    );
     const state = await getOrgBillingState("org-1");
     expect(state?.isFoundingFree).toBe(false);
+    expect(state?.isSubscriptionActive).toBe(true);
+  });
+
+  it("trial fields still reflect the real underlying data for display purposes (unrelated to the access bypass)", async () => {
+    mockPrisma.organisation.findUnique.mockResolvedValue(org({ plan: "STARTER", trialEndsAt: TOMORROW }));
+    const state = await getOrgBillingState("org-1");
+    expect(state?.isTrialActive).toBe(true);
+    expect(state?.trialDaysLeft).toBe(1);
   });
 });
