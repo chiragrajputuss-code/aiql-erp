@@ -39,7 +39,7 @@ export default async function ConnectionsPage() {
           <h1 className="text-2xl font-semibold text-slate-900">Connections</h1>
           <p className="text-sm text-muted-foreground mt-0.5">Connect your ERP or upload a spreadsheet</p>
         </div>
-        <Button asChild className="bg-[#1B3A5C] hover:bg-[#1B3A5C]/90 gap-2">
+        <Button asChild data-tour="add-connection" className="bg-[#1B3A5C] hover:bg-[#1B3A5C]/90 gap-2">
           <Link href="/connections/new"><Plus className="h-4 w-4" />Add connection</Link>
         </Button>
       </div>
@@ -56,7 +56,7 @@ export default async function ConnectionsPage() {
           </CardContent>
         </Card>
       ) : (
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+        <div data-tour="connections-list" className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
           {connections.map((conn) => {
             const statusMeta = STATUS_BADGE[conn.status] ?? STATUS_BADGE.PENDING;
             const icon = ERP_ICONS[conn.erpType] ?? ERP_ICONS.default;

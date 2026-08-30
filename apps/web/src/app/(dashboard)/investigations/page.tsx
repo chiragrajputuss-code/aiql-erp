@@ -544,6 +544,7 @@ export default function InvestigationsPage() {
         <div className="flex items-center gap-2">
           {run && (
             <a
+              data-tour="download-pdf"
               href={`/api/v1/investigations/report/export${connectionId ? `?connectionId=${encodeURIComponent(connectionId)}` : ""}`}
               className="inline-flex items-center gap-2 rounded-md border border-slate-200 px-3 py-2 text-sm font-medium hover:bg-slate-50"
               title="Download the client-facing Health Check PDF"
@@ -556,7 +557,7 @@ export default function InvestigationsPage() {
               <Presentation className="h-4 w-4" /> Board Meeting Mode
             </Button>
           )}
-          <Button onClick={runInvestigation} disabled={running} className="gap-2 bg-[#1B3A5C] hover:bg-[#1B3A5C]/90">
+          <Button data-tour="run-investigation" onClick={runInvestigation} disabled={running} className="gap-2 bg-[#1B3A5C] hover:bg-[#1B3A5C]/90">
             {running ? <Loader2 className="h-4 w-4 animate-spin" /> : <RefreshCw className="h-4 w-4" />}
             {run ? "Run Again" : "Run Investigation"}
           </Button>
@@ -573,6 +574,7 @@ export default function InvestigationsPage() {
           <label htmlFor="client-switcher" className="text-xs text-muted-foreground shrink-0">Client book:</label>
           <select
             id="client-switcher"
+            data-tour="client-switcher"
             value={connectionId ?? ""}
             onChange={(e) => selectClient(e.target.value || null)}
             className="text-sm border border-slate-200 rounded-md px-2 py-1.5 bg-white max-w-xs"
@@ -593,6 +595,7 @@ export default function InvestigationsPage() {
               <label htmlFor="period-selector" className="text-xs text-muted-foreground shrink-0">Period:</label>
               <select
                 id="period-selector"
+                data-tour="period-selector"
                 value={selectedRunId ?? history[0]?.runId ?? ""}
                 onChange={(e) => selectPeriod(e.target.value || null)}
                 className="text-sm border border-slate-200 rounded-md px-2 py-1.5 bg-white max-w-xs"
@@ -697,7 +700,7 @@ export default function InvestigationsPage() {
               </CardContent>
             </Card>
           ) : (
-            <div className="space-y-2">
+            <div data-tour="findings-list" className="space-y-2">
               {run.findings.map((f) => <FindingCard key={f.id} f={f} />)}
             </div>
           )}

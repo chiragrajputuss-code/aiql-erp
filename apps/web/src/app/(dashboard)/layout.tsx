@@ -2,6 +2,7 @@ import { redirect } from "next/navigation";
 import { getCurrentUser } from "@/lib/auth";
 import { prisma } from "@aiql/db";
 import AppShell from "@/components/app-shell";
+import { HelpPanel } from "@/components/help/help-panel";
 
 // Founding-free (Phase 5, see apps/web/src/lib/billing.ts checkPlanAccess /
 // getOrgBillingState): this layout used to compute its own, independent
@@ -27,6 +28,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
   return (
     <AppShell user={user} org={org}>
       {children}
+      <HelpPanel />
     </AppShell>
   );
 }

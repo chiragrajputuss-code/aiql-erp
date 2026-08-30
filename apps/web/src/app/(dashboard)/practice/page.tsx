@@ -132,7 +132,7 @@ export default function PracticePage() {
       {!loading && summary && (
         <>
           {/* Header strip */}
-          <div className="grid grid-cols-3 gap-3">
+          <div data-tour="practice-summary" className="grid grid-cols-3 gap-3">
             <Card><CardContent className="pt-4">
               <p className="text-xs text-muted-foreground font-medium uppercase tracking-wide">Clients</p>
               <p className="text-2xl font-bold text-slate-800 mt-1">{summary.totalClients}</p>
@@ -163,7 +163,7 @@ export default function PracticePage() {
               </CardContent>
             </Card>
           ) : (
-            <div className="rounded-xl border border-slate-200 overflow-x-auto">
+            <div data-tour="practice-table" className="rounded-xl border border-slate-200 overflow-x-auto">
               <table className="w-full text-sm">
                 <thead className="bg-slate-50 text-xs text-muted-foreground">
                   <tr>
@@ -211,7 +211,10 @@ export default function PracticePage() {
                           {c.totalImpactRs > 0 ? formatINR(c.totalImpactRs) : <span className="text-slate-300">—</span>}
                         </td>
                         <td className="px-3 py-3 text-right">
+                          {/* Present on every row; the tour spotlights the
+                              first match, which is the top-priority client. */}
                           <Link
+                            data-tour="practice-action"
                             href={`/investigations?connectionId=${encodeURIComponent(c.connectionId)}`}
                             className="inline-flex items-center gap-1 text-xs font-medium text-indigo-600 hover:text-indigo-800"
                           >
