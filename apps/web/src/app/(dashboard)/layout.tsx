@@ -1,78 +1,31 @@
 import { redirect } from "next/navigation";
-import Link from "next/link";
 import { getCurrentUser } from "@/lib/auth";
 import { prisma } from "@aiql/db";
 import AppShell from "@/components/app-shell";
-import { AlertCircle, Zap } from "lucide-react";
-import { isTestAccount } from "@/lib/billing";
 
+// Founding-free (Phase 5, see apps/web/src/lib/billing.ts checkPlanAccess /
+// getOrgBillingState): this layout used to compute its own, independent
+// copy of the trial-expiry/subscription check to decide whether to show a
+// "Your free trial has ended — subscribe to continue" banner site-wide.
+// That duplicate logic kept showing the banner even after checkPlanAccess
+// itself was fixed to stop blocking queries — nobody is gated by trial
+// expiry or subscription status right now, so no dashboard page should
+// show a trial/upgrade banner either. Restore from git history (the commit
+// that introduced this comment) alongside checkPlanAccess's bypass removal
+// when pricing is actually introduced after 2027.
 export default async function DashboardLayout({ children }: { children: React.ReactNode }) {
   const user = await getCurrentUser();
   if (!user) redirect("/login");
 
   const org = await prisma.organisation.findUnique({
     where: { id: user.orgId },
-    select: {
-      name: true,
-      queriesUsed: true,
-      queryLimit: true,
-      trialEndsAt: true,
-      subscriptionStatus: true,
-      razorpaySubscriptionId: true,
-      users: { select: { email: true } },
-    },
+    select: { name: true, queriesUsed: true, queryLimit: true },
   });
 
   if (!org) redirect("/login");
 
-  const now = new Date();
-  const testAccount = isTestAccount(org.users);
-  const isTrialActive = org.trialEndsAt ? org.trialEndsAt > now : false;
-  const trialDaysLeft = org.trialEndsAt
-    ? Math.max(0, Math.ceil((org.trialEndsAt.getTime() - now.getTime()) / 86_400_000))
-    : 0;
-  const isSubscriptionActive = org.subscriptionStatus === "active";
-  // Permanent test accounts never see trial banners.
-  const trialExpired = !testAccount && !isTrialActive && !isSubscriptionActive;
-  const showTrialCountdown = !testAccount && isTrialActive && trialDaysLeft <= 5;
-
   return (
     <AppShell user={user} org={org}>
-      {/* Trial / expiry banner */}
-      {trialExpired && (
-        <div className="bg-red-600 text-white px-4 py-2.5 flex items-center justify-between gap-4 text-sm">
-          <div className="flex items-center gap-2">
-            <AlertCircle className="h-4 w-4 shrink-0" />
-            <span className="font-medium">Your free trial has ended.</span>
-            <span className="opacity-90">Subscribe to continue querying your GL data.</span>
-          </div>
-          <Link
-            href="/billing"
-            className="bg-white text-red-600 px-4 py-1.5 rounded-lg font-semibold text-xs hover:bg-red-50 shrink-0"
-          >
-            Upgrade now
-          </Link>
-        </div>
-      )}
-      {showTrialCountdown && (
-        <div className="bg-amber-500 text-white px-4 py-2.5 flex items-center justify-between gap-4 text-sm">
-          <div className="flex items-center gap-2">
-            <Zap className="h-4 w-4 shrink-0" />
-            <span className="font-medium">
-              {trialDaysLeft === 0
-                ? "Your trial ends today."
-                : `${trialDaysLeft} day${trialDaysLeft === 1 ? "" : "s"} left in your trial.`}
-            </span>
-            <span className="opacity-90">Upgrade to keep uninterrupted access.</span>
-          </div>
-          <Link
-            href="/billing"
-            className="bg-white text-amber-600 px-4 py-1.5 rounded-lg font-semibold text-xs hover:bg-amber-50 shrink-0"
-          >
-            View plans
-          </Link>
-        </div>
-      )}
       {children}
     </AppShell>
   );
