@@ -219,7 +219,7 @@ function HeroPreview() {
               <span key={i} className={`h-1.5 rounded-full transition-all ${i === idx ? "w-5 bg-[#1B3A5C]" : "w-1.5 bg-slate-200"}`} />
             ))}
           </div>
-          <Link href="/sample-report" className="flex items-center gap-1 text-xs font-semibold text-[#1B3A5C] hover:underline">
+          <Link href="/sample-report" className="flex items-center gap-1 min-h-11 sm:min-h-0 text-xs font-semibold text-[#1B3A5C] hover:underline">
             See the full report <ArrowRight className="h-3 w-3" />
           </Link>
         </div>
@@ -776,7 +776,7 @@ export default function LandingPage() {
             ))}
           </div>
           <div className="text-center mt-10">
-            <Link href="/sample-report" className="inline-flex items-center gap-2 text-[#1B3A5C] font-semibold hover:underline">
+            <Link href="/sample-report" className="inline-flex items-center gap-2 min-h-11 px-2 text-[#1B3A5C] font-semibold hover:underline">
               See a real investigation report <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
@@ -992,19 +992,21 @@ export default function LandingPage() {
               <p className="font-semibold text-slate-200">Financial Investigation Platform</p>
               <p className="text-sm mt-1">Helping finance teams understand what deserves attention before it costs them money.</p>
             </div>
+            {/* py-1.5 on each link gives a ~44px touch height on phones;
+                these were ~20px tall and stacked tightly enough to mis-tap. */}
             <div className="flex gap-12 text-sm">
-              <div className="space-y-2">
+              <div className="space-y-1 sm:space-y-2">
                 <p className="text-slate-200 font-semibold mb-3">Product</p>
-                <Link href="/sample-report" className="block hover:text-white">Sample report</Link>
-                <Link href="/resources" className="block hover:text-white">Resources</Link>
-                <a href="#how-it-works" className="block hover:text-white">How it works</a>
-                <a href="#pricing" className="block hover:text-white">Pricing</a>
+                <Link href="/sample-report" className="flex items-center min-h-11 sm:min-h-0 hover:text-white">Sample report</Link>
+                <Link href="/resources" className="flex items-center min-h-11 sm:min-h-0 hover:text-white">Resources</Link>
+                <a href="#how-it-works" className="flex items-center min-h-11 sm:min-h-0 hover:text-white">How it works</a>
+                <a href="#pricing" className="flex items-center min-h-11 sm:min-h-0 hover:text-white">Pricing</a>
               </div>
-              <div className="space-y-2">
+              <div className="space-y-1 sm:space-y-2">
                 <p className="text-slate-200 font-semibold mb-3">Company</p>
-                <Link href="/contact" className="block hover:text-white">Contact</Link>
-                <Link href="/privacy" className="block hover:text-white">Privacy</Link>
-                <Link href="/terms" className="block hover:text-white">Terms</Link>
+                <Link href="/contact" className="flex items-center min-h-11 sm:min-h-0 hover:text-white">Contact</Link>
+                <Link href="/privacy" className="flex items-center min-h-11 sm:min-h-0 hover:text-white">Privacy</Link>
+                <Link href="/terms" className="flex items-center min-h-11 sm:min-h-0 hover:text-white">Terms</Link>
               </div>
             </div>
           </div>

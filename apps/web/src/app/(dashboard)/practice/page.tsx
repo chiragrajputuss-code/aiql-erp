@@ -163,7 +163,63 @@ export default function PracticePage() {
               </CardContent>
             </Card>
           ) : (
-            <div data-tour="practice-table" className="rounded-xl border border-slate-200 overflow-x-auto">
+            <div data-tour="practice-table">
+              {/* Mobile: one card per client. A six-column table behind
+                  overflow-x-auto means side-scrolling to reach the ₹ figure
+                  and the action — on the screen a CA opens every week. The
+                  card carries the same fields in reading order instead. */}
+              <ul className="md:hidden space-y-2">
+                {sorted.map((c) => {
+                  const stale = isStale(c.lastRunAt);
+                  const neverRun = c.lastRunAt === null;
+                  return (
+                    <li key={c.connectionId} className="rounded-xl border border-slate-200 bg-white p-3.5">
+                      <div className="flex items-start justify-between gap-3">
+                        <div className="min-w-0">
+                          <p className="font-medium text-slate-900 truncate">{c.clientName}</p>
+                          <p className={`text-xs mt-0.5 ${neverRun ? "text-slate-400" : stale ? "text-amber-600" : "text-slate-500"}`}>
+                            {formatLastRun(c.lastRunAt)}
+                            {stale && !neverRun && " · stale"}
+                          </p>
+                          {!c.hasGstr2b && (
+                            <p className="text-[11px] text-slate-400 mt-0.5">GSTR-2B not uploaded</p>
+                          )}
+                        </div>
+                        {c.totalImpactRs > 0 && (
+                          <span className="text-sm font-semibold text-slate-800 tabular-nums shrink-0">
+                            {formatINR(c.totalImpactRs)}
+                          </span>
+                        )}
+                      </div>
+                      <div className="flex items-center justify-between gap-3 mt-3">
+                        <div className="flex items-center gap-1.5">
+                          {c.criticalCount > 0 && (
+                            <Badge className="bg-red-100 text-red-700 border-red-200">{c.criticalCount} critical</Badge>
+                          )}
+                          {c.warningCount > 0 && (
+                            <Badge className="bg-amber-100 text-amber-700 border-amber-200">{c.warningCount} to check</Badge>
+                          )}
+                          {c.criticalCount === 0 && c.warningCount === 0 && !neverRun && (
+                            <span className="text-xs text-slate-400">Nothing outstanding</span>
+                          )}
+                        </div>
+                        {/* min-h-11 keeps this at ~44px, the minimum
+                            comfortable touch target. */}
+                        <Link
+                          href={`/investigations?connectionId=${encodeURIComponent(c.connectionId)}`}
+                          className="inline-flex items-center gap-1.5 shrink-0 min-h-11 px-3 rounded-lg bg-[#1B3A5C] text-white text-xs font-semibold"
+                        >
+                          <Search className="h-3.5 w-3.5" />
+                          {neverRun || stale ? "Run" : "View"}
+                        </Link>
+                      </div>
+                    </li>
+                  );
+                })}
+              </ul>
+
+              {/* Desktop: the sortable table. */}
+              <div className="hidden md:block rounded-xl border border-slate-200 overflow-x-auto">
               <table className="w-full text-sm">
                 <thead className="bg-slate-50 text-xs text-muted-foreground">
                   <tr>
@@ -227,6 +283,7 @@ export default function PracticePage() {
                   })}
                 </tbody>
               </table>
+              </div>
             </div>
           )}
         </>

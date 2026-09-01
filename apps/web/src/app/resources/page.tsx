@@ -17,7 +17,7 @@ export default function ResourcesPage() {
       <header className="border-b border-slate-100 px-6 py-4">
         <div className="max-w-4xl mx-auto flex items-center justify-between">
           <Link href="/" className="text-lg font-bold text-[#1B3A5C]">AcctQAI</Link>
-          <Link href="/signup" className="text-sm text-[#1B3A5C] hover:underline font-medium">
+          <Link href="/signup" className="inline-flex items-center min-h-11 px-2 -mr-2 text-sm text-[#1B3A5C] hover:underline font-medium">
             Sign up free →
           </Link>
         </div>

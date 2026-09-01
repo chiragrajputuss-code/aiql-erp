@@ -61,12 +61,17 @@ type Phase = "sources" | "analysing" | "report";
 function TopBar() {
   return (
     <header className="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-slate-200">
-      <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
-        <Link href="/" className="font-bold text-[#1B3A5C] text-lg tracking-tight">Acct<span className="text-blue-600">QAI</span></Link>
-        <div className="flex items-center gap-2">
-          <Link href="/contact" className="text-sm font-medium text-slate-600 hover:text-slate-900 px-3 py-1.5">Book a demo</Link>
-          <Link href="/signup" className="text-sm font-semibold bg-[#1B3A5C] text-white px-4 py-1.5 rounded-lg hover:bg-[#1B3A5C]/90">
-            Run this on your books
+      <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between gap-3">
+        <Link href="/" className="font-bold text-[#1B3A5C] text-lg tracking-tight shrink-0">Acct<span className="text-blue-600">QAI</span></Link>
+        {/* Three items don't fit a 390px header: "Book a demo" wrapped onto
+            two lines and crowded the primary CTA, which is the whole point
+            of this page for ad traffic. The secondary link drops below sm,
+            and the CTA shortens rather than wrapping. */}
+        <div className="flex items-center gap-2 shrink-0">
+          <Link href="/contact" className="hidden sm:inline-flex items-center min-h-11 text-sm font-medium text-slate-600 hover:text-slate-900 px-3">Book a demo</Link>
+          <Link href="/signup" className="inline-flex items-center min-h-11 whitespace-nowrap text-sm font-semibold bg-[#1B3A5C] text-white px-4 rounded-lg hover:bg-[#1B3A5C]/90">
+            <span className="sm:hidden">Try it free</span>
+            <span className="hidden sm:inline">Run this on your books</span>
           </Link>
         </div>
       </div>

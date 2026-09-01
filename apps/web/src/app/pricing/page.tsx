@@ -63,8 +63,8 @@ function Header() {
           <span className="text-lg font-bold text-[#1B3A5C]">AcctQAI</span>
         </Link>
         <div className="flex items-center gap-3">
-          <Link href="/login" className="text-sm text-slate-600 hover:text-slate-900 px-3 py-2">Log in</Link>
-          <Link href="/contact" className="text-sm font-semibold bg-[#1B3A5C] text-white rounded-lg px-4 py-2 hover:bg-[#1B3A5C]/90 transition-colors">Book a demo</Link>
+          <Link href="/login" className="inline-flex items-center min-h-11 text-sm text-slate-600 hover:text-slate-900 px-3">Log in</Link>
+          <Link href="/contact" className="inline-flex items-center min-h-11 text-sm font-semibold bg-[#1B3A5C] text-white rounded-lg px-4 hover:bg-[#1B3A5C]/90 transition-colors">Book a demo</Link>
         </div>
       </div>
     </header>

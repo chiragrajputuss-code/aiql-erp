@@ -83,7 +83,7 @@ export default function ContactPage() {
                 </div>
                 <div>
                   <p className="font-medium text-slate-900">Email us directly</p>
-                  <a href="mailto:support@acctqai.com" className="text-blue-600 hover:underline text-sm">
+                  <a href="mailto:support@acctqai.com" className="inline-flex items-center min-h-11 text-blue-600 hover:underline text-sm">
                     support@acctqai.com
                   </a>
                 </div>
