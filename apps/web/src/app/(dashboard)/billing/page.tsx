@@ -1,13 +1,15 @@
 "use client";
 
 import { useEffect, useState, useCallback } from "react";
-import { Check, X, AlertCircle, CheckCircle2, Loader2, Zap, CreditCard } from "lucide-react";
+import { Check, X, CheckCircle2, Loader2, CreditCard } from "lucide-react";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
 interface BillingState {
   plan: string;
   isFoundingFree: boolean;
+  // Still sent by /api/billing/portal, and still meaningful the day pricing
+  // turns on — but nothing on this page reads them while founding-free is on.
   trialEndsAt: string | null;
   isTrialActive: boolean;
   trialDaysLeft: number;
@@ -185,35 +187,20 @@ export default function BillingPage() {
       </div>
 
       {/* ── Status card ─────────────────────────────────────────────────── */}
-      <div className={`rounded-2xl border p-6 ${
-        state.isTrialActive
-          ? "bg-amber-50 border-amber-200"
-          : isActive
-          ? "bg-green-50 border-green-200"
-          : "bg-red-50 border-red-200"
-      }`}>
+      {/* Anyone reaching this point is subscribed — `isFoundingFree` is
+          `!isSubscriptionActive`, so the founding-free branch above catches
+          everyone else. There is no trial to report on, and the old
+          "Your trial has ended" copy that used to live here contradicted
+          every marketing page. */}
+      <div className="rounded-2xl border p-6 bg-green-50 border-green-200">
         <div className="flex items-start gap-4">
-          {state.isTrialActive ? (
-            <Zap className="h-6 w-6 text-amber-500 shrink-0 mt-0.5" />
-          ) : isActive ? (
-            <CheckCircle2 className="h-6 w-6 text-green-500 shrink-0 mt-0.5" />
-          ) : (
-            <AlertCircle className="h-6 w-6 text-red-500 shrink-0 mt-0.5" />
-          )}
+          <CheckCircle2 className="h-6 w-6 text-green-500 shrink-0 mt-0.5" />
           <div className="flex-1">
             <div className="font-semibold text-slate-900 text-base">
-              {state.isTrialActive
-                ? `Free trial — ${state.trialDaysLeft} day${state.trialDaysLeft === 1 ? "" : "s"} left`
-                : isActive
-                ? `${state.plan} plan — Active`
-                : "Trial ended — upgrade to continue"}
+              {state.plan} plan — Active
             </div>
             <p className="text-sm text-slate-600 mt-1">
-              {state.isTrialActive
-                ? `Your trial ends on ${new Date(state.trialEndsAt!).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })}. Upgrade before it ends to avoid interruption.`
-                : isActive
-                ? `Your subscription is active. Queries reset on the 1st of each month.`
-                : `Your trial has ended. Subscribe below to continue querying your GL data.`}
+              Your subscription is active. Queries reset on the 1st of each month.
             </p>
 
             {/* Query usage bar */}

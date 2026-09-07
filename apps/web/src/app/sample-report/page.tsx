@@ -5,10 +5,10 @@ import Link from "next/link";
 import {
   Search, AlertCircle, AlertTriangle, TrendingUp, Info, CheckCircle2,
   Loader2, ChevronDown, ArrowRight, ShieldCheck, Sparkles,
-  Lock, Play, Activity,
+  Lock, Play, Activity, Hammer, Clock,
 } from "lucide-react";
 import {
-  SAMPLE_REPORT, SAMPLE_SOURCES, ANALYSIS_STEPS, ANALYSIS_STATS,
+  SAMPLE_REPORT, SAMPLE_SOURCES, ANALYSIS_STEPS, ANALYSIS_STATS, ROADMAP,
   type SampleFinding, type SampleSeverity, type SampleCategory,
 } from "@/lib/investigations/sample-report";
 
@@ -361,10 +361,12 @@ function ReportPanel({ onReplay }: { onReplay: () => void }) {
 
       {/* Filters */}
       <div className="flex gap-2 flex-wrap mb-4">
-        {(["all", "critical", "warning", "opportunity"] as const).map((s) => {
+        {/* "info" belongs here too — without it the chip counts don't add up to
+            the total, which is exactly the kind of arithmetic a CA checks. */}
+        {(["all", "critical", "warning", "opportunity", "info"] as const).map((s) => {
           const count = s === "all" ? r.findings.length : r.findings.filter((f) => f.severity === s).length;
           const active = filter === s;
-          const lbl = s === "all" ? "All findings" : s === "warning" ? "needs attention" : s;
+          const lbl = s === "all" ? "All findings" : s === "warning" ? "needs attention" : s === "info" ? "FYI" : s;
           return (
             <button key={s} onClick={() => setFilter(s)}
               className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors capitalize ${
@@ -387,6 +389,8 @@ function ReportPanel({ onReplay }: { onReplay: () => void }) {
         <span>Analysed {new Date(r.resolvedAt).toLocaleDateString("en-IN", { day: "numeric", month: "long", year: "numeric" })} · read-only · AcctQAI never modifies your books.</span>
       </div>
 
+      <RoadmapPanel />
+
       {/* CTA */}
       <div className="mt-8 rounded-2xl bg-gradient-to-br from-[#1B3A5C] to-[#15314d] text-white p-7 text-center">
         <ShieldCheck className="h-8 w-8 mx-auto mb-3 text-white/90" />
@@ -403,6 +407,43 @@ function ReportPanel({ onReplay }: { onReplay: () => void }) {
           </Link>
         </div>
         <p className="text-white/50 text-xs mt-3">No credit card · Read-only · Setup in minutes</p>
+      </div>
+    </div>
+  );
+}
+
+// ─── Roadmap ──────────────────────────────────────────────────────────────────
+//
+// Deliberately not styled as findings. These investigations don't exist yet,
+// so they get no severity colour, no rupee figure and no evidence table —
+// anything that looks like a result here would be a promise we can't keep on
+// the reader's own books the day they sign up.
+
+function RoadmapPanel() {
+  return (
+    <div className="mt-8 rounded-2xl border border-dashed border-slate-300 bg-white/60 p-5 sm:p-6">
+      <div className="flex items-start gap-2.5">
+        <Hammer className="h-4 w-4 text-slate-400 shrink-0 mt-0.5" />
+        <div>
+          <p className="text-sm font-semibold text-slate-700">Not in the report above — these are still being built</p>
+          <p className="text-xs text-muted-foreground mt-1 leading-relaxed">
+            AcctQAI investigates GST/ITC and duplicate payments today, and that&apos;s what the sample
+            shows. These are next on the roadmap — you&apos;ll get them as they ship, at no extra cost.
+          </p>
+        </div>
+      </div>
+
+      <div className="grid sm:grid-cols-2 gap-x-6 gap-y-4 mt-5">
+        {ROADMAP.map((item) => (
+          <div key={item.title} className="flex gap-2.5">
+            <Clock className="h-3.5 w-3.5 text-slate-300 shrink-0 mt-1" />
+            <div className="min-w-0">
+              <p className="text-sm font-medium text-slate-600">{item.title}</p>
+              <p className="text-xs text-slate-400 italic mt-0.5">&ldquo;{item.businessQuestion}&rdquo;</p>
+              <p className="text-xs text-slate-500 mt-1 leading-relaxed">{item.willFind}</p>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

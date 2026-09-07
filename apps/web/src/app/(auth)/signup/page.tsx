@@ -78,7 +78,10 @@ export default function SignupPage() {
           <span className="font-bold text-[#1B3A5C]">AcctQAI</span>
         </div>
         <CardTitle className="text-2xl">Start investigating your books</CardTitle>
-        <CardDescription>Create your account — free for 14 days, no credit card needed.</CardDescription>
+        {/* Not "free for 14 days" — there is no trial. Founding firms are free
+            through 2027 (see /pricing and lib/billing.ts), and the signup page
+            was the last place still promising a trial that doesn't exist. */}
+        <CardDescription>Create your account — free for founding firms through 2027, no credit card needed.</CardDescription>
       </CardHeader>
       <CardContent className="space-y-4">
         <form onSubmit={handleSubmit} className="space-y-4">

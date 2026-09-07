@@ -2,13 +2,21 @@
 //
 // A hand-crafted, realistic investigation report for a fictional Indian auto-
 // ancillary SME. Used by the public /sample-report page so a prospect can SEE
-// the product's output before signing up — no upload, no login. It mirrors the
-// exact shape the real engine produces (findings + evidence + recommendation +
-// resolves-when), and showcases the full investigation library, not just the
-// one investigation wired today.
+// the product's output before signing up — no upload, no login.
 //
-// Numbers are illustrative but internally consistent. This is marketing/demo
-// data — clearly labelled as a sample in the UI.
+// HONESTY RULE (do not break this):
+//   Every finding in `FINDINGS` must correspond to a finding code the engine
+//   actually emits today — i.e. one of the codes in
+//   `packages/investigation-engine/src/investigations/*.ts`. As of now that is
+//   GST-ITC-001…006 (gst-vendor-itc) and DUP-PAY-001/002 (duplicate-payment).
+//   Anything we can't yet produce belongs in `ROADMAP` below, which the page
+//   renders as a clearly-labelled "not yet available" list — never as a
+//   finding card with fabricated evidence. A prospect who signs up after
+//   seeing this page must get the report they were shown.
+//
+// Numbers are illustrative but internally consistent (ITC = 18% of taxable,
+// and the headline totals are computed from the findings, not hand-typed).
+// This is marketing/demo data — clearly labelled as a sample in the UI.
 
 export type SampleSeverity = "critical" | "warning" | "opportunity" | "info";
 export type SampleCategory =
@@ -93,7 +101,10 @@ export const SAMPLE_SOURCES: SampleSource[] = [
   },
 ];
 
-// ─── Live-analysis steps (each shows a real-feeling result as it completes) ────
+// ─── Live-analysis steps ──────────────────────────────────────────────────────
+//
+// One step per check the engine genuinely runs today. If you add a step here,
+// there must be a real investigation behind it.
 export interface AnalysisStep {
   label:   string;
   detail:  string;          // what it's working over
@@ -102,16 +113,14 @@ export interface AnalysisStep {
 }
 
 export const ANALYSIS_STEPS: AnalysisStep[] = [
-  { label: "Reading General Ledger",                detail: "1,284 transactions", result: "14 columns mapped",     tone: "neutral" },
-  { label: "Identifying purchase invoices",          detail: "across vouchers",    result: "47 invoices",           tone: "neutral" },
-  { label: "Cross-checking purchases against GSTR-2B", detail: "47 invoices",      result: "3 vendors flagged",     tone: "alert" },
-  { label: "Scanning payments for duplicates",       detail: "312 payments",       result: "1 duplicate found",     tone: "alert" },
-  { label: "Aging receivables",                      detail: "18 customers",       result: "₹4.7L overdue",         tone: "alert" },
-  { label: "Comparing expenses to 3-month trend",    detail: "9 expense heads",    result: "1 anomaly",             tone: "alert" },
-  { label: "Assessing vendor concentration",         detail: "23 vendors",         result: "1 supply risk",         tone: "alert" },
-  { label: "Explaining margin movement",             detail: "April vs May",       result: "-3.2 pts explained",    tone: "neutral" },
-  { label: "Checking TDS deductions",                detail: "professional fees",  result: "1 short deduction",     tone: "alert" },
-  { label: "Finding savings opportunities",          detail: "vendor terms + ITC", result: "₹43K recoverable",      tone: "good" },
+  { label: "Reading General Ledger",                    detail: "1,284 transactions", result: "14 columns mapped",  tone: "neutral" },
+  { label: "Identifying purchase invoices",              detail: "across vouchers",    result: "47 invoices",        tone: "neutral" },
+  { label: "Cross-checking purchases against GSTR-2B",   detail: "47 invoices",        result: "3 vendors flagged",  tone: "alert"   },
+  { label: "Checking ITC eligibility flags",             detail: "47 invoices",        result: "1 blocked credit",   tone: "alert"   },
+  { label: "Reviewing 6 months of vendor filing history", detail: "23 vendors",        result: "1 habitual late filer", tone: "neutral" },
+  { label: "Matching supplier names GL ↔ GSTR-2B",       detail: "23 vendors",         result: "2 mismatches",       tone: "neutral" },
+  { label: "Scanning payments for duplicates",           detail: "312 payments",       result: "1 duplicate found",  tone: "alert"   },
+  { label: "Looking for ITC you haven't claimed",         detail: "GSTR-2B vs GL",     result: "₹4,500 unclaimed",   tone: "good"    },
 ];
 
 // Headline counters shown during/after analysis.
@@ -120,30 +129,29 @@ export const ANALYSIS_STATS = {
   purchaseInvoices:    47,
   paymentsScanned:     312,
   vendorsAnalysed:     23,
-  customersAged:       18,
 };
 
 const FINDINGS: SampleFinding[] = [
-  // ── 1. GST ITC at risk — the headline ──
+  // ── 1. GST ITC at risk (engine: GST-ITC-002) — the headline ──
   {
     code: "GST-ITC-002",
     investigation: "GST Vendor ITC Risk",
     category: "compliance",
     severity: "critical",
-    title: "₹1,24,500 of Input Tax Credit at risk — 3 vendors haven't filed GSTR-1",
-    impactRs: 124500,
+    title: "3 purchase invoices not in GSTR-2B — ₹1,24,020 of ITC at risk",
+    impactRs: 124020,
     businessQuestion: "Which vendors are putting my Input Tax Credit at risk?",
     conclusion:
-      "Three vendors with invoices booked in your GL for May 2026 do not appear in GSTR-2B. The likely cause is that they have not filed their GSTR-1 — so ₹1,24,500 of ITC you've assumed is at risk of being blocked or reversed with interest.",
+      "Three vendors with invoices booked in your GL for May 2026 do not appear in GSTR-2B, and none of them has a history of filing late — so this is a genuine gap, not a timing lag. ₹1,24,020 of ITC you've assumed is at risk of being blocked or reversed with interest.",
     evidence: [{
       description: "GL purchase invoices with no matching GSTR-2B entry",
       columns: ["Vendor", "Invoice", "Date", "Taxable ₹", "ITC at risk ₹"],
       rows: [
         ["Agarwal Stationery Mart", "AGW-B2026-88", "2026-05-10", 71000, 12780],
         ["Sindhwani Rubber Products", "SRP-2026-0091", "2026-05-29", 94000, 16920],
-        ["Bright Tools & Hardware", "BTH-2026-204", "2026-05-18", 524000, 94300],
+        ["Bright Tools & Hardware", "BTH-2026-204", "2026-05-18", 524000, 94320],
       ],
-      amountRs: 124500,
+      amountRs: 124020,
       confidence: 1,
       references: ["AGW-B2026-88", "SRP-2026-0091", "BTH-2026-204"],
     }],
@@ -151,7 +159,7 @@ const FINDINGS: SampleFinding[] = [
       action: "Hold pending payments to Agarwal Stationery, Sindhwani Rubber and Bright Tools until their invoices appear in GSTR-2B. Send each a filing-reminder today.",
       owner: "Finance Manager",
       priority: "today",
-      expectedBenefit: "Protect ₹1,24,500 of ITC from reversal — and use payment as leverage to get them to file.",
+      expectedBenefit: "Protect ₹1,24,020 of ITC from reversal — and use payment as leverage to get them to file.",
       deadline: "Before GSTR-3B filing on the 20th",
     },
     verificationSteps: [
@@ -161,9 +169,9 @@ const FINDINGS: SampleFinding[] = [
     resolvesWhen: "All three invoices appear in GSTR-2B for May 2026 (suppliers file GSTR-1).",
   },
 
-  // ── 2. Duplicate payment ──
+  // ── 2. Duplicate payment (engine: DUP-PAY-001) ──
   {
-    code: "RISK-DUP-001",
+    code: "DUP-PAY-001",
     investigation: "Duplicate Payment Detection",
     category: "risk",
     severity: "critical",
@@ -197,173 +205,59 @@ const FINDINGS: SampleFinding[] = [
     resolvesWhen: "The duplicate ₹68,000 is refunded or adjusted, or confirmed as two genuine invoices.",
   },
 
-  // ── 3. Receivables overdue ──
+  // ── 3. ITC marked ineligible in GSTR-2B (engine: GST-ITC-004) ──
   {
-    code: "CASH-AR-001",
-    investigation: "Receivables & Cash",
-    category: "financial_health",
-    severity: "warning",
-    title: "₹4,70,000 overdue beyond 60 days across 4 customers",
-    impactRs: 470000,
-    businessQuestion: "Where is my cash stuck?",
-    conclusion:
-      "₹4,70,000 of receivables are more than 60 days overdue. Rajesh Auto Components alone accounts for ₹2,10,000 — collecting even half would materially ease this month's cash position.",
-    evidence: [{
-      description: "Debtors aged beyond 60 days",
-      columns: ["Customer", "Invoice", "Days overdue", "Amount ₹"],
-      rows: [
-        ["Rajesh Auto Components Pvt Ltd", "SI-2026-004", 74, 210000],
-        ["Krishna Trading Co", "SI-2026-006", 68, 134000],
-        ["Mahindra Component Works", "SI-2026-003", 63, 86000],
-        ["Bharat Forge Supplies", "SI-2026-009", 61, 40000],
-      ],
-      amountRs: 470000,
-      confidence: 1,
-      references: ["SI-2026-004", "SI-2026-006", "SI-2026-003", "SI-2026-009"],
-    }],
-    recommendation: {
-      action: "Call Rajesh Auto and Krishna Trading this week with a payment plan; put the other two on a reminder cycle.",
-      owner: "Collections",
-      priority: "this_week",
-      expectedBenefit: "Unlock up to ₹4,70,000 of stuck cash; ₹3,44,000 from the top two alone.",
-      deadline: null,
-    },
-    verificationSteps: [
-      "Confirm the invoice dates and that no payment has been received since.",
-      "Check for any disputes or credit notes against these invoices.",
-    ],
-    resolvesWhen: "Overdue balance beyond 60 days falls below ₹1,00,000.",
-  },
-
-  // ── 4. Expense anomaly ──
-  {
-    code: "EXP-TREND-001",
-    investigation: "Expense Investigation",
-    category: "financial_health",
-    severity: "warning",
-    title: "Marketing spend up 181% vs 3-month average (₹42K → ₹1.18L)",
-    impactRs: 76000,
-    businessQuestion: "Which expenses changed abnormally this month?",
-    conclusion:
-      "Marketing & advertising rose to ₹1,18,000 in May against a ₹42,000 three-month average — a ₹76,000 spike, almost entirely to Pixel Ads Agency. Worth confirming this was a planned campaign and not a misposting.",
-    evidence: [{
-      description: "Marketing & advertising by month",
-      columns: ["Month", "Vendor", "Amount ₹"],
-      rows: [
-        ["Feb 2026", "Pixel Ads Agency", 22000],
-        ["Mar 2026", "Pixel Ads Agency", 38000],
-        ["Apr 2026", "Pixel Ads Agency", 66000],
-        ["May 2026", "Pixel Ads Agency", 118000],
-      ],
-      amountRs: 76000,
-      confidence: 1,
-      references: ["Pixel Ads Agency"],
-    }],
-    recommendation: {
-      action: "Confirm the May campaign was approved and budgeted; if not, investigate the posting. Set a monthly marketing budget alert.",
-      owner: "Finance Manager",
-      priority: "this_week",
-      expectedBenefit: "Avoid ₹76,000+ of unbudgeted spend recurring next month.",
-      deadline: null,
-    },
-    verificationSteps: [
-      "Match the May Pixel Ads invoices to an approved campaign / PO.",
-      "Confirm the amount wasn't a duplicate or wrong-account posting.",
-    ],
-    resolvesWhen: "May marketing spend is confirmed as budgeted, or corrected.",
-  },
-
-  // ── 5. Vendor concentration ──
-  {
-    code: "VENDOR-CONC-001",
-    investigation: "Vendor Investigation",
-    category: "operations",
-    severity: "warning",
-    title: "61% of purchases concentrated with a single vendor",
-    impactRs: null, // real risk, not directly quantifiable
-    businessQuestion: "Am I over-dependent on any single vendor?",
-    conclusion:
-      "Mehta Steel Industries accounts for 61% of May purchase value. A price hike, quality issue or supply disruption from one vendor would hit production directly. Consider qualifying a second source for steel.",
-    evidence: [{
-      description: "Purchase value by vendor (May 2026)",
-      columns: ["Vendor", "Purchases ₹", "Share %"],
-      rows: [
-        ["Mehta Steel Industries", 156000, 61],
-        ["Gupta Metal Works", 42000, 16],
-        ["Kumar Electrical Stores", 31200, 12],
-        ["Others", 27300, 11],
-      ],
-      amountRs: null,
-      confidence: 1,
-      references: ["Mehta Steel Industries"],
-    }],
-    recommendation: {
-      action: "Qualify a second steel supplier and shift 15–20% of volume to reduce single-vendor dependency.",
-      owner: "Procurement",
-      priority: "this_month",
-      expectedBenefit: "Lower supply risk and stronger price negotiation.",
-      deadline: null,
-    },
-    verificationSteps: [
-      "Review the purchase register grouped by vendor for the quarter.",
-      "Assess switching cost and lead time for an alternate steel supplier.",
-    ],
-    resolvesWhen: "No single vendor exceeds 45% of purchase value.",
-  },
-
-  // ── 6. TDS not deducted ──
-  {
-    code: "TDS-001",
-    investigation: "TDS Compliance",
+    code: "GST-ITC-004",
+    investigation: "GST Vendor ITC Risk",
     category: "compliance",
     severity: "warning",
-    title: "TDS not deducted on ₹45,000 professional fees (Desai & Associates)",
-    impactRs: 2200,
-    businessQuestion: "Did we deduct TDS everywhere it was due?",
+    title: "1 booked invoice marked ITC-ineligible in GSTR-2B — ₹8,640 wrongly claimed",
+    impactRs: 8640,
+    businessQuestion: "Am I claiming credit the law doesn't allow?",
     conclusion:
-      "A ₹45,000 professional-fee payment to Desai & Associates Advocates has no TDS deducted. Under section 194J, ₹4,500 (10%) was due. Non-deduction can mean a ₹2,200 disallowance plus interest.",
+      "The ₹48,000 car-repair bill from Sai Motors is flagged ITC-ineligible in GSTR-2B (section 17(5) blocked credit on passenger vehicles), but ₹8,640 of ITC has been taken on it in your books. Claiming it invites a reversal with interest at assessment.",
     evidence: [{
-      description: "Professional-fee payment with no TDS entry",
-      columns: ["Date", "Vendor", "Section", "Gross ₹", "TDS due ₹", "TDS deducted ₹"],
+      description: "GL invoices where GSTR-2B marks the credit ineligible",
+      columns: ["Vendor", "Invoice", "Taxable ₹", "ITC claimed ₹", "2B eligibility"],
       rows: [
-        ["2026-05-28", "Desai & Associates Advocates", "194J", 45000, 4500, 0],
+        ["Sai Motors & Service", "SM-2026-0338", 48000, 8640, "Ineligible — 17(5)"],
       ],
-      amountRs: 2200,
+      amountRs: 8640,
       confidence: 1,
-      references: ["DA-INV-2605"],
+      references: ["SM-2026-0338"],
     }],
     recommendation: {
-      action: "Deduct and deposit the ₹4,500 TDS before filing, and issue a corrected entry. Add a 194J check on professional-fee vouchers.",
-      owner: "Finance Manager",
+      action: "Reverse the ₹8,640 of ITC in this month's GSTR-3B and re-post the amount to repairs expense.",
+      owner: "Accountant",
       priority: "this_week",
-      expectedBenefit: "Avoid a ₹2,200 expense disallowance plus interest and penalty.",
-      deadline: "Before the TDS deposit due date (7th of next month)",
+      expectedBenefit: "Avoid a ₹8,640 reversal plus interest at assessment.",
+      deadline: "Before GSTR-3B filing on the 20th",
     },
     verificationSteps: [
-      "Confirm the payment exceeds the ₹30,000 194J threshold.",
-      "Check whether a lower-deduction certificate exists for this vendor.",
+      "Open GSTR-2B for May 2026 and confirm the eligibility flag on SM-2026-0338.",
+      "Confirm the vehicle is a passenger car not used for further supply or driver training.",
     ],
-    resolvesWhen: "TDS of ₹4,500 is deducted and deposited, with the challan recorded.",
+    resolvesWhen: "The ₹8,640 is reversed in GSTR-3B and the ledger entry corrected.",
   },
 
-  // ── 7. Unclaimed ITC — opportunity ──
+  // ── 4. Unclaimed ITC (engine: GST-ITC-003) — opportunity ──
   {
     code: "GST-ITC-003",
     investigation: "GST Vendor ITC Risk",
     category: "opportunity",
     severity: "opportunity",
-    title: "₹25,000 ITC available in GSTR-2B but not booked in your GL",
-    impactRs: 25000,
+    title: "₹25,000 invoice sitting in GSTR-2B but not booked — ₹4,500 ITC unclaimed",
+    impactRs: 4500,
     businessQuestion: "Am I claiming all the ITC I'm entitled to?",
     conclusion:
-      "GSTR-2B shows an invoice from Vishwas Trading Company (₹25,000 taxable) eligible for ITC that you haven't booked in your GL. That's credit you're entitled to but currently leaving unclaimed.",
+      "GSTR-2B shows an invoice from Vishwas Trading Company (₹25,000 taxable) eligible for ITC that you haven't booked in your GL. That's ₹4,500 of credit you're entitled to but currently leaving unclaimed.",
     evidence: [{
       description: "GSTR-2B invoice with no matching GL entry",
       columns: ["Vendor", "Invoice", "Taxable ₹", "ITC available ₹"],
       rows: [
         ["Vishwas Trading Company", "VTC-MAY-2026-12", 25000, 4500],
       ],
-      amountRs: 25000,
+      amountRs: 4500,
       confidence: 1,
       references: ["VTC-MAY-2026-12"],
     }],
@@ -381,78 +275,120 @@ const FINDINGS: SampleFinding[] = [
     resolvesWhen: "The invoice is booked and the ITC claimed.",
   },
 
-  // ── 8. Early-payment discount opportunity ──
+  // ── 5. Habitual late filer — do NOT chase (engine: GST-ITC-006) ──
   {
-    code: "OPP-DISC-001",
-    investigation: "Working Capital",
-    category: "opportunity",
-    severity: "opportunity",
-    title: "₹18,000/yr of early-payment discounts going unused",
-    impactRs: 18000,
-    businessQuestion: "Where can I save money I'm already entitled to?",
+    code: "GST-ITC-006",
+    investigation: "GST Vendor ITC Risk",
+    category: "operations",
+    severity: "info",
+    title: "1 invoice not yet in GSTR-2B — expected next period, not at risk",
+    impactRs: 19800,
+    businessQuestion: "Which missing invoices actually need chasing?",
     conclusion:
-      "Two vendors offer 2% discounts for payment within 10 days that you're not taking — while paying others early with no discount. Re-sequencing payments would capture roughly ₹18,000 a year at no cost.",
+      "Speedway Logistics is missing from May's GSTR-2B, but they've filed GSTR-1 late in 5 of the last 6 months and the invoice has always shown up in the following period. This ₹19,800 of ITC is delayed, not lost — no chase needed, and it should not be rejected in IMS.",
     evidence: [{
-      description: "Vendors offering unused early-payment terms",
-      columns: ["Vendor", "Terms", "Annual spend ₹", "Discount available ₹"],
+      description: "Missing invoice from a vendor with a consistent late-filing pattern",
+      columns: ["Vendor", "Invoice", "Taxable ₹", "ITC pending ₹", "Filing pattern (6 mo)"],
       rows: [
-        ["Gupta Metal Works", "2% / 10 days", 540000, 10800],
-        ["Sharma Packaging Pvt Ltd", "2% / 10 days", 360000, 7200],
+        ["Speedway Logistics Pvt Ltd", "SLP-2026-1140", 110000, 19800, "Late 5 of 6 · avg 24 days"],
       ],
-      amountRs: 18000,
-      confidence: 0.85,
-      references: ["Gupta Metal Works", "Sharma Packaging Pvt Ltd"],
+      amountRs: 19800,
+      confidence: 0.9,
+      references: ["SLP-2026-1140"],
     }],
     recommendation: {
-      action: "Prioritise these two vendors in the payment run to capture the early-payment discount.",
-      owner: "Accounts Payable",
+      action: "No action needed. Leave SLP-2026-1140 pending in IMS rather than rejecting it, and re-check next month's GSTR-2B.",
+      owner: "Accountant",
       priority: "this_month",
-      expectedBenefit: "Capture ~₹18,000/yr of discounts at no extra cost.",
+      expectedBenefit: "Avoid rejecting a genuine invoice in IMS, or chasing a vendor who hasn't done anything wrong.",
       deadline: null,
     },
     verificationSteps: [
-      "Confirm the discount terms on the vendor agreements.",
-      "Check your cash runway supports paying these two earlier.",
+      "Check GSTR-2B for the last 6 periods and confirm Speedway's invoices appear one period late each time.",
+      "Confirm Speedway's GSTIN is Active on the GSTN portal.",
     ],
-    resolvesWhen: "Early-payment discounts are being captured each cycle.",
+    resolvesWhen: "SLP-2026-1140 appears in a later GSTR-2B, or the vendor's pattern changes to non-filing.",
   },
 
-  // ── 9. Profit change explained — info ──
+  // ── 6. Supplier name mismatches (engine: GST-ITC-005) — data quality ──
   {
-    code: "PROFIT-001",
-    investigation: "Profit Investigation",
-    category: "financial_health",
+    code: "GST-ITC-005",
+    investigation: "GST Vendor ITC Risk",
+    category: "operations",
     severity: "info",
-    title: "Gross margin down 3.2 points — driven by steel + freight costs",
-    impactRs: null,
-    businessQuestion: "Why did my profit change this month?",
+    title: "2 supplier name mismatches between GL and GSTR-2B",
+    impactRs: 0,
+    businessQuestion: "Is my ledger clean enough to reconcile reliably?",
     conclusion:
-      "Gross margin fell from 31.4% to 28.2%. The change is almost entirely cost-side: steel input cost rose 14% and inward freight 8% versus April, while selling prices held flat. Revenue itself was steady.",
+      "Two suppliers are spelled differently in your ledger than in GSTR-2B. The GSTINs match, so nothing is at risk this month — but every future reconciliation has to work around it, and a name-only match would miss these.",
     evidence: [{
-      description: "Margin bridge — April vs May",
-      columns: ["Driver", "Impact on margin"],
+      description: "Same GSTIN, different supplier name",
+      columns: ["GSTIN", "Name in GL", "Name in GSTR-2B"],
       rows: [
-        ["Steel input cost +14%", "-2.1 pts"],
-        ["Inward freight +8%", "-0.8 pts"],
-        ["Product mix", "-0.3 pts"],
-        ["Selling price", "0.0 pts"],
+        ["27AABCG1234H1Z5", "Gupta Metal", "Gupta Metal Works Pvt Ltd"],
+        ["27AAECS7788L1ZK", "Sharma Packg.", "Sharma Packaging Private Limited"],
       ],
       amountRs: null,
-      confidence: 0.9,
-      references: ["Mehta Steel Industries", "Speedway Logistics Pvt Ltd"],
+      confidence: 1,
+      references: ["27AABCG1234H1Z5", "27AAECS7788L1ZK"],
     }],
     recommendation: {
-      action: "Review steel pricing with Mehta Steel (also flagged for over-concentration) and consider a price revision or surcharge to protect margin.",
-      owner: "Management",
+      action: "Rename these two ledgers in Tally to match the GSTIN registration exactly, and record the GSTIN on the ledger master.",
+      owner: "Accountant",
       priority: "this_month",
-      expectedBenefit: "Recover up to 3 points of gross margin.",
+      expectedBenefit: "Cleaner reconciliation every month; fewer false 'missing invoice' flags.",
       deadline: null,
     },
     verificationSteps: [
-      "Compare per-unit steel cost April vs May from the purchase register.",
-      "Confirm selling prices were unchanged over the period.",
+      "Look up each GSTIN on the GST portal and copy the registered legal name.",
+      "Update the ledger master in Tally and confirm the GSTIN field is filled.",
     ],
-    resolvesWhen: "Gross margin recovers toward the 31% trend, or the new cost base is accepted in pricing.",
+    resolvesWhen: "Both ledger names match the GSTIN registration.",
+  },
+];
+
+// ─── On the roadmap ───────────────────────────────────────────────────────────
+//
+// Investigations we intend to ship but have NOT built. Rendered as a plain
+// "not yet available" list, never as a finding — no fabricated evidence, no
+// rupee figures, nothing that counts toward the report totals. When one of
+// these ships, move it into FINDINGS with real evidence and delete it here.
+export interface RoadmapItem {
+  title:            string;
+  businessQuestion: string;
+  willFind:         string;
+}
+
+export const ROADMAP: RoadmapItem[] = [
+  {
+    title: "Receivables & cash",
+    businessQuestion: "Where is my cash stuck?",
+    willFind: "Debtors aged past their terms, ranked by how much collecting them would move this month's cash position.",
+  },
+  {
+    title: "Expense anomalies",
+    businessQuestion: "Which expenses changed abnormally this month?",
+    willFind: "Expense heads that jumped against their own trailing average, with the vendor and vouchers behind the spike.",
+  },
+  {
+    title: "TDS compliance",
+    businessQuestion: "Did we deduct TDS everywhere it was due?",
+    willFind: "Payments over a section threshold with no TDS entry, and the disallowance exposure that creates.",
+  },
+  {
+    title: "Vendor concentration",
+    businessQuestion: "Am I over-dependent on any single vendor?",
+    willFind: "Purchase share by vendor, and where a single supply disruption would hit production.",
+  },
+  {
+    title: "Working capital & payment terms",
+    businessQuestion: "Where can I save money I'm already entitled to?",
+    willFind: "Early-payment discounts being left on the table, and the payment re-sequencing that captures them.",
+  },
+  {
+    title: "Profit & margin bridge",
+    businessQuestion: "Why did my profit change this month?",
+    willFind: "A margin bridge attributing the movement to input cost, freight, mix and price.",
   },
 ];
 
@@ -461,12 +397,12 @@ export const SAMPLE_REPORT: SampleReport = {
   period: "May 2026",
   snapshotId: "CTX-05-2026-SAMPLE",
   resolvedAt: "2026-06-01T08:00:00+05:30",
-  healthScore: 62,
+  healthScore: 68,
   totalImpactRs: FINDINGS.reduce((s, f) => s + (f.impactRs ?? 0), 0),
   criticalCount: FINDINGS.filter((f) => f.severity === "critical").length,
   warningCount: FINDINGS.filter((f) => f.severity === "warning").length,
   opportunityCount: FINDINGS.filter((f) => f.severity === "opportunity").length,
   executiveSummary:
-    "For May 2026 we found 2 critical issues, 4 warnings and 2 opportunities worth ₹8.5L in total. The most urgent: ₹1,24,500 of Input Tax Credit is at risk because three vendors haven't filed GSTR-1, and a ₹68,000 payment to Mehta Steel appears to be a duplicate. ₹4.7L of receivables are stuck beyond 60 days. On the upside, ₹25,000 of ITC and ₹18,000 of vendor discounts are sitting unclaimed.",
+    "For May 2026 we found 2 critical issues, 1 warning and 1 opportunity, with ₹2,25,000 of input tax credit and cash in play. The most urgent: ₹1,24,020 of ITC is at risk because three vendors haven't filed GSTR-1, and a ₹68,000 payment to Mehta Steel appears to be a duplicate. A ₹8,640 blocked credit has been claimed and needs reversing before the 20th, while ₹4,500 of ITC sits in GSTR-2B unbooked. One further missing invoice is from a habitual late filer and needs no action at all.",
   findings: FINDINGS,
 };
