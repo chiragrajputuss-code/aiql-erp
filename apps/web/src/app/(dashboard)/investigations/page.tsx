@@ -6,7 +6,9 @@ import {
   Search, AlertCircle, AlertTriangle, TrendingUp, Info,
   Loader2, RefreshCw, ChevronDown, ShieldCheck, Clock,
   Lightbulb, Presentation, Printer, ArrowLeft, Download, Building2,
+  MessageSquareText, Copy, Check,
 } from "lucide-react";
+import { buildVendorDrafts, type VendorDraft } from "@/lib/investigations/vendor-drafts";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
@@ -145,6 +147,14 @@ function formatMonthYear(iso: string): string {
   return new Date(iso).toLocaleDateString("en-IN", { month: "long", year: "numeric" });
 }
 
+// run.period is "MM-YYYY" (not an ISO date) — label it for vendor drafts.
+const MONTH_NAMES = ["January","February","March","April","May","June","July","August","September","October","November","December"];
+function periodToLabel(period: string): string {
+  const m = period.match(/^(\d{1,2})-(\d{4})$/);
+  if (!m) return period;
+  return `${MONTH_NAMES[parseInt(m[1], 10) - 1] ?? m[1]} ${m[2]}`;
+}
+
 function formatINR(n: number): string {
   if (n >= 1_00_00_000) return `₹${(n / 1_00_00_000).toFixed(2)} Cr`;
   if (n >= 1_00_000)    return `₹${(n / 1_00_000).toFixed(2)} L`;
@@ -161,9 +171,77 @@ const SEV: Record<Severity, { icon: React.ReactNode; border: string; pill: strin
 
 // ─── Finding card with evidence drill-down ────────────────────────────────────
 
-function FindingCard({ f }: { f: Finding }) {
+// ─── Vendor follow-up drafts ──────────────────────────────────────────────────
+// The finding says "follow up with these vendors" — this hands the CA the
+// message itself, per vendor, copyable or shareable straight into WhatsApp.
+// Deterministic template over the evidence; no AI involved (see vendor-drafts.ts).
+
+function DraftCard({ d }: { d: VendorDraft }) {
+  const [copied, setCopied] = useState(false);
+
+  async function copy() {
+    try {
+      await navigator.clipboard.writeText(d.message);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch { /* clipboard unavailable (http / permissions) — user can still select the text */ }
+  }
+
+  return (
+    <div className="rounded-md bg-white border border-slate-200 p-3">
+      <div className="flex items-center justify-between gap-2 flex-wrap">
+        <p className="text-xs font-semibold text-slate-700">{d.vendor || "Supplier (name not in books)"}</p>
+        <div className="flex items-center gap-2">
+          <button
+            onClick={copy}
+            className="inline-flex items-center gap-1 rounded border border-slate-200 px-2 py-1 text-[11px] font-medium text-slate-600 hover:bg-slate-50"
+          >
+            {copied ? <Check className="h-3 w-3 text-emerald-600" /> : <Copy className="h-3 w-3" />}
+            {copied ? "Copied" : "Copy"}
+          </button>
+          <a
+            href={`https://wa.me/?text=${encodeURIComponent(d.message)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 rounded border border-emerald-200 bg-emerald-50 px-2 py-1 text-[11px] font-medium text-emerald-700 hover:bg-emerald-100"
+          >
+            <MessageSquareText className="h-3 w-3" /> WhatsApp
+          </a>
+        </div>
+      </div>
+      <pre className="mt-2 whitespace-pre-wrap font-sans text-[11px] leading-relaxed text-slate-600 bg-slate-50 border border-slate-100 rounded p-2">{d.message}</pre>
+    </div>
+  );
+}
+
+function VendorFollowUps({ drafts }: { drafts: VendorDraft[] }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="mt-3 ml-8">
+      <button
+        onClick={() => setOpen((o) => !o)}
+        className="flex items-center gap-1.5 text-xs font-medium text-emerald-700 hover:text-emerald-900"
+      >
+        <MessageSquareText className="h-3.5 w-3.5" />
+        Vendor follow-up — {drafts.length} message{drafts.length === 1 ? "" : "s"} ready to send
+        <ChevronDown className={`h-3.5 w-3.5 transition-transform ${open ? "rotate-180" : ""}`} />
+      </button>
+      {open && (
+        <div className="mt-2 space-y-2">
+          {drafts.map((d, i) => <DraftCard key={i} d={d} />)}
+          <p className="text-[10px] text-muted-foreground">
+            Generated from this finding&apos;s evidence — review before sending. No AI involved; the text contains only what the evidence contains.
+          </p>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function FindingCard({ f, clientName, periodLabel }: { f: Finding; clientName?: string; periodLabel?: string }) {
   const [open, setOpen] = useState(false);
   const meta = SEV[f.severity];
+  const drafts = buildVendorDrafts(f, { clientName, periodLabel });
 
   return (
     <div className={`border-l-4 rounded-lg border border-slate-200 ${meta.border}`}>
@@ -203,6 +281,9 @@ function FindingCard({ f }: { f: Finding }) {
             <p className="text-xs text-emerald-700 mt-1.5">✓ {f.recommendation.expectedBenefit}</p>
           </div>
         )}
+
+        {/* Vendor follow-up drafts — only on findings whose action is vendor contact */}
+        {drafts.length > 0 && <VendorFollowUps drafts={drafts} />}
 
         {/* Resolves when */}
         <div className="mt-2 ml-8 text-xs text-muted-foreground">
@@ -701,7 +782,14 @@ export default function InvestigationsPage() {
             </Card>
           ) : (
             <div data-tour="findings-list" className="space-y-2">
-              {run.findings.map((f) => <FindingCard key={f.id} f={f} />)}
+              {run.findings.map((f) => (
+                <FindingCard
+                  key={f.id}
+                  f={f}
+                  clientName={clients.find((c) => c.connectionId === run.connectionId)?.displayName}
+                  periodLabel={periodToLabel(run.period)}
+                />
+              ))}
             </div>
           )}
 

@@ -9,9 +9,17 @@ export default async function GeneralSettingsPage() {
 
   const org = await prisma.organisation.findUnique({
     where: { id: user.orgId },
-    select: { name: true, slug: true, plan: true },
+    select: { name: true, slug: true, plan: true, reportBrandName: true, reportBrandContact: true },
   });
   if (!org) redirect("/login");
 
-  return <GeneralForm name={org.name} slug={org.slug} plan={org.plan} />;
+  return (
+    <GeneralForm
+      name={org.name}
+      slug={org.slug}
+      plan={org.plan}
+      reportBrandName={org.reportBrandName ?? ""}
+      reportBrandContact={org.reportBrandContact ?? ""}
+    />
+  );
 }

@@ -49,10 +49,20 @@ export async function GET(req: NextRequest) {
       orderBy: { startedAt: "desc" },
       include: { findings: { orderBy: { createdAt: "asc" } } },
     }),
-    prisma.organisation.findUnique({ where: { id: user.orgId }, select: { name: true } }),
+    prisma.organisation.findUnique({
+      where:  { id: user.orgId },
+      select: { name: true, reportBrandName: true, reportBrandContact: true },
+    }),
   ]);
 
   if (!run) return NextResponse.json({ error: "No investigation has been run yet." }, { status: 404 });
+
+  // "Prepared for" is the CLIENT (the connection's book), not the firm — the
+  // firm is the preparer. An org-wide legacy run has no connection; the line
+  // is simply omitted then.
+  const client = run.connectionId
+    ? await prisma.erpConnection.findUnique({ where: { id: run.connectionId }, select: { displayName: true } })
+    : null;
 
   // The resolved-value ledger sentence — only once there's something to show
   // (a client's very first run has nothing resolved yet, so the sentence
@@ -80,6 +90,11 @@ export async function GET(req: NextRequest) {
         action:       rec?.action,
         evidenceRows,
         verifyFirst:  verify[0],
+        // Cross-run memory: a carried finding shows how long it has been open.
+        openSince:
+          f.changeStatus === "carried" && f.firstSeenPeriod && f.firstSeenPeriod !== run.period
+            ? periodLabel(f.firstSeenPeriod)
+            : undefined,
       };
     })
     .sort((a, b) => (severityOrder[a.severity] ?? 9) - (severityOrder[b.severity] ?? 9) || (b.impactRs ?? 0) - (a.impactRs ?? 0));
@@ -96,7 +111,9 @@ export async function GET(req: NextRequest) {
     `For ${periodLabel(run.period)}: ${findings.length} finding${findings.length === 1 ? "" : "s"} identified across your books.`;
 
   const pdf = await buildAuditPdf({
-    preparedFor:        org?.name || undefined,
+    preparedBy:         org?.reportBrandName || org?.name || "AcctQAI",
+    preparedByContact:  org?.reportBrandContact || undefined,
+    preparedFor:        client?.displayName || undefined,
     periodLabel:        periodLabel(run.period),
     healthScore:        run.healthScore ?? 0,
     totalAtRiskRs,

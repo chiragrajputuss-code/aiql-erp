@@ -48,9 +48,15 @@ export interface AuditFindingInput {
   action?:      string;   // recommendation → the "Do this"
   evidenceRows?: number;  // count of materialized proof rows
   verifyFirst?: string;   // first verification step
+  openSince?:   string;   // "May 2026" — carried finding's first-seen period
 }
 
 export interface AuditReportInput {
+  // The report is issued under the CA firm's name — that's the whole point of
+  // the deliverable: the client sees their accountant's letterhead, and AcctQAI
+  // appears only in the footer. Falls back to the org name at the call site.
+  preparedBy:         string;
+  preparedByContact?: string;  // one line under the firm name (phone / email)
   preparedFor?:       string;  // client business name (optional)
   periodLabel:        string;  // "May 2026"
   healthScore:        number;
@@ -88,11 +94,17 @@ export function buildAuditPdf(input: AuditReportInput): Promise<Buffer> {
 
     const totalFound = (input.totalAtRiskRs || 0) + (input.totalOpportunityRs || 0);
 
-    // ── Brand header ─────────────────────────────────────────────────────────
+    // ── Firm letterhead ──────────────────────────────────────────────────────
+    // The hero of the header is the CA firm, not us — this document's value to
+    // the firm is that it goes out under their own name. AcctQAI lives in the
+    // footer ("Prepared with AcctQAI").
     doc.rect(0, 0, PAGE.w, 8).fill(COLORS.brand);
-    doc.fillColor(COLORS.brand).font("Helvetica-Bold").fontSize(20).text("AcctQAI", M, 34);
+    const firmSize = input.preparedBy.length > 34 ? 15 : 20;
+    doc.fillColor(COLORS.brand).font("Helvetica-Bold").fontSize(firmSize)
+       .text(input.preparedBy, M, 34, { width: CONTENT_W - 120, lineBreak: false, ellipsis: true });
     doc.fillColor(COLORS.slate400).font("Helvetica").fontSize(9)
-       .text("Financial Health Check", M, 58);
+       .text(input.preparedByContact || "Financial Health Check", M, 58,
+             { width: CONTENT_W - 120, lineBreak: false, ellipsis: true });
     doc.fillColor(COLORS.slate400).font("Helvetica").fontSize(9)
        .text(input.generatedOn, M, 34, { width: CONTENT_W, align: "right" });
 
@@ -198,10 +210,13 @@ export function buildAuditPdf(input: AuditReportInput): Promise<Buffer> {
            .font("Helvetica").text(doThis, { width: innerW });
         iy += doH + 2;
       }
-      // evidence line
+      // evidence line — with the cross-run memory when the finding has been
+      // open across periods ("Open since May 2026"): the one thing no filing
+      // tool in the client's stack remembers.
       const ev = f.evidenceRows ? `${f.evidenceRows} supporting record${f.evidenceRows === 1 ? "" : "s"} attached` : "Evidence attached";
-      doc.fillColor(COLORS.slate400).font("Helvetica").fontSize(7.5)
-         .text(`${f.code}  ·  ${ev}`, innerX, y + blockH - 14);
+      const openNote = f.openSince ? `  ·  Open since ${f.openSince}` : "";
+      doc.fillColor(f.openSince ? COLORS.warning : COLORS.slate400).font("Helvetica").fontSize(7.5)
+         .text(`${f.code}  ·  ${ev}${openNote}`, innerX, y + blockH - 14);
 
       y += blockH + 10;
     }
@@ -213,14 +228,18 @@ export function buildAuditPdf(input: AuditReportInput): Promise<Buffer> {
       // Footer sits below the normal bottom margin; zero the margin so pdfkit
       // does not auto-append a blank page when we write there.
       doc.page.margins.bottom = 0;
-      const fy = PAGE.h - 48;
+      const fy = PAGE.h - 54;
       doc.moveTo(M, fy).lineTo(PAGE.w - M, fy).lineWidth(0.5).stroke(COLORS.slate200);
       doc.fillColor(COLORS.slate400).font("Helvetica").fontSize(7.5)
          .text(
-           "Findings are computed automatically from the books provided and are read-only — AcctQAI never modifies your records. " +
+           "Findings are computed automatically from the books provided and are read-only — your records are never modified. " +
            "Verify each finding against source documents before acting.",
            M, fy + 8, { width: CONTENT_W - 60 },
          );
+      doc.fillColor(COLORS.brand).font("Helvetica-Bold").fontSize(7.5)
+         .text(`Prepared by ${input.preparedBy}`, M, fy + 30, { continued: true })
+         .fillColor(COLORS.slate400).font("Helvetica")
+         .text("  ·  with AcctQAI — acctqai.com", { lineBreak: false });
       doc.fillColor(COLORS.slate400).font("Helvetica").fontSize(8)
          .text(`Page ${i + 1} of ${range.count}`, PAGE.w - M - 60, fy + 8, { width: 60, align: "right" });
     }

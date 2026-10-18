@@ -14,6 +14,10 @@ const schema = z.object({
   llmProvider: z.enum(["AIQL_MANAGED", "AZURE_OPENAI", "OPENAI", "GEMINI", "GROQ", "OLLAMA"]).optional(),
   llmApiKey: z.string().optional(),
   llmModel: z.string().optional(),
+  // Client-report branding. An empty string clears the field back to the
+  // default (org name / no contact line) — the UI has no other way to "unset".
+  reportBrandName: z.string().max(80).optional(),
+  reportBrandContact: z.string().max(120).optional(),
 });
 
 export async function PATCH(req: NextRequest) {
@@ -27,7 +31,11 @@ export async function PATCH(req: NextRequest) {
     return NextResponse.json({ error: parsed.error.flatten().fieldErrors }, { status: 400 });
   }
 
-  const { slug, ...rest } = parsed.data;
+  const { slug, reportBrandName, reportBrandContact, ...rest } = parsed.data;
+  const branding = {
+    ...(reportBrandName !== undefined ? { reportBrandName: reportBrandName.trim() || null } : {}),
+    ...(reportBrandContact !== undefined ? { reportBrandContact: reportBrandContact.trim() || null } : {}),
+  };
 
   if (slug) {
     const conflict = await prisma.organisation.findFirst({
@@ -40,8 +48,8 @@ export async function PATCH(req: NextRequest) {
 
   const org = await prisma.organisation.update({
     where: { id: user.orgId },
-    data: { ...(slug ? { slug } : {}), ...rest },
-    select: { id: true, name: true, slug: true, plan: true, llmProvider: true, llmModel: true },
+    data: { ...(slug ? { slug } : {}), ...branding, ...rest },
+    select: { id: true, name: true, slug: true, plan: true, llmProvider: true, llmModel: true, reportBrandName: true, reportBrandContact: true },
   });
 
   return NextResponse.json(org);

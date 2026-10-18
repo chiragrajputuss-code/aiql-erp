@@ -188,6 +188,11 @@ model Organisation {
   llmApiKey    String?
   llmModel     String?
 
+  // Client-report branding — how the firm appears on the client-facing
+  // Health Check PDF ("Prepared by"). Null = fall back to the org name.
+  reportBrandName    String?
+  reportBrandContact String?   // one line: phone / email shown under the firm name
+
   // Notifications
   notifyEmail     Boolean @default(true)
   notifyWhatsApp  Boolean @default(false)
