@@ -1,0 +1,1297 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>AcctQAI — CA Outreach Playbook</title>
+<style>
+  @page { size: A4; margin: 14mm 14mm 13mm 14mm; }
+
+  :root {
+    --navy: #1B3A5C;
+    --blue: #2563eb;
+    --ink: #1e293b;
+    --muted: #64748b;
+    --line: #e2e8f0;
+    --red: #b91c1c;
+    --redbg: #fef2f2;
+    --green: #047857;
+    --greenbg: #ecfdf5;
+    --amber: #b45309;
+    --amberbg: #fffbeb;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    font-size: 9.3pt;
+    line-height: 1.42;
+    margin: 0;
+  }
+
+  h1, h2, h3, h4 { color: var(--navy); margin: 0; font-weight: 700; }
+  h2 { font-size: 15pt; margin: 0 0 2mm 0; letter-spacing: -0.2pt; }
+  h3 { font-size: 11pt; margin: 4.5mm 0 1.5mm 0; }
+  h4 { font-size: 9.5pt; margin: 2.5mm 0 1mm 0; color: var(--ink); }
+  p { margin: 0 0 2.2mm 0; }
+  ul, ol { margin: 0 0 2.2mm 0; padding-left: 4.5mm; }
+  li { margin-bottom: 0.7mm; }
+  strong { color: var(--navy); }
+
+  .page { page-break-after: always; }
+  .page:last-child { page-break-after: auto; }
+  .nobreak { page-break-inside: avoid; }
+
+  /* ---- Cover ---- */
+  .cover {
+    height: 250mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .logo {
+    display: inline-block;
+    background: var(--navy);
+    color: #fff;
+    font-weight: 700;
+    font-size: 13pt;
+    padding: 3mm 5mm;
+    border-radius: 3mm;
+    letter-spacing: 0.5pt;
+  }
+  .cover h1 { font-size: 30pt; line-height: 1.15; margin: 12mm 0 0 0; letter-spacing: -0.8pt; }
+  .cover .sub { font-size: 13pt; color: var(--muted); margin-top: 5mm; max-width: 135mm; line-height: 1.5; }
+  .cover .meta { margin-top: 18mm; font-size: 9.5pt; color: var(--muted); border-top: 1.5pt solid var(--navy); padding-top: 4mm; width: 95mm; }
+  .cover .meta b { color: var(--navy); }
+
+  /* ---- Section head ---- */
+  .sechead {
+    border-bottom: 2pt solid var(--navy);
+    padding-bottom: 1.8mm;
+    margin-bottom: 3.5mm;
+  }
+  .sechead .kicker {
+    font-size: 8pt; letter-spacing: 1.2pt; text-transform: uppercase;
+    color: var(--blue); font-weight: 700; display: block; margin-bottom: 1.5mm;
+  }
+
+  /* ---- Script block ---- */
+  .script {
+    border-left: 3.5pt solid var(--navy);
+    background: #f8fafc;
+    padding: 2.6mm 3.4mm;
+    margin: 0 0 2.8mm 0;
+    font-size: 8.9pt;
+    line-height: 1.46;
+    page-break-inside: avoid;
+  }
+  .script .lbl {
+    font-size: 7.5pt; letter-spacing: 1pt; text-transform: uppercase;
+    color: var(--muted); font-weight: 700; display: block; margin-bottom: 1.5mm;
+  }
+  .script p { margin: 0 0 1.8mm 0; }
+  .script p:last-child { margin-bottom: 0; }
+
+  /* ---- Callouts ---- */
+  .warn, .good, .note {
+    padding: 2.2mm 3mm; margin: 0 0 2.8mm 0; border-radius: 1.5mm;
+    font-size: 8.8pt; page-break-inside: avoid;
+  }
+  .warn { background: var(--redbg); border-left: 3pt solid var(--red); }
+  .warn b { color: var(--red); }
+  .good { background: var(--greenbg); border-left: 3pt solid var(--green); }
+  .good b { color: var(--green); }
+  .note { background: var(--amberbg); border-left: 3pt solid var(--amber); }
+  .note b { color: var(--amber); }
+  .warn p, .good p, .note p { margin: 0 0 2mm 0; }
+  .warn p:last-child, .good p:last-child, .note p:last-child { margin-bottom: 0; }
+
+  /* ---- Tables ---- */
+  table { width: 100%; border-collapse: collapse; margin: 0 0 2.8mm 0; font-size: 8.6pt; }
+  tr { page-break-inside: avoid; }
+  th {
+    background: var(--navy); color: #fff; text-align: left;
+    padding: 1.5mm 2.2mm; font-weight: 600; font-size: 8.3pt;
+  }
+  td { padding: 1.5mm 2.2mm; border-bottom: 0.5pt solid var(--line); vertical-align: top; }
+  tr:nth-child(even) td { background: #f8fafc; }
+  td.term { font-weight: 700; color: var(--navy); white-space: nowrap; }
+
+  /* ---- Tool card header ---- */
+  .toolbar {
+    background: var(--navy); color: #fff; padding: 2.2mm 3mm;
+    border-radius: 1.5mm 1.5mm 0 0; margin-bottom: 0;
+  }
+  .toolbar h3 { color: #fff; margin: 0; font-size: 11.5pt; }
+  .toolbar .tag { font-size: 8.5pt; opacity: 0.85; display: block; margin-top: 0.8mm; }
+  .toolbody {
+    border: 0.75pt solid var(--line); border-top: 0;
+    padding: 2.8mm 3mm 0.5mm 3mm; margin-bottom: 4mm;
+  }
+
+  .twocol { display: flex; gap: 5mm; }
+  .twocol > div { flex: 1; }
+
+  .pill {
+    display: inline-block; background: #eff6ff; color: var(--blue);
+    border: 0.5pt solid #bfdbfe; border-radius: 10mm;
+    padding: 0.8mm 2.5mm; font-size: 8pt; font-weight: 600; margin-right: 1.5mm;
+  }
+
+  .hi { font-size: 10.2pt; color: var(--navy); font-weight: 700; line-height: 1.45; }
+  .lead { font-size: 9.8pt; color: var(--muted); line-height: 1.45; margin-bottom: 3.5mm; }
+  .small { font-size: 8.3pt; color: var(--muted); }
+  .num {
+    display: inline-block; width: 6mm; height: 6mm; background: var(--navy);
+    color: #fff; border-radius: 50%; text-align: center; line-height: 6mm;
+    font-size: 8.5pt; font-weight: 700; margin-right: 2mm;
+  }
+  .step { margin-bottom: 2mm; page-break-inside: avoid; }
+  .route { border: 0.75pt solid var(--line); border-left: 3pt solid var(--navy);
+    background: #f8fafc; padding: 3mm 3.5mm; font-size: 9pt; line-height: 1.9; }
+  .route b { color: var(--navy); }
+  .route span { white-space: nowrap; }
+  .foot { margin-top: 8mm; padding-top: 3mm; border-top: 0.5pt solid var(--line); font-size: 8pt; color: var(--muted); }
+</style>
+</head>
+<body>
+
+<!-- ================= COVER ================= -->
+<div class="page cover">
+  <div><span class="logo">AcctQAI</span></div>
+  <h1>CA Outreach<br>Playbook</h1>
+  <div class="sub">
+    A field guide for the marketing team. Written for people who have never
+    worked in accounting or tax — every term is explained before it is used.
+  </div>
+  <div class="meta">
+    <b>Version</b> 1.1 &nbsp;·&nbsp; <b>Date</b> 18 October 2026<br>
+    <b>Owner</b> Chirag Rajput &nbsp;·&nbsp; <b>Internal use only</b>
+  </div>
+</div>
+
+<!-- ================= 1. READ THIS FIRST ================= -->
+<div class="page">
+  <div class="sechead">
+    <span class="kicker">Section 1</span>
+    <h2>Read this first</h2>
+  </div>
+
+  <p class="lead">
+    You'll be speaking to Chartered Accountants about a tax problem. You don't
+    need to be an expert — just this one idea, and knowing when to hand over.
+  </p>
+
+  <h3>The one idea the whole product rests on</h3>
+
+  <p>
+    When an Indian business buys something, it pays GST (a tax) on that purchase.
+    It is allowed to deduct that tax from the tax it later owes on its own sales.
+    That deduction is called <strong>Input Tax Credit</strong>, or <strong>ITC</strong>.
+    It is real money — often lakhs of rupees a month.
+  </p>
+
+  <p>
+    But there is a catch, and the catch is the entire business opportunity:
+  </p>
+
+  <div class="good nobreak">
+    <p class="hi">You only get that credit if your supplier reports the sale to the government.</p>
+    <p>
+      If your supplier forgets, files late, or never files at all, you lose money
+      you have already paid out. You did nothing wrong. You still lose.
+    </p>
+  </div>
+
+  <p>
+    Every month the government publishes a statement for each business called
+    <strong>GSTR-2B</strong>. It lists everything that business's suppliers
+    reported selling to them. The accountant's job is to compare that government
+    statement against the company's own books, line by line, and chase down every
+    difference before the filing deadline.
+  </p>
+
+  <p>
+    A CA in practice does this for anywhere between 20 and 100 client companies,
+    <strong>every single month</strong> — tedious, deadline-driven, and exactly
+    where money quietly leaks.
+  </p>
+
+  <h3>What AcctQAI does, in one sentence</h3>
+
+  <div class="script nobreak">
+    <span class="lbl">Say it like this</span>
+    <p>
+      You upload a client's accounting records and their GSTR-2B, and it gives
+      you back a report telling you which differences actually cost money, which
+      ones you can safely ignore, and what to do about each one — with the exact
+      transaction rows shown underneath every finding.
+    </p>
+  </div>
+
+  <h3>The six things it finds today</h3>
+
+  <p class="small" style="margin-bottom:3mm">
+    These six, and only these six. Everything else is on the roadmap and must be
+    described as not built yet. This matters — see Section 8.
+  </p>
+
+  <table>
+    <tr><th style="width:38%">The finding</th><th>Why a CA cares</th></tr>
+    <tr>
+      <td class="term">Invoice missing from 2B</td>
+      <td>The supplier hasn't reported the sale — the credit can be reversed, with interest.</td>
+    </tr>
+    <tr>
+      <td class="term">Missing, but the supplier always files late</td>
+      <td>Don't chase, don't reject — saves calls and prevents a costly mistake.</td>
+    </tr>
+    <tr>
+      <td class="term">Credit claimed that the law does not allow</td>
+      <td>Claiming credit the law blocks (company cars, say) means repaying with interest.</td>
+    </tr>
+    <tr>
+      <td class="term">Credit available but never claimed</td>
+      <td>Free money the client is entitled to and hasn't taken.</td>
+    </tr>
+    <tr>
+      <td class="term">Supplier name spelled differently</td>
+      <td>Makes every future comparison unreliable — a data-quality warning.</td>
+    </tr>
+    <tr>
+      <td class="term">The same bill paid twice</td>
+      <td>Cash straight out the door — found in the books, nothing to do with tax.</td>
+    </tr>
+  </table>
+
+  <div class="twocol">
+    <div class="note nobreak" style="margin-bottom:0">
+      <p><b>The strongest check is the second one.</b> No other tool looks at a
+      supplier's <em>six-month filing behaviour</em> to decide whether a missing
+      invoice is a real problem or just a slow supplier.</p>
+    </div>
+    <div class="good nobreak" style="margin-bottom:0">
+      <p><b>The strongest pitch is the deliverable.</b> The report is issued under
+      the <b>CA firm's own letterhead</b>, ready to forward to their client (AcctQAI
+      sits only in the footer); the vendor follow-up messages come <b>already
+      written</b>; and it <b>remembers</b> — an unresolved problem says "Open since
+      May 2026" on it. We make the CA look good to their client, every month.</p>
+    </div>
+  </div>
+</div>
+
+<!-- ================= 2. JARGON ================= -->
+<div class="page">
+  <div class="sechead">
+    <span class="kicker">Section 2</span>
+    <h2>Jargon decoder</h2>
+  </div>
+
+  <p class="lead">
+    These words will come up in the first two minutes of any call. You do not
+    need to use them — but you must not freeze when you hear them.
+  </p>
+
+  <table>
+    <tr><th style="width:27%">Term</th><th>What it actually means</th></tr>
+    <tr><td class="term">CA</td><td>Chartered Accountant. A licensed accounting professional, member of the ICAI. Roughly equivalent to a CPA in the US. Our customer.</td></tr>
+    <tr><td class="term">Practice / firm</td><td>A CA who works for many client companies, rather than being employed inside one company. <strong>Only CAs in practice are our customers.</strong></td></tr>
+    <tr><td class="term">GST</td><td>Goods and Services Tax. India's main indirect tax. Businesses charge it on sales and pay it on purchases.</td></tr>
+    <tr><td class="term">ITC</td><td>Input Tax Credit. The GST a business paid on its purchases, which it can deduct from what it owes. <strong>This is the money at stake.</strong></td></tr>
+    <tr><td class="term">GSTR-1</td><td>The monthly return a <em>seller</em> files, listing everything they sold. If your supplier skips this, you lose your credit.</td></tr>
+    <tr><td class="term">GSTR-2B</td><td>A monthly statement the government generates for you, listing what your suppliers said they sold you. <strong>The key document in our product.</strong></td></tr>
+    <tr><td class="term">GSTR-3B</td><td>The monthly summary return where the business actually claims its credit and pays its tax. The deadline is the 20th of each month — this is why CAs are busy mid-month.</td></tr>
+    <tr><td class="term">Reconciliation ("recon")</td><td>Comparing two sets of records to find the differences. The core task our product automates.</td></tr>
+    <tr><td class="term">GL / General Ledger</td><td>The complete record of every accounting transaction a company has made. One of the two files we need.</td></tr>
+    <tr><td class="term">IMS</td><td>Invoice Management System. A newer government system where the business must accept, reject, or hold each supplier invoice. Rejecting a genuine one is an expensive mistake — which our late-filer check prevents.</td></tr>
+    <tr><td class="term">Blocked credit / 17(5)</td><td>A section of the law listing purchases where credit is <em>not</em> allowed — company cars being the classic example.</td></tr>
+    <tr><td class="term">Voucher</td><td>A single entry in the accounting system. One payment, one invoice. "Voucher-level evidence" means we show the actual entries.</td></tr>
+    <tr><td class="term">Working paper</td><td>The documented evidence a CA keeps to justify their work if questioned. Our reports are designed to drop straight into one — a genuine selling point.</td></tr>
+    <tr><td class="term">GSTIN</td><td>The unique 15-character GST registration number of a business. Like a tax ID.</td></tr>
+    <tr><td class="term">Vendor / Supplier</td><td>The same thing. A business you buy from.</td></tr>
+  </table>
+
+  <div class="warn nobreak">
+    <p><b>If they use a term that is not on this list</b></p>
+    <p>
+      Say so plainly: <em>"Main technical side nahi dekhta, main product team se hoon —
+      ye question main Chirag ko forward kar doon?"</em> Guessing in front of a CA is
+      the fastest way to lose the conversation. Admitting it costs nothing.
+    </p>
+  </div>
+</div>
+
+<!-- ================= 3. WHO ================= -->
+<div class="page">
+  <div class="sechead">
+    <span class="kicker">Section 3</span>
+    <h2>Who to talk to, and who to skip</h2>
+  </div>
+
+  <p class="lead">
+    Not every CA is a prospect. Our product needs two files that only one kind of
+    CA has access to. Qualifying fast saves everyone's time.
+  </p>
+
+  <h3>Target</h3>
+  <ul>
+    <li><strong>CAs in practice who handle GST filings for multiple client companies.</strong> This is the whole target. Ten of these is worth a hundred of anything else.</li>
+    <li>GST practitioners and tax consultants — not full CAs, but they do the same work and often have more clients.</li>
+    <li>Accounting and bookkeeping firms that file GST on behalf of clients.</li>
+    <li>Partners or managers at small and mid-size CA firms (2 to 20 staff) — big enough to feel the pain, small enough to decide quickly.</li>
+  </ul>
+
+  <h3>Skip — but always ask for a referral</h3>
+  <ul>
+    <li><strong>CAs working inside one company</strong> ("in industry"). They have one set of books, not many. Low value to us.</li>
+    <li><strong>Audit-only or income-tax-only practices.</strong> They do not touch GSTR-2B.</li>
+    <li><strong>CA students and freshers.</strong> Large and very visible online, but they do not choose software.</li>
+    <li>Very large firms (Big Four and similar). Long procurement cycles, not our market yet.</li>
+  </ul>
+
+  <div class="good nobreak">
+    <p><b>Nobody is a dead end.</b></p>
+    <p>
+      Every CA knows twenty other CAs. A person who is not a prospect is still a
+      referral. Never end a call without the referral ask in Section 7.
+    </p>
+  </div>
+
+  <h3>The qualifying question — ask this in the first minute</h3>
+
+  <div class="script">
+    <span class="lbl">Hinglish</span>
+    <p>Aap GST filing karte ho clients ke liye? Kitne clients ka, roughly?</p>
+    <span class="lbl" style="margin-top:3mm">English</span>
+    <p>Do you handle GST filings for clients? Roughly how many clients?</p>
+  </div>
+
+  <table>
+    <tr><th style="width:33%">If they say</th><th>Then</th></tr>
+    <tr><td class="term">"Yes, 20+ clients"</td><td>Best case. Go to the tool question in Section 4.</td></tr>
+    <tr><td class="term">"Yes, 5&ndash;10 clients"</td><td>Still good. Same path.</td></tr>
+    <tr><td class="term">"Only 1&ndash;2"</td><td>Weak fit. Be friendly, go straight to the referral ask.</td></tr>
+    <tr><td class="term">"No, I don't do GST"</td><td>Use the script in Section 6.7. Referral first, duplicate-payments second.</td></tr>
+  </table>
+</div>
+
+<!-- ================= 4. OPENING ================= -->
+<div class="page">
+  <div class="sechead">
+    <span class="kicker">Section 4</span>
+    <h2>Opening the conversation</h2>
+  </div>
+
+  <p class="lead">
+    Do not open by describing the product. Open with a question they can answer
+    instantly — it gets them talking and tells you which script to use next.
+  </p>
+
+  <div class="step"><span class="num">1</span><strong>The hook</strong></div>
+  <div class="script">
+    <span class="lbl">Hinglish</span>
+    <p>
+      Ek cheez poochhni thi — jab client ka koi purchase invoice GSTR-2B mein
+      nahi aata, toh aap kaise decide karte ho ki vendor ko chase karna hai
+      ya agle month ka wait karna hai?
+    </p>
+    <span class="lbl" style="margin-top:3mm">English</span>
+    <p>
+      Quick question — when a client's purchase invoice doesn't show up in
+      GSTR-2B, how do you decide whether to chase the supplier or just wait
+      for next month?
+    </p>
+  </div>
+
+  <p class="small">
+    Let them answer fully. Whatever they say is useful information — write it down
+    verbatim and send it to Chirag.
+  </p>
+
+  <div class="step" style="margin-top:6mm"><span class="num">2</span><strong>The twenty-second explanation</strong></div>
+  <div class="script">
+    <span class="lbl">Hinglish</span>
+    <p>
+      Humne CA firms ke liye ek tool banaya hai. Client ka ledger aur GSTR-2B
+      upload karo, aur woh report deta hai — kaunse vendor ke invoice 2B mein
+      missing hain aur kitna ITC risk pe hai, kaunse sirf habitual late filer
+      hain jinko chase karne ki zaroorat nahi, aur ledger mein koi duplicate
+      payment. Har finding ke saath actual voucher rows dikhte hain, aur final
+      report aapke firm ke naam se banti hai — client ko seedha forward kar
+      sakte ho.
+    </p>
+    <span class="lbl" style="margin-top:3mm">English</span>
+    <p>
+      We've built a tool for CA firms. You upload a client's ledger and their
+      GSTR-2B, and it gives you back a report — which suppliers' invoices are
+      missing from 2B and how much credit that puts at risk, which ones are just
+      habitual late filers so you don't waste time chasing them, and any duplicate
+      payments in the ledger. Every finding shows the actual transaction rows
+      behind it, and the final report is issued under your firm's own name —
+      ready to forward to your client.
+    </p>
+  </div>
+
+  <p><strong>Then stop.</strong> If they are interested they will ask. If not, you have spent twenty seconds, not three minutes.</p>
+
+  <div class="step" style="margin-top:6mm"><span class="num">3</span><strong>The branching question — this decides everything that follows</strong></div>
+  <div class="script">
+    <span class="lbl">Hinglish</span>
+    <p>Abhi aap 2B reconciliation kaise karte ho — koi software use karte ho, ya Excel mein?</p>
+    <span class="lbl" style="margin-top:3mm">English</span>
+    <p>How do you do the 2B reconciliation at the moment — some software, or in Excel?</p>
+  </div>
+
+  <p>Their answer sends you to one of the seven sections that follow.</p>
+
+  <div class="route">
+    <span>Tally &rarr; <b>6.1</b></span> &nbsp;&middot;&nbsp;
+    <span>Zoho Books &rarr; <b>6.2</b></span> &nbsp;&middot;&nbsp;
+    <span>ClearTax / Clear &rarr; <b>6.3</b></span> &nbsp;&middot;&nbsp;
+    <span>Excel or manual &rarr; <b>6.4</b></span> &nbsp;&middot;&nbsp;
+    <span>Any other software &rarr; <b>6.5</b></span> &nbsp;&middot;&nbsp;
+    <span>GST portal directly &rarr; <b>6.6</b></span> &nbsp;&middot;&nbsp;
+    <span>"We don't do GST" &rarr; <b>6.7</b></span>
+  </div>
+</div>
+
+<!-- ================= 5. GROUND RULE ================= -->
+<div class="page">
+  <div class="sechead">
+    <span class="kicker">Section 5</span>
+    <h2>The one rule for every tool conversation</h2>
+  </div>
+
+  <div class="warn nobreak" style="font-size:10.5pt">
+    <p class="hi" style="color:var(--red)">Never tell a CA what their current software cannot do.</p>
+    <p>
+      You do not know which version they have, which plan they pay for, or what
+      was added last quarter. If you claim Tally or ClearTax "can't do X" and
+      they know it can, the conversation is over and you have damaged the brand.
+    </p>
+    <p style="margin-top:2mm"><b>Ask instead.</b> It is more respectful, it gets better information, and it is the thing we actually want from these calls.</p>
+  </div>
+
+  <h3>The move that works with every tool</h3>
+
+  <div class="script">
+    <span class="lbl">Hinglish</span>
+    <p>
+      Aap [tool] use karte ho aur main nahi — toh aap hi behtar bata sakte ho.
+      Usme ye wala check hota hai kya: ki jo invoice missing hai, woh vendor
+      pichhle 6 mahine se late file kar raha hai ya genuinely gayab hai?
+    </p>
+    <span class="lbl" style="margin-top:3mm">English</span>
+    <p>
+      You use [tool] and I don't, so you'd know better than me. Does it do this
+      particular check — whether a missing invoice is from a supplier who's been
+      filing late for the last six months, versus one that's genuinely gone?
+    </p>
+  </div>
+
+  <div class="good nobreak">
+    <p><b>Why this works</b></p>
+    <p>
+      If they say no, they have just told themselves we are different — far more
+      persuasive than you telling them. If they say yes, you have learned something
+      genuinely valuable about a competitor. <strong>Write the answer down either way
+      and send it to Chirag.</strong> That information is worth as much as a signup.
+    </p>
+  </div>
+
+  <h3>What we are actually asking for</h3>
+
+  <p>
+    We are <strong>not</strong> asking them to switch tools. We are not asking them to
+    buy anything. We are asking them to look at a two-minute sample and tell us
+    where it falls short. Keep saying this — it lowers their defences and it
+    happens to be true.
+  </p>
+
+  <div class="script">
+    <span class="lbl">The frame, in one line</span>
+    <p>
+      Main aapko kuch bechne nahi aaya — product abhi free hai. Mujhe practising
+      CA ki honest raay chahiye ki ye kaam ka hai ya nahi.
+    </p>
+  </div>
+</div>
+
+<!-- ================= 6.1 TALLY ================= -->
+<div class="page">
+  <div class="sechead">
+    <span class="kicker">Section 6.1</span>
+    <h2>If they use Tally</h2>
+  </div>
+
+  <div class="toolbar">
+    <h3>TallyPrime</h3>
+    <span class="tag">The most widely used accounting software in Indian small business. Most of their clients will be on it.</span>
+  </div>
+  <div class="toolbody">
+    <h4>What it is, in plain English</h4>
+    <p>
+      Desktop accounting software that has been the default in India for decades.
+      It handles the full books — sales, purchases, payments, ledgers — and recent
+      versions also help prepare and file GST returns, including comparing purchases
+      against GSTR-2B.
+    </p>
+
+    <h4>Where we fit</h4>
+    <p>
+      Tally shows the CA <em>what</em> is different between the books and the
+      government statement. We start where that output ends: which of those
+      differences actually costs money, which are harmless, and what to do about
+      each — plus a check on the payments side that has nothing to do with GST.
+    </p>
+
+    <p>
+      <span class="pill">Our advantage</span> A Tally export is our native input.
+      No setup, no integration project, no IT involvement. They export the ledger
+      the way they already do and upload it.
+    </p>
+  </div>
+
+  <div class="script">
+    <span class="lbl">Script — Hinglish</span>
+    <p>
+      Achha, Tally. Toh data already sahi shape mein hai — humara tool Tally ka
+      GL export seedha padh leta hai, koi mapping ya setup nahi chahiye.
+    </p>
+    <p>
+      Tally aapko bata deta hai ki kya match nahi ho raha. Hum uske aage ka kaam
+      karte hain — un differences ko priority dete hain. Jaise: ye teen invoice
+      missing hain aur inka vendor hamesha time pe file karta hai, toh ye actually
+      risk hai. Aur ye ek missing hai lekin vendor 6 mein se 5 baar late filer
+      hai — isko chase mat karo, IMS mein reject bhi mat karo, agle month aa jayega.
+    </p>
+    <p>
+      Plus hum ledger mein duplicate payments bhi check karte hain — same invoice
+      do baar pay ho gaya ho toh.
+    </p>
+    <p>
+      Aap bataiye — Tally mein vendor ki filing history wala view milta hai kya?
+      Main genuinely jaanna chahta hoon.
+    </p>
+  </div>
+
+  <div class="script">
+    <span class="lbl">Script — English</span>
+    <p>
+      Tally — good, that means the data is already in the right shape. Our tool
+      reads a Tally ledger export directly, no mapping or setup needed.
+    </p>
+    <p>
+      Tally tells you what doesn't match. We pick up where that leaves off and
+      rank those differences: these three invoices are missing and their suppliers
+      always file on time, so that's genuine risk. This one is missing but the
+      supplier has filed late five months out of six — don't chase it, don't reject
+      it in IMS, it'll arrive next month.
+    </p>
+    <p>
+      We also scan the ledger for duplicate payments — the same bill paid twice.
+    </p>
+    <p>
+      Tell me though — does Tally give you a view of a supplier's filing history?
+      I'd genuinely like to know.
+    </p>
+  </div>
+
+  <div class="warn nobreak">
+    <p><b>Do not say</b> that Tally has no GSTR-2B reconciliation. It does. Do not
+    say we "integrate with Tally" or "sync with Tally" — we read an exported file.
+    Live sync is on the roadmap and not built.</p>
+  </div>
+</div>
+
+<!-- ================= 6.2 ZOHO ================= -->
+<div class="page">
+  <div class="sechead">
+    <span class="kicker">Section 6.2</span>
+    <h2>If they use Zoho Books</h2>
+  </div>
+
+  <div class="toolbar">
+    <h3>Zoho Books</h3>
+    <span class="tag">Cloud accounting software. Popular with newer businesses, startups and younger CA practices.</span>
+  </div>
+  <div class="toolbody">
+    <h4>What it is, in plain English</h4>
+    <p>
+      Online accounting software, so the CA can log in from anywhere rather than
+      sitting at the client's computer. It covers the books and GST filing, and
+      has a portal that lets an accountant manage several client companies from
+      one login.
+    </p>
+
+    <h4>Where we fit</h4>
+    <p>
+      Same as Tally — we are the judgment layer on top of the matching, plus the
+      payments check. One extra angle worth using: most firms have a <em>mix</em>
+      of clients, some on Tally, some on Zoho, some on neither. We take an export
+      from any of them, so the firm gets one consistent report across every client
+      instead of a different screen per software.
+    </p>
+  </div>
+
+  <div class="script">
+    <span class="lbl">Script — Hinglish</span>
+    <p>
+      Zoho — theek hai. Ek cheez jo shayad kaam ki ho: aapke saare clients Zoho
+      pe nahi honge na? Kuch Tally pe honge, kuch Excel pe.
+    </p>
+    <p>
+      Humara tool kisi bhi system ka export le leta hai, toh poore firm ke liye
+      ek hi format mein report banti hai — har client ke liye alag software mein
+      ghusne ki zaroorat nahi.
+    </p>
+    <p>
+      Aur report mein sirf mismatch nahi hota — har difference ke saath ye hota
+      hai ki kitna paisa risk pe hai, kya karna hai, aur kaunse case mein kuch
+      karne ki zaroorat hi nahi kyunki vendor hamesha late file karta hai.
+    </p>
+  </div>
+
+  <div class="script">
+    <span class="lbl">Script — English</span>
+    <p>
+      Zoho, got it. One thing that might be useful: not all your clients will be
+      on Zoho, right? Some on Tally, some probably still in Excel.
+    </p>
+    <p>
+      Our tool takes an export from any of them, so you get one report format
+      across the whole firm instead of a different screen per client.
+    </p>
+    <p>
+      And the report isn't just a list of mismatches — each difference comes with
+      how much money is at risk, what to do about it, and which ones need nothing
+      at all because the supplier is simply a habitual late filer.
+    </p>
+  </div>
+
+  <div class="warn nobreak">
+    <p><b>Do not say</b> Zoho lacks GST reconciliation. It has it. The honest angle
+    here is the mixed-client view and the prioritisation, not a missing feature.</p>
+  </div>
+</div>
+
+<!-- ================= 6.3 CLEARTAX ================= -->
+<div class="page">
+  <div class="sechead">
+    <span class="kicker">Section 6.3</span>
+    <h2>If they use ClearTax (Clear)</h2>
+  </div>
+
+  <div class="toolbar">
+    <h3>Clear &nbsp;/&nbsp; ClearTax</h3>
+    <span class="tag">The largest dedicated GST compliance platform in India. Our most serious competitor — treat it with respect.</span>
+  </div>
+  <div class="toolbody">
+    <h4>What it is, in plain English</h4>
+    <p>
+      A specialist platform built purely for tax compliance at scale. CA firms use
+      it to file GST returns for many clients at once, run large reconciliations,
+      and chase suppliers. It is a mature, well-funded, genuinely good product,
+      and firms pay real money for it.
+    </p>
+
+    <div class="note nobreak" style="margin-top:3mm">
+      <p><b>This is the conversation to be most careful in.</b></p>
+      <p>
+        A CA paying for Clear has already decided this problem is worth money.
+        That is good news — they have budget and they feel the pain. But they
+        also know the category well, so any exaggeration will be caught immediately.
+      </p>
+    </div>
+
+    <h4>Where we fit — honestly</h4>
+    <p>
+      We are not a filing tool. We do not file returns and we are not trying to
+      replace Clear. We are an investigation layer that produces a prioritised
+      report with evidence and a recommended action per finding, and we also look
+      at the payments side of the ledger, which a GST platform has no reason to
+      touch. And we are free through 2027.
+    </p>
+  </div>
+
+  <div class="script">
+    <span class="lbl">Script — Hinglish</span>
+    <p>
+      Clear toh solid hai, filing ke liye. Main uske against nahi keh raha —
+      hum filing karte hi nahi.
+    </p>
+    <p>
+      Hum ek alag cheez karte hain: reconciliation ke baad jo differences bachte
+      hain, unko priority aur judgment dete hain. Kaunsa actually risk hai,
+      kaunsa ignore kar sakte ho, kitna paisa involved hai, aur next step kya hai —
+      evidence rows ke saath, taaki working paper mein seedha ja sake.
+    </p>
+    <p>
+      Aur ek cheez jo GST platform dekhta hi nahi: ledger mein duplicate payments.
+      Woh tax ka issue nahi, cash ka hai.
+    </p>
+    <p>
+      Lekin sach kahun toh aap Clear use karte ho, main nahi. Aap hi bata sakte ho
+      ki ye overlap hai ya genuinely alag. Isiliye toh poochh raha hoon.
+    </p>
+  </div>
+
+  <div class="script">
+    <span class="lbl">Script — English</span>
+    <p>
+      Clear is solid for filing — I'm not going to argue against it. We don't
+      file returns at all.
+    </p>
+    <p>
+      We do a different job: once the reconciliation is done, we apply judgment to
+      what's left. Which differences are genuine risk, which you can safely ignore,
+      how much money is involved, and what to do next — with the evidence rows
+      attached so it goes straight into a working paper.
+    </p>
+    <p>
+      And one thing a GST platform has no reason to look at: duplicate payments in
+      the ledger. That's a cash problem, not a tax problem.
+    </p>
+    <p>
+      But honestly — you use Clear and I don't. You're better placed to tell me
+      whether this overlaps or is genuinely different. That's really why I'm asking.
+    </p>
+  </div>
+
+  <div class="warn nobreak">
+    <p><b>Absolutely do not</b> list features you think Clear is missing. You do not
+    know their plan or tier. If they ask you to compare directly, say:
+    <em>"Main aapko galat nahi batana chahta — Chirag se connect karwa doon, woh
+    detail mein bata denge."</em> Then hand it over.</p>
+  </div>
+</div>
+
+<!-- ================= 6.4 EXCEL ================= -->
+<div class="page">
+  <div class="sechead">
+    <span class="kicker">Section 6.4</span>
+    <h2>If they use Excel or do it manually</h2>
+  </div>
+
+  <div class="toolbar">
+    <h3>Excel &nbsp;/&nbsp; manual</h3>
+    <span class="tag">Our best segment. No incumbent to displace, highest pain, fastest decision.</span>
+  </div>
+  <div class="toolbody">
+    <h4>What this actually looks like</h4>
+    <p>
+      A junior member of staff downloads the GSTR-2B file from the government
+      portal, opens the client's purchase records in Excel, and matches the two
+      lists by hand or with a lookup formula. Then they email suppliers about the
+      gaps. Then they do it again for the next client. And the next.
+    </p>
+
+    <div class="good nobreak" style="margin-top:3mm">
+      <p><b>Lead with time, not features.</b></p>
+      <p>
+        This person does not need convincing that there is a problem. They need to
+        hear a number. Ask how long one client takes, then let them do the
+        multiplication out loud.
+      </p>
+    </div>
+  </div>
+
+  <div class="script">
+    <span class="lbl">The question to ask first — Hinglish</span>
+    <p>Ek client ka 2B recon mein roughly kitna time lag jaata hai? Aur month mein kitne clients?</p>
+    <span class="lbl" style="margin-top:3mm">English</span>
+    <p>Roughly how long does one client's 2B reconciliation take? And how many clients a month?</p>
+  </div>
+
+  <p class="small">
+    Typical answers are one to four hours per client. Let them multiply it themselves —
+    do not do it for them, it sounds like a sales tactic. Write the number down for Chirag.
+  </p>
+
+  <div class="script">
+    <span class="lbl">Script — Hinglish</span>
+    <p>
+      Haan, ye wahi kaam hai jo humne automate kiya hai. Ledger aur 2B upload
+      karo, report minute bhar mein aa jaati hai.
+    </p>
+    <p>
+      Aur sirf matching nahi — report ye bhi batati hai ki kaunsa missing invoice
+      actually risk hai aur kaunsa sirf late filer hai jiska chase karna waste
+      hai. Excel mein woh judgment nahi aata, woh experience se aata hai —
+      humne usko rules mein daal diya hai.
+    </p>
+    <p>
+      Har finding ke neeche actual rows dikhte hain, toh working paper mein
+      seedha attach kar sakte ho.
+    </p>
+  </div>
+
+  <div class="script">
+    <span class="lbl">Script — English</span>
+    <p>
+      That's exactly the job we've automated. Upload the ledger and the 2B, and
+      the report comes back in about a minute.
+    </p>
+    <p>
+      And it's not just matching — the report also tells you which missing invoice
+      is genuine risk and which is just a late filer not worth chasing. Excel can't
+      give you that judgment; it normally comes from experience. We've put it into
+      the rules.
+    </p>
+    <p>
+      Every finding shows the actual rows underneath, so you can attach it straight
+      to a working paper.
+    </p>
+  </div>
+</div>
+
+<!-- ================= 6.5 / 6.6 / 6.7 ================= -->
+<div class="page">
+  <div class="sechead">
+    <span class="kicker">Section 6.5</span>
+    <h2>If they use some other software</h2>
+  </div>
+
+  <p class="small" style="margin-bottom:3mm">
+    Names you may hear: Busy, Marg, Vyapar, Cygnet, IRIS, Saral, Webtel, GSTZen,
+    TaxPro, KDK. You are not expected to know any of them. Say so and ask.
+  </p>
+
+  <div class="script">
+    <span class="lbl">Script — Hinglish</span>
+    <p>
+      Honestly, main us tool ko detail mein nahi jaanta. Aap bataiye — usme 2B
+      reconciliation kaisa hai? Kya kaam achha karta hai, aur kahan manually
+      karna padta hai?
+    </p>
+    <p>
+      [Listen. Then:] Jahan manual kaam bachta hai, shayad wahin hum fit hote
+      hain. Hum reconciliation ke baad ka judgment dete hain — kya risk hai, kya
+      ignore kar sakte ho, kitna paisa hai, kya karna hai.
+    </p>
+  </div>
+
+  <div class="good nobreak">
+    <p><b>Admitting you don't know the tool is a strength here.</b> It gives them
+    permission to talk, and what they say next is market research we cannot get
+    any other way. Record it verbatim.</p>
+  </div>
+
+  <div class="sechead" style="margin-top:10mm">
+    <span class="kicker">Section 6.6</span>
+    <h2>If they work directly on the GST portal</h2>
+  </div>
+
+  <p>
+    Smaller practices download the 2B statement from the government website and
+    review it on screen. Functionally identical to the Excel case — use the
+    <strong>6.4</strong> script, and lead with the time question.
+  </p>
+
+  <div class="sechead" style="margin-top:10mm">
+    <span class="kicker">Section 6.7</span>
+    <h2>If they say "we don't do GST"</h2>
+  </div>
+
+  <p>
+    This will happen often. There are two moves, in this order. The referral is the
+    main prize — do not skip it to pitch.
+  </p>
+
+  <div class="script">
+    <span class="lbl">Move 1 — the referral ask (always do this)</span>
+    <p>
+      Koi baat nahi. Aapke jaan-pehchaan mein koi CA hai jo GST filing zyada
+      karta hai? Hum us kaam ke liye tool bana rahe hain aur 2&ndash;3 practising
+      CAs ki honest raay chahiye. Intro mil jaye toh badi help ho jayegi.
+    </p>
+  </div>
+
+  <div class="script">
+    <span class="lbl">Move 2 — only if the conversation is still warm</span>
+    <p>
+      Waise ek cheez jo bina GST ke bhi kaam karti hai — sirf ledger upload karo
+      aur woh duplicate payments pakadti hai, voucher-level evidence ke saath.
+      Audit ya review ke kaam mein aa sakti hai.
+    </p>
+  </div>
+
+  <div class="warn nobreak">
+    <p><b>Do not stack both in one message.</b> Ask for the referral, let them
+    respond, and only then mention the duplicate-payment angle if it still feels
+    natural.</p>
+  </div>
+</div>
+
+<!-- ================= 6.8 / 6.9 ================= -->
+<div class="page">
+  <div class="sechead">
+    <span class="kicker">Section 6.8</span>
+    <h2>If they use all of them together (Tally + Zoho + ClearTax)</h2>
+  </div>
+
+  <p class="small" style="margin-bottom:3mm">
+    A well-tooled firm. They know the category, so any exaggeration gets caught.
+    The whole answer is a reframe: we are not a fourth tool competing with the
+    three — those keep the books and file the returns; we do neither.
+  </p>
+
+  <div class="script">
+    <span class="lbl">Script — Hinglish</span>
+    <p>
+      Sach kahun toh aap kisi ko replace nahi karenge. Tally aur Zoho aapki
+      books hain, Clear aapki filing karta hai — hum na books rakhte hain, na
+      return file karte hain. Hum uske baad wala kaam karte hain.
+    </p>
+    <p>
+      Maan lijiye reconciliation ke baad 40 differences bache. Clear bata dega
+      ki 40 hain. Hum batayenge ki in 40 mein se 8 pe actually paisa risk pe
+      hai, 5 ko chhodo kyunki woh vendor 6 mahine mein 5 baar late file kar
+      chuka hai — IMS mein reject mat karna — aur baaki sirf timing ke hain.
+      Un vendors ke follow-up message bhi likhe-likhaye milte hain, aur final
+      report aapke firm ke naam se client ko jaati hai.
+    </p>
+    <p>
+      Lekin main guess nahi karna chahta — aap Clear use karte ho, main nahi.
+      Kya usme vendor ki 6-mahine ki filing history wala judgment milta hai?
+      Agar milta hai, toh aapko chauthe tool ki zaroorat nahi — aur main wahi
+      sunna chahta hoon.
+    </p>
+  </div>
+
+  <div class="good nobreak">
+    <p><b>End on the concession.</b> A CA paying for three tools has heard every
+    pitch. The one thing they have not heard is a vendor saying "maybe you don't
+    need me." It is disarming, it is true at our stage, and it converts them from
+    a prospect into an advisor — which is what these first hundred conversations
+    are actually for.</p>
+  </div>
+
+  <div class="warn nobreak">
+    <p><b>Do not</b> claim Clear lacks the filing-history judgment (you don't know
+    their tier — ask), <b>do not</b> say we replace anything, and <b>do not</b> lead
+    with price. Free lowers the bar to trying; it is not the reason to try.</p>
+  </div>
+
+  <div class="sechead" style="margin-top:8mm">
+    <span class="kicker">Section 6.9</span>
+    <h2>"Can't we just do this manually?"</h2>
+  </div>
+
+  <p class="small" style="margin-bottom:3mm">
+    The deepest objection, because it is true — everything the tool does, a person
+    with the files open could do. Never argue it's impossible. Ask whether it
+    actually happens.
+  </p>
+
+  <div class="script">
+    <span class="lbl">Script — Hinglish</span>
+    <p>
+      Bilkul ho sakta hai, main ye nahi keh raha ki impossible hai. Par ek cheez
+      poochhta hoon — ek client ke 5 invoice 2B mein missing hain. Un paanch
+      vendors ka pichhle 6 mahine ka 2B nikaal ke dekhte ho ki kaun hamesha late
+      file karta hai? Ya yaad se kaam chala lete ho?
+    </p>
+    <p>
+      Zyadatar log yaad se chalate hain — jo 5-6 parties roz ki hain unka yaad
+      rehta hai, baaki 18 ka nahi. Hum sirf us yaad ko systematic kar dete hain,
+      aur aise banda bhi chala sakta hai jiske paas woh experience nahi hai.
+    </p>
+    <p>
+      Agar aapke 4-5 hi clients hain aur saare vendors aap personally jaante
+      ho — sach mein, aapko iski zaroorat nahi. Main bech nahi raha.
+    </p>
+  </div>
+
+  <div class="note nobreak">
+    <p><b>The arithmetic, if they push back:</b> doing the late-filer check properly
+    by hand means ~30 portal lookups per client per month (5 missing invoices ×
+    6 months of history). At 30 clients that is ~900 lookups a month. Nobody does
+    it — they guess, chase everyone, or chase nobody. The tool replaces a guess,
+    not a process. And the admission at the end ("you don't need this at 4–5
+    clients") is what makes the rest believable — say it.</p>
+  </div>
+</div>
+
+<!-- ================= 7. OBJECTIONS ================= -->
+<div class="page">
+  <div class="sechead">
+    <span class="kicker">Section 7</span>
+    <h2>Objections</h2>
+  </div>
+
+  <h3>"Is this AI? I don't want AI near client data."</h3>
+  <p class="small">The most common objection. CAs are professionally liable for their work and are right to be suspicious. The honest answer is strong — use it in full.</p>
+  <div class="script">
+    <p>
+      Findings AI se nahi aate. Fixed accounting rules se calculate hote hain —
+      same file do baar chalao, same report milegi, rupee tak. AI sirf summary
+      ka ek sentence likhta hai, koi number nahi banata. Aur usse pehle vendor
+      names aur amounts mask ho jaate hain, toh AI ko real data dikhta hi nahi.
+      AI band kar do, report phir bhi banegi.
+    </p>
+  </div>
+
+  <h3>"What about data security?"</h3>
+  <div class="script">
+    <p>
+      Data AWS Mumbai mein rehta hai, har organisation ka alag isolated. Sab
+      read-only hai — books mein kuch change nahi hota. Names, references aur
+      amounts encrypted aur masked hote hain analysis se pehle.
+    </p>
+  </div>
+
+  <h3>"How much does it cost?"</h3>
+  <div class="script">
+    <p>
+      Abhi kuch nahi. 2027 tak founding firms ke liye free hai — jitne client
+      books chaho, poori report, kuch bhi hold nahi. Uske baad pricing aayegi,
+      lekin pehle se batayenge aur founding firms ko preferential terms milenge.
+      Achanak invoice nahi aayega.
+    </p>
+  </div>
+  <div class="warn nobreak">
+    <p><b>Never say "free forever."</b> Say free through 2027. This is a promise the
+    company has made publicly on the website and we must say the same thing everywhere.</p>
+  </div>
+
+  <h3>"Are you a CA?"</h3>
+  <div class="script">
+    <p>
+      Nahi, main marketing side se hoon — product engineering team ne banaya hai.
+      Isiliye toh aapki raay chahiye. Technical GST question ho toh main founder
+      se seedha connect karwa deta hoon.
+    </p>
+  </div>
+  <p class="small">Say this plainly and without apology. Pretending to be an expert in front of a CA fails within two questions.</p>
+
+  <h3>"I don't have time."</h3>
+  <div class="script">
+    <p>
+      Sample report 2 minute ka hai, login bhi nahi chahiye —
+      acctqai.com/sample-report. Dekh lijiye, aur agar kaam ka na lage toh wahi
+      bata dijiye. Woh bhi humare liye useful hai.
+    </p>
+  </div>
+
+  <h3>"Send me details on WhatsApp / email."</h3>
+  <p class="small">Usually a polite brush-off, but take it — then follow up once, three days later. Not twice.</p>
+  <div class="script">
+    <p>
+      Bilkul. Main sirf sample report ka link bhej raha hoon — 2 minute ka hai,
+      koi signup nahi. Agar dekhne ka time mile toh ek line feedback de dijiyega.
+    </p>
+  </div>
+</div>
+
+<!-- ================= 8. HARD RULES ================= -->
+<div class="page">
+  <div class="sechead">
+    <span class="kicker">Section 8</span>
+    <h2>Hard rules — things we never say</h2>
+  </div>
+
+  <p class="lead">
+    The product was recently audited and corrected so that the website only claims
+    what the software genuinely does. That work is worthless if we over-promise on
+    the phone. These are not suggestions.
+  </p>
+
+  <table>
+    <tr><th style="width:47%">Never say</th><th>Say instead</th></tr>
+    <tr>
+      <td>"It analyses receivables / TDS / expenses / vendor concentration / profit margins."</td>
+      <td>Those are on the roadmap and not built. The sample report labels them as such. Mention them only as "coming later."</td>
+    </tr>
+    <tr>
+      <td>"It integrates with Tally" or "syncs with Tally / Zoho."</td>
+      <td>"It reads a Tally or Zoho export." Automatic sync is roadmap, not shipped.</td>
+    </tr>
+    <tr>
+      <td>"AI finds the errors in your books."</td>
+      <td>"Fixed accounting rules find them. AI only writes the summary sentence."</td>
+    </tr>
+    <tr>
+      <td>"It's free forever."</td>
+      <td>"Free for founding firms through 2027."</td>
+    </tr>
+    <tr>
+      <td>"It'll save you two lakh rupees." / quoting figures from the sample.</td>
+      <td>The sample uses fictional data. Always say "in this sample" when pointing at any number on that page.</td>
+    </tr>
+    <tr>
+      <td>"Tally / Clear / Zoho can't do this."</td>
+      <td>"Does yours do this? I'd genuinely like to know."</td>
+    </tr>
+    <tr>
+      <td>Any specific tax advice, section number, or interpretation of the law.</td>
+      <td>"Ye technical question hai — main founder se connect karwa deta hoon."</td>
+    </tr>
+  </table>
+
+  <h3>Hand over to Chirag immediately when</h3>
+  <ul>
+    <li>They ask a GST or accounting question that is not answered in this document.</li>
+    <li>They ask exactly how a calculation works, or cite a section of the law.</li>
+    <li>They ask for a direct feature comparison against ClearTax or any other tool.</li>
+    <li>They ask about an API, an integration, white-labelling, or reselling.</li>
+    <li>They want to negotiate pricing or ask what happens after 2027.</li>
+    <li><strong>They say yes.</strong> Chirag does every first onboarding call personally — see Section 9.</li>
+  </ul>
+
+  <div class="warn nobreak">
+    <p><b>Guessing is the one unrecoverable mistake.</b> A CA will test you, politely,
+    within the first few questions. "I don't know, let me find out" keeps the
+    conversation alive. A confident wrong answer ends it, and they tell other CAs.</p>
+  </div>
+</div>
+
+<!-- ================= 9. CLOSE ================= -->
+<div class="page">
+  <div class="sechead">
+    <span class="kicker">Section 9</span>
+    <h2>Closing, and what counts as success</h2>
+  </div>
+
+  <h3>The close — ask for feedback, never for a signup</h3>
+
+  <div class="script">
+    <span class="lbl">Hinglish</span>
+    <p>
+      Main aapko sign-up karne ke liye nahi bol raha. Ek client ka data chala ke
+      dekhiye aur bataiye kahan galat hai ya kya missing hai. Woh humare liye
+      sabse zyada kaam ka hoga.
+    </p>
+    <span class="lbl" style="margin-top:3mm">English</span>
+    <p>
+      I'm not asking you to sign up. Run it on one client's data and tell me where
+      it's wrong or what's missing. That's genuinely the most useful thing for us.
+    </p>
+  </div>
+
+  <div class="good nobreak">
+    <p><b>If they say yes, say this next — immediately, in the same breath:</b></p>
+    <p>
+      <em>"Kya main ek call set kar doon founder ke saath? Pehla upload woh saath
+      mein karwa denge, 15 minute."</em>
+    </p>
+    <p>
+      CAs who are left to do the first upload alone almost always drop off at the
+      export step. A scheduled call is the difference between a signup and a user.
+    </p>
+  </div>
+
+  <h3>Always end with the referral ask — even on a "no"</h3>
+
+  <div class="script">
+    <p>
+      Aur ek aakhri cheez — aapke jaan-pehchaan mein koi 2 CA hain jo GST filing
+      karte hain aur jinse main baat kar sakoon?
+    </p>
+  </div>
+
+  <h3>What to record after every conversation</h3>
+  <p>Send all of this to Chirag, even from a call that went nowhere:</p>
+  <ol>
+    <li>Name, firm, city, and roughly how many clients they handle.</li>
+    <li><strong>Which tool they use</strong> — the single most valuable field.</li>
+    <li>Their answer to the opening hook: how do they currently decide whether to chase a supplier?</li>
+    <li>If Excel: hours per client, and number of clients.</li>
+    <li>Anything they said their current tool does badly. Verbatim, in their words.</li>
+    <li>Outcome: demo sent / call booked / not interested / referral given.</li>
+  </ol>
+
+  <h3>What success looks like</h3>
+
+  <div class="note nobreak">
+    <p><b>The target is not 100 signups.</b></p>
+    <p>
+      A hundred people who sign up and never upload a file teach us nothing. The
+      goal is <strong>100 real conversations</strong> and <strong>10 CAs who run it
+      on actual client books</strong>. Ten of those is a product. A hundred empty
+      accounts is a vanity number.
+    </p>
+    <p style="margin-top:2mm">
+      A call that ends in a clear "no, because…" is a <em>successful</em> call.
+      Record the "because" and move on.
+    </p>
+  </div>
+</div>
+
+<!-- ================= 10. CHEAT SHEET ================= -->
+<div class="page">
+  <div class="sechead">
+    <span class="kicker">Section 10</span>
+    <h2>One-page cheat sheet</h2>
+  </div>
+  <p class="small" style="margin-bottom:4mm">Print this page and keep it next to you on calls.</p>
+
+  <h3>The product in one line</h3>
+  <div class="script">
+    <p>
+      Client ka ledger aur GSTR-2B upload karo — report batati hai kaunsa ITC
+      risk pe hai, kaunse vendor ko chase karne ki zaroorat nahi, aur koi
+      duplicate payment hua ho toh. Vendor follow-up message likhe-likhaye,
+      aur final report aapke firm ke naam se — client ko forward karne layak.
+    </p>
+  </div>
+
+  <h3>The four questions, in order</h3>
+  <table>
+    <tr><td class="term" style="width:8mm">1</td><td>Jab invoice 2B mein nahi aata, aap chase karte ho ya wait?</td></tr>
+    <tr><td class="term">2</td><td>GST filing karte ho clients ke liye? Kitne clients?</td></tr>
+    <tr><td class="term">3</td><td>2B recon kaise karte ho — software ya Excel?</td></tr>
+    <tr><td class="term">4</td><td>Kya usme vendor ki filing history ka check hai?</td></tr>
+  </table>
+
+  <h3>The six findings</h3>
+  <table>
+    <tr><td>Invoice missing from 2B &rarr; credit at risk</td></tr>
+    <tr><td>Missing but supplier always files late &rarr; don't chase, don't reject</td></tr>
+    <tr><td>Credit claimed that the law doesn't allow</td></tr>
+    <tr><td>Credit available but never claimed</td></tr>
+    <tr><td>Supplier name spelled differently in the two records</td></tr>
+    <tr><td>Same bill paid twice</td></tr>
+  </table>
+
+  <div class="twocol">
+    <div>
+      <h3 style="margin-top:2mm">Always</h3>
+      <ul>
+        <li>Ask what their tool does — never tell them what it can't.</li>
+        <li>Mention the report carries their firm's name, not ours.</li>
+        <li>Say "in this sample" before any rupee figure.</li>
+        <li>Ask for feedback, not a signup.</li>
+        <li>Ask for 2 referrals, even on a no.</li>
+        <li>Offer a call with Chirag for the first upload.</li>
+      </ul>
+    </div>
+    <div>
+      <h3 style="margin-top:2mm">Never</h3>
+      <ul>
+        <li>Claim receivables, TDS or expense analysis.</li>
+        <li>Say "integrates with Tally" — it reads an export.</li>
+        <li>Say "free forever" — say through 2027.</li>
+        <li>Give tax advice or quote a law section.</li>
+        <li>Guess. Hand over instead.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Links</h3>
+  <table>
+    <tr><td class="term">Sample report</td><td>acctqai.com/sample-report &nbsp;<span class="small">(2 minutes, no signup — this is the main thing you send)</span></td></tr>
+    <tr><td class="term">Pricing</td><td>acctqai.com/pricing</td></tr>
+    <tr><td class="term">Sign up</td><td>acctqai.com/signup</td></tr>
+  </table>
+
+  <div class="foot">
+    AcctQAI — CA Outreach Playbook v1.1 · 18 October 2026 · Internal use only.
+    Product claims in this document were verified against the shipped software on
+    the date above. If the product changes, this document must change with it.
+  </div>
+</div>
+
+</body>
+</html>
