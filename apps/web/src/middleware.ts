@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { isHiddenRoute } from "@/lib/hidden-routes";
 
 const SESSION_COOKIE = "auth_session";
 
@@ -40,6 +41,10 @@ export function middleware(request: NextRequest) {
     const loginUrl = new URL("/login", request.url);
     loginUrl.searchParams.set("redirect", pathname);
     return NextResponse.redirect(loginUrl);
+  }
+
+  if (isHiddenRoute(pathname)) {
+    return NextResponse.redirect(new URL("/practice", request.url));
   }
 
   return NextResponse.next();

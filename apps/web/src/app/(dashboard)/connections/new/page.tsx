@@ -100,7 +100,7 @@ function StepType({ onSelect }: { onSelect: (t: WizardStep) => void }) {
       <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
         {[
           { id: "upload" as WizardStep, emoji: "📊", title: "Upload File", sub: "Excel / CSV", time: "~2 min",
-            highlight: true, comingSoon: false, desc: "Upload any spreadsheet — AIQL auto-detects columns" },
+            highlight: true, comingSoon: false, desc: "Upload any spreadsheet — AcctQAI auto-detects columns" },
           { id: "tally" as WizardStep, emoji: "📒", title: "Tally Prime", sub: "Cloud VPS", time: "~5 min",
             highlight: false, comingSoon: true, desc: "Connect to Tally Prime running on cloud server" },
           { id: "zoho" as WizardStep, emoji: "📗", title: "Zoho Books", sub: "OAuth 2.0", time: "~1 min",
@@ -283,9 +283,6 @@ function DocTypeCard({
               <option key={d.value} value={d.value}>{d.icon} {d.label}</option>
             ))}
           </select>
-          {!docDef.chatEnabled && (
-            <p className="text-xs text-amber-600 mt-0.5">AI chat not yet available for this type — coming in v2</p>
-          )}
         </div>
         {confidence > 0 && (
           <span className={`text-xs border rounded-full px-2 py-0.5 ${confidenceColor}`}>
@@ -548,8 +545,8 @@ function StepSuccess({ columns, onDone }: { columns: number; onDone: () => void 
         <CheckCircle2 className="h-8 w-8 text-green-600" />
       </div>
       <h2 className="text-xl font-semibold">Data loaded successfully</h2>
-      <p className="text-muted-foreground text-sm">{columns} canonical columns ready for AI queries</p>
-      <Button onClick={onDone} className="bg-[#1B3A5C] hover:bg-[#1B3A5C]/90 mt-2">Go to Query Studio →</Button>
+      <p className="text-muted-foreground text-sm">{columns} columns read. Upload the other file for the same month if you have not yet, then run the investigation.</p>
+      <Button onClick={onDone} className="bg-[#1B3A5C] hover:bg-[#1B3A5C]/90 mt-2">Go to Investigations →</Button>
     </div>
   );
 }
@@ -584,7 +581,7 @@ function StepZoho({ onBack }: { onBack: () => void }) {
 
 export default function NewConnectionPage() {
   const router = useRouter();
-  const [step, setStep] = useState<WizardStep>("type");
+  const [step, setStep] = useState<WizardStep>("upload");
   const [uploadState, setUploadState] = useState<UploadState | null>(null);
   const [loadedColumns, setLoadedColumns] = useState(0);
 
@@ -597,12 +594,12 @@ export default function NewConnectionPage() {
       <Card className="border-slate-200">
         <CardContent className="pt-6">
           {step === "type"    && <StepType onSelect={(t) => setStep(t)} />}
-          {step === "upload"  && <StepUpload onBack={() => setStep("type")} onNext={(s) => { setUploadState(s); setStep("mapping"); }} />}
+          {step === "upload"  && <StepUpload onBack={() => router.push("/connections")} onNext={(s) => { setUploadState(s); setStep("mapping"); }} />}
           {step === "mapping" && uploadState && (
             <StepMapping state={uploadState} onBack={() => setStep("upload")}
               onConfirm={(cols) => { setLoadedColumns(cols); setStep("success"); }} />
           )}
-          {step === "success" && <StepSuccess columns={loadedColumns} onDone={() => router.push("/query")} />}
+          {step === "success" && <StepSuccess columns={loadedColumns} onDone={() => router.push("/investigations")} />}
           {step === "tally"   && <StepTally onBack={() => setStep("type")} />}
           {step === "zoho"    && <StepZoho onBack={() => setStep("type")} />}
         </CardContent>

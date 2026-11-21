@@ -6,9 +6,6 @@ import { usePathname } from "next/navigation";
 const TABS = [
   { href: "/settings/general", label: "General" },
   { href: "/settings/team", label: "Team" },
-  { href: "/settings/llm", label: "LLM Config" },
-  { href: "/settings/api-keys", label: "API Keys" },
-  { href: "/tokenisation/config", label: "Data Masking" },
 ];
 
 export default function SettingsNav() {

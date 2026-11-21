@@ -47,9 +47,6 @@ export function ConnectionCardActions({ connectionId, displayName, canDelete }: 
         <Button asChild variant="outline" size="sm" className="flex-1 text-xs">
           <Link href={`/connections/${connectionId}`}>View</Link>
         </Button>
-        <Button asChild variant="outline" size="sm" className="flex-1 text-xs">
-          <Link href={`/connections/${connectionId}/schema`}>Schema</Link>
-        </Button>
         {canDelete && (
           <Button
             variant="outline"

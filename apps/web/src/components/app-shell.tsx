@@ -4,23 +4,16 @@ import { useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import {
-  LayoutDashboard,
-  MessageSquare,
-  ClipboardList,
   Plug,
-  BarChart2,
   Settings,
   Menu,
   LogOut,
   ChevronRight,
   Building2,
-  History,
-  BookOpen,
   CreditCard,
   Search,
 } from "lucide-react";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import { NewFeatureBanner } from "@/components/new-feature-banner";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import {
@@ -52,18 +45,17 @@ type NavItem = {
   allowedRoles?: string[];
 };
 
+// Only what AcctQAI sells today. Screens from earlier product ideas (cash
+// dashboard, Query Studio, Close Manager, Knowledge, Usage) are hidden here and
+// redirected in middleware.ts (HIDDEN_ROUTES). To bring one back, add its nav
+// line here and remove its path there.
 const NAV: NavItem[] = [
-  { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
   { href: "/practice", label: "Practice", icon: Building2, allowedRoles: ["ADMIN", "MEMBER"] },
   { href: "/investigations", label: "Investigations", icon: Search, allowedRoles: ["ADMIN", "MEMBER"] },
-  { href: "/query",   label: "Query Studio", icon: MessageSquare, allowedRoles: ["ADMIN", "MEMBER"] },
-  { href: "/history", label: "History",      icon: History,       allowedRoles: ["ADMIN", "MEMBER"] },
-  { href: "/close",   label: "Close Manager", icon: ClipboardList },
   { href: "/connections", label: "Connections", icon: Plug, allowedRoles: ["ADMIN", "MEMBER"] },
-  { href: "/knowledge", label: "Knowledge", icon: BookOpen, allowedRoles: ["ADMIN", "MEMBER"] },
-  { href: "/usage", label: "Usage", icon: BarChart2 },
   { href: "/billing", label: "Billing", icon: CreditCard, allowedRoles: ["ADMIN"] },
-  { href: "/settings/general", label: "Settings", icon: Settings, allowedRoles: ["ADMIN", "MEMBER"] },
+  // Settings pages are ADMIN-gated in settings/layout.tsx; match that here.
+  { href: "/settings/general", label: "Settings", icon: Settings, allowedRoles: ["ADMIN"] },
 ];
 
 function initials(name: string | null, email: string) {
@@ -95,7 +87,7 @@ function SidebarContent({ user, org, onNavigate }: { user: User; org: Org; onNav
         <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-white/20 font-bold text-white">
           A
         </div>
-        <span className="text-lg font-semibold tracking-tight">AIQL</span>
+        <span className="text-lg font-semibold tracking-tight">AcctQAI</span>
       </div>
 
       <Separator className="bg-white/10" />
@@ -130,23 +122,6 @@ function SidebarContent({ user, org, onNavigate }: { user: User; org: Org; onNav
         })}
       </nav>
 
-      <Separator className="bg-white/10" />
-
-      {/* Usage bar */}
-      <div className="px-5 py-4 shrink-0">
-        <div className="flex justify-between text-xs text-white/50 mb-1.5">
-          <span>Queries</span>
-          <span>
-            {org.queriesUsed} / {org.queryLimit}
-          </span>
-        </div>
-        <div className="h-1.5 rounded-full bg-white/10">
-          <div
-            className="h-full rounded-full bg-white/40 transition-all"
-            style={{ width: `${Math.min(100, (org.queriesUsed / org.queryLimit) * 100)}%` }}
-          />
-        </div>
-      </div>
     </div>
   );
 }
@@ -211,13 +186,17 @@ export default function AppShell({
                   </div>
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem asChild>
-                  <Link href="/settings/general" className="cursor-pointer">
-                    <Settings className="mr-2 h-4 w-4" />
-                    Settings
-                  </Link>
-                </DropdownMenuItem>
-                <DropdownMenuSeparator />
+                {user.role === "ADMIN" && (
+                  <>
+                    <DropdownMenuItem asChild>
+                      <Link href="/settings/general" className="cursor-pointer">
+                        <Settings className="mr-2 h-4 w-4" />
+                        Settings
+                      </Link>
+                    </DropdownMenuItem>
+                    <DropdownMenuSeparator />
+                  </>
+                )}
                 <DropdownMenuItem onClick={handleLogout} className="text-destructive focus:text-destructive cursor-pointer">
                   <LogOut className="mr-2 h-4 w-4" />
                   Log out
@@ -227,7 +206,6 @@ export default function AppShell({
           </div>
         </header>
 
-        <NewFeatureBanner />
         {/* Main content */}
         <main className="flex-1 overflow-y-auto p-4 md:p-6">{children}</main>
       </div>

@@ -3,15 +3,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 
-const PLAN_COLORS: Record<string, string> = {
-  FREE: "bg-slate-100 text-slate-700",
-  STARTER: "bg-blue-100 text-blue-700",
-  PROFESSIONAL: "bg-purple-100 text-purple-700",
-  ENTERPRISE: "bg-amber-100 text-amber-700",
-};
 
 type Props = {
   name: string;
@@ -21,7 +14,7 @@ type Props = {
   reportBrandContact: string;
 };
 
-export default function GeneralForm({ name, slug, plan, reportBrandName, reportBrandContact }: Props) {
+export default function GeneralForm({ name, slug, reportBrandName, reportBrandContact }: Props) {
   const [form, setForm] = useState({ name, slug });
   const [brand, setBrand] = useState({ reportBrandName, reportBrandContact });
   const [brandStatus, setBrandStatus] = useState<"idle" | "saving" | "saved" | "error">("idle");
@@ -76,7 +69,6 @@ export default function GeneralForm({ name, slug, plan, reportBrandName, reportB
             <CardTitle className="text-base">Organisation</CardTitle>
             <CardDescription>Your organisation name and URL slug</CardDescription>
           </div>
-          <Badge className={`${PLAN_COLORS[plan] ?? ""} border-0`}>{plan}</Badge>
         </div>
       </CardHeader>
       <CardContent>

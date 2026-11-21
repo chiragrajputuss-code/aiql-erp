@@ -37,7 +37,7 @@ export default async function ConnectionsPage() {
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-2xl font-semibold text-slate-900">Connections</h1>
-          <p className="text-sm text-muted-foreground mt-0.5">Connect your ERP or upload a spreadsheet</p>
+          <p className="text-sm text-muted-foreground mt-0.5">Upload a client's ledger and GSTR-2B</p>
         </div>
         <Button asChild data-tour="add-connection" className="bg-[#1B3A5C] hover:bg-[#1B3A5C]/90 gap-2">
           <Link href="/connections/new"><Plus className="h-4 w-4" />Add connection</Link>
@@ -49,7 +49,7 @@ export default async function ConnectionsPage() {
           <CardContent className="flex flex-col items-center justify-center py-16 gap-3">
             <Plug className="h-10 w-10 text-slate-300" />
             <p className="font-medium text-slate-600">No connections yet</p>
-            <p className="text-sm text-muted-foreground">Upload an Excel/CSV file or connect Tally / Zoho Books</p>
+            <p className="text-sm text-muted-foreground">Upload a ledger export from Tally (Excel or CSV) and the GSTR-2B for the same month</p>
             <Button asChild className="mt-2 bg-[#1B3A5C] hover:bg-[#1B3A5C]/90">
               <Link href="/connections/new">Add your first connection</Link>
             </Button>

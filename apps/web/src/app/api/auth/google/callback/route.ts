@@ -63,7 +63,7 @@ export async function GET(req: NextRequest) {
     const cookie = lucia.createSessionCookie(session.id);
     cookies().set(cookie.name, cookie.value, cookie.attributes);
 
-    return NextResponse.redirect(new URL("/", req.url));
+    return NextResponse.redirect(new URL("/practice", req.url));
   } catch {
     return NextResponse.redirect(new URL("/login?error=oauth_failed", req.url));
   }

@@ -6,7 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { FileSpreadsheet, RefreshCw, AlertCircle, ArrowLeft, Calendar, MessageCircle, Bell, TrendingUp } from "lucide-react";
+import { FileSpreadsheet, AlertCircle, ArrowLeft, Calendar } from "lucide-react";
 import { DeleteConnectionDialog } from "@/components/connections/delete-connection-dialog";
 
 export default async function ConnectionDetailPage({ params }: { params: { id: string } }) {
@@ -82,7 +82,6 @@ export default async function ConnectionDetailPage({ params }: { params: { id: s
                 <div>
                   <p className="text-[11px] text-indigo-500 font-semibold uppercase tracking-wider">GL Period</p>
                   <p className="text-sm font-semibold text-indigo-900">{glMinDate} — {glMaxDate}</p>
-                  <p className="text-[11px] text-indigo-500 mt-0.5">Use these dates when creating a close period</p>
                 </div>
               </div>
             )}
@@ -117,44 +116,14 @@ export default async function ConnectionDetailPage({ params }: { params: { id: s
 
             <Separator />
             <div className="flex gap-3 flex-wrap">
-              {/* Chat button — only for GL document type */}
+              <Button asChild size="sm" className="gap-2 bg-[#1B3A5C] hover:bg-[#1B3A5C]/90">
+                <Link href="/investigations">Run investigation</Link>
+              </Button>
               {(connection.uploadedFile?.documentType ?? "GL") === "GL" && (
-                <Button asChild size="sm" className="gap-2 bg-[#1B3A5C] hover:bg-[#1B3A5C]/90">
-                  <Link href={`/connections/${connection.id}/chat`}>
-                    <MessageCircle className="h-4 w-4" />Ask AI
-                  </Link>
+                <Button asChild variant="outline" size="sm" className="gap-2">
+                  <Link href={`/connections/${connection.id}/data`}>View ledger rows</Link>
                 </Button>
               )}
-              <Button asChild variant="outline" size="sm" className="gap-2 border-emerald-200 text-emerald-700 hover:bg-emerald-50">
-                <Link href={`/connections/${connection.id}/data`}>View GL Data</Link>
-              </Button>
-              <Button asChild variant="outline" size="sm" className="gap-2">
-                <Link href={`/connections/${connection.id}/schema`}>View Schema</Link>
-              </Button>
-              <Button asChild variant="outline" size="sm" className="gap-2">
-                <Link href={`/connections/${connection.id}/account-mapping`}>Account Mapping</Link>
-              </Button>
-              <Button asChild variant="outline" size="sm" className="gap-2 border-violet-200 text-violet-700 hover:bg-violet-50">
-                <Link href={`/connections/${connection.id}/scan`}>Data Quality Scan</Link>
-              </Button>
-              <Button asChild variant="outline" size="sm" className="gap-2 border-blue-200 text-blue-700 hover:bg-blue-50">
-                <Link href={`/connections/${connection.id}/flux`}>Flux Analysis</Link>
-              </Button>
-              <Button asChild variant="outline" size="sm" className="gap-2 border-amber-200 text-amber-700 hover:bg-amber-50">
-                <Link href={`/connections/${connection.id}/pulse`}>
-                  <Bell className="h-4 w-4" />Daily Pulse
-                </Link>
-              </Button>
-              {connection.uploadedFile?.documentType === "GSTR_2B" && (
-                <Button asChild variant="outline" size="sm" className="gap-2 border-violet-200 text-violet-700 hover:bg-violet-50">
-                  <Link href={`/connections/${connection.id}/vendor-compliance`}>
-                    <TrendingUp className="h-4 w-4" />Vendor ITC Scorecard
-                  </Link>
-                </Button>
-              )}
-              <Button variant="outline" size="sm" className="gap-2" disabled>
-                <RefreshCw className="h-4 w-4" />Update Data
-              </Button>
             </div>
           </CardContent>
         </Card>
@@ -179,11 +148,6 @@ export default async function ConnectionDetailPage({ params }: { params: { id: s
                 </p>
               </div>
             </div>
-            <div className="flex gap-3">
-              <Button asChild variant="outline" size="sm">
-                <Link href={`/connections/${connection.id}/schema`}>View Schema</Link>
-              </Button>
-            </div>
           </CardContent>
         </Card>
       )}
@@ -193,8 +157,7 @@ export default async function ConnectionDetailPage({ params }: { params: { id: s
         <div className="rounded-xl border border-rose-100 bg-rose-50/40 p-5">
           <h3 className="text-sm font-semibold text-rose-700 mb-1">Danger Zone</h3>
           <p className="text-xs text-rose-500 mb-4 leading-snug">
-            Deleting this connection permanently removes all uploaded GL data, scan history,
-            pinned queries, and the underlying database table. This action cannot be undone.
+            Deleting this connection permanently removes all uploaded GL data, investigation results and the underlying database table. This action cannot be undone.
           </p>
           <DeleteConnectionDialog
             connectionId={connection.id}

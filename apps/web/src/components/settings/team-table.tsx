@@ -3,10 +3,6 @@
 import { useState } from "react";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Input } from "@/components/ui/input";
-import { UserPlus } from "lucide-react";
 
 type Member = { id: string; name: string | null; email: string; role: string };
 
@@ -37,26 +33,6 @@ export default function TeamTable({ members, currentUserId }: { members: Member[
     <div className="space-y-4">
       <div className="flex items-center justify-between">
         <p className="text-sm text-muted-foreground">{rows.length} member{rows.length !== 1 ? "s" : ""}</p>
-        <Dialog>
-          <DialogTrigger asChild>
-            <Button size="sm" className="bg-[#1B3A5C] hover:bg-[#1B3A5C]/90 gap-2">
-              <UserPlus className="h-4 w-4" />
-              Invite member
-            </Button>
-          </DialogTrigger>
-          <DialogContent>
-            <DialogHeader>
-              <DialogTitle>Invite a team member</DialogTitle>
-              <DialogDescription>
-                Email invitations will be available once email is configured in Sprint 9.
-              </DialogDescription>
-            </DialogHeader>
-            <div className="space-y-3 pt-2">
-              <Input placeholder="colleague@company.com" disabled />
-              <Button className="w-full" disabled>Send invite (coming soon)</Button>
-            </div>
-          </DialogContent>
-        </Dialog>
       </div>
 
       <div className="rounded-lg border">
